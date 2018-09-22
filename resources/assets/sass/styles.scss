@@ -1,3 +1,7 @@
+@font-face {
+    font-family: ToyotaFont;
+    src: url('/fonts/toyotadisplay.woff');
+}
 *{
     margin: 0;
     padding: 0;
@@ -9,24 +13,98 @@ body{
       color: black 
 }
 
+footer{
+  background-color: #171717;
+}
+
 .container-10{
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/*.logo-dyv{
-    width: 15%;
+  .mar-top-40{
+    margin-top: 40px;
+  }
+  .mar-top-15{
+    margin-top: 15px;
+  }
+  .pad-top-50{
+    padding-top: 50px;
+  }
+  .pad-top-bot-50{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    display: flex;
-    align-items: flex-end;
+  .pad-top-bot-20{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .pad-bot-25{
+    padding-bottom: 25px;
+  }
+
+
+.text-primary-1{
+    color: #f05f40!important;
 }
 
-.logo-toyota{
-    width: 15%;
+.dropdown-menu > li > a {
+  line-height: 2.1
+}
 
-    display: flex;
-    align-items: flex-start;
-}*/
+/*TAMAÑO FUENTES-------------------------------------------*/
+.fs-17{
+  font-size: 17px;
+}
+.fs-25{
+  font-size: 25px;
+}
+
+/*COLORES--------------------------------------------------*/
+.white{
+  color: white;
+}
+.gray{
+  color: #58595b;
+}
+.red{
+  color: #d71921;
+}
+
+
+
+
+
+/*BOTONES------------------------------------------------*/
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+/*------------------------------------------------*/
 
 .header-contacto{
     display: flex;
@@ -86,6 +164,57 @@ body{
 .dropdown-menu > li > a {
     font-weight: 600;
 }
+
+
+/*Modelo SECTION--------------------------------------------------------------
+---------------------------------------------------------------------------*/
+.list-colors:hover{
+    cursor: pointer;
+  }
+  .circle{
+    border-radius: 50%;
+    border: solid 1px white;
+    height: 30px;
+    width: 30px;
+  }
+
+  .active_circle{
+      border: solid 3px #66d4fd;
+  }
+
+  .active_li {
+      /*background: #fff;*/
+      filter: alpha(opacity=0);
+      -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      -o-transform: scale(1.3);
+      transform: scale(1.3);
+      border-radius: 50%;
+      -webkit-transition: transform .4s cubic-bezier(.175,.885,.32,3.5),opacity .1s linear;
+      -moz-transition: transform .4s cubic-bezier(.175,.885,.32,3.5),opacity .1s linear;
+      -ms-transition: transform .4s cubic-bezier(.175,.885,.32,3.5),opacity .1s linear;
+      -o-transition: transform .4s cubic-bezier(.175,.885,.32,3.5),opacity .1s linear;
+      transition: transform .4s cubic-bezier(.175,.885,.32,3.5),opacity .1s linear;
+  }
+
+
+  .caption-default > h4 {
+    color: #404048!important; 
+      text-shadow: 0px 0px 0px #ffffff;
+      font-weight: bold;
+  }
+
+    .caption-default > h3 {
+      color: #404048!important; 
+      text-shadow: 0px 0px 0px #ffffff;
+      font-weight: bold;
+  }
+
+  .text-shadow{
+      font-weight: bold;
+      color: #404048!important; 
+      text-shadow: 0px 0px 0px #ffffff;
+  }
 
 
 /*NAVBAR Desktop--------------------------------------------
@@ -471,7 +600,7 @@ $content-selector: "~ .content > section";
 
 
 
-/*----------------Liezo---------------------------------------------------------------------*/
+/*----------------Lienzo---------------------------------------------------------------------*/
 .hover-block{
     display: none; 
     position: absolute;
@@ -515,3 +644,72 @@ $content-selector: "~ .content > section";
   }
 
   /*-------------------------------------------------------------------------------------------*/
+
+
+/*FOOTER-------------------------------------------------------------------------------------*/
+  .footer-menu > li{
+    font-size: 22px;
+  }
+
+  .footer-menu > li > a{
+    color:#da251d;
+    font-weight: bold;
+  }
+
+  .h-dyv{
+    color: white;
+    font-weight: bold;
+    font-size: 55px;
+  }
+
+  .row-footer{
+    padding:15px 0px 15px 0px;
+  }
+  .row-footer-last{
+    padding:15px 0px 0px 0px;
+    border-top: 3px dashed #383431
+  }
+
+  .row-footer-first{
+    padding:15px 0px 0px 0px;
+  }
+  .row-footer h1{
+    color: white;
+  }
+
+  .row-footer-border{
+    border-bottom: 3px dashed #383431
+  }
+  .row-footer-social{
+    border-top: 6px solid #383431; 
+    margin-top: 10px; 
+
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap;
+  }
+
+  .row-footer-social > .phone{
+    margin-left: 28px;
+    margin-right: 28px;
+  }
+
+  .row-footer-social > .dir > h4 > small{
+    color: #aeaeae
+  }
+
+
+
+  .slide-left {
+    position: relative;
+    left: -500px;
+    opacity: 0;
+  }
+
+ .slide-left-show {
+    transition: all 2.45s ease;
+    /*transition: 1.5s;*/
+    left: 0;
+    opacity: 1;
+}
+

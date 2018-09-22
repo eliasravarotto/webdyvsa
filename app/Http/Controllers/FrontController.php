@@ -21,8 +21,17 @@ class FrontController extends Controller
         return view('frontend.modelo');
     }
 
+
+
+    //SECCION UNIDADES USADAS
+
     public function usadosIndex()
     {
         return view('frontend.usados.index');
+    }
+
+    public function usadosShow($id)
+    {
+        return view('frontend.usados.show');
     }
 }

@@ -70,7 +70,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(4);
+var bind = __webpack_require__(6);
 var isBuffer = __webpack_require__(21);
 
 /*global toString:true*/
@@ -377,33 +377,6 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
 /* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file.
@@ -510,6 +483,33 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -533,10 +533,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(6);
+    adapter = __webpack_require__(8);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(6);
+    adapter = __webpack_require__(8);
   }
   return adapter;
 }
@@ -607,468 +607,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function bind(fn, thisArg) {
-  return function wrap() {
-    var args = new Array(arguments.length);
-    for (var i = 0; i < args.length; i++) {
-      args[i] = arguments[i];
-    }
-    return fn.apply(thisArg, args);
-  };
-};
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(0);
-var settle = __webpack_require__(24);
-var buildURL = __webpack_require__(26);
-var parseHeaders = __webpack_require__(27);
-var isURLSameOrigin = __webpack_require__(28);
-var createError = __webpack_require__(7);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(29);
-
-module.exports = function xhrAdapter(config) {
-  return new Promise(function dispatchXhrRequest(resolve, reject) {
-    var requestData = config.data;
-    var requestHeaders = config.headers;
-
-    if (utils.isFormData(requestData)) {
-      delete requestHeaders['Content-Type']; // Let the browser set it
-    }
-
-    var request = new XMLHttpRequest();
-    var loadEvent = 'onreadystatechange';
-    var xDomain = false;
-
-    // For IE 8/9 CORS support
-    // Only supports POST and GET calls and doesn't returns the response headers.
-    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-    if ("development" !== 'test' &&
-        typeof window !== 'undefined' &&
-        window.XDomainRequest && !('withCredentials' in request) &&
-        !isURLSameOrigin(config.url)) {
-      request = new window.XDomainRequest();
-      loadEvent = 'onload';
-      xDomain = true;
-      request.onprogress = function handleProgress() {};
-      request.ontimeout = function handleTimeout() {};
-    }
-
-    // HTTP basic authentication
-    if (config.auth) {
-      var username = config.auth.username || '';
-      var password = config.auth.password || '';
-      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
-    }
-
-    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
-
-    // Set the request timeout in MS
-    request.timeout = config.timeout;
-
-    // Listen for ready state
-    request[loadEvent] = function handleLoad() {
-      if (!request || (request.readyState !== 4 && !xDomain)) {
-        return;
-      }
-
-      // The request errored out and we didn't get a response, this will be
-      // handled by onerror instead
-      // With one exception: request that using file: protocol, most browsers
-      // will return status as 0 even though it's a successful request
-      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
-        return;
-      }
-
-      // Prepare the response
-      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
-      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
-      var response = {
-        data: responseData,
-        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
-        status: request.status === 1223 ? 204 : request.status,
-        statusText: request.status === 1223 ? 'No Content' : request.statusText,
-        headers: responseHeaders,
-        config: config,
-        request: request
-      };
-
-      settle(resolve, reject, response);
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle low level network errors
-    request.onerror = function handleError() {
-      // Real errors are hidden from us by the browser
-      // onerror should only fire if it's a network error
-      reject(createError('Network Error', config, null, request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle timeout
-    request.ontimeout = function handleTimeout() {
-      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
-        request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Add xsrf header
-    // This is only done if running in a standard browser environment.
-    // Specifically not if we're in a web worker, or react-native.
-    if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(30);
-
-      // Add xsrf header
-      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
-          cookies.read(config.xsrfCookieName) :
-          undefined;
-
-      if (xsrfValue) {
-        requestHeaders[config.xsrfHeaderName] = xsrfValue;
-      }
-    }
-
-    // Add headers to the request
-    if ('setRequestHeader' in request) {
-      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
-        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
-          // Remove Content-Type if data is undefined
-          delete requestHeaders[key];
-        } else {
-          // Otherwise add header to the request
-          request.setRequestHeader(key, val);
-        }
-      });
-    }
-
-    // Add withCredentials to request if needed
-    if (config.withCredentials) {
-      request.withCredentials = true;
-    }
-
-    // Add responseType to request if needed
-    if (config.responseType) {
-      try {
-        request.responseType = config.responseType;
-      } catch (e) {
-        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
-        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
-        if (config.responseType !== 'json') {
-          throw e;
-        }
-      }
-    }
-
-    // Handle progress if needed
-    if (typeof config.onDownloadProgress === 'function') {
-      request.addEventListener('progress', config.onDownloadProgress);
-    }
-
-    // Not all browsers support upload events
-    if (typeof config.onUploadProgress === 'function' && request.upload) {
-      request.upload.addEventListener('progress', config.onUploadProgress);
-    }
-
-    if (config.cancelToken) {
-      // Handle cancellation
-      config.cancelToken.promise.then(function onCanceled(cancel) {
-        if (!request) {
-          return;
-        }
-
-        request.abort();
-        reject(cancel);
-        // Clean up request
-        request = null;
-      });
-    }
-
-    if (requestData === undefined) {
-      requestData = null;
-    }
-
-    // Send the request
-    request.send(requestData);
-  });
-};
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var enhanceError = __webpack_require__(25);
-
-/**
- * Create an Error with the specified message, config, error code, request and response.
- *
- * @param {string} message The error message.
- * @param {Object} config The config.
- * @param {string} [code] The error code (for example, 'ECONNABORTED').
- * @param {Object} [request] The request.
- * @param {Object} [response] The response.
- * @returns {Error} The created error.
- */
-module.exports = function createError(message, config, code, request, response) {
-  var error = new Error(message);
-  return enhanceError(error, config, code, request, response);
-};
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isCancel(value) {
-  return !!(value && value.__CANCEL__);
-};
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * A `Cancel` is an object that is thrown when an operation is canceled.
- *
- * @class
- * @param {string=} message The message.
- */
-function Cancel(message) {
-  this.message = message;
-}
-
-Cancel.prototype.toString = function toString() {
-  return 'Cancel' + (this.message ? ': ' + this.message : '');
-};
-
-Cancel.prototype.__CANCEL__ = true;
-
-module.exports = Cancel;
-
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports) {
 
 /*
@@ -1150,7 +692,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 11 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -1378,11 +920,469 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+var settle = __webpack_require__(24);
+var buildURL = __webpack_require__(26);
+var parseHeaders = __webpack_require__(27);
+var isURLSameOrigin = __webpack_require__(28);
+var createError = __webpack_require__(9);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(29);
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
+
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if ("development" !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(30);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(25);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(67);
 
 
 /***/ }),
@@ -1410,6 +1410,8 @@ Vue.component('example-component', __webpack_require__(42));
 Vue.component('banner-ppal', __webpack_require__(45));
 Vue.component('navbar-desk', __webpack_require__(51));
 Vue.component('detalle-modelo', __webpack_require__(54));
+Vue.component('index-usados', __webpack_require__(59));
+Vue.component('show-usado', __webpack_require__(62));
 
 var app = new Vue({
   el: '#app'
@@ -18586,7 +18588,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(16)(module)))
 
 /***/ }),
 /* 16 */
@@ -31384,7 +31386,7 @@ module.exports = __webpack_require__(20);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(4);
+var bind = __webpack_require__(6);
 var Axios = __webpack_require__(22);
 var defaults = __webpack_require__(3);
 
@@ -31419,9 +31421,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(9);
+axios.Cancel = __webpack_require__(11);
 axios.CancelToken = __webpack_require__(36);
-axios.isCancel = __webpack_require__(8);
+axios.isCancel = __webpack_require__(10);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -31574,7 +31576,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(7);
+var createError = __webpack_require__(9);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -32009,7 +32011,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(33);
-var isCancel = __webpack_require__(8);
+var isCancel = __webpack_require__(10);
 var defaults = __webpack_require__(3);
 var isAbsoluteURL = __webpack_require__(34);
 var combineURLs = __webpack_require__(35);
@@ -32169,7 +32171,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(9);
+var Cancel = __webpack_require__(11);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -43267,7 +43269,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(40).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(40).setImmediate))
 
 /***/ }),
 /* 40 */
@@ -43337,7 +43339,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 41 */
@@ -43530,14 +43532,14 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)))
 
 /***/ }),
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(43)
 /* template */
@@ -43660,7 +43662,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(46)
 }
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(49)
 /* template */
@@ -43713,7 +43715,7 @@ var content = __webpack_require__(47);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(11)("3a20bc3c", content, false, {});
+var update = __webpack_require__(5)("3a20bc3c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43732,12 +43734,12 @@ if(false) {
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\r\n\r\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption {\r\n  z-index: 1;\n}\r\n\r\n/* Declare heights because of positioning of img element */\n.carousel .item {\r\n  height: 100%;\r\n  background-color:#555;\n}\n.carousel img {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  min-height: 400px;\n}\n.thumbnail-lighten{\r\n  background-color: #fcfeff;\n}\n.thumbnail-lighten .caption {\r\n    padding: 0px;\n}\n.thumbnail-lighten .caption p {\r\n    font-size: 15px;\n}\n.thumbnail-lighten .caption h3 {\r\n        color: #4b4b4b !important;\r\n        font-size: 20px;\r\n        font-weight: 600;\n}\r\n\r\n/* RESPONSIVE CSS--------------------------------------------------------*/\n@media (min-width: 768px) {\r\n\r\n  /* Navbar positioning foo */\n.navbar-wrapper {\r\n    margin-top: 90px;\r\n    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */\n}\r\n  /* The navbar becomes detached from the top, so we round the corners */\n.navbar-wrapper .navbar {\r\n    border-radius: 4px;\n}\r\n\r\n  /* Bump up size of carousel content */\n.carousel-caption p {\r\n    margin-bottom: 20px;\r\n    font-size: 21px;\r\n    line-height: 1.4;\n}\n}\n.carousel,.item,.active{height:100%;\n}\n.carousel-inner{height:100%;\n}\n.fill{width:100%;height:100%;background-position:center;background-size:cover;\n}\r\n\r\n/* faster sliding speed */\n.carousel-inner > .item {\r\n/*    -webkit-transition: 0.6s ease-in-out left;\r\n    -moz-transition: 0.6s ease-in-out left;\r\n    -o-transition: 0.6s ease-in-out left;\r\n    transition: 0.6s ease-in-out left;*/\n}\r\n\r\n  ", ""]);
+exports.push([module.i, "\r\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption {\r\n  z-index: 1;\n}\r\n/* Declare heights because of positioning of img element */\n.carousel .item {\r\n  height: 100%;\r\n  background-color:#555;\n}\n.carousel img {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  min-height: 400px;\n}\n.thumbnail-lighten{\r\n  background-color: #fcfeff;\n}\n.thumbnail-lighten .caption {\r\n    padding: 0px;\n}\n.thumbnail-lighten .caption p {\r\n    font-size: 15px;\n}\n.thumbnail-lighten .caption h3 {\r\n        color: #4b4b4b !important;\r\n        font-size: 20px;\r\n        font-weight: 600;\n}\r\n/* RESPONSIVE CSS--------------------------------------------------------*/\n@media (min-width: 768px) {\r\n  /* Navbar positioning foo */\n.navbar-wrapper {\r\n    margin-top: 90px;\r\n    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */\n}\r\n  /* The navbar becomes detached from the top, so we round the corners */\n.navbar-wrapper .navbar {\r\n    border-radius: 4px;\n}\r\n  /* Bump up size of carousel content */\n.carousel-caption p {\r\n    margin-bottom: 20px;\r\n    font-size: 21px;\r\n    line-height: 1.4;\n}\n}\n.carousel,.item,.active{height:100%;\n}\n.carousel-inner{height:100%;\n}\n.fill{width:100%;height:100%;background-position:center;background-size:cover;\n}\r\n/* faster sliding speed */\n.carousel-inner > .item {\r\n/*    -webkit-transition: 0.6s ease-in-out left;\r\n    -moz-transition: 0.6s ease-in-out left;\r\n    -o-transition: 0.6s ease-in-out left;\r\n    transition: 0.6s ease-in-out left;*/\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -43781,15 +43783,6 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -43941,7 +43934,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(52)
 /* template */
@@ -44173,7 +44166,9 @@ var staticRenderFns = [
             _c("a", { attrs: { href: "#" } }, [_vm._v("FINANCIACION")])
           ]),
           _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("USADOS")])]),
+          _c("li", [
+            _c("a", { attrs: { href: "/usados" } }, [_vm._v("USADOS")])
+          ]),
           _vm._v(" "),
           _c("li", { staticClass: "dropdown dropdown-hover" }, [
             _c(
@@ -44268,7 +44263,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(55)
 }
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(57)
 /* template */
@@ -44321,7 +44316,7 @@ var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(11)("db1c4de8", content, false, {});
+var update = __webpack_require__(5)("db1c4de8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44340,12 +44335,12 @@ if(false) {
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n", ""]);
+exports.push([module.i, "\n\n", ""]);
 
 // exports
 
@@ -44538,26 +44533,78 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
     data: function data() {
         return {
+            activeClass: 'active item',
             backgroundColor: '',
             position: '',
             styles: '',
             //data from request.
-            slider_images: [],
-            model_image: [],
+            slider_ppal_images: [{ id: '0', url: '/imagenes/bg3.jpg' }],
+            slider_sm_images: [{ id: '0', url: '/imagenes/modelos/etios/galeria/1.jpg' }, { id: '1', url: '/imagenes/modelos/etios/galeria/2.jpg' }, { id: '2', url: '/imagenes/modelos/etios/galeria/3.jpg' }, { id: '3', url: '/imagenes/modelos/etios/galeria/3.jpg' }],
             model_color_images: [{ model_color: 'etios_blanco', model_image: '/imagenes/modelos/etios/colores/etios_blanco.jpg', color_css: '#efeeeb', model_color_desc: 'Blanco' }, { model_color: 'etios_blanco_perla', model_image: '/imagenes/modelos/etios/colores/etios_blanco_perla.jpg', color_css: '#f4f4f4', model_color_desc: 'Blanco Perla' }, { model_color: 'etios_gris_plata', model_image: '/imagenes/modelos/etios/colores/etios_gris_plata.jpg', color_css: '#d4d1d4', model_color_desc: 'Gris Plata' }, { model_color: 'etios_gris_arena', model_image: '/imagenes/modelos/etios/colores/etios_gris_arena.jpg', color_css: '#878774', model_color_desc: 'Gris Arena' }, { model_color: 'etios_azul', model_image: '/imagenes/modelos/etios/colores/etios_azul.jpg', color_css: '#0c3a62', model_color_desc: 'Azul' }, { model_color: 'etios_rojo', model_image: '/imagenes/modelos/etios/colores/etios_rojo.jpg', color_css: '#a60000', model_color_desc: 'Rojo' }, { model_color: 'etios_negro', model_image: '/imagenes/modelos/etios/colores/etios_negro.jpg', color_css: '#050505', model_color_desc: 'Negro' }, { model_color: 'etios_gris_oscuro', model_image: '/imagenes/modelos/etios/colores/etios_gris_oscuro.jpg', color_css: '#555555', model_color_desc: 'Gris Oscuro' }],
             model_color_selected: 'Click para seleccionar un color.',
-            features: [{ title: 'NUEVO DISEÑO EXTERIOR', desc: 'Gracias al diseño de su frente y sus nuevos faros oscurecidos, el Etios obtiene una imagen más agresiva y robusta. A su vez, las nuevas llantas de aleación de 15” y los faldones laterales contribuyen a darle una impronta más audaz.', image: 'http://homu.com.ar/wp-content/uploads/2017/05/etios04-3.jpg' }, { title: 'MAS TECNOLOGÍA', desc: 'El nuevo Etios presenta un audio con pantalla táctil de 7”, MP3, Bluetooth®, USB, entrada auxiliar de audio y conexión con smartphone.', image: 'http://homu.com.ar/wp-content/uploads/2017/05/etios06-2.jpg' }, { title: 'DALE MARCHA A TUS IMPULSOS', desc: 'La caja automática de 4 marchas, con control de velocidad crucero y la caja manual de 6 marchas, favorecen un andar fluido y dinámico sin descuidar un consumo conveniente.', image: 'https://www.toyota.com.ar/showroom/etios-hb/images/top_features/img.jpg' }]
+            features: [{ title: 'NUEVO DISEÑO EXTERIOR', desc: 'Gracias al diseño de su frente y sus nuevos faros oscurecidos, el Etios obtiene una imagen más agresiva y robusta. A su vez, las nuevas llantas de aleación de 15” y los faldones laterales contribuyen a darle una impronta más audaz.', image: 'http://homu.com.ar/wp-content/uploads/2017/05/etios04-3.jpg' }, { title: 'MAS TECNOLOGÍA', desc: 'El nuevo Etios presenta un audio con pantalla táctil de 7”, MP3, Bluetooth®, USB, entrada auxiliar de audio y conexión con smartphone.', image: 'http://homu.com.ar/wp-content/uploads/2017/05/etios06-2.jpg' }, { title: 'DALE MARCHA A TUS IMPULSOS', desc: 'La caja automática de 4 marchas, con control de velocidad crucero y la caja manual de 6 marchas, favorecen un andar fluido y dinámico sin descuidar un consumo conveniente.', image: 'https://www.toyota.com.ar/showroom/etios-hb/images/top_features/img.jpg' }],
+            image_logo: '/imagenes/modelos/etios/logo.png',
+            link_ficha_tecnica: '',
+            link_catalogo: ''
         };
     },
     mounted: function mounted() {
         this.initJS();
-        //this.data.bg_color != null ? this.styles = 'background-color:'+this.data.bg_color : '';
-        //this.position = 'position:'+this.data.position;
     },
 
     methods: {
@@ -44575,6 +44622,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 $("#images_colors").find("img").hide();
                 $("#img_" + li.id).show();
             }
+
+            $('#myCarouselmin').carousel({
+                interval: 5000
+            });
+
+            $('#carousel-text').html($('#slide-content-0').html());
+
+            //Handles the carousel thumbnails
+            $('[id^=carousel-selector-]').click(function () {
+                var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+                var id = parseInt(id);
+                $('#myCarouselmin').carousel(id);
+            });
+
+            // When the carousel slides, auto update the text
+            $('#myCarouselmin').on('slid.bs.carousel', function (e) {
+                var id = $('.item.active').data('slide-number');
+                $('#carousel-text').html($('#slide-content-' + id).html());
+            });
         },
         changeColor: function changeColor(id, name_color) {
             this.model_color_selected = name_color;
@@ -44603,124 +44669,275 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("article", [
-      _vm._m(1),
+      _c("section", { staticClass: "container pad-top-bot-20" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 text-center" }, [
+            _c("img", { attrs: { src: _vm.image_logo } })
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2)
+      ]),
       _vm._v(" "),
-      _c(
-        "section",
-        { staticClass: "arrow_box container mar-top-40 pad-bot-25" },
-        [
-          _c("div", { staticClass: "row" }, [
-            _vm._m(2),
+      _c("section", { staticClass: "arrow_box container pad-top-bot-20" }, [
+        _c("div", { staticClass: "row" }, [
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12 col-xs-12" }, [
+            _c("h3", { staticClass: "text-center" }, [_vm._v("COLORES")]),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col-lg-6 col-md-6 col-sm-12 col-xs-12" },
-              [
-                _c("h3", { staticClass: "text-center" }, [_vm._v("COLORES")]),
+              { staticClass: "text-center", attrs: { id: "images_colors" } },
+              _vm._l(_vm.model_color_images, function(data) {
+                return _c("img", {
+                  staticClass: "img-thumbnail thumbnail-no-border",
+                  staticStyle: { padding: "0px" },
+                  attrs: {
+                    id: "img_" + data.model_color,
+                    src: data.model_image
+                  }
+                })
+              })
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-center" }, [
+              _c("label", { staticStyle: { "font-size": "17px" } }, [
+                _vm._v(_vm._s(_vm.model_color_selected))
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "list-inline list-colors text-center mar-top-15" },
+              _vm._l(_vm.model_color_images, function(data) {
+                return _c(
+                  "li",
+                  {
+                    attrs: { id: data.model_color },
+                    on: {
+                      click: function($event) {
+                        _vm.changeColor(data.model_color, data.model_color_desc)
+                      }
+                    }
+                  },
+                  [
+                    _c("div", {
+                      staticClass: "circle",
+                      style: { "background-color": data.color_css }
+                    })
+                  ]
+                )
+              })
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "pad-top-bot-50" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xs-12", attrs: { id: "slider" } }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-6",
+                    attrs: { id: "carousel-bounding-box" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel slide",
+                        attrs: { id: "myCarouselmin" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "carousel-inner" },
+                          _vm._l(_vm.slider_sm_images, function(img, index) {
+                            return _c(
+                              "div",
+                              {
+                                class: [index == 0 ? _vm.activeClass : "item"],
+                                attrs: { "data-slide-number": img.id }
+                              },
+                              [_c("img", { attrs: { src: img.url } })]
+                            )
+                          })
+                        ),
+                        _vm._v(" "),
+                        _vm._m(4),
+                        _vm._v(" "),
+                        _vm._m(5)
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
                   {
-                    staticClass: "text-center",
-                    attrs: { id: "images_colors" }
+                    staticClass: "col-md-6 hidden-xs",
+                    attrs: { id: "carousel-text" }
                   },
-                  _vm._l(_vm.model_color_images, function(data) {
-                    return _c("img", {
-                      staticClass: "img-thumbnail thumbnail-no-border",
-                      staticStyle: { padding: "0px" },
-                      attrs: {
-                        id: "img_" + data.model_color,
-                        src: data.model_image
-                      }
-                    })
-                  })
-                ),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-center" }, [
-                  _c("label", { staticStyle: { "font-size": "17px" } }, [
-                    _vm._v(_vm._s(_vm.model_color_selected))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "list-inline list-colors text-center mar-top-15"
-                  },
-                  _vm._l(_vm.model_color_images, function(data) {
-                    return _c(
-                      "li",
+                  [
+                    _c(
+                      "div",
                       {
-                        attrs: { id: data.model_color },
-                        on: {
-                          click: function($event) {
-                            _vm.changeColor(
-                              data.model_color,
-                              data.model_color_desc
-                            )
-                          }
-                        }
+                        staticClass: "row hidden-xs",
+                        attrs: { id: "slider-thumbs" }
                       },
                       [
-                        _c("div", {
-                          staticClass: "circle",
-                          style: { "background-color": data.color_css }
-                        })
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "thumbnail",
+                              attrs: {
+                                id:
+                                  "carousel-selector-" +
+                                  _vm.slider_sm_images[0].id
+                              }
+                            },
+                            [
+                              _c("img", {
+                                attrs: {
+                                  src: "/imagenes/modelos/etios/galeria/1.jpg"
+                                }
+                              })
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "thumbnail",
+                              attrs: {
+                                id:
+                                  "carousel-selector-" +
+                                  _vm.slider_sm_images[1].id
+                              }
+                            },
+                            [
+                              _c("img", {
+                                attrs: {
+                                  src: "/imagenes/modelos/etios/galeria/2.jpg"
+                                }
+                              })
+                            ]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "thumbnail",
+                            attrs: {
+                              id:
+                                "carousel-selector-" +
+                                _vm.slider_sm_images[2].id
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/imagenes/modelos/etios/galeria/3.jpg"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "thumbnail",
+                            attrs: {
+                              id:
+                                "carousel-selector-" +
+                                _vm.slider_sm_images[3].id
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/imagenes/modelos/etios/galeria/2.jpg"
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "pad-top-bot-20",
+          staticStyle: { "background-color": "#f0fdff" }
+        },
+        [
+          _c("div", { staticClass: "container pad-top-bot-50" }, [
+            _c(
+              "div",
+              { staticClass: "row" },
+              _vm._l(_vm.features, function(item) {
+                return _c(
+                  "div",
+                  { staticClass: "col-md-4 col-sm-12 col-xs-12" },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "thumbnail thumbnail-no-bg thumbnail-no-border"
+                      },
+                      [
+                        _c("img", { attrs: { src: item.image, alt: "..." } }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "caption caption-default" }, [
+                          _c("h4", { staticClass: "text-center" }, [
+                            _vm._v(_vm._s(item.title))
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-justify" }, [
+                            _vm._v(
+                              "\r\n                                    " +
+                                _vm._s(item.desc) +
+                                "\r\n                                "
+                            )
+                          ])
+                        ])
                       ]
                     )
-                  })
+                  ]
                 )
-              ]
+              })
             )
           ])
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticStyle: { "background-color": "#f0fdff" } }, [
-        _c("div", { staticClass: "container pad-top-bot-50" }, [
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.features, function(item) {
-              return _c(
-                "div",
-                { staticClass: "col-md-4 col-sm-12 col-xs-12" },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "thumbnail thumbnail-no-bg thumbnail-no-border"
-                    },
-                    [
-                      _c("img", { attrs: { src: item.image, alt: "..." } }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "caption caption-default" }, [
-                        _c("h4", { staticClass: "text-center" }, [
-                          _vm._v(_vm._s(item.title))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "text-justify" }, [
-                          _vm._v(
-                            "\r\n                                    " +
-                              _vm._s(item.desc) +
-                              "\r\n                                "
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]
-              )
-            })
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._m(3)
+      _vm._m(6)
     ])
   ])
 }
@@ -44821,86 +45038,77 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "container mar-top-40" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12 text-center" }, [
-          _c("img", {
-            attrs: {
-              src:
-                "http://homu.com.ar/wp-content/uploads/2017/05/LOGO-ETIOS-260x67.png"
-            }
-          })
-        ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 text-center" }, [
+        _c("h3", [_vm._v("TU PRIMER TOYOTA")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6 col-sm-12 text-center" }, [
+        _c("img", {
+          staticStyle: { height: "300px" },
+          attrs: { src: "/imagenes/etios.jpg" }
+        })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12 text-center" }, [
-          _c("h3", [_vm._v("TU PRIMER TOYOTA")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-6 col-sm-12 text-center" }, [
-          _c("img", {
-            staticStyle: { height: "300px" },
-            attrs: { src: "/imagenes/etios.jpg" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-          _c("table", { staticClass: "table table-striped" }, [
-            _c("thead", [
-              _c("tr", [_c("th", [_vm._v("Versiones")]), _vm._v(" "), _c("th")])
+      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+        _c("table", { staticClass: "table table-striped" }, [
+          _c("thead", [
+            _c("tr", [_c("th", [_vm._v("Versiones")]), _vm._v(" "), _c("th")])
+          ]),
+          _vm._v(" "),
+          _c("tbody", [
+            _c("tr", [
+              _c("td", { staticStyle: { width: "75%" } }, [
+                _vm._v("X 5P 6M/T")
+              ]),
+              _vm._v(" "),
+              _c("td", [_vm._v("$ 373700")])
             ]),
             _vm._v(" "),
-            _c("tbody", [
-              _c("tr", [
-                _c("td", { staticStyle: { width: "75%" } }, [
-                  _vm._v("X 5P 6M/T")
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v("$ 373700")])
+            _c("tr", [
+              _c("td", { staticStyle: { width: "75%" } }, [
+                _vm._v("X 4P 6M/T")
               ]),
               _vm._v(" "),
-              _c("tr", [
-                _c("td", { staticStyle: { width: "75%" } }, [
-                  _vm._v("X 4P 6M/T")
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v("$ 389000")])
+              _c("td", [_vm._v("$ 389000")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { staticStyle: { width: "75%" } }, [
+                _vm._v("XLS 5P 6M/T")
               ]),
               _vm._v(" "),
-              _c("tr", [
-                _c("td", { staticStyle: { width: "75%" } }, [
-                  _vm._v("XLS 5P 6M/T")
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v("$ 418000")])
+              _c("td", [_vm._v("$ 418000")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { staticStyle: { width: "75%" } }, [
+                _vm._v("XLS 4P 6M/T")
               ]),
               _vm._v(" "),
-              _c("tr", [
-                _c("td", { staticStyle: { width: "75%" } }, [
-                  _vm._v("XLS 4P 6M/T")
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v("$ 433300")])
+              _c("td", [_vm._v("$ 433300")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { staticStyle: { width: "75%" } }, [
+                _vm._v("XLS 5P 4A/T")
               ]),
               _vm._v(" "),
-              _c("tr", [
-                _c("td", { staticStyle: { width: "75%" } }, [
-                  _vm._v("XLS 5P 4A/T")
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v("$ 436400")])
+              _c("td", [_vm._v("$ 436400")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { staticStyle: { width: "75%" } }, [
+                _vm._v("XLS 4P 4A/T")
               ]),
               _vm._v(" "),
-              _c("tr", [
-                _c("td", { staticStyle: { width: "75%" } }, [
-                  _vm._v("XLS 4P 4A/T")
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v("$ 451700")])
-              ])
+              _c("td", [_vm._v("$ 451700")])
             ])
           ])
         ])
@@ -44913,7 +45121,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" },
+      {
+        staticClass:
+          "col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left"
+      },
       [
         _c("h3", [_vm._v("TU PRIMER TOYOTA, MEJOR QUE NUNCA")]),
         _vm._v(" "),
@@ -44959,6 +45170,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "left carousel-control",
+        attrs: { href: "#myCarouselmin", role: "button", "data-slide": "prev" }
+      },
+      [_c("span", { staticClass: "glyphicon glyphicon-chevron-left" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "right carousel-control",
+        attrs: { href: "#myCarouselmin", role: "button", "data-slide": "next" }
+      },
+      [_c("span", { staticClass: "glyphicon glyphicon-chevron-right" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "parallax bg3" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
@@ -44986,6 +45223,1389 @@ if (false) {
 
 /***/ }),
 /* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(60)
+/* template */
+var __vue_template__ = __webpack_require__(61)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/frontend/usados_index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3afcddce", Component.options)
+  } else {
+    hotAPI.reload("data-v-3afcddce", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['data'],
+    data: function data() {
+        return {
+            unidades: [{ id: '1', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'rojo', url_imagen: 'imagenes/usados/corolla.jpg', tipo: 'auto' }, { id: '2', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'rojo', url_imagen: 'imagenes/usados/hilux.jpg', tipo: 'camioneta' }, { id: '3', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'negro', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }, { id: '4', marca: 'renault', modelo: 'Logan', version: 'Lg', año: '2016', km: '50.000', color: 'negro', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }, { id: '5', marca: 'Chevrolet', modelo: 'Corsa', version: 'cls', año: '2016', km: '50.000', color: 'gris', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }],
+            dataModalContacto: ''
+
+        };
+    },
+    mounted: function mounted() {},
+
+    methods: {
+        openModalContacto: function openModalContacto(unidad) {
+            $('#contacto').modal('toggle');
+            this.dataModalContacto = unidad;
+        }
+    }
+});
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "galeria-usados" }, [
+    _c("div", { attrs: { id: "fh5co-portfolio-section" } }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "animate-box row", attrs: { id: "portfoliolist" } },
+        _vm._l(_vm.unidades, function(unidad) {
+          return _c(
+            "div",
+            {
+              class:
+                " col-md-4 col-sm-12 col-xs-12 portfolio all thumbnail thumbnail-no-bg " +
+                unidad.color +
+                " " +
+                unidad.marca +
+                " " +
+                unidad.tipo,
+              attrs: { "data-cat": "logo" }
+            },
+            [
+              _c("div", { staticClass: "portfolio-wrapper" }, [
+                _c("img", { attrs: { src: unidad.url_imagen, alt: "" } }),
+                _vm._v(" "),
+                _vm._m(1, true)
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "caption caption-default" }, [
+                _c("h3", [
+                  _vm._v(
+                    _vm._s(unidad.marca) + " " + _vm._s(unidad.version) + " "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr", {
+                  staticStyle: { "margin-top": "10px", "margin-bottom": "10px" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticStyle: {
+                      display: "flex",
+                      "justify-content": "space-around"
+                    }
+                  },
+                  [
+                    _c("div", [
+                      _vm._m(2, true),
+                      _vm._v(
+                        " " +
+                          _vm._s(unidad.año) +
+                          "\n                               "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _vm._m(3, true),
+                      _vm._v(
+                        " " +
+                          _vm._s(unidad.km) +
+                          "\n                               "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _vm._m(4, true),
+                      _vm._v(
+                        " " +
+                          _vm._s(unidad.color) +
+                          "\n                               "
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticStyle: {
+                      display: "flex",
+                      "justify-content": "flex-start",
+                      "align-items": "center"
+                    }
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-danger",
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            _vm.openModalContacto(unidad)
+                          }
+                        }
+                      },
+                      [_vm._v("Consultar")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(5, true)
+                  ]
+                )
+              ])
+            ]
+          )
+        })
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(6),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "contacto",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(7),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("h4", { staticClass: "text-center" }, [
+                  _vm._v(
+                    "\n                       " +
+                      _vm._s(_vm.dataModalContacto.marca) +
+                      " - " +
+                      _vm._s(_vm.dataModalContacto.modelo) +
+                      " - " +
+                      _vm._s(_vm.dataModalContacto.año) +
+                      " - " +
+                      _vm._s(_vm.dataModalContacto.color) +
+                      "\n                   "
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(8),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _vm._m(9)
+              ]),
+              _vm._v(" "),
+              _vm._m(10)
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "clearfix animate-box", attrs: { id: "filters" } },
+      [
+        _c("li", [
+          _c(
+            "span",
+            { staticClass: "filter active", attrs: { "data-filter": ".all" } },
+            [_vm._v("Todos")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "span",
+            { staticClass: "filter", attrs: { "data-filter": ".auto" } },
+            [_vm._v("Autos")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "span",
+            { staticClass: "filter", attrs: { "data-filter": ".camioneta" } },
+            [_vm._v("Camionetas")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "span",
+            { staticClass: "filter", attrs: { "data-filter": ".toyota" } },
+            [_vm._v("Toyota")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "span",
+            { staticClass: "filter", attrs: { "data-filter": ".renault" } },
+            [_vm._v("Renault")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "span",
+            { staticClass: "filter", attrs: { "data-filter": ".rojo" } },
+            [_vm._v("Rojo")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "span",
+            { staticClass: "filter", attrs: { "data-filter": ".gris" } },
+            [_vm._v("Gris")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "label" }, [
+      _c("div", { staticClass: "label-text" }, [
+        _c("a", { staticClass: "text-title" }, [_vm._v("Camera")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "text-category" }, [_vm._v("Logo")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "label-bg" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", {
+        staticClass: "fa fa-calendar",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" Año:")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", {
+        staticClass: "fa fa-tachometer",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" KM:")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", {
+        staticClass: "fa fa-paint-brush",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" Color:")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "fb-share-button",
+        staticStyle: { "margin-left": "10px" },
+        attrs: {
+          "data-href": "https://developers.facebook.com/docs/plugins/",
+          "data-layout": "button",
+          "data-size": "small",
+          "data-mobile-iframe": "true"
+        }
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "fb-xfbml-parse-ignore",
+            attrs: {
+              target: "_blank",
+              href:
+                "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&src=sdkpreparse"
+            }
+          },
+          [_vm._v("Compartir")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "fh5co-services-section" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-md-8 col-md-offset-2 text-center heading-section"
+            },
+            [
+              _c("h2", [_vm._v("Our Services")]),
+              _vm._v(" "),
+              _c("h3", [
+                _vm._v(
+                  "Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."
+                )
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4 animate-box" }, [
+            _c("div", { staticClass: "fh5co-services text-center" }, [
+              _c("i", { staticClass: "icon-heart" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "holder-section" }, [
+                _c("h3", [_vm._v("Crafted With Love")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. "
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4 animate-box" }, [
+            _c("div", { staticClass: "fh5co-services text-center" }, [
+              _c("i", { staticClass: "icon-laptop" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "holder-section" }, [
+                _c("h3", [_vm._v("Web Developement")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. "
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4 animate-box" }, [
+            _c("div", { staticClass: "fh5co-services text-center" }, [
+              _c("i", { staticClass: "icon-video" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "holder-section" }, [
+                _c("h3", [_vm._v("Video Editing")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. "
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4 animate-box" }, [
+            _c("div", { staticClass: "fh5co-services text-center" }, [
+              _c("i", { staticClass: "icon-mobile" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "holder-section" }, [
+                _c("h3", [_vm._v("Mobile Optimization")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. "
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4 animate-box" }, [
+            _c("div", { staticClass: "fh5co-services text-center" }, [
+              _c("i", { staticClass: "icon-gears" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "holder-section" }, [
+                _c("h3", [_vm._v("Search Engine Optimization")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. "
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4 animate-box" }, [
+            _c("div", { staticClass: "fh5co-services text-center" }, [
+              _c("i", { staticClass: "icon-piechart" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "holder-section" }, [
+                _c("h3", [_vm._v("Web Marketing")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      ),
+      _vm._v(" "),
+      _c("h4", { staticClass: "modal-title", attrs: { id: "myModalLabel" } }, [
+        _vm._v("CONSULTAR")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", [
+      _c("label", [_vm._v("Email o Telefono")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", name: "" }
+      }),
+      _vm._v(" "),
+      _c("label", [_vm._v("Mensaje")]),
+      _vm._v(" "),
+      _c("textarea", { staticClass: "form-control" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "alert alert-info", attrs: { role: "alert" } },
+      [_c("p", [_vm._v("Estaremos en contacto a la brevedad.")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-default",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "button" } },
+        [_vm._v("Enviar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3afcddce", module.exports)
+  }
+}
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(63)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(65)
+/* template */
+var __vue_template__ = __webpack_require__(66)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/frontend/usados_show.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0093e19e", Component.options)
+  } else {
+    hotAPI.reload("data-v-0093e19e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(64);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("d8267854", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0093e19e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./usados_show.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0093e19e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./usados_show.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.hide-bullets {\nlist-style:none;\nmargin-left: -40px;\nmargin-top:20px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['data'],
+    data: function data() {
+        var _ref;
+
+        return {
+            unidad: { marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2015', km: '25.000', color: 'negro',
+                imagenes: [(_ref = {
+                    url: ''
+                }, _defineProperty(_ref, 'url', ''), _defineProperty(_ref, 'url', ''), _defineProperty(_ref, 'url', ''), _ref)]
+            }
+        };
+    },
+    mounted: function mounted() {
+        this.initJS();
+    },
+
+    methods: {
+        openModalContacto: function openModalContacto(unidad) {
+            $('#contacto').modal('toggle');
+            this.dataModalContacto = unidad;
+        },
+        initJS: function initJS() {
+            //SRC https://bootsnipp.com/snippets/featured/carousel-extended-320-compatible
+            $('#myCarousel').carousel({
+                interval: 5000
+            });
+
+            $('[id^=carousel-selector-]').click(function () {
+                var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+                var id = parseInt(id);
+                $('#myCarousel').carousel(id);
+            });
+
+            //$('#carousel-text').html($('#slide-content-0').html());
+
+            // When the carousel slides, auto update the text
+            // $('#myCarousel').on('slid.bs.carousel', function (e) {
+            //          var id = $('.item.active').data('slide-number');
+            //         $('#carousel-text').html($('#slide-content-'+id).html());
+            // });
+        }
+    }
+});
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-xs-12", attrs: { id: "slider" } }, [
+        _c("div", { staticClass: "row" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-sm-4", attrs: { id: "carousel-text" } },
+            [
+              _c("div", [
+                _c(
+                  "label",
+                  {
+                    staticStyle: {
+                      "font-family": "ToyotaFont",
+                      "font-size": "20px",
+                      color: "#404048"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    \t\t\t" +
+                        _vm._s(_vm.unidad.marca) +
+                        " " +
+                        _vm._s(_vm.unidad.modelo) +
+                        " " +
+                        _vm._s(_vm.unidad.version) +
+                        " \n                    \t\t"
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticStyle: {
+                    display: "flex",
+                    "justify-content": "space-between"
+                  }
+                },
+                [
+                  _c("div", [
+                    _vm._m(1),
+                    _vm._v(
+                      " " +
+                        _vm._s(_vm.unidad.año) +
+                        "\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._m(2),
+                    _vm._v(
+                      " " +
+                        _vm._s(_vm.unidad.km) +
+                        "\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._m(3),
+                    _vm._v(
+                      " " +
+                        _vm._s(_vm.unidad.color) +
+                        "\n                            "
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-default btn-block btn-lg",
+                  attrs: { href: "" }
+                },
+                [_vm._v("CONSULTAR")]
+              )
+            ]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(5),
+    _vm._v(" "),
+    _c("div", { staticClass: "row arrow_box" }),
+    _vm._v(" "),
+    _vm._m(6)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-sm-8", attrs: { id: "carousel-bounding-box" } },
+      [
+        _c(
+          "div",
+          { staticClass: "carousel slide", attrs: { id: "myCarousel" } },
+          [
+            _c("div", { staticClass: "carousel-inner" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "active item",
+                  attrs: { "data-slide-number": "0" }
+                },
+                [_c("img", { attrs: { src: "/imagenes/usados/camry/1.jpg" } })]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "item", attrs: { "data-slide-number": "1" } },
+                [_c("img", { attrs: { src: "/imagenes/usados/camry/10.jpg" } })]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "item", attrs: { "data-slide-number": "2" } },
+                [_c("img", { attrs: { src: "/imagenes/usados/camry/11.jpg" } })]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "item", attrs: { "data-slide-number": "3" } },
+                [_c("img", { attrs: { src: "/imagenes/usados/camry/12.jpg" } })]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "item", attrs: { "data-slide-number": "4" } },
+                [_c("img", { attrs: { src: "/imagenes/usados/camry/13.jpg" } })]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "item", attrs: { "data-slide-number": "5" } },
+                [_c("img", { attrs: { src: "/imagenes/usados/camry/5.jpg" } })]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "left carousel-control",
+                attrs: {
+                  href: "#myCarousel",
+                  role: "button",
+                  "data-slide": "prev"
+                }
+              },
+              [_c("span", { staticClass: "glyphicon glyphicon-chevron-left" })]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "right carousel-control",
+                attrs: {
+                  href: "#myCarousel",
+                  role: "button",
+                  "data-slide": "next"
+                }
+              },
+              [_c("span", { staticClass: "glyphicon glyphicon-chevron-right" })]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", {
+        staticClass: "fa fa-calendar",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" Año:")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", {
+        staticClass: "fa fa-tachometer",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" KM:")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", {
+        staticClass: "fa fa-paint-brush",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" Color:")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "well text-justify" }, [
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                        \ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                        \tquis nostrud exercitation ullamco laboris nisi ut aliquip ex."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row hidden-xs", attrs: { id: "slider-thumbs" } },
+      [
+        _c("ul", { staticClass: "hide-bullets" }, [
+          _c("li", { staticClass: "col-sm-2" }, [
+            _c(
+              "a",
+              {
+                staticClass: "thumbnail",
+                attrs: { id: "carousel-selector-0" }
+              },
+              [_c("img", { attrs: { src: "/imagenes/usados/camry/1.jpg" } })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "col-sm-2" }, [
+            _c(
+              "a",
+              {
+                staticClass: "thumbnail",
+                attrs: { id: "carousel-selector-1" }
+              },
+              [_c("img", { attrs: { src: "/imagenes/usados/camry/10.jpg" } })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "col-sm-2" }, [
+            _c(
+              "a",
+              {
+                staticClass: "thumbnail",
+                attrs: { id: "carousel-selector-2" }
+              },
+              [_c("img", { attrs: { src: "/imagenes/usados/camry/11.jpg" } })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "col-sm-2" }, [
+            _c(
+              "a",
+              {
+                staticClass: "thumbnail",
+                attrs: { id: "carousel-selector-3" }
+              },
+              [_c("img", { attrs: { src: "/imagenes/usados/camry/12.jpg" } })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "col-sm-2" }, [
+            _c(
+              "a",
+              {
+                staticClass: "thumbnail",
+                attrs: { id: "carousel-selector-4" }
+              },
+              [_c("img", { attrs: { src: "/imagenes/usados/camry/13.jpg" } })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "col-sm-2" }, [
+            _c(
+              "a",
+              {
+                staticClass: "thumbnail",
+                attrs: { id: "carousel-selector-5" }
+              },
+              [_c("img", { attrs: { src: "/imagenes/usados/camry/5.jpg" } })]
+            )
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mar-top" }, [
+      _c("div", { staticClass: "col-md-7 col-xs-12 col-sm-12" }, [
+        _c("h2", [_vm._v("Su no nos molesta.")]),
+        _vm._v(" "),
+        _c("form", [
+          _c("label", [_vm._v("Email o Telefono")]),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: { type: "text", name: "" }
+          }),
+          _vm._v(" "),
+          _c("label", [_vm._v("Mensaje")]),
+          _vm._v(" "),
+          _c("textarea", { staticClass: "form-control" })
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "alert alert-info", attrs: { role: "alert" } },
+          [_c("p", [_vm._v("Estaremos en contacto a la brevedad.")])]
+        ),
+        _vm._v(" "),
+        _c("div", [
+          _c("a", { staticClass: "btn btn-default", attrs: { href: "" } }, [
+            _vm._v("Enviar")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5 col-xs-12 col-sm-12" })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0093e19e", module.exports)
+  }
+}
+
+/***/ }),
+/* 67 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -26,6 +26,10 @@ Route::get('/admin', function () {
 
 Route::resource('admin/modelos','ModelosController');
 Route::get('/home','FrontController@home');
+Route::get('/financiacion','FrontController@financiacion');
+Route::get('/plan-de-ahorro','FrontController@planDeAhorro');
+Route::get('/contacto','FrontController@contacto');
 Route::get('/nosotros','FrontController@aboutUs');
 Route::get('/modelo','FrontController@modelo');
 Route::get('/usados','FrontController@usadosIndex');
+Route::get('/usados/{id}','FrontController@usadosShow');

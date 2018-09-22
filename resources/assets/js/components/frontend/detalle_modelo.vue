@@ -1,9 +1,6 @@
 <style type="text/css">
 
-
-    
 </style>
-
 <template>
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -42,10 +39,10 @@
             </a>
     </div>
     <article>
-        <section class="container mar-top-40">
+        <section class="container pad-top-bot-20">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <img src="http://homu.com.ar/wp-content/uploads/2017/05/LOGO-ETIOS-260x67.png">
+                    <img v-bind:src="image_logo">
                 </div>
             </div>
             <div class="row">
@@ -97,9 +94,9 @@
             </div>
         </section>
 
-        <section class="arrow_box container mar-top-40 pad-bot-25">
+        <section class="arrow_box container pad-top-bot-20">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left">
                     <h3>TU PRIMER TOYOTA, MEJOR QUE NUNCA</h3>
                     <br>
                     <p class="text-justify">El Toyota Etios continua reforzando su actitud gracias a la incorporación de un nuevo diseño de parrilla, llantas de aleación y faros oscurecidos. Además, incorpora de serie Control de estabilidad y Control de tracción que en conjunto con su excelente performance de motor y transmisión hacen al Etios la opción ideal para recorrer el camino.</p>
@@ -145,7 +142,60 @@
             </div>
         </section>
 
-        <section style="background-color: #f0fdff;">
+        <section class="pad-top-bot-50">
+            <div class="container">
+                <!-- Slider -->
+                <div class="row">
+                    <div class="col-xs-12" id="slider">
+                        <!-- Top part of the slider -->
+                        <div class="row">
+                            <div class="col-md-6" id="carousel-bounding-box">
+                                <div class="carousel slide" id="myCarouselmin">
+
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        <div v-for="(img, index) in slider_sm_images" v-bind:class="[index == 0 ? activeClass : 'item']" v-bind:data-slide-number="img.id">
+                                            <img v-bind:src="img.url">
+                                        </div>
+                                    </div>
+                                    <!-- Carousel nav -->
+
+                                    <a class="left carousel-control" href="#myCarouselmin" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarouselmin" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
+                                    </a>                                
+                                    </div>
+                            </div>
+
+                            <div class="col-md-6 hidden-xs" id="carousel-text">
+                                <div class="row hidden-xs" id="slider-thumbs">
+                                    <div class="col-md-6">
+                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[0].id"><img src="/imagenes/modelos/etios/galeria/1.jpg"></a>
+                                     </div>   
+
+                                    <div class="col-md-6">
+                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[1].id"><img src="/imagenes/modelos/etios/galeria/2.jpg"></a>
+                                    </div>
+                                </div>                 
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[2].id"><img src="/imagenes/modelos/etios/galeria/3.jpg"></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[3].id"><img src="/imagenes/modelos/etios/galeria/2.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/Slider-->
+            </div>
+        </section>
+
+        <section class="pad-top-bot-20" style="background-color: #f0fdff;">
             <div class="container pad-top-bot-50">
                 <div class="row">
                     <div v-for="item in features" class="col-md-4 col-sm-12 col-xs-12">
@@ -185,12 +235,18 @@
     	props: ['data'],
         data(){
             return {
+                activeClass : 'active item',
                 backgroundColor: '',
                 position: '',
                 styles: '',
                 //data from request.
-                slider_images: [],
-                model_image: [],
+                slider_ppal_images: [{id:'0', url:'/imagenes/bg3.jpg'}],
+                slider_sm_images: [
+                                    {id: '0',url: '/imagenes/modelos/etios/galeria/1.jpg'},
+                                    {id: '1',url: '/imagenes/modelos/etios/galeria/2.jpg'},
+                                    {id: '2',url: '/imagenes/modelos/etios/galeria/3.jpg'},
+                                    {id: '3',url: '/imagenes/modelos/etios/galeria/3.jpg'}
+                ],
                 model_color_images: [
                                         {model_color: 'etios_blanco', model_image:'/imagenes/modelos/etios/colores/etios_blanco.jpg', color_css: '#efeeeb', model_color_desc:'Blanco'},
                                         {model_color: 'etios_blanco_perla', model_image:'/imagenes/modelos/etios/colores/etios_blanco_perla.jpg', color_css: '#f4f4f4', model_color_desc:'Blanco Perla'},
@@ -206,20 +262,21 @@
                             { title:'NUEVO DISEÑO EXTERIOR', desc: 'Gracias al diseño de su frente y sus nuevos faros oscurecidos, el Etios obtiene una imagen más agresiva y robusta. A su vez, las nuevas llantas de aleación de 15” y los faldones laterales contribuyen a darle una impronta más audaz.', image:'http://homu.com.ar/wp-content/uploads/2017/05/etios04-3.jpg' },
                             { title:'MAS TECNOLOGÍA', desc: 'El nuevo Etios presenta un audio con pantalla táctil de 7”, MP3, Bluetooth®, USB, entrada auxiliar de audio y conexión con smartphone.', image:'http://homu.com.ar/wp-content/uploads/2017/05/etios06-2.jpg' },
                             { title:'DALE MARCHA A TUS IMPULSOS', desc: 'La caja automática de 4 marchas, con control de velocidad crucero y la caja manual de 6 marchas, favorecen un andar fluido y dinámico sin descuidar un consumo conveniente.', image:'https://www.toyota.com.ar/showroom/etios-hb/images/top_features/img.jpg' }
-                        ]
+                ],
+                image_logo: '/imagenes/modelos/etios/logo.png',
+                link_ficha_tecnica: '',
+                link_catalogo: ''
             }
         },
         mounted() {
             this.initJS();
-            //this.data.bg_color != null ? this.styles = 'background-color:'+this.data.bg_color : '';
-            //this.position = 'position:'+this.data.position;
+
         },
         methods:{
             initJS(){
                 $("#images_colors").find("img").hide();
                 $("#img_etios_blanco").show();
 
-            
                 function test(li){
                     $('.list-colors li.active_li').removeClass('active_li');
                     $('.list-colors').find(".active_circle").removeClass("active_circle");
@@ -230,6 +287,27 @@
                     $("#images_colors").find("img").hide();
                     $("#img_"+li.id).show();
                 }
+
+                $('#myCarouselmin').carousel({
+                        interval: 5000
+                });
+         
+                $('#carousel-text').html($('#slide-content-0').html());
+         
+                //Handles the carousel thumbnails
+               $('[id^=carousel-selector-]').click( function(){
+                    var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+                    var id = parseInt(id);
+                    $('#myCarouselmin').carousel(id);
+                });
+ 
+ 
+                // When the carousel slides, auto update the text
+                $('#myCarouselmin').on('slid.bs.carousel', function (e) {
+                         var id = $('.item.active').data('slide-number');
+                        $('#carousel-text').html($('#slide-content-'+id).html());
+                });
+
             },
             changeColor(id, name_color){
                 this.model_color_selected = name_color;

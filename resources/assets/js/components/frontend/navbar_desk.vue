@@ -24,7 +24,7 @@
 	                </li>
 	                <li><a href="#">PLAN DE AHORRO</a></li>
 	                <li><a href="#">FINANCIACION</a></li>
-	                <li><a href="#">USADOS</a></li>
+	                <li><a href="/usados">USADOS</a></li>
 	                <li class="dropdown dropdown-hover">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">POSVENTA <span class="caret"></span></a>
 	                  <ul class="dropdown-menu dropdown-hover">

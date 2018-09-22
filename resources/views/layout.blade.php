@@ -12,83 +12,10 @@
 </head>
 
 <style type="text/css">
-@font-face {
-    font-family: 'icomoon';
-    src:    url({{ asset('/public/icomoon.eot') }});
-    src:    url({{ asset('/public/icomoon.eot') }}) format('embedded-opentype'),
-            url({{ asset('/public/icomoon.ttf') }}) format('truetype'),
-            url({{ asset('/public/icomoon.woff') }}) format('woff'),
-            url({{ asset('/public/icomoon.svg') }}) format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-twitter-with-circle:before {
-    content: "\ea7c";
-}
-
-  .text-primary-1{
-    color: #f05f40!important;
+  footer .row{
+    margin-right: 0px;
+    margin-left: 0px;
   }
-.mb-4, .my-4 {
-    margin-bottom: 1.5rem!important;
-    max-width: 50px;
-    border-width: 3px;
-    border-color: #f05f40;
-}
-.mt-4, .my-4 {
-    margin-top: 1.5rem!important;
-    max-width: 50px;
-    border-width: 3px;
-    border-color: #f05f40;
-}
-
-.dropdown-menu > li > a {
-  line-height: 2.1
-}
-.row-footer{
-  padding:15px 0px 15px 0px;
-}
-.row-footer-last{
-  padding:15px 0px 0px 0px;
-}
-
-.row-footer-first{
-  padding:15px 0px 0px 0px;
-}
-.row-footer h1{
-  color: white;
-}
-footer{
-  background-color: #171717;
-}
-
-.gris{
-  color: #505050;
-}
-
-.fs-25{
-  font-size: 25px;
-}
-
-.red{
-  color: #d0241d;
-}
 </style>
 
 <body>
@@ -188,65 +115,72 @@ footer{
     <footer>
       <div>
         <div class="row row-footer-first">
-          <ul class="list-unstyled list-inline text-center">
-            <li style="font-size: 22px;"><a style="color:#da251d;font-weight: bold; " href="">Sucursales</a></li>
-            <li style="font-size: 22px;"></li>
-            <li style="font-size: 22px;"></li>
-            <li style="font-size: 22px;"><a style="color:#da251d;font-weight: bold; " href="">Contacto</a></li>
+          <ul class="list-unstyled list-inline text-center footer-menu">
+            <li>
+              <a href="#">Sucursales</a>
+            </li>
+            <li></li>
+            <li></li>
+            <li>
+              <a href="#">Contacto</a></li>
           </ul>
         </div>
+
         <div class="row row-footer">
-          <div class="col-md-offset-4 col-md-1 col-sm-1 col-xs-12 text-center">
+          <div class="col-md-offset-4 col-sm-offset-4 col-md-1 col-sm-1 col-xs-4 text-center">
             <h1><i class="fa fa-facebook-square"></i>
-              <p style="font-size: 17px">Facebook</p>
+              <p class="fs-17">Facebook</p>
             </h1>
           </div>
-          <div class="col-md-2 col-sm-2 col-xs-12 text-center">
+          <div class="col-md-2 col-sm-2 col-xs-4 text-center">
             <h1>
-              <i class="icon-twitter-with-circle"></i>
-              {{-- <i class="fa fa-twitter-square" aria-hidden="true"></i> --}}
-              <p style="font-size: 17px">Twitter</p>
+              <i class="fa fa-twitter-square" aria-hidden="true"></i>
+              <p class="fs-17">Twitter</p>
             </h1>
           </div>
-          <div class="col-md-1 col-sm-1 col-xs-12 text-center ">
+          <div class="col-md-1 col-sm-1 col-xs-4 text-center ">
             <h1>
               <i class="fa fa-instagram" aria-hidden="true"></i>
-              <p style="font-size: 17px">Instagram</p>
+              <p class="fs-17">Instagram</p>
             </h1>
           </div>
         </div>
-        <div class="row row-footer" style="border-bottom: 3px dashed #383431">
+
+        <div class="row row-footer row-footer-border">
           <div class="col-md-12 col-xs-12 col-sm-12 text-center">
-            <h1 style="color: white; font-weight: bold; font-size: 55px;">Derka y Vargas</h1>
-            <h3 style="color: white">Concesionario Oficial Toyota en Chaco</h3>
+            <h1 class="h-dyv">Derka y Vargas</h1>
+            <h3 class="white">Concesionario Oficial Toyota en Chaco</h3>
           </div>
         </div>
-        <div class="row-footer" style="border-top: 6px solid #383431; margin-top: 10px; display: flex; justify-content: center; flex-wrap: wrap;">
+
+        <div class="row-footer row-footer-social">
           <div class="">
-            <h4 style="color: white">
+            <h4 class="white">
               <i class="fa fa-envelope fs-25 red"></i>
               administracion@derkayvargas.com.ar
             </h4>
           </div>   
-          <div class="" style="margin-left: 28px; margin-right: 28px;" >
-            <h4 style="color: white">
+          <div class="phone">
+            <h4 class="white">
               <i class="fa fa-phone fs-25 red"></i>
               (0364) 44 - 20602 / 20549 / 20840
             </h4>
           </div>   
-          <div class="text-center">
-            <h4 style="color: white">
+          <div class="text-center dir">
+            <h4 class="white">
               <i class="fa fa-home fs-25 red"></i>
               Casa Central Sáenz Peñabr <br>
-              <small class="text-center" style="color: #aeaeae">Belgrano N° 872 (calle 10 esq 19 )</small>
+              <small class="text-center">Belgrano N° 872 (calle 10 esq 19 )</small>
             </h4>
           </div>     
         </div>
-        <div class="row row-footer-last" style=" border-top: 3px dashed #383431">
+
+        <div class="row row-footer-last">
           <div class="col-md-12">
-            <p class="text-center" style="font-size: 15px;color: white">Copyright C 2018 - Todos los Derechos Reservados</p>
+            <p class="text-center" style="font-size: 15px;color: white">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2018 - Todos los Derechos Reservados</p>
           </div>
         </div>
+
       </div>
     </footer>
 
@@ -277,9 +211,10 @@ footer{
      
                 //check to see if this element is within viewport
                 if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
-                    $element.addClass('.test');
+                    $element.addClass('.slide-left');
+                    console.log('asas')
                 } else {
-                    $element.removeClass('.test');
+                    $element.removeClass('.slide-left-show');
                 }
             });
         }
