@@ -173,7 +173,7 @@ footer{
   }
   .circle{
     border-radius: 50%;
-    border: solid 1px white;
+    border: solid 1px #484848;
     height: 30px;
     width: 30px;
   }
@@ -286,7 +286,7 @@ footer{
   background-size: cover;
 }
 .parallax.bg3 {
-    background-image: url('/imagenes/empresa.jpg');
+    /*background-image: url('/imagenes/empresa.jpg');*/
     min-height: 500px;
     opacity: 1;
 }
@@ -346,6 +346,21 @@ footer{
 
 /*----MEDIA QUERYS-------------------------------------------------
 ---------------------------------------------------------------------*/
+@media (max-width: 992px) { 
+  .image-service .is-image { width: 100%; }
+
+  .image-service .is-desc-sm-xs {
+    position: absolute;
+    padding: 40px;
+    margin-left: 5%;
+    background: #fff;
+    top: 100%;
+    width: 85%;
+    z-index: 2;
+    -webkit-transform: translateY(-50%);
+  }
+}
+
 @media only screen and (max-width: 992px) {
     .lista-contacto{ display: none }
 }

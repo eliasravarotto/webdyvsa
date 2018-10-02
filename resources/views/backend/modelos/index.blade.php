@@ -16,31 +16,33 @@
         <table class="table">
             <thead>
               <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
+                <th>Id</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Activo</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
+              @foreach($modelos as $modelo)
               <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-              </tr>
-              <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
+                <td>{{$modelo->id}}</td>
+                <td>{{$modelo->nombre}}</td>
+                <td>{{$modelo->marca_id}}</td>
+                <td>{{$modelo->activo}}</td>
+                <td>
+                  {{-- <a href="{{ route('modelos.show', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}
+                  <form action="{{ url('admin/modelos', ['id' => $modelo->id]) }}" method="post">
+                      <a href="{{ route('modelos.edit', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      {!! method_field('delete') !!}
+                      {!! csrf_field() !!}
+                      <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                  </form>
+                </td>
+                @endforeach
               </tr>
             </tbody>
           </table>
-
-
     </div>
 </div>
 

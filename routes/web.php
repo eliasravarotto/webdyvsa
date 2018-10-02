@@ -24,12 +24,27 @@ Route::get('/admin', function () {
     return view('backend.sufee_admin.dashboard');
 });
 
+// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 Route::resource('admin/modelos','ModelosController');
+Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
+Route::put('admin/modelos/{id}/edit/colores','ModelosController@updateColores');
+Route::get('admin/modelos/{id}/edit/galeria','ModelosController@editGaleria');
+Route::put('admin/modelos/{id}/edit/galeria','ModelosController@updateGaleria');
+Route::get('admin/modelos/{id}/edit/caracteristicas','ModelosController@editCaracteristicas');
+Route::put('admin/modelos/{id}/edit/caracteristicas','ModelosController@updateCaracteristicas');
+Route::get('admin/modelos/{id}/edit/parallax','ModelosController@editParallax');
+Route::put('admin/modelos/{id}/edit/parallax','ModelosController@updateParallax');
+Route::get('admin/modelos/{id}/edit/slider','ModelosController@editSlider');
+Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
+
+
 Route::get('/home','FrontController@home');
 Route::get('/financiacion','FrontController@financiacion');
+Route::get('/posventa','FrontController@posventa');
 Route::get('/plan-de-ahorro','FrontController@planDeAhorro');
 Route::get('/contacto','FrontController@contacto');
 Route::get('/nosotros','FrontController@aboutUs');
-Route::get('/modelo','FrontController@modelo');
+Route::get('/modelo/{modelo}','FrontController@modelo');
+Route::get('/modelo','FrontController@getModelos');
 Route::get('/usados','FrontController@usadosIndex');
 Route::get('/usados/{id}','FrontController@usadosShow');

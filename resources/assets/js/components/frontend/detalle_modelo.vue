@@ -4,55 +4,56 @@
 <template>
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li> 
-            </ol>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li> 
+        </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <!--
               <div class="item active">
                 <img src="https://www.zento.com.ar/images/etios/slide2.jpg" alt="Los Angeles" style="width:100%;">
                 <div class="carousel-caption">
                     <h3>Etios</h3>
                     <p>Decile sí a todo.</p>
                     </div>
-              </div>
+                </div>
               <div class="item">
                 <img src="https://www.zento.com.ar/images/etios/slide2.jpg" alt="Chicago" style="width:100%;">
               </div>
-              <div class="item">
-                <img src="https://www.zento.com.ar/images/etios/slide2.jpg" alt="New york" style="width:100%;">
-              </div>
+            -->
+            <div v-for="(img, index) in slider_ppal_images" v-bind:class="[index == 0 ? 'item active' : 'item']">
+                <img v-bind:src="img.url" alt="New york" style="width:100%;">
             </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-              <span class="sr-only">Next</span>
-            </a>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
     </div>
     <article>
         <section class="container pad-top-bot-20">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <img v-bind:src="image_logo">
+                    <img v-bind:src="img_logo">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h3>TU PRIMER TOYOTA</h3>
+                    <h3>{{ modelo.slogan }}</h3>
                 </div>
             </div>
             <div class="row" >
                 <div class="col-md-6 col-sm-12 text-center">
-                    <img src="/imagenes/etios.jpg" style=" height: 300px">
+                    <img v-bind:src="img_modelo" style=" height: 300px">
                     <!-- <img class="img-responsive" src="https://www.zento.com.ar/images/etios/versiones_precios.jpg"> -->
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -119,11 +120,11 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <h3 class="text-center">COLORES</h3>
                     <div id="images_colors" class="text-center">
-                        <img v-for="data in model_color_images"
-                             class="img-thumbnail thumbnail-no-border"
-                             style="padding: 0px" 
-                             v-bind:id="'img_'+data.model_color" 
-                             v-bind:src="data.model_image" 
+                        <img v-for="(data, index) in model_color_images"
+                             v-bind:class="'img-thumbnail thumbnail-no-border '"
+                             v-bind:style="'padding: 0px; '+[index == 0 ? 'display: block;' : 'display: none;']" 
+                             v-bind:id="'img_'+data.codigo" 
+                             v-bind:src="data.url" 
                         />
                     </div>
                     <br>
@@ -133,9 +134,9 @@
 
                     <ul class="list-inline list-colors text-center mar-top-15">
                         <li v-for="data in model_color_images" 
-                            v-bind:id="data.model_color" 
-                            v-on:click="changeColor(data.model_color, data.model_color_desc)">
-                            <div class="circle" v-bind:style="{'background-color': data.color_css}"></div>
+                            v-bind:id="data.codigo" 
+                            v-on:click="changeColor(data.codigo, data.color)">
+                            <div class="circle" v-bind:style="{'background-color': '#'+data.codigo}"></div>
                         </li>
                     </ul>
                 </div>
@@ -154,39 +155,27 @@
 
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
-                                        <div v-for="(img, index) in slider_sm_images" v-bind:class="[index == 0 ? activeClass : 'item']" v-bind:data-slide-number="img.id">
+                                        <div v-for="(img, index) in imagenes_galeria" v-bind:class="[index == 0 ? activeClass : 'item']" v-bind:data-slide-number="img.id">
                                             <img v-bind:src="img.url">
                                         </div>
                                     </div>
-                                    <!-- Carousel nav -->
 
+                                    <!-- Carousel nav -->
                                     <a class="left carousel-control" href="#myCarouselmin" role="button" data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left"></span>                                       
                                     </a>
                                     <a class="right carousel-control" href="#myCarouselmin" role="button" data-slide="next">
                                         <span class="glyphicon glyphicon-chevron-right"></span>                                       
                                     </a>                                
-                                    </div>
+                                </div>
                             </div>
 
                             <div class="col-md-6 hidden-xs" id="carousel-text">
                                 <div class="row hidden-xs" id="slider-thumbs">
-                                    <div class="col-md-6">
-                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[0].id"><img src="/imagenes/modelos/etios/galeria/1.jpg"></a>
+                                    <div v-for="img in imagenes_galeria" class="col-md-6">
+                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+img.id"><img v-bind:src="img.url"></a>
                                      </div>   
-
-                                    <div class="col-md-6">
-                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[1].id"><img src="/imagenes/modelos/etios/galeria/2.jpg"></a>
-                                    </div>
                                 </div>                 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[2].id"><img src="/imagenes/modelos/etios/galeria/3.jpg"></a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+slider_sm_images[3].id"><img src="/imagenes/modelos/etios/galeria/2.jpg"></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -200,11 +189,11 @@
                 <div class="row">
                     <div v-for="item in features" class="col-md-4 col-sm-12 col-xs-12">
                         <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img v-bind:src="item.image" alt="...">
+                            <img v-bind:src="item.img" alt="...">
                             <div class="caption caption-default">
-                                <h4 class="text-center">{{ item.title }}</h4>
+                                <h4 class="text-center">{{ item.titulo }}</h4>
                                 <p class="text-justify">
-                                    {{ item.desc }}
+                                    {{ item.descripcion }}
                                 </p>
                             </div>
                         </div>
@@ -214,13 +203,13 @@
         </section>
 
         <!--Parallax Section -->
-        <div class="parallax bg3">
+        <div class="parallax bg3" v-bind:style="'background-image: url('+parallax.imagen+')'">
           <div class="container">
             <div class="row">
               <div class="col-xs-12">
                 &nbsp;
                 <div class="caption">
-                  <span class="border et-waypoint">Derka y Vargas Concesionario Oficial Toyota</span>
+                  <span class="border et-waypoint">{{ parallax.texto }}</span>
                 </div>
               </div>
             </div>
@@ -235,47 +224,45 @@
     	props: ['data'],
         data(){
             return {
+                modelo: '',
+                nombre_modelo :'',
                 activeClass : 'active item',
                 backgroundColor: '',
                 position: '',
                 styles: '',
-                //data from request.
-                slider_ppal_images: [{id:'0', url:'/imagenes/bg3.jpg'}],
-                slider_sm_images: [
-                                    {id: '0',url: '/imagenes/modelos/etios/galeria/1.jpg'},
-                                    {id: '1',url: '/imagenes/modelos/etios/galeria/2.jpg'},
-                                    {id: '2',url: '/imagenes/modelos/etios/galeria/3.jpg'},
-                                    {id: '3',url: '/imagenes/modelos/etios/galeria/3.jpg'}
-                ],
-                model_color_images: [
-                                        {model_color: 'etios_blanco', model_image:'/imagenes/modelos/etios/colores/etios_blanco.jpg', color_css: '#efeeeb', model_color_desc:'Blanco'},
-                                        {model_color: 'etios_blanco_perla', model_image:'/imagenes/modelos/etios/colores/etios_blanco_perla.jpg', color_css: '#f4f4f4', model_color_desc:'Blanco Perla'},
-                                        {model_color: 'etios_gris_plata', model_image:'/imagenes/modelos/etios/colores/etios_gris_plata.jpg', color_css: '#d4d1d4', model_color_desc:'Gris Plata'},
-                                        {model_color: 'etios_gris_arena', model_image:'/imagenes/modelos/etios/colores/etios_gris_arena.jpg', color_css: '#878774', model_color_desc:'Gris Arena'},
-                                        {model_color: 'etios_azul', model_image:'/imagenes/modelos/etios/colores/etios_azul.jpg', color_css: '#0c3a62', model_color_desc:'Azul'},
-                                        {model_color: 'etios_rojo', model_image:'/imagenes/modelos/etios/colores/etios_rojo.jpg', color_css: '#a60000', model_color_desc:'Rojo'},
-                                        {model_color: 'etios_negro', model_image:'/imagenes/modelos/etios/colores/etios_negro.jpg', color_css: '#050505', model_color_desc:'Negro'},
-                                        {model_color: 'etios_gris_oscuro', model_image:'/imagenes/modelos/etios/colores/etios_gris_oscuro.jpg', color_css: '#555555', model_color_desc:'Gris Oscuro'},
-                                    ],
+                parallax: '',
+                img_modelo: '',
+                imagenes_galeria: '',
+                slider_ppal_images: '',
+                model_color_images: '',
                 model_color_selected: 'Click para seleccionar un color.',
-                features: [
-                            { title:'NUEVO DISEÑO EXTERIOR', desc: 'Gracias al diseño de su frente y sus nuevos faros oscurecidos, el Etios obtiene una imagen más agresiva y robusta. A su vez, las nuevas llantas de aleación de 15” y los faldones laterales contribuyen a darle una impronta más audaz.', image:'http://homu.com.ar/wp-content/uploads/2017/05/etios04-3.jpg' },
-                            { title:'MAS TECNOLOGÍA', desc: 'El nuevo Etios presenta un audio con pantalla táctil de 7”, MP3, Bluetooth®, USB, entrada auxiliar de audio y conexión con smartphone.', image:'http://homu.com.ar/wp-content/uploads/2017/05/etios06-2.jpg' },
-                            { title:'DALE MARCHA A TUS IMPULSOS', desc: 'La caja automática de 4 marchas, con control de velocidad crucero y la caja manual de 6 marchas, favorecen un andar fluido y dinámico sin descuidar un consumo conveniente.', image:'https://www.toyota.com.ar/showroom/etios-hb/images/top_features/img.jpg' }
-                ],
-                image_logo: '/imagenes/modelos/etios/logo.png',
+                features: '',
+                img_logo: '',
+                slogan: '',
                 link_ficha_tecnica: '',
                 link_catalogo: ''
             }
         },
         mounted() {
+            this.modelo = this.data.modelo;
+            this.nombre_modelo = this.data.modelo.nombre.toLowerCase();
+            this.imagenes_galeria = this.data.imagenesGaleria;
+            this.slider_ppal_images = this.data.imagenesSlider;
+            this.model_color_images = this.data.imagenesColores;
+            this.parallax = this.data.parallax[0];
+            this.features = this.data.caracteristicas;
+            this.img_modelo = this.modelo.img_modelo;
+            this.img_logo = this.modelo.img_logo;
             this.initJS();
-
+            console.log(this.data);
         },
         methods:{
+            getImagenesSliderPpal(){
+
+            },
             initJS(){
-                $("#images_colors").find("img").hide();
-                $("#img_etios_blanco").show();
+                //$("#images_colors").find("img").hide();
+                //$("#img_etios_blanco").show();
 
                 function test(li){
                     $('.list-colors li.active_li').removeClass('active_li');

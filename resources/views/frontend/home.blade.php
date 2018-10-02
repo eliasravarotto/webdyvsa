@@ -3,10 +3,10 @@
 @section('content')
 
 	<!-- Navbar Desktop -->
-	<navbar-desk v-bind:data="{ bg_color: null }"></navbar-desk>
+	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.3);', position: ''}"></navbar-desk>
 
   <!-- Text Overlay -->
-  <div class="overlay"><h1>Overlay Text Here!</h1></div>
+  {{-- <div class="overlay"><h1>Overlay Text Here!</h1></div> --}}
 
   <!-- Banner Principal -->
   <banner-ppal></banner-ppal>

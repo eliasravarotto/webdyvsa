@@ -15,10 +15,12 @@ class CreateModelosTable extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('marca_id')->unsigned();
+            $table->integer('marca_id')->unsigned()->default(1);
             $table->foreign('marca_id')->references('id')->on('marcas');
-            $table->string('posicion')->nullable();
-            $table->string('modelo');
+            $table->string('nombre');
+            $table->string('img_logo')->nullable();
+            $table->string('img_modelo')->nullable();
+            $table->string('slogan')->nullable();
             $table->boolean('activo')->default(1);
             $table->timestamps();
             $table->softDeletes();

@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelo;
+use App\ImagenSliderModelo;
+use App\ImagenColorModelo;
+use App\ImagenGaleriaModelo;
+use App\CaracteristicaModelo;
+use App\ParallaxModelo;
+
 
 class ModelosController extends Controller
 {
@@ -14,7 +20,8 @@ class ModelosController extends Controller
      */
     public function index()
     {
-        return view('backend.modelos.index');
+        $modelos = Modelo::all();
+        return view('backend.modelos.index', compact('modelos'));
     }
 
     /**
@@ -24,7 +31,8 @@ class ModelosController extends Controller
      */
     public function create()
     {
-        return view('backend.modelos.create');
+        $modelo = new Modelo;
+        return view('backend.modelos.create', compact('modelo'));
     }
 
     /**
@@ -35,16 +43,27 @@ class ModelosController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $modelo_name = strtolower($request->nombre);
+       
+        $logo_img = $request->file('img_logo');
+        $logo_name = $request->file('img_logo')->getClientOriginalName();
+        $logo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$logo_name);
+
+        $modelo_img = $request->file('img_modelo');
+        $modelo_name_img = $request->file('img_modelo')->getClientOriginalName();
+        $modelo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$modelo_name_img);
+
         $modelo = new Modelo;
-        foreach ($colores as $color) {
-            if(is_numeric($color)){
-                //buscar color
-            } else {
-                //crear color
-            }
-        }
+        $modelo->nombre = $request->nombre;
+        $modelo->slogan = $request->slogan;
+        $modelo->img_logo = '/imagenes/modelos/'.$modelo_name.'/'.$logo_name;
+        $modelo->img_modelo = '/imagenes/modelos/'.$modelo_name.'/'.$modelo_name_img;
+
         $modelo->save();
+
+        \Session::flash('flash_message','Modelo guardado correctamente.'); //<--FLASH MESSAGE
+
+        return redirect('admin/modelos');
     }
 
     /**
@@ -55,7 +74,7 @@ class ModelosController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'shoe';
     }
 
     /**
@@ -66,7 +85,9 @@ class ModelosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $modelo = Modelo::find($id);
+
+        return view('backend.modelos.edit', compact('modelo'));
     }
 
     /**
@@ -78,7 +99,33 @@ class ModelosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+         //return $request;
+        $modelo = Modelo::find($id);
+        $modelo_name = strtolower($request->nombre);
+
+        if ($request->img_modelo ) {
+            unlink(public_path().$modelo->img_modelo);
+            $modelo_img = $request->file('img_modelo');
+            $modelo_name_img = $request->file('img_modelo')->getClientOriginalName();
+            $modelo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$modelo_name_img);
+            $modelo->img_modelo = '/imagenes/modelos/'.$modelo_name.'/'.$modelo_name_img;
+        }
+        if ($request->img_logo ) {
+            unlink(public_path().$modelo->img_logo);
+            $logo_img = $request->file('img_logo');
+            $logo_name = $request->file('img_logo')->getClientOriginalName();
+            $logo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$logo_name);
+            $modelo->img_logo = '/imagenes/modelos/'.$modelo_name.'/'.$logo_name;
+        } 
+
+        $modelo->nombre = $request->nombre;
+        $modelo->slogan = $request->slogan;
+        $modelo->update();
+
+        \Session::flash('flash_message','Modelo actualizado correctamente'); //<--FLASH MESSAGE
+
+        return redirect('admin/modelos');
     }
 
     /**
@@ -89,6 +136,150 @@ class ModelosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $modelo = Modelo::find($id);
+        if (file_exists(public_path().$modelo->img_modelo)) {
+            unlink(public_path().$modelo->img_modelo);
+        }
+        if (file_exists(public_path().$modelo->img_logo)) {
+            unlink(public_path().$modelo->img_logo);
+        }
+
+        $modelo->delete();
+
+        \Session::flash('flash_message','Modelo eliminado correctamente'); 
+
+        return redirect('admin/modelos');
+
+    }
+
+    public function editColores($id)
+    {
+        $modelo = Modelo::find($id);
+        return view('backend.modelos.formColores', compact('modelo'));
+    }
+
+    public function updateColores(Request $request, $id)
+    {
+        $modelo = Modelo::find($id);
+        $modelo_name = strtolower($modelo->nombre);
+        $total = count($request->img_colores);
+        if ($total>0) {
+            for( $i=0 ; $i < $total ; $i++ ) {
+                $file = $request->file('img_colores')[$i];
+                $filename = $request->file('img_colores')[$i]->getClientOriginalName();
+                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/colores/',$filename);
+                $imagen_color = new ImagenColorModelo;
+                $imagen_color->modelo_id = $modelo->id;
+                $imagen_color->color = $request->color[$i];
+                $imagen_color->codigo = $request->codigo[$i];
+                $imagen_color->url = '/imagenes/modelos/'.$modelo_name.'/colores/'.$filename;
+                $imagen_color->save();
+            }
+        }
+
+        return redirect('admin/modelos');
+    }
+
+    public function editGaleria($id)
+    {
+        $modelo = Modelo::find($id);
+        return view('backend.modelos.formGaleria', compact('modelo'));
+    }
+
+    public function updateGaleria(Request $request, $id)
+    {
+        $modelo = Modelo::find($id);
+        $modelo_name = strtolower($modelo->nombre);
+        $total = count($request->img_galeria);
+        if ($total>0) {
+            for( $i=0 ; $i < $total ; $i++ ) {
+                $file = $request->file('img_galeria')[$i];
+                $filename = $request->file('img_galeria')[$i]->getClientOriginalName();
+                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/galeria/',$filename);
+                $imagen = new ImagenGaleriaModelo;
+                $imagen->modelo_id = $modelo->id;
+                $imagen->url = '/imagenes/modelos/'.$modelo_name.'/galeria/'.$filename;
+                $imagen->save();
+            }
+        }
+        
+        return redirect('admin/modelos');
+   }
+
+    public function editCaracteristicas($id)
+    {
+        $modelo = Modelo::find($id);
+        return view('backend.modelos.formCaracteristicas', compact('modelo'));
+    }
+
+    public function updateCaracteristicas(Request $request, $id)
+    {
+        $modelo = Modelo::find($id);
+        $modelo_name = strtolower($modelo->nombre);
+        $total = count($request->img);
+        if ($total>0) {
+            for( $i=0 ; $i < $total ; $i++ ) {
+                $file = $request->file('img')[$i];
+                $filename = $request->file('img')[$i]->getClientOriginalName();
+                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/caracteristicas/',$filename);
+                $caracteristica = new CaracteristicaModelo;
+                $caracteristica->modelo_id = $modelo->id;
+                $caracteristica->titulo = $request->titulo[$i];
+                $caracteristica->descripcion = $request->desc[$i];
+                $caracteristica->img = '/imagenes/modelos/'.$modelo_name.'/caracteristicas/'.$filename;
+                $caracteristica->save();
+            }
+        }
+
+        return redirect('admin/modelos');
+
+    }
+
+    public function editParallax($id)
+    {
+        $modelo = Modelo::find($id);
+        return view('backend.modelos.formParallax', compact('modelo'));
+    }
+
+    public function updateParallax(Request $request, $id)
+    {
+        $modelo = Modelo::find($id);
+        $modelo_name = strtolower($modelo->nombre);
+        $parallax = new ParallaxModelo;
+        $parallax->modelo_id = $modelo->id;
+        $parallax->texto = $request->texto;
+        $file = $request->file('img');
+        $filename = $request->file('img')->getClientOriginalName();
+        $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/parallax/',$filename);
+        $parallax->imagen = '/imagenes/modelos/'.$modelo_name.'/parallax/'.$filename;
+        $parallax->save();
+
+        return redirect('admin/modelos');
+    }
+
+    public function editSlider($id)
+    {
+        $modelo = Modelo::find($id);
+        return view('backend.modelos.formSlider', compact('modelo'));
+    }
+
+    public function updateSlider(Request $request, $id)
+    {
+        $modelo = Modelo::find($id);
+        $modelo_name = strtolower($modelo->nombre);
+
+        $total = count($request->img_slider);
+        if ($total>0) {
+            for( $i=0 ; $i < $total ; $i++ ) {
+                $file = $request->file('img_slider')[$i];
+                $filename = $request->file('img_slider')[$i]->getClientOriginalName();
+                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/slider/',$filename);
+                $imagen_slider = new ImagenSliderModelo;
+                $imagen_slider->modelo_id = $modelo->id;
+                $imagen_slider->url = '/imagenes/modelos/'.$modelo_name.'/slider/'.$filename;
+                $imagen_slider->save();
+            }
+        } 
+        return redirect('admin/modelos');
     }
 }

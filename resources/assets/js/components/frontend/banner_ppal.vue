@@ -32,7 +32,7 @@
 @media (min-width: 768px) {
   /* Navbar positioning foo */
   .navbar-wrapper {
-    margin-top: 90px;
+    margin-top: 80px;
     margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
   }
   /* The navbar becomes detached from the top, so we round the corners */
@@ -80,7 +80,7 @@
     export default {
         data(){
             return {
-                imagenes: ["/imagenes/bg3.png","/imagenes/bg5.png"],
+                imagenes: ["/imagenes/bg1.jpg","/imagenes/bg2.jpg","/imagenes/bg3.jpg"],
                 activeClass : 'active item'
             }
         },

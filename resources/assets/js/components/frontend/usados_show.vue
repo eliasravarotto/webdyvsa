@@ -105,7 +105,7 @@ margin-top:20px;
 
         <div class="row mar-top">
         	<div class="col-md-7 col-xs-12 col-sm-12">
-                <h2>Su no nos molesta.</h2>
+                <h2>CONSULTAR</h2>
                 <form>
                     <label>Email o Telefono</label>
                     <input class="form-control" type="text" name="">

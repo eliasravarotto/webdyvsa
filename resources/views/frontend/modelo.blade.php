@@ -3,9 +3,17 @@
 @section('content')
 
 	<!-- Navbar Desktop -->
-	<navbar-desk v-bind:data="{ bg_color:'#292828', position: 'relative' }"></navbar-desk>
- 
-	<detalle-modelo></detalle-modelo>
+	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
+
+	<detalle-modelo 
+		v-bind:data="{ 
+						modelo: {{ $modelo }}, 
+						imagenesSlider: {{ $imagenesSlider }}, 
+						imagenesColores: {{ $imagenesColores }}, 
+						imagenesGaleria: {{ $imagenesGaleria }},
+						caracteristicas: {{ $caracteristicas }},
+						parallax: {{ $parallax }} }">
+	</detalle-modelo>
 
 @stop
 

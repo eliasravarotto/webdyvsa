@@ -1,7 +1,7 @@
 <template>
 	<div>
-    	<div class="navbar-wrapper visible-md visible-lg" v-bind:style="this.position">
-	        <div class="navbar navbar-static-top" v-bind:style="this.styles">
+    	<div class="navbar-wrapper visible-md visible-lg" v-bind:style="this.styles">
+	        <div class="navbar navbar-static-top" v-bind:style="this.background">
 	            <div class="navbar-header">
 	                <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	                  <span class="icon-bar"></span>
@@ -15,11 +15,9 @@
 	                <li class="dropdown dropdown-hover">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MODELOS <span class="caret"></span></a>
 	                  <ul class="dropdown-menu dropdown-hover">
-	                    <li><a href="/modelo">HILUX</a></li>
-	                    <li><a href="/modelo">RAV</a></li>
-	                    <li><a href="/modelo">COROLLA</a></li>
-	                    <li><a href="/modelo">YARIS</a></li>
-	                    <li><a href="/modelo">ETIOS</a></li>
+	                    <li v-for="modelo in modelos">
+	                    	<a v-bind:href="'/modelo/'+modelo.nombre">{{ modelo.nombre }}</a>
+	                    </li>
 	                  </ul>
 	                </li>
 	                <li><a href="#">PLAN DE AHORRO</a></li>
@@ -31,7 +29,7 @@
 	                    <li><a href="#">Servicios</a></li>
 	                    <li><a href="#">Accesorios</a></li>
 	                    <li role="separator" class="divider"></li>
-	                    <li><a href="#">Link</a></li>
+	                    <li><a href="/posventa">Link</a></li>
 	                  </ul>
 	                </li>
 	                <li class="dropdown dropdown-hover">
@@ -55,17 +53,30 @@
     	props: ['data'],
         data(){
             return {
-                backgroundColor: '',
+                background: '',
+                opacity: '',
                 position: '',
-                styles: ''
+                styles: '',
+                modelos: ''
             }
         },
         mounted() {
-            this.data.bg_color != null ? this.styles = 'background-color:'+this.data.bg_color : '';
+            this.data.bg_rgba != null ? this.background = 'background: '+this.data.bg_rgba : '';
             this.position = 'position:'+this.data.position;
+
+            this.styles = this.position+'; '+this.background;
+
+            this.getModelos();
+
         },
         methods:{
-            
+            getModelos(){
+            	axios
+		          	.get('/modelo')
+		          	.then(response => (
+		                this.modelos = response.data
+	          		))
+            }
         },
         computed: {
           

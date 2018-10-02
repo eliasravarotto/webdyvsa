@@ -13,7 +13,7 @@
 
 @section('content')
 	<!-- Navbar Desktop -->
-	<navbar-desk v-bind:data="{ bg_color:'#292828', position: 'relative' }"></navbar-desk>
+	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
 
  <article>
 	<div>

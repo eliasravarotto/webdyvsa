@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Modelo;
+use App\Repositories\ModeloRepository;
 
 class FrontController extends Controller
 {
@@ -11,19 +13,52 @@ class FrontController extends Controller
         return view('frontend.home');
     }
 
+    public function posventa()
+    {
+        return view('frontend.posventa');
+    }
+
     public function aboutUs()
     {
         return view('frontend.about-us');
     }
 
- 	public function modelo()
+
+
+    //------------MODELOS------------------//
+
+ 	public function modelo($modelo, ModeloRepository $modeloRepo)
     {
-        return view('frontend.modelo');
+        
+        $modelo = Modelo::where('nombre', '=', $modelo)->first();
+        
+        $imagenesSlider = $modeloRepo->getImagenesSlider($modelo->id);
+        $imagenesColores = $modeloRepo->getImagenesColores($modelo->id);
+        $imagenesGaleria = $modeloRepo->getImagenesGaleria($modelo->id);
+        $caracteristicas = $modeloRepo->getCaracteristicas($modelo->id);
+        $parallax = $modeloRepo->getParallax($modelo->id);
+        //return $imagenesSlider;
+        //return $parallax;
+        //$versiones =
+        return view('frontend.modelo', 
+                    compact('modelo',
+                            'imagenesSlider', 
+                            'imagenesColores', 
+                            'imagenesGaleria',
+                            'caracteristicas',
+                            'parallax')
+        );
+    }
+
+    public function getModelos()
+    {
+        $modelos = Modelo::all();
+        return $modelos;
     }
 
 
 
-    //SECCION UNIDADES USADAS
+    //SECCION UNIDADES USADAS--------------//
 
     public function usadosIndex()
     {

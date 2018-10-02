@@ -43739,7 +43739,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\r\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption {\r\n  z-index: 1;\n}\r\n/* Declare heights because of positioning of img element */\n.carousel .item {\r\n  height: 100%;\r\n  background-color:#555;\n}\n.carousel img {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  min-height: 400px;\n}\n.thumbnail-lighten{\r\n  background-color: #fcfeff;\n}\n.thumbnail-lighten .caption {\r\n    padding: 0px;\n}\n.thumbnail-lighten .caption p {\r\n    font-size: 15px;\n}\n.thumbnail-lighten .caption h3 {\r\n        color: #4b4b4b !important;\r\n        font-size: 20px;\r\n        font-weight: 600;\n}\r\n/* RESPONSIVE CSS--------------------------------------------------------*/\n@media (min-width: 768px) {\r\n  /* Navbar positioning foo */\n.navbar-wrapper {\r\n    margin-top: 90px;\r\n    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */\n}\r\n  /* The navbar becomes detached from the top, so we round the corners */\n.navbar-wrapper .navbar {\r\n    border-radius: 4px;\n}\r\n  /* Bump up size of carousel content */\n.carousel-caption p {\r\n    margin-bottom: 20px;\r\n    font-size: 21px;\r\n    line-height: 1.4;\n}\n}\n.carousel,.item,.active{height:100%;\n}\n.carousel-inner{height:100%;\n}\n.fill{width:100%;height:100%;background-position:center;background-size:cover;\n}\r\n/* faster sliding speed */\n.carousel-inner > .item {\r\n/*    -webkit-transition: 0.6s ease-in-out left;\r\n    -moz-transition: 0.6s ease-in-out left;\r\n    -o-transition: 0.6s ease-in-out left;\r\n    transition: 0.6s ease-in-out left;*/\n}\r\n\r\n", ""]);
+exports.push([module.i, "\r\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption {\r\n  z-index: 1;\n}\r\n/* Declare heights because of positioning of img element */\n.carousel .item {\r\n  height: 100%;\r\n  background-color:#555;\n}\n.carousel img {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  min-height: 400px;\n}\n.thumbnail-lighten{\r\n  background-color: #fcfeff;\n}\n.thumbnail-lighten .caption {\r\n    padding: 0px;\n}\n.thumbnail-lighten .caption p {\r\n    font-size: 15px;\n}\n.thumbnail-lighten .caption h3 {\r\n        color: #4b4b4b !important;\r\n        font-size: 20px;\r\n        font-weight: 600;\n}\r\n/* RESPONSIVE CSS--------------------------------------------------------*/\n@media (min-width: 768px) {\r\n  /* Navbar positioning foo */\n.navbar-wrapper {\r\n    margin-top: 80px;\r\n    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */\n}\r\n  /* The navbar becomes detached from the top, so we round the corners */\n.navbar-wrapper .navbar {\r\n    border-radius: 4px;\n}\r\n  /* Bump up size of carousel content */\n.carousel-caption p {\r\n    margin-bottom: 20px;\r\n    font-size: 21px;\r\n    line-height: 1.4;\n}\n}\n.carousel,.item,.active{height:100%;\n}\n.carousel-inner{height:100%;\n}\n.fill{width:100%;height:100%;background-position:center;background-size:cover;\n}\r\n/* faster sliding speed */\n.carousel-inner > .item {\r\n/*    -webkit-transition: 0.6s ease-in-out left;\r\n    -moz-transition: 0.6s ease-in-out left;\r\n    -o-transition: 0.6s ease-in-out left;\r\n    transition: 0.6s ease-in-out left;*/\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -43865,7 +43865,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            imagenes: ["/imagenes/bg3.png", "/imagenes/bg5.png"],
+            imagenes: ["/imagenes/bg1.jpg", "/imagenes/bg2.jpg", "/imagenes/bg3.jpg"],
             activeClass: 'active item'
         };
     },
@@ -44032,24 +44032,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
     data: function data() {
         return {
-            backgroundColor: '',
+            background: '',
+            opacity: '',
             position: '',
-            styles: ''
+            styles: '',
+            modelos: ''
         };
     },
     mounted: function mounted() {
-        this.data.bg_color != null ? this.styles = 'background-color:' + this.data.bg_color : '';
+        this.data.bg_rgba != null ? this.background = 'background: ' + this.data.bg_rgba : '';
         this.position = 'position:' + this.data.position;
+
+        this.styles = this.position + '; ' + this.background;
+
+        this.getModelos();
     },
 
-    methods: {},
+    methods: {
+        getModelos: function getModelos() {
+            var _this = this;
+
+            axios.get('/modelo').then(function (response) {
+                return _this.modelos = response.data;
+            });
+        }
+    },
     computed: {}
 });
 
@@ -44066,13 +44078,64 @@ var render = function() {
       "div",
       {
         staticClass: "navbar-wrapper visible-md visible-lg",
-        style: this.position
+        style: this.styles
       },
       [
         _c(
           "div",
-          { staticClass: "navbar navbar-static-top", style: this.styles },
-          [_vm._m(0), _vm._v(" "), _vm._m(1)]
+          { staticClass: "navbar navbar-static-top", style: this.background },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "collapse navbar-collapse",
+                staticStyle: {
+                  display: "flex !important",
+                  "justify-content": "center"
+                },
+                attrs: { id: "bs-example-navbar-collapse-1" }
+              },
+              [
+                _c(
+                  "ul",
+                  { staticClass: "nav navbar-nav navbar-ppal fromLeft" },
+                  [
+                    _c("li", { staticClass: "dropdown dropdown-hover" }, [
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        { staticClass: "dropdown-menu dropdown-hover" },
+                        _vm._l(_vm.modelos, function(modelo) {
+                          return _c("li", [
+                            _c(
+                              "a",
+                              { attrs: { href: "/modelo/" + modelo.nombre } },
+                              [_vm._v(_vm._s(modelo.nombre))]
+                            )
+                          ])
+                        })
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _vm._m(7)
+                  ]
+                )
+              ]
+            )
+          ]
         )
       ]
     )
@@ -44108,141 +44171,113 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "a",
       {
-        staticClass: "collapse navbar-collapse",
-        staticStyle: {
-          display: "flex !important",
-          "justify-content": "center"
-        },
-        attrs: { id: "bs-example-navbar-collapse-1" }
+        staticClass: "dropdown-toggle",
+        attrs: {
+          href: "#",
+          "data-toggle": "dropdown",
+          role: "button",
+          "aria-haspopup": "true",
+          "aria-expanded": "false"
+        }
       },
-      [
-        _c("ul", { staticClass: "nav navbar-nav navbar-ppal fromLeft" }, [
-          _c("li", { staticClass: "dropdown dropdown-hover" }, [
-            _c(
-              "a",
-              {
-                staticClass: "dropdown-toggle",
-                attrs: {
-                  href: "#",
-                  "data-toggle": "dropdown",
-                  role: "button",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false"
-                }
-              },
-              [_vm._v("MODELOS "), _c("span", { staticClass: "caret" })]
-            ),
-            _vm._v(" "),
-            _c("ul", { staticClass: "dropdown-menu dropdown-hover" }, [
-              _c("li", [
-                _c("a", { attrs: { href: "/modelo" } }, [_vm._v("HILUX")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/modelo" } }, [_vm._v("RAV")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/modelo" } }, [_vm._v("COROLLA")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/modelo" } }, [_vm._v("YARIS")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/modelo" } }, [_vm._v("ETIOS")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("PLAN DE AHORRO")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("FINANCIACION")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/usados" } }, [_vm._v("USADOS")])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown dropdown-hover" }, [
-            _c(
-              "a",
-              {
-                staticClass: "dropdown-toggle",
-                attrs: {
-                  href: "#",
-                  "data-toggle": "dropdown",
-                  role: "button",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false"
-                }
-              },
-              [_vm._v("POSVENTA "), _c("span", { staticClass: "caret" })]
-            ),
-            _vm._v(" "),
-            _c("ul", { staticClass: "dropdown-menu dropdown-hover" }, [
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Servicios")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Accesorios")])
-              ]),
-              _vm._v(" "),
-              _c("li", {
-                staticClass: "divider",
-                attrs: { role: "separator" }
-              }),
-              _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Link")])])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown dropdown-hover" }, [
-            _c(
-              "a",
-              {
-                staticClass: "dropdown-toggle",
-                attrs: {
-                  href: "#",
-                  "data-toggle": "dropdown",
-                  role: "button",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false"
-                }
-              },
-              [_vm._v("NOSOTROS "), _c("span", { staticClass: "caret" })]
-            ),
-            _vm._v(" "),
-            _c("ul", { staticClass: "dropdown-menu dropdown-hover" }, [
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("La Empresa")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Historia")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Misión-Visión-Valores")
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", {}, [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("CONTACTO")])
-          ])
-        ])
-      ]
+      [_vm._v("MODELOS "), _c("span", { staticClass: "caret" })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("PLAN DE AHORRO")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("FINANCIACION")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/usados" } }, [_vm._v("USADOS")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown dropdown-hover" }, [
+      _c(
+        "a",
+        {
+          staticClass: "dropdown-toggle",
+          attrs: {
+            href: "#",
+            "data-toggle": "dropdown",
+            role: "button",
+            "aria-haspopup": "true",
+            "aria-expanded": "false"
+          }
+        },
+        [_vm._v("POSVENTA "), _c("span", { staticClass: "caret" })]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "dropdown-menu dropdown-hover" }, [
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Servicios")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Accesorios")])]),
+        _vm._v(" "),
+        _c("li", { staticClass: "divider", attrs: { role: "separator" } }),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "/posventa" } }, [_vm._v("Link")])])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown dropdown-hover" }, [
+      _c(
+        "a",
+        {
+          staticClass: "dropdown-toggle",
+          attrs: {
+            href: "#",
+            "data-toggle": "dropdown",
+            role: "button",
+            "aria-haspopup": "true",
+            "aria-expanded": "false"
+          }
+        },
+        [_vm._v("NOSOTROS "), _c("span", { staticClass: "caret" })]
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "dropdown-menu dropdown-hover" }, [
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("La Empresa")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Historia")])]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Misión-Visión-Valores")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", {}, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("CONTACTO")])
+    ])
   }
 ]
 render._withStripped = true
@@ -44572,45 +44607,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
     data: function data() {
         return {
+            modelo: '',
+            nombre_modelo: '',
             activeClass: 'active item',
             backgroundColor: '',
             position: '',
             styles: '',
-            //data from request.
-            slider_ppal_images: [{ id: '0', url: '/imagenes/bg3.jpg' }],
-            slider_sm_images: [{ id: '0', url: '/imagenes/modelos/etios/galeria/1.jpg' }, { id: '1', url: '/imagenes/modelos/etios/galeria/2.jpg' }, { id: '2', url: '/imagenes/modelos/etios/galeria/3.jpg' }, { id: '3', url: '/imagenes/modelos/etios/galeria/3.jpg' }],
-            model_color_images: [{ model_color: 'etios_blanco', model_image: '/imagenes/modelos/etios/colores/etios_blanco.jpg', color_css: '#efeeeb', model_color_desc: 'Blanco' }, { model_color: 'etios_blanco_perla', model_image: '/imagenes/modelos/etios/colores/etios_blanco_perla.jpg', color_css: '#f4f4f4', model_color_desc: 'Blanco Perla' }, { model_color: 'etios_gris_plata', model_image: '/imagenes/modelos/etios/colores/etios_gris_plata.jpg', color_css: '#d4d1d4', model_color_desc: 'Gris Plata' }, { model_color: 'etios_gris_arena', model_image: '/imagenes/modelos/etios/colores/etios_gris_arena.jpg', color_css: '#878774', model_color_desc: 'Gris Arena' }, { model_color: 'etios_azul', model_image: '/imagenes/modelos/etios/colores/etios_azul.jpg', color_css: '#0c3a62', model_color_desc: 'Azul' }, { model_color: 'etios_rojo', model_image: '/imagenes/modelos/etios/colores/etios_rojo.jpg', color_css: '#a60000', model_color_desc: 'Rojo' }, { model_color: 'etios_negro', model_image: '/imagenes/modelos/etios/colores/etios_negro.jpg', color_css: '#050505', model_color_desc: 'Negro' }, { model_color: 'etios_gris_oscuro', model_image: '/imagenes/modelos/etios/colores/etios_gris_oscuro.jpg', color_css: '#555555', model_color_desc: 'Gris Oscuro' }],
+            parallax: '',
+            img_modelo: '',
+            imagenes_galeria: '',
+            slider_ppal_images: '',
+            model_color_images: '',
             model_color_selected: 'Click para seleccionar un color.',
-            features: [{ title: 'NUEVO DISEÑO EXTERIOR', desc: 'Gracias al diseño de su frente y sus nuevos faros oscurecidos, el Etios obtiene una imagen más agresiva y robusta. A su vez, las nuevas llantas de aleación de 15” y los faldones laterales contribuyen a darle una impronta más audaz.', image: 'http://homu.com.ar/wp-content/uploads/2017/05/etios04-3.jpg' }, { title: 'MAS TECNOLOGÍA', desc: 'El nuevo Etios presenta un audio con pantalla táctil de 7”, MP3, Bluetooth®, USB, entrada auxiliar de audio y conexión con smartphone.', image: 'http://homu.com.ar/wp-content/uploads/2017/05/etios06-2.jpg' }, { title: 'DALE MARCHA A TUS IMPULSOS', desc: 'La caja automática de 4 marchas, con control de velocidad crucero y la caja manual de 6 marchas, favorecen un andar fluido y dinámico sin descuidar un consumo conveniente.', image: 'https://www.toyota.com.ar/showroom/etios-hb/images/top_features/img.jpg' }],
-            image_logo: '/imagenes/modelos/etios/logo.png',
+            features: '',
+            img_logo: '',
+            slogan: '',
             link_ficha_tecnica: '',
             link_catalogo: ''
         };
     },
     mounted: function mounted() {
+        this.modelo = this.data.modelo;
+        this.nombre_modelo = this.data.modelo.nombre.toLowerCase();
+        this.imagenes_galeria = this.data.imagenesGaleria;
+        this.slider_ppal_images = this.data.imagenesSlider;
+        this.model_color_images = this.data.imagenesColores;
+        this.parallax = this.data.parallax[0];
+        this.features = this.data.caracteristicas;
+        this.img_modelo = this.modelo.img_modelo;
+        this.img_logo = this.modelo.img_logo;
         this.initJS();
+        console.log(this.data);
     },
 
     methods: {
+        getImagenesSliderPpal: function getImagenesSliderPpal() {},
         initJS: function initJS() {
-            $("#images_colors").find("img").hide();
-            $("#img_etios_blanco").show();
+            //$("#images_colors").find("img").hide();
+            //$("#img_etios_blanco").show();
 
             function test(li) {
                 $('.list-colors li.active_li').removeClass('active_li');
@@ -44666,24 +44705,63 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c(
+      "div",
+      {
+        staticClass: "carousel slide",
+        attrs: { id: "myCarousel", "data-ride": "carousel" }
+      },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "carousel-inner" },
+          _vm._l(_vm.slider_ppal_images, function(img, index) {
+            return _c("div", { class: [index == 0 ? "item active" : "item"] }, [
+              _c("img", {
+                staticStyle: { width: "100%" },
+                attrs: { src: img.url, alt: "New york" }
+              })
+            ])
+          })
+        ),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2)
+      ]
+    ),
     _vm._v(" "),
     _c("article", [
       _c("section", { staticClass: "container pad-top-bot-20" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12 text-center" }, [
-            _c("img", { attrs: { src: _vm.image_logo } })
+            _c("img", { attrs: { src: _vm.img_logo } })
           ])
         ]),
         _vm._v(" "),
-        _vm._m(1),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 text-center" }, [
+            _c("h3", [_vm._v(_vm._s(_vm.modelo.slogan))])
+          ])
+        ]),
         _vm._v(" "),
-        _vm._m(2)
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 col-sm-12 text-center" }, [
+            _c("img", {
+              staticStyle: { height: "300px" },
+              attrs: { src: _vm.img_modelo }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(3)
+        ])
       ]),
       _vm._v(" "),
       _c("section", { staticClass: "arrow_box container pad-top-bot-20" }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(3),
+          _vm._m(4),
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12 col-xs-12" }, [
             _c("h3", { staticClass: "text-center" }, [_vm._v("COLORES")]),
@@ -44691,14 +44769,13 @@ var render = function() {
             _c(
               "div",
               { staticClass: "text-center", attrs: { id: "images_colors" } },
-              _vm._l(_vm.model_color_images, function(data) {
+              _vm._l(_vm.model_color_images, function(data, index) {
                 return _c("img", {
-                  staticClass: "img-thumbnail thumbnail-no-border",
-                  staticStyle: { padding: "0px" },
-                  attrs: {
-                    id: "img_" + data.model_color,
-                    src: data.model_image
-                  }
+                  class: "img-thumbnail thumbnail-no-border ",
+                  style:
+                    "padding: 0px; " +
+                    [index == 0 ? "display: block;" : "display: none;"],
+                  attrs: { id: "img_" + data.codigo, src: data.url }
                 })
               })
             ),
@@ -44718,17 +44795,17 @@ var render = function() {
                 return _c(
                   "li",
                   {
-                    attrs: { id: data.model_color },
+                    attrs: { id: data.codigo },
                     on: {
                       click: function($event) {
-                        _vm.changeColor(data.model_color, data.model_color_desc)
+                        _vm.changeColor(data.codigo, data.color)
                       }
                     }
                   },
                   [
                     _c("div", {
                       staticClass: "circle",
-                      style: { "background-color": data.color_css }
+                      style: { "background-color": "#" + data.codigo }
                     })
                   ]
                 )
@@ -44760,7 +44837,7 @@ var render = function() {
                         _c(
                           "div",
                           { staticClass: "carousel-inner" },
-                          _vm._l(_vm.slider_sm_images, function(img, index) {
+                          _vm._l(_vm.imagenes_galeria, function(img, index) {
                             return _c(
                               "div",
                               {
@@ -44772,9 +44849,9 @@ var render = function() {
                           })
                         ),
                         _vm._v(" "),
-                        _vm._m(4),
+                        _vm._m(5),
                         _vm._v(" "),
-                        _vm._m(5)
+                        _vm._m(6)
                       ]
                     )
                   ]
@@ -44793,94 +44870,19 @@ var render = function() {
                         staticClass: "row hidden-xs",
                         attrs: { id: "slider-thumbs" }
                       },
-                      [
-                        _c("div", { staticClass: "col-md-6" }, [
+                      _vm._l(_vm.imagenes_galeria, function(img) {
+                        return _c("div", { staticClass: "col-md-6" }, [
                           _c(
                             "a",
                             {
                               staticClass: "thumbnail",
-                              attrs: {
-                                id:
-                                  "carousel-selector-" +
-                                  _vm.slider_sm_images[0].id
-                              }
+                              attrs: { id: "carousel-selector-" + img.id }
                             },
-                            [
-                              _c("img", {
-                                attrs: {
-                                  src: "/imagenes/modelos/etios/galeria/1.jpg"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "thumbnail",
-                              attrs: {
-                                id:
-                                  "carousel-selector-" +
-                                  _vm.slider_sm_images[1].id
-                              }
-                            },
-                            [
-                              _c("img", {
-                                attrs: {
-                                  src: "/imagenes/modelos/etios/galeria/2.jpg"
-                                }
-                              })
-                            ]
+                            [_c("img", { attrs: { src: img.url } })]
                           )
                         ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "thumbnail",
-                            attrs: {
-                              id:
-                                "carousel-selector-" +
-                                _vm.slider_sm_images[2].id
-                            }
-                          },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "/imagenes/modelos/etios/galeria/3.jpg"
-                              }
-                            })
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "thumbnail",
-                            attrs: {
-                              id:
-                                "carousel-selector-" +
-                                _vm.slider_sm_images[3].id
-                            }
-                          },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "/imagenes/modelos/etios/galeria/2.jpg"
-                              }
-                            })
-                          ]
-                        )
-                      ])
-                    ])
+                      })
+                    )
                   ]
                 )
               ])
@@ -44912,17 +44914,17 @@ var render = function() {
                           "thumbnail thumbnail-no-bg thumbnail-no-border"
                       },
                       [
-                        _c("img", { attrs: { src: item.image, alt: "..." } }),
+                        _c("img", { attrs: { src: item.img, alt: "..." } }),
                         _vm._v(" "),
                         _c("div", { staticClass: "caption caption-default" }, [
                           _c("h4", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(item.title))
+                            _vm._v(_vm._s(item.titulo))
                           ]),
                           _vm._v(" "),
                           _c("p", { staticClass: "text-justify" }, [
                             _vm._v(
                               "\r\n                                    " +
-                                _vm._s(item.desc) +
+                                _vm._s(item.descripcion) +
                                 "\r\n                                "
                             )
                           ])
@@ -44937,7 +44939,27 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _vm._m(6)
+      _c(
+        "div",
+        {
+          staticClass: "parallax bg3",
+          style: "background-image: url(" + _vm.parallax.imagen + ")"
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-xs-12" }, [
+                _vm._v("\r\n                 \r\n                "),
+                _c("div", { staticClass: "caption" }, [
+                  _c("span", { staticClass: "border et-waypoint" }, [
+                    _vm._v(_vm._s(_vm.parallax.texto))
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
+      )
     ])
   ])
 }
@@ -44946,91 +44968,35 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("ol", { staticClass: "carousel-indicators" }, [
+      _c("li", {
+        staticClass: "active",
+        attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: { "data-target": "#myCarousel", "data-slide-to": "2" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "a",
       {
-        staticClass: "carousel slide",
-        attrs: { id: "myCarousel", "data-ride": "carousel" }
+        staticClass: "left carousel-control",
+        attrs: { href: "#myCarousel", "data-slide": "prev" }
       },
       [
-        _c("ol", { staticClass: "carousel-indicators" }, [
-          _c("li", {
-            staticClass: "active",
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
-          }),
-          _vm._v(" "),
-          _c("li", {
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
-          }),
-          _vm._v(" "),
-          _c("li", {
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "2" }
-          })
-        ]),
+        _c("span", { staticClass: "glyphicon glyphicon-chevron-left" }),
         _vm._v(" "),
-        _c("div", { staticClass: "carousel-inner" }, [
-          _c("div", { staticClass: "item active" }, [
-            _c("img", {
-              staticStyle: { width: "100%" },
-              attrs: {
-                src: "https://www.zento.com.ar/images/etios/slide2.jpg",
-                alt: "Los Angeles"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "carousel-caption" }, [
-              _c("h3", [_vm._v("Etios")]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Decile sí a todo.")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "item" }, [
-            _c("img", {
-              staticStyle: { width: "100%" },
-              attrs: {
-                src: "https://www.zento.com.ar/images/etios/slide2.jpg",
-                alt: "Chicago"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "item" }, [
-            _c("img", {
-              staticStyle: { width: "100%" },
-              attrs: {
-                src: "https://www.zento.com.ar/images/etios/slide2.jpg",
-                alt: "New york"
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "left carousel-control",
-            attrs: { href: "#myCarousel", "data-slide": "prev" }
-          },
-          [
-            _c("span", { staticClass: "glyphicon glyphicon-chevron-left" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "right carousel-control",
-            attrs: { href: "#myCarousel", "data-slide": "next" }
-          },
-          [
-            _c("span", { staticClass: "glyphicon glyphicon-chevron-right" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
-          ]
-        )
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
       ]
     )
   },
@@ -45038,78 +45004,72 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 text-center" }, [
-        _c("h3", [_vm._v("TU PRIMER TOYOTA")])
-      ])
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "right carousel-control",
+        attrs: { href: "#myCarousel", "data-slide": "next" }
+      },
+      [
+        _c("span", { staticClass: "glyphicon glyphicon-chevron-right" }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+      ]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6 col-sm-12 text-center" }, [
-        _c("img", {
-          staticStyle: { height: "300px" },
-          attrs: { src: "/imagenes/etios.jpg" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-        _c("table", { staticClass: "table table-striped" }, [
-          _c("thead", [
-            _c("tr", [_c("th", [_vm._v("Versiones")]), _vm._v(" "), _c("th")])
+    return _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+      _c("table", { staticClass: "table table-striped" }, [
+        _c("thead", [
+          _c("tr", [_c("th", [_vm._v("Versiones")]), _vm._v(" "), _c("th")])
+        ]),
+        _vm._v(" "),
+        _c("tbody", [
+          _c("tr", [
+            _c("td", { staticStyle: { width: "75%" } }, [_vm._v("X 5P 6M/T")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$ 373700")])
           ]),
           _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", { staticStyle: { width: "75%" } }, [
-                _vm._v("X 5P 6M/T")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 373700")])
+          _c("tr", [
+            _c("td", { staticStyle: { width: "75%" } }, [_vm._v("X 4P 6M/T")]),
+            _vm._v(" "),
+            _c("td", [_vm._v("$ 389000")])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { staticStyle: { width: "75%" } }, [
+              _vm._v("XLS 5P 6M/T")
             ]),
             _vm._v(" "),
-            _c("tr", [
-              _c("td", { staticStyle: { width: "75%" } }, [
-                _vm._v("X 4P 6M/T")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 389000")])
+            _c("td", [_vm._v("$ 418000")])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { staticStyle: { width: "75%" } }, [
+              _vm._v("XLS 4P 6M/T")
             ]),
             _vm._v(" "),
-            _c("tr", [
-              _c("td", { staticStyle: { width: "75%" } }, [
-                _vm._v("XLS 5P 6M/T")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 418000")])
+            _c("td", [_vm._v("$ 433300")])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { staticStyle: { width: "75%" } }, [
+              _vm._v("XLS 5P 4A/T")
             ]),
             _vm._v(" "),
-            _c("tr", [
-              _c("td", { staticStyle: { width: "75%" } }, [
-                _vm._v("XLS 4P 6M/T")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 433300")])
+            _c("td", [_vm._v("$ 436400")])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { staticStyle: { width: "75%" } }, [
+              _vm._v("XLS 4P 4A/T")
             ]),
             _vm._v(" "),
-            _c("tr", [
-              _c("td", { staticStyle: { width: "75%" } }, [
-                _vm._v("XLS 5P 4A/T")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 436400")])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { staticStyle: { width: "75%" } }, [
-                _vm._v("XLS 4P 4A/T")
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 451700")])
-            ])
+            _c("td", [_vm._v("$ 451700")])
           ])
         ])
       ])
@@ -45191,25 +45151,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "glyphicon glyphicon-chevron-right" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "parallax bg3" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-xs-12" }, [
-            _vm._v("\r\n                 \r\n                "),
-            _c("div", { staticClass: "caption" }, [
-              _c("span", { staticClass: "border et-waypoint" }, [
-                _vm._v("Derka y Vargas Concesionario Oficial Toyota")
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -46561,7 +46502,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mar-top" }, [
       _c("div", { staticClass: "col-md-7 col-xs-12 col-sm-12" }, [
-        _c("h2", [_vm._v("Su no nos molesta.")]),
+        _c("h2", [_vm._v("CONSULTAR")]),
         _vm._v(" "),
         _c("form", [
           _c("label", [_vm._v("Email o Telefono")]),
