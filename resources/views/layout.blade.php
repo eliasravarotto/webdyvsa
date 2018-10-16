@@ -12,44 +12,97 @@
 </head>
 
 <style type="text/css">
+  .logos-content > div > img{
+    padding: 0px 15px 0px 15px;
+  }
+
   footer .row{
     margin-right: 0px;
     margin-left: 0px;
   }
+
+  #f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 281px;
+  z-index: 1;
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.7s linear;
+}
+#f1_container:hover #f1_card {
+  -webkit-transition: -webkit-transform 0.7s ease-in;
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}
+
+.item-footer-social{
+  padding: 0px 10px 0px 10px; 
+}
+
 </style>
 
 <body>
+  @include('frontend.float-buttons')
   <div id="app">
-
     <div class="header-contacto">
       <a href="/home">
         <img src="{{ asset('/imagenes/logo-empresa.png') }}"  style="height: 51px;">
       </a>
-        <div style="width: 60%; display: flex; justify-content: center; flex-direction: column;text-align: center;">
-            <ul class="lista-contacto list-unstyled">
+        <div style="width: 60%; display: flex; justify-content: space-around; text-align: center;">
+            <ul class="lista-contacto list-unstyled" style="display: flex; align-items: center;">
                 <li>
-                    <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <a href="">
+                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
                         Sáenz Peña
                     </a>
                 </li>
+                <li>-</li>
                 <li>
-                    <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <a href="">
+                      {{-- <i class="fa fa-map-marker" aria-hidden="true"></i> --}}
                         Charata
                     </a>
                 </li>
+                <li>-</li>
                 <li>
-                    <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <a href="">
                         Villa Angela
                     </a>
                 </li>
+                <li>-</li>
                 <li>
-                    <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <a href="">
                         Resistencia
                     </a>
                 </li>
-                <li class="tw"><a href=""><i class="fa fa-facebook"></i></a></li>
-                <li class="tw"><a href=""><i class="fa fa-twitter"></i></a></li>
-                <li class="tw"><a href=""><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <ul class="lista-redes-sociales list-unstyled" style="display: flex; align-items: center;">
+                <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/facebook.png"></a></li>
+                <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/instagram.png"></a></li>
+                <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/twitter.png"></a></li>
             </ul>
         </div>
         <img src="{{ asset('/imagenes/logo-toyota.png') }}" style="height: 60px;">
@@ -112,38 +165,51 @@
 
     @yield('content')
 
+    <section>
+      <div class="section-colored text-center prefooter " style="padding: 20px 0; background-color: #f5f5f5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 logos-footer disabled">
+                   {{-- <ul class="nav nav-tabs nav-justified">
+                        <li><img src="/imagenes/logos/eco-toyota.gif" class="img-responsive" style="height: 100px;"></li>
+                        <li><img src="/assets/img/footer/toyota-express.jpg" title="Mantenimiento Express Toyota"></li>
+                        <li><img src="/assets/img/footer/geniune-parts.jpg" title="Repuestos Genuinos Toyota" ></li>
+                   </ul> --}}
+                   <div class="logos-content" style="display: flex; justify-content: center; align-items: center;">
+                     <div><img src="/imagenes/logos/logo_etc.png" class="img-responsive"></div>
+                     <div><img src="/imagenes/logos/logo_mant_exp.png" class="img-responsive"></div>
+                     <div><img src="/imagenes/logos/logo_eco.png" class="img-responsive"></div>
+                     <div><img src="/imagenes/logos/logo_genuine_parts.png" class="img-responsive"></div>
+                     <div><img src="/imagenes/logos/iram.png" class="img-responsive"></div>
+                   </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <div>
-        <div class="row row-footer-first">
-          <ul class="list-unstyled list-inline text-center footer-menu">
+        <div class="row row-footer-first text-center">
+          <ul class="list-unstyled list-inline footer-menu" style="margin-left: 0px;">
             <li>
               <a href="#">Sucursales</a>
             </li>
-            <li></li>
-            <li></li>
             <li>
               <a href="#">Contacto</a></li>
           </ul>
         </div>
 
-        <div class="row row-footer">
-          <div class="col-md-offset-4 col-sm-offset-4 col-md-1 col-sm-1 col-xs-4 text-center">
-            <h1><i class="fa fa-facebook-square"></i>
-              <p class="fs-17">Facebook</p>
-            </h1>
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-4 text-center">
-            <h1>
-              <i class="fa fa-twitter-square" aria-hidden="true"></i>
-              <p class="fs-17">Twitter</p>
-            </h1>
-          </div>
-          <div class="col-md-1 col-sm-1 col-xs-4 text-center ">
-            <h1>
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-              <p class="fs-17">Instagram</p>
-            </h1>
-          </div>
+        <div class="row-footer" style="display: flex; justify-content: center;">
+            <div class="item-footer-social">
+              <img src="/imagenes/icons/facebook.png" style="height: 50px; width:50px;">
+            </div>
+            <div class="item-footer-social">
+              <img src="/imagenes/icons/instagram.png" style="height: 50px; width:50px;">
+            </div>
+            <div class="item-footer-social">
+              <img src="/imagenes/icons/twitter.png" style="height: 50px; width:50px;">
+            </div>
         </div>
 
         <div class="row row-footer row-footer-border">
@@ -223,6 +289,13 @@
 
         window.sr = ScrollReveal();
         sr.reveal('.thumbnail-lighten', {duration: 1500});
+
+        //MENU FLOTANTE
+        $( ".menu-toggle" ).click(function() {
+          $(".menu-toggle").toggleClass('open');
+          $(".menu-round").toggleClass('open');
+          $(".menu-line").toggleClass('open');
+        });
     })(jQuery);
   </script>
 

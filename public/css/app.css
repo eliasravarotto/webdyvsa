@@ -8367,7 +8367,15 @@ body {
 }
 
 footer {
-  background-color: #171717;
+  background-color: #635e5e;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.i-item-list {
+  width: 30px;
 }
 
 .container-10 {
@@ -8492,8 +8500,7 @@ footer {
   text-decoration: none;
 }
 
-.lista-contacto li,
-.lista-redes-sociales li {
+.lista-contacto li {
   margin-left: 25px;
 }
 
@@ -9152,7 +9159,7 @@ footer {
 }
 
 .footer-menu > li > a {
-  color: #da251d;
+  color: white;
   font-weight: bold;
 }
 
@@ -9217,5 +9224,305 @@ footer {
   /*transition: 1.5s;*/
   left: 0;
   opacity: 1;
+}
+
+/*---------------ABRIR IMAGENES EN MODALWINDOW------------------------*/
+
+/* Style the Image Used to Trigger the Modal */
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+
+.modal-img {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  /*padding-top: 100px;*/
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 55%;
+  /*max-width: 700px;*/
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+          animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* The Close Button */
+
+.close-on-click {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.close-on-click:hover,
+.close-on-click:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/*Zoom-in on hover*/
+
+.item-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.item-hover img {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.item-hover:hover img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/*-----------------Menú Flotante----------------------
+------------------------------------------------------*/
+
+/*this makes a basic circle*/
+
+/*Brand Colour Palette*/
+
+/*this is what I use to place the menu thing wherever I want*/
+
+.container-float {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+/*this toggles the whole damn thing*/
+
+.menu-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  -webkit-box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+  display: table;
+  text-align: center;
+  /*Twist the plus so it looks like a close 'x'*/
+}
+
+.menu-toggle .fa {
+  color: #fff;
+  font-size: 2em;
+  display: table-cell;
+  vertical-align: middle;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.menu-toggle.open .fa {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+/*Single Template buttons*/
+
+.btn-app {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #4644fd;
+  color: #fff;
+  text-align: center;
+}
+
+.btn-app .fa {
+  line-height: 2.5em;
+}
+
+/*add shadow only when templates are activated*/
+
+.open .btn-app {
+  -webkit-box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*The most-popular apps in a circular thingo*/
+
+.menu-round {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  z-index: 3;
+  /*position of templates when activated*/
+}
+
+.menu-round .btn-app {
+  bottom: 0.25em;
+  right: 0.25em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.menu-round.open .btn-app:nth-of-type(1) {
+  right: 0.5em;
+  bottom: 4.25em;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.menu-round.open .btn-app:nth-of-type(2) {
+  right: 3.5em;
+  bottom: 3.5em;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.menu-round.open .btn-app:nth-of-type(3) {
+  right: 4.25em;
+  bottom: 0.5em;
+}
+
+/*stacked template icons*/
+
+.menu-line {
+  position: absolute;
+  z-index: 2;
+}
+
+.menu-line .btn-app {
+  bottom: 5px;
+  right: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.menu-line.open {
+  /*first one. add 3 to each subsequent template*/
+  /*align each template item on top of the next*/
+}
+
+.menu-line.open .btn-app:nth-of-type(1) {
+  bottom: 4.25em;
+}
+
+.menu-line.open .btn-app:nth-of-type(1) {
+  bottom: 7.25em;
+}
+
+.menu-line.open .btn-app:nth-of-type(2) {
+  bottom: 10.25em;
+}
+
+.menu-line.open .btn-app:nth-of-type(3) {
+  bottom: 13.25em;
+}
+
+.menu-line.open .btn-app:nth-of-type(4) {
+  bottom: 16.25em;
+}
+
+.menu-line.open .btn-app:nth-of-type(5) {
+  bottom: 19.25em;
+}
+
+.menu-line.open .btn-app:nth-of-type(6) {
+  bottom: 22.25em;
+}
+
+.menu-line.open .btn-app:nth-of-type(7) {
+  bottom: 25.25em;
 }
 

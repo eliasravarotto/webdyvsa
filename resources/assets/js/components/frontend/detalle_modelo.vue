@@ -5,11 +5,11 @@
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+<!--         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li> 
-        </ol>
+        </ol> -->
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -39,6 +39,7 @@
           <span class="sr-only">Next</span>
         </a>
     </div>
+    
     <article>
         <section class="container pad-top-bot-20">
             <div class="row">
@@ -65,29 +66,9 @@
                           </tr>
                         </thead>
                         <tbody>                         
-                          <tr> 
-                            <td style="width: 75%;">X 5P 6M/T</td>
-                            <td>$ 373700</td>
-                          </tr>
-                          <tr> 
-                            <td style="width: 75%;">X 4P 6M/T</td>
-                            <td>$ 389000</td>
-                          </tr>
-                          <tr> 
-                            <td style="width: 75%;">XLS 5P 6M/T</td>
-                            <td>$ 418000</td>
-                          </tr>
-                          <tr> 
-                            <td style="width: 75%;">XLS 4P 6M/T</td>
-                            <td>$ 433300</td>
-                          </tr>
-                          <tr> 
-                            <td style="width: 75%;">XLS 5P 4A/T</td>
-                            <td>$ 436400</td>
-                          </tr>
-                          <tr> 
-                            <td style="width: 75%;">XLS 4P 4A/T</td>
-                            <td>$ 451700</td>
+                          <tr v-for="version in versiones"> 
+                            <td style="width: 75%;">{{ version.nombre }}</td>
+                            <td>{{ version.precio }}</td>
                           </tr>
                     </tbody>
                         </table>
@@ -104,13 +85,13 @@
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="" class="btn btn-default">
+                            <a v-bind:href="modelo.link_ficha_tecnica" class="btn btn-default" target="_blank" rel="noopener noreferrer">
                                 <i class="fa fa-download" aria-hidden="true"></i>
                                  Ficha Técnica
                             </a>
                         </li>
                         <li>
-                            <a href="" class="btn btn-default">
+                            <a v-bind:href="modelo.link_catalogo" class="btn btn-default" target="_blank" rel="noopener noreferrer">
                                 <i class="fa fa-download" aria-hidden="true"></i>
                                  Catálogo
                             </a>
@@ -122,7 +103,7 @@
                     <div id="images_colors" class="text-center">
                         <img v-for="(data, index) in model_color_images"
                              v-bind:class="'img-thumbnail thumbnail-no-border '"
-                             v-bind:style="'padding: 0px; '+[index == 0 ? 'display: block;' : 'display: none;']" 
+                             v-bind:style="'padding: 0px; '+[index == 0 ? 'display: -webkit-inline-box;' : 'display: none;']" 
                              v-bind:id="'img_'+data.codigo" 
                              v-bind:src="data.url" 
                         />
@@ -170,10 +151,23 @@
                                 </div>
                             </div>
 
+
+                            <!-- The Modal ------------------------------->
+                            <div id="moda_show_imagen" class="modal-img">
+                                <!-- The Close Button -->
+                                <span class="close-on-click">&times;</span>
+                                <!-- Modal Content (The Image) -->
+                                <img class="modal-content" id="img01" src="#">
+                            </div>
+
                             <div class="col-md-6 hidden-xs" id="carousel-text">
                                 <div class="row hidden-xs" id="slider-thumbs">
                                     <div v-for="img in imagenes_galeria" class="col-md-6">
-                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+img.id"><img v-bind:src="img.url"></a>
+                                            <div class="item-hover">
+                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+img.id">
+                                            <img class="hand" v-bind:src="img.url" v-on:click="showImage(img)">
+                                        </a>
+                                            </div>
                                      </div>   
                                 </div>                 
                             </div>
@@ -237,6 +231,7 @@
                 model_color_images: '',
                 model_color_selected: 'Click para seleccionar un color.',
                 features: '',
+                versiones: '',
                 img_logo: '',
                 slogan: '',
                 link_ficha_tecnica: '',
@@ -246,6 +241,7 @@
         mounted() {
             this.modelo = this.data.modelo;
             this.nombre_modelo = this.data.modelo.nombre.toLowerCase();
+            this.versiones = this.data.versiones;
             this.imagenes_galeria = this.data.imagenesGaleria;
             this.slider_ppal_images = this.data.imagenesSlider;
             this.model_color_images = this.data.imagenesColores;
@@ -257,8 +253,25 @@
             console.log(this.data);
         },
         methods:{
-            getImagenesSliderPpal(){
+            showImage(img){
+                // Get the modal
+                var modal = document.getElementById('moda_show_imagen');
 
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById('myImg');
+                var modalImg = document.getElementById("img01");
+                console.log(modalImg);
+                modalImg.src = img.url;
+                modal.style.display = "flex";
+      
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close-on-click")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() { 
+                    $("#moda_show_imagen").fadeOut()
+                }
             },
             initJS(){
                 //$("#images_colors").find("img").hide();

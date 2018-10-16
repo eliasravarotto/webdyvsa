@@ -36,6 +36,8 @@ Route::get('admin/modelos/{id}/edit/parallax','ModelosController@editParallax');
 Route::put('admin/modelos/{id}/edit/parallax','ModelosController@updateParallax');
 Route::get('admin/modelos/{id}/edit/slider','ModelosController@editSlider');
 Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
+Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
+Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
 
 
 Route::get('/home','FrontController@home');

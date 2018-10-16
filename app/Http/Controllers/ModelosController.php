@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Modelo;
-use App\ImagenSliderModelo;
+use App\CaracteristicaModelo;
 use App\ImagenColorModelo;
 use App\ImagenGaleriaModelo;
-use App\CaracteristicaModelo;
+use App\ImagenSliderModelo;
+use App\Modelo;
 use App\ParallaxModelo;
+use App\Version;
+use Illuminate\Http\Request;
 
 
 class ModelosController extends Controller
@@ -56,6 +57,8 @@ class ModelosController extends Controller
         $modelo = new Modelo;
         $modelo->nombre = $request->nombre;
         $modelo->slogan = $request->slogan;
+        $modelo->link_ficha_tecnica = $request->ficha_tecnica;
+        $modelo->link_catalogo = $request->catalogo;
         $modelo->img_logo = '/imagenes/modelos/'.$modelo_name.'/'.$logo_name;
         $modelo->img_modelo = '/imagenes/modelos/'.$modelo_name.'/'.$modelo_name_img;
 
@@ -121,6 +124,8 @@ class ModelosController extends Controller
 
         $modelo->nombre = $request->nombre;
         $modelo->slogan = $request->slogan;
+        $modelo->link_ficha_tecnica = $request->ficha_tecnica;
+        $modelo->link_catalogo = $request->catalogo;
         $modelo->update();
 
         \Session::flash('flash_message','Modelo actualizado correctamente'); //<--FLASH MESSAGE
@@ -280,6 +285,29 @@ class ModelosController extends Controller
                 $imagen_slider->save();
             }
         } 
+        return redirect('admin/modelos');
+    }
+
+    public function editVersiones($id)
+    {
+        $modelo = Modelo::find($id);
+        $versiones = Version::where('modelo_id','=', $id)->get();
+        return view('backend.modelos.formVersiones', compact('modelo','versiones'));
+    }
+
+    public function updateVersiones($id, Request $request)
+    {
+        $modelo = Modelo::find($id);
+        $total = count($request->versiones);
+        if ($total>0) {
+            for( $i=0 ; $i < $total ; $i++ ){
+                $version = new Version;
+                $version->nombre = $request->versiones[$i];
+                $version->precio = $request->precios[$i];
+                $version->modelo_id = $modelo->id;
+                $version->save();
+            }
+        }
         return redirect('admin/modelos');
     }
 }

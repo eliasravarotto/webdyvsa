@@ -1,11 +1,12 @@
 <?php
 namespace App\Repositories;
-use Illuminate\Support\Facades\DB;
-use App\ImagenSliderModelo;
+use App\CaracteristicaModelo;
 use App\ImagenColorModelo;
 use App\ImagenGaleriaModelo;
-use App\CaracteristicaModelo;
+use App\ImagenSliderModelo;
 use App\ParallaxModelo;
+use App\Version;
+use Illuminate\Support\Facades\DB;
 
 class ModeloRepository
 {
@@ -32,5 +33,10 @@ class ModeloRepository
 	public function getParallax($id)
 	{
 		return ParallaxModelo::where('modelo_id', '=', $id)->get();
+	}
+
+	public function getVersiones($id)
+	{
+		return Version::where('modelo_id', '=', $id)->get();
 	}
 }

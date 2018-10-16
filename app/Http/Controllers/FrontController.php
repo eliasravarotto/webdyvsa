@@ -36,7 +36,9 @@ class FrontController extends Controller
         $imagenesColores = $modeloRepo->getImagenesColores($modelo->id);
         $imagenesGaleria = $modeloRepo->getImagenesGaleria($modelo->id);
         $caracteristicas = $modeloRepo->getCaracteristicas($modelo->id);
+        $versiones = $modeloRepo->getVersiones($modelo->id);
         $parallax = $modeloRepo->getParallax($modelo->id);
+        //return $imagenesGaleria;
         //return $imagenesSlider;
         //return $parallax;
         //$versiones =
@@ -46,7 +48,8 @@ class FrontController extends Controller
                             'imagenesColores', 
                             'imagenesGaleria',
                             'caracteristicas',
-                            'parallax')
+                            'parallax',
+                            'versiones')
         );
     }
 

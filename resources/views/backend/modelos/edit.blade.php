@@ -113,7 +113,7 @@
       <strong class="card-title">Versiones {{ $modelo->nombre }} 
         <small>
           <span class="float-right mt-1">
-            <a href="">
+            <a href="/admin/modelos/{{ $modelo->id }}/edit/versiones">
               <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
             </a>
           </span>

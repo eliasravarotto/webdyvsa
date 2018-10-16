@@ -44601,12 +44601,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
@@ -44625,6 +44619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             model_color_images: '',
             model_color_selected: 'Click para seleccionar un color.',
             features: '',
+            versiones: '',
             img_logo: '',
             slogan: '',
             link_ficha_tecnica: '',
@@ -44634,6 +44629,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         this.modelo = this.data.modelo;
         this.nombre_modelo = this.data.modelo.nombre.toLowerCase();
+        this.versiones = this.data.versiones;
         this.imagenes_galeria = this.data.imagenesGaleria;
         this.slider_ppal_images = this.data.imagenesSlider;
         this.model_color_images = this.data.imagenesColores;
@@ -44646,7 +44642,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        getImagenesSliderPpal: function getImagenesSliderPpal() {},
+        showImage: function showImage(img) {
+            // Get the modal
+            var modal = document.getElementById('moda_show_imagen');
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            //var img = document.getElementById('myImg');
+            var modalImg = document.getElementById("img01");
+            console.log(modalImg);
+            modalImg.src = img.url;
+            modal.style.display = "flex";
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close-on-click")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                $("#moda_show_imagen").fadeOut();
+            };
+        },
         initJS: function initJS() {
             //$("#images_colors").find("img").hide();
             //$("#img_etios_blanco").show();
@@ -44712,8 +44726,6 @@ var render = function() {
         attrs: { id: "myCarousel", "data-ride": "carousel" }
       },
       [
-        _vm._m(0),
-        _vm._v(" "),
         _c(
           "div",
           { staticClass: "carousel-inner" },
@@ -44727,9 +44739,9 @@ var render = function() {
           })
         ),
         _vm._v(" "),
-        _vm._m(1),
+        _vm._m(0),
         _vm._v(" "),
-        _vm._m(2)
+        _vm._m(1)
       ]
     ),
     _vm._v(" "),
@@ -44755,13 +44767,97 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _vm._m(3)
+          _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+            _c("table", { staticClass: "table table-striped" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.versiones, function(version) {
+                  return _c("tr", [
+                    _c("td", { staticStyle: { width: "75%" } }, [
+                      _vm._v(_vm._s(version.nombre))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(version.precio))])
+                  ])
+                })
+              )
+            ])
+          ])
         ])
       ]),
       _vm._v(" "),
       _c("section", { staticClass: "arrow_box container pad-top-bot-20" }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(4),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left"
+            },
+            [
+              _c("h3", [_vm._v("TU PRIMER TOYOTA, MEJOR QUE NUNCA")]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-justify" }, [
+                _vm._v(
+                  "El Toyota Etios continua reforzando su actitud gracias a la incorporación de un nuevo diseño de parrilla, llantas de aleación y faros oscurecidos. Además, incorpora de serie Control de estabilidad y Control de tracción que en conjunto con su excelente performance de motor y transmisión hacen al Etios la opción ideal para recorrer el camino."
+                )
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-inline" }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-default",
+                      attrs: {
+                        href: _vm.modelo.link_ficha_tecnica,
+                        target: "_blank",
+                        rel: "noopener noreferrer"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-download",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(
+                        "\r\n                                 Ficha Técnica\r\n                            "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-default",
+                      attrs: {
+                        href: _vm.modelo.link_catalogo,
+                        target: "_blank",
+                        rel: "noopener noreferrer"
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-download",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(
+                        "\r\n                                 Catálogo\r\n                            "
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12 col-xs-12" }, [
             _c("h3", { staticClass: "text-center" }, [_vm._v("COLORES")]),
@@ -44774,7 +44870,11 @@ var render = function() {
                   class: "img-thumbnail thumbnail-no-border ",
                   style:
                     "padding: 0px; " +
-                    [index == 0 ? "display: block;" : "display: none;"],
+                    [
+                      index == 0
+                        ? "display: -webkit-inline-box;"
+                        : "display: none;"
+                    ],
                   attrs: { id: "img_" + data.codigo, src: data.url }
                 })
               })
@@ -44849,13 +44949,15 @@ var render = function() {
                           })
                         ),
                         _vm._v(" "),
-                        _vm._m(5),
+                        _vm._m(3),
                         _vm._v(" "),
-                        _vm._m(6)
+                        _vm._m(4)
                       ]
                     )
                   ]
                 ),
+                _vm._v(" "),
+                _vm._m(5),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -44872,14 +44974,26 @@ var render = function() {
                       },
                       _vm._l(_vm.imagenes_galeria, function(img) {
                         return _c("div", { staticClass: "col-md-6" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "thumbnail",
-                              attrs: { id: "carousel-selector-" + img.id }
-                            },
-                            [_c("img", { attrs: { src: img.url } })]
-                          )
+                          _c("div", { staticClass: "item-hover" }, [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "thumbnail",
+                                attrs: { id: "carousel-selector-" + img.id }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "hand",
+                                  attrs: { src: img.url },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.showImage(img)
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ])
                         ])
                       })
                     )
@@ -44968,25 +45082,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ol", { staticClass: "carousel-indicators" }, [
-      _c("li", {
-        staticClass: "active",
-        attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
-      }),
-      _vm._v(" "),
-      _c("li", {
-        attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
-      }),
-      _vm._v(" "),
-      _c("li", {
-        attrs: { "data-target": "#myCarousel", "data-slide-to": "2" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "a",
       {
@@ -45021,110 +45116,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-      _c("table", { staticClass: "table table-striped" }, [
-        _c("thead", [
-          _c("tr", [_c("th", [_vm._v("Versiones")]), _vm._v(" "), _c("th")])
-        ]),
-        _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", { staticStyle: { width: "75%" } }, [_vm._v("X 5P 6M/T")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$ 373700")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { staticStyle: { width: "75%" } }, [_vm._v("X 4P 6M/T")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$ 389000")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { staticStyle: { width: "75%" } }, [
-              _vm._v("XLS 5P 6M/T")
-            ]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$ 418000")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { staticStyle: { width: "75%" } }, [
-              _vm._v("XLS 4P 6M/T")
-            ]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$ 433300")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { staticStyle: { width: "75%" } }, [
-              _vm._v("XLS 5P 4A/T")
-            ]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$ 436400")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { staticStyle: { width: "75%" } }, [
-              _vm._v("XLS 4P 4A/T")
-            ]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$ 451700")])
-          ])
-        ])
-      ])
+    return _c("thead", [
+      _c("tr", [_c("th", [_vm._v("Versiones")]), _vm._v(" "), _c("th")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left"
-      },
-      [
-        _c("h3", [_vm._v("TU PRIMER TOYOTA, MEJOR QUE NUNCA")]),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-justify" }, [
-          _vm._v(
-            "El Toyota Etios continua reforzando su actitud gracias a la incorporación de un nuevo diseño de parrilla, llantas de aleación y faros oscurecidos. Además, incorpora de serie Control de estabilidad y Control de tracción que en conjunto con su excelente performance de motor y transmisión hacen al Etios la opción ideal para recorrer el camino."
-          )
-        ]),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("ul", { staticClass: "list-inline" }, [
-          _c("li", [
-            _c("a", { staticClass: "btn btn-default", attrs: { href: "" } }, [
-              _c("i", {
-                staticClass: "fa fa-download",
-                attrs: { "aria-hidden": "true" }
-              }),
-              _vm._v(
-                "\r\n                                 Ficha Técnica\r\n                            "
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "btn btn-default", attrs: { href: "" } }, [
-              _c("i", {
-                staticClass: "fa fa-download",
-                attrs: { "aria-hidden": "true" }
-              }),
-              _vm._v(
-                "\r\n                                 Catálogo\r\n                            "
-              )
-            ])
-          ])
-        ])
-      ]
-    )
   },
   function() {
     var _vm = this
@@ -45150,6 +45144,23 @@ var staticRenderFns = [
         attrs: { href: "#myCarouselmin", role: "button", "data-slide": "next" }
       },
       [_c("span", { staticClass: "glyphicon glyphicon-chevron-right" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "modal-img", attrs: { id: "moda_show_imagen" } },
+      [
+        _c("span", { staticClass: "close-on-click" }, [_vm._v("×")]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "modal-content",
+          attrs: { id: "img01", src: "#" }
+        })
+      ]
     )
   }
 ]

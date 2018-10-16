@@ -12,7 +12,8 @@
 						imagenesColores: {{ $imagenesColores }}, 
 						imagenesGaleria: {{ $imagenesGaleria }},
 						caracteristicas: {{ $caracteristicas }},
-						parallax: {{ $parallax }} }">
+						parallax: {{ $parallax }},
+						versiones: {{ $versiones }} }">
 	</detalle-modelo>
 
 @stop

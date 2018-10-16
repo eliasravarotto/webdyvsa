@@ -18,7 +18,7 @@
         <div class="thumbnail thumbnail-lighten thumbnail-no-border">
           <img src="/imagenes/hilux.png" alt="...">
           <div class="caption text-center">
-            <img src="/imagenes/modelos/hillux/logo.jpg" style="height: 30px">
+            <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px">
             <hr>
             <h4>La superación por encima del cambio</h4>
           </div>
@@ -28,7 +28,7 @@
         <div class="thumbnail thumbnail-lighten thumbnail-no-border">
           <img src="/imagenes/corolla.png" alt="...">
           <div class="caption text-center">
-            <img src="/imagenes/modelos/corolla/logo.png" style="height: 55px;">
+            <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;">
             <hr>
             <h4>Seguí avanzando</h4>
           </div>

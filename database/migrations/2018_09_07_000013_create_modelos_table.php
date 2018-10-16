@@ -21,6 +21,8 @@ class CreateModelosTable extends Migration
             $table->string('img_logo')->nullable();
             $table->string('img_modelo')->nullable();
             $table->string('slogan')->nullable();
+            $table->string('link_ficha_tecnica')->nullable();
+            $table->string('link_catalogo')->nullable();
             $table->boolean('activo')->default(1);
             $table->timestamps();
             $table->softDeletes();
