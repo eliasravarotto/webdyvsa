@@ -57,6 +57,7 @@ class ModelosController extends Controller
         $modelo = new Modelo;
         $modelo->nombre = $request->nombre;
         $modelo->slogan = $request->slogan;
+        $modelo->descripcion = $request->descripcion;
         $modelo->link_ficha_tecnica = $request->ficha_tecnica;
         $modelo->link_catalogo = $request->catalogo;
         $modelo->img_logo = '/imagenes/modelos/'.$modelo_name.'/'.$logo_name;
@@ -124,6 +125,7 @@ class ModelosController extends Controller
 
         $modelo->nombre = $request->nombre;
         $modelo->slogan = $request->slogan;
+        $modelo->descripcion = $request->descripcion;
         $modelo->link_ficha_tecnica = $request->ficha_tecnica;
         $modelo->link_catalogo = $request->catalogo;
         $modelo->update();

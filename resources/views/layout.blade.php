@@ -65,41 +65,44 @@
 </style>
 
 <body>
-  @include('frontend.float-buttons')
+
+  {{-- @include('frontend.float-buttons') --}}
+  @include('frontend.menu-fab')
+
   <div id="app">
     <div class="header-contacto">
       <a href="/home">
         <img src="{{ asset('/imagenes/logo-empresa.png') }}"  style="height: 51px;">
       </a>
         <div style="width: 60%; display: flex; justify-content: space-around; text-align: center;">
-            <ul class="lista-contacto list-unstyled" style="display: flex; align-items: center;">
+            <ul class="lista-contacto list-unstyled hidden-sm hidden-xs" style="display: flex; align-items: center;">
                 <li>
                     <a href="">
                       <img src="/imagenes/icons/map-marker.png" style="width: 25px">
                         Sáenz Peña
                     </a>
                 </li>
-                <li>-</li>
                 <li>
                     <a href="">
+                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
                       {{-- <i class="fa fa-map-marker" aria-hidden="true"></i> --}}
                         Charata
                     </a>
                 </li>
-                <li>-</li>
                 <li>
                     <a href="">
+                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
                         Villa Angela
                     </a>
                 </li>
-                <li>-</li>
                 <li>
                     <a href="">
+                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
                         Resistencia
                     </a>
                 </li>
             </ul>
-            <ul class="lista-redes-sociales list-unstyled" style="display: flex; align-items: center;">
+            <ul class="lista-redes-sociales list-unstyled hidden-sm hidden-xs" style="display: flex; align-items: center;">
                 <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/facebook.png"></a></li>
                 <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/instagram.png"></a></li>
                 <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/twitter.png"></a></li>
@@ -252,8 +255,8 @@
 
   </div>
 
-  <div id="fb-root"></div>
   <!-- Script Section -->
+  <div id="fb-root"></div>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   @yield('script')
@@ -296,6 +299,7 @@
           $(".menu-round").toggleClass('open');
           $(".menu-line").toggleClass('open');
         });
+
     })(jQuery);
   </script>
 

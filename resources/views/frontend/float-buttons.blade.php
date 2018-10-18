@@ -7,11 +7,9 @@
     </div>
     
     <div class="menu-round">
-        <div class="btn-app">
-      <a href="#">
-            <div class="fa fa-twitter"></div>
-      </a>
-        </div>
+      <div class="btn-app">
+          <div class="fa fa-twitter"></div>
+      </div>
       <div class="btn-app">
         <div class="fa fa-facebook"></div>
       </div>

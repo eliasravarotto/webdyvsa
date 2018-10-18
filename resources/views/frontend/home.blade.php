@@ -72,11 +72,11 @@
     </div>
   </div>
 
-  <section id="services">
-    <div class="container">
+  <section id="services" style="border-top: 1px solid #01b2aa;">
+    {{-- <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">At Your Service</h2>
+          <h2 class="section-heading">Derka y Vargas Social Media</h2>
         </div>
         <div class="col-lg-12 text-center">
         <center>
@@ -84,23 +84,25 @@
         </center>
       </div>
       </div>
-    </div>
+    </div> --}}
     <div class="container">
+      <img src="https://www.groundsure.com/wp-content/uploads/2017/07/sm7.jpg" style="width: 100%">
       <div class="row">
-      <div class="col-xs-12 col-md-6" style="margin: 20px 0;">
+      <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
         <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
       </div>
-      <div class="col-xs-12 col-md-6" style="margin: 20px 0;">
-        <p>Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec rutrum congue leo eget malesuada.Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Cras
-          ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-        <p>Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec rutrum congue leo eget malesuada.Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Cras
-          ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-        <p>Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec rutrum congue leo eget malesuada.Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Cras
-          ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-          
+      <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0;">
+        {{-- <iframe src="//lightwidget.com/widgets/fb15970b2bfe5432b206f2b116d4779a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> --}}
+        <iframe src="//lightwidget.com/widgets/fa8772b6f29953d581a30dbbbc638347.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+
       </div>
     </div>
     </div>
   </section>
 
+@stop
+
+@section('script')
+        <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+          {{-- <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script> --}}
 @stop

@@ -30,5 +30,11 @@
 	  <input name="img_logo" type="file" class="form-control">
 	</div>
 </div>
+<div class="form-group row">
+  	<div class=" col-12">
+ 		<label class="control-label mb-1">Descripción del Modelo</label>
+  		<textarea class="form-control" name="descripcion"></textarea>
+  	</div>
+</div>
 
 
