@@ -65,7 +65,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
-		<section>
+		<section style="width: 98.8%">
 			<div class="row row-well" style=" display: flex; justify-content: center; align-items: center; flex-wrap: nowrap;">
 				<div class="" style="width: 50%; display: flex; justify-content: center; padding-left: 50px;">
 					<h2>
@@ -164,21 +164,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
-		<section>
+		<section style="height: 680px">
 			<div class="container">
-				<h2 class="text-center">Valores de Posventa</h2>
+				<h2 class="text-center">Servicio al Cliente</h2>
+				<h3 class="text-center">Elegir un TOYOTA es mucho más que elegir un vehículo</h3>
 				<div class="row">
 					<div class="col-md-4">
-						<h3><i class="fa fa-users" aria-hidden="true"></i> Personal Técnico Capacitado</h3>
-						<p>Contar con personal altamente capacitado es la mejor forma de transmitir el valor de la marca Toyota a nuestros clientes. Por esta razón desarrollamos y entrenamos a nuestro personal mientras nos preparamos para responder a los retos del futuro. Por ello es que Usted tiene siempre la tranquilidad y el respaldo de dejar su vehículo en las mejores manos. Somos los que mejor conocemos su Toyota.</p>
+						<h3 class="text-center"><i class="fa fa-users" aria-hidden="true"></i> Elegirnos</h3>
+						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Cuando usted elige un Toyota, elige una filosofía de trabajo que respeta principios y valores. En Derka y Vargas le ofrecemos servicios fieles al compromiso y como garantía de calidad en todas nuestras sucursales de Chaco.</p>
 					</div>	
 					<div class="col-md-4">
-						<h3><i class="fa fa-certificate" aria-hidden="true"></i> Personal Técnico Capacitado</h3>
-						<p>Contar con personal altamente capacitado es la mejor forma de transmitir el valor de la marca Toyota a nuestros clientes. Por esta razón desarrollamos y entrenamos a nuestro personal mientras nos preparamos para responder a los retos del futuro. Por ello es que Usted tiene siempre la tranquilidad y el respaldo de dejar su vehículo en las mejores manos. Somos los que mejor conocemos su Toyota.</p>
+						<h3 class="text-center"><i class="fa fa-certificate" aria-hidden="true"></i> Garantía</h3>
+						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Toyota respalda todos sus vehículos con garantía de 3 años o 100.000 km (lo que ocurra primero) y es transferible a nuevos propietarios. Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquier de nuestras sucursales en Chaco donde gustosamente procesarán su solicitud.</p>
 					</div>	
 					<div class="col-md-4">
-						<h3><i class="fa fa-certificate" aria-hidden="true"></i> Personal Técnico Capacitado</h3>
-						<p>Contar con personal altamente capacitado es la mejor forma de transmitir el valor de la marca Toyota a nuestros clientes. Por esta razón desarrollamos y entrenamos a nuestro personal mientras nos preparamos para responder a los retos del futuro. Por ello es que Usted tiene siempre la tranquilidad y el respaldo de dejar su vehículo en las mejores manos. Somos los que mejor conocemos su Toyota.</p>
+						<h3 class="text-center"><i class="fa fa-certificate" aria-hidden="true"></i> Repuestos & Accesorios</h3>
+						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Contamos con el stock para satisfacer las preferencias y necesidades de nuestros clientes. Los repuestos originales son los que aseguran el correcto funcionamiento del vehículo. Contar con los mismos es condición necesaria para que la garantía siga vigente, logrando que su Toyota sea siempre un Toyota.</p>
 					</div>	
 				</div>
 			</div>
@@ -192,17 +193,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 						</div>
 						<div class="is-desc reveal reveal_visible visible-md visible-lg">
 							<h2 class=" case27-primary-text">Mantenimiento Express</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<a href="#" class="btn btn-primary">
-									Start exploring 
-								</a>
+							<p style="font-size: 15px;">Presentamos Mantenimiento Express, una opción de servicio rápido con las mismas características, calidad y precio de un servicio convencional, para generar la más alta conveniencia y satisfacción. Con las herramientas adecuadas y con un alto nivel de capacitación y entrenamiento los técnicos pueden cumplir con el proceso de mantenimiento de manera eficiente, logrando el mismo trabajo en 60 minutos.</p>
+							{{-- <a href="#" class="btn btn-primary">
+								Start exploring 
+							</a> --}}
 						</div>
 						<div class="is-desc-sm-xs reveal reveal_visible hidden-md hidden-lg">
 							<h2 class="">Mantenimiento Express</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<a href="#" class="btn btn-primary">
-									Start exploring 
-								</a>
+							<p style="font-size: 15px;">Presentamos Mantenimiento Express, una opción de servicio rápido con las mismas características, calidad y precio de un servicio convencional, para generar la más alta conveniencia y satisfacción. Con las herramientas adecuadas y con un alto nivel de capacitación y entrenamiento los técnicos pueden cumplir con el proceso de mantenimiento de manera eficiente, logrando el mismo trabajo en 60 minutos.</p>
+							{{-- <a href="#" class="btn btn-primary">
+								Start exploring 
+							</a> --}}
 						</div>
 					</div>
 				</div>
@@ -212,7 +213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		<section style="padding-top: 20px; padding-bottom: 20px">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6" style="min-height: 300px; " id="map_ruta" ></div>
+					<div class="col-md-6" style="min-height: 300px; " id="map" ></div>
 					<div class="col-md-6" style="min-height: 300px;">
 						<div style="display: flex; justify-content: center; font-size: 22px">
 							<address>
@@ -231,28 +232,102 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
+		<!-- Modal -->
+            <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">SOLICITAR TURNO</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                <label>Nombre</label>
+                                <input class="form-control" type="text" name="nombre" v-model="nombre" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12 col-sm-12">
+                                <label>Teléfono</label>
+                                <input class="form-control" type="email" name="telefono" v-model="telefono">
+                            </div>
+                                
+                            <div class="col-md-6 col-xs-12 col-sm-12">
+                                <label>Email</label> (opcional)
+                                <input class="form-control" type="email" name="email" v-model="email">
+                            </div>
+                        </div>
+                        <label>Mensaje</label>
+                        <textarea class="form-control" v-model="mensaje"></textarea>
+                    </form>
+                    <br>
+                    <div class="alert alert-info" role="alert">
+                        <p>Estaremos en contacto a la brevedad.</p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" v-on:click="enviarConsulta()">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 	</article>
 
 @stop
 
 @section('script')
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+{{--     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN9Nwz-k-NNnKtTlpy36lG4aQqeCicU6g&callback=initMap"
+  type="text/javascript"></script> --}}
 <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -27.423658, lng: -58.950215};
-  // The map, centered at Uluru
-  var map_ruta = new google.maps.Map(
-      document.getElementById('map_ruta'), {zoom: 14, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map_ruta});
-}
+// // Initialize and add the map
+// function initMap() {
+//   // The location of Uluru
+//   var uluru = {lat: -27.423658, lng: -58.950215};
+//   // The map, centered at Uluru
+//   var map_ruta = new google.maps.Map(
+//       document.getElementById('map_ruta'), {zoom: 14, center: uluru});
+//   // The marker, positioned at Uluru
+//   var marker = new google.maps.Marker({position: uluru, map: map_ruta});
+// }
+var locations = [
+      ['Sucursal Resistencia', -33.890542, 151.274856, 3],
+      ['Sucursal Charata', -33.923036, 151.259052, 2],
+      ['Casa Central Saenz Peña', -34.028249, 151.157507, 1],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(-33.92, 151.25),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
     </script>
     <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN9Nwz-k-NNnKtTlpy36lG4aQqeCicU6g&callback=initMap"
-  type="text/javascript"></script>
+
 @stop

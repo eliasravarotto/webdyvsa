@@ -32303,7 +32303,15 @@ $('.contenedor_tarjeta').mouseenter(function () {
 $('.contenedor_tarjeta').mouseleave(function () {
   $('.hover-block', this).slideUp();
 });
-//---------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+
+//--------------------------------MENU FLOTANTE-----------------------------------------
+$(".menu-toggle").click(function () {
+  $(".menu-toggle").toggleClass('open');
+  $(".menu-round").toggleClass('open');
+  $(".menu-line").toggleClass('open');
+});
+//--------------------------------------------------------------------------------------
 
 /***/ }),
 /* 39 */
@@ -44590,17 +44598,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
@@ -44797,14 +44794,12 @@ var render = function() {
                 "col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left"
             },
             [
-              _c("h3", [_vm._v("TU PRIMER TOYOTA, MEJOR QUE NUNCA")]),
+              _c("h3", [_vm._v(_vm._s(_vm.modelo.slogan))]),
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c("p", { staticClass: "text-justify" }, [
-                _vm._v(
-                  "El Toyota Etios continua reforzando su actitud gracias a la incorporación de un nuevo diseño de parrilla, llantas de aleación y faros oscurecidos. Además, incorpora de serie Control de estabilidad y Control de tracción que en conjunto con su excelente performance de motor y transmisión hacen al Etios la opción ideal para recorrer el camino."
-                )
+                _vm._v(_vm._s(_vm.modelo.descriptcion))
               ]),
               _vm._v(" "),
               _c("br"),
@@ -45375,14 +45370,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
     data: function data() {
         return {
             unidades: [{ id: '1', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'rojo', url_imagen: 'imagenes/usados/corolla.jpg', tipo: 'auto' }, { id: '2', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'rojo', url_imagen: 'imagenes/usados/hilux.jpg', tipo: 'camioneta' }, { id: '3', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'negro', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }, { id: '4', marca: 'renault', modelo: 'Logan', version: 'Lg', año: '2016', km: '50.000', color: 'negro', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }, { id: '5', marca: 'Chevrolet', modelo: 'Corsa', version: 'cls', año: '2016', km: '50.000', color: 'gris', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }],
-            dataModalContacto: ''
-
+            usadoSelected: '',
+            nombre: '',
+            telefono: '',
+            email: '',
+            mensaje: ''
         };
     },
     mounted: function mounted() {},
@@ -45390,7 +45403,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         openModalContacto: function openModalContacto(unidad) {
             $('#contacto').modal('toggle');
-            this.dataModalContacto = unidad;
+            this.usadoSelected = unidad;
+        },
+        enviarConsulta: function enviarConsulta() {
+            $('#contacto').modal('toggle');
+            axios.post('/consultar/usado/' + this.usadoSelected.id, {
+                nombre: this.nombre,
+                telefono: this.telefono,
+                email: this.email,
+                mensaje: this.mensaje,
+                marca: this.usadoSelected.marca,
+                modelo: this.usadoSelected.modelo
+            }).then(function (response) {
+                console.log(response);
+                this.usadoSelected = '';
+                this.nombre = '';
+                this.telefono = '';
+                this.email = '';
+                this.mensaje = '';
+                this.marca = '';
+                this.modelo = '';
+            }).catch(function (error) {
+                console.log(error);
+            });
         }
     }
 });
@@ -45531,7 +45566,7 @@ var render = function() {
       [
         _c(
           "div",
-          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          { staticClass: "modal-dialog modal-lg", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
               _vm._m(7),
@@ -45540,25 +45575,157 @@ var render = function() {
                 _c("h4", { staticClass: "text-center" }, [
                   _vm._v(
                     "\n                       " +
-                      _vm._s(_vm.dataModalContacto.marca) +
+                      _vm._s(_vm.usadoSelected.marca) +
                       " - " +
-                      _vm._s(_vm.dataModalContacto.modelo) +
+                      _vm._s(_vm.usadoSelected.modelo) +
                       " - " +
-                      _vm._s(_vm.dataModalContacto.año) +
+                      _vm._s(_vm.usadoSelected.año) +
                       " - " +
-                      _vm._s(_vm.dataModalContacto.color) +
+                      _vm._s(_vm.usadoSelected.color) +
                       "\n                   "
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(8),
+                _c("form", [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12 col-xs-12 col-sm-12" },
+                      [
+                        _c("label", [_vm._v("Nombre")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.nombre,
+                              expression: "nombre"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", name: "nombre" },
+                          domProps: { value: _vm.nombre },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.nombre = $event.target.value
+                            }
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-6 col-xs-12 col-sm-12" }, [
+                      _c("label", [_vm._v("Teléfono")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.telefono,
+                            expression: "telefono"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "email", name: "telefono" },
+                        domProps: { value: _vm.telefono },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.telefono = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 col-xs-12 col-sm-12" }, [
+                      _c("label", [_vm._v("Email")]),
+                      _vm._v(" (opcional)\n                               "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.email,
+                            expression: "email"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "email", name: "email" },
+                        domProps: { value: _vm.email },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.email = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("Mensaje")]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.mensaje,
+                        expression: "mensaje"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    domProps: { value: _vm.mensaje },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.mensaje = $event.target.value
+                      }
+                    }
+                  })
+                ]),
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _vm._m(9)
+                _vm._m(8)
               ]),
               _vm._v(" "),
-              _vm._m(10)
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-default",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Cerrar")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        _vm.enviarConsulta()
+                      }
+                    }
+                  },
+                  [_vm._v("Enviar")]
+                )
+              ])
             ])
           ]
         )
@@ -45867,49 +46034,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("form", [
-      _c("label", [_vm._v("Email o Telefono")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", name: "" }
-      }),
-      _vm._v(" "),
-      _c("label", [_vm._v("Mensaje")]),
-      _vm._v(" "),
-      _c("textarea", { staticClass: "form-control" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
       { staticClass: "alert alert-info", attrs: { role: "alert" } },
       [_c("p", [_vm._v("Estaremos en contacto a la brevedad.")])]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-default",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Cerrar")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "button" } },
-        [_vm._v("Enviar")]
-      )
-    ])
   }
 ]
 render._withStripped = true

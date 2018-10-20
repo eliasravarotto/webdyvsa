@@ -5,7 +5,8 @@
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
-<!--         <ol class="carousel-indicators">
+        <!--
+        <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li> 
@@ -13,18 +14,6 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <!--
-              <div class="item active">
-                <img src="https://www.zento.com.ar/images/etios/slide2.jpg" alt="Los Angeles" style="width:100%;">
-                <div class="carousel-caption">
-                    <h3>Etios</h3>
-                    <p>Decile sí a todo.</p>
-                    </div>
-                </div>
-              <div class="item">
-                <img src="https://www.zento.com.ar/images/etios/slide2.jpg" alt="Chicago" style="width:100%;">
-              </div>
-            -->
             <div v-for="(img, index) in slider_ppal_images" v-bind:class="[index == 0 ? 'item active' : 'item']">
                 <img v-bind:src="img.url" alt="New york" style="width:100%;">
             </div>
@@ -79,9 +68,9 @@
         <section class="arrow_box container pad-top-bot-20">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left">
-                    <h3>TU PRIMER TOYOTA, MEJOR QUE NUNCA</h3>
+                    <h3>{{ modelo.slogan }}</h3>
                     <br>
-                    <p class="text-justify">El Toyota Etios continua reforzando su actitud gracias a la incorporación de un nuevo diseño de parrilla, llantas de aleación y faros oscurecidos. Además, incorpora de serie Control de estabilidad y Control de tracción que en conjunto con su excelente performance de motor y transmisión hacen al Etios la opción ideal para recorrer el camino.</p>
+                    <p class="text-justify">{{ modelo.descriptcion }}</p>
                     <br>
                     <ul class="list-inline">
                         <li>

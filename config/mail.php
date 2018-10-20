@@ -29,7 +29,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    //'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => 'smtp.gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +43,8 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    //'port' => env('MAIL_PORT', 587),
+    'port' => 587,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,9 +57,13 @@ return [
     |
     */
 
+    // 'from' => [
+    //     'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+    //     'name' => env('MAIL_FROM_NAME', 'Example'),
+    // ],
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => 'elias.ravarotto@gmail.com',
+        'name' => 'Elias DyV',
     ],
 
     /*
@@ -71,7 +77,8 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    //'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => 'tls',
 
     /*
     |--------------------------------------------------------------------------
@@ -99,7 +106,7 @@ return [
     |
     */
 
-    'sendmail' => '/usr/sbin/sendmail -bs',
+    // 'sendmail' => '/usr/sbin/sendmail -bs',
 
     /*
     |--------------------------------------------------------------------------
@@ -112,12 +119,12 @@ return [
     |
     */
 
-    'markdown' => [
-        'theme' => 'default',
+    // 'markdown' => [
+    //     'theme' => 'default',
 
-        'paths' => [
-            resource_path('views/vendor/mail'),
-        ],
-    ],
+    //     'paths' => [
+    //         resource_path('views/vendor/mail'),
+    //     ],
+    // ],
 
 ];

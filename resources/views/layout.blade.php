@@ -238,8 +238,8 @@
           <div class="text-center dir">
             <h4 class="white">
               <i class="fa fa-home fs-25 red"></i>
-              Casa Central Sáenz Peñabr <br>
-              <small class="text-center">Belgrano N° 872 (calle 10 esq 19 )</small>
+              Casa Central Sáenz Peña <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small class="text-center">Belgrano N° 872 (calle 10 esq 19 )</small>
             </h4>
           </div>     
         </div>
@@ -292,13 +292,6 @@
 
         window.sr = ScrollReveal();
         sr.reveal('.thumbnail-lighten', {duration: 1500});
-
-        //MENU FLOTANTE
-        $( ".menu-toggle" ).click(function() {
-          $(".menu-toggle").toggleClass('open');
-          $(".menu-round").toggleClass('open');
-          $(".menu-line").toggleClass('open');
-        });
 
     })(jQuery);
   </script>

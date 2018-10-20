@@ -14,18 +14,25 @@
 @section('content')
 	<!-- Navbar Desktop -->
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
-
- <article>
-	<div>
-		<div class="container">
-			<h3 style="font-family:ToyotaFont; color: #404048">ELEGI TU USADO</h3>
-		</div>
-	</div>
-	<div class="container">
-		<index-usados></index-usados>
-	</div>
-	
-</article> 
+	<article>
+{{-- 		<section>
+			<div style="width: 100%; display: flex; justify-content: flex-end;" >
+				<div>
+					<img src="https://mbtskoudsalg.com/images/whatsapp-icon-transparent-png-6.png" style="height: 100px;">
+				</div>
+			</div>
+		</section> --}}
+		<section>
+			<div>
+				<div class="container">
+					<h3 style="font-family:ToyotaFont; color: #404048">ELEGI TU USADO</h3>
+				</div>
+			</div>
+			<div class="container">
+				<index-usados></index-usados>
+			</div>
+		</section>
+	</article> 
 
 @stop
 

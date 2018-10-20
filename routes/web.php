@@ -50,3 +50,5 @@ Route::get('/modelo/{modelo}','FrontController@modelo');
 Route::get('/modelo','FrontController@getModelos');
 Route::get('/usados','FrontController@usadosIndex');
 Route::get('/usados/{id}','FrontController@usadosShow');
+Route::post('/consultar/usado/{id}','FrontController@consultaUsado');
+Route::get('/turno-servicio','TurnoServicioController@create');

@@ -116,7 +116,7 @@
 
             <!-- Modal -->
             <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -124,13 +124,28 @@
                   </div>
                   <div class="modal-body">
                     <h4 class="text-center">
-                        {{ dataModalContacto.marca }} - {{ dataModalContacto.modelo }} - {{ dataModalContacto.año }} - {{ dataModalContacto.color }}
+                        {{ usadoSelected.marca }} - {{ usadoSelected.modelo }} - {{ usadoSelected.año }} - {{ usadoSelected.color }}
                     </h4>
                     <form>
-                        <label>Email o Telefono</label>
-                        <input class="form-control" type="text" name="">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                <label>Nombre</label>
+                                <input class="form-control" type="text" name="nombre" v-model="nombre" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12 col-sm-12">
+                                <label>Teléfono</label>
+                                <input class="form-control" type="email" name="telefono" v-model="telefono">
+                            </div>
+                                
+                            <div class="col-md-6 col-xs-12 col-sm-12">
+                                <label>Email</label> (opcional)
+                                <input class="form-control" type="email" name="email" v-model="email">
+                            </div>
+                        </div>
                         <label>Mensaje</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" v-model="mensaje"></textarea>
                     </form>
                     <br>
                     <div class="alert alert-info" role="alert">
@@ -139,7 +154,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Enviar</button>
+                    <button type="button" class="btn btn-primary" v-on:click="enviarConsulta()">Enviar</button>
                   </div>
                 </div>
               </div>
@@ -159,8 +174,11 @@
                             { id:'4', marca: 'renault', modelo: 'Logan', version:'Lg', año:'2016', km:'50.000', color:'negro', url_imagen:'imagenes/usados/rav.jpg', tipo:'auto' },
                             { id:'5', marca: 'Chevrolet', modelo: 'Corsa', version:'cls', año:'2016', km:'50.000', color:'gris', url_imagen:'imagenes/usados/rav.jpg', tipo:'auto' }
                 ],
-                dataModalContacto : ''
-
+                usadoSelected : '',
+                nombre: '',
+                telefono: '',
+                email: '',
+                mensaje:'',
             }
         },
         mounted() {
@@ -170,7 +188,33 @@
             openModalContacto(unidad)
             {
                 $('#contacto').modal('toggle');
-                this.dataModalContacto = unidad;
+                this.usadoSelected = unidad;
+            },
+            enviarConsulta()
+            {
+                $('#contacto').modal('toggle');
+                axios.post('/consultar/usado/'+this.usadoSelected.id, {
+                    nombre: this.nombre,
+                    telefono: this.telefono,
+                    email: this.email,
+                    mensaje: this.mensaje,
+                    marca: this.usadoSelected.marca,
+                    modelo: this.usadoSelected.modelo,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                    this.usadoSelected = '';
+                    this.nombre = '';
+                    this.telefono = '';
+                    this.email = '';
+                    this.mensaje = '';
+                    this.marca = '';
+                    this.modelo = '';
+
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
             }
         }
     }

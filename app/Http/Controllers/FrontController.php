@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Modelo;
 use App\Repositories\ModeloRepository;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
 {
@@ -71,5 +72,23 @@ class FrontController extends Controller
     public function usadosShow($id)
     {
         return view('frontend.usados.show');
+    }
+
+    public function consultaUsado(Request $request)
+    {
+        //return $request;
+
+        Mail::send('emails.template', ['data' => $request], function ($message) use ($request){
+
+            $unidad = $request->marca.' '.$request->modelo;
+            
+            $message->subject('Consulta sobre usado -'.$unidad);
+            $message->to('elias.ravarotto@gmail.com');
+            //$message->to('eliasravarotto@derkayvargas.com.ar');
+
+
+        });
+        return 'ok';
+
     }
 }
