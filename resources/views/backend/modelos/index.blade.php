@@ -10,7 +10,7 @@
     <div class="card-body">
         <div class="row">
           <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
-            <a class="btn btn-primary" href="{{ route('modelos.create') }}">Nuevo</a>
+            <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
           </div>
         </div>
         <table class="table">

@@ -10,7 +10,7 @@
 
 @section('content')
 <!-- Navbar Desktop -->
-<navbar-desk v-bind:data="{ bg_color:'#292828', position: 'relative' }"></navbar-desk>
+	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
 <article>
 	<div>
 		<div class="container">
@@ -18,7 +18,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<show-usado></show-usado>
+		<show-usado v-bind:data="{ unidad: {{$unidad}}, imagenes: {{$imagenes}} }"></show-usado>
 	</div>
 
 </article> 

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Consulta;
+use App\ImagenGaleriaUsado;
 use App\Modelo;
 use App\Repositories\ModeloRepository;
+use App\TipoServicio;
+use App\Usado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,7 +20,18 @@ class FrontController extends Controller
 
     public function posventa()
     {
-        return view('frontend.posventa');
+        $servicios = TipoServicio::all();
+        return view('frontend.posventa', compact('servicios'));
+    }
+
+    public function planDeAhorro()
+    {
+        return view('frontend.plan-de-ahorro.index');
+    }
+
+    public function financiacion()
+    {
+        return view('frontend.financiacion.index');
     }
 
     public function aboutUs()
@@ -61,34 +76,40 @@ class FrontController extends Controller
     }
 
 
-
     //SECCION UNIDADES USADAS--------------//
 
     public function usadosIndex()
     {
-        return view('frontend.usados.index');
+        $unidades = Usado::all();
+
+        return view('frontend.usados.index', compact('unidades'));
     }
 
     public function usadosShow($id)
     {
-        return view('frontend.usados.show');
+        $unidad = Usado::find($id);
+        $imagenes = ImagenGaleriaUsado::where('usado_id','=', $id)->get();
+        return view('frontend.usados.show', compact('unidad', 'imagenes'));
     }
 
     public function consultaUsado(Request $request)
     {
         //return $request;
-
+        $consulta = new Consulta;
+        $consulta->nombre = $request->nombre;
+        $consulta->telefono = $request->telefono;
+        $consulta->email = $request->email;
+        $consulta->mensaje = $request->mensaje;
+        $consulta->save();
         Mail::send('emails.template', ['data' => $request], function ($message) use ($request){
 
             $unidad = $request->marca.' '.$request->modelo;
             
-            $message->subject('Consulta sobre usado -'.$unidad);
+            $message->subject('Consulta sobre la unidad -'.$unidad);
             $message->to('elias.ravarotto@gmail.com');
             //$message->to('eliasravarotto@derkayvargas.com.ar');
-
-
         });
-        return 'ok';
 
+        return 'ok';
     }
 }

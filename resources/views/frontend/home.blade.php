@@ -47,16 +47,51 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12" style="margin: 20px 0;">
-        <p>Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec rutrum congue leo eget malesuada.Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Cras
-          ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-        <p>Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec rutrum congue leo eget malesuada.Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Cras
-          ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+  <section class="pad-top-50 pad-bot-50" style="height: auto;">
+      <div class="container">
+        {{-- <h2 class="text-center bold">Servicio al Cliente</h2> --}}
+        {{-- <h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3> --}}
+        <div class="row" >
+          <div class="col-md-4 col-sm-12">
+            <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+                <img src="https://www.toyota.com.ar/images/recm_Service.jpg" alt="...">
+                <div class="caption caption-default">
+                    <h4 class="text-center">Llamado a Revisión Técnica</h4>
+                    <p class="text-justify">
+                      Descubrí los servicios que te ayudan a cuidar tu Toyota. 
+                    </p>
+                    <a href="/posventa" class="btn btn-toyota">IR A POSVENTA</a>
+                </div>
+            </div>
+          </div>  
+          <div class="col-md-4 col-sm-12">
+            <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+                <img src="/imagenes/plan_de_ahorro/tpa.jpg" alt="...">
+                <div class="caption caption-default">
+                    <h4 class="text-center">Toyota Plan de Ahorro</h4>
+                    <p class="text-justify">
+                      Toyota Plan Argentina S.A. de Ahorro Para Fines Determinados ofrece un excelente medio para acceder a un vehículo de la marca a través del sistema de ahorro previo.
+                    </p>
+                    <a href="/plan-de-ahorro" class="btn btn-toyota">IR A PLAN DE AHORRO</a>
+                </div>
+            </div>
+          </div>  
+          <div class="col-md-4 col-sm-12">
+            <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+                <img src="/imagenes/tcf/tcf_card.jpg" alt="...">
+                <div class="caption caption-default">
+                    <h4 class="text-center">Financiá el placer de tener tu TOYOTA</h4>
+                    <p class="text-justify">
+                      Financiá tu Toyota con tasa preferencial. Te ofrecemos más oportunidades de tener tu 0km.
+                    </p>
+                    <a href="/financiacion" class="btn btn-toyota">IR A FINANCIACIÓN</a>
+                </div>
+            </div>
+          </div>  
+        </div>
       </div>
-    </div>
-  </div>
+  </section>
+
 
   <!--Parallax Section -->
   <div class="parallax bg3">
@@ -65,7 +100,7 @@
         <div class="col-xs-12">
           &nbsp;
           <div class="caption">
-            <span class="border et-waypoint">PARALLAX WITH STANDARD ROW</span>
+            <span class="border et-waypoint">Derka y Vargas - Charata</span>
           </div>
         </div>
       </div>
@@ -86,7 +121,7 @@
       </div>
     </div> --}}
     <div class="container">
-      <img src="https://www.groundsure.com/wp-content/uploads/2017/07/sm7.jpg" style="width: 100%">
+      <img src="{{asset('imagenes/logos/social_media.jpg')}}" style="width: 100%">
       <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
         <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>

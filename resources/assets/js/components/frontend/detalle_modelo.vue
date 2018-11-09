@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center text-uppercase">
                     <h3>{{ modelo.slogan }}</h3>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left">
                     <h3>{{ modelo.slogan }}</h3>
                     <br>
-                    <p class="text-justify">{{ modelo.descriptcion }}</p>
+                    <p class="text-justify">{{ modelo.descripcion }}</p>
                     <br>
                     <ul class="list-inline">
                         <li>
@@ -152,11 +152,11 @@
                             <div class="col-md-6 hidden-xs" id="carousel-text">
                                 <div class="row hidden-xs" id="slider-thumbs">
                                     <div v-for="img in imagenes_galeria" class="col-md-6">
-                                            <div class="item-hover">
-                                        <a class="thumbnail" v-bind:id="'carousel-selector-'+img.id">
-                                            <img class="hand" v-bind:src="img.url" v-on:click="showImage(img)">
-                                        </a>
-                                            </div>
+                                        <div class="item-hover">
+                                            <a class="thumbnail" v-bind:id="'carousel-selector-'+img.id">
+                                                <img class="hand" v-bind:src="img.url" v-on:click="showImage(img)">
+                                            </a>
+                                        </div>
                                      </div>   
                                 </div>                 
                             </div>

@@ -1,9 +1,6 @@
 @extends('layout')
 
 @section('content')
-<style type="text/css">
-
-</style>
 
 	<!-- Navbar Desktop -->
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
@@ -12,69 +9,76 @@
 		<section style="background: url('https://www.toyota.com.ar/usuarios/mant_express/img/botBg.jpg'); background-size: cover; background-repeat: no-repeat;">
 			<section style="background: rgba(240, 255, 255, 0.8)">
 				<div class="container">
+					@if (session('status'))
+						<div class="alert alert-warning alert-dismissible toast" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('status') }}
+						</div>
+					@endif
 					{{-- <div class="row" style="margin-top: 30px; margin-bottom: 30px; border-radius: 5px;"> --}}
 					<div class="row">
-					<div class="col-md-offset-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
 						<h1 class="text-center">Solicitar Turno <br><small>Servicio de Atención al Cliente</small></h1>
-					<form class="" role="form">
+					<form class="form-horizontal" action="/turno-servicios" method="POST" role="form">
+					  {{ csrf_field() }}
 					  <div class="form-group">
-					    <label class="control-label">Nombre y Apellido</label>
-					    <div class="">
-					      <input type="text" class="form-control"  placeholder="">
+					    <label class="control-label col-lg-3">Nombre y Apellido</label>
+					    <div class="col-lg-9">
+					      <input type="text" class="form-control"  name="cliente"  value="{{ old('cliente') }}" required>
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label class=" control-label">Teléfono</label>
-					    <div class="">
-					      <input type="text" class="form-control"  placeholder="">
+					    <label class="col-lg-3 control-label">Teléfono</label>
+					    <div class="col-lg-9">
+					      <input type="text" class="form-control"  name="telefono" value="{{ old('telefono') }}" required>
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label class=" control-label">Email</label>
-					    <div class="">
-					      <input type="email" class="form-control"  placeholder="">
+					    <label class="col-lg-3 control-label">Email</label>
+					    <div class="col-lg-9">
+					      <input type="email" class="form-control"  name="email" value="{{ old('email') }}">
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label class=" control-label">Fecha</label>
-					    <div class="">
-					      <input type="date" class="form-control"  placeholder="">
+					    <label class="col-lg-3 control-label">Fecha</label>
+					    <div class="col-lg-9">
+					      <input type="date" class="form-control"  name="fecha" value="{{ old('fecha') }}" required>
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label class=" control-label">Sucursal</label>
+					    <label class="col-lg-3 control-label">Sucursal</label>
+					    <div class="col-lg-9">
 					    	<ul class="list-inline">
+					    		@foreach($sucursales as $sucursal)
 					    		<li>
 				    			<div class="radio">
 								  <label>
-								    <input type="radio" name="sucursal" value="1">
-								    Sáenz Peña
+								    <input type="radio" name="sucursal" value="{{$sucursal->id}}" {{ old('sucursal') == $sucursal->id ? 'checked' : '' }} required>
+								    {{ $sucursal->localidad }}
 								  </label>
 								</div>
 					    		</li>
-					    		<li>
-				    			<div class="radio">
-								  <label>
-								    <input type="radio" name="sucursal" value="2">
-								    Charata
-								  </label>
-								</div>
-					    		</li>
-					    		<li>
-				    			<div class="radio">
-								  <label>
-								    <input type="radio" name="sucursal" value="3">
-								    Resistencia
-								  </label>
-								</div>
-					    		</li>
+					    		@endforeach
 					    	</ul>
 						</div>
+						</div>
 						<div class="form-group">
-							<label>Modelo</label>
+							<label class="control-label col-lg-3">Tipo de Servicio</label>
+							<div class="col-lg-9">
+								
+							<select name="tipo_de_servicio" required="" class="form-control">
+								@foreach($servicios as $servicio)
+								<option value="{{ $servicio->id }}" selected="">{{ $servicio->nombre }}</option>
+								@endforeach
+							</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-lg-3">Modelo</label>
+							<div class="col-lg-9">
 							<select name="modelo" required="" class="form-control">
 								<option value="0" selected="">Hilux (4x2)</option>
-								<option value="1">Hilux (4x4 / SW4)</option>
+								<option value="1" >Hilux (4x4 / SW4)</option>
 								<option value="2">Hilux (automática)</option>
 								<option value="3">SW4 (automática)</option>
 								<option value="4">Corolla (Manual)</option>
@@ -92,19 +96,24 @@
 								<option value="16">Coupe 86 (Automático)</option>
 								<option value="17">Otros</option>
 							</select>
+							</div>
 						</div>
 						<div class="form-group">
-						    <label class="control-label">Dominio</label>
-						    <div class="">
-						      <input type="text" name="dominio" class="form-control"  placeholder="">
+						    <label class="control-label col-lg-3">Dominio</label>
+						    <div class="col-lg-9">
+						      <input type="text" name="dominio" class="form-control" value="{{ old('dominio') }}" required>
 						    </div>
 					  	</div>
 						<div class="form-group">
-							<label>Comentarios</label>
-							<textarea class="form-control" name="comentario"></textarea>
+							<label class="control-label col-lg-3">Comentarios</label>
+							<div class="col-lg-9">
+							<textarea class="form-control" name="comentario">{{ old('comentario') }}</textarea>
+							</div>
 					  	</div>
 					  	<div class="form-group text-right">
+					  		<div class="col-lg-12">
 					  		<button type="submit" class="btn btn-default">Enviar</button>
+					  		</div>
 					  	</div>
 					</form>
 					</div>

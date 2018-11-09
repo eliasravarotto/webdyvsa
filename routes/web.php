@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test', function () {
+    return view('test');
+});
 
 // Route::get('/home', function () {
 //     return view('home');
@@ -38,6 +41,9 @@ Route::get('admin/modelos/{id}/edit/slider','ModelosController@editSlider');
 Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
 Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
 Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
+Route::get('admin/turno-servicios','TurnoServicioController@index');
+Route::resource('admin/usados','UsadoController');
+Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria');
 
 
 Route::get('/home','FrontController@home');
@@ -51,4 +57,5 @@ Route::get('/modelo','FrontController@getModelos');
 Route::get('/usados','FrontController@usadosIndex');
 Route::get('/usados/{id}','FrontController@usadosShow');
 Route::post('/consultar/usado/{id}','FrontController@consultaUsado');
-Route::get('/turno-servicio','TurnoServicioController@create');
+Route::get('/turno-servicios/create','TurnoServicioController@create');
+Route::post('/turno-servicios','TurnoServicioController@store');

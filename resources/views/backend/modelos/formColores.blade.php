@@ -96,7 +96,7 @@
                       <div class="col-6">
                         <div class="input-group">
                           <input name="img_colores[]" type="file" class="form-control" style="height: 39px;">
-                          <a href="#" class="btn btn-danger" onclick="removeField(${this.index})"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                          <a href="#" class="btn btn-danger" onclick="removeField(event,${this.index})"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </div>
                       </div>
                     </div>`

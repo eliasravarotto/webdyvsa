@@ -44136,9 +44136,7 @@ var render = function() {
                     _vm._v(" "),
                     _vm._m(5),
                     _vm._v(" "),
-                    _vm._m(6),
-                    _vm._v(" "),
-                    _vm._m(7)
+                    _vm._m(6)
                   ]
                 )
               ]
@@ -44198,7 +44196,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("PLAN DE AHORRO")])
+      _c("a", { attrs: { href: "/plan-de-ahorro" } }, [
+        _vm._v("PLAN DE AHORRO")
+      ])
     ])
   },
   function() {
@@ -44206,7 +44206,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("FINANCIACION")])
+      _c("a", { attrs: { href: "/financiacion" } }, [_vm._v("FINANCIACION")])
     ])
   },
   function() {
@@ -44238,43 +44238,22 @@ var staticRenderFns = [
       ),
       _vm._v(" "),
       _c("ul", { staticClass: "dropdown-menu dropdown-hover" }, [
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Servicios")])]),
+        _c("li", [
+          _c("a", { attrs: { href: "/accesorios" } }, [_vm._v("Accesorios")])
+        ]),
         _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Accesorios")])]),
+        _c("li", [
+          _c("a", { attrs: { href: "/posventa" } }, [
+            _vm._v("Servicios Posventa")
+          ])
+        ]),
         _vm._v(" "),
         _c("li", { staticClass: "divider", attrs: { role: "separator" } }),
         _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "/posventa" } }, [_vm._v("Link")])])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown dropdown-hover" }, [
-      _c(
-        "a",
-        {
-          staticClass: "dropdown-toggle",
-          attrs: {
-            href: "#",
-            "data-toggle": "dropdown",
-            role: "button",
-            "aria-haspopup": "true",
-            "aria-expanded": "false"
-          }
-        },
-        [_vm._v("NOSOTROS "), _c("span", { staticClass: "caret" })]
-      ),
-      _vm._v(" "),
-      _c("ul", { staticClass: "dropdown-menu dropdown-hover" }, [
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("La Empresa")])]),
-        _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Historia")])]),
-        _vm._v(" "),
         _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Misión-Visión-Valores")])
+          _c("a", { attrs: { href: "/turno-servicios/create" } }, [
+            _vm._v("Turnos ONLINE")
+          ])
         ])
       ])
     ])
@@ -44751,7 +44730,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12 text-center" }, [
+          _c("div", { staticClass: "col-md-12 text-center text-uppercase" }, [
             _c("h3", [_vm._v(_vm._s(_vm.modelo.slogan))])
           ])
         ]),
@@ -44799,7 +44778,7 @@ var render = function() {
               _c("br"),
               _vm._v(" "),
               _c("p", { staticClass: "text-justify" }, [
-                _vm._v(_vm._s(_vm.modelo.descriptcion))
+                _vm._v(_vm._s(_vm.modelo.descripcion))
               ]),
               _vm._v(" "),
               _c("br"),
@@ -45385,12 +45364,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
     data: function data() {
         return {
-            unidades: [{ id: '1', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'rojo', url_imagen: 'imagenes/usados/corolla.jpg', tipo: 'auto' }, { id: '2', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'rojo', url_imagen: 'imagenes/usados/hilux.jpg', tipo: 'camioneta' }, { id: '3', marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2016', km: '50.000', color: 'negro', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }, { id: '4', marca: 'renault', modelo: 'Logan', version: 'Lg', año: '2016', km: '50.000', color: 'negro', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }, { id: '5', marca: 'Chevrolet', modelo: 'Corsa', version: 'cls', año: '2016', km: '50.000', color: 'gris', url_imagen: 'imagenes/usados/rav.jpg', tipo: 'auto' }],
+            unidades: '',
             usadoSelected: '',
             nombre: '',
             telefono: '',
@@ -45398,7 +45378,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             mensaje: ''
         };
     },
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        //this.getUnidades();
+        this.unidades = this.data.unidades;
+    },
 
     methods: {
         openModalContacto: function openModalContacto(unidad) {
@@ -45453,104 +45436,120 @@ var render = function() {
                 " col-md-4 col-sm-12 col-xs-12 portfolio all thumbnail thumbnail-no-bg " +
                 unidad.color +
                 " " +
-                unidad.marca +
-                " " +
-                unidad.tipo,
+                unidad.marca,
               attrs: { "data-cat": "logo" }
             },
             [
-              _c("div", { staticClass: "portfolio-wrapper" }, [
-                _c("img", { attrs: { src: unidad.url_imagen, alt: "" } }),
-                _vm._v(" "),
-                _vm._m(1, true)
+              _c("a", { attrs: { href: "/usados/" + unidad.id } }, [
+                _c("div", { staticClass: "portfolio-wrapper" }, [
+                  _c("img", { attrs: { src: unidad.foto, alt: "" } }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "label" }, [
+                    _c("div", { staticClass: "label-text" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-danger text-uppercase",
+                          attrs: { href: "/usados/" + unidad.id }
+                        },
+                        [_vm._v("Detalles")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "label-bg" })
+                  ])
+                ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "caption caption-default" }, [
-                _c("h3", [
-                  _vm._v(
-                    _vm._s(unidad.marca) + " " + _vm._s(unidad.version) + " "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("hr", {
-                  staticStyle: { "margin-top": "10px", "margin-bottom": "10px" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
+              _c(
+                "div",
+                { staticClass: "caption caption-default text-uppercase" },
+                [
+                  _c("h3", [
+                    _vm._v(
+                      _vm._s(unidad.marca) + " " + _vm._s(unidad.modelo) + " "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("hr", {
                     staticStyle: {
-                      display: "flex",
-                      "justify-content": "space-around"
+                      "margin-top": "10px",
+                      "margin-bottom": "10px"
                     }
-                  },
-                  [
-                    _c("div", [
-                      _vm._m(2, true),
-                      _vm._v(
-                        " " +
-                          _vm._s(unidad.año) +
-                          "\n                               "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _vm._m(3, true),
-                      _vm._v(
-                        " " +
-                          _vm._s(unidad.km) +
-                          "\n                               "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _vm._m(4, true),
-                      _vm._v(
-                        " " +
-                          _vm._s(unidad.color) +
-                          "\n                               "
-                      )
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticStyle: {
-                      display: "flex",
-                      "justify-content": "flex-start",
-                      "align-items": "center"
-                    }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-danger",
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            _vm.openModalContacto(unidad)
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticStyle: {
+                        display: "flex",
+                        "justify-content": "space-around"
+                      }
+                    },
+                    [
+                      _c("div", [
+                        _vm._m(1, true),
+                        _vm._v(
+                          " " +
+                            _vm._s(unidad.anio) +
+                            "\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _vm._m(2, true),
+                        _vm._v(
+                          " " + _vm._s(unidad.km) + "\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _vm._m(3, true),
+                        _vm._v(
+                          " " +
+                            _vm._s(unidad.color) +
+                            "\n                        "
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticStyle: {
+                        display: "flex",
+                        "justify-content": "flex-start",
+                        "align-items": "center"
+                      }
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-danger text-uppercase",
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              _vm.openModalContacto(unidad)
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("Consultar")]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(5, true)
-                  ]
-                )
-              ])
+                        },
+                        [_vm._v("Consultar")]
+                      )
+                    ]
+                  )
+                ]
+              )
             ]
           )
         })
       )
     ]),
     _vm._v(" "),
-    _vm._m(6),
+    _vm._m(4),
     _vm._v(" "),
     _c(
       "div",
@@ -45569,12 +45568,12 @@ var render = function() {
           { staticClass: "modal-dialog modal-lg", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(7),
+              _vm._m(5),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
-                _c("h4", { staticClass: "text-center" }, [
+                _c("h4", { staticClass: "text-center text-uppercase" }, [
                   _vm._v(
-                    "\n                       " +
+                    "\n                " +
                       _vm._s(_vm.usadoSelected.marca) +
                       " - " +
                       _vm._s(_vm.usadoSelected.modelo) +
@@ -45582,7 +45581,7 @@ var render = function() {
                       _vm._s(_vm.usadoSelected.año) +
                       " - " +
                       _vm._s(_vm.usadoSelected.color) +
-                      "\n                   "
+                      "\n            "
                   )
                 ]),
                 _vm._v(" "),
@@ -45648,7 +45647,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6 col-xs-12 col-sm-12" }, [
                       _c("label", [_vm._v("Email")]),
-                      _vm._v(" (opcional)\n                               "),
+                      _vm._v(" (opcional)\n                        "),
                       _c("input", {
                         directives: [
                           {
@@ -45699,7 +45698,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _vm._m(8)
+                _vm._m(6)
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-footer" }, [
@@ -45709,13 +45708,13 @@ var render = function() {
                     staticClass: "btn btn-default",
                     attrs: { type: "button", "data-dismiss": "modal" }
                   },
-                  [_vm._v("Cerrar")]
+                  [_vm._v("CERRAR")]
                 ),
                 _vm._v(" "),
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-primary",
+                    staticClass: "btn btn-danger",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -45723,7 +45722,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Enviar")]
+                  [_vm._v("ENVIAR")]
                 )
               ])
             ])
@@ -45769,7 +45768,7 @@ var staticRenderFns = [
         _c("li", [
           _c(
             "span",
-            { staticClass: "filter", attrs: { "data-filter": ".toyota" } },
+            { staticClass: "filter", attrs: { "data-filter": ".Toyota" } },
             [_vm._v("Toyota")]
           )
         ]),
@@ -45793,26 +45792,12 @@ var staticRenderFns = [
         _c("li", [
           _c(
             "span",
-            { staticClass: "filter", attrs: { "data-filter": ".gris" } },
+            { staticClass: "filter", attrs: { "data-filter": ".Gris Oscuro" } },
             [_vm._v("Gris")]
           )
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "label" }, [
-      _c("div", { staticClass: "label-text" }, [
-        _c("a", { staticClass: "text-title" }, [_vm._v("Camera")]),
-        _vm._v(" "),
-        _c("span", { staticClass: "text-category" }, [_vm._v("Logo")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "label-bg" })
-    ])
   },
   function() {
     var _vm = this
@@ -45849,38 +45834,6 @@ var staticRenderFns = [
       }),
       _vm._v(" Color:")
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "fb-share-button",
-        staticStyle: { "margin-left": "10px" },
-        attrs: {
-          "data-href": "https://developers.facebook.com/docs/plugins/",
-          "data-layout": "button",
-          "data-size": "small",
-          "data-mobile-iframe": "true"
-        }
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass: "fb-xfbml-parse-ignore",
-            attrs: {
-              target: "_blank",
-              href:
-                "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&src=sdkpreparse"
-            }
-          },
-          [_vm._v("Compartir")]
-        )
-      ]
-    )
   },
   function() {
     var _vm = this
@@ -46037,7 +45990,13 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "alert alert-info", attrs: { role: "alert" } },
-      [_c("p", [_vm._v("Estaremos en contacto a la brevedad.")])]
+      [
+        _c("p", [
+          _vm._v(
+            "Al enviar el formulario un asesor se pondrá en contacto con usted a la brevedad."
+          )
+        ])
+      ]
     )
   }
 ]
@@ -46147,8 +46106,11 @@ exports.push([module.i, "\n.hide-bullets {\nlist-style:none;\nmargin-left: -40px
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46281,24 +46243,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
     data: function data() {
-        var _ref;
-
         return {
-            unidad: { marca: 'TOYOTA', modelo: 'COROLLA', version: 'XEI', año: '2015', km: '25.000', color: 'negro',
-                imagenes: [(_ref = {
-                    url: ''
-                }, _defineProperty(_ref, 'url', ''), _defineProperty(_ref, 'url', ''), _defineProperty(_ref, 'url', ''), _ref)]
+            unidad: '',
+            imagenes: '',
+            form: {
+                nombre: '',
+                email: '',
+                telefono: '',
+                mensaje: ''
             }
         };
     },
     mounted: function mounted() {
         this.initJS();
+        this.unidad = this.data.unidad;
+        this.imagenes = this.data.imagenes;
     },
 
     methods: {
         openModalContacto: function openModalContacto(unidad) {
             $('#contacto').modal('toggle');
             this.dataModalContacto = unidad;
+        },
+        showImage: function showImage(img) {
+            // Get the modal
+            var modal = document.getElementById('moda_show_imagen');
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            //var img = document.getElementById('myImg');
+            var modalImg = document.getElementById("img01");
+            modalImg.src = img.url;
+            modal.style.display = "flex";
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close-on-click")[0];
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                $("#moda_show_imagen").fadeOut();
+            };
         },
         initJS: function initJS() {
             //SRC https://bootsnipp.com/snippets/featured/carousel-extended-320-compatible
@@ -46319,6 +46299,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             //          var id = $('.item.active').data('slide-number');
             //         $('#carousel-text').html($('#slide-content-'+id).html());
             // });
+        },
+        enviarConsulta: function enviarConsulta() {
+            axios.post('/consultar/usado/' + this.unidad.id, {
+                nombre: this.form.nombre,
+                telefono: this.form.telefono,
+                email: this.form.email,
+                mensaje: this.form.mensaje,
+                marca: this.unidad.marca,
+                modelo: this.unidad.modelo
+            }).then(function (response) {
+                console.log(response);
+                this.form.nombre = '';
+                this.form.telefono = '';
+                this.form.email = '';
+                this.form.mensaje = '';
+            }).catch(function (error) {
+                console.log(error);
+            });
         }
     }
 });
@@ -46335,19 +46333,49 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-xs-12", attrs: { id: "slider" } }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(0),
+          _c(
+            "div",
+            { staticClass: "col-sm-7", attrs: { id: "carousel-bounding-box" } },
+            [
+              _c(
+                "div",
+                { staticClass: "carousel slide", attrs: { id: "myCarousel" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "carousel-inner" },
+                    _vm._l(_vm.imagenes, function(imagen, index) {
+                      return _c(
+                        "div",
+                        {
+                          class: index == 0 ? "active item" : "item",
+                          attrs: { "data-slide-number": index }
+                        },
+                        [_c("img", { attrs: { src: imagen.url } })]
+                      )
+                    })
+                  ),
+                  _vm._v(" "),
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ]
+              )
+            ]
+          ),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-sm-4", attrs: { id: "carousel-text" } },
+            { staticClass: "col-sm-5", attrs: { id: "carousel-text" } },
             [
               _c("div", [
                 _c(
                   "label",
                   {
+                    staticClass: "text-uppercase",
                     staticStyle: {
                       "font-family": "ToyotaFont",
-                      "font-size": "20px",
+                      "font-size": "25px",
                       color: "#404048"
                     }
                   },
@@ -46370,21 +46398,22 @@ var render = function() {
                 {
                   staticStyle: {
                     display: "flex",
-                    "justify-content": "space-between"
+                    "justify-content": "space-between",
+                    "font-size": "18px"
                   }
                 },
                 [
                   _c("div", [
-                    _vm._m(1),
+                    _vm._m(2),
                     _vm._v(
                       " " +
-                        _vm._s(_vm.unidad.año) +
+                        _vm._s(_vm.unidad.anio) +
                         "\n                            "
                     )
                   ]),
                   _vm._v(" "),
                   _c("div", [
-                    _vm._m(2),
+                    _vm._m(3),
                     _vm._v(
                       " " +
                         _vm._s(_vm.unidad.km) +
@@ -46393,7 +46422,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", [
-                    _vm._m(3),
+                    _vm._m(4),
                     _vm._v(
                       " " +
                         _vm._s(_vm.unidad.color) +
@@ -46403,7 +46432,9 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(4),
+              _c("div", { staticClass: "well text-justify" }, [
+                _c("p", [_vm._v(_vm._s(_vm.unidad.descripcion))])
+              ]),
               _vm._v(" "),
               _c(
                 "a",
@@ -46419,11 +46450,196 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row hidden-xs", attrs: { id: "slider-thumbs" } },
+      [
+        _c(
+          "ul",
+          {
+            staticClass: "hide-bullets",
+            staticStyle: { display: "flex", "justify-content": "center" }
+          },
+          _vm._l(_vm.imagenes, function(imagen, index) {
+            return _c("li", { staticClass: "col-sm-2" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "thumbnail hand",
+                  attrs: { id: "carousel-selector-" + index }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: imagen.url },
+                    on: {
+                      click: function($event) {
+                        _vm.showImage(imagen)
+                      }
+                    }
+                  })
+                ]
+              )
+            ])
+          })
+        )
+      ]
+    ),
+    _vm._v(" "),
     _vm._m(5),
     _vm._v(" "),
     _c("div", { staticClass: "row arrow_box" }),
     _vm._v(" "),
-    _vm._m(6)
+    _c("div", { staticClass: "row", staticStyle: { "margin-top": "100px" } }, [
+      _c("div", { staticClass: "col-md-6 col-sm-12 col-xs-12 well" }, [
+        _c("h3", { staticClass: "text-center" }, [
+          _vm._v("Consultar por "),
+          _c("span", { staticClass: "text-uppercase" }, [
+            _vm._v(
+              _vm._s(_vm.unidad.marca) +
+                " " +
+                _vm._s(_vm.unidad.modelo) +
+                " " +
+                _vm._s(_vm.unidad.color)
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("form", [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-xs-12 col-sm-12" }, [
+              _c("label", [_vm._v("Nombre")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.nombre,
+                    expression: "form.nombre"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", name: "nombre" },
+                domProps: { value: _vm.form.nombre },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "nombre", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6 col-xs-12 col-sm-12" }, [
+              _c("label", [_vm._v("Teléfono")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.telefono,
+                    expression: "form.telefono"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "email", name: "telefono" },
+                domProps: { value: _vm.form.telefono },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "telefono", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6 col-xs-12 col-sm-12" }, [
+              _c("label", [_vm._v("Email")]),
+              _vm._v(" (opcional)\n                            "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.email,
+                    expression: "form.email"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "email", name: "email" },
+                domProps: { value: _vm.form.email },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "email", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 col-xs-12 col-sm-12" }, [
+              _c("label", [_vm._v("Mensaje")]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.mensaje,
+                    expression: "form.mensaje"
+                  }
+                ],
+                staticClass: "form-control",
+                domProps: { value: _vm.form.mensaje },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "mensaje", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row", staticStyle: { "margin-top": "20px" } },
+            [
+              _c("div", { staticClass: "col-md-12 col-xs-12 col-sm-12" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.enviarConsulta()
+                      }
+                    }
+                  },
+                  [_vm._v("ENVIAR")]
+                )
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(6)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -46432,82 +46648,25 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "col-sm-8", attrs: { id: "carousel-bounding-box" } },
-      [
-        _c(
-          "div",
-          { staticClass: "carousel slide", attrs: { id: "myCarousel" } },
-          [
-            _c("div", { staticClass: "carousel-inner" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "active item",
-                  attrs: { "data-slide-number": "0" }
-                },
-                [_c("img", { attrs: { src: "/imagenes/usados/camry/1.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "item", attrs: { "data-slide-number": "1" } },
-                [_c("img", { attrs: { src: "/imagenes/usados/camry/10.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "item", attrs: { "data-slide-number": "2" } },
-                [_c("img", { attrs: { src: "/imagenes/usados/camry/11.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "item", attrs: { "data-slide-number": "3" } },
-                [_c("img", { attrs: { src: "/imagenes/usados/camry/12.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "item", attrs: { "data-slide-number": "4" } },
-                [_c("img", { attrs: { src: "/imagenes/usados/camry/13.jpg" } })]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "item", attrs: { "data-slide-number": "5" } },
-                [_c("img", { attrs: { src: "/imagenes/usados/camry/5.jpg" } })]
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "left carousel-control",
-                attrs: {
-                  href: "#myCarousel",
-                  role: "button",
-                  "data-slide": "prev"
-                }
-              },
-              [_c("span", { staticClass: "glyphicon glyphicon-chevron-left" })]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "right carousel-control",
-                attrs: {
-                  href: "#myCarousel",
-                  role: "button",
-                  "data-slide": "next"
-                }
-              },
-              [_c("span", { staticClass: "glyphicon glyphicon-chevron-right" })]
-            )
-          ]
-        )
-      ]
+      "a",
+      {
+        staticClass: "left carousel-control",
+        attrs: { href: "#myCarousel", role: "button", "data-slide": "prev" }
+      },
+      [_c("span", { staticClass: "glyphicon glyphicon-chevron-left" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "right carousel-control",
+        attrs: { href: "#myCarousel", role: "button", "data-slide": "next" }
+      },
+      [_c("span", { staticClass: "glyphicon glyphicon-chevron-right" })]
     )
   },
   function() {
@@ -46550,89 +46709,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "well text-justify" }, [
-      _c("p", [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                        \ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                        \tquis nostrud exercitation ullamco laboris nisi ut aliquip ex."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "row hidden-xs", attrs: { id: "slider-thumbs" } },
+      { staticClass: "modal-img", attrs: { id: "moda_show_imagen" } },
       [
-        _c("ul", { staticClass: "hide-bullets" }, [
-          _c("li", { staticClass: "col-sm-2" }, [
-            _c(
-              "a",
-              {
-                staticClass: "thumbnail",
-                attrs: { id: "carousel-selector-0" }
-              },
-              [_c("img", { attrs: { src: "/imagenes/usados/camry/1.jpg" } })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "col-sm-2" }, [
-            _c(
-              "a",
-              {
-                staticClass: "thumbnail",
-                attrs: { id: "carousel-selector-1" }
-              },
-              [_c("img", { attrs: { src: "/imagenes/usados/camry/10.jpg" } })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "col-sm-2" }, [
-            _c(
-              "a",
-              {
-                staticClass: "thumbnail",
-                attrs: { id: "carousel-selector-2" }
-              },
-              [_c("img", { attrs: { src: "/imagenes/usados/camry/11.jpg" } })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "col-sm-2" }, [
-            _c(
-              "a",
-              {
-                staticClass: "thumbnail",
-                attrs: { id: "carousel-selector-3" }
-              },
-              [_c("img", { attrs: { src: "/imagenes/usados/camry/12.jpg" } })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "col-sm-2" }, [
-            _c(
-              "a",
-              {
-                staticClass: "thumbnail",
-                attrs: { id: "carousel-selector-4" }
-              },
-              [_c("img", { attrs: { src: "/imagenes/usados/camry/13.jpg" } })]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "col-sm-2" }, [
-            _c(
-              "a",
-              {
-                staticClass: "thumbnail",
-                attrs: { id: "carousel-selector-5" }
-              },
-              [_c("img", { attrs: { src: "/imagenes/usados/camry/5.jpg" } })]
-            )
-          ])
-        ])
+        _c("span", { staticClass: "close-on-click" }, [_vm._v("×")]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "modal-content",
+          attrs: { id: "img01", src: "#" }
+        })
       ]
     )
   },
@@ -46640,39 +46726,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mar-top" }, [
-      _c("div", { staticClass: "col-md-7 col-xs-12 col-sm-12" }, [
-        _c("h2", [_vm._v("CONSULTAR")]),
-        _vm._v(" "),
-        _c("form", [
-          _c("label", [_vm._v("Email o Telefono")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "" }
-          }),
-          _vm._v(" "),
-          _c("label", [_vm._v("Mensaje")]),
-          _vm._v(" "),
-          _c("textarea", { staticClass: "form-control" })
+    return _c("div", { staticClass: "col-md-6 col-sm-12 col-xs-12" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-9 col-sm-9 col-xs-9" }, [
+          _c("div", { staticClass: "text-right" }, [
+            _c(
+              "p",
+              { staticStyle: { "font-size": "20px", "font-weight": "bold" } },
+              [_vm._v("También podes enviarnos tu consulta vía Whatsapp")]
+            ),
+            _vm._v(" "),
+            _c("b", { staticStyle: { "font-size": "25px" } }, [
+              _vm._v("3625-123456")
+            ])
+          ])
         ]),
         _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "alert alert-info", attrs: { role: "alert" } },
-          [_c("p", [_vm._v("Estaremos en contacto a la brevedad.")])]
-        ),
-        _vm._v(" "),
-        _c("div", [
-          _c("a", { staticClass: "btn btn-default", attrs: { href: "" } }, [
-            _vm._v("Enviar")
+        _c("div", { staticClass: "col-md-3 col-sm-3 col-xs-3" }, [
+          _c("div", [
+            _c("img", {
+              staticStyle: { height: "75px" },
+              attrs: { src: "/imagenes/icons/whatsapp-icon.png" }
+            })
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5 col-xs-12 col-sm-12" })
+      ])
     ])
   }
 ]

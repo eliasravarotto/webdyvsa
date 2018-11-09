@@ -29,18 +29,34 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
-    
+    <style type="text/css">
+        .absolute{
+            position: absolute;
+        }
+        .circle{
+            border-radius: 50%;
+        }
+        .bg-white{
+            background-color: white;
+        }
+        .thumbnail{
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                -webkit-transition: border .2s ease-in-out;
+                -o-transition: border .2s ease-in-out;
+                transition: border .2s ease-in-out;
+        }
+        label{
+            font-weight: bold;
+        }
+    </style>
 
 
 </head>
 <body>
-
-
-        <!-- Left Panel -->
-
+    <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
-
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
@@ -52,22 +68,25 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="/admin"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li>
                         <a href="/home"> <i class="menu-icon fa fa-home" aria-hidden="true"></i>DyVSA Web </a>
                     </li>
                     <h3 class="menu-title">PAGINAS</h3><!-- /.menu-title -->
                     <li class="">
-                        <a href="/admin/modelos" class="dropdown-toggle"><i class="menu-icon fa fa-car" aria-hidden="true"></i>  Modelos</a>
+                        <a href="/admin/modelos" class="dropdown-toggle"><i class="menu-icon fa fa-car"></i>  Modelos</a>
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon ti-email"></i>Home </a>
+                        <a href="/admin/usados"><i class="menu-icon fa fa-car"></i>Usados </a>
+                    </li>
+                    <h3 class="menu-title">Emails</h3>
+                    <li>
+                        <a href="/admin/turno-servicios"> <i class="menu-icon ti-email"></i>Solicitud de Turnos </a>
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon ti-email"></i>Posventa </a>
+                        <a href="#"> <i class="menu-icon ti-email"></i>Consulta de Usados </a>
                     </li>
-
                     <h3 class="menu-title">Datos Empresa</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
@@ -286,6 +305,7 @@
     <script src="/sfee_admin/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
     <script src="/sfee_admin/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.11/sweetalert2.all.min.js"></script>
     @yield('script')
     
 

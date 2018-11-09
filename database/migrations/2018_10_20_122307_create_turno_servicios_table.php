@@ -16,15 +16,18 @@ class CreateTurnoServiciosTable extends Migration
         Schema::create('turno_servicios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('cliente');
-            $table->integer('telefono');
+            $table->string('telefono');
             $table->string('email');
             $table->date('fecha');
             $table->string('modelo');
             $table->string('dominio');
             $table->string('comentario');
 
-            $table->integer('sucursal')->unsigned();
+            $table->integer('sucursal_id')->unsigned();
             $table->foreign('sucursal_id')->references('id')->on('sucursales');
+
+            $table->integer('servicio_id')->unsigned();
+            $table->foreign('servicio_id')->references('id')->on('tipo_servicios');
             $table->timestamps();
         });
     }

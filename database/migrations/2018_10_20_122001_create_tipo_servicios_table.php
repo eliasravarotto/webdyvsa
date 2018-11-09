@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSucursalsTable extends Migration
+class CreateTipoServiciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class CreateSucursalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sucursales', function (Blueprint $table) {
+        Schema::create('tipo_servicios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('localidad');
-            $table->string('direccion');
-            $table->string('telefono');
-            $table->string('email');
-            $table->string('map_lat');
-            $table->string('map_lng');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ class CreateSucursalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sucursals');
+        Schema::dropIfExists('tipo_servicios');
     }
 }

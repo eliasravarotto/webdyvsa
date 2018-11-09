@@ -19,8 +19,11 @@
 	<label style="font-weight: bold;">Nomnbre:</label> {{ $data->nombre }} <br>
 	<label style="font-weight: bold;">Telefono:</label> {{ $data->telefono }} <br>
 	<label style="font-weight: bold;">Email:</label> {{ $data->email }} <br>
-	<label style="font-weight: bold;">Unidad:</label> {{ $data->marca }} {{ $data->modelo }}<h4>Mensaje</h4>			
-	<p>{{$data->mensaje}}</p>
+	<label style="font-weight: bold;">Unidad:</label> {{ $data->marca }} {{ $data->modelo }}
+	<h4>Mensaje</h4>			
+	<div class="well">
+		<p>{{$data->mensaje}}</p>
+	</div>
 </div>
 </body>
 </html>

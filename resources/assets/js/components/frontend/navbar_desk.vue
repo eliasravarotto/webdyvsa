@@ -20,26 +20,26 @@
 	                    </li>
 	                  </ul>
 	                </li>
-	                <li><a href="#">PLAN DE AHORRO</a></li>
-	                <li><a href="#">FINANCIACION</a></li>
+	                <li><a href="/plan-de-ahorro">PLAN DE AHORRO</a></li>
+	                <li><a href="/financiacion">FINANCIACION</a></li>
 	                <li><a href="/usados">USADOS</a></li>
 	                <li class="dropdown dropdown-hover">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">POSVENTA <span class="caret"></span></a>
 	                  <ul class="dropdown-menu dropdown-hover">
-	                    <li><a href="#">Servicios</a></li>
-	                    <li><a href="#">Accesorios</a></li>
+	                    <li><a href="/accesorios">Accesorios</a></li>
+	                    <li><a href="/posventa">Servicios Posventa</a></li>
 	                    <li role="separator" class="divider"></li>
-	                    <li><a href="/posventa">Link</a></li>
+	                    <li><a href="/turno-servicios/create">Turnos ONLINE</a></li>
 	                  </ul>
 	                </li>
-	                <li class="dropdown dropdown-hover">
+	                <!-- <li class="dropdown dropdown-hover">
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NOSOTROS <span class="caret"></span></a>
 	                  <ul class="dropdown-menu dropdown-hover">
 	                    <li><a href="#">La Empresa</a></li>
 	                    <li><a href="#">Historia</a></li>
 	                    <li><a href="#">Misión-Visión-Valores</a></li>
 	                  </ul>
-	                </li>
+	                </li> -->
 	                <li class=""><a href="#">CONTACTO</a></li>
 	              </ul>
 	            </div><!-- /.navbar-collapse -->

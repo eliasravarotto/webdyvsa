@@ -12,6 +12,12 @@
 
   </head>
   <body>
+    @if (session('status'))
+      <div class="alert alert-warning alert-dismissible toast" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('status') }}
+      </div>
+    @endif
 
     @yield('content')
 

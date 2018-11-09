@@ -25,7 +25,7 @@
 }
 
 
-.btn {
+/*.btn {
   text-transform: uppercase;
   letter-spacing: 2px;
   -webkit-transition: 0.3s;
@@ -50,7 +50,7 @@
 .btn.btn-default:hover, .btn.btn-default:focus, .btn.btn-default:active {
   border-color: transparent;
 }
-
+*/
 
 #filters {
   padding: 0;
@@ -131,7 +131,8 @@
 }
 
 .portfolio .label-bg {
-  background: #A7CDCC;
+  /*background: #A7CDCC;*/
+  background: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   position: absolute;

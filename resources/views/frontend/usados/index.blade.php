@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class="container">
-				<index-usados></index-usados>
+				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 			</div>
 		</section>
 	</article> 

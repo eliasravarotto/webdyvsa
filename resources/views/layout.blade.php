@@ -2,16 +2,57 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WebDyVSA</title>
+    <title>Derka y Vargas Concesionario Oficial TOYOTA</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
+    <meta name="keywords" content="Derka y Vargas, Toyota, Chaco, Hilux, Corolla, Etios, Yaris, SW4, Camry, Prius, RAV4, Land Cruiser, Prado">
+    <link rel="shortcut icon" href="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+ 
     @yield('styles_sheets')
 </head>
 
 <style type="text/css">
+
+.sticky-links ul {
+    background-color: #e01e37;
+    padding: 10px 8px;
+    position: fixed;
+    z-index: 99999;
+    right: 10px;
+    top: calc(50% - 100px);
+    border-radius: 50px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.testDrive {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 9;
+    left: -90px;
+    width: 180px;
+    opacity: 0;
+    transition: all .6s;
+    font-family: toyotaDisplay, Verdana, Helvetica, Arial, sans-serif;
+}
+
+.sticky-links ul li a img {
+    width: 42px;
+    margin-bottom: 10px;
+}
+
+
+
+
   .logos-content > div > img{
     padding: 0px 15px 0px 15px;
   }
@@ -103,9 +144,9 @@
                 </li>
             </ul>
             <ul class="lista-redes-sociales list-unstyled hidden-sm hidden-xs" style="display: flex; align-items: center;">
-                <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/facebook.png"></a></li>
-                <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/instagram.png"></a></li>
-                <li><a href="#"><img style="height: 30px; width: 30px;" src="/imagenes/icons/twitter.png"></a></li>
+                <li><a href="https://www.facebook.com/derkayvargas/" target="_blank"><img style="height: 30px; width: 30px;" src="/imagenes/icons/facebook.png"></a></li>
+                <li><a href="https://www.instagram.com/derkayvargas/" target="_blank"><img style="height: 30px; width: 30px;" src="/imagenes/icons/instagram.png"></a></li>
+                <li><a href="https://twitter.com/derkayvargas?lang=es" target="_blank"><img style="height: 30px; width: 30px;" src="/imagenes/icons/twitter.png"></a></li>
             </ul>
         </div>
         <img src="{{ asset('/imagenes/logo-toyota.png') }}" style="height: 60px;">
@@ -122,15 +163,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          {{-- <a class="navbar-brand" href="#">Brand</a> --}}
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
+            <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Modelos</a></li>
+            <li><a href="#">Plan de Ahorro</a></li>
+            <li><a href="#">Financiación</a></li>
+            <li><a href="#">Usados</a></li>
+            <li><a href="#">Posventa</a></li>
+            <li><a href="#">Contacto</a></li>
+            {{-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -141,15 +187,15 @@
                 <li role="separator" class="divider"></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+            </li> --}}
           </ul>
-          <form class="navbar-form navbar-left">
+          {{-- <form class="navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
+          </form> --}}
+          {{-- <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -161,7 +207,7 @@
                 <li><a href="#">Separated link</a></li>
               </ul>
             </li>
-          </ul>
+          </ul> --}}
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
@@ -259,6 +305,7 @@
   <div id="fb-root"></div>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
   @yield('script')
 
   <script type="text/javascript">
@@ -294,6 +341,7 @@
         sr.reveal('.thumbnail-lighten', {duration: 1500});
 
     })(jQuery);
+    
   </script>
 
 </body>
