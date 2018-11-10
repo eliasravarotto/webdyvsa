@@ -17,6 +17,17 @@ footer{
   background-color: #635e5e;
 }
 
+.rotate-180 > img{
+   -webkit-transition: -webkit-transform .8s ;
+    -ms-transition: -ms-transform .8s ;
+    transition: transform .8s ;
+}
+.rotate-180:hover > img{
+    transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+}
+
 
 .features p{
   color: crimson;
@@ -97,6 +108,10 @@ footer{
   font-size: 25px;
 }
 
+.fs-20{
+  font-size: 20px;
+}
+
 .bold{
   font-weight: bold;
 }
@@ -110,6 +125,7 @@ $rojo-1: #d03554;
 $gris-toyota: #58595b;
 $gris: #58595b;
 $gris-1: #808080;
+$gris-2: #626262;
 
 .white{
   color: white !important;
@@ -120,6 +136,9 @@ $gris-1: #808080;
 
 .gray-1{
   color: #808080;
+}
+.gray-2{
+  color: $gris-2;
 }
 .red{
   color: #d71921;
@@ -136,6 +155,7 @@ $gris-1: #808080;
 .gray-toyota{
   color: $gris-toyota
 }
+
 
 
 
@@ -301,6 +321,33 @@ $gris-1: #808080;
 
 .thumbnail-financial .caption p{
   font-size: 17px;
+}
+
+.thumbnail-no-bg{
+  background-color: transparent;
+  transition: transform .3s;
+}
+
+
+
+.thumbnail-hover:hover{
+  transform: scale(1.05);
+  -webkit-box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
+box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
+}
+
+.thumbnail-hover:hover > .caption{
+  background-color: $gris-toyota;
+  transition: all .4s;
+
+  -webkit-box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
+box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
+}
+
+.thumbnail-hover:hover > .caption > p{
+  color: white;
 }
 
 .navbar{

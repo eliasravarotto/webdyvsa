@@ -16,7 +16,7 @@
 	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MODELOS <span class="caret"></span></a>
 	                  <ul class="dropdown-menu dropdown-hover">
 	                    <li v-for="modelo in modelos">
-	                    	<a v-bind:href="'/modelo/'+modelo.nombre">{{ modelo.nombre }}</a>
+	                    	<a class="text-uppercase" v-bind:href="'/modelo/'+modelo.nombre">{{ modelo.nombre }}</a>
 	                    </li>
 	                  </ul>
 	                </li>
@@ -72,7 +72,7 @@
         methods:{
             getModelos(){
             	axios
-		          	.get('/modelo')
+		          	.get('/modelos')
 		          	.then(response => (
 		                this.modelos = response.data
 	          		))

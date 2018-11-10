@@ -58,7 +58,7 @@ class FrontController extends Controller
         //return $imagenesSlider;
         //return $parallax;
         //$versiones =
-        return view('frontend.modelo', 
+        return view('frontend.modelos.show', 
                     compact('modelo',
                             'imagenesSlider', 
                             'imagenesColores', 
@@ -69,10 +69,16 @@ class FrontController extends Controller
         );
     }
 
-    public function getModelos()
+    public function getModelos(Request $request)
     {
         $modelos = Modelo::all();
-        return $modelos;
+        
+        if ($request->ajax()) {
+            return $modelos;
+        } else {
+            return view('frontend.modelos.index', compact('modelos'));
+        }
+
     }
 
 

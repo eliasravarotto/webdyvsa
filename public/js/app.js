@@ -44065,7 +44065,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getModelos: function getModelos() {
             var _this = this;
 
-            axios.get('/modelo').then(function (response) {
+            axios.get('/modelos').then(function (response) {
                 return _this.modelos = response.data;
             });
         }
@@ -44120,7 +44120,10 @@ var render = function() {
                           return _c("li", [
                             _c(
                               "a",
-                              { attrs: { href: "/modelo/" + modelo.nombre } },
+                              {
+                                staticClass: "text-uppercase",
+                                attrs: { href: "/modelo/" + modelo.nombre }
+                              },
                               [_vm._v(_vm._s(modelo.nombre))]
                             )
                           ])

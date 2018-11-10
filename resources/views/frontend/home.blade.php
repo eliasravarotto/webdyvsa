@@ -12,45 +12,44 @@
   <banner-ppal></banner-ppal>
 
   <!-- Section .. -->
-  <div class="container" style="padding-top: 35px; padding-bottom:  50px;">
+  <div class="container pad-top-bot-50">
+    <p class="text-center" style="font-size: 25px; color: #626262">MODELOS</p>
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <div class="thumbnail thumbnail-lighten thumbnail-no-border">
+        <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border rotate-180">
           <img src="/imagenes/hilux.png" alt="...">
           <div class="caption text-center">
             <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px">
             <hr>
-            <h4>La superación por encima del cambio</h4>
+            <h4 class="text-uppercase">La superación por encima del cambio</h4>
           </div>
-        </div>          
+        </a>          
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <div class="thumbnail thumbnail-lighten thumbnail-no-border">
+        <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border rotate-180">
           <img src="/imagenes/corolla.png" alt="...">
           <div class="caption text-center">
             <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;">
             <hr>
-            <h4>Seguí avanzando</h4>
+            <h4 class="text-uppercase">SEGUÍ AVANZANDO</h4>
           </div>
-        </div>          
+        </a>          
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <div class="thumbnail thumbnail-lighten thumbnail-no-border">
+        <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border rotate-180">
           <img src="/imagenes/etios.png" alt="...">
           <div class="caption text-center">
             <img src="/imagenes/modelos/etios/logo.png" style="height: 40px">
             <hr>
-            <h4>Mi primer Toyota</h4>
+            <h4 class="text-uppercase">Mi primer Toyota</h4>
           </div>
-        </div>          
+        </a>          
       </div>
     </div>
+    <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
   </div>
-
   <section class="pad-top-50 pad-bot-50" style="height: auto;">
       <div class="container">
-        {{-- <h2 class="text-center bold">Servicio al Cliente</h2> --}}
-        {{-- <h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3> --}}
         <div class="row" >
           <div class="col-md-4 col-sm-12">
             <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
