@@ -6,8 +6,8 @@
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
 
 	<article>
-		<section style="background: url('https://www.toyota.com.ar/usuarios/mant_express/img/botBg.jpg'); background-size: cover; background-repeat: no-repeat;">
-			<section style="background: rgba(240, 255, 255, 0.8)">
+		<section  class="pad-bot-25" style="background: url('/imagenes/fondo2.jpg'); background-size: cover; background-repeat: no-repeat;">
+			<section>
 				<div class="container">
 					@if (session('status'))
 						<div class="alert alert-warning alert-dismissible toast" role="alert">
@@ -18,7 +18,7 @@
 					{{-- <div class="row" style="margin-top: 30px; margin-bottom: 30px; border-radius: 5px;"> --}}
 					<div class="row">
 					<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
-						<h1 class="text-center">Solicitar Turno <br><small>Servicio de Atención al Cliente</small></h1>
+						<h1 class="text-center h1-titulo-form">SOLICITAR TURNO <br><small>Servicio de Atención al Cliente</small></h1>
 					<form class="form-horizontal" action="/turno-servicios" method="POST" role="form">
 					  {{ csrf_field() }}
 					  <div class="form-group">

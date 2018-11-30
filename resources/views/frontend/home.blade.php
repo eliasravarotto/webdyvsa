@@ -10,13 +10,31 @@
 
   <!-- Banner Principal -->
   <banner-ppal></banner-ppal>
+<div style="position: relative;">
+  <div>
+    <!-- The video -->
+    <video autoplay muted loop id="myVideo">
+      <source src="/imagenes/tc2019.mp4" type="video/mp4">
+    </video>
+
+    <!-- Optional: some overlay text to describe the video -->
+    <div class="content">
+      <h1>DERKA Y VARGAS <br>   <small>CONCECIONARIO OFICIAL TOYOTA</small></h1>
+      <h4>Acercate a conocer el nuevo TOYOTA COROLLA 2019</h4>
+      <button class="btn btn-toyota">CONOCELO</button>
+    </div>
+  </div>
+</div>
 
   <!-- Section .. -->
   <div class="container pad-top-bot-50">
+    <div class="tooltip" style="background-color: black">Hover over me
+      <span class="tooltiptext">Tooltip text</span>
+    </div>
     <p class="text-center" style="font-size: 25px; color: #626262">MODELOS</p>
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border rotate-180">
+        <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
           <img src="/imagenes/hilux.png" alt="...">
           <div class="caption text-center">
             <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px">
@@ -26,7 +44,7 @@
         </a>          
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border rotate-180">
+        <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border">
           <img src="/imagenes/corolla.png" alt="...">
           <div class="caption text-center">
             <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;">
@@ -36,7 +54,7 @@
         </a>          
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border rotate-180">
+        <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border">
           <img src="/imagenes/etios.png" alt="...">
           <div class="caption text-center">
             <img src="/imagenes/modelos/etios/logo.png" style="height: 40px">

@@ -21,36 +21,27 @@
 
 <style type="text/css">
 
-.sticky-links ul {
-    background-color: #e01e37;
-    padding: 10px 8px;
-    position: fixed;
-    z-index: 99999;
-    right: 10px;
-    top: calc(50% - 100px);
-    border-radius: 50px;
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+  .contact-details .media {
+    margin: 0 0 30px;
+}
+.contact-details .media .media-left {
+    padding-right: 25px;
 }
 
-.testDrive {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 9;
-    left: -90px;
-    width: 180px;
-    opacity: 0;
-    transition: all .6s;
-    font-family: toyotaDisplay, Verdana, Helvetica, Arial, sans-serif;
+.media-body, .media-left, .media-right {
+    display: table-cell;
+    vertical-align: top;
 }
-
-.sticky-links ul li a img {
-    width: 42px;
-    margin-bottom: 10px;
+.contact-details .media .media-left i {
+    width: 55px;
+    font-size: 24px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    color: #333;
+    border: 1px dashed #333;
 }
-
-
 
 
   .logos-content > div > img{
@@ -103,6 +94,44 @@
   padding: 0px 10px 0px 10px; 
 }
 
+
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    /*position: relative;*/
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    /*min-height: 100%;*/
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: absolute;
+    /*top: 0;*/
+    margin-top: -650px;
+    margin-left: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    /*width: 50%;*/
+    padding: 25px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
 </style>
 
 <body>
@@ -170,12 +199,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Modelos</a></li>
-            <li><a href="#">Plan de Ahorro</a></li>
-            <li><a href="#">Financiación</a></li>
-            <li><a href="#">Usados</a></li>
-            <li><a href="#">Posventa</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/modelos">Modelos</a></li>
+            <li><a href="/plan-de-ahorro">Plan de Ahorro</a></li>
+            <li><a href="/financiacion">Financiación</a></li>
+            <li><a href="/usados">Usados</a></li>
+            <li><a href="/posventa">Posventa</a></li>
+            <li><a href="/contacto">Contacto</a></li>
             {{-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -295,7 +324,6 @@
             <p class="text-center" style="font-size: 15px;color: white">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2018 - Todos los Derechos Reservados</p>
           </div>
         </div>
-
       </div>
     </footer>
 
@@ -306,11 +334,13 @@
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
   @yield('script')
 
   <script type="text/javascript">
     (function($) {
-
+        $('[data-toggle="tooltip"]').tooltip();   
+        
         var $animation_elements = $('.et-waypoint'),
             $window = $(window);
      

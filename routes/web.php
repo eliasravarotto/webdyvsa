@@ -42,7 +42,10 @@ Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
 Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
 Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
 Route::get('admin/turno-servicios','TurnoServicioController@index');
+Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index');
+Route::get('admin/mensajes-contacto','MensajeEmailController@index')->name('contacto_mensajes_index');
 Route::resource('admin/usados','UsadoController');
+Route::resource('admin/servicios','TipoServicioController');
 Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria');
 
 
@@ -50,7 +53,7 @@ Route::get('/home','FrontController@home');
 Route::get('/financiacion','FrontController@financiacion');
 Route::get('/posventa','FrontController@posventa');
 Route::get('/plan-de-ahorro','FrontController@planDeAhorro');
-Route::get('/contacto','FrontController@contacto');
+Route::get('/contacto','FrontController@contacto')->name('contacto');
 Route::get('/nosotros','FrontController@aboutUs');
 Route::get('/modelos/{modelo}','FrontController@modelo');
 Route::get('/modelos','FrontController@getModelos');
@@ -59,3 +62,6 @@ Route::get('/usados/{id}','FrontController@usadosShow');
 Route::post('/consultar/usado/{id}','FrontController@consultaUsado');
 Route::get('/turno-servicios/create','TurnoServicioController@create');
 Route::post('/turno-servicios','TurnoServicioController@store');
+Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('test_drive_form');
+Route::post('/test-drive','SolicitudTestDriveController@store');
+Route::post('/contacto','MensajeEmailController@store');

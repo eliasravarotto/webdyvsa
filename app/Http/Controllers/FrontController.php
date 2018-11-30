@@ -39,6 +39,11 @@ class FrontController extends Controller
         return view('frontend.about-us');
     }
 
+    public function contacto()
+    {
+        return view('frontend.contacto.index');
+    }
+
 
 
     //------------MODELOS------------------//

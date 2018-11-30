@@ -80,7 +80,8 @@
     export default {
         data(){
             return {
-                imagenes: ["/imagenes/bg1.jpg","/imagenes/bg2.jpg","/imagenes/bg3.jpg"],
+                imagenes: ["/imagenes/bg1.png"],
+                // imagenes: ["/imagenes/bg1.png","/imagenes/bg2.jpg","/imagenes/bg3.jpg"],
                 activeClass : 'active item'
             }
         },

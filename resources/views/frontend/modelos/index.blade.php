@@ -17,8 +17,8 @@
 				<div class="row">
 					@foreach($modelos->slice(0,4) as $modelo)
 					<div class="col-sm-6 col-md-3">
-					    <a href="/modelos/{{$modelo->nombre}}" style="min-height: 263px; position: relative; text-decoration: none;" class="thumbnail thumbnail-hover thumbnail-no-border thumbnail-no-bg">
-					      <img src="{{$modelo->img_modelo}}" alt="..." style=" position: absolute; bottom: 0;left: 0;">
+					    <a href="/modelos/{{$modelo->nombre}}" style="min-height: 263px; text-decoration: none;" class="thumbnail thumbnail-hover thumbnail-no-border thumbnail-no-bg">
+					      <img src="{{$modelo->img_modelo}}" alt="..." style="">
 					      <div class="caption" style="border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 5px ">
 					        <p class="text-uppercase text-center fs-20 gray-2">{{$modelo->nombre}}</p>
 					      </div>

@@ -82,7 +82,13 @@
                     </li>
                     <h3 class="menu-title">Emails</h3>
                     <li>
+                        <a href="/admin/solicitudes-test-drive"> <i class="menu-icon ti-email"></i>Solicitud de Test Drive </a>
+                    </li>
+                    <li>
                         <a href="/admin/turno-servicios"> <i class="menu-icon ti-email"></i>Solicitud de Turnos </a>
+                    </li>
+                    <li>
+                        <a href="{{route('contacto_mensajes_index')}}"> <i class="menu-icon ti-email"></i>Mensajes </a>
                     </li>
                     <li>
                         <a href="#"> <i class="menu-icon ti-email"></i>Consulta de Usados </a>

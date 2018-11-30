@@ -52,6 +52,7 @@ class EnviarEmailTurnoSolicitado implements ShouldQueue
 
             $message->subject('Solicitud de Turno');
             $message->to('elias.ravarotto@gmail.com');
+            $message->to('eliasravarotto@derkayvargas.com.ar');
             //$message->to('marceloaguirre@derkayvargas.com.ar');
         });
     }

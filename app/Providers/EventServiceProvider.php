@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SeHaSolicitadoUnTurno' => [
             'App\Listeners\EnviarEmailTurnoSolicitado',
         ],
+        'App\Events\SeHaSolicitadoTestDrive' => [
+            'App\Listeners\EnviarEmailTestDriveSolicitado',
+        ],
     ];
 
     /**

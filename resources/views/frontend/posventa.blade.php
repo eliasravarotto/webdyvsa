@@ -237,7 +237,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 										<div style="font-size: 15px; padding-left: 22px;">{{ $sucursal->direccion }}</div>
 										<div style="font-size: 15px; padding-left: 22px;"><i class="fa fa-phone-square" aria-hidden="true"></i> {{ $sucursal->telefono }}</div>
 									</li>
-								
 								@endforeach
 							</ul>
 						</div>
@@ -252,21 +251,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 @stop
 
 @section('script')
-<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-{{--     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN9Nwz-k-NNnKtTlpy36lG4aQqeCicU6g&callback=initMap"
-  type="text/javascript"></script> --}}
+
 <script>
 	$(document).ready(function() {
         $('.summernote').summernote();
     });	
 
 	var sucursales = {!! \App\Helpers\Helper::getSucursalesPosventa() !!};
-	var locations = [
-      [sucursales[0].nombre, sucursales[0].map_lat, sucursales[0].map_lng, 4],
-      [sucursales[1].nombre, sucursales[1].map_lat, sucursales[1].map_lng, 3],
-      [sucursales[2].nombre, sucursales[2].map_lat, sucursales[2].map_lng, 2],
-      // [sucursales[3].nombre, sucursales[3].map_lat, sucursales[3].map_lng, 1],
-	];
+	// var locations = [
+ //      [sucursales[0].nombre, sucursales[0].map_lat, sucursales[0].map_lng, 4],
+ //      [sucursales[1].nombre, sucursales[1].map_lat, sucursales[1].map_lng, 3],
+ //      [sucursales[2].nombre, sucursales[2].map_lat, sucursales[2].map_lng, 2],
+ //      // [sucursales[3].nombre, sucursales[3].map_lat, sucursales[3].map_lng, 1],
+	// ];
 
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -279,9 +276,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
     var marker, i;
 
-    for (i = 0; i < locations.length; i++) {  
+    for (i = 0; i < sucursales.length; i++) {  
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        position: new google.maps.LatLng(sucursales[i].map_lat, sucursales[i].map_lng),
         map: map
       });
 
@@ -300,10 +298,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     }
 
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-
 @stop
