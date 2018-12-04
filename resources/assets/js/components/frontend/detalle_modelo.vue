@@ -43,7 +43,7 @@
             </div>
             <div class="row" >
                 <div class="col-md-6 col-sm-12 text-center">
-                    <img v-bind:src="img_modelo" style=" height: 300px">
+                    <img v-bind:src="img_modelo" style="height: 300px">
                     <!-- <img class="img-responsive" src="https://www.zento.com.ar/images/etios/versiones_precios.jpg"> -->
                 </div>
                 <div class="col-md-6 col-sm-12">

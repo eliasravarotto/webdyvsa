@@ -12,13 +12,14 @@
   <banner-ppal></banner-ppal>
 <div style="position: relative;">
   <div>
-    <!-- The video -->
-    <video autoplay muted loop id="myVideo">
-      <source src="/imagenes/tc2019.mp4" type="video/mp4">
+    <div align="center" class="embed-responsive embed-responsive-16by9">
+    <video autoplay muted loop id="" class="embed-responsive-item">
+      {{-- <source src="/imagenes/tc2019.mp4" type="video/mp4"> --}}
+      <source src="/videos/gr.mp4" type="video/mp4">
     </video>
+    </div>
 
-    <!-- Optional: some overlay text to describe the video -->
-    <div class="content">
+    <div class="content visible-lg">
       <h1>DERKA Y VARGAS <br>   <small>CONCECIONARIO OFICIAL TOYOTA</small></h1>
       <h4>Acercate a conocer el nuevo TOYOTA COROLLA 2019</h4>
       <button class="btn btn-toyota">CONOCELO</button>
