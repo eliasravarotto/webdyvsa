@@ -46,6 +46,19 @@
     line-height: 1.4;
   }
 }
+
+@media (max-width: 768px) {
+  .carousel .item {
+    height: auto;
+    background-color:#555;
+  }
+  .carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: auto;
+  }
+}
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
 .fill{width:100%;height:100%;background-position:center;background-size:cover;}
@@ -60,7 +73,7 @@
 </style>
 <template>
 <div>
-  <div class="fill banner">
+  <div class="fill banner visible-md visible-lg">
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <template v-for="(imagen, index) in imagenes">
@@ -73,6 +86,16 @@
       </div>
     </div>
   </div>
+
+
+  <div id="myCarousel" class="carousel slide visible-xs visible-sm" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div v-for="(imagen, index) in imagenes" v-bind:class="[index == 0 ? activeClass : 'item']">
+                <img v-bind:src="imagen" class="img-responsive" alt="New york" style="width:100%; position: relative;">
+            </div>
+        </div>
+    </div>
  </div>   
 </template>
 
@@ -86,7 +109,9 @@
             }
         },
         mounted() {
-            
+            $('#myCarouselmin').carousel({
+                        interval: 5000
+                });
         },
         methods:{
             

@@ -11,45 +11,43 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
+Route::group(['middleware' => 'auth'], function(){
+
+
+	Route::get('/admin', function () {
+	    return view('backend.sufee_admin.dashboard');
+	});
+
+
+	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
+	Route::resource('admin/modelos','ModelosController');
+	Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
+	Route::put('admin/modelos/{id}/edit/colores','ModelosController@updateColores');
+	Route::get('admin/modelos/{id}/edit/galeria','ModelosController@editGaleria');
+	Route::put('admin/modelos/{id}/edit/galeria','ModelosController@updateGaleria');
+	Route::get('admin/modelos/{id}/edit/caracteristicas','ModelosController@editCaracteristicas');
+	Route::put('admin/modelos/{id}/edit/caracteristicas','ModelosController@updateCaracteristicas');
+	Route::get('admin/modelos/{id}/edit/parallax','ModelosController@editParallax');
+	Route::put('admin/modelos/{id}/edit/parallax','ModelosController@updateParallax');
+	Route::get('admin/modelos/{id}/edit/slider','ModelosController@editSlider');
+	Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
+	Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
+	Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
+	Route::get('admin/turno-servicios','TurnoServicioController@index');
+	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index');
+	Route::get('admin/mensajes-contacto','MensajeEmailController@index')->name('contacto_mensajes_index');
+	Route::resource('admin/usados','UsadoController');
+	Route::resource('admin/servicios','TipoServicioController');
+	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria');
+
 });
-Route::get('/test', function () {
-    return view('test');
-});
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
-
-Route::get('/admin', function () {
-    return view('backend.sufee_admin.dashboard');
-});
-
-// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
-Route::resource('admin/modelos','ModelosController');
-Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
-Route::put('admin/modelos/{id}/edit/colores','ModelosController@updateColores');
-Route::get('admin/modelos/{id}/edit/galeria','ModelosController@editGaleria');
-Route::put('admin/modelos/{id}/edit/galeria','ModelosController@updateGaleria');
-Route::get('admin/modelos/{id}/edit/caracteristicas','ModelosController@editCaracteristicas');
-Route::put('admin/modelos/{id}/edit/caracteristicas','ModelosController@updateCaracteristicas');
-Route::get('admin/modelos/{id}/edit/parallax','ModelosController@editParallax');
-Route::put('admin/modelos/{id}/edit/parallax','ModelosController@updateParallax');
-Route::get('admin/modelos/{id}/edit/slider','ModelosController@editSlider');
-Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
-Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
-Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
-Route::get('admin/turno-servicios','TurnoServicioController@index');
-Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index');
-Route::get('admin/mensajes-contacto','MensajeEmailController@index')->name('contacto_mensajes_index');
-Route::resource('admin/usados','UsadoController');
-Route::resource('admin/servicios','TipoServicioController');
-Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria');
-
-
-Route::get('/home','FrontController@home');
+Route::get('/','FrontController@home');
 Route::get('/financiacion','FrontController@financiacion');
 Route::get('/posventa','FrontController@posventa');
 Route::get('/plan-de-ahorro','FrontController@planDeAhorro');

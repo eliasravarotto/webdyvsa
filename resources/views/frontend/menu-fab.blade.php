@@ -43,7 +43,7 @@
 					</div>">
   	<img src="/imagenes/icons/turno_posventa.png" height="30px" >
   </a>
-  <a class="btn btn-default " href="#" 
+  <a class="btn btn-default " href="/contacto" 
       data-toggle="tooltip" 
       data-trigger="hover" 
       data-placement="left" 

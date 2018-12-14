@@ -1382,7 +1382,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(67);
+module.exports = __webpack_require__(70);
 
 
 /***/ }),
@@ -1412,6 +1412,8 @@ Vue.component('navbar-desk', __webpack_require__(51));
 Vue.component('detalle-modelo', __webpack_require__(54));
 Vue.component('index-usados', __webpack_require__(59));
 Vue.component('show-usado', __webpack_require__(62));
+
+Vue.component('producto', __webpack_require__(67));
 
 var app = new Vue({
   el: '#app'
@@ -43747,7 +43749,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\r\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption {\r\n  z-index: 1;\n}\r\n/* Declare heights because of positioning of img element */\n.carousel .item {\r\n  height: 100%;\r\n  background-color:#555;\n}\n.carousel img {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  min-height: 400px;\n}\n.thumbnail-lighten{\r\n  background-color: #fcfeff;\n}\n.thumbnail-lighten .caption {\r\n    padding: 0px;\n}\n.thumbnail-lighten .caption p {\r\n    font-size: 15px;\n}\n.thumbnail-lighten .caption h3 {\r\n        color: #4b4b4b !important;\r\n        font-size: 20px;\r\n        font-weight: 600;\n}\r\n/* RESPONSIVE CSS--------------------------------------------------------*/\n@media (min-width: 768px) {\r\n  /* Navbar positioning foo */\n.navbar-wrapper {\r\n    margin-top: 80px;\r\n    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */\n}\r\n  /* The navbar becomes detached from the top, so we round the corners */\n.navbar-wrapper .navbar {\r\n    border-radius: 4px;\n}\r\n  /* Bump up size of carousel content */\n.carousel-caption p {\r\n    margin-bottom: 20px;\r\n    font-size: 21px;\r\n    line-height: 1.4;\n}\n}\n.carousel,.item,.active{height:100%;\n}\n.carousel-inner{height:100%;\n}\n.fill{width:100%;height:100%;background-position:center;background-size:cover;\n}\r\n/* faster sliding speed */\n.carousel-inner > .item {\r\n/*    -webkit-transition: 0.6s ease-in-out left;\r\n    -moz-transition: 0.6s ease-in-out left;\r\n    -o-transition: 0.6s ease-in-out left;\r\n    transition: 0.6s ease-in-out left;*/\n}\r\n\r\n", ""]);
+exports.push([module.i, "\r\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption {\r\n  z-index: 1;\n}\r\n/* Declare heights because of positioning of img element */\n.carousel .item {\r\n  height: 100%;\r\n  background-color:#555;\n}\n.carousel img {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  min-height: 400px;\n}\n.thumbnail-lighten{\r\n  background-color: #fcfeff;\n}\n.thumbnail-lighten .caption {\r\n    padding: 0px;\n}\n.thumbnail-lighten .caption p {\r\n    font-size: 15px;\n}\n.thumbnail-lighten .caption h3 {\r\n        color: #4b4b4b !important;\r\n        font-size: 20px;\r\n        font-weight: 600;\n}\r\n/* RESPONSIVE CSS--------------------------------------------------------*/\n@media (min-width: 768px) {\r\n  /* Navbar positioning foo */\n.navbar-wrapper {\r\n    margin-top: 80px;\r\n    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */\n}\r\n  /* The navbar becomes detached from the top, so we round the corners */\n.navbar-wrapper .navbar {\r\n    border-radius: 4px;\n}\r\n  /* Bump up size of carousel content */\n.carousel-caption p {\r\n    margin-bottom: 20px;\r\n    font-size: 21px;\r\n    line-height: 1.4;\n}\n}\n@media (max-width: 768px) {\n.carousel .item {\r\n    height: auto;\r\n    background-color:#555;\n}\n.carousel img {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    min-height: auto;\n}\n}\n.carousel,.item,.active{height:100%;\n}\n.carousel-inner{height:100%;\n}\n.fill{width:100%;height:100%;background-position:center;background-size:cover;\n}\r\n/* faster sliding speed */\n.carousel-inner > .item {\r\n/*    -webkit-transition: 0.6s ease-in-out left;\r\n    -moz-transition: 0.6s ease-in-out left;\r\n    -o-transition: 0.6s ease-in-out left;\r\n    transition: 0.6s ease-in-out left;*/\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -43869,6 +43871,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43878,7 +43903,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             activeClass: 'active item'
         };
     },
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        $('#myCarouselmin').carousel({
+            interval: 5000
+        });
+    },
 
     methods: {},
     computed: {}
@@ -43893,7 +43922,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "fill banner" }, [
+    _c("div", { staticClass: "fill banner visible-md visible-lg" }, [
       _c(
         "div",
         { staticClass: "carousel slide", attrs: { id: "myCarousel" } },
@@ -43925,7 +43954,34 @@ var render = function() {
           )
         ]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "carousel slide visible-xs visible-sm",
+        attrs: { id: "myCarousel", "data-ride": "carousel" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "carousel-inner" },
+          _vm._l(_vm.imagenes, function(imagen, index) {
+            return _c(
+              "div",
+              { class: [index == 0 ? _vm.activeClass : "item"] },
+              [
+                _c("img", {
+                  staticClass: "img-responsive",
+                  staticStyle: { width: "100%", position: "relative" },
+                  attrs: { src: imagen, alt: "New york" }
+                })
+              ]
+            )
+          })
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -46334,123 +46390,115 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-xs-12", attrs: { id: "slider" } }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-sm-7", attrs: { id: "carousel-bounding-box" } },
-            [
-              _c(
-                "div",
-                { staticClass: "carousel slide", attrs: { id: "myCarousel" } },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "carousel-inner" },
-                    _vm._l(_vm.imagenes, function(imagen, index) {
-                      return _c(
-                        "div",
-                        {
-                          class: index == 0 ? "active item" : "item",
-                          attrs: { "data-slide-number": index }
-                        },
-                        [_c("img", { attrs: { src: imagen.url } })]
-                      )
-                    })
-                  ),
-                  _vm._v(" "),
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _vm._m(1)
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-sm-5", attrs: { id: "carousel-text" } },
-            [
-              _c("div", [
+    _c("div", { attrs: { id: "slider" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          {
+            staticClass: "col-md-offset-1 col-sm-12 col-md-5  ",
+            attrs: { id: "carousel-bounding-box" }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "carousel slide", attrs: { id: "myCarousel" } },
+              [
                 _c(
-                  "label",
-                  {
-                    staticClass: "text-uppercase",
-                    staticStyle: {
-                      "font-family": "ToyotaFont",
-                      "font-size": "25px",
-                      color: "#404048"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                    \t\t\t" +
-                        _vm._s(_vm.unidad.marca) +
-                        " " +
-                        _vm._s(_vm.unidad.modelo) +
-                        " " +
-                        _vm._s(_vm.unidad.version) +
-                        " \n                    \t\t"
+                  "div",
+                  { staticClass: "carousel-inner" },
+                  _vm._l(_vm.imagenes, function(imagen, index) {
+                    return _c(
+                      "div",
+                      {
+                        class: index == 0 ? "active item" : "item",
+                        attrs: { "data-slide-number": index }
+                      },
+                      [_c("img", { attrs: { src: imagen.url } })]
                     )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
+                  })
+                ),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-sm-12 col-md-5", attrs: { id: "carousel-text" } },
+          [
+            _c("div", [
               _c(
-                "div",
+                "label",
                 {
+                  staticClass: "text-uppercase",
                   staticStyle: {
-                    display: "flex",
-                    "justify-content": "space-between",
-                    "font-size": "18px"
+                    "font-family": "ToyotaFont",
+                    "font-size": "25px",
+                    color: "#404048"
                   }
                 },
                 [
-                  _c("div", [
-                    _vm._m(2),
-                    _vm._v(
+                  _vm._v(
+                    "\n                    \t\t\t" +
+                      _vm._s(_vm.unidad.marca) +
                       " " +
-                        _vm._s(_vm.unidad.anio) +
-                        "\n                            "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._m(3),
-                    _vm._v(
+                      _vm._s(_vm.unidad.modelo) +
                       " " +
-                        _vm._s(_vm.unidad.km) +
-                        "\n                            "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._m(4),
-                    _vm._v(
-                      " " +
-                        _vm._s(_vm.unidad.color) +
-                        "\n                            "
-                    )
-                  ])
+                      _vm._s(_vm.unidad.version) +
+                      " \n                    \t\t"
+                  )
                 ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "well text-justify" }, [
-                _c("p", [_vm._v(_vm._s(_vm.unidad.descripcion))])
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-default btn-block btn-lg",
-                  attrs: { href: "" }
-                },
-                [_vm._v("CONSULTAR")]
               )
-            ]
-          )
-        ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticStyle: {
+                  display: "flex",
+                  "justify-content": "space-between",
+                  "font-size": "18px"
+                }
+              },
+              [
+                _c("div", [
+                  _vm._m(2),
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.unidad.anio) +
+                      "\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _vm._m(3),
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.unidad.km) +
+                      "\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _vm._m(4),
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.unidad.color) +
+                      "\n                            "
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "well text-justify" }, [
+              _c("p", [_vm._v(_vm._s(_vm.unidad.descripcion))])
+            ])
+          ]
+        )
       ])
     ]),
     _vm._v(" "),
@@ -46490,8 +46538,6 @@ var render = function() {
     ),
     _vm._v(" "),
     _vm._m(5),
-    _vm._v(" "),
-    _c("div", { staticClass: "row arrow_box" }),
     _vm._v(" "),
     _c("div", { staticClass: "row", staticStyle: { "margin-top": "100px" } }, [
       _c("div", { staticClass: "col-md-6 col-sm-12 col-xs-12 well" }, [
@@ -46731,27 +46777,29 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-6 col-sm-12 col-xs-12" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-9 col-sm-9 col-xs-9" }, [
-          _c("div", { staticClass: "text-right" }, [
-            _c(
-              "p",
-              { staticStyle: { "font-size": "20px", "font-weight": "bold" } },
-              [_vm._v("También podes enviarnos tu consulta vía Whatsapp")]
-            ),
-            _vm._v(" "),
-            _c("b", { staticStyle: { "font-size": "25px" } }, [
-              _vm._v("3625-123456")
+      _c("div", { staticClass: "well" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-9 col-sm-9 col-xs-9" }, [
+            _c("div", { staticClass: "text-right" }, [
+              _c(
+                "p",
+                { staticStyle: { "font-size": "20px", "font-weight": "bold" } },
+                [_vm._v("También podes enviarnos tu consulta vía Whatsapp")]
+              ),
+              _vm._v(" "),
+              _c("b", { staticStyle: { "font-size": "25px" } }, [
+                _vm._v("3625-123456")
+              ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-3 col-sm-3 col-xs-3" }, [
-          _c("div", [
-            _c("img", {
-              staticStyle: { height: "75px" },
-              attrs: { src: "/imagenes/icons/whatsapp-icon.png" }
-            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-3 col-xs-3" }, [
+            _c("div", [
+              _c("img", {
+                staticStyle: { height: "75px" },
+                attrs: { src: "/imagenes/icons/whatsapp-icon.png" }
+              })
+            ])
           ])
         ])
       ])
@@ -46769,6 +46817,349 @@ if (false) {
 
 /***/ }),
 /* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(68)
+/* template */
+var __vue_template__ = __webpack_require__(69)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/producto.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1d054677", Component.options)
+  } else {
+    hotAPI.reload("data-v-1d054677", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['data'],
+  data: function data() {
+    return {
+      index: 1,
+      productos: '',
+      producto_selected: ''
+    };
+  },
+  mounted: function mounted() {
+    this.obtenerProductos();
+  },
+
+  methods: {
+    obtenerProductos: function obtenerProductos() {
+      var _this = this;
+
+      axios.get('/obtener_productos').then(function (response) {
+        return _this.productos = response.data;
+      });
+    },
+    agregarLinea: function agregarLinea() {
+      this.index = this.index + 1;
+      $('#lineas').append('\n                                <div class="row" id="linea_' + this.index + '" style="margin-top: 10px;">\n                                    <div class="col-md-3">\n                                      <div class="input-group">\n                                        <select name="producto[]" v-model="producto_selected" class="form-control">\n\t\t\t\t\t\t                \t<option v-for="producto in productos" v-bind:value="producti.id">{{producto.id}}</option>\n\t\t\t\t\t\t                </select>\n                                      </div>\n                                    </div>\n                                    <div class="col-md-3">\n                                      <div class="input-group">\n                                        <input name="codigo[]" placeholder="C\xF3digo del color" type="text" class="form-control" style="height: 39px;">\n                                      </div>\n                                    </div>\n                                    <div class="col-md-3">\n                                      <div class="input-group">\n                                        <input name="codigo[]" placeholder="C\xF3digo del color" type="text" class="form-control" style="height: 39px;">\n                                      </div>\n                                    </div>\n                                    <div class="col-md-3">\n                                      <div class="input-group">\n                                          <a class="btn btn-danger" href="#" onclick="borrarLinea(event, ' + this.index + ')"><i class="fa fa-trash" aria-hidden="true"></i></a>\n                                        </div>\n                                    </div>\n                                  </div>\n              ');
+    },
+    borrarLinea: function borrarLinea(i) {
+      $('#linea_' + i).remove();
+      this.index = this.index - 1;
+    }
+  },
+  computed: {}
+});
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { href: "#" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.agregarLinea()
+            }
+          }
+        },
+        [
+          _c("i", {
+            staticClass: "fa fa-plus",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "lineas" } }, [
+        _c("div", { staticClass: "row", attrs: { id: "linea_1" } }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.producto_selected,
+                      expression: "producto_selected"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { name: "producto[]" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.producto_selected = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                _vm._l(_vm.productos, function(producto) {
+                  return _c(
+                    "option",
+                    { domProps: { value: _vm.producti.id } },
+                    [_vm._v(_vm._s(producto.id))]
+                  )
+                })
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.producto_selected.cantidad,
+                    expression: "producto_selected.cantidad"
+                  }
+                ],
+                staticClass: "form-control",
+                staticStyle: { height: "39px" },
+                attrs: {
+                  name: "codigo[]",
+                  placeholder: "Código del color",
+                  type: "text"
+                },
+                domProps: { value: _vm.producto_selected.cantidad },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.producto_selected,
+                      "cantidad",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.producto_selected.precio_unitario,
+                    expression: "producto_selected.precio_unitario"
+                  }
+                ],
+                staticClass: "form-control",
+                staticStyle: { height: "39px" },
+                attrs: {
+                  name: "codigo[]",
+                  placeholder: "Código del color",
+                  type: "text"
+                },
+                domProps: { value: _vm.producto_selected.precio_unitario },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.producto_selected,
+                      "precio_unitario",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-danger",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.borrarLinea(1)
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fa fa-trash",
+                    attrs: { "aria-hidden": "true" }
+                  })
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.producto_selected,
+            expression: "producto_selected"
+          }
+        ],
+        staticClass: "form-control",
+        staticStyle: { display: "none" },
+        attrs: { id: "select_prod", name: "producto[]" },
+        on: {
+          change: function($event) {
+            var $$selectedVal = Array.prototype.filter
+              .call($event.target.options, function(o) {
+                return o.selected
+              })
+              .map(function(o) {
+                var val = "_value" in o ? o._value : o.value
+                return val
+              })
+            _vm.producto_selected = $event.target.multiple
+              ? $$selectedVal
+              : $$selectedVal[0]
+          }
+        }
+      },
+      _vm._l(_vm.productos, function(producto) {
+        return _c("option", { domProps: { value: _vm.producti.id } }, [
+          _vm._v(_vm._s(producto.id))
+        ])
+      })
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1d054677", module.exports)
+  }
+}
+
+/***/ }),
+/* 70 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

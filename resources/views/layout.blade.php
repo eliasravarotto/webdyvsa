@@ -141,7 +141,7 @@
 
   <div id="app">
     <div class="header-contacto">
-      <a href="/home">
+      <a href="/">
         <img src="{{ asset('/imagenes/logo-empresa.png') }}"  style="height: 51px;">
       </a>
         <div style="width: 60%; display: flex; justify-content: space-around; text-align: center;">

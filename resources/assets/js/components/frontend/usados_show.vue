@@ -8,11 +8,11 @@ margin-top:20px;
 <template>
 	<div>
 		<!-- Slider -->
-        <div class="row">
-            <div class="col-xs-12" id="slider">
+
+            <div id="slider">
                 <!-- Top part of the slider -->
                 <div class="row">
-                    <div class="col-sm-7" id="carousel-bounding-box">
+                    <div class="col-md-offset-1 col-sm-12 col-md-5  " id="carousel-bounding-box">
                         <div class="carousel slide" id="myCarousel">
                             <!-- Carousel items -->
                             <div class="carousel-inner">
@@ -30,7 +30,7 @@ margin-top:20px;
                         </div>
                     </div>
 
-                    <div class="col-sm-5" id="carousel-text">
+                    <div class="col-sm-12 col-md-5" id="carousel-text">
                     	<div>
                     		<label class="text-uppercase" style="font-family:ToyotaFont; font-size: 25px; color: #404048">
                     			{{ unidad.marca }} {{ unidad.modelo }} {{ unidad.version }} 
@@ -50,11 +50,11 @@ margin-top:20px;
                         <div class="well text-justify">
                         	<p>{{unidad.descripcion}}</p>
                         </div>
-                        <a class="btn btn-default btn-block btn-lg" href="">CONSULTAR</a>
+                        <!-- <a class="btn btn-default btn-block btn-lg" href="">CONSULTAR</a> -->
                     </div>
                 </div>
             </div>
-        </div>
+        
         <!--/Slider-->
         <div class="row hidden-xs" id="slider-thumbs">
             <!-- Bottom switcher of slider -->
@@ -73,7 +73,7 @@ margin-top:20px;
             <img class="modal-content" id="img01" src="#">
         </div>
 
-        <div class="row arrow_box"></div>
+        <!-- <div class="row arrow_box"></div> -->
 
         <div class="row" style="margin-top: 100px;">
             <div class="col-md-6 col-sm-12 col-xs-12 well">
@@ -110,6 +110,8 @@ margin-top:20px;
                 </form>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="well">
+                    
                 <div class="row">
                     <div class="col-md-9 col-sm-9 col-xs-9">
                         <div class="text-right">
@@ -123,11 +125,9 @@ margin-top:20px;
                         </div>
                     </div>
                 </div>
+                </div>
             </div>	
         </div>
-
-        
-
 	</div>
 </template>
 

@@ -125,19 +125,20 @@
     </div>
   </div>
 
+  <div class="body-navidad">
+    <div class="page-wrap">
+      <header class="site-header wrapper">
+        <h1 class="h1-navidad">
+          DERKA Y VARGAS<br>
+          <br>
+          
+          <span class="script">Te Desea Felicez Fiestas</span>
+        </h1>
+      </header>
+    </div>
+  </div>
+
   <section id="services" style="border-top: 1px solid #01b2aa;">
-    {{-- <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Derka y Vargas Social Media</h2>
-        </div>
-        <div class="col-lg-12 text-center">
-        <center>
-          <hr class="my-4">
-        </center>
-      </div>
-      </div>
-    </div> --}}
     <div class="container">
       <img src="{{asset('imagenes/logos/social_media.jpg')}}" style="width: 100%">
       <div class="row">
@@ -147,15 +148,13 @@
       <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0;">
         {{-- <iframe src="//lightwidget.com/widgets/fb15970b2bfe5432b206f2b116d4779a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> --}}
         <iframe src="//lightwidget.com/widgets/fa8772b6f29953d581a30dbbbc638347.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-
       </div>
     </div>
     </div>
   </section>
-
+ 
 @stop
 
 @section('script')
         <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-          {{-- <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script> --}}
 @stop

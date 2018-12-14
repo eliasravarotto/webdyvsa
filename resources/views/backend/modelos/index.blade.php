@@ -1,7 +1,18 @@
 @extends('backend.sufee_admin.index')
 
 @section('content')
-
+<div class="breadcrumbs">
+    <div class="col-sm-12">
+        <div class="page-header">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="/admin">Dashboard</a></li>
+                    <li class="active">Modelos</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="card">
     <div class="card-header">
         <strong class="card-title" v-if="headerText">Listado de Modelos</strong>
@@ -10,7 +21,7 @@
     <div class="card-body">
         <div class="row">
           <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
-            <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
+            <a class="btn btn-primary" href="{{ route('modelos.create') }}">Nuevo</a>
           </div>
         </div>
         <table class="table">

@@ -1,8 +1,6 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,6 +47,10 @@
         label{
             font-weight: bold;
         }
+
+        body{
+            background-color: #868e96;
+        }
     </style>
 
 
@@ -61,7 +63,10 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="/imagenes/sfee_admin/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./">
+                    {{-- <img src="/imagenes/sfee_admin/images/logo.png" alt="Logo"> --}}
+                    DERKA Y VARGAS
+                </a>
                 <a class="navbar-brand hidden" href="./"><img src="/imagenes/sfee_admin/images/logo2.png" alt="Logo"></a>
             </div>
 
@@ -80,6 +85,9 @@
                     <li>
                         <a href="/admin/usados"><i class="menu-icon fa fa-car"></i>Usados </a>
                     </li>
+                    <li>
+                        <a href="/admin/servicios"><i class="menu-icon fa fa-car"></i>Servicios Posventa </a>
+                    </li>
                     <h3 class="menu-title">Emails</h3>
                     <li>
                         <a href="/admin/solicitudes-test-drive"> <i class="menu-icon ti-email"></i>Solicitud de Test Drive </a>
@@ -93,8 +101,8 @@
                     <li>
                         <a href="#"> <i class="menu-icon ti-email"></i>Consulta de Usados </a>
                     </li>
-                    <h3 class="menu-title">Datos Empresa</h3><!-- /.menu-title -->
 
+                    {{-- <h3 class="menu-title">Datos Empresa</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Sucursales</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -104,9 +112,6 @@
                             <li><i class="menu-icon ti-themify-logo"></i><a href="#">Villa Ángela</a></li>
                         </ul>
                     </li>
-                    {{-- <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li> --}}
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Redes Sociales</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -115,14 +120,6 @@
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Instagram</a></li>
                         </ul>
                     </li>
-
-                    {{-- <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li> --}}
                     <h3 class="menu-title">Páginas</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
@@ -131,7 +128,7 @@
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -151,14 +148,6 @@
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                     <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
-
                         <div class="dropdown for-notification">
                           <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
@@ -233,61 +222,27 @@
                             <img class="user-avatar rounded-circle" src="/imagenes/sfee_admin/images/admin.jpg" alt="User Avatar">
                         </a>
 
-                        <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                        <ul class="user-menu dropdown-menu">
+                                <a class="nav-link" href="#">
+                                    <i class="fa fa-user" aria-hidden="true"></i> Perfil 
+                                </a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+                                {{-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a> --}}
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="#">
+                                    <i class="fa fa-cogs" aria-hidden="true"></i> Settings
+                                </a>
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
-                        </div>
+                                <a class="nav-link" href="/logout">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                                </a>
+                        </ul>
                     </div>
-
-                    <div class="language-select dropdown" id="language-select">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
-                            <i class="flag-icon flag-icon-us"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="language" >
-                            <div class="dropdown-item">
-                                <span class="flag-icon flag-icon-fr"></span>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-es"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-us"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-it"></i>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
         </header><!-- /header -->
         <!-- Header-->
-
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="content mt-3">
             @yield('content')

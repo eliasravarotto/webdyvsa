@@ -1,7 +1,18 @@
 @extends('backend.sufee_admin.index')
 
 @section('content')
-
+<div class="breadcrumbs">
+    <div class="col-sm-12">
+        <div class="page-header">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="/admin">Dashboard</a></li>
+                    <li class="active">Servicios Posventa</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="card">
     <div class="card-header">
         <strong class="card-title" v-if="headerText">Listado de Servicios</strong>

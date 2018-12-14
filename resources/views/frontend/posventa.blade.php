@@ -122,8 +122,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 						<thead>
 						  <tr>
 						    <th style="text-align: center; font-size: 20px;"></th>
-						    <th style="text-align: center; font-size: 20px;">ETIOS</th>
 						    <th style="text-align: center; font-size: 20px;">COROLLA</th>
+						    <th style="text-align: center; font-size: 20px;">ETIOS</th>
 						    <th style="text-align: center; font-size: 20px;">HILUX 4x2</th>
 						    <th style="text-align: center; font-size: 20px;">Hilux/SW4 4x4</th>
 						  </tr>
@@ -132,9 +132,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 							@foreach($servicios as $servicio)
 							<tr>
 								<td style="text-align: center;font-size: 20px;"><b>{{ $servicio->nombre }}</b></td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->etios }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->corolla }}</td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux_4x2 }}</td>
+								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->etios }}</td>
+								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux_sw4_4x4 }}</td>
 							</tr>
 						  	@endforeach

@@ -12,12 +12,12 @@
 <!-- Navbar Desktop -->
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
 <article>
-	<div>
+{{-- 	<div>
 		<div class="container">
-			<h3 style="font-family:ToyotaFont; color: #404048">TOYOTA COROLLA XEI</h3>
+			<h3 style="font-family:ToyotaFont; color: #404048">DETALLES</h3>
 		</div>
-	</div>
-	<div class="container">
+	</div> --}}
+	<div class="container mar-top-20">
 		<show-usado v-bind:data="{ unidad: {{$unidad}}, imagenes: {{$imagenes}} }"></show-usado>
 	</div>
 

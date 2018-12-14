@@ -15,7 +15,8 @@ class FrontController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        $productos = Modelo::all();
+        return view('frontend.home', compact('productos'));
     }
 
     public function posventa()

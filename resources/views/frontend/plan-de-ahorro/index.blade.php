@@ -185,9 +185,9 @@
 			<section>
 				<div class="container">
 				<div class="row">
-					<div class="col-md-12">
+					{{-- <div class="col-md-12">
 						<img src="/imagenes/tpa/team.png" class="img-responsive">
-					</div>
+					</div> --}}
 					<blockquote style="border-left: 5px solid #e81f39;">
 						<div class="row">
 							<div class="col-md-2">
@@ -206,8 +206,7 @@
 			<section>
 				<div class="row">
 					<div class="container">
-					<div class="col-md-6 col-sm-12 col-xs-12"></div>
-					<div class="col-md-6 col-sm-12 col-xs-12">
+					<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
 						<div class="fb-page" data-href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/">Toyota Plan de Ahorro - Derka y Vargas</a></blockquote></div>
 					</div>
 					</div>
