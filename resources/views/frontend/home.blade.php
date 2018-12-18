@@ -10,11 +10,11 @@
 
   <!-- Banner Principal -->
   <banner-ppal></banner-ppal>
-<div style="position: relative;">
+
+{{-- <div style="position: relative;">
   <div>
     <div align="center" class="embed-responsive embed-responsive-16by9">
     <video autoplay muted loop id="" class="embed-responsive-item">
-      {{-- <source src="/imagenes/tc2019.mp4" type="video/mp4"> --}}
       <source src="/videos/gr.mp4" type="video/mp4">
     </video>
     </div>
@@ -25,9 +25,9 @@
       <button class="btn btn-toyota">CONOCELO</button>
     </div>
   </div>
-</div>
+</div> --}}
 
-  <!-- Section .. -->
+  <!-- Section -->
   <div class="container pad-top-bot-50">
     <div class="tooltip" style="background-color: black">Hover over me
       <span class="tooltiptext">Tooltip text</span>
@@ -67,6 +67,7 @@
     </div>
     <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
   </div>
+  
   <section class="pad-top-50 pad-bot-50" style="height: auto;">
       <div class="container">
         <div class="row" >
