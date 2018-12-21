@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConsultasTable extends Migration
+class CreateConsultaUsadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateConsultasTable extends Migration
      */
     public function up()
     {
-        Schema::create('consultas', function (Blueprint $table) {
+        Schema::create('consulta_usados', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('email')->nullable();
             $table->string('telefono');
-            $table->string('mensaje');
-
+            $table->string('email');
+            $table->string('marca');
+            $table->string('modelo');
+            $table->longText('mensaje');
+            $table->string('enviar_a');
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ class CreateConsultasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consultas');
+        Schema::dropIfExists('consulta_usados');
     }
 }

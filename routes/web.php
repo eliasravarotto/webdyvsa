@@ -57,7 +57,7 @@ Route::get('/modelos/{modelo}','FrontController@modelo');
 Route::get('/modelos','FrontController@getModelos');
 Route::get('/usados','FrontController@usadosIndex');
 Route::get('/usados/{id}','FrontController@usadosShow');
-Route::post('/consultar/usado/{id}','FrontController@consultaUsado');
+Route::post('/consultar/usado/{id}','ConsultaUsadoController@store');
 Route::get('/turno-servicios/create','TurnoServicioController@create');
 Route::post('/turno-servicios','TurnoServicioController@store');
 Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('test_drive_form');

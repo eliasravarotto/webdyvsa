@@ -25,7 +25,7 @@
 		<section>
 			<div>
 				<div class="container">
-					<h3 style="font-family:ToyotaFont; color: #404048">ELEGI TU USADO</h3>
+					<h3 style="font-family:ToyotaFont; color: #404048">ELEGÍ TU USADO</h3>
 				</div>
 			</div>
 			<div class="container">

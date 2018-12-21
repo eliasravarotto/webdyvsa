@@ -244,15 +244,10 @@
     @yield('content')
 
     <section>
-      <div class="section-colored text-center prefooter " style="padding: 20px 0; background-color: #f5f5f5">
+      <div class="section-colored text-center prefooter " style="padding: 20px 0; background-color: #f5f5f5; margin-top: 25px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 logos-footer disabled">
-                   {{-- <ul class="nav nav-tabs nav-justified">
-                        <li><img src="/imagenes/logos/eco-toyota.gif" class="img-responsive" style="height: 100px;"></li>
-                        <li><img src="/assets/img/footer/toyota-express.jpg" title="Mantenimiento Express Toyota"></li>
-                        <li><img src="/assets/img/footer/geniune-parts.jpg" title="Repuestos Genuinos Toyota" ></li>
-                   </ul> --}}
                    <div class="logos-content" style="display: flex; justify-content: center; align-items: center;">
                      <div><img src="/imagenes/logos/logo_etc.png" class="img-responsive"></div>
                      <div><img src="/imagenes/logos/logo_mant_exp.png" class="img-responsive"></div>
@@ -327,6 +322,8 @@
       </div>
     </footer>
 
+
+
   </div>
 
   <!-- Script Section -->
@@ -335,6 +332,7 @@
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
   <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+  
   @yield('script')
 
   <script type="text/javascript">

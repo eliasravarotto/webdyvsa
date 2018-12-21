@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\HaIngresadoUnaConsulta;
 use App\MensajeEmail;
 use Illuminate\Http\Request;
 
@@ -36,17 +37,37 @@ class MensajeEmailController extends Controller
      */
     public function store(Request $request)
     {
+        
         try {
             $mensaje = new MensajeEmail;
             $mensaje->cliente = $request->cliente;
             $mensaje->telefono = $request->telefono;
             $mensaje->email = $request->email;
             $mensaje->mensaje = $request->mensaje;
+           
+
+            switch ($request->from) {
+                case 'financiacion':
+                    $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    break;
+                case 'financiacion':
+                    $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    break;
+                default:
+                    $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    break;
+            }
+
+            $mensaje->enviar_a = $enviar_a;
             $mensaje->save();
 
-            //event( new SeHaSolicitadoTestDrive($test_drive));
+            event( new HaIngresadoUnaConsulta($mensaje));
 
-            return redirect('/contacto')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
+            if ($request->from == 'contacto') {
+                return redirect('/contacto')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
+            } else{
+                 return redirect('/financiacion')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
+            }
 
         } catch (Exception $e) {
             return redirect('/contacto')->with('error', 'Error');

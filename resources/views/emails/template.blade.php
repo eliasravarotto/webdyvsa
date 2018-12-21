@@ -12,18 +12,18 @@
 </head>
 <body>
 <div style="display: flex; justify-content: flex-end;">
-	<img src="https://derkayvargas.com/_files/200000005-b0396b1366/200/dyv_logo_700px-01.png" style="height: 50px; width: 50px">
+	<img src="https://derkayvargas.com/_files/200000213-36c2937c1a/200/logonavidadpng.png" style="height: 50px; width: 50px">
 </div>
 <div>
 	<h4>Datos</h4>
-	<label style="font-weight: bold;">Nomnbre:</label> {{ $data->nombre }} <br>
+	{{-- <label style="font-weight: bold;">Nomnbre:</label> {{ $data->nombre }} <br>
 	<label style="font-weight: bold;">Telefono:</label> {{ $data->telefono }} <br>
 	<label style="font-weight: bold;">Email:</label> {{ $data->email }} <br>
 	<label style="font-weight: bold;">Unidad:</label> {{ $data->marca }} {{ $data->modelo }}
 	<h4>Mensaje</h4>			
 	<div class="well">
 		<p>{{$data->mensaje}}</p>
-	</div>
+	</div> --}}
 </div>
 </body>
 </html>

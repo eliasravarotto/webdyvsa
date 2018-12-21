@@ -6,7 +6,8 @@
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
 
 	<article>
-		<section  class="pad-bot-25" style="background: url('/imagenes/fondo2.jpg'); background-size: cover; background-repeat: no-repeat;">
+		{{-- <section  class="pad-bot-25" style="background: url('/imagenes/fondo2.jpg'); background-size: cover; background-repeat: no-repeat;"> --}}
+		<section  class="pad-bot-25">
 			<section>
 				<div class="container">
 					@if (session('status'))

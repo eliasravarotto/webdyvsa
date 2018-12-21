@@ -3,7 +3,7 @@
     position: fixed;
     z-index: 99999;
     right: 10px;
-    top: calc(50% - 100px);
+    
     /*border-radius: 50px;*/
     -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);

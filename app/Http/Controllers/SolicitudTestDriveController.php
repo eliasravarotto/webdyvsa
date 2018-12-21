@@ -49,19 +49,19 @@ class SolicitudTestDriveController extends Controller
 
             switch ($request->sucursal) {
                 case 1:
-                    $email = 'eliasravarotto@derkayvargas.com.ar';
+                    $email = 'eliasravarotto@derkayvargas.com.ar'; //SAENZ PEÑA
                     break;
                 case 2:
-                    $email = 'elias.ravarotto@gmail.com';
+                    $email = 'elias.ravarotto@gmail.com'; //RESISTENCIA
                     break;
                 case 3:
-                   $email = 'eliasravarotto@derkayvargas.com.ar';
+                   $email = 'eliasravarotto@derkayvargas.com.ar'; //CHARATA
                     break;
                 case 4:
-                    $email = 'eliasravarotto@derkayvargas.com.ar';
+                    $email = 'eliasravarotto@derkayvargas.com.ar'; //VILLA ANGELA
                     break;
                 case 5:
-                    $email = 'eliasravarotto@derkayvargas.com.ar';
+                    $email = 'eliasravarotto@derkayvargas.com.ar'; // RESISTENCIA TPA
                     break;
             }
             $test_drive->enviar_a = $email;

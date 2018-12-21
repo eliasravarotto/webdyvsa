@@ -14,8 +14,10 @@
 		</section>
 		<section>
 			<div class="container">
-				<h2>FINANCIACIÓN</h2>
-				<p>Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
+				<div class="page-header">
+				  <h1>FINANCIACIÓN <small></small></h1>
+				</div>
+				<p class="text-justify">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
 				</p>
 			</div>
 		</section>
@@ -98,8 +100,6 @@
 	      </div>
   		</section>
 
-
-
   		<section>
   			<div class="container">
 	  			{{-- <div class="panel-group" id="accordion"> --}}
@@ -167,6 +167,52 @@
 		  	</div> 
   		</section>
 
+  		<section>
+  			<div class="container">
+  			<div class="row">
+				<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+					<h2 class="text-center h1-titulo-form">FORMULARIO DE CONTACTO<br>
+						<small>Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</small>
+					</h2>
+				</div>
+			</div>
+  			<div class="row">
+  				<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+		  			<form class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+						{{ csrf_field() }}
+						<input type="hidden" name="from" value="financiacion">
+						<div class="row">
+							<div class=" col-md-6">
+						    <label class="control-label">Nombre y Apellido</label>
+						    <input type="text" class="form-control" name="cliente">
+					  	</div>
+					  	<div class=" col-md-6">
+						    <label class="control-label">Teléfono</label>
+						    <input type="text" class="form-control" name="telefono">
+					  	</div>
+						</div>
+						<div class="row">
+							<div class=" col-md-12">
+								<label class="control-label">Email</label>
+						    <input type="email" class="form-control" name="email">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label class="control-label">Mensaje</label>
+						    <textarea name="mensaje" class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="row pad-top-20">
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-default">ENVIAR</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			</div>
+  		</section>
     </article>
 @stop
 @section('script')
@@ -180,26 +226,5 @@
 
 	$("div.thumbnail-red").height(maxHeight);
 
-	console.log(maxHeight);
-
-	$('#creditos_prend').click(function() {
-	  $('#plus_creditos_prend').toggle();
-	  $('#minus_creditos_prend').toggle();
-	  if($('#minus_leasing').is(':visible'))
-		{
-			$('#plus_leasing').toggle();
-	  		$('#minus_leasing').toggle();
-		}
-	});
-
-	$('#leasing').click(function() {
-	  $('#plus_leasing').toggle();
-	  $('#minus_leasing').toggle();
-	  	if($('#minus_creditos_prend').is(':visible'))
-		{
-			$('#plus_creditos_prend').toggle();
-	 		$('#minus_creditos_prend').toggle();
-		}
-	});
 </script>
 @stop

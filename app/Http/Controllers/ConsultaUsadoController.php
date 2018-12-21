@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Consulta;
+use App\ConsultaUsado;
+use App\Events\SeConsultoPorUsado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
-class ConsultaController extends Controller
+class ConsultaUsadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,16 +37,33 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        $consulta = new ConsultaUsado;
+        $consulta->nombre = $request->nombre;
+        $consulta->telefono = $request->telefono;
+        $consulta->email = $request->email;
+        $consulta->mensaje = $request->mensaje;
+        $consulta->marca = $request->marca;
+        $consulta->modelo = $request->modelo;
+        $consulta->enviar_a = 'unemail@derkayvargas.com.ar';
+
+        $consulta->save();
+
+        event( new SeConsultoPorUsado($consulta));
+
+        if($request->ajax()){
+            return 'ok';
+        }        
+        return redirect('/usados');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Consulta  $consulta
+     * @param  \App\ConsultaUsado  $consultaUsado
      * @return \Illuminate\Http\Response
      */
-    public function show(Consulta $consulta)
+    public function show(ConsultaUsado $consultaUsado)
     {
         //
     }
@@ -52,10 +71,10 @@ class ConsultaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Consulta  $consulta
+     * @param  \App\ConsultaUsado  $consultaUsado
      * @return \Illuminate\Http\Response
      */
-    public function edit(Consulta $consulta)
+    public function edit(ConsultaUsado $consultaUsado)
     {
         //
     }
@@ -64,10 +83,10 @@ class ConsultaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Consulta  $consulta
+     * @param  \App\ConsultaUsado  $consultaUsado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consulta $consulta)
+    public function update(Request $request, ConsultaUsado $consultaUsado)
     {
         //
     }
@@ -75,10 +94,10 @@ class ConsultaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Consulta  $consulta
+     * @param  \App\ConsultaUsado  $consultaUsado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Consulta $consulta)
+    public function destroy(ConsultaUsado $consultaUsado)
     {
         //
     }
