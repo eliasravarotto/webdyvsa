@@ -30,7 +30,8 @@ return [
     */
 
     //'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-    'host' => 'smtp.gmail.com',
+    //'host' => 'smtp.gmail.com',
+    'host' => 'outlook.office365.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -62,8 +63,9 @@ return [
     //     'name' => env('MAIL_FROM_NAME', 'Example'),
     // ],
     'from' => [
-        'address' => 'elias.ravarotto@gmail.com',
-        'name' => 'Elias DyV',
+        //'address' => 'elias.ravarotto@gmail.com',
+        'address' => 'info@derkayvargas.com.ar',
+        'name' => 'WEB Derka y Vargas',
     ],
 
     /*
@@ -91,9 +93,12 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    // 'username' => env('MAIL_USERNAME'),
 
-    'password' => env('MAIL_PASSWORD'),
+    // 'password' => env('MAIL_PASSWORD'),
+    'username' => 'info@derkayvargas.com.ar',
+
+    'password' => 'Hoz94629',
 
     /*
     |--------------------------------------------------------------------------

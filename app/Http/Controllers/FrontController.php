@@ -112,6 +112,7 @@ class FrontController extends Controller
         $consulta->telefono = $request->telefono;
         $consulta->email = $request->email;
         $consulta->mensaje = $request->mensaje;
+        $consulta->enviar_a = 'elias.ravarotto@gmail.com';
         $consulta->save();
         Mail::send('emails.template', ['data' => $request], function ($message) use ($request){
 

@@ -69,6 +69,7 @@ class TurnoServicioController extends Controller
             $turno->dominio = $request->dominio;
             $turno->servicio_id = $request->tipo_de_servicio;
             $turno->comentario = $request->comentario;
+            $turno->enviar_a = 'elias.ravarotto@gmail.com';
             $turno->save();
 
             event( new SeHaSolicitadoUnTurno($turno));
