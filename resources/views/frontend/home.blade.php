@@ -126,19 +126,6 @@
     </div>
   </div>
 
-  <div class="body-navidad">
-    <div class="page-wrap">
-      <header class="site-header wrapper">
-        <h1 class="h1-navidad">
-          DERKA Y VARGAS<br>
-          <br>
-          
-          <span class="script">Te Desea Felicez Fiestas</span>
-        </h1>
-      </header>
-    </div>
-  </div>
-
   <section id="services" style="border-top: 1px solid #01b2aa;">
     <div class="container">
       <img src="{{asset('imagenes/logos/social_media.jpg')}}" style="width: 100%">

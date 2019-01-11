@@ -87,7 +87,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
-		<section style="margin-top: 50px; margin-bottom: 50px">
+{{-- 		<section style="margin-top: 50px; margin-bottom: 50px">
 			<div class=" container">
 				
 			<div class="row">
@@ -97,27 +97,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					<div class="well">
 					<h3>DETALLES</h3>
-					{{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div> --}}
-					{{-- <form action="/" method="POST">
-				        {{ csrf_field() }}
-				        <textarea name="summernoteInput" class="summernote"></textarea>
-				        <br>
-				        <button type="submit">Submit</button>
-				    </form> --}}
 				</div>
 			</div>
 			</div>
-		</section>
+		</section> --}}
 		
-		<section class="pad-top-50 pad-bot-50 arrow_box">
-			<div class="container">
-				<div class="table-responsive">          
+		<section class="pad-top-50">
+			<div class="container arrow_box">
+				<div class="page-header">
+		  			<h1>PRECIOS VIGENTES </h1>
+					<p><b>Desde:</b> 01-02-2019 - <b>Hasta:</b> 31-01-2019</p>
+				</div>
+				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped">
 						<thead>
 						  <tr>

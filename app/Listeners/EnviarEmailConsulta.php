@@ -28,11 +28,11 @@ class EnviarEmailConsulta implements ShouldQueue
     public function handle(HaIngresadoUnaConsulta $event)
     {
         $consulta = $event->consulta;
+        $asunto = $event->asunto;
+
         Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta){
-
-            $message->subject('Nueva Consulta');
+            $message->subject('$asunto');
             $message->to($consulta->enviar_a);
-
         });
     }
 }

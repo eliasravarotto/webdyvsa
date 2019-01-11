@@ -17,11 +17,11 @@ class CreateTurnoServiciosTable extends Migration
             $table->increments('id');
             $table->string('cliente');
             $table->string('telefono');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->date('fecha');
             $table->string('modelo');
             $table->string('dominio');
-            $table->string('comentario');
+            $table->string('comentario')->nullable();
             $table->string('enviar_a');
 
             $table->integer('sucursal_id')->unsigned();

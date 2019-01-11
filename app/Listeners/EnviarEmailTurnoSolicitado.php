@@ -37,6 +37,7 @@ class EnviarEmailTurnoSolicitado implements ShouldQueue
                                 turno_servicios.modelo,
                                 turno_servicios.dominio,
                                 turno_servicios.comentario,
+                                turno_servicios.enviar_a,
                                 turno_servicios.created_at,
                                 sucursales.nombre AS sucursal,
                                 tipo_servicios.nombre as tipo_de_servicio
@@ -51,9 +52,12 @@ class EnviarEmailTurnoSolicitado implements ShouldQueue
         Mail::send('emails.solicitud-turno', ['turno' => $turno], function ($message) use ($turno){
 
             $message->subject('Solicitud de Turno');
-            $message->to('elias.ravarotto@gmail.com');
-            $message->to('eliasravarotto@derkayvargas.com.ar');
-            //$message->to('marceloaguirre@derkayvargas.com.ar');
+
+            $receptores = unserialize($turno->enviar_a);
+
+            foreach ($receptores as $receptor) {
+                $message->to($receptor);
+            }
         });
     }
 }

@@ -15,15 +15,17 @@ class HaIngresadoUnaConsulta
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $consulta;
+    public $asunto;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($consulta)
+    public function __construct($consulta, $asunto)
     {
         $this->consulta = $consulta;
+        $this->asunto = $asunto;
     }
 
     /**

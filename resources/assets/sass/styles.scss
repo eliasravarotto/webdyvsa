@@ -124,9 +124,16 @@ footer{
   line-height: 2.1
 }
 
+
 /*TAMAÑO FUENTES-------------------------------------------*/
+.fs-16{
+  font-size: 16px;
+}
 .fs-17{
   font-size: 17px;
+}
+.fs-18{
+  font-size: 18px;
 }
 .fs-25{
   font-size: 25px;
@@ -187,6 +194,9 @@ $gris-2: #626262;
 
 /*BOTONES------------------------------------------------*/
 
+.btn{
+  border-radius:0px !important;
+}
 
 .btn-circle {
   width: 30px;
@@ -221,7 +231,7 @@ $gris-2: #626262;
 }
 .btn-toyota:hover {
     color: #fff;
-    background-color: #eb0a1e;;
+    background-color: #000000;
     border-color: #78341a;
 }
 
@@ -578,6 +588,13 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
 
 /*----MEDIA QUERYS-------------------------------------------------
 ---------------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+  .remove-flex-on-mobile {
+    display: block !important;
+  }
+}
+
 @media (max-width: 992px) { 
   .image-service .is-image { width: 100%; }
 
@@ -1226,184 +1243,4 @@ $red:#ff3c4b;
     top: calc(50% - 100px);
   }
 
-}
-
-
-
-
-/*---------------- LAYOUT NAVIDEÑO------------------------
---------------------------------------------------------*/
-* {
-  box-sizing: border-box;
-}
-.cf:before,
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.cf:after {
-  clear: both;
-}
-.cf {
-  *zoom: 1;
-}
-/* COLORS *
------------------------------------------------*/
-/* FONTS *
------------------------------------------------*/
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Sacramento';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Sacramento'), local('Sacramento-Regular'), url(https://fonts.gstatic.com/s/sacramento/v5/buEzpo6gcdjy0EiZMBUG4C0f-A.ttf) format('truetype');
-}
-.script {
-  font-family: 'Sacramento', cursive;
-}
-.display {
-  font-family: 'Montserrat', sans-serif;
-}
-/* GLOBAL *
------------------------------------------------*/
-.body-navidad {
-  margin: 0;
-  background-color: #dd4444;
-  background-image: url('http://nicholaspetersen.is/wp-content/themes/v3.1/images/blackbg1-transparent.png');
-  color: white;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  min-height: 550px;
-}
-@media screen and (min-width: 38em) {
-  .body-navidad {
-    font-size: 112.5%;
-  }
-}
-.page-wrap {
-  width: 100%;
-  overflow: hidden;
-  background: url('http://nicholaspetersen.is/wp-content/themes/v3/images/christmas-trees-mobile.png') no-repeat;
-  background-position: top center;
-  background-size: 100% auto;
-}
-@media screen and (min-width: 38em) {
-  .page-wrap {
-    background: url('http://nicholaspetersen.is/wp-content/themes/v3/images/christmas-trees.png') no-repeat;
-    background-size: 100% auto;
-  }
-}
-.wrapper {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-p.small {
-  font-size: 0.8em;
-}
-a {
-  color: #9c3538;
-}
-a:hover {
-  color: #bf3d3f;
-}
-a.sc-player,
-.button {
-  display: inline-block;
-  background: #bf3d3f;
-  background: rgba(19, 19, 19, 0.14);
-  border-radius: 4px;
-  padding: 1em 1.5em;
-  text-align: center;
-  text-decoration: none;
-  color: #f8f8f8;
-  font-size: 1.5em;
-  transition: all 0.3s ease-out;
-}
-a.sc-player:hover,
-.button:hover {
-  background: #9c3538;
-  background: rgba(19, 19, 19, 0.24);
-  color: #f8f8f8;
-}
-.button svg {
-  fill: #f8f8f8;
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: middle;
-}
-.main {
-  margin-bottom: 4em;
-}
-.transition {
-  transition: all 0.3s ease-out;
-}
-.h1-navidad {
-  position: relative;
-  margin-top: 50px;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  font-size: 2em;
-  line-height: 1;
-  text-shadow: 0.15em 0.1em 3px rgba(19, 19, 19, 0.22);
-  -webkit-font-smoothing: antialiased;
-  transition: all 0.3s ease-out;
-  cursor: pointer;
-}
-@media screen and (min-width: 20em) {
-  .h1-navidad {
-    font-size: 2.5em;
-  }
-}
-@media screen and (min-width: 38em) {
-  .h1-navidad {
-    font-size: 4.5em;
-    margin-top: 100px;
-  }
-}
-@media screen and (min-width: 68em) {
-  .h1-navidad {
-    font-size: 6em;
-  }
-}
-.h1-navidad .small {
-  position: relative;
-  z-index: 1;
-  display: block;
-  font-size: 1.15em;
-  /*margin-bottom: -0.15em;*/
-  margin-bottom: 100px;
-  text-transform: none;
-  font-weight: normal;
-  font-size: 0.6em;
-  position: absolute;
-  left: 50%;
-  margin-left: -1.75em;
-  top: -0.25em;
-}
-.h1-navidad .script {
-  position: relative;
-  z-index: 1;
-  display: block;
-  font-size: 1.15em;
-  /*margin-bottom: -0.15em;*/
-  margin-bottom: 100px;
-  font-weight: normal;
-  text-transform: none;
-}
-@media screen and (min-width: 38em) {
-  .h1-navidad:hover {
-    -webkit-transform: translate(-0.1em, -0.1em) scale(1.05);
-            transform: translate(-0.1em, -0.1em) scale(1.05);
-    text-shadow: 0.25em 0.2em 10px rgba(19, 19, 19, 0.22);
-  }
 }

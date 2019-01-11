@@ -48,20 +48,21 @@ class MensajeEmailController extends Controller
 
             switch ($request->from) {
                 case 'financiacion':
-                    $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
-                    break;
-                case 'financiacion':
-                    $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    $enviar_a = 'elias.ravarotto@gmail.com';
+                    $asunto ='Consulta - Financiación';
+                    //$enviar_a = 'fabianaaranda@derkayvargas.com.ar';
                     break;
                 default:
-                    $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    $asunto ='Consulta';
+                    $enviar_a = 'elias.ravarotto@gmail.com';
+                    //$enviar_a = 'fabianaaranda@derkayvargas.com.ar';
                     break;
             }
 
             $mensaje->enviar_a = $enviar_a;
             $mensaje->save();
 
-            event( new HaIngresadoUnaConsulta($mensaje));
+            event( new HaIngresadoUnaConsulta($mensaje, $asunto));
 
             if ($request->from == 'contacto') {
                 return redirect('/contacto')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');

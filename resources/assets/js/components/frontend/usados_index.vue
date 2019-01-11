@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div id="fh5co-services-section">
+        <!-- <div id="fh5co-services-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center heading-section">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Modal -->
         <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

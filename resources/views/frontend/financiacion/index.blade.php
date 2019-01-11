@@ -14,93 +14,24 @@
 		</section>
 		<section>
 			<div class="container">
-				<div class="page-header">
-				  <h1>FINANCIACIÓN <small></small></h1>
+				<div class="page-header" >
+					<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center; align-items: center;">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				  			{{-- <h1>FINANCIACIÓN <small></small></h1> --}}
+				  			<center>
+				  			<img class="img-responsive" src="/imagenes/TCF/Toyota_Compania_Financiera.jpg">
+				  			</center>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" >
+							<p class="text-justify fs-16">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
+							</p>
+						</div>
+					</div>
 				</div>
-				<p class="text-justify">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
-				</p>
 			</div>
 		</section>
 
-  		<section>
-  			<center>
-  				<img class="img-responsive" src="http://homu.com.ar/wp-content/uploads/2017/05/financial-web-SEP.jpg">
-  			</center>
-  		</section>
-
-		<section class="pad-top-50 pad-bot-50" style="height: auto;">
-	      <div class="container">
-	        {{-- <h2 class="text-center bold">Servicio al Cliente</h2> --}}
-	        {{-- <h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3> --}}
-	        <div class="row" >
-	          <div class="col-md-4 col-sm-12">
-	            {{-- <div class="thumbnail thumbnail-red thumbnail-financial">
-	                <div class="caption caption-default text-center">
-	                    <i class="fa fa-calculator" style="font-size: 70px;" aria-hidden="true"></i>
-	                    <h1>Simulá tu préstamo</h1>
-	                    <p class="text-justify">
-	                      Elegí el modelo y el mejor plan de financiación para vos.
-	                    </p>
-	                	<a href="https://www.toyotacfa.com.ar/simulador-creditos" class="btn btn-white btn-primary btn-danger-1">SIMULAR</a>
-	                </div>
-	            </div> --}}
-            	<a href="https://www.toyotacfa.com.ar/simulador-creditos" style="text-decoration: none; color: black">
-		            <div class="well text-center">
-			            	<i class="fa fa-calculator" style="font-size: 70px;" aria-hidden="true"></i>
-		                    <h1>Simulá tu préstamo</h1>
-	                    <p class="text-justify">
-	                      Elegí el modelo y el mejor plan de financiación para vos.
-	                    </p>
-		            </div>
-            	</a>
-	          </div>  
-	          <div class="col-md-4 col-sm-12">
-	            {{-- <div class="thumbnail thumbnail-red thumbnail-financial">
-	                <div class="caption caption-default text-center">
-	                    <i class="fa fa-usd" style="font-size: 70px;" aria-hidden="true"></i>
-	                    <h1>Solicitá tu préstamo</h1>
-	                    <p class="text-justify">
-	                      En pocos y simples pasos obtené información en tu e-mail.
-	                    </p>
-	                    <a href="https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF" class="btn btn-white btn-primary btn-danger-1">SOLICITAR</a>
-	                </div>
-	            </div> --}}
-                <a href="https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF" style="text-decoration: none;color: black">
-	            <div class="well text-center">
-	            	<i class="fa fa-usd" style="font-size: 70px;" aria-hidden="true"></i>
-                    <h1>Solicitá tu préstamo</h1>
-                    <p class="text-justify">
-                      En pocos y simples pasos obtené información en tu e-mail.
-                    </p>
-	            </div>
-                </a>
-	          </div>  
-	          <div class="col-md-4 col-sm-12">
-	            {{-- <div class="thumbnail thumbnail-red thumbnail-financial">
-	                <div class="caption caption-default text-center">
-	                    <i class="fa fa-envelope-o" style="font-size: 70px;" aria-hidden="true"></i>
-	                    <h1>¿Más detalles?</h1>
-	                    <p class="text-justify">
-	                      Completá el formulario y te contactaremos a la brevedad
-	                    </p>
-	                    <a href="/financiacion" class="btn btn-white btn-primary btn-danger-1">CONSULTAR</a>
-	                </div>
-	            </div> --}}
-                <a href="/financiacion" style="text-decoration: none;color: black">
-	            <div class="well text-center">
-	            	<i class="fa fa-envelope-o" style="font-size: 70px;" aria-hidden="true"></i>
-                    <h1>¿Más detalles?</h1>
-                    <p class="text-justify">
-                      Completá el formulario y te contactaremos a la brevedad
-                    </p>
-	            </div>
-                </a>
-	          </div>  
-	        </div>
-	      </div>
-  		</section>
-
-  		<section>
+		<section>
   			<div class="container">
 	  			{{-- <div class="panel-group" id="accordion"> --}}
 				    <div class="panel panel-default">
@@ -167,64 +98,144 @@
 		  	</div> 
   		</section>
 
+  				<section class="pad-top-50 pad-bot-50" style="height: auto;">
+	      <div class="container">
+	        {{-- <h2 class="text-center bold">Servicio al Cliente</h2> --}}
+	        {{-- <h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3> --}}
+	        <div class="row" >
+	          <div class="col-md-4 col-sm-12">
+	            {{-- <div class="thumbnail thumbnail-red thumbnail-financial">
+	                <div class="caption caption-default text-center">
+	                    <i class="fa fa-calculator" style="font-size: 70px;" aria-hidden="true"></i>
+	                    <h1>Simulá tu préstamo</h1>
+	                    <p class="text-justify">
+	                      Elegí el modelo y el mejor plan de financiación para vos.
+	                    </p>
+	                	<a href="https://www.toyotacfa.com.ar/simulador-creditos" class="btn btn-white btn-primary btn-danger-1">SIMULAR</a>
+	                </div>
+	            </div> --}}
+            	<a href="https://www.toyotacfa.com.ar/simulador-creditos" style="text-decoration: none; color: black">
+		            <div class="well text-center">
+			            	<i class="fa fa-calculator" style="font-size: 70px;" aria-hidden="true"></i>
+		                    <h1>Simulá tu préstamo</h1>
+	                    <p class="text-justify">
+	                      Elegí el modelo y el mejor plan de financiación para vos.
+	                    </p>
+		            </div>
+            	</a>
+	          </div>  
+	          <div class="col-md-4 col-sm-12">
+	            {{-- <div class="thumbnail thumbnail-red thumbnail-financial">
+	                <div class="caption caption-default text-center">
+	                    <i class="fa fa-usd" style="font-size: 70px;" aria-hidden="true"></i>
+	                    <h1>Solicitá tu préstamo</h1>
+	                    <p class="text-justify">
+	                      En pocos y simples pasos obtené información en tu e-mail.
+	                    </p>
+	                    <a href="https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF" class="btn btn-white btn-primary btn-danger-1">SOLICITAR</a>
+	                </div>
+	            </div> --}}
+                <a href="https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF" style="text-decoration: none;color: black">
+	            <div class="well text-center">
+	            	<i class="fa fa-usd" style="font-size: 70px;" aria-hidden="true"></i>
+                    <h1>Solicitá tu préstamo</h1>
+                    <p class="text-justify">
+                      En pocos y simples pasos obtené información en tu e-mail.
+                    </p>
+	            </div>
+                </a>
+	          </div>  
+	          <div class="col-md-4 col-sm-12">
+	            {{-- <div class="thumbnail thumbnail-red thumbnail-financial">
+	                <div class="caption caption-default text-center">
+	                    <i class="fa fa-envelope-o" style="font-size: 70px;" aria-hidden="true"></i>
+	                    <h1>¿Más detalles?</h1>
+	                    <p class="text-justify">
+	                      Completá el formulario y te contactaremos a la brevedad
+	                    </p>
+	                    <a href="/financiacion" class="btn btn-white btn-primary btn-danger-1">CONSULTAR</a>
+	                </div>
+	            </div> --}}
+                <a href="#" onclick="masDetalles(event)" style="text-decoration: none;color: black">
+	            <div class="well text-center">
+	            	<i class="fa fa-envelope-o" style="font-size: 70px;" aria-hidden="true"></i>
+                    <h1>¿Más detalles?</h1>
+                    <p class="text-justify">
+                      Completá el formulario y te contactaremos a la brevedad
+                    </p>
+	            </div>
+                </a>
+	          </div>  
+	        </div>
+	      </div>
+  		</section>
+
   		<section>
   			<div class="container">
-  			<div class="row">
-				<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
-					<h2 class="text-center h1-titulo-form">FORMULARIO DE CONTACTO<br>
-						<small>Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</small>
-					</h2>
+	  			<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center;align-items: center;">
+					<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+	  					<img class="img-responsive" src="http://homu.com.ar/wp-content/uploads/2017/05/financial-web-SEP.jpg">
+					</div>
+					<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12" id="form-contacto">
+						<h2 class="text-center h1-titulo-form">FORMULARIO DE CONTACTO<br>
+							<small>Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</small>
+						</h2>
+						<form class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+							{{ csrf_field() }}
+							<input type="hidden" name="from" value="financiacion">
+							<div class="row">
+								<div class=" col-md-6">
+							    <label class="control-label">Nombre y Apellido</label>
+							    <input type="text" class="form-control cliente" name="cliente">
+						  	</div>
+						  	<div class=" col-md-6">
+							    <label class="control-label">Teléfono</label>
+							    <input type="text" class="form-control" name="telefono">
+						  	</div>
+							</div>
+							<div class="row">
+								<div class=" col-md-12">
+									<label class="control-label">Email</label>
+							    <input type="email" class="form-control" name="email">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label class="control-label">Mensaje</label>
+							    <textarea name="mensaje" class="form-control"></textarea>
+								</div>
+							</div>
+							<div class="row pad-top-20">
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-default">ENVIAR</button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-			</div>
-  			<div class="row">
-  				<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
-		  			<form class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
-						{{ csrf_field() }}
-						<input type="hidden" name="from" value="financiacion">
-						<div class="row">
-							<div class=" col-md-6">
-						    <label class="control-label">Nombre y Apellido</label>
-						    <input type="text" class="form-control" name="cliente">
-					  	</div>
-					  	<div class=" col-md-6">
-						    <label class="control-label">Teléfono</label>
-						    <input type="text" class="form-control" name="telefono">
-					  	</div>
-						</div>
-						<div class="row">
-							<div class=" col-md-12">
-								<label class="control-label">Email</label>
-						    <input type="email" class="form-control" name="email">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<label class="control-label">Mensaje</label>
-						    <textarea name="mensaje" class="form-control"></textarea>
-							</div>
-						</div>
-						<div class="row pad-top-20">
-							<div class="col-md-12">
-								<button type="submit" class="btn btn-default">ENVIAR</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
 			</div>
   		</section>
     </article>
 @stop
 @section('script')
 <script type="text/javascript">
-	var heights = $("div.thumbnail-red").map(function ()
-    {
-        return $(this).height();
-    }).get();
+	// var heights = $("div.thumbnail-red").map(function ()
+ //    {
+ //        return $(this).height();
+ //    }).get();
 
-	maxHeight = Math.max.apply(null, heights);
+	// maxHeight = Math.max.apply(null, heights);
 
-	$("div.thumbnail-red").height(maxHeight);
+	// $("div.thumbnail-red").height(maxHeight);
+
+	function masDetalles(e){
+		e.preventDefault();
+		$('html,body').animate({
+	        scrollTop: $("#form-contacto").offset().top
+	    }, 'slow');
+	    $(".cliente").focus();
+	}
+
 
 </script>
 @stop

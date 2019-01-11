@@ -64,12 +64,27 @@ class TurnoServicioController extends Controller
             $turno->telefono = $request->telefono;
             $turno->email = $request->email;
             $turno->fecha = $request->fecha;
-            $turno->sucursal_id = $request->sucursal;
             $turno->modelo = $request->modelo;
             $turno->dominio = $request->dominio;
             $turno->servicio_id = $request->tipo_de_servicio;
             $turno->comentario = $request->comentario;
-            $turno->enviar_a = 'elias.ravarotto@gmail.com';
+            $turno->sucursal_id = $request->sucursal;
+
+            $receptopres = [];
+
+            switch ($turno->sucursal_id) {
+                case 1:
+                    array_push($receptopres, "eliasravarotto@derkayvargas.com.ar", "elias_rvt@hotmail.com", "elias.ravarotto@gmail.com");
+                    break;
+                case 2:
+                    array_push($receptopres, "eliasravarotto@derkayvargas.com.ar", "elias_rvt@hotmail.com", "elias.ravarotto@gmail.com");
+                    break;
+                case 3:
+                    array_push($receptopres, "eliasravarotto@derkayvargas.com.ar", "elias_rvt@hotmail.com", "elias.ravarotto@gmail.com");
+                    break;
+            }
+            
+            $turno->enviar_a = serialize($receptopres);
             $turno->save();
 
             event( new SeHaSolicitadoUnTurno($turno));

@@ -15,7 +15,7 @@ class CreateParallaxModelosTable extends Migration
     {
         Schema::create('parallax_modelos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('texto');
+            $table->string('texto')->nullable();
             $table->string('imagen');
             $table->integer('modelo_id')->unsigned();
             $table->foreign('modelo_id')->references('id')->on('modelos');

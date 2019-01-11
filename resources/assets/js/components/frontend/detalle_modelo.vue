@@ -1,4 +1,15 @@
 <style type="text/css">
+.row-well{
+    background: #f4f4f4;
+background: -moz-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(7%, #fefefe), color-stop(43%, #f6f6f6), color-stop(100%, #ededed));
+background: -webkit-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: -o-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: -ms-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: linear-gradient(to right, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+    height: 100px;
+}
 
 </style>
 <template>
@@ -111,9 +122,24 @@
                     </ul>
                 </div>
             </div>
+            <section style="width: 100%" v-if="tieneTestDrive">
+                <div class="row row-well" style=" display: flex; justify-content: center; align-items: center; flex-wrap: nowrap;">
+                    <div class="" style="width: 50%; display: flex; justify-content: center; padding-left: 50px;">
+                        <h2>
+                            <span>
+                                ¿Querés probarlo?
+                            </span>
+                        </h2>
+                    </div>
+                    <div style="width: 50%;display: flex; justify-content: center; padding-right: 50px;">
+                        <a href="/test-drive/create" class="btn btn-toyota btn-lg" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
+                    </div>
+                </div>
+            </section>
         </section>
 
-        <section class="pad-top-bot-50">
+
+        <section class="pad-top-bot-50" v-if="imagenes_galeria.length > 0">
             <div class="container">
                 <!-- Slider -->
                 <div class="row">
@@ -185,6 +211,7 @@
             </div>
         </section>
 
+
         <!--Parallax Section -->
         <div class="parallax bg3" v-bind:style="'background-image: url('+parallax.imagen+')'">
           <div class="container">
@@ -192,7 +219,7 @@
               <div class="col-xs-12">
                 &nbsp;
                 <div class="caption">
-                  <span class="border et-waypoint">{{ parallax.texto }}</span>
+                  <span v-if="parallax.texto != ''" class="border et-waypoint">{{ parallax.texto }}</span>
                 </div>
               </div>
             </div>
@@ -224,7 +251,8 @@
                 img_logo: '',
                 slogan: '',
                 link_ficha_tecnica: '',
-                link_catalogo: ''
+                link_catalogo: '', 
+                tieneTestDrive: '',
             }
         },
         mounted() {
@@ -238,7 +266,15 @@
             this.features = this.data.caracteristicas;
             this.img_modelo = this.modelo.img_modelo;
             this.img_logo = this.modelo.img_logo;
+
+            if (this.modelo.nombre == 'Hilux' || this.modelo.nombre == 'Corolla' || this.modelo.nombre == 'Etios' || this.modelo.nombre == 'Yaris'){
+                this.tieneTestDrive = true;
+            } else{
+                this.tieneTestDrive = false;
+            }
+
             this.initJS();
+
             console.log(this.data);
         },
         methods:{
