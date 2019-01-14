@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
-class EnviarEmailTurnoSolicitado implements ShouldQueue
+class EnviarEmailTurnoSolicitado
 {
     /**
      * Create the event listener.

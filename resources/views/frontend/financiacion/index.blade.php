@@ -207,7 +207,7 @@
 							</div>
 							<div class="row pad-top-20">
 								<div class="col-md-12">
-									<button type="submit" class="btn btn-default">ENVIAR</button>
+									<button type="submit" class="btn btn-default btn-submit">ENVIAR</button>
 								</div>
 							</div>
 						</form>

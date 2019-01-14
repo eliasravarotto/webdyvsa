@@ -17,6 +17,12 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad-bot-25">
+					@if (session('status'))
+						<div class="alert alert-warning alert-dismissible toast" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('status') }}
+						</div>
+					@endif
 					@include('frontend.contacto.form')
 			  		<div style="margin-top: 35px; min-height: 400px;" id="map" ></div>
 				</div>

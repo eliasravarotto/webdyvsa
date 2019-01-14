@@ -104,6 +104,13 @@ class FrontController extends Controller
         return view('frontend.usados.show', compact('unidad', 'imagenes'));
     }
 
+    public function ultimosUsados()
+    {
+        $unidades = Usado::take(3)->get();
+
+        return $unidades;
+    }
+
     public function consultaUsado(Request $request)
     {
         //return $request;

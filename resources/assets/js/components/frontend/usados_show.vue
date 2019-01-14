@@ -12,7 +12,7 @@ margin-top:20px;
             <div id="slider">
                 <!-- Top part of the slider -->
                 <div class="row">
-                    <div class="col-md-offset-1 col-sm-12 col-md-5  " id="carousel-bounding-box">
+                    <div class="col-sm-12 col-md-6  " id="carousel-bounding-box">
                         <div class="carousel slide" id="myCarousel">
                             <!-- Carousel items -->
                             <div class="carousel-inner">
@@ -28,42 +28,144 @@ margin-top:20px;
                                 <span class="glyphicon glyphicon-chevron-right"></span>                                       
                             </a>                                
                         </div>
+                        <!--/Slider Small-->
+                        <div class="row hidden-xs" id="slider-thumbs">
+                            <!-- Bottom switcher of slider -->
+                            <ul class="hide-bullets" style="display: flex; justify-content: center;">
+                                <li v-for="(imagen, index) in imagenes" class="col-md-3">
+                                    <a class="thumbnail hand" :id="'carousel-selector-'+index"><img :src="imagen.url" v-on:click="showImage(imagen)"></a>
+                                </li>
+                            </ul>                 
+                        </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-5" id="carousel-text">
-                    	<div>
-                    		<label class="text-uppercase" style="font-family:ToyotaFont; font-size: 25px; color: #404048">
-                    			{{ unidad.marca }} {{ unidad.modelo }} {{ unidad.version }} 
-                    		</label>
-                    	</div>
-                    	<div style="display: flex; justify-content: space-between; font-size: 18px;">
-                            <div>
-                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{ unidad.anio }}
+                    <div class="col-sm-12 col-md-6" id="carousel-text">
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+                            <label class="text-uppercase" style="font-family:ToyotaFont; font-size: 25px; color: #404048">
+                                {{ unidad.marca }} {{ unidad.modelo }} {{ unidad.version }} 
+                            </label>
+                            <div style="display: flex; justify-content: space-between; font-size: 18px;">
+                                <div>
+                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{ unidad.anio }}
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{ unidad.km }}
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{ unidad.color }}
+                                </div>
                             </div>
-                            <div>
-                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{ unidad.km }}
+                            <div class="text-justify">
+                                <p>{{unidad.descripcion}}</p>
                             </div>
-                            <div>
-                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{ unidad.color }}
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h4 class="text-center">CONSULTAR POR ESTA UNIDAD
+                                    <!-- <span class="text-uppercase">{{unidad.marca}} {{unidad.modelo}} {{unidad.color}}</span> -->
+                                </h4>
+                                <form style="padding: 10px;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12">
+                                            <label>Nombre</label>
+                                            <input class="form-control" type="text" name="nombre" v-model="form.nombre" >
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-12 col-sm-12">
+                                            <label>Teléfono</label>
+                                            <input class="form-control" type="email" name="telefono" v-model="form.telefono">
+                                        </div>
+                                            
+                                        <div class="col-md-6 col-xs-12 col-sm-12">
+                                            <label>Email</label> (opcional)
+                                            <input class="form-control" type="email" name="email" v-model="form.email">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12">
+                                            <label>Mensaje</label>
+                                            <textarea class="form-control" v-model="form.mensaje"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div class="col-md-12 col-xs-12 col-sm-12">
+                                            <a  class="btn btn-default btn-submit" v-on:click.prevent="enviarConsulta()">ENVIAR</a>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
-                        <div class="well text-justify">
-                        	<p>{{unidad.descripcion}}</p>
+                            </div>
                         </div>
                         <!-- <a class="btn btn-default btn-block btn-lg" href="">CONSULTAR</a> -->
+                        <!-- <div class="row">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="text-right">
+                                    <p style="font-size: 18px; font-weight: bold;">Podés enviarnos tu consulta vía Whatsapp</p>
+                                    <b style="font-size: 25px;">3625-123456</b>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <div>
+                                    <img src="/imagenes/icons/whatsapp-icon.png" style="height: 70px;">                             
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
+
+            <section>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header">
+                          <h2 class="text-center">OTROS USADOS <br> <small>Quizás te interese otro</small></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                  <div v-for="unidad in otrasUnidades" class="col-sm-6 col-md-4">
+                    <div class="thumbnail thumbnail-no-bg">
+                      <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt="">
+                      <div class="caption caption-default">
+                        <h3 class="text-center">{{unidad.marca}} {{unidad.modelo}} {{unidad.version}}</h3>                        
+                        <p class="text-center">
+                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                                <div>
+                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{ unidad.anio }}
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{ unidad.km }}
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{ unidad.color }}
+                                </div>
+                            </div>
+                        </p>
+                        <p class="text-center" >
+                            <a v-bind:href="'/usados/'+unidad.id" class="btn btn-default" role="button">VER DETALLES</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-info" href="">VER TODOS</a>
+                    </div>
+                </div>
+            </section>
         
         <!--/Slider-->
-        <div class="row hidden-xs" id="slider-thumbs">
-            <!-- Bottom switcher of slider -->
+        <!-- <div class="row hidden-xs" id="slider-thumbs">
             <ul class="hide-bullets" style="display: flex; justify-content: center;">
                 <li v-for="(imagen, index) in imagenes" class="col-sm-2">
                     <a class="thumbnail hand" :id="'carousel-selector-'+index"><img :src="imagen.url" v-on:click="showImage(imagen)"></a>
                 </li>
             </ul>                 
-        </div>
+        </div> -->
 
         <!-- The Modal ------------------------------->
         <div id="moda_show_imagen" class="modal-img">
@@ -73,61 +175,6 @@ margin-top:20px;
             <img class="modal-content" id="img01" src="#">
         </div>
 
-        <!-- <div class="row arrow_box"></div> -->
-
-        <div class="row" style="margin-top: 100px;">
-            <div class="col-md-6 col-sm-12 col-xs-12 well">
-                <h3 class="text-center">Consultar por <span class="text-uppercase">{{unidad.marca}} {{unidad.modelo}} {{unidad.color}}</span></h3>
-                <form>
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12 col-sm-12">
-                            <label>Nombre</label>
-                            <input class="form-control" type="text" name="nombre" v-model="form.nombre" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-xs-12 col-sm-12">
-                            <label>Teléfono</label>
-                            <input class="form-control" type="email" name="telefono" v-model="form.telefono">
-                        </div>
-                            
-                        <div class="col-md-6 col-xs-12 col-sm-12">
-                            <label>Email</label> (opcional)
-                            <input class="form-control" type="email" name="email" v-model="form.email">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12 col-sm-12">
-                            <label>Mensaje</label>
-                            <textarea class="form-control" v-model="form.mensaje"></textarea>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top: 20px;">
-                        <div class="col-md-12 col-xs-12 col-sm-12">
-                            <a  class="btn btn-danger" v-on:click.prevent="enviarConsulta()">ENVIAR</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="well">
-                    
-                <div class="row">
-                    <div class="col-md-9 col-sm-9 col-xs-9">
-                        <div class="text-right">
-                            <p style="font-size: 20px; font-weight: bold;">También podes enviarnos tu consulta vía Whatsapp</p>
-                            <b style="font-size: 25px;">3625-123456</b>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
-                        <div>
-                            <img src="/imagenes/icons/whatsapp-icon.png" style="height: 75px;">                             
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>	
-        </div>
 	</div>
 </template>
 
@@ -143,13 +190,17 @@ margin-top:20px;
                     email: '',
                     telefono:'',
                     mensaje:'',
-                }
-                }
+                },
+                otrasUnidades: ['asas'],
+            }
         },
         mounted() {
             this.initJS();
             this.unidad = this.data.unidad;
             this.imagenes = this.data.imagenes;
+        },
+        created() {
+            this.otrosUsados();
         },
         methods:{
             openModalContacto(unidad)
@@ -171,6 +222,15 @@ margin-top:20px;
                 span.onclick = function() { 
                     $("#moda_show_imagen").fadeOut()
                 }
+            },
+            otrosUsados(){
+                self = this;
+                axios
+                    .get('/usados/get-last')
+                    .then(function (response) {
+                        console.log(response.data);
+                        self.otrasUnidades = response.data;
+                    })
             },
             initJS()
             {

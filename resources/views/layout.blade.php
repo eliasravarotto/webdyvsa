@@ -138,6 +138,7 @@
 
   {{-- @include('frontend.float-buttons') --}}
   @include('frontend.menu-fab')
+  @include('loading-dyv')
 
   <div id="app">
     <div class="header-contacto">
@@ -367,6 +368,11 @@
 
         window.sr = ScrollReveal();
         sr.reveal('.thumbnail-lighten', {duration: 1500});
+
+        $(".btn-submit").click(function(){
+          $('.en_proceso').css("display","flex");
+          console.log("The paragraph was clicked.");
+        });
 
     })(jQuery);
     

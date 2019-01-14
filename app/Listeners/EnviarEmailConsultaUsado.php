@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
-class EnviarEmailConsultaUsado implements ShouldQueue
+class EnviarEmailConsultaUsado
 {
     /**
      * Create the event listener.
