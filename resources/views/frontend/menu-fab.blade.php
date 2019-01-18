@@ -56,7 +56,7 @@
 					</div>">
   	<img src="/imagenes/icons/contacto.png" height="30px">
   </a>
-  <a class="btn btn-default " href="/contacto"  
+  {{-- <a class="btn btn-default " href="/contacto"  
       data-toggle="tooltip" 
       data-trigger="hover" 
       data-placement="left" 
@@ -68,7 +68,7 @@
 						</div>
 					</div>">
   	<img src="/imagenes/icons/contact_us.png" height="30px">
-  </a>
+  </a> --}}
 </div>
 
 

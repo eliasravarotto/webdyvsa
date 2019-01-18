@@ -33,6 +33,7 @@
                 <th>Corolla</th>
                 <th>Hilux</th>
                 <th>Hilux/SW4 4x4</th>
+                <th>Updated</th>
                 <th></th>
               </tr>
             </thead>
@@ -45,6 +46,7 @@
                 <td>{{$servicio->corolla}}</td>
                 <td>{{$servicio->hilux}}</td>
                 <td>{{$servicio->hilux_sw4_4x4}}</td>
+                <td>{{$servicio->updated_at}}</td>
                 <td>
                   {{-- <a href="{{ route('modelos.show', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}
                   <form action="{{ url('admin/servicios', ['id' => $servicio->id]) }}" method="post">

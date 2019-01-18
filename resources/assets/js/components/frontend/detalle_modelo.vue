@@ -54,7 +54,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
             </div>
             <div class="row" >
                 <div class="col-md-6 col-sm-12 text-center">
-                    <img v-bind:src="img_modelo" style="height: 300px">
+                    <img class="img-responsive" v-bind:src="img_modelo" >
                     <!-- <img class="img-responsive" src="https://www.zento.com.ar/images/etios/versiones_precios.jpg"> -->
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -123,7 +123,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                 </div>
             </div>
             <section style="width: 100%" v-if="tieneTestDrive">
-                <div class="row row-well" style=" display: flex; justify-content: center; align-items: center; flex-wrap: nowrap;">
+                <div class="row row-well" style=" display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
                     <div class="" style="width: 50%; display: flex; justify-content: center; padding-left: 50px;">
                         <h2>
                             <span>
@@ -213,7 +213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
         <!--Parallax Section -->
-        <div class="parallax bg3" v-bind:style="'background-image: url('+parallax.imagen+')'">
+        <div class="parallax bg3 visible-md visible-lg" v-bind:style="'background-image: url('+parallax.imagen+')'">
           <div class="container">
             <div class="row">
               <div class="col-xs-12">

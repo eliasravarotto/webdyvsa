@@ -11,24 +11,31 @@
   <!-- Banner Principal -->
   <banner-ppal></banner-ppal>
 
-{{-- <div style="position: relative;">
-  <div>
-    <div align="center" class="embed-responsive embed-responsive-16by9">
-    <video autoplay muted loop id="" class="embed-responsive-item">
-      <source src="/videos/gr.mp4" type="video/mp4">
-    </video>
-    </div>
+  <section class="container pad-top-50 pad-bot-25">
+      <div class="row">
+        <div class="col-md-5">
+          <img  class="img-responsive" src="/imagenes/etios_sorteo.jpg">
+        </div>
+        <div class="col-md-7">
+          <div style="padding-right: 10px; padding-left: 10px;">
+            <h2 class="text-center">¡PARTICIPA Y GANA, HACÉ LA CAMPAÑA DE AIRBAG Y GANATE UN ETIOS!</h2>
+            <br>
+            <p class="fs-18" style="text-align: justify;">Vení a cualquiera de nuestras sucursales con Posventa de #derkayvargas a hacer el servicio de Airbag del conductor y acompañante y participá de un sorteo por un Etios XLS Sedán que se realizará en Marzo 2019 junto con otros importantes premios. No te lo pierdas!!! </p>
+          </div>
+          <br>
+          <center>
+            <a class="btn btn-toyota" href="/documentos/campaña-airbag.pdf">
+              <i class="fa fa-file-pdf-o"></i>  BASES Y CONDICIONES
+            </a>
+          </center>
+        </div>
+      </div>
+  </section>
 
-    <div class="content visible-lg">
-      <h1>DERKA Y VARGAS <br>   <small>CONCECIONARIO OFICIAL TOYOTA</small></h1>
-      <h4>Acercate a conocer el nuevo TOYOTA COROLLA 2019</h4>
-      <button class="btn btn-toyota">CONOCELO</button>
-    </div>
-  </div>
-</div> --}}
+  <hr class="container">
 
   <!-- Section -->
-  <div class="container pad-top-bot-50">
+  <div class="container pad-top-bot-25">
     <div class="tooltip" style="background-color: black">Hover over me
       <span class="tooltiptext">Tooltip text</span>
     </div>
@@ -68,7 +75,9 @@
     <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
   </div>
   
-  <section class="pad-top-50 pad-bot-50" style="height: auto;">
+  <hr class="container">
+
+  <section class="pad-top-25 pad-bot-50" style="height: auto;">
       <div class="container">
         <div class="row" >
           <div class="col-md-4 col-sm-12">
@@ -117,10 +126,10 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          &nbsp;
+          {{-- &nbsp;
           <div class="caption">
             <span class="border et-waypoint">Derka y Vargas - Charata</span>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>

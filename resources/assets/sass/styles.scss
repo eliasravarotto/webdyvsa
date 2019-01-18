@@ -5,7 +5,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Exo', sans-serif;
 }
 
 body{
@@ -17,6 +17,10 @@ footer{
   background-color: #635e5e;
 }
 
+
+.row-no-margin{
+  margin: 0px !important;
+}
 .form-group.required .control-label:after { 
    content:"*";
    color:red;
@@ -40,6 +44,131 @@ footer{
   /*-webkit-animation: rotateRct 1.2s ease-in-out infinite, color-change 1.3s ease-in-out infinite;*/
   animation: rotateRct 1.2s ease-in-out infinite;/*, color-change 1.3s ease-in-out infinite;*/
 }
+
+
+
+  .contact-details .media {
+    margin: 0 0 30px;
+}
+.contact-details .media .media-left {
+    padding-right: 25px;
+}
+
+.media-body, .media-left, .media-right {
+    display: table-cell;
+    vertical-align: top;
+}
+.contact-details .media .media-left i {
+    width: 55px;
+    font-size: 24px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    color: #333;
+    border: 1px dashed #333;
+}
+
+
+  .logos-content > div > img{
+    padding: 0px 15px 0px 15px;
+  }
+
+  footer .row{
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  #f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 281px;
+  z-index: 1;
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.7s linear;
+}
+#f1_container:hover #f1_card {
+  -webkit-transition: -webkit-transform 0.7s ease-in;
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}
+
+.item-footer-social{
+  padding: 0px 10px 0px 10px; 
+}
+
+
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    /*position: relative;*/
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    /*min-height: 100%;*/
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: absolute;
+    /*top: 0;*/
+    margin-top: -650px;
+    margin-left: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    /*width: 50%;*/
+    padding: 25px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+  #myBtn:hover {
+      background: #ddd;
+      color: black;
+  }
+
+  .navbar-mobile > li > a{
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .navbar-mobile > li{
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
 
 @keyframes rotateRct {
   0% {
@@ -161,6 +290,9 @@ footer{
  .pad-top-20{
     padding-top: 20px;
   }
+  .pad-top-25{
+    padding-top: 25px;
+  }
  .pad-top-30{
     padding-top: 30px;
   }
@@ -174,7 +306,10 @@ footer{
     padding-top: 50px;
     padding-bottom: 50px;
   }
-
+  .pad-top-bot-25{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
   .pad-top-bot-20{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -183,6 +318,8 @@ footer{
   .pad-bot-25{
     padding-bottom: 25px;
   }
+
+
 .h1-titulo-form{
   padding: 30px 0px 30px 0px;
 }
@@ -362,12 +499,16 @@ $gris-2: #626262;
     display: flex;
     justify-content: center;
     width: 100%;
-}
-
-.header-contacto {
     background-color: white;
     padding: 10px 0px 10px 0px;
 }
+
+.header-ppal{
+    background-color: white;
+    padding: 10px 0px 10px 0px;
+}
+
+
 
 .lista-contacto li a,
 .lista-redes-sociales li a{
@@ -591,7 +732,7 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
   background-size: cover;
 }
 .parallax.bg3 {
-    background-image: url('/imagenes/dyv_charata.jpg');
+    background-image: url('/imagenes/dyv2019.png');
     min-height: 500px;
     opacity: 1;
 }
@@ -663,6 +804,11 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.75);
 @media screen and (max-width: 768px) {
   .remove-flex-on-mobile {
     display: block !important;
+  }
+  .center-on-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -1047,18 +1193,17 @@ $content-selector: "~ .content > section";
 
 
 
-  .slide-left {
+  /*.slide-left {
     position: relative;
     left: -500px;
     opacity: 0;
   }
 
  .slide-left-show {
-    transition: all 2.45s ease;
-    /*transition: 1.5s;*/
+    transition: all 1s;
     left: 0;
     opacity: 1;
-}
+}*/
 
 
 

@@ -68,7 +68,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	<article>
 		<section>
 			<div style="width: 100%">
-				<img src="http://www.yacopinisa.com/wp-content/uploads/2017/08/slide-psvtas4.jpg" class="img-responsive" alt="Cinque Terre">
+				<img src="/imagenes/posventa/slide.jpg" class="img-responsive">
 			</div>
 		</section>
 
@@ -106,7 +106,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			<div class="container arrow_box">
 				<div class="page-header">
 		  			<h1>PRECIOS VIGENTES </h1>
-					<p><b>Desde:</b> 01-02-2019 - <b>Hasta:</b> 31-01-2019</p>
+					<p><b>Desde:</b> 01-01-2019 - <b>Hasta:</b> 31-01-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped">
@@ -193,8 +193,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				</div>
 			</div>
 		</section>
-
-		<section class="pad-bot-50 pad-top-50 section-mant-exp" style="background-color: #fb7d7df5">
+		<section class="pad-bot-50 pad-top-50">
+			<img src="/imagenes/posventa/mto_exp.png" class="img-responsive">
+		</section>
+		{{-- <section class="pad-bot-50 pad-top-50 section-mant-exp" style="background-color: #fb7d7df5">
 			<div class="container">
 				<div class="row section-body">
 					<div class="col-md-12 col-sm-12 image-service is-right-text">
@@ -211,7 +213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 
 		<section class="pad-top-50 pad-bot-50">
 			<div class="container">

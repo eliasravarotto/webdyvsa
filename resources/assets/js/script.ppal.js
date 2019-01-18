@@ -5,7 +5,7 @@ $(document).ready(function(){
       });
 
       //-75 tamaño del header-contacto
-      $(".banner").css({"height":($(window).height()-75) + "px"});
+      //$(".banner").css({"height":($(window).height()-75) + "px"});
 
       //Efecto Hover menú principal.
       $('.dropdown-hover').hover(

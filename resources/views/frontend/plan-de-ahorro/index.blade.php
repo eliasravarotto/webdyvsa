@@ -81,6 +81,7 @@
 				</div>
 				</div>
 			</section>
+
 			<section>
 				<div class="container">
 				<div class="row well">
@@ -181,7 +182,7 @@
 				</div>
 				</div>
 			</section>
-			<hr>
+			<hr class="container">
 			<section>
 				<div class="container">
 				<div class="row">
@@ -202,7 +203,7 @@
 				</div>
 				</div>
 			</section>
-			<hr>
+			<hr class="container">
 			<section>
 				<div class="row">
 					<div class="container">
@@ -259,7 +260,7 @@
 				</div>
 				</div>
 			</section>
-			<hr>
+			<hr class="container">
 			<section>
 				<div class="container">
 				<div class="row">

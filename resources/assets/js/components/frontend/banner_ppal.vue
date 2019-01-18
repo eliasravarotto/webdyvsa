@@ -12,7 +12,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 400px;
+  /*min-height: 400px;*/
 }
 .thumbnail-lighten{
   background-color: #fcfeff;
@@ -28,6 +28,7 @@
         font-size: 20px;
         font-weight: 600;
 }
+
 /* RESPONSIVE CSS--------------------------------------------------------*/
 @media (min-width: 768px) {
   /* Navbar positioning foo */
@@ -78,9 +79,10 @@
       <div class="carousel-inner">
         <template v-for="(imagen, index) in imagenes">
           <div v-bind:class="[index == 0 ? activeClass : 'item']">
-              <div class="fill" v-bind:style="{ 'background-image': 'url(' + imagen + ')' }">
+              <!-- <div class="fill" v-bind:style="{ 'background-image': 'url(' + imagen + ')' }">
                 <div class="container"></div>
-              </div>
+              </div> -->
+              <img v-bind:src="imagen" class="img-responsive" style="width:100%; position: relative;">
           </div>
         </template>
       </div>
@@ -92,7 +94,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div v-for="(imagen, index) in imagenes" v-bind:class="[index == 0 ? activeClass : 'item']">
-                <img v-bind:src="imagen" class="img-responsive" alt="New york" style="width:100%; position: relative;">
+                <img v-bind:src="imagen" class="img-responsive" style="width:100%; position: relative;">
             </div>
         </div>
     </div>
@@ -103,7 +105,7 @@
     export default {
         data(){
             return {
-                imagenes: ["/imagenes/bg1.png"],
+                imagenes: ["/imagenes/td012019.png","/imagenes/tasa0.png"],
                 // imagenes: ["/imagenes/bg1.png","/imagenes/bg2.jpg","/imagenes/bg3.jpg"],
                 activeClass : 'active item'
             }
