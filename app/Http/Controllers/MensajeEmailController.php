@@ -48,14 +48,19 @@ class MensajeEmailController extends Controller
 
             switch ($request->from) {
                 case 'financiacion':
-                    $enviar_a = 'elias.ravarotto@gmail.com';
+                    //$enviar_a = 'elias.ravarotto@gmail.com';
                     $asunto ='Consulta - Financiación';
-                    //$enviar_a = 'fabianaaranda@derkayvargas.com.ar';
+                    $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
+                    break;
+                case 'tpa':
+                    //$enviar_a = 'elias.ravarotto@gmail.com';
+                    $asunto ='Consulta - Financiación';
+                    $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
                     break;
                 default:
-                    $asunto ='Consulta';
-                    $enviar_a = 'elias.ravarotto@gmail.com';
-                    //$enviar_a = 'fabianaaranda@derkayvargas.com.ar';
+                    //$asunto ='Consulta Pagina Web TPA';
+                    $enviar_a = 'santiagogaliano@derkayvargas.com.ar';
+                    $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
                     break;
             }
 

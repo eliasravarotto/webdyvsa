@@ -1449,14 +1449,15 @@ $red:#ff3c4b;
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
   .btn-group-vertical{
-    top: calc(85% - 100px);
+   /*display:none;*/
+    top: calc(92% - 100px);
   }
 
 }
 
 @media only screen and (min-width : 481px) {
   .btn-group-vertical{
-    top: calc(50% - 100px);
+    top: calc(75% - 100px);
   }
 
 }

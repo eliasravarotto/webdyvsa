@@ -28,21 +28,25 @@
 				<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-				        <div href="/modelos/corolla" class="thumbnail thumbnail-no-bg thumbnail-no-border" style="background-color: #f5f5f5">
-				          <img src="/imagenes/tpa/etios-hb.png" alt="...">
+				        <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="background-color: #f5f5f5">
+				          <img src="/imagenes/tpa/hilux.png" alt="...">
 				          <div class="caption text-center">
 				          	<center>
-				            <img src="/imagenes/tpa/logo-etios.png" class="img-responsive">
+				            <img src="/imagenes/tpa/logo-hilux.png" class="img-responsive">
 				          	</center>
 				            <hr>
 				            <ul class="list-unstyled">
 				            	<li>
-				            		<a style="font-size: 20px" href="#" class="text-uppercase">Plan Etios 100%</a>
+				            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_hilix_100" class="text-uppercase">Plan Hilux 4x4 DX 100%</a>
+				            	</li>
+				            	<li>
+				            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_hilix_70_30" class="text-uppercase">Plan Hilux 4x2 DX 70/30</a>
 				            	</li>
 				            </ul>
 				          </div>
 				        </div>          
 			      	</div>
+
 			      	<div class="col-md-4">
 				        <div href="/modelos/corolla" class="thumbnail thumbnail-no-bg thumbnail-no-border" style="background-color: #f5f5f5">
 				          <img src="/imagenes/tpa/corolla.png" alt="...">
@@ -53,7 +57,7 @@
 				            <hr>
 				            <ul class="list-unstyled">
 				            	<li>
-				            		<a style="font-size: 20px" href="#" class="text-uppercase">Plan Corolla 100%</a>
+				            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_corolla"  class="text-uppercase">Plan Corolla 100%</a>
 				            	</li>
 				            </ul>
 				          </div>
@@ -61,18 +65,15 @@
 			      	</div>
 			      	<div class="col-md-4">
 				        <div href="/modelos/corolla" class="thumbnail thumbnail-no-bg thumbnail-no-border" style="background-color: #f5f5f5">
-				          <img src="/imagenes/tpa/hilux.png" alt="...">
+				          <img src="/imagenes/tpa/etios-hb.png" alt="...">
 				          <div class="caption text-center">
 				          	<center>
-				            <img src="/imagenes/tpa/logo-hilux.png" class="img-responsive">
+				            <img src="/imagenes/tpa/logo-etios.png" class="img-responsive">
 				          	</center>
 				            <hr>
 				            <ul class="list-unstyled">
 				            	<li>
-				            		<a style="font-size: 20px" href="#" class="text-uppercase">Plan Hilux 4x4 DX 100%</a>
-				            	</li>
-				            	<li>
-				            		<a style="font-size: 20px" href="#" class="text-uppercase">Plan Hilux 4x2 DX 70/30</a>
+				            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_etios" class="text-uppercase">Plan Etios 100%</a>
 				            	</li>
 				            </ul>
 				          </div>
@@ -80,6 +81,261 @@
 			      	</div>
 				</div>
 				</div>
+
+				<!-- Modal HILUX_100-->
+				<div id="modal_hilix_100" class="modal" role="dialog">
+				  <div class="modal-dialog" style="width: 100%">
+				    <!-- Modal content-->
+				    <div class="modal-content" >
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        {{-- <h4 class="modal-title text-center">HILUX 100%</h4> --}}
+				      </div>
+				      <div class="modal-body">
+						  <h2 class="text-center">Hilux 4x4 DX CD</h2>
+						<table class="table table-hover table-bordered">
+						    <tbody>
+						      <tr>
+						        <th>Modalidad</th>
+						        <td>100%</td>
+						      </tr>
+						      <tr>
+						        <th>Plazo</th>
+						        <td>84 Cuotas</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+				        <table class="table table-hover">
+						    <thead>
+						      <tr style="background-color: black">
+						        <th class="text-center" style="color: white; font-weight: bold;"></th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 18</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 19 a 84</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>
+						        <td class="text-center" style="font-weight: bold;">TOTAL</td>
+						        <td class="text-center" style="font-weight: bold;">$ 22.841</td>
+						        <td class="text-center" style="font-weight: bold;">$ 23.969</td>
+						        <td class="text-center" style="font-weight: bold;">$ 18.774</td>
+						        <td class="text-center" style="font-weight: bold;">$ 16.679</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+					  	<div class="row">
+					  		<div class="col-md-12">
+					  			<blockquote style="border-left: 5px solid #e81f39;">
+									<div class="row">
+										<p>Integración Mínima 24 Cuotas</p>	
+										<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/"></a>toyotaplan.com.ar</p>
+										<p>Vigencia a partir del 01/01/2019</p>
+									</div>
+								</blockquote>
+					  		</div>
+					  	</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+				      </div>
+				    </div>
+
+				  </div>
+				</div>
+
+				<!-- Modal HILUX_70/30-->
+				<div id="modal_hilix_70_30" class="modal" role="dialog">
+				  <div class="modal-dialog" style="width: 100%">
+				    <!-- Modal content-->
+				    <div class="modal-content" >
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        {{-- <h4 class="modal-title text-center">HILUX 100%</h4> --}}
+				      </div>
+				      <div class="modal-body">
+						  <h2 class="text-center">Hilux 4x2 DX CD</h2>
+						<table class="table table-hover table-bordered">
+						    <tbody>
+						      <tr>
+						        <th>Modalidad</th>
+						        <td>70/30</td>
+						      </tr>
+						      <tr>
+						        <th>Plazo</th>
+						        <td>84 Cuotas</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+				        <table class="table table-hover">
+						    <thead>
+						      <tr style="background-color: black">
+						        <th class="text-center" style="color: white; font-weight: bold;"></th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 18</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 19 a 84</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>
+						        <td class="text-center" style="font-weight: bold;">TOTAL</td>
+						        <td class="text-center" style="font-weight: bold;">$ 15.456</td>
+						        <td class="text-center" style="font-weight: bold;">$ 16.384</td>
+						        <td class="text-center" style="font-weight: bold;">$ 11.955</td>
+						        <td class="text-center" style="font-weight: bold;">$ 10.168</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+					  	<div class="row">
+					  		<div class="col-md-12">
+					  			<blockquote style="border-left: 5px solid #e81f39;">
+									<div class="row">
+										<p>Integración Mínima 24 Cuotas</p>	
+										<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/"></a>toyotaplan.com.ar</p>
+										<p>Vigencia a partir del 01/01/2019</p>
+									</div>
+								</blockquote>
+					  		</div>
+					  	</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+				      </div>
+				    </div>
+
+				  </div>
+				</div>
+
+				<!-- Modal COROLLA-->
+				<div id="modal_corolla" class="modal" role="dialog">
+				  <div class="modal-dialog" style="width: 100%">
+				    <!-- Modal content-->
+				    <div class="modal-content" >
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        {{-- <h4 class="modal-title text-center">HILUX 100%</h4> --}}
+				      </div>
+				      <div class="modal-body">
+						  <h2 class="text-center">Corolla XLI M/T</h2>
+						<table class="table table-hover table-bordered">
+						    <tbody>
+						      <tr>
+						        <th>Modalidad</th>
+						        <td>100%</td>
+						      </tr>
+						      <tr>
+						        <th>Plazo</th>
+						        <td>84 Cuotas</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+				        <table class="table table-hover">
+						    <thead>
+						      <tr style="background-color: black">
+						        <th class="text-center" style="color: white; font-weight: bold;"></th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 18</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 19 a 84</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>
+						        <td class="text-center" style="font-weight: bold;">TOTAL</td>
+						        <td class="text-center" style="font-weight: bold;">$ 13.456</td>
+						        <td class="text-center" style="font-weight: bold;">$ 14.120</td>
+						        <td class="text-center" style="font-weight: bold;">$ 11.060</td>
+						        <td class="text-center" style="font-weight: bold;">$ 9.825</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+					  	<div class="row">
+					  		<div class="col-md-12">
+					  			<blockquote style="border-left: 5px solid #e81f39;">
+									<div class="row">
+										<p>Integración Mínima 24 Cuotas</p>	
+										<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
+										<p>Vigencia a partir del 01/01/2019</p>
+									</div>
+								</blockquote>
+					  		</div>
+					  	</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+				      </div>
+				    </div>
+
+				  </div>
+				</div>
+
+				<!-- Modal ETIOS-->
+				<div id="modal_etios" class="modal" role="dialog">
+				  <div class="modal-dialog" style="width: 100%">
+				    <!-- Modal content-->
+				    <div class="modal-content" >
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        {{-- <h4 class="modal-title text-center">HILUX 100%</h4> --}}
+				      </div>
+				      <div class="modal-body">
+						  <h2 class="text-center">Etios X 5P</h2>
+						<table class="table table-hover table-bordered">
+						    <tbody>
+						      <tr>
+						        <th>Modalidad</th>
+						        <td>100%</td>
+						      </tr>
+						      <tr>
+						        <th>Plazo</th>
+						        <td>84 Cuotas</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+				        <table class="table table-hover">
+						    <thead>
+						      <tr style="background-color: black">
+						        <th class="text-center" style="color: white; font-weight: bold;"></th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 10</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 11 a 18</th>
+						        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 19 a 84</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr>
+						        <td class="text-center" style="font-weight: bold;">TOTAL</td>
+						        <td class="text-center" style="font-weight: bold;">$ 7.563,49</td>
+						        <td class="text-center" style="font-weight: bold;">$ 7.957,84</td>
+						        <td class="text-center" style="font-weight: bold;">$ 7.429,59</td>
+						        <td class="text-center" style="font-weight: bold;">$ 7.586,55</td>
+						        <td class="text-center" style="font-weight: bold;">$ 6.752,00</td>
+						      </tr>
+						    </tbody>
+					  	</table>
+					  	<div class="row">
+					  		<div class="col-md-12">
+					  			<blockquote style="border-left: 5px solid #e81f39;">
+									<div class="row">
+										<p>Integración Mínima 24 Cuotas</p>	
+										<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
+										<p>Vigencia a partir del 01/01/2019</p>
+									</div>
+								</blockquote>
+					  		</div>
+					  	</div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+				      </div>
+				    </div>
+
+				  </div>
+				</div>
+
 			</section>
 
 			<section>
@@ -94,8 +350,7 @@
 			                      Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados 
 			                    </p>
 			                    <center>
-			                    	
-			                    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modal_adjudicados">VER LISTADO</a>
+			                    {{-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modal_adjudicados">VER LISTADO</a> --}}
 			                    </center>
 			                </div>
             			</div>
@@ -144,6 +399,7 @@
 
 					  </div>
 					</div>
+
 					<div class="col-md-4">
 						<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
 			                <div class="caption caption-default">
@@ -157,6 +413,7 @@
 					</div>
 					<div class="col-md-4">
 						<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+							<a href="#" onclick="masDetalles(event)">
 			                <div class="caption caption-default">
 			                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
 			                    <h4 class="text-center">Licitación Online</h4>
@@ -164,10 +421,14 @@
 			                    Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
 			                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
 			                </div>
+			                </a>
             			</div>
 					</div>
+					<center>
+						<a class="btn btn-default" href="#" onclick="masDetalles(event)">CONSULTAR</a>
+					</center>
 				</div>
-				<div class="row">
+				{{-- <div class="row">
 					<div class="col-md-12">
 						<div style="width: calc(100% - 2px );
 								    border: solid 1px #d8d8d8;
@@ -179,7 +440,7 @@
 							<b>Próximo Vencimiento:</b> Sr. Cliente el próximo vencimiento de su cuota es el <b>10/12/2018.</b>
 						</div>
 					</div>		
-				</div>
+				</div> --}}
 				</div>
 			</section>
 			<hr class="container">
@@ -207,8 +468,43 @@
 			<section>
 				<div class="row">
 					<div class="container">
-					<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="fb-page" data-href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/">Toyota Plan de Ahorro - Derka y Vargas</a></blockquote></div>
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12" id="form-contacto">
+						<h2>CONSULTÁ POR UN PLAN DE AHORRO <br>
+							<small>Un asesor se pondrá en contacto con usted a la brevedad.</small></h2>
+							<form class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+								{{ csrf_field() }}
+								<input type="hidden" name="from" value="tpa">
+								<div class="row">
+									<div class=" col-md-6">
+								    <label class="control-label">Nombre y Apellido</label>
+								    <input type="text" class="form-control cliente" name="cliente" required>
+							  	</div>
+							  	<div class=" col-md-6">
+								    <label class="control-label">Teléfono</label>
+								    <input type="text" class="form-control" name="telefono" required>
+							  	</div>
+								</div>
+								<div class="row">
+									<div class=" col-md-12">
+										<label class="control-label">Email</label>
+								    <input type="email" class="form-control" name="email">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<label class="control-label">Mensaje</label>
+								    <textarea name="mensaje" class="form-control" required></textarea>
+									</div>
+								</div>
+								<div class="row pad-top-20">
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-default">ENVIAR</button>
+									</div>
+								</div>
+							</form>
 					</div>
 					</div>
 				</div>
@@ -261,7 +557,7 @@
 				</div>
 			</section>
 			<hr class="container">
-			<section>
+			{{-- <section>
 				<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -277,7 +573,7 @@
 					</div>		
 				</div>
 				</div>
-			</section>
+			</section> --}}
 			<br>
 		</div>
     </article>
@@ -328,5 +624,13 @@
     	map.setOptions({center:newPos,zoom:15});
     }
     //------End Google Maps.---------------------------------------------------//
+
+    function masDetalles(e){
+		e.preventDefault();
+		$('html,body').animate({
+	        scrollTop: $("#form-contacto").offset().top
+	    }, 'slow');
+	    $(".cliente").focus();
+	}
 </script>
 @stop

@@ -3,25 +3,18 @@
 
 @section('styles_sheets')
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="{{ asset('gallery/css/animate.css') }}">
+	{{-- <link rel="stylesheet" href="{{ asset('gallery/css/animate.css') }}"> --}}
 
-	<link rel="stylesheet" href="{{ asset('gallery/css/style.css') }}">
+	{{-- <link rel="stylesheet" href="{{ asset('gallery/css/style.css') }}"> --}}
 
 	<!-- Modernizr JS -->
-	<script src="{{ asset('gallery/js/modernizr-2.6.2.min.js') }}"></script>
+	{{-- <script src="{{ asset('gallery/js/modernizr-2.6.2.min.js') }}"></script> --}}
 @stop
 
 @section('content')
 	<!-- Navbar Desktop -->
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
 	<article>
-{{-- 		<section>
-			<div style="width: 100%; display: flex; justify-content: flex-end;" >
-				<div>
-					<img src="https://mbtskoudsalg.com/images/whatsapp-icon-transparent-png-6.png" style="height: 100px;">
-				</div>
-			</div>
-		</section> --}}
 		<section>
 			<div>
 				<div class="container">
@@ -38,15 +31,15 @@
 
 @section('script')
 	<!-- jQuery Easing -->
-	<script src="/gallery/js/jquery.easing.1.3.js"></script>
+	{{-- <script src="/gallery/js/jquery.easing.1.3.js"></script> --}}
 
 	<!-- Waypoints -->
-	<script src="/gallery/js/jquery.waypoints.min.js"></script>
+	{{-- <script src="/gallery/js/jquery.waypoints.min.js"></script> --}}
 	<!-- Portfolio Filter Mixitup -->
-	<script type="text/javascript" src="/gallery/js/jquery.mixitup.min.js"></script>
+	{{-- <script type="text/javascript" src="/gallery/js/jquery.mixitup.min.js"></script> --}}
 
 	<!-- Main JS (Do not remove) -->
-	<script src="/gallery/js/main.js"></script>
+	{{-- <script src="/gallery/js/main.js"></script> --}}
 
 	<script type="text/javascript">
 		$(function () {
@@ -55,7 +48,6 @@
 			
 				init: function () {
 				
-					// MixItUp plugin
 					// http://mixitup.io
 					$('#portfoliolist').mixItUp({
 	  				selectors: {

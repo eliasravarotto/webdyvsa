@@ -105,7 +105,7 @@
     export default {
         data(){
             return {
-                imagenes: ["/imagenes/td012019.png","/imagenes/tasa0.png"],
+                imagenes: ["/imagenes/home/slide1.png","/imagenes/home/slide2.png","/imagenes/home/slide3.png"],
                 // imagenes: ["/imagenes/bg1.png","/imagenes/bg2.jpg","/imagenes/bg3.jpg"],
                 activeClass : 'active item'
             }

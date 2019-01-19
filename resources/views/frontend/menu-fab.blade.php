@@ -24,6 +24,7 @@
 						</div>
 					</div>">
   	<img src="/imagenes/icons/test_drive.png" height="30px">
+    TEST DRIVE
   </a>
 
   <a class="btn btn-default " href="/turno-servicios/create" data-toggle="tooltip" 
@@ -42,6 +43,7 @@
 						</div>
 					</div>">
   	<img src="/imagenes/icons/turno_posventa.png" height="30px" >
+    TURNOS
   </a>
   <a class="btn btn-default " href="/contacto" 
       data-toggle="tooltip" 
@@ -55,6 +57,7 @@
 						</div>
 					</div>">
   	<img src="/imagenes/icons/contacto.png" height="30px">
+    CONTACTO
   </a>
   {{-- <a class="btn btn-default " href="/contacto"  
       data-toggle="tooltip" 

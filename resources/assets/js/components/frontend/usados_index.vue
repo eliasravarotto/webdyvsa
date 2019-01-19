@@ -1,7 +1,7 @@
 <template>
     <div class="galeria-usados">
         <div id="fh5co-portfolio-section">
-            <ul id="filters" class="clearfix animate-box">
+            <!-- <ul id="filters" class="clearfix animate-box">
                 <li><span class="filter active" data-filter=".all">Todos</span></li>
                 <li><span class="filter" data-filter=".auto">Autos</span></li>
                 <li><span class="filter" data-filter=".camioneta">Camionetas</span></li>
@@ -9,9 +9,8 @@
                 <li><span class="filter" data-filter=".renault">Renault</span></li>
                 <li><span class="filter" data-filter=".rojo">Rojo</span></li>
                 <li><span class="filter" data-filter=".Gris Oscuro">Gris</span></li>
-            </ul>
-            <!-- <div id="portfoliolist" class="animate-box" style="display: flex;flex-direction:row; flex-wrap: wrap;"> -->
-            <div id="portfoliolist" class="animate-box row">
+            </ul> -->
+            <!-- <div id="portfoliolist" class="animate-box row">
                 <div v-for="unidad in unidades" v-bind:class="' col-md-4 col-sm-12 col-xs-12 portfolio all thumbnail thumbnail-no-bg '+unidad.color+' '+unidad.marca" data-cat="logo">
                     <a v-bind:href="'/usados/'+unidad.id">
                     <div class="portfolio-wrapper">             
@@ -41,82 +40,328 @@
                         <br>
                         <div style="display: flex; justify-content: flex-start; align-items: center;">
                             <a href="#" class="btn btn-danger text-uppercase" v-on:click="openModalContacto(unidad)">Consultar</a>
-                            <!-- <div style="margin-left: 10px;" class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div> -->
                         </div>
                     </div>
-                </div>  
+                </div>   
+            </div> -->
+
+            <div class="row">
+                <div class="col-md-7">
+
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
+                  <div class="caption caption-default">
+                    <h3 class="text-center">CHERY TIGGO 5 2.0 4X2 LUXURY CVT L/17</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2018  
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 8.800
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 850.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
+                  <div class="caption caption-default">
+                    <h3 class="text-center">FORD FIESTA 1.6 5P SE</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2014 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 44.500
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 315.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
+                  <div class="caption caption-default">
+                    <h3 class="text-center">FORD FIESTA 1.6 5P SE PLUS</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2014 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 76.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Gris Oscuro
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 330.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
+                  <div class="caption caption-default">
+                    <h3 class="text-center">FORD FIESTA 1.6 5P SE PLUS</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2014 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 38.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 330.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
+                  <div class="caption caption-default">
+                    <h3 class="text-center">FORD FOCUS L/14 2.0 4 P SE PLUS</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2014 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 41.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Dorado
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 400.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
+                  <div class="caption caption-default">
+                    <h3 class="text-center">FORD FOCUS L/16 1.6 5 P S</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2015 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 33.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 420.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <div class="caption caption-default">
+                    <h3 class="text-center">IVECO DAILY 70C 16 CHASIS 4350</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2010 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 90.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 740.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <div class="caption caption-default">
+                    <h3 class="text-center">TOYOTA COROLLA 1.8 SE-G L/11 AUT</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2013 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 169.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Gris Plata
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 370.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <div class="caption caption-default">
+                    <h3 class="text-center">TOYOTA COROLLA 1.8 XLI L/14 CVT</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2016 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 42.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco Perla
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 470.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <div class="caption caption-default">
+                    <h3 class="text-center">TOYOTA ETIOS  1.5 5 PTAS XLS</h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2015 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 80.215
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Gris
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 290.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <div class="caption caption-default">
+                    <h3 class="text-center">TOYOTA ETIOS 1.5 4 PTAS XLS </h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2016 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 100.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Negro
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 315.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <div class="caption caption-default">
+                    <h3 class="text-center">TOYOTA ETIOS 1.5 4 PTAS XLS 4AT </h3>
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2016 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 66.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Rojo
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                        <h3 class="text-center">$ 375.000</h3>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            </div>
+            </div>
             </div>
         </div>
 
-        <!-- <div id="fh5co-services-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center heading-section">
-                        <h2>Our Services</h2>
-                        <h3>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-services text-center">
-                            <i class="icon-heart"></i>
-                            <div class="holder-section">
-                                <h3>Crafted With Love</h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-services text-center">
-                            <i class="icon-laptop"></i>
-                            <div class="holder-section">
-                                <h3>Web Developement</h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-services text-center">
-                            <i class="icon-video"></i>
-                            <div class="holder-section">
-                                <h3>Video Editing</h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-services text-center">
-                            <i class="icon-mobile"></i>
-                            <div class="holder-section">
-                                <h3>Mobile Optimization</h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-services text-center">
-                            <i class="icon-gears"></i>
-                            <div class="holder-section">
-                                <h3>Search Engine Optimization</h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 animate-box">
-                        <div class="fh5co-services text-center">
-                            <i class="icon-piechart"></i>
-                            <div class="holder-section">
-                                <h3>Web Marketing</h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <!-- Modal -->
-        <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -159,7 +404,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

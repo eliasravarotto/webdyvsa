@@ -4,11 +4,11 @@
 	<div class="row">
 		<div class=" col-md-6">
 	    <label class="control-label">Nombre y Apellido</label>
-	    <input type="text" class="form-control" name="cliente">
+	    <input type="text" class="form-control" name="cliente" required>
   	</div>
   	<div class=" col-md-6">
 	    <label class="control-label">Teléfono</label>
-	    <input type="text" class="form-control" name="telefono">
+	    <input type="text" class="form-control" name="telefono" required>
   	</div>
 	</div>
 	<div class="row">
@@ -20,7 +20,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<label class="control-label">Mensaje</label>
-	    <textarea name="mensaje" class="form-control"></textarea>
+	    <textarea name="mensaje" class="form-control" required></textarea>
 		</div>
 	</div>
 	<div class="row pad-top-20">

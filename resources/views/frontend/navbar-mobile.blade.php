@@ -15,7 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-mobile">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="/">Inicio</a></li>
         <li><a href="/modelos">Modelos</a></li>
         <li><a href="/plan-de-ahorro">Plan de Ahorro</a></li>
         <li><a href="/financiacion">Financiación</a></li>

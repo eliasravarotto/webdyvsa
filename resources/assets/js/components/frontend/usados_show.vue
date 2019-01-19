@@ -153,7 +153,7 @@ margin-top:20px;
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <a class="btn btn-info" href="">VER TODOS</a>
+                        <a class="btn btn-info" href="/usados">VER TODOS</a>
                     </div>
                 </div>
             </section>
