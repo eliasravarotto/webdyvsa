@@ -8,8 +8,8 @@
 
 	<article>
 		<section>
-			<div style="border: solid 3px black;" >
-				<img src="/imagenes/plan_de_ahorro/tpa_banner.jpg" class="img-responsive" alt="Cinque Terre">
+			<div>
+				<img src="/imagenes/tpa/slide1.png" class="img-responsive" alt="Cinque Terre">
 			</div>
 		</section>
 			<section>

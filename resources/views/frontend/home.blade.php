@@ -94,7 +94,7 @@
           </div>  
           <div class="col-md-4 col-sm-12">
             <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-                <img src="/imagenes/plan_de_ahorro/tpa.jpg" alt="...">
+                <img src="/imagenes/tpa/tpa_card.png" alt="...">
                 <div class="caption caption-default">
                     <h4 class="text-center">Toyota Plan de Ahorro</h4>
                     <p class="text-justify">
