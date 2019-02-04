@@ -37,7 +37,6 @@ class MensajeEmailController extends Controller
      */
     public function store(Request $request)
     {
-        
         try {
             $mensaje = new MensajeEmail;
             $mensaje->cliente = $request->cliente;
@@ -45,7 +44,6 @@ class MensajeEmailController extends Controller
             $mensaje->email = $request->email;
             $mensaje->mensaje = $request->mensaje;
            
-
             switch ($request->from) {
                 case 'financiacion':
                     //$enviar_a = 'elias.ravarotto@gmail.com';
@@ -58,7 +56,7 @@ class MensajeEmailController extends Controller
                     $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
                     break;
                 default:
-                    //$asunto ='Consulta Pagina Web TPA';
+                    $asunto ='Consulta Pagina Web TPA';
                     $enviar_a = 'santiagogaliano@derkayvargas.com.ar';
                     $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
                     break;
