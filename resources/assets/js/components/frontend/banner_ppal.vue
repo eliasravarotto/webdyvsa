@@ -105,8 +105,7 @@
     export default {
         data(){
             return {
-                imagenes: ["/imagenes/home/slide1.png","/imagenes/home/slide2.png","/imagenes/home/slide3.png"],
-                // imagenes: ["/imagenes/bg1.png","/imagenes/bg2.jpg","/imagenes/bg3.jpg"],
+                imagenes: ["/imagenes/home/slide4.png","/imagenes/home/slide1.png","/imagenes/home/slide2.png","/imagenes/home/slide3.png"],
                 activeClass : 'active item'
             }
         },
