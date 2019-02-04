@@ -16,14 +16,15 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
  
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-132697927-1');
-    </script> --}}
+      gtag('config', 'UA-132697927-2');
+    </script>
+
 
     
     @yield('styles_sheets')
