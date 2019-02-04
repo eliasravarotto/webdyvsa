@@ -103,16 +103,18 @@
 
 <script>
     export default {
+        props: ['data'],
         data(){
             return {
-                imagenes: ["/imagenes/home/slide4.png","/imagenes/home/slide1.png","/imagenes/home/slide2.png","/imagenes/home/slide3.png"],
+                imagenes: '',
                 activeClass : 'active item'
             }
         },
         mounted() {
             $('#myCarouselmin').carousel({
-                        interval: 5000
-                });
+                    interval: 5000
+            });
+            this.imagenes = this.data.slides_img;
         },
         methods:{
             

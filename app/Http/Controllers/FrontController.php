@@ -16,7 +16,8 @@ class FrontController extends Controller
     public function home()
     {
         $productos = Modelo::all();
-        return view('frontend.home', compact('productos'));
+        $slides_img = $this->imagesSlideHome();
+        return view('frontend.home', compact('productos', 'slides_img'));
     }
 
     public function posventa()
@@ -43,6 +44,16 @@ class FrontController extends Controller
     public function contacto()
     {
         return view('frontend.contacto.index');
+    }
+
+    private function imagesSlideHome()
+    {
+        $slides_img = [];
+        array_push($slides_img, '/imagenes/home/slide4.png');
+        array_push($slides_img, '/imagenes/home/slide1.png');
+        array_push($slides_img, '/imagenes/home/slide2.png');
+        array_push($slides_img, '/imagenes/home/slide3.png');
+        return $slides_img;
     }
 
 

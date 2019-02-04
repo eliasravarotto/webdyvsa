@@ -9,7 +9,7 @@
   {{-- <div class="overlay"><h1>Overlay Text Here!</h1></div> --}}
 
   <!-- Banner Principal -->
-  <banner-ppal></banner-ppal>
+  <banner-ppal v-bind:data="{ slides_img: {{collect($slides_img)}} }"></banner-ppal>
 
   <section class="container pad-top-50 pad-bot-25">
       <div class="row">
