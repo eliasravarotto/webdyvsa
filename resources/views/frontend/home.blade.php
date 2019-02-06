@@ -143,9 +143,15 @@
         <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0;">
-        {{-- <iframe src="//lightwidget.com/widgets/fb15970b2bfe5432b206f2b116d4779a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> --}}
         {{-- <iframe src="//lightwidget.com/widgets/fa8772b6f29953d581a30dbbbc638347.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> --}}
-        <grid-instagram></grid-instagram>
+        {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
+        @php $count = 0 @endphp
+        @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
+          @if ($count == 9) @break @endif
+          @php $count++ @endphp
+          <a class="group" rel="group1" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}"></a>
+        @endforeach
+       
       </div>
     </div>
     </div>
@@ -154,18 +160,6 @@
 @stop
 
 @section('script')
-  <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-<script type="text/javascript">
-  
-  $.ajax({
-    type: 'GET',
-    url: 'https://api.instagram.com/v1/users/media/recent/?access_token=3040871634.0b0a53a.271afbc2524c47b0b5b38e701bf0e98d',
-    headers: {
-        'ACCESS_TOKEN': '3040871634.0b0a53a.271afbc2524c47b0b5b38e701bf0e98d'
-    }
-
-    }).done(function(data) { 
-      console.log(data);
-  });
-</script>
+  <!-- LightWidget WIDGET -->
+  {{-- <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script> --}}
 @stop

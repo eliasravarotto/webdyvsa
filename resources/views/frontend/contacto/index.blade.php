@@ -24,7 +24,8 @@
 						</div>
 					@endif
 					@include('frontend.contacto.form')
-			  		<div style="margin-top: 35px; min-height: 400px;" id="map" ></div>
+			  		{{-- <div style="margin-top: 35px; min-height: 400px;" id="map" ></div> --}}
+					<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 				</div>
 
 				<div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-xs-12">
