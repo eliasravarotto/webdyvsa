@@ -144,7 +144,8 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0;">
         {{-- <iframe src="//lightwidget.com/widgets/fb15970b2bfe5432b206f2b116d4779a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> --}}
-        <iframe src="//lightwidget.com/widgets/fa8772b6f29953d581a30dbbbc638347.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+        {{-- <iframe src="//lightwidget.com/widgets/fa8772b6f29953d581a30dbbbc638347.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> --}}
+        <grid-instagram></grid-instagram>
       </div>
     </div>
     </div>
@@ -153,5 +154,18 @@
 @stop
 
 @section('script')
-        <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+  <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+<script type="text/javascript">
+  
+  $.ajax({
+    type: 'GET',
+    url: 'https://api.instagram.com/v1/users/media/recent/?access_token=3040871634.0b0a53a.271afbc2524c47b0b5b38e701bf0e98d',
+    headers: {
+        'ACCESS_TOKEN': '3040871634.0b0a53a.271afbc2524c47b0b5b38e701bf0e98d'
+    }
+
+    }).done(function(data) { 
+      console.log(data);
+  });
+</script>
 @stop
