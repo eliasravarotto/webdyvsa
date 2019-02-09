@@ -35,7 +35,7 @@
               <td>{{ $consulta->marca }} - {{ $consulta->modelo }}</td>
             </tr>
             <tr>
-              <th>Consulta</th>
+              <th>Mensaje</th>
               <td>{{ $consulta->mensaje }}</td>
             </tr>
           </tbody>

@@ -1,27 +1,31 @@
 @extends('layout')
-
+        <style type="text/css">
+            .precio{
+                    background-color: #016a87;
+                    color: #fafafa !important;
+                    text-shadow: 0px 0px 0px #ffffff;
+            }
+        </style>
 
 @section('styles_sheets')
-	<!-- Animate.css -->
-	{{-- <link rel="stylesheet" href="{{ asset('gallery/css/animate.css') }}"> --}}
-
-	{{-- <link rel="stylesheet" href="{{ asset('gallery/css/style.css') }}"> --}}
-
-	<!-- Modernizr JS -->
-	{{-- <script src="{{ asset('gallery/js/modernizr-2.6.2.min.js') }}"></script> --}}
 @stop
 
 @section('content')
 	<!-- Navbar Desktop -->
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
+	
 	<article>
 		<section>
-			<div>
-				<div class="container">
-					<h3 style="font-family:ToyotaFont; color: #404048">ELEGÍ TU USADO</h3>
-				</div>
-			</div>
 			<div class="container">
+				<div class="page-header">
+				  <h1>ELEGÍ TU USADO<small></small></h1>
+				</div>
+				<div class="row container">
+					<button class="btn btn-toyota btn-lg pull-right" data-toggle="modal" data-target="#contacto">
+						<i class="fa fa-envelope-o"></i> CONSULTAR
+					</button>
+				</div>
+				<br>
 				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 			</div>
 		</section>
@@ -40,32 +44,4 @@
 
 	<!-- Main JS (Do not remove) -->
 	{{-- <script src="/gallery/js/main.js"></script> --}}
-
-	<script type="text/javascript">
-		$(function () {
-			
-			var filterList = {
-			
-				init: function () {
-				
-					// http://mixitup.io
-					$('#portfoliolist').mixItUp({
-	  				selectors: {
-	    			  target: '.portfolio',
-	    			  filter: '.filter'	
-	    		  },
-	    		  load: {
-	      		  filter: '.all'  
-	      		}     
-					});								
-				
-				}
-
-			};
-			
-			// Run the show!
-			filterList.init();
-			
-		});	
-	</script>
 @stop

@@ -45,7 +45,8 @@ class ConsultaUsadoController extends Controller
         $consulta->mensaje = $request->mensaje;
         $consulta->marca = $request->marca;
         $consulta->modelo = $request->modelo;
-        $consulta->enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+        $consulta->enviar_a = 'fabianaaranda@derkayvargas.com.ar';
+        //$consulta->enviar_a = 'eliasravarotto@derkayvargas.com.ar';
 
         $consulta->save();
 
@@ -53,7 +54,8 @@ class ConsultaUsadoController extends Controller
 
         if($request->ajax()){
             return 'ok';
-        }        
+        }  
+              
         return redirect('/usados');
     }
 

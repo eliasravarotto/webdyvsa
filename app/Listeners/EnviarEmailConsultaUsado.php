@@ -33,7 +33,7 @@ class EnviarEmailConsultaUsado
         Mail::send('emails.consulta-usado', ['consulta' => $consulta], function ($message) use ($consulta){
 
             $unidad = $consulta->marca.' '.$consulta->modelo;
-            $message->subject('Consulta sobre la unidad -'.$unidad);
+            $message->subject('Consulta de usados '.$unidad);
             $message->to($consulta->enviar_a);
 
         });

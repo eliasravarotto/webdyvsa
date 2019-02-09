@@ -30,8 +30,8 @@ class EnviarEmailConsulta
         $consulta = $event->consulta;
         $asunto = $event->asunto;
 
-        Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta){
-            $message->subject('$asunto');
+        Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta, $asunto){
+            $message->subject($asunto);
             $message->to($consulta->enviar_a);
         });
     }

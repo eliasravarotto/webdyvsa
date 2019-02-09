@@ -46,19 +46,19 @@ class MensajeEmailController extends Controller
            
             switch ($request->from) {
                 case 'financiacion':
-                    //$enviar_a = 'elias.ravarotto@gmail.com';
                     $asunto ='Consulta - Financiación';
                     $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
+                    // $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
                     break;
                 case 'tpa':
-                    //$enviar_a = 'elias.ravarotto@gmail.com';
-                    $asunto ='Consulta - Financiación';
-                    $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
+                    $asunto ='Consulta desde Pagina Web TPA';
+                    $enviar_a = 'santiagogaliano@derkayvargas.com.ar';
+                    // $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
                     break;
                 default:
-                    $asunto ='Consulta Pagina Web TPA';
-                    $enviar_a = 'santiagogaliano@derkayvargas.com.ar';
+                    $asunto ='Consulta desde Pagina Web';
                     $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
+                    // $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
                     break;
             }
 
@@ -69,8 +69,10 @@ class MensajeEmailController extends Controller
 
             if ($request->from == 'contacto') {
                 return redirect('/contacto')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
+            } else if($request->from == 'tpa') {
+                 return redirect('/plan-de-ahorro')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
             } else{
-                 return redirect('/financiacion')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
+                return redirect('/financiacion')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
             }
 
         } catch (Exception $e) {
