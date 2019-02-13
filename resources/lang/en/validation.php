@@ -104,7 +104,9 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
-    'recaptcha'=>'Por favor verifique que es un humano!',
+
+    'recaptcha'=>'Por favor haga click en No soy un robot!',
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

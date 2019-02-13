@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Events\HaIngresadoUnaConsulta;
-use App\Http\Requests\ReCaptchataTestFormRequest;
 use App\MensajeEmail;
 use Illuminate\Http\Request;
-// use GuzzleHttp\Client;
+use Validator;
+
+use GuzzleHttp\Client;
+use App\Http\Requests\ReCaptchataTestFormRequest;
 
 
 class MensajeEmailController extends Controller
@@ -32,40 +34,37 @@ class MensajeEmailController extends Controller
         //
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReCaptchataTestFormRequest $request)
     {
 
-        // $url = 'https://www.google.com/recaptcha/api/siteverify';
-        // $data = array(
-        //     'secret' => 'API-SECRET',
-        //     'response' => $request["g-recaptcha-response"]
-        // );
+        if ($request->email == null) {
+            $this->validate($request, [
+                'from' => 'required',
+                'cliente' => 'required',
+                'telefono' => 'required',
+                'mensaje' => 'required',
+                'g-recaptcha-response' => 'required',
+            ]);
+        }
+        if ($request->telefono == null) {
+            $this->validate($request, [
+                'from' => 'required',
+                'cliente' => 'required',
+                'email' => 'required',
+                'mensaje' => 'required',
+                'g-recaptcha-response' => 'required',
+            ]);
 
-        // $options = array(
-        //     'http' => array (
-        //         'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-        //             "User-Agent:MyAgent/1.0\r\n",
-        //         'method' => 'POST',
-        //         'content' => http_build_query($data)
-        //     )
-        // );
+        }
 
-        // $context  = stream_context_create($options);
-        // $verify = file_get_contents($url, false, $context);
-        // $captcha_success = json_decode($verify);
-        
-        // if ($captcha_success->success) {
-        //     return 'Se envía el formulario';
-        // } else {
-        //     return 'No se envía el formulario';
-        // }
-        // return $request;
+        return $request;
 
         try {
             $mensaje = new MensajeEmail;
