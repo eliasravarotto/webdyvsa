@@ -64,8 +64,6 @@ class MensajeEmailController extends Controller
 
         }
 
-        return $request;
-
         try {
             $mensaje = new MensajeEmail;
             $mensaje->cliente = $request->cliente;
