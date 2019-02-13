@@ -41,31 +41,31 @@ class MensajeEmailController extends Controller
     public function store(Request $request)
     {
 
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $data = array(
-            'secret' => 'API-SECRET',
-            'response' => $request["g-recaptcha-response"]
-        );
+        // $url = 'https://www.google.com/recaptcha/api/siteverify';
+        // $data = array(
+        //     'secret' => 'API-SECRET',
+        //     'response' => $request["g-recaptcha-response"]
+        // );
 
-        $options = array(
-            'http' => array (
-                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                    "User-Agent:MyAgent/1.0\r\n",
-                'method' => 'POST',
-                'content' => http_build_query($data)
-            )
-        );
+        // $options = array(
+        //     'http' => array (
+        //         'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+        //             "User-Agent:MyAgent/1.0\r\n",
+        //         'method' => 'POST',
+        //         'content' => http_build_query($data)
+        //     )
+        // );
 
-        $context  = stream_context_create($options);
-        $verify = file_get_contents($url, false, $context);
-        $captcha_success = json_decode($verify);
+        // $context  = stream_context_create($options);
+        // $verify = file_get_contents($url, false, $context);
+        // $captcha_success = json_decode($verify);
         
-        if ($captcha_success->success) {
-            return 'Se envía el formulario';
-        } else {
-            return 'No se envía el formulario';
-        }
-        return $request;
+        // if ($captcha_success->success) {
+        //     return 'Se envía el formulario';
+        // } else {
+        //     return 'No se envía el formulario';
+        // }
+        // return $request;
 
         try {
             $mensaje = new MensajeEmail;
