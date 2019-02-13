@@ -24,8 +24,14 @@
 		</div>
 	</div>
 	<div class="row pad-top-20">
-		<div class="col-md-12">
-			<button type="submit" class="btn btn-default btn-submit">ENVIAR</button>
+		<div class="col-md-6">
+			<div class="g-recaptcha" 
+		           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+		    </div>
+		</div>
+		<div class="col-md-6 text-right">
+			{{-- <button type="submit" class="btn btn-default btn-submit">ENVIAR</button> --}}
+			<button type="submit" class="btn btn-default">ENVIAR</button>
 		</div>
 	</div>
 </form>

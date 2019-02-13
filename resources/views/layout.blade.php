@@ -197,9 +197,8 @@
   <div id="fb-root"></div>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-  {{-- <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> --}}
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   @yield('script')
 
   <script type="text/javascript">

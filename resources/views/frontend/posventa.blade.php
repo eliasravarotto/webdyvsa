@@ -1,43 +1,5 @@
 @extends('layout')
 <style type="text/css">
-.image-service .is-desc {
-    position: absolute;
-    padding: 60px;
-    margin-left: 65%;
-    background: #fff;
-    top: 50%;
-    width: 35%;
-    z-index: 2;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-box-shadow: 0 23px 40px rgba(0,0,0,.15);
-    box-shadow: 0 23px 40px rgba(0,0,0,.15);
-}
-.image-service .is-desc-sm-xs {
-    position: absolute;
-    padding: 60px;
-    margin-left: 65%;
-    background: #fff;
-    top: 50%;
-    width: 35%;
-    z-index: 2;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-box-shadow: 0 23px 40px rgba(0,0,0,.15);
-    box-shadow: 0 23px 40px rgba(0,0,0,.15);
-}
-
-.image-service .is-image {
-    width: 70%;
-    height: 100%;
-    background-size: cover;
-    background-position: 50%;
-}
-.image-service {
-    position: relative;
-    height: 550px;
-}
-
 .row-well{
 	background: #f4f4f4;
 background: -moz-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
@@ -72,7 +34,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
-		<section style="width: 98.8%">
+		<section>
+			<div class="container">
 			<div class="row row-well" style=" display: flex; justify-content: center; align-items: center; flex-wrap: nowrap;">
 				<div class="" style="width: 50%; display: flex; justify-content: center; padding-left: 50px;">
 					<h2>
@@ -85,23 +48,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					<a href="/turno-servicios/create" class="btn btn-toyota btn-lg">SOLICITAR TURNO</a>
 				</div>
 			</div>
+			</div>
 		</section>
 
-{{-- 		<section style="margin-top: 50px; margin-bottom: 50px">
-			<div class=" container">
-				
-			<div class="row">
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					<img class="img-responsive" src="/imagenes/posventa/gratis.jpg" alt="Cinque Terre">
-				</div>
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					<div class="well">
-					<h3>DETALLES</h3>
-				</div>
-			</div>
-			</div>
-		</section> --}}
-		
 		<section class="pad-top-50">
 			<div class="container arrow_box">
 				<div class="page-header">
@@ -148,7 +97,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					</div>	
 					<div class="col-md-4 col-sm-12">
 						<h3 class="text-center bold"><i class="fa fa-certificate" aria-hidden="true"></i> Técnicos Especializados</h3>
-						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Toyota respalda todos sus vehículos con garantía de 3 años o 100.000 km (lo que ocurra primero) y es transferible a nuevos propietarios. Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquier de nuestras sucursales en Chaco donde gustosamente procesarán su solicitud.</p> --}}
 						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Técnicos Especializados. Profesionales constantemente capacitados bajo estándares internacionales.</p>
 					</div>	
 					<div class="col-md-4 col-sm-12">
@@ -159,7 +107,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				<div class="features row">
 					<div class="col-md-4 col-sm-6 col-xs-6">
 						<h3 class="text-center bold"><i class="fa fa-coffee" aria-hidden="true"></i> Living de Espera</h3>
-						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Toyota respalda todos sus vehículos con garantía de 3 años o 100.000 km (lo que ocurra primero) y es transferible a nuevos propietarios. Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquier de nuestras sucursales en Chaco donde gustosamente procesarán su solicitud.</p> --}}
+						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Toyota respalda todos sus vehículos con garantía de 3 años o 100.000 km (lo que ocurra primero) y es transferible a nuevos propietarios. Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquier de nuestras sucursales en Chaco donde gustosamente procesarán su solicitud.</p>
 						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Comodidad total durante la espera.</p>
 					</div>	
 					<div class="col-md-4 col-sm-6 col-xs-6">
@@ -193,46 +141,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				</div>
 			</div>
 		</section>
+
 		<section class="pad-bot-50 pad-top-50">
 			<img src="/imagenes/posventa/mto_exp.png" class="img-responsive">
 		</section>
-		{{-- <section class="pad-bot-50 pad-top-50 section-mant-exp" style="background-color: #fb7d7df5">
-			<div class="container">
-				<div class="row section-body">
-					<div class="col-md-12 col-sm-12 image-service is-right-text">
-						<div class="is-image reveal reveal_visible" style="background-image: url('/imagenes/posventa/mant_exp.png')">
-						</div>
-						<div class="is-desc reveal reveal_visible visible-md visible-lg">
-							<h2 class=" case27-primary-text">Mantenimiento Express</h2>
-							<p class="text-justify" style="font-size: 15px; ">Presentamos Mantenimiento Express, una opción de servicio rápido con las mismas características, calidad y precio de un servicio convencional, para generar la más alta conveniencia y satisfacción. Con las herramientas adecuadas y con un alto nivel de capacitación y entrenamiento los técnicos pueden cumplir con el proceso de mantenimiento de manera eficiente, logrando el mismo trabajo en 60 minutos.</p>
-						</div>
-						<div class="is-desc-sm-xs reveal reveal_visible hidden-md hidden-lg">
-							<h2 class="">Mantenimiento Express</h2>
-							<p style="font-size: 15px;">Presentamos Mantenimiento Express, una opción de servicio rápido con las mismas características, calidad y precio de un servicio convencional, para generar la más alta conveniencia y satisfacción. Con las herramientas adecuadas y con un alto nivel de capacitación y entrenamiento los técnicos pueden cumplir con el proceso de mantenimiento de manera eficiente, logrando el mismo trabajo en 60 minutos.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> --}}
 
 		<section class="pad-top-50 pad-bot-50">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6" style="min-height: 400px; " id="map" ></div>
 					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
-						<h2 class="bold" style="margin-top: 0px;">Sucursales</h2>
+						<h2 class="bold" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
 						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>
 						<div style="font-size: 22px">
 							<ul class="list-unstyled list-locations">
 								@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
 									<li>
-										<a href="#" onclick="goto(event, {{$sucursal->map_lat}},{{ $sucursal->map_lng }})"><img src="/imagenes/icons/map-marker.png" style="width: 22px; margin-bottom: 4px;">{{$sucursal->nombre}}</a>
+										{{-- <a href="#" onclick="goto(event, {{$sucursal->map_lat}},{{ $sucursal->map_lng }})"><img src="/imagenes/icons/map-marker.png" style="width: 22px; margin-bottom: 4px;">{{$sucursal->nombre}}</a> --}}
+										<a href="#" onclick="mostrarMapa(event, {{$sucursal->id}})"><img src="/imagenes/icons/map-marker.png" style="width: 22px; margin-bottom: 4px;">{{$sucursal->nombre}}</a>
 										<div style="font-size: 15px; padding-left: 22px;">{{ $sucursal->direccion }}</div>
 										<div style="font-size: 15px; padding-left: 22px;"><i class="fa fa-phone-square" aria-hidden="true"></i> {{ $sucursal->telefono }}</div>
 									</li>
 								@endforeach
 							</ul>
 						</div>
+					</div>
+					<div class="col-md-6" style="min-height: 400px; " id="map" >
+						<iframe class="iframe_map" id="map_suc_1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.7362498019697!2d-60.4403663807801!3d-26.78467607731101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94412d1c14ba7d7b%3A0x3f41780d9ada61c!2sDerka+y+Vargas!5e0!3m2!1ses-419!2sus!4v1550060476101" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			  			<iframe class="iframe_map" id="map_suc_2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.47966577166!2d-58.952102685279336!3d-27.423158221289846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450dbbf2426f97%3A0xf7ab8afd16b0dc53!2sDerka+y+Vargas!5e0!3m2!1ses-419!2sus!4v1550060536621" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			  			<iframe class="iframe_map" id="map_suc_3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1773.9799215466412!2d-61.17127152760032!3d-27.220410546402633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94475b80fed5f86f%3A0xfd9c8362d6544c0c!2sDerka+Y+Vargas+S.A.+(Concesionario+oficial+Toyota)!5e0!3m2!1ses-419!2sus!4v1550060114365" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -246,11 +182,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 @section('script')
 
 <script>
-	$(document).ready(function() {
-        $('.summernote').summernote();
-    });	
-
-	var sucursales = {!! \App\Helpers\Helper::getSucursalesPosventa() !!};
+	{{--var sucursales = {!! \App\Helpers\Helper::getSucursalesPosventa() !!}; --}}
 	// var locations = [
  //      [sucursales[0].nombre, sucursales[0].map_lat, sucursales[0].map_lng, 4],
  //      [sucursales[1].nombre, sucursales[1].map_lat, sucursales[1].map_lng, 3],
@@ -259,36 +191,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	// ];
 
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
-      center: new google.maps.LatLng(-27.041598, -60.149756),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+    // var map = new google.maps.Map(document.getElementById('map'), {
+    //   zoom: 8,
+    //   center: new google.maps.LatLng(-27.041598, -60.149756),
+    //   mapTypeId: google.maps.MapTypeId.ROADMAP
+    // });
 
-    var infowindow = new google.maps.InfoWindow();
+    // var infowindow = new google.maps.InfoWindow();
 
-    var marker, i;
+    // var marker, i;
 
-    for (i = 0; i < sucursales.length; i++) {  
-      marker = new google.maps.Marker({
-        //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        position: new google.maps.LatLng(sucursales[i].map_lat, sucursales[i].map_lng),
-        map: map
-      });
+    // for (i = 0; i < sucursales.length; i++) {  
+    //   marker = new google.maps.Marker({
+    //     //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+    //     position: new google.maps.LatLng(sucursales[i].map_lat, sucursales[i].map_lng),
+    //     map: map
+    //   });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
+    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    //     return function() {
+    //       infowindow.setContent(locations[i][0]);
+    //       infowindow.open(map, marker);
+    //     }
+    //   })(marker, i));
+    // }
 
-    function goto(e, lat, lng){
-    	e.preventDefault();
-    	var newPos = new google.maps.LatLng(lat,lng);
-    	map.setOptions({center:newPos,zoom:15});
-    }
+    // function goto(e, lat, lng){
+    // 	e.preventDefault();
+    // 	var newPos = new google.maps.LatLng(lat,lng);
+    // 	map.setOptions({center:newPos,zoom:15});
+    // }
+
+    $('.iframe_map').hide();
+    $('#map_suc_1').show();
+
+    function mostrarMapa(e, id){
+     	e.preventDefault();
+     	$('.iframe_map').hide();
+     	$('#map_suc_'+id).show();
+     	$('html, body').animate({
+	        scrollTop: $('#map').offset().top - 20 //#DIV_ID is an example. Use the id of your destination on the page
+	    }, 'slow');
+	}
 
     </script>
 @stop
