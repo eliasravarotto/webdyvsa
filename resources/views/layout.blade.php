@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Google Analytics -->
+    {{--
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -22,7 +23,7 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-132697927-2');
-    </script>
+    </script> --}}
 
     @yield('styles_sheets')
 
@@ -30,7 +31,6 @@
 
 <body>
 
-  {{-- @include('frontend.float-buttons') --}}
   @include('frontend.menu-fab')
   @include('loading-dyv')
 
@@ -66,44 +66,6 @@
           </a>
         </div>
       </div>
-      {{-- <a href="/">
-        <img src="{{ asset('/imagenes/logo-empresa.png') }}"  style="height: 51px;">
-      </a> --}}
-        {{-- <div style="width: 60%; display: flex; justify-content: space-around; text-align: center;">
-            <ul class="lista-contacto list-unstyled hidden-sm hidden-xs" style="display: flex; align-items: center;">
-                <li>
-                    <a href="">
-                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
-                        Sáenz Peña
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        Charata
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
-                        Villa Angela
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                      <img src="/imagenes/icons/map-marker.png" style="width: 25px">
-                        Resistencia
-                    </a>
-                </li>
-            </ul>
-            <ul class="lista-redes-sociales list-unstyled hidden-sm hidden-xs" style="display: flex; align-items: center;">
-                <li><a href="https://www.facebook.com/derkayvargas/" target="_blank"><img style="height: 30px; width: 30px;" src="/imagenes/icons/facebook.png"></a></li>
-                <li><a href="https://www.instagram.com/derkayvargas/" target="_blank"><img style="height: 30px; width: 30px;" src="/imagenes/icons/instagram.png"></a></li>
-                <li><a href="https://twitter.com/derkayvargas?lang=es" target="_blank"><img style="height: 30px; width: 30px;" src="/imagenes/icons/twitter.png"></a></li>
-            </ul>
-        </div> --}}
-        {{-- <img src="{{ asset('/imagenes/logo-toyota.png') }}" style="height: 60px;"> --}}
     </div>
 
      @include('frontend.navbar-mobile')
@@ -130,28 +92,6 @@
 
     <footer>
       <div>
-        {{-- <div class="row row-footer-first text-center">
-          <ul class="list-unstyled list-inline footer-menu" style="margin-left: 0px;">
-            <li>
-              <a href="#">Sucursales</a>
-            </li>
-            <li>
-              <a href="#">Contacto</a></li>
-          </ul>
-        </div>
-
-        <div class="row-footer" style="display: flex; justify-content: center;">
-            <div class="item-footer-social">
-              <img src="/imagenes/icons/facebook.png" style="height: 50px; width:50px;">
-            </div>
-            <div class="item-footer-social">
-              <img src="/imagenes/icons/instagram.png" style="height: 50px; width:50px;">
-            </div>
-            <div class="item-footer-social">
-              <img src="/imagenes/icons/twitter.png" style="height: 50px; width:50px;">
-            </div>
-        </div>
- --}}
         <div class="row row-footer row-footer-border">
           <div class="col-md-12 col-xs-12 col-sm-12 text-center">
             <h1 class="h-dyv">Derka y Vargas</h1>
@@ -188,17 +128,14 @@
         </div>
       </div>
     </footer>
-
-
-
   </div>
 
   <!-- Script Section -->
   <div id="fb-root"></div>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
   <script src='https://www.google.com/recaptcha/api.js'></script>
+  @include('frontend.flash-message')
   @yield('script')
 
   <script type="text/javascript">
@@ -240,7 +177,6 @@
         });
 
     })(jQuery);
-    
   </script>
 
 </body>

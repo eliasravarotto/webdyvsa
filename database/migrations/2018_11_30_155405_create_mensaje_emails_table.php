@@ -16,8 +16,8 @@ class CreateMensajeEmailsTable extends Migration
         Schema::create('mensaje_emails', function (Blueprint $table) {
             $table->increments('id');
             $table->string('cliente');
-            $table->string('telefono');
-            $table->string('email');
+            $table->string('telefono')->nullable();
+            $table->string('email')->nullable();
             $table->longText('mensaje');
             $table->string('enviar_a');
             $table->timestamps();

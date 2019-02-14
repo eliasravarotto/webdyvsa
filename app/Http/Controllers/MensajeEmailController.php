@@ -74,18 +74,15 @@ class MensajeEmailController extends Controller
             switch ($request->from) {
                 case 'financiacion':
                     $asunto ='Consulta - Financiación';
-                    $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
-                    // $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
                     break;
                 case 'tpa':
                     $asunto ='Consulta desde Pagina Web TPA';
-                    $enviar_a = 'santiagogaliano@derkayvargas.com.ar';
-                    // $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    $enviar_a = env('RECEPTOR_EMAILS_TPA');
                     break;
                 default:
                     $asunto ='Consulta desde Pagina Web';
-                    $enviar_a = 'fabianaaranda@derkayvargas.com.ar';
-                    // $enviar_a = 'eliasravarotto@derkayvargas.com.ar';
+                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
                     break;
             }
 
@@ -94,16 +91,11 @@ class MensajeEmailController extends Controller
 
             event( new HaIngresadoUnaConsulta($mensaje, $asunto));
 
-            if ($request->from == 'contacto') {
-                return redirect('/contacto')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
-            } else if($request->from == 'tpa') {
-                 return redirect('/plan-de-ahorro')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
-            } else{
-                return redirect('/financiacion')->with('status', 'Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad.');
-            }
+            return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
 
         } catch (Exception $e) {
-            return redirect('/contacto')->with('error', 'Error');
+
+            return back()->with('success','Lo sentimos ha ocurrido un error, por favor intente mas tarde.');
         }
     }
 
