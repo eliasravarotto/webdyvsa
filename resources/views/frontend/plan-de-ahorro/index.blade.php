@@ -27,60 +27,79 @@
 
 		<section>
 			<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-			        <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="background-color: #f5f5f5">
-			          <img src="/imagenes/tpa/hilux.png" alt="...">
-			          <div class="caption text-center">
-			          	<center>
-			            <img src="/imagenes/tpa/logo-hilux.png" class="img-responsive">
-			          	</center>
-			            <hr>
-			            <ul class="list-unstyled">
-			            	<li>
-			            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_hilix_100" class="text-uppercase">Plan Hilux 4x4 DX 100%</a>
-			            	</li>
-			            	<li>
-			            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_hilix_70_30" class="text-uppercase">Plan Hilux 4x2 DX 70/30</a>
-			            	</li>
-			            </ul>
-			          </div>
-			        </div>          
-		      	</div>
+				<div class="row">
+					<div class="col-md-6">
+				        <div class="tarjeta">
+				        	<div class="tarjeta-contenido">
+				        		<div class="contenido-izquierda">
+				        			<h2>ETIOS X</h2>
+				        			<p>5 Puertas</p>
+				        			<p>Plan 100%</p>
+				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_etios">
+				        				DETALLES
+				        			</a>
+				        		</div>
+				        		<div class="contenido-derecha">
+				        			<img src="/imagenes/tpa/tarjeta-etios.png">
+				        		</div>
+				        	</div>
+				        </div>
+			      	</div>
 
-		      	<div class="col-md-4">
-			        <div href="/modelos/corolla" class="thumbnail thumbnail-no-bg thumbnail-no-border" style="background-color: #f5f5f5">
-			          <img src="/imagenes/tpa/corolla.png" alt="...">
-			          <div class="caption text-center">
-			          	<center>
-			            <img src="/imagenes/tpa/logo-corolla.png" class="img-responsive">
-			          	</center>
-			            <hr>
-			            <ul class="list-unstyled">
-			            	<li>
-			            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_corolla"  class="text-uppercase">Plan Corolla 100%</a>
-			            	</li>
-			            </ul>
-			          </div>
-			        </div>          
-		      	</div>
-		      	<div class="col-md-4">
-			        <div href="/modelos/corolla" class="thumbnail thumbnail-no-bg thumbnail-no-border" style="background-color: #f5f5f5">
-			          <img src="/imagenes/tpa/etios-hb.png" alt="...">
-			          <div class="caption text-center">
-			          	<center>
-			            <img src="/imagenes/tpa/logo-etios.png" class="img-responsive">
-			          	</center>
-			            <hr>
-			            <ul class="list-unstyled">
-			            	<li>
-			            		<a style="font-size: 20px" href="#" data-toggle="modal" data-target="#modal_etios" class="text-uppercase">Plan Etios 100%</a>
-			            	</li>
-			            </ul>
-			          </div>
-			        </div>          
-		      	</div>
-			</div>
+			      	<div class="col-md-6">
+				        <div class="tarjeta">
+				        	<div class="tarjeta-contenido">
+				        		<div class="contenido-izquierda">
+				        			<h2>COROLLA</h2>
+				        			<p>XLI M/T</p>
+				        			<p>Plan 100%</p>
+				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_corolla">
+				        				DETALLES
+				        			</a>
+				        		</div>
+				        		<div class="contenido-derecha">
+				          			<img src="/imagenes/tpa/tarjeta-corolla.png">
+				        		</div>
+				        	</div>
+				        </div>     
+			      	</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+				        <div class="tarjeta">
+				        	<div class="tarjeta-contenido">
+				        		<div class="contenido-izquierda">
+				        			<h2>HILUX</h2>
+				        			<p>CD 4x2 DX</p>
+				        			<p>Plan 70/30</p>
+				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_hilix_70_30">
+				        				DETALLES
+				        			</a>
+				        		</div>
+				        		<div class="contenido-derecha">
+				          			<img src="/imagenes/tpa/tarjeta-hilux-4x2.png">
+				        		</div>
+				        	</div>
+				        </div>      
+			      	</div>
+			      	<div class="col-md-6">
+				        <div class="tarjeta">
+				        	<div class="tarjeta-contenido">
+				        		<div class="contenido-izquierda">
+				        			<h2>HILUX</h2>
+				        			<p>CD 4x4 DX</p>
+				        			<p>Plan 100%</p>
+				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_hilix_100">
+				        				DETALLES
+				        			</a>
+				        		</div>
+				        		<div class="contenido-derecha">
+				          			<img src="/imagenes/tpa/tarjeta-hilux-4x4.png">
+				        		</div>
+				        	</div>
+				        </div>      
+			      	</div>
+				</div>
 			</div>
 
 			<!-- Modal HILUX_100-->
@@ -337,98 +356,100 @@
 			  </div>
 			</div>
 		</section>
-
+		<br>
 		<section>
 			<div class="container">
-			<div class="row well">
-				<div class="col-md-4">
-					<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-		                <div class="caption caption-default">
-		                	<h1 class="text-center"><i class="fa fa-car" style="font-size: 90px; color: black;"></i></h1>
-		                    <h4 class="text-center">Adjudicados</h4>
-		                    <p class="text-justify">
-		                      Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados 
-		                    </p>
-		                    <center>
-		                    {{-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modal_adjudicados">VER LISTADO</a> --}}
-		                    </center>
-		                </div>
-        			</div>
-				</div>
-				<!-- Modal ADJUDICADOS-->
-				<div id="modal_adjudicados" class="modal" role="dialog">
-				  <div class="modal-dialog" style="width: 100%">
-				    <!-- Modal content-->
-				    <div class="modal-content" >
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h4 class="modal-title">LISTADO DE PLANES ADJUDICADOS</h4>
-				      </div>
-				      <div class="modal-body">
-				        <table class="table table-hover">
-						    <thead>
-						      <tr>
-						        <th>Firstname</th>
-						        <th>Lastname</th>
-						        <th>Email</th>
-						      </tr>
-						    </thead>
-						    <tbody>
-						      <tr>
-						        <td>John</td>
-						        <td>Doe</td>
-						        <td>john@example.com</td>
-						      </tr>
-						      <tr>
-						        <td>Mary</td>
-						        <td>Moe</td>
-						        <td>mary@example.com</td>
-						      </tr>
-						      <tr>
-						        <td>July</td>
-						        <td>Dooley</td>
-						        <td>july@example.com</td>
-						      </tr>
-						    </tbody>
-						  </table>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-				      </div>
-				    </div>
+				<div class="well">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+				                <div class="caption caption-default">
+				                	<h1 class="text-center"><i class="fa fa-car" style="font-size: 90px; color: black;"></i></h1>
+				                    <h4 class="text-center">Adjudicados</h4>
+				                    <p class="text-justify">
+				                      Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados 
+				                    </p>
+				                    <center>
+				                    {{-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modal_adjudicados">VER LISTADO</a> --}}
+				                    </center>
+				                </div>
+		        			</div>
+						</div>
+						<!-- Modal ADJUDICADOS-->
+						<div id="modal_adjudicados" class="modal" role="dialog">
+						  <div class="modal-dialog" style="width: 100%">
+						    <!-- Modal content-->
+						    <div class="modal-content" >
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						        <h4 class="modal-title">LISTADO DE PLANES ADJUDICADOS</h4>
+						      </div>
+						      <div class="modal-body">
+						        <table class="table table-hover">
+								    <thead>
+								      <tr>
+								        <th>Firstname</th>
+								        <th>Lastname</th>
+								        <th>Email</th>
+								      </tr>
+								    </thead>
+								    <tbody>
+								      <tr>
+								        <td>John</td>
+								        <td>Doe</td>
+								        <td>john@example.com</td>
+								      </tr>
+								      <tr>
+								        <td>Mary</td>
+								        <td>Moe</td>
+								        <td>mary@example.com</td>
+								      </tr>
+								      <tr>
+								        <td>July</td>
+								        <td>Dooley</td>
+								        <td>july@example.com</td>
+								      </tr>
+								    </tbody>
+								  </table>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+						      </div>
+						    </div>
 
-				  </div>
-				</div>
+						  </div>
+						</div>
 
-				<div class="col-md-4">
-					<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-		                <div class="caption caption-default">
-		                	<h1 class="text-center"><i class="fa fa-users" style="font-size: 90px; color: black;"></i></h1>
-		                    <h4 class="text-center">Agrupados</h4>
-		                    <p class="text-justify">
-							Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.			                    </p>
-		                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
-		                </div>
-        			</div>
-				</div>
+						<div class="col-md-4">
+							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+				                <div class="caption caption-default">
+				                	<h1 class="text-center"><i class="fa fa-users" style="font-size: 90px; color: black;"></i></h1>
+				                    <h4 class="text-center">Agrupados</h4>
+				                    <p class="text-justify">
+									Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.			                    </p>
+				                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
+				                </div>
+		        			</div>
+						</div>
 
-				<div class="col-md-4">
-					<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-						<a href="#" onclick="masDetalles(event)">
-		                <div class="caption caption-default">
-		                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
-		                    <h4 class="text-center">Licitación Online</h4>
-		                    <p class="text-justify">
-		                    Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
-		                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
-		                </div>
-		                </a>
-        			</div>
+						<div class="col-md-4">
+							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+								<a href="#" onclick="masDetalles(event)">
+				                <div class="caption caption-default">
+				                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
+				                    <h4 class="text-center">Licitación Online</h4>
+				                    <p class="text-justify">
+				                    Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
+				                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
+				                </div>
+				                </a>
+		        			</div>
+						</div>
+						<center>
+							<a class="btn btn-default" href="#" onclick="masDetalles(event)">CONSULTAR</a>
+						</center>
+					</div>
 				</div>
-				<center>
-					<a class="btn btn-default" href="#" onclick="masDetalles(event)">CONSULTAR</a>
-				</center>
-			</div>
 			</div>
 		</section>
 
