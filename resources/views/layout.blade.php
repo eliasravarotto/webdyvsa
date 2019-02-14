@@ -13,18 +13,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
 
-
-    <!-- Google Analytics -->
-    {{--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-132697927-2');
-    </script> --}}
-
     @yield('styles_sheets')
 
 </head>
@@ -32,7 +20,6 @@
 <body>
 
   @include('frontend.menu-fab')
-  @include('loading-dyv')
 
   <div id="app">
     <div class="header-ppal">
@@ -130,12 +117,25 @@
     </footer>
   </div>
 
-  <!-- Script Section -->
+  <!---------------------------------------------
+  //Script Section 
+  ------------------------------------------- -->
   <div id="fb-root"></div>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <script src='https://www.google.com/recaptcha/api.js'></script>
   @include('frontend.flash-message')
+  <!-- Google Analytics -->
+  @if (env('APP_ENV' == 'production'))
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-132697927-2');
+  </script> 
+  @endif
+
   @yield('script')
 
   <script type="text/javascript">
@@ -176,7 +176,17 @@
           console.log("The paragraph was clicked.");
         });
 
+        $('#form').submit(function(){
+          $("input[type='submit']", this)
+            .val("Enviando Mensaje...")
+            .attr('disabled', 'disabled');
+          return true;
+        });
     })(jQuery);
+
+    $(function()
+    {
+    });
   </script>
 
 </body>

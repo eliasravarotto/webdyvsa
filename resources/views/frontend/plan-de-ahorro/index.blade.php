@@ -459,7 +459,7 @@
 					<div class="col-md-6 col-sm-12 col-xs-12" id="form-contacto">
 						<h2>CONSULTÁ POR UN PLAN DE AHORRO <br>
 						<small>Un asesor se pondrá en contacto con usted a la brevedad.</small></h2>
-						<form class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}
 							<input type="hidden" name="from" value="tpa">
 							<div class="row">

@@ -180,7 +180,7 @@
 						<h2 class="text-center h1-titulo-form">FORMULARIO DE CONTACTO<br>
 							<small>Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</small>
 						</h2>
-						<form class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}
 							<input type="hidden" name="from" value="financiacion">
 							<div class="row">
@@ -217,7 +217,7 @@
 									@endif
 								</div>
 								<div class="col-md-6 text-right">
-									<button type="submit" class="btn btn-default btn-submit">ENVIAR</button>
+									<button type="submit" class="btn btn-default">ENVIAR</button>
 								</div>
 							</div>
 						</form>
