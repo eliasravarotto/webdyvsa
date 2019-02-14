@@ -8,6 +8,7 @@ use App\TipoServicio;
 use App\TurnoServicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ReCaptchataTestFormRequest;
 
 class TurnoServicioController extends Controller
 {
@@ -56,7 +57,7 @@ class TurnoServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReCaptchataTestFormRequest $request)
     {
         try {
             $turno = new TurnoServicio;
@@ -75,12 +76,15 @@ class TurnoServicioController extends Controller
             switch ($turno->sucursal_id) {
                 case 1:
                     array_push($receptopres, "fabianaaranda@derkayvargas.com.ar", "eliasravarotto@derkayvargas.com.ar");
+                    //array_push($receptopres, "eliasravarotto@derkayvargas.com.ar");
                     break;
                 case 2:
-                    array_push($receptopres, "franciscozago@derkayvargas.com.ar", "marcoruiz@derkayvargas.com.ar", "federicow@derkayvargas.com.ar");
+                    array_push($receptopres, "fabianaaranda@derkayvargas.com.ar", "franciscozago@derkayvargas.com.ar", "marcoruiz@derkayvargas.com.ar", "federicow@derkayvargas.com.ar");
+                    //array_push($receptopres, "eliasravarotto@derkayvargas.com.ar");
                     break;
                 case 3:
                     array_push($receptopres, "fabianaaranda@derkayvargas.com.ar", "eliasravarotto@derkayvargas.com.ar");
+                    //array_push($receptopres, "eliasravarotto@derkayvargas.com.ar");
                     break;
             }
             
@@ -89,7 +93,7 @@ class TurnoServicioController extends Controller
 
             event( new SeHaSolicitadoUnTurno($turno));
 
-            return redirect('/turno-servicios/create')->with('status', 'Su turno fue solicitado, estaremos en contacto con usted a la brevedad para su confirmación');
+            return back()->with('success','Su turno fue solicitado, estaremos en contacto con usted a la brevedad para su confirmación');
         }
         catch (\Exception $e) {
             return $e->getMessage();
