@@ -58,7 +58,7 @@
 				        			</a>
 				        		</div>
 				        		<div class="contenido-derecha">
-				          			<img src="/imagenes/tpa/tarjeta-corolla.png">
+				          			<img src="/imagenes/tpa/tarjeta-corolla.PNG">
 				        		</div>
 				        	</div>
 				        </div>     
