@@ -126,7 +126,7 @@
   <script src='https://www.google.com/recaptcha/api.js'></script>
   @include('frontend.flash-message')
   <!-- Google Analytics -->
-  @if (env('APP_ENV' == 'production'))
+  @if (env('IS_PROD'))
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
