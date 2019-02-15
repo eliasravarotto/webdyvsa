@@ -50,15 +50,15 @@
 				        <div class="tarjeta">
 				        	<div class="tarjeta-contenido">
 				        		<div class="contenido-izquierda">
-				        			<h2>COROLLA</h2>
-				        			<p>XLI M/T</p>
+				        			<h2>YARIS XS</h2>
+				        			<p>5 Puertas</p>
 				        			<p>Plan 100%</p>
-				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_corolla">
+				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_yaris">
 				        				DETALLES
 				        			</a>
 				        		</div>
 				        		<div class="contenido-derecha">
-				          			<img src="/imagenes/tpa/tarjeta-corolla.PNG">
+				          			<img src="/imagenes/tpa/tarjeta-yaris.png">
 				        		</div>
 				        	</div>
 				        </div>     
@@ -128,20 +128,18 @@
 			        <table class="table table-hover">
 					    <thead>
 					      <tr style="background-color: black">
-					        <th class="text-center" style="color: white; font-weight: bold;"></th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
-					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 18</th>
-					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 19 a 84</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 24</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 25 a 84</th>
 					      </tr>
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">TOTAL</td>
-					        <td class="text-center" style="font-weight: bold;">$ 22.841</td>
-					        <td class="text-center" style="font-weight: bold;">$ 23.969</td>
-					        <td class="text-center" style="font-weight: bold;">$ 18.774</td>
-					        <td class="text-center" style="font-weight: bold;">$ 16.679</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.473,90</td>
+					        <td class="text-center" style="font-weight: bold;">$ 16.660,35</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.808,04</td>
+					        <td class="text-center" style="font-weight: bold;">$ 18.136,92</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -150,8 +148,8 @@
 				  			<blockquote style="border-left: 5px solid #e81f39;">
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
-									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/"></a>toyotaplan.com.ar</p>
-									<p>Vigencia a partir del 01/01/2019</p>
+									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
+									<p>01 de Febrero 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -191,7 +189,6 @@
 			        <table class="table table-hover">
 					    <thead>
 					      <tr style="background-color: black">
-					        <th class="text-center" style="color: white; font-weight: bold;"></th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 18</th>
@@ -200,11 +197,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">TOTAL</td>
-					        <td class="text-center" style="font-weight: bold;">$ 15.456</td>
-					        <td class="text-center" style="font-weight: bold;">$ 16.384</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.955</td>
-					        <td class="text-center" style="font-weight: bold;">$ 10.168</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.686,29</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.435,00</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.148,40</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.020,39</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -213,8 +209,8 @@
 				  			<blockquote style="border-left: 5px solid #e81f39;">
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
-									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/"></a>toyotaplan.com.ar</p>
-									<p>Vigencia a partir del 01/01/2019</p>
+									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
+									<p>Vigencia 01 de Febrero 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -228,17 +224,16 @@
 			  </div>
 			</div>
 
-			<!-- Modal COROLLA-->
-			<div id="modal_corolla" class="modal" role="dialog">
+			<!-- Modal YARIS-->
+			<div id="modal_yaris" class="modal" role="dialog">
 			  <div class="modal-dialog" style="width: 100%">
 			    <!-- Modal content-->
 			    <div class="modal-content" >
 			      <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal">&times;</button>
-			        {{-- <h4 class="modal-title text-center">HILUX 100%</h4> --}}
 			      </div>
 			      <div class="modal-body">
-					  <h2 class="text-center">Corolla XLI M/T</h2>
+					  <h2 class="text-center">YARIS XS</h2>
 					<table class="table table-hover table-bordered">
 					    <tbody>
 					      <tr>
@@ -254,20 +249,18 @@
 			        <table class="table table-hover">
 					    <thead>
 					      <tr style="background-color: black">
-					        <th class="text-center" style="color: white; font-weight: bold;"></th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
-					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 18</th>
-					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 19 a 84</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 24</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 25 a 84</th>
 					      </tr>
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">TOTAL</td>
-					        <td class="text-center" style="font-weight: bold;">$ 13.456</td>
-					        <td class="text-center" style="font-weight: bold;">$ 14.120</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.060</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.825</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.979,33</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.005,53</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.868,74</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.352,55</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -277,7 +270,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia a partir del 01/01/2019</p>
+									<p>Vigencia a partir del 01/02/2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -317,22 +310,18 @@
 			        <table class="table table-hover">
 					    <thead>
 					      <tr style="background-color: black">
-					        <th class="text-center" style="color: white; font-weight: bold;"></th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
-					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 10</th>
-					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 11 a 18</th>
-					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 19 a 84</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 24</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 25 a 84</th>
 					      </tr>
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">TOTAL</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.563,49</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.957,84</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.429,59</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.586,55</td>
-					        <td class="text-center" style="font-weight: bold;">$ 6.752,00</td>
+					        <td class="text-center" style="font-weight: bold;">$ 5.779,17</td>
+					        <td class="text-center" style="font-weight: bold;">$ 6.595,06</td>
+					        <td class="text-center" style="font-weight: bold;">$ 6.674,80</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.657,93</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -342,7 +331,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia a partir del 01/01/2019</p>
+									<p>Vigencia 01 de Febrero 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -426,7 +415,7 @@
 				                	<h1 class="text-center"><i class="fa fa-users" style="font-size: 90px; color: black;"></i></h1>
 				                    <h4 class="text-center">Agrupados</h4>
 				                    <p class="text-justify">
-									Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.			                    </p>
+									Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
 				                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
 				                </div>
 		        			</div>
@@ -434,20 +423,24 @@
 
 						<div class="col-md-4">
 							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-								<a href="#" onclick="masDetalles(event)">
 				                <div class="caption caption-default">
 				                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
 				                    <h4 class="text-center">Licitación Online</h4>
-				                    <p class="text-justify">
-				                    Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
+				                    <p class="text-center">
+				                    	{{-- Completá online el formulario de pre-licitación para el próximo acto de adjudicación. --}}
+				                    	Proximamente.
+				                    </p>
 				                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
 				                </div>
-				                </a>
 		        			</div>
 						</div>
-						<center>
-							<a class="btn btn-default" href="#" onclick="masDetalles(event)">CONSULTAR</a>
-						</center>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-md-12">
+							<center>
+								<a class="btn btn-toyota" href="#" onclick="masDetalles(event)">CONSULTAR</a>
+							</center>
+						</div>
 					</div>
 				</div>
 			</div>
