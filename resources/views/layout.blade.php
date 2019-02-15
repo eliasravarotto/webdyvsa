@@ -55,7 +55,8 @@
       </div>
     </div>
 
-     @include('frontend.navbar-mobile')
+     {{-- @include('frontend.navbar-mobile') --}}
+     @include('frontend.new-nav')
 
     @yield('content')
 

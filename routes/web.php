@@ -64,8 +64,3 @@ Route::post('/turno-servicios','TurnoServicioController@store');
 Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('test_drive_form');
 Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
-
-Route::get('/t', function () {
-	    $users = Tracker::onlineUsers();
-	    return $users;
-});
