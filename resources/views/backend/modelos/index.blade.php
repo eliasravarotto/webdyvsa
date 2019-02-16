@@ -1,6 +1,7 @@
-@extends('backend.sufee_admin.index')
+@extends('backend.layout')
 
 @section('content')
+
 <div class="breadcrumbs">
     <div class="col-sm-12">
         <div class="page-header">

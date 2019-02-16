@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 
 	Route::get('/admin', function () {
-	    return view('backend.sufee_admin.dashboard');
+	    return view('backend.inicio');
 	});
 
 
