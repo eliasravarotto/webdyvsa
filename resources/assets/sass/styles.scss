@@ -602,6 +602,14 @@ $gris-2: #626262;
     font-size: 14px;
 }
 
+.lista-redes-sociales li a img{
+  opacity: 1;
+}
+
+.lista-redes-sociales li a img:hover{
+  opacity: 0.7;
+}
+
 .lista-contacto li a:hover,
 .lista-redes-sociales li a:hover{
     text-decoration: none;
