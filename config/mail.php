@@ -98,7 +98,7 @@ return [
     // 'password' => env('MAIL_PASSWORD'),
     'username' => 'info@derkayvargas.com.ar',
 
-    'password' => 'Hoz94629',
+    'password' => 'Kad77349',
 
     /*
     |--------------------------------------------------------------------------
