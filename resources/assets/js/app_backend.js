@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-require('./script.ppal.js');
+//require('./script.ppal.js');
 
 window.Vue = require('vue');
 

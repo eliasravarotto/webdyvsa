@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app_backend.css') }}" rel="stylesheet">
     {{-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-w6tc0TXjTUnYHwVwGgnYyV12wbRoJQo9iMlC2KdkdmVvntGgzT9jvqNEF/uKaF4m" crossorigin="anonymous"> --}}
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -28,40 +28,40 @@
 
             <ul class="list-unstyled components">
                 <li class="active">
+                    <a href="/admin/usados">
+                        <i class="fa fa-dashboard"></i>
+                        INICIO
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/usados">
+                        <i class="fa fa-car"></i>
+                        USADOS
+                    </a>
+                </li>
+                <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle arrow-right">
-                        <i class="fas fa-home"></i>
-                        Home
+                        <i class="fa fa-envelope"></i>
+                        EMAILS
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
+                            <a href="{{route('contacto_mensajes_index', 'contacto')}}">Contacto</a>
                         </li>
                         <li>
-                            <a href="#">Home 2</a>
+                            <a href="{{route('contacto_mensajes_index', 'financiacion')}}">Financiacion</a>
                         </li>
                         <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-briefcase"></i>
-                        About
-                    </a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle arrow-right">
-                        <i class="fas fa-copy"></i>
-                        Pages
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
+                            <a href="{{url('/admin/usados')}}">Usados</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="{{route('testdrive_index')}}">Test Drive</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="{{route('contacto_mensajes_index', 'tpa')}}">Tpa</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/admin/servicios')}}">Turnos</a>
                         </li>
                     </ul>
                 </li>
@@ -103,6 +103,18 @@
                 </div>
             </nav>
             <div class="container">
+                @if (session('success'))
+                  <div class="alert alert-warning alert-dismissible toast" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('success') }}
+                  </div>
+                @endif
+                @if (session('error'))
+                  <div class="alert alert-danger alert-dismissible toast" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('error') }}
+                  </div>
+                @endif
                 @yield('content')
             </div>
         </div>
@@ -113,7 +125,8 @@
     ------------------------- -->
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app_backend.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     @yield('page-script')
     <script type="text/javascript">
         $(document).ready(function () {

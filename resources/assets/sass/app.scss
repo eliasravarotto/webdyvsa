@@ -1,19 +1,12 @@
-
 // Fonts
-// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-// @import url('https://fonts.googleapis.com/css?family=PT+Sans'); //Para menu principal
-// @import url('https://fonts.googleapis.com/css?family=Exo'); // Para Todo.
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+//@import url('https://fonts.googleapis.com/css?family=PT+Sans'); //Para menu principal
+@import url('https://fonts.googleapis.com/css?family=Exo'); // Para Todo.
 
 // Variables
-// @import "variables";
-
-// Bootstrap
-// @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
-@import "styles.scss";
-
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 @import "variables";
 
-@import "~bootstrap/scss/bootstrap";
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "styles.scss";

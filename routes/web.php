@@ -39,11 +39,11 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
 	Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
 	Route::get('admin/turno-servicios','TurnoServicioController@index');
-	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index');
-	Route::get('admin/mensajes-contacto','MensajeEmailController@index')->name('contacto_mensajes_index');
+	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
+	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin/servicios','TipoServicioController');
-	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria');
+	Route::post('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
 
 });
 

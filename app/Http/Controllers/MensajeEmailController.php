@@ -18,9 +18,13 @@ class MensajeEmailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($from = null)
     {
-        $mensajes = MensajeEmail::all();
+        if ($from == null) {
+            $mensajes = MensajeEmail::all();
+        } else{
+            $mensajes = MensajeEmail::where('from', '=', $from)->get();
+        }
         return view('backend.contacto.index', compact('mensajes'));
     }
 
@@ -73,19 +77,23 @@ class MensajeEmailController extends Controller
            
             switch ($request->from) {
                 case 'financiacion':
+                    $from = 'financiacion';
                     $asunto ='Consulta - Financiación';
                     $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
                     break;
                 case 'tpa':
+                    $from = 'tpa';
                     $asunto ='Consulta desde Pagina Web TPA';
                     $enviar_a = env('RECEPTOR_EMAILS_TPA');
                     break;
                 default:
+                    $from = 'contacto';
                     $asunto ='Consulta desde Pagina Web';
                     $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
                     break;
             }
 
+            $mensaje->from = $from;
             $mensaje->enviar_a = $enviar_a;
             $mensaje->save();
 
