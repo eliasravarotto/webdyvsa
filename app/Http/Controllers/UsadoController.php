@@ -43,13 +43,13 @@ class UsadoController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request->all();
 
         $usado = new Usado;
         $usado->dominio = $request->dominio;
         $usado->marca = $request->marca;
         $usado->modelo = $request->modelo;
         $usado->anio = $request->anio;
+        $usado->interno = $request->interno;
         $usado->km = $request->km;
         $usado->precio = $request->precio;
         $usado->color = $request->color;
@@ -67,7 +67,8 @@ class UsadoController extends Controller
         if ($total>0) {
             for( $i=0 ; $i < $total ; $i++ ) { 
                 $file = $request->file('img_galeria')[$i];
-                $filename = $request->file('img_galeria')[$i]->getClientOriginalName();
+                $originalname = $request->file('img_galeria')[$i]->getClientOriginalName();
+                $filename = md5(date('Y-m-d H:i:s:u').$originalname);
                 $file->move(public_path().'/imagenes/usados/'.$usado->id.'/',$filename);
                 $imagen = new ImagenGaleriaUsado;
                 $imagen->usado_id = $usado->id;
@@ -123,10 +124,12 @@ class UsadoController extends Controller
         $usado->update();
 
         $total = count($request->nuevas_imagenes);
+
         if ($total>0) {
             for( $i=0 ; $i < $total ; $i++ ){
                 $file = $request->file('nuevas_imagenes')[$i];
-                $filename = $request->file('nuevas_imagenes')[$i]->getClientOriginalName();
+                //$filename = $request->file('nuevas_imagenes')[$i]->getClientOriginalName();
+                $filename = md5(date('Y-m-d H:i:s:u').$request->file('nuevas_imagenes')[$i]->getClientOriginalName());
                 $file->move(public_path().'/imagenes/usados/'.$usado->id.'/',$filename);
                 $imagen = new ImagenGaleriaUsado;
                 $imagen->usado_id = $usado->id;
@@ -156,8 +159,10 @@ class UsadoController extends Controller
                     $imagenes_galeria[$i]->delete();
                 }
             }
-
-            unlink(public_path().$usado->foto);
+            if (file_exists($usado->foto)) {
+                
+                unlink(public_path().$usado->foto);
+            }
             $usado->delete();
 
         } catch (Exception $e) {
@@ -172,5 +177,6 @@ class UsadoController extends Controller
         $img_galeria = ImagenGaleriaUsado::find($id);
         unlink(public_path().$img_galeria->url);
         $img_galeria->delete();
+        return back()->with('success', 'La imagen fué eliminada correctamente!');
     }
 }

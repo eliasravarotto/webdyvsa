@@ -16,7 +16,7 @@
 </head>
 <body>
   <div style="display: flex; justify-content: flex-end;">
-  	<img src="https://derkayvargas.com/_files/200000005-b0396b1366/200/dyv_logo_700px-01.png" style="height: 50px; width: 50px">
+  	{{-- <img src="https://derkayvargas.com/_files/200000005-b0396b1366/200/dyv_logo_700px-01.png" style="height: 50px; width: 50px"> --}}
   </div>
   <div>
   <h4>Nueva Solicitud de Test Drive</h4>

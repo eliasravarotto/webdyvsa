@@ -1,18 +1,6 @@
-@extends('backend.sufee_admin.index')
+@extends('backend.layout')
 
 @section('content')
-<style type="text/css">
-	.col-buttons-inline{
-		display: flex;
-		justify-content: 
-		flex-start; 
-		align-self: flex-end;
-	}
-	.col-buttons-inline > button{
-		height: 59%;
-		margin-right: 10px;
-	}
-</style>
 <div class="card">
     <div class="card-header">
         <strong class="card-title">Nuevo Modelo</strong>
@@ -21,15 +9,13 @@
     	<form action="{{ route('usados.store') }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
 			{{ csrf_field() }}
 			@include('backend.usados.form')
-			<div class="row form-group">
-				<div class="col-9">
-					<a class="btn btn-dark">
-					  <i class="fa fa-lock fa-lg"></i>&nbsp;
-					  <span id="payment-button-amount">Cancelar</span>
+			<div class="row form-group my-3">
+				<div class="col-12">
+					<a href="/admin/usados" class="btn btn-secondary">
+					  Cancelar
 					</a>
-					<button type="submit" class="btn btn-info">
-					  <i class="fa fa-lock fa-lg"></i>&nbsp;
-					  <span id="payment-button-amount">Guardar</span>
+					<button type="submit" class="btn btn-success">
+					  Guardar
 					</button>
 				</div>
 			</div>

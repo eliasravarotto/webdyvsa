@@ -5,15 +5,16 @@
 	<!-- Navbar Desktop -->
 	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
 
+	@if (session('status'))
+		<div class="alert alert-warning alert-dismissible toast" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('status') }}
+		</div>
+	@endif
+
 	<article>
 		<section class="pad-bot-25">
 			<div class="container">
-				@if (session('status'))
-					<div class="alert alert-warning alert-dismissible toast" role="alert">
-					  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					  <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('status') }}
-					</div>
-				@endif
 				{{-- <div class="row" style="margin-top: 30px; margin-bottom: 30px; border-radius: 5px;"> --}}
 				<div class="row">
 					<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
@@ -42,7 +43,6 @@
 							    <label class="control-label col-lg-4">Sucursal</label>
 							    <div class="col-lg-8">
 							    	<select class="form-control" name="sucursal">
-							    		<option></option>
 							    		@foreach($sucursales as $sucursal)
 							    		<option value="{{$sucursal->id}}">{{$sucursal->nombre}}</option>
 							    		@endforeach
@@ -53,7 +53,6 @@
 							    <label class="control-label col-lg-4">Modelo</label>
 							    <div class="col-lg-8">
 							    	<select class="form-control" name="modelo">
-							    		<option></option>
 							    		<option value="HILUX">HILUX</option>
 							    		<option value="COROLLA">COROLLA</option>
 							    		<option value="ETIOS">ETIOS</option>
@@ -62,19 +61,24 @@
 							    	</select>
 							    </div>
 						  	</div>
+					  		<div class="row">
+					  			<div class="col-md-offset-4 col-md-8">
+					  				<div class="alert alert-info" role="alert">
+					  					<p style="font-size: 18px;">La fecha está sujeta a disponibilidad.</p>
+					  				</div>
+					  			</div>
+					  		</div>
+						  	<div class="form-group">
+						  		<div class=" col-md-offset-4 col-sm-12">
+						  		<p class="text-danger">(*) Campos Obligatrorios</p>
+						  		</div>
+						  	</div>
 						  	<div class="form-group text-right">
 						  		<div class="col-lg-12">
 						  		<button type="submit" class="btn btn-default">Enviar</button>
 						  		</div>
 						  	</div>
 				  		</form>
-				  		<div class="row">
-				  			<div class="col-md-offset-4 col-md-8">
-				  				<div class="alert alert-info" role="alert">
-				  					<p style="font-size: 18px;">La fecha está sujeta a disponibilidad.</p>
-				  				</div>
-				  			</div>
-				  		</div>
 					</div>
 				</div>
 			</div>

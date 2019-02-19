@@ -49,30 +49,32 @@ class SolicitudTestDriveController extends Controller
 
             switch ($request->sucursal) {
                 case 1:
-                    $email = 'fabianaaranda@derkayvargas.com.ar'; //SAENZ PEÑA
+                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //SAENZ PEÑA
                     break;
                 case 2:
-                    $email = 'fabianaaranda@derkayvargas.com.ar'; //RESISTENCIA
+                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //RESISTENCIA
                     break;
                 case 3:
-                   $email = 'fabianaaranda@derkayvargas.com.ar'; //CHARATA
+                   $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //CHARATA
                     break;
                 case 4:
-                    $email = 'fabianaaranda@derkayvargas.com.ar'; //VILLA ANGELA
+                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //VILLA ANGELA
                     break;
                 case 5:
-                    $email = 'fabianaaranda@derkayvargas.com.ar'; // RESISTENCIA TPA
+                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); // RESISTENCIA TPA
                     break;
             }
+
             $test_drive->enviar_a = $email;
             $test_drive->save();
 
+
             event( new SeHaSolicitadoTestDrive($test_drive));
 
-            return redirect('/test-drive/create')->with('status', 'Su solicitud fué enviada correctamente, estaremos en contacto con usted a la brevedad.');
+            return back()->with('success', 'Su solicitud fué enviada correctamente, estaremos en contacto con usted a la brevedad.');
         }
         catch (\Exception $e) {
-            return redirect('/test-drive/create')->with('error', 'Lo sentimos ha ocurrido un error por favor intente más tarde');
+            return back()->with('error', 'Lo sentimos ha ocurrido un error por favor intente más tarde');
         }
     }
 

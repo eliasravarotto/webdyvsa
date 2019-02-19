@@ -1,14 +1,6 @@
-@extends('backend.sufee_admin.index')
+@extends('backend.layout')
 
 @section('content')
-
-    @if (session('success'))
-      <div class="alert alert-warning alert-dismissible toast" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('success') }}
-      </div>
-    @endif
-
 <div class="card" id="app_index">
     <div class="card-header">
         <strong class="card-title">Listado de Unidades Usadas</strong>
@@ -22,7 +14,7 @@
         <table class="table">
             <thead>
               <tr>
-                <th>Id</th>
+                <th>Int.</th>
                 <th>Dominio</th>
                 <th>Modelo</th>
                 <th>Marca</th>
@@ -34,8 +26,8 @@
             </thead>
             <tbody>
                 @foreach($usados as $usado)
-                <tr id="usado_{{$usado->id}}">
-                    <td>{{ $usado->id }}</td>
+                <tr>
+                    <td>{{ $usado->interno }}</td>
                     <td>{{ $usado->dominio }}</td>
                     <td>{{ $usado->modelo }}</td>
                     <td>{{ $usado->marca }}</td>
@@ -43,8 +35,12 @@
                     <td>{{ $usado->km }}</td>
                     <td>$ {{ $usado->precio }}</td>
                     <td>
-                        <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-outline-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                        <a class="btn btn-outline-danger" v-on:click="borrar({{collect($usado)}})"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                              <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-outline-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-outline-danger delete-user"><i class="fa fa-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
@@ -55,41 +51,4 @@
 @stop
 
 @section('script')
-<script>
-    new Vue ({
-    el: '#app_index',
-    data: {
-        index: '',
-        
-    },
-    mounted(){
-        
-    },
-    methods:{
-        borrar(usado){
-            swal({
-                  title: 'Desea eliminar '+usado.marca+' '+usado.modelo+ ' '+usado.dominio+'?',
-                  //text: "You won't be able to revert this!",
-                  type: 'warning',
-                  showCancelButton: true,
-                  cancelButtonColor: '#3085d6',
-                  confirmButtonColor: '#d33',
-                  confirmButtonText: 'Eliminar'
-                }).then((result) => {
-                  if (result) {
-                    axios
-                        .delete('/admin/usados/'+usado.id)
-                        .then((res) => { 
-                            if (res.status == 200){
-                                $('#usado_'+usado.id).fadeOut(400, function() {
-                                     $(this).remove(); 
-                                });
-                            }
-                        })
-                  }
-                })
-        }
-    }
-})
-</script>
 @stop

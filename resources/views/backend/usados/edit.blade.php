@@ -1,4 +1,4 @@
-@extends('backend.sufee_admin.index')
+@extends('backend.layout')
 
 @section('content')
 <div class="card">
@@ -12,7 +12,7 @@
             @include('backend.usados.form')
             <div class="row form-group" style="margin-top: 50px;">
 				<div class="col-9">
-					<a href="#" class="btn btn-secondary">
+					<a href="/admin/usados" class="btn btn-secondary">
 					  Cancelar
 					</a>
 					<button type="submit" class="btn btn-success">
