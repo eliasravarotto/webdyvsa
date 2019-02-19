@@ -22,13 +22,14 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-                <strong>BS</strong>
+                <h3>Derka y Vargas</h3>
+                <p>Dashboard Web Site</p>
+                {{-- <strong>DyV</strong> --}}
             </div>
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="/admin/usados">
+                    <a href="/admin">
                         <i class="fa fa-dashboard"></i>
                         INICIO
                     </a>
@@ -126,7 +127,6 @@
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app_backend.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     @yield('page-script')
     <script type="text/javascript">
         $(document).ready(function () {
