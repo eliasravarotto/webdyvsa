@@ -1,4 +1,4 @@
-@extends('backend.sufee_admin.index')
+@extends('backend.layout')
 
 @section('content')
 <div class="card" id="app">
@@ -14,7 +14,7 @@
 				<div class="col-md-12">
 					<a href="/admin/servicios/" class="btn btn-secondary pull-left">Cancelar</a>
 					<button type="submit" name="add_another" value="Guardar y Continuar" class="btn btn-primary pull-right">Guardar y Continuar</button>
-					<button type="submit" class="btn btn-primary pull-right" style="margin-right: 5px;">Guardar</button>
+					<button type="submit" class="btn btn-success pull-right" style="margin-right: 5px;">Guardar</button>
 				</div>
 			</div>
       	</form>

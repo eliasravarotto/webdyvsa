@@ -1,25 +1,12 @@
 @extends('backend.layout')
 
 @section('content')
-<div class="breadcrumbs">
-    <div class="col-sm-12">
-        <div class="page-header">
-            <div class="page-title">
-                <ol class="breadcrumb text-right">
-                    <li><a href="/admin">Dashboard</a></li>
-                    <li class="active">Solicitud Test Drive</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card">
-    <div class="card-header">
-        <strong class="card-title" v-if="headerText">Listado de Solicitudes</strong>
-    </div>
 
-    <div class="card-body">
-        <table class="table">
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">EMAILS</h4>
+    <h5 class="card-subtitle mb-2 text-muted">Solicitudes de Test Drive</h5>
+        <table class="table table-sm table-hover">
             <thead>
               <tr>
                 <th>Fecha Estimada</th>

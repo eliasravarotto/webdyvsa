@@ -1,10 +1,32 @@
+$rojo_toyota:#eb0a1e;
+$gris_toyota:#58595b;
+$gris_claro_toyota:#e5e5e5;
+$blanco_toyota:#fafafa;
+$azul:#4665a8;
+$azul_oscuro:#3b5999;
+
 body {
       background: #fafafa;
   }
 
+.navbar{
+    margin-bottom: 1rem !important;
+}
+
+
 /*-----------------------------------
 // ESTILOS SIDEBAR
 -----------------------------------*/
+.mi-navbar-toggler{
+    border:0 !important;
+    font-size: 2rem !important;
+    margin: 0 !important;
+    padding: 0 .8rem !important;
+    background: transparent !important;
+    color: #777 !important;
+    margin-left: auto !important;
+    outline: 0 !important;
+}
 .components
 a,
 a:hover,
@@ -45,7 +67,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: $azul;
     color: #fff;
     transition: all 0.3s;
 }
@@ -57,6 +79,7 @@ a:focus {
 }
 
 #sidebar.active .sidebar-header h3,
+#sidebar.active .sidebar-header p,
 #sidebar.active .CTAs {
     display: none;
 }
@@ -99,6 +122,10 @@ a:focus {
     transform: translateX(50%);
 }
 
+#sidebar.active .sidebar-header {
+    padding: 5px !important;
+}
+
 .arrow-right::after {
     display: block;
     position: absolute;
@@ -109,7 +136,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: $azul_oscuro;
 }
 
 #sidebar .sidebar-header strong {
@@ -129,7 +156,7 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: $azul;
     background: #fff;
 }
 
@@ -140,7 +167,7 @@ a:focus {
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: $azul_oscuro;
 }
 
 a[data-toggle="collapse"] {
@@ -150,7 +177,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: $azul_oscuro;
 }
 
 ul.CTAs {
@@ -167,12 +194,12 @@ ul.CTAs a {
 
 a.download {
     background: #fff;
-    color: #7386D5;
+    color: $azul;
 }
 
 a.article,
 a.article:hover {
-    background: #6d7fcc !important;
+    background: $azul_oscuro !important;
     color: #fff !important;
 }
 
@@ -205,6 +232,7 @@ a.article:hover {
         margin-left: 0 !important;
     }
     #sidebar .sidebar-header h3,
+    #sidebar .sidebar-header p,
     #sidebar .CTAs {
         display: none;
     }

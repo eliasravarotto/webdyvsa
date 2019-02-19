@@ -25,7 +25,8 @@ class MensajeEmailController extends Controller
         } else{
             $mensajes = MensajeEmail::where('from', '=', $from)->get();
         }
-        return view('backend.contacto.index', compact('mensajes'));
+
+        return view('backend.contacto.index', compact('mensajes', 'from'));
     }
 
     /**
@@ -85,6 +86,11 @@ class MensajeEmailController extends Controller
                     $from = 'tpa';
                     $asunto ='Consulta desde Pagina Web TPA';
                     $enviar_a = env('RECEPTOR_EMAILS_TPA');
+                    break;
+                case 'usados':
+                    $from = 'usados';
+                    $asunto ='Consulta desde Pagina Web TPA';
+                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
                     break;
                 default:
                     $from = 'contacto';

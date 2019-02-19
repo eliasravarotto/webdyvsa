@@ -1,9 +1,11 @@
 @extends('backend.layout')
 
 @section('content')
-       
-      
-    <table class="table table-sm">
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">EMAILS</h4>
+    <h6 class="card-subtitle mb-2 text-muted">Recibidos desde {{$from}}.</h6>    
+    <table class="table table-sm table-hover">
         <thead>
           <tr>
             <th>Cliente</th>
@@ -26,6 +28,9 @@
             @endforeach
           </tr>
         </tbody>
-      </table>
+    </table>
+  </div>
+</div>
+      
 
 @stop

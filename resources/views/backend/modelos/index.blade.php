@@ -1,38 +1,18 @@
 @extends('backend.layout')
 
 @section('content')
-
-<div class="breadcrumbs">
-    <div class="col-sm-12">
-        <div class="page-header">
-            <div class="page-title">
-                <ol class="breadcrumb text-right">
-                    <li><a href="/admin">Dashboard</a></li>
-                    <li class="active">Modelos</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="card">
-    <div class="card-header">
-        <strong class="card-title" v-if="headerText">Listado de Modelos</strong>
-    </div>
-
     <div class="card-body">
-        <div class="row">
-          <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
-            <a class="btn btn-primary" href="{{ route('modelos.create') }}">Nuevo</a>
-          </div>
-        </div>
-        <table class="table">
+      <h4 class="card-title">MODELOS</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Listado de modelos</h6>
+        <table class="table table-sm table-hover">
             <thead>
               <tr>
                 <th>Id</th>
                 <th>Modelo</th>
                 <th>Marca</th>
                 <th>Activo</th>
-                <th></th>
+                <th><a class="btn btn-primary" href="{{ route('modelos.create') }}">Nuevo</a></th>
               </tr>
             </thead>
             <tbody>

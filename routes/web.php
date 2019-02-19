@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
 	Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
 	Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
-	Route::get('admin/turno-servicios','TurnoServicioController@index');
+	Route::get('admin/turnos-servicios','TurnoServicioController@index');
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
 	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
 	Route::resource('admin/usados','UsadoController');

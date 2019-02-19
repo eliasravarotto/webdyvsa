@@ -11,7 +11,7 @@
             <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
           </div>
         </div>
-        <table class="table">
+        <table class="table table-sm table-hover">
             <thead>
               <tr>
                 <th>Int.</th>
