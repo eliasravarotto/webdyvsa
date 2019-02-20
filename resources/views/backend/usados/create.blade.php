@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <strong class="card-title">Nuevo Modelo</strong>
+        <strong class="card-title">Nueva Unidad</strong>
     </div>
     <div class="card-body">
     	<form action="{{ route('usados.store') }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">

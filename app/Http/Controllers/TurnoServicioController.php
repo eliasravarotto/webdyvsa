@@ -34,7 +34,8 @@ class TurnoServicioController extends Controller
                                 FROM
                                 turno_servicios
                                 INNER JOIN sucursales ON turno_servicios.sucursal_id = sucursales.id
-                                INNER JOIN tipo_servicios ON turno_servicios.servicio_id = tipo_servicios.id');
+                                INNER JOIN tipo_servicios ON turno_servicios.servicio_id = tipo_servicios.id
+                                ORDER BY turno_servicios.created_at DESC');
         
         return view('backend.solicitudes-turno.index', compact('solicitudes'));
     }

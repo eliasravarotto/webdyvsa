@@ -21,9 +21,9 @@ class MensajeEmailController extends Controller
     public function index($from = null)
     {
         if ($from == null) {
-            $mensajes = MensajeEmail::all();
+            $mensajes = MensajeEmail::all()->orderBy('created_at', 'DESC')->get();
         } else{
-            $mensajes = MensajeEmail::where('from', '=', $from)->get();
+            $mensajes = MensajeEmail::where('from', '=', $from)->orderBy('created_at', 'DESC')->get();
         }
 
         return view('backend.contacto.index', compact('mensajes', 'from'));

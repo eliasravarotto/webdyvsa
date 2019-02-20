@@ -24,7 +24,7 @@
             {{-- <td>{{$mensaje->email}}</td> --}}
             <td>{{$mensaje->mensaje}}</td>
             {{-- <td>{{$mensaje->enviar_a}}</td> --}}
-            <td>{{$mensaje->created_at}}</td>
+            <td>{{ date('d-m-Y H:m', strtotime($mensaje->created_at))}}</td>
             @endforeach
           </tr>
         </tbody>

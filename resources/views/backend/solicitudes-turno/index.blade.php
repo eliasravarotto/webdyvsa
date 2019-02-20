@@ -24,7 +24,7 @@
             <td>{{$solicitud->sucursal}}</td>
             <td>{{$solicitud->tipo_de_servicio}}</td>
             <td>{{$solicitud->comentario}}</td>
-            <td>{{$solicitud->created_at}}</td>
+            <td>{{ date('d-m-Y H:m', strtotime($solicitud->created_at))}}</td>
             @endforeach
           </tr>
         </tbody>

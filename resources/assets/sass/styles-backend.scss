@@ -6,17 +6,21 @@ $azul:#4665a8;
 $azul_oscuro:#3b5999;
 
 body {
-      background: #fafafa;
+      background: $blanco_toyota;
   }
+
+
+/*---------------------------------------------------
+// ESTILOS SIDEBAR Y NAVBAR
+---------------------------------------------------*/
 
 .navbar{
     margin-bottom: 1rem !important;
 }
-
-
-/*-----------------------------------
-// ESTILOS SIDEBAR
------------------------------------*/
+.mi-navbar-collapse ul li a[aria-expanded="true"] {
+    color: #fff !important;
+    background: $azul_oscuro;
+} 
 .mi-navbar-toggler{
     border:0 !important;
     font-size: 2rem !important;
@@ -264,5 +268,32 @@ a.article:hover {
 }
 
 /*------------------------------------------
-// ESTILOS 
+// ESTILOS TARJETAS INICIO
 -------------------------------------------*/
+
+.bg-circulo-white{
+    background-color: $rojo_toyota;
+    font-size: 2.4rem !important;
+    border-radius: 50%;
+    width: 4.3rem;
+    height: 4.3rem;
+    line-height: 4.3rem !important;
+    text-align: center;
+    color: white;
+}
+.tarjeta-dash{
+    height: 150px;
+}
+.tarjeta-dash .card-body{
+    display: flex;
+    justify-content: flex-start;
+}
+.tarjeta-dash .card-body div{
+    padding: 0 .5rem;
+}
+.tarjeta-dash .card-body p{
+    font-size: .8rem;
+}
+.tarjeta-dash .card-body div h6{
+    font-weight:bold;
+}

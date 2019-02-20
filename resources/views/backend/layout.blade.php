@@ -92,7 +92,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse mi-navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                           <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
