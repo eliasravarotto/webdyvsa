@@ -54,14 +54,15 @@ class UsadoController extends Controller
         $usado->precio = $request->precio;
         $usado->color = $request->color;
         $usado->descripcion = $request->descripcion;
-        $usado->foto = '';
         $usado->save();
 
-        $foto = $request->file('foto');
-        $foto_name = $request->file('foto')->getClientOriginalName();
-        $foto->move(public_path().'/imagenes/usados/'.$usado->id.'/',$foto_name);
-        $usado->foto = '/imagenes/usados/'.$usado->id.'/'.$foto_name;
-        $usado->update();
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $foto_name = $request->file('foto')->getClientOriginalName();
+            $foto->move(public_path().'/imagenes/usados/'.$usado->id.'/',$foto_name);
+            $usado->foto = '/imagenes/usados/'.$usado->id.'/'.$foto_name;
+            $usado->update();
+        } 
 
         $total = count($request->img_galeria);
         if ($total>0) {
@@ -120,8 +121,23 @@ class UsadoController extends Controller
         $usado->color = $request->color;
         $usado->precio = $request->precio;
         $usado->descripcion = $request->descripcion;
-        //$usado->foto = $request->foto;
         $usado->update();
+
+        //Actualizar foto y borrar
+        if ($request->hasFile('foto')) {
+            if ($usado->foto != null) {
+                if(file_exists(public_path().$usado->foto)){
+                    unlink(public_path().$usado->foto);    
+                }
+            }
+
+            $foto = $request->file('foto');
+            $foto_name = $request->file('foto')->getClientOriginalName();
+            $foto->move(public_path().'/imagenes/usados/'.$usado->id.'/',$foto_name);
+            $usado->foto = '/imagenes/usados/'.$usado->id.'/'.$foto_name;
+            $usado->update();
+
+        }
 
         $total = count($request->nuevas_imagenes);
 
@@ -159,16 +175,16 @@ class UsadoController extends Controller
                     $imagenes_galeria[$i]->delete();
                 }
             }
-            if (file_exists($usado->foto)) {
-                
+            if (file_exists(public_path().$usado->foto)) {
                 unlink(public_path().$usado->foto);
             }
             $usado->delete();
 
         } catch (Exception $e) {
-            return $e;
+            return back()->with('error', 'Error!'.$e);
         }
        
+        return back()->with('success', 'La unidad fué eliminada correctamente!');
 
     }
 

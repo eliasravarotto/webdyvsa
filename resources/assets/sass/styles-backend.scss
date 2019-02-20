@@ -9,6 +9,12 @@ body {
       background: $blanco_toyota;
   }
 
+.form-group.requerido .control-label:after {
+  content:"(*)";
+  color:red;
+  font-size: 18px;
+}
+
 
 /*---------------------------------------------------
 // ESTILOS SIDEBAR Y NAVBAR

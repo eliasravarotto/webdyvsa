@@ -1,6 +1,33 @@
 @extends('backend.layout')
 
 @section('content')
+{{-- ESTILOS INPUT FOTO CAMPAÑA --}}
+	<style>
+		#div_file{
+			cursor: pointer;
+			padding:5px;
+			display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		}
+		#div_file p{
+			text-align: center;
+			cursor: pointer;
+		}
+		#div_file input{
+			border:1px solid black;
+			cursor: pointer;
+			position:absolute;
+			top:0px;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			width:100%;
+			height:100%;
+			opacity: 0;
+		}
+	</style>
 <div class="card">
     <div class="card-header">
         <h4 class=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</h4>

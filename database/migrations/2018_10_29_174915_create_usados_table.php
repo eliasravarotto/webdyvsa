@@ -24,7 +24,7 @@ class CreateUsadosTable extends Migration
             $table->string('color');
             $table->string('precio')->nullable();;
             $table->string('descripcion')->nullable();
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

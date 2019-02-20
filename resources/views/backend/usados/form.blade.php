@@ -1,71 +1,84 @@
-<div >
-<div class="row">
-	<div class="col-md-3">
-		<div class="form-group">
-			<label class="control-label mb-1">Marca</label>
-			<input name="marca" type="text" class="form-control" value="{{ $usado->marca }}">
+<div>
+	<div class="row"> 
+		<div class="col-sm-12 col-md-8">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group requerido">
+						<label class="control-label mb-1">Marca</label>
+						<input name="marca" type="text" class="form-control" value="{{ $usado->marca }}">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group requerido">
+						<label class="control-label mb-1">Modelo</label>
+						<input name="modelo" type="text" class="form-control" value="{{ $usado->modelo }}">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group requerido">
+						<label class="control-label mb-1">Año</label>
+						<input name="anio" type="text" class="form-control" value="{{ $usado->anio }}">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group requerido">
+						<label class="control-label mb-1">Color</label>
+						<input name="color" type="text" class="form-control" value="{{ $usado->color }}">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label class="control-label mb-1">Km</label>
+						<input name="km" type="text" class="form-control" value="{{ $usado->km }}">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label class="control-label mb-1">Dominio</label>
+						<input name="dominio" type="text" class="form-control" value="{{ $usado->dominio }}">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label class="control-label mb-1">Int.</label>
+						<input name="interno" type="text" class="form-control" value="{{ $usado->interno }}">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label mb-1">Precio</label>
+						<input name="precio" type="text" class="form-control" value="{{ $usado->precio }}">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div id="div_file">
+			 	{{-- <img id='output'> --}}
+			 	@if($usado->foto != null)
+			 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="{{$usado->foto}}" alt="">
+			 	@else
+			 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
+			    @endif
+			    <p id="texto">Click o Arrastrar para cambiar imagen</p>
+			    <input type='file' name="foto" accept='image/*' onchange='openFile(event)' title=" ">
+			 </div>
+			{{-- <div class="form-group">
+				<label class="control-label mb-1">Foto</label>
+				<input type="file" name="foto">
+			</div> --}}
 		</div>
 	</div>
-	<div class="col-md-3">
-		<div class="form-group">
-			<label class="control-label mb-1">Modelo</label>
-			<input name="modelo" type="text" class="form-control" value="{{ $usado->modelo }}">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-group">
+				<label class="control-label mb-1">Descripcion</label>
+				<textarea class="form-control" name="descripcion">{{ $usado->descripcion }}</textarea>
+			</div>
 		</div>
 	</div>
-	<div class="col-md-2">
-		<div class="form-group">
-			<label class="control-label mb-1">Año</label>
-			<input name="anio" type="text" class="form-control" value="{{ $usado->anio }}">
-		</div>
-	</div>
-	<div class="col-md-2">
-		<div class="form-group">
-			<label class="control-label mb-1">Dominio</label>
-			<input name="dominio" type="text" class="form-control" value="{{ $usado->dominio }}">
-		</div>
-	</div>
-	<div class="col-md-2">
-		<div class="form-group">
-			<label class="control-label mb-1">Int.</label>
-			<input name="interno" type="text" class="form-control" value="{{ $usado->interno }}">
-		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-md-3">
-		<div class="form-group">
-			<label class="control-label mb-1">Km</label>
-			<input name="km" type="text" class="form-control" value="{{ $usado->km }}">
-		</div>
-	</div>
-	<div class="col-md-2">
-		<div class="form-group">
-			<label class="control-label mb-1">Color</label>
-			<input name="color" type="text" class="form-control" value="{{ $usado->color }}">
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="form-group">
-			<label class="control-label mb-1">Precio</label>
-			<input name="precio" type="text" class="form-control" value="{{ $usado->precio }}">
-		</div>
-	</div>
-	<div class="col-md-4">
-		<div class="form-group">
-			<label class="control-label mb-1">Foto</label>
-			<input type="file" name="foto">
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-12">
-		<div class="form-group">
-			<label class="control-label mb-1">Descripcion</label>
-			<textarea class="form-control" name="descripcion">{{ $usado->descripcion }}</textarea>
-		</div>
-	</div>
-</div>
 
 <div class="card">
 	<div class="card-body">
@@ -83,12 +96,9 @@
 			@foreach($imagenes_galeria as $imagen)
 			<div class="col-md-3">
 				<div class="thumbnail" style="position: relative;">
-					<form method="POST" action="{{ route('borrar_img_usado', $imagen->id) }}">
-                        {{ csrf_field() }}
-                      	<button style="position: absolute;" onclick="return confirm('Desea eliminar la imagen')" type="submit" class="btn btn-danger delete-user">
+                      	<a href="{{ route('borrar_img_usado', $imagen->id) }}" style="position: absolute;" onclick="return confirm('Desea eliminar la imagen?');" class="btn btn-danger delete-user">
                       		<i class="fa fa-trash"></i>
-                      	</button>
-                    </form>
+                      	</a>
 	      			<img src="{{$imagen->url}}" alt="..." style="width: 190px;">
 	      		</div>
 			</div>
@@ -111,7 +121,11 @@
 @endif
 	</div>
 </div>
-
+<div class="row my-1">
+	<div class="col-md-12">
+		<p class="text-danger">(*) Campos obligatorios</p>
+	</div>
+</div>
 
 </div>
 
@@ -167,6 +181,19 @@
 	        $('#images_new').append(field);
 	        index++;
 	    }
+
+	    //Script field foto
+	    var openFile = function(event) {
+	    var input = event.target;
+
+	    var reader = new FileReader();
+	    reader.onload = function(){
+	      var dataURL = reader.result;
+	      var output = document.getElementById('output');
+	      output.src = dataURL;
+	    };
+	    reader.readAsDataURL(input.files[0]);
+	  };
 
 	</script>
 @stop
