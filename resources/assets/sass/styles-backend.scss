@@ -1,49 +1,47 @@
-$rojo_toyota:#eb0a1e;
-$gris_toyota:#58595b;
-$gris_claro_toyota:#e5e5e5;
-$blanco_toyota:#fafafa;
-$azul:#4665a8;
-$azul_oscuro:#3b5999;
+$rojo_toyota: #eb0a1e;
+$gris_toyota: #58595b;
+$gris_claro_toyota: #e5e5e5;
+$blanco_toyota: #fafafa;
+$azul: #4665a8;
+$azul_oscuro: #3b5999;
 
 body {
-      background: $blanco_toyota;
-  }
+    background: $blanco_toyota
+}
 
 .form-group.requerido .control-label:after {
-  content:"(*)";
-  color:red;
-  font-size: 18px;
+    content: "(*)";
+    color: red;
+    font-size: 18px
 }
 
-
-/*---------------------------------------------------
-// ESTILOS SIDEBAR Y NAVBAR
----------------------------------------------------*/
-
-.navbar{
-    margin-bottom: 1rem !important;
+.navbar {
+    margin-bottom: 1rem !important
 }
+
 .mi-navbar-collapse ul li a[aria-expanded="true"] {
     color: #fff !important;
-    background: $azul_oscuro;
-} 
-.mi-navbar-toggler{
-    border:0 !important;
+    background: $azul_oscuro
+}
+
+.mi-navbar-toggler {
+    border: 0 !important;
     font-size: 2rem !important;
     margin: 0 !important;
     padding: 0 .8rem !important;
     background: transparent !important;
     color: #777 !important;
     margin-left: auto !important;
-    outline: 0 !important;
+    outline: 0 !important
 }
+
 .components
 a,
 a:hover,
 a:focus {
     color: inherit;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s
 }
 
 .navbar {
@@ -52,26 +50,25 @@ a:focus {
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1)
 }
 
 .navbar-btn {
     box-shadow: none;
     outline: none !important;
-    border: none;
+    border: none
 }
 
 .line {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
+    margin: 40px 0
 }
 
-/* --------------- SIDEBAR STYLE-------------------- */
 .wrapper {
     display: flex;
-    align-items: stretch;
+    align-items: stretch
 }
 
 #sidebar {
@@ -79,48 +76,48 @@ a:focus {
     max-width: 250px;
     background: $azul;
     color: #fff;
-    transition: all 0.3s;
+    transition: all 0.3s
 }
 
 #sidebar.active {
     min-width: 80px;
     max-width: 80px;
-    text-align: center;
+    text-align: center
 }
 
 #sidebar.active .sidebar-header h3,
 #sidebar.active .sidebar-header p,
 #sidebar.active .CTAs {
-    display: none;
+    display: none
 }
 
 #sidebar.active .sidebar-header strong {
-    display: block;
+    display: block
 }
 
 #sidebar ul li a {
-    text-align: left;
+    text-align: left
 }
 
 #sidebar.active ul li a {
     padding: 20px 10px;
     text-align: center;
-    font-size: 0.85em;
+    font-size: 0.85em
 }
 
 #sidebar ul li a:hover {
-    text-decoration: none;
+    text-decoration: none
 }
 
 #sidebar.active ul li a i {
     margin-right: 0;
     display: block;
     font-size: 1.8em;
-    margin-bottom: 5px;
+    margin-bottom: 5px
 }
 
 #sidebar.active ul ul a {
-    padding: 10px !important;
+    padding: 10px !important
 }
 
 #sidebar.active .arrow-right::after {
@@ -129,11 +126,11 @@ a:focus {
     right: 50%;
     -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
-    transform: translateX(50%);
+    transform: translateX(50%)
 }
 
 #sidebar.active .sidebar-header {
-    padding: 5px !important;
+    padding: 5px !important
 }
 
 .arrow-right::after {
@@ -141,57 +138,57 @@ a:focus {
     position: absolute;
     top: 50%;
     right: 20px;
-    transform: translateY(-50%);
+    transform: translateY(-50%)
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: $azul_oscuro;
+    background: $azul_oscuro
 }
 
 #sidebar .sidebar-header strong {
     display: none;
-    font-size: 1.8em;
+    font-size: 1.8em
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #47748b
 }
 
 #sidebar ul li a {
     padding: 10px;
     font-size: 1.1em;
-    display: block;
+    display: block
 }
 
 #sidebar ul li a:hover {
     color: $azul;
-    background: #fff;
+    background: #fff
 }
 
 #sidebar ul li a i {
-    margin-right: 10px;
+    margin-right: 10px
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: $azul_oscuro;
+    background: $azul_oscuro
 }
 
 a[data-toggle="collapse"] {
-    position: relative;
+    position: relative
 }
 
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: $azul_oscuro;
+    background: $azul_oscuro
 }
 
 ul.CTAs {
-    padding: 20px;
+    padding: 20px
 }
 
 ul.CTAs a {
@@ -199,85 +196,89 @@ ul.CTAs a {
     font-size: 0.9em !important;
     display: block;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 5px
 }
 
 a.download {
     background: #fff;
-    color: $azul;
+    color: $azul
 }
 
 a.article,
 a.article:hover {
     background: $azul_oscuro !important;
-    color: #fff !important;
+    color: #fff !important
 }
-
-/* ---------CONTENT STYLE--------------------------- */
 
 #content {
     width: 100%;
     min-height: 100vh;
-    transition: all 0.3s;
+    transition: all 0.3s
 }
 
-/* ----------MEDIAQUERIES SIDEBAR-------------------- */
-
-@media (max-width: 768px) {
+@media (max-width:768px) {
     #sidebar {
         min-width: 80px;
         max-width: 80px;
         text-align: center;
-        margin-left: -80px !important;
+        margin-left: -80px !important
     }
+
     .dropdown-toggle::after {
         top: auto;
         bottom: 10px;
         right: 50%;
         -webkit-transform: translateX(50%);
         -ms-transform: translateX(50%);
-        transform: translateX(50%);
+        transform: translateX(50%)
     }
+
     #sidebar.active {
-        margin-left: 0 !important;
+        margin-left: 0 !important
     }
+
     #sidebar .sidebar-header h3,
     #sidebar .sidebar-header p,
     #sidebar .CTAs {
-        display: none;
+        display: none
     }
+
     #sidebar .sidebar-header strong {
-        display: block;
+        display: block
     }
+
     #sidebar ul li a {
-        padding: 20px 10px;
+        padding: 20px 10px
     }
+
     #sidebar ul li a span {
-        font-size: 0.85em;
+        font-size: 0.85em
     }
+
     #sidebar ul li a i {
         margin-right: 0;
-        display: block;
+        display: block
     }
+
     #sidebar ul ul a {
-        padding: 10px !important;
+        padding: 10px !important
     }
+
     #sidebar ul li a i {
-        font-size: 1.3em;
+        font-size: 1.3em
     }
+
     #sidebar {
-        margin-left: 0;
+        margin-left: 0
     }
+
     #sidebarCollapse span {
-        display: none;
+        display: none
     }
+
 }
 
-/*------------------------------------------
-// ESTILOS TARJETAS INICIO
--------------------------------------------*/
-
-.bg-circulo-white{
+.bg-circulo-white {
     background-color: $rojo_toyota;
     font-size: 2.4rem !important;
     border-radius: 50%;
@@ -285,21 +286,26 @@ a.article:hover {
     height: 4.3rem;
     line-height: 4.3rem !important;
     text-align: center;
-    color: white;
+    color: white
 }
-.tarjeta-dash{
-    height: 150px;
+
+.tarjeta-dash {
+    height: 150px
 }
-.tarjeta-dash .card-body{
+
+.tarjeta-dash .card-body {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start
 }
-.tarjeta-dash .card-body div{
-    padding: 0 .5rem;
+
+.tarjeta-dash .card-body div {
+    padding: 0 .5rem
 }
-.tarjeta-dash .card-body p{
-    font-size: .8rem;
+
+.tarjeta-dash .card-body p {
+    font-size: .8rem
 }
-.tarjeta-dash .card-body div h6{
-    font-weight:bold;
+
+.tarjeta-dash .card-body div h6 {
+    font-weight: bold
 }
