@@ -10,6 +10,7 @@
           <tr>
             <th>Fecha</th>
             <th>Cliente</th>
+            <th>Teléfono</th>
             <th>Sucursal</th>
             <th>Servicio</th>
             <th>Comentario</th>
@@ -18,9 +19,10 @@
         </thead>
         <tbody>
           @foreach($solicitudes as $solicitud)
-          <tr>
-            <td>{{$solicitud->fecha}}</td>
+          <tr class="pointer" onclick="location.href = '{{route('solicitud_show', $solicitud->id)}}'">
+            <td>{{ date('d-m-Y', strtotime($solicitud->fecha))}}</td>
             <td>{{$solicitud->cliente}}</td>
+            <td>{{$solicitud->telefono}}</td>
             <td>{{$solicitud->sucursal}}</td>
             <td>{{$solicitud->tipo_de_servicio}}</td>
             <td>{{$solicitud->comentario}}</td>

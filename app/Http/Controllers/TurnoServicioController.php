@@ -69,8 +69,8 @@ class TurnoServicioController extends Controller
             $turno->modelo = $request->modelo;
             $turno->dominio = $request->dominio;
             $turno->servicio_id = $request->tipo_de_servicio;
-            $turno->comentario = $request->comentario;
             $turno->sucursal_id = $request->sucursal;
+            $turno->comentario = $request->comentario;
 
             $receptopres = [];
 
@@ -110,7 +110,8 @@ class TurnoServicioController extends Controller
      */
     public function show($id)
     {
-        //
+        $solicitud = TurnoServicio::find($id);
+        return view('backend.solicitudes-turno.show', compact('solicitud'));
     }
 
     /**

@@ -70,24 +70,23 @@
 								<label class="control-label col-lg-3">Modelo</label>
 								<div class="col-lg-9">
 								<select name="modelo" required class="form-control">
-									<option value="0" selected>Hilux (4x2)</option>
-									<option value="1" >Hilux (4x4 / SW4)</option>
-									<option value="2">Hilux (automática)</option>
-									<option value="3">SW4 (automática)</option>
-									<option value="4">Corolla (Manual)</option>
-									<option value="5">Corolla (Automático / CVT)</option>
-									<option value="6">Etios (Manual)</option>
-									<option value="7">Etios (Automático)</option>
-									<option value="8">Yaris</option>
-									<option value="9">Camry</option>
-									<option value="10">RAV4 (4x2)</option>
-									<option value="11">RAV4 (4x4)</option>
-									<option value="12">Land Cruiser Prado (Manual)</option>
-									<option value="13">Land Cruiser Prado</option>
-									<option value="14">Land Cruiser 200</option>
-									<option value="15">Coupe 86</option>
-									<option value="16">Coupe 86 (Automático)</option>
-									<option value="17">Otros</option>
+									<option value="Hilux (4x2)" selected>Hilux (4x2)</option>
+									<option value="Hilux (4x4 / SW4)" >Hilux (4x4 / SW4)</option>
+									<option value="Hilux (automática)">Hilux (automática)</option>
+									<option value="SW4 (automática)">SW4 (automática)</option>
+									<option value="Corolla (Manual)">Corolla (Manual)</option>
+									<option value="Corolla (Automático / CVT)">Corolla (Automático / CVT)</option>
+									<option value="Etios (Manual)">Etios (Manual)</option>
+									<option value="Etios (Automático)">Etios (Automático)</option>
+									<option value="Yaris">Yaris</option>
+									<option value="Camry">Camry</option>
+									<option value="RAV4 (4x2)">RAV4 (4x2)</option>
+									<option value="RAV4 (4x4)">RAV4 (4x4)</option>
+									<option value="Land Cruiser Prado (Manual)">Land Cruiser Prado (Manual)</option>
+									<option value="Land Cruiser Prad">Land Cruiser Prado</option>
+									<option value="Land Cruiser 200">Land Cruiser 200</option>
+									<option value="Coupe 86">Coupe 86</option>
+									<option value="Otros">Otros</option>
 								</select>
 								</div>
 							</div>

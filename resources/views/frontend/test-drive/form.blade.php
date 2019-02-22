@@ -2,9 +2,6 @@
 
 @section('content')
 
-	<!-- Navbar Desktop -->
-	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
-
 	@if (session('status'))
 		<div class="alert alert-warning alert-dismissible toast" role="alert">
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

@@ -89,7 +89,6 @@
     </div>
   </div>
 
-
   <div id="myCarousel" class="carousel slide visible-xs visible-sm" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -98,7 +97,7 @@
             </div>
         </div>
     </div>
- </div>   
+</div>   
 </template>
 
 <script>

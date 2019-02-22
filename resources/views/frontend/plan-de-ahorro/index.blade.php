@@ -1,11 +1,6 @@
 @extends('layout')
 
-
 @section('content')
-
-	<!-- Navbar Desktop -->
-	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
-
 	<article>
 		<section>
 			<div>

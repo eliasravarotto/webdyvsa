@@ -1,10 +1,9 @@
 @extends('layout')
 
-
 @section('content')
 
 	<!-- Navbar Desktop -->
-	<navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk>
+	{{-- <navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk> --}}
 	<div class="container">
 	<article>
 		<section class="pad-bot-25">

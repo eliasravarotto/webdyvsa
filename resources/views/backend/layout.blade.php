@@ -18,12 +18,13 @@
 
 <body>
     <div class="wrapper">
+        <!-- Dark Overlay element -->
+    <div class="overlay"></div>
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Derka y Vargas</h3>
                 <p>Dashboard Web Site</p>
-                <strong><img src="{{asset('imagenes/icons/logo_dyv_loading.png')}}" style="width: 100%"></strong>
             </div>
 
             <ul class="list-unstyled components">
@@ -74,7 +75,7 @@
                 <li>
                     <a href="{{url('admin/servicios')}}">
                     <i class="material-icons" style="font-size: 1.3rem; vertical-align: sub !important">build</i>
-                        TIPOS DE SERVICIOS
+                        SERVICIOS
                     </a>
                 </li>
             </ul>
@@ -84,22 +85,25 @@
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-danger">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary d-md-none">
                         <i class="fa fa-align-left"></i>
                     </button>
-                    <a class="navbar-brand d-block d-sm-none" href="#">Derka y Vargas</a>
+                    <button type="button" id="sidebarCollapseDesk" class="btn btn-primary d-none d-md-block">
+                        <i class="fa fa-align-left"></i>
+                    </button>
+                    <a class="navbar-brand d-md-none" href="#">Derka y Vargas</a>
                     <button class="navbar-toggler mi-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
 
                     <div class="collapse navbar-collapse mi-navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
-                          <li class="nav-item active">
+                          {{-- <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">Link</a>
-                          </li>
+                          </li> --}}
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Dropdown
@@ -107,7 +111,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="#">Perfil</a>
                               <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                              <a class="dropdown-item" href="/logout">Cerrar Sesión</a>
                             </div>
                           </li>
                         </ul>
@@ -143,9 +147,26 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $('#sidebarCollapse').on('click', function () {
+            $('#sidebarCollapseDesk').on('click', function () {
                 $('#sidebar').toggleClass('active');
                 $(this).toggleClass('active');
+            });
+
+            
+            $('#dismiss, .overlay').on('click', function () {
+                // hide sidebar
+                $('#sidebar').removeClass('active');
+                // hide overlay
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                // open sidebar
+                $('#sidebar').addClass('active');
+                // fade in the overlay
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
 
         });

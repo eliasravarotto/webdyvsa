@@ -19,9 +19,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::group(['middleware' => 'auth'], function(){
 
 
-	Route::get('/admin', function () {
-	    return view('backend.inicio');
-	});
+	Route::get('/admin', 'BackendController@inicio');
 
 
 	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
@@ -38,7 +36,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
 	Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
 	Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
-	Route::get('admin/turnos-servicios','TurnoServicioController@index');
+	Route::get('admin/turnos-servicios','TurnoServicioController@index')->name('solicitudes_index');
+	Route::get('admin/turnos-servicios/{id}','TurnoServicioController@show')->name('solicitud_show');
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
 	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
 	Route::resource('admin/usados','UsadoController');

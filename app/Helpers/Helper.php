@@ -2,6 +2,7 @@
 namespace App\Helpers;
 
 use App\Sucursal;
+use App\Modelo;
 
 
 class Helper
@@ -49,5 +50,11 @@ class Helper
           $result = json_decode($result);
 
           return $result;
+	}
+
+
+	public static function getModelos()
+	{
+		return Modelo::all();
 	}
 }
