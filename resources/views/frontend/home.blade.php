@@ -176,8 +176,7 @@
       <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
         <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0;">
-        {{-- <iframe src="//lightwidget.com/widgets/fa8772b6f29953d581a30dbbbc638347.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> --}}
+      <div class="col-xs-12 col-sm-12 col-md-6 text-center" style="margin: 20px 0;">
         {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
         @php $count = 0 @endphp
         @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)

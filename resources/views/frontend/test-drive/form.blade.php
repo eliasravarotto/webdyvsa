@@ -72,7 +72,7 @@
 						  	</div>
 						  	<div class="form-group text-right">
 						  		<div class="col-lg-12">
-						  		<button type="submit" class="btn btn-default">Enviar</button>
+						  			<input type="submit" class="btn btn-default" name="ENVIAR">
 						  		</div>
 						  	</div>
 				  		</form>

@@ -21,7 +21,6 @@ Vue.component('navbar-desk', require('./components/frontend/navbar_desk.vue'));
 Vue.component('detalle-modelo', require('./components/frontend/detalle_modelo.vue'));
 Vue.component('index-usados', require('./components/frontend/usados_index.vue'));
 Vue.component('show-usado', require('./components/frontend/usados_show.vue'));
-Vue.component('grid-instagram', require('./components/frontend/grid-instagram.vue'));
 
 Vue.component('producto', require('./components/producto.vue'));
 

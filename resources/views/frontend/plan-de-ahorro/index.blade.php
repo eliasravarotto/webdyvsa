@@ -505,7 +505,7 @@
 									@endif
 								</div>
 								<div class="col-md-6 text-right">
-									<button type="submit" class="btn btn-default">ENVIAR</button>
+									<input type="submit" class="btn btn-default" name="ENVIAR">
 								</div>
 							</div>
 						</form>

@@ -23,8 +23,8 @@
 
   <div id="app">
     @include('frontend.includes.header-desk')
-    @include('frontend.includes.header-mobile')
     @include('frontend.includes.navbar-desk')
+    @include('frontend.includes.header-mobile')
 
     @yield('content')
 

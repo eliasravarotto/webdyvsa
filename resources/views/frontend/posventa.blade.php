@@ -117,11 +117,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 						</p>
 					</div>	
 				</div>
-				<div class="row well" style="padding: 15px 35px 15px 35px; margin-top: 25px;">
+				<div class="well" style="padding: 15px 35px 15px 35px; margin-top: 25px;">
+					<div class="row">
 					<div class="col-md-7" style="padding: 0px;">
 						<p style="font-size: 20px; font-weight: bold;">La calidad de siempre, más coveniente que nunca.</p>
 						<p style="text-align: justify;">Nadie conoce mejor tu Toyota como Toyota, por eso acercate a cualquiera de nuestras sucursales con servicio de Posventa para contar con el respaldo de un servicio técnico oficial. </p>	
-						<a href="/turno-servicios/create" class="btn btn-toyota">SOLICITAR TURNO</a>
+						<a href="/turno-servicios/create" class="btn btn-toyota">SOLICITAR TURNO ONLINE</a>
+						<a href="https://wa.me/543625270614"  class="btn btn-toyota btn-whatsapp" target="_blank">ENVIAR WHATSAPP</a>
 					</div>
 					<div class="col-md-offset-1 col-md-4 via-whatsapp" style="padding: 0px;">
 						<div style="width: 100%; display: flex; justify-content: space-around; align-items: center;">
@@ -133,6 +135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 								<img src="{{asset('imagenes/icons/whatsapp-icon.png')}}" style="height: 75px;">								
 							</div>
 						</div>
+					</div>
 					</div>
 				</div>
 			</div>
