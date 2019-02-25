@@ -23,15 +23,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="/imagenes/home/slide1.png" alt="Los Angeles">
+        <img src="/imagenes/home/slide1.png" alt="">
       </div>
 
       <div class="item">
-        <img src="/imagenes/home/slide2.png" alt="Chicago">
+        <img src="/imagenes/home/slide2.png" alt="">
       </div>
 
       <div class="item">
-        <img src="/imagenes/home/slide3.png" alt="New York">
+        <img src="/imagenes/home/slide3.png" alt="">
+      </div>
+
+      <div class="item">
+        <img src="/imagenes/home/portada_uva.png" alt="">
       </div>
     </div>
 
