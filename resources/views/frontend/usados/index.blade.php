@@ -89,10 +89,10 @@
 		<section>
 			<div class="container">
 			<div class="row">
+              <!-- INT 890 -->
               <div class="col-sm-12 col-md-4">
                 <div class="thumbnail thumbnail-no-bg">
                   <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-                  <!-- INT 890 -->
                   <div class="caption caption-default">
                     <h3 class="text-center">CHERY TIGGO 5 2.0 4X2 LUXURY CVT L/17</h3>
                     <p class="text-center">
@@ -116,10 +116,10 @@
                 </div>
               </div>
 
+              <!-- INT 921 -->
               <div class="col-sm-12 col-md-4">
                 <div class="thumbnail thumbnail-no-bg">
                   <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-                  <!-- INT 921 -->
                   <div class="caption caption-default">
                     <h3 class="text-center">FORD FIESTA 1.6 5P SE</h3>
                     <p class="text-center">
@@ -143,10 +143,10 @@
                 </div>
               </div>
 
+              <!-- INT 851 -->
               <div class="col-sm-12 col-md-4">
                 <div class="thumbnail thumbnail-no-bg">
                   <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-                  <!-- INT 851 -->
                   <div class="caption caption-default">
                     <h3 class="text-center">FORD FIESTA 1.6 5P SE PLUS</h3>
                     <p class="text-center">
@@ -172,10 +172,10 @@
             </div>
 
             <div class="row">
+              <!-- INT 915 -->
               <div class="col-sm-12 col-md-4">
                 <div class="thumbnail thumbnail-no-bg">
                   <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-                  <!-- INT 915 -->
                   <div class="caption caption-default">
                     <h3 class="text-center">FORD FIESTA 1.6 5P SE PLUS</h3>
                     <p class="text-center">
@@ -199,10 +199,10 @@
                 </div>
               </div>
 
+              <!-- INT 880 -->
               <div class="col-sm-12 col-md-4">
                 <div class="thumbnail thumbnail-no-bg">
                   <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-                  <!-- INT 880 -->
                   <div class="caption caption-default">
                     <h3 class="text-center">FORD FOCUS L/14 2.0 4 P SE PLUS</h3>
                     <p class="text-center">
@@ -226,10 +226,10 @@
                 </div>
               </div>
 
+              <!-- INT 889 -->
               <div class="col-sm-12 col-md-4">
                 <div class="thumbnail thumbnail-no-bg">
                   <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-                  <!-- INT 889 -->
                   <div class="caption caption-default">
                     <h3 class="text-center">FORD FOCUS L/16 1.6 5 P S</h3>
                     <p class="text-center">
@@ -255,9 +255,9 @@
             </div>
 
             <div class="row">
+                <!-- INT 957 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 957 -->
                       <div class="caption caption-default">
                         <h3 class="text-center">FORD RANGER 3.0 TDI DC 4X2</h3>
                         <p class="text-center">
@@ -280,9 +280,9 @@
                       </div>
                     </div>
                 </div>
+                <!-- INT 864 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 864 -->
                         <div class="caption caption-default">
                             <h3 class="text-center">IVECO DAILY 70C 16 CHASIS 4350</h3>
                             <p class="text-center">
@@ -305,9 +305,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- INT 944 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 944 -->
                         <div class="caption caption-default">
                             <h3 class="text-center">TOYOTA COROLLA 1.8 SE-G L/11 AUT</h3>
                             <p class="text-center">
@@ -333,10 +333,61 @@
             </div>
 
             <div class="row">
-                
+                <!-- INT 959 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 902 -->
+                        <div class="caption caption-default">
+                            <h3 class="text-center">TOYOTA COROLLA 1.8 SE-G L/11 AUT</h3>
+                            <p class="text-center">
+                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2012 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 133.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Negro
+                            </div>
+                            </div>
+                            </p>
+                            <p class="text-center" >
+                            <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                            <h2 class="text-center precio">$ 310.000</h2>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INT 954 -->
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-no-bg">
+                        <div class="caption caption-default">
+                            <h3 class="text-center">TOYOTA COROLLA 1.8 XEI L/14</h3>
+                            <p class="text-center">
+                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2014 
+                            </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 172.000
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Negro
+                            </div>
+                            </div>
+                            </p>
+                            <p class="text-center" >
+                            <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                            <h2 class="text-center precio">$ 330.000</h2>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- INT 902 -->
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-no-bg">
                         <div class="caption caption-default">
                             <h3 class="text-center">TOYOTA ETIOS 1.5 4 PTAS XLS </h3>
                             <p class="text-center">
@@ -360,9 +411,9 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-4">
+                <!-- INT 929 -->
+                {{-- <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 929 -->
                         <div class="caption caption-default">
                             <h3 class="text-center">TOYOTA HILUX L/05 2.5 SC 4X2</h3>
                             <p class="text-center">
@@ -384,10 +435,13 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
+            </div>
+
+            <div class="row">
+                <!-- INT 926 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 926 -->
                       <div class="caption caption-default">
                         <h3 class="text-center">TOYOTA HILUX L/16 2.4 DC 4X2 </h3>
                         <p class="text-center">
@@ -410,12 +464,35 @@
                       </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row">
+                <!-- INT 942 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 901 -->
+                      <div class="caption caption-default">
+                        <h3 class="text-center">TOYOTA HILUX L/16 2.4 DC 4X2 TDI SR </h3>
+                        <p class="text-center">
+                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                                <div>
+                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2018 
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 20.000
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
+                                </div>
+                            </div>
+                        </p>
+                        <p class="text-center" >
+                            <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
+                            <h2 class="text-center precio">$ 1.050.000</h2>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <!-- INT 901 -->
+                {{-- <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-no-bg">
                       <div class="caption caption-default">
                         <h3 class="text-center">TOYOTA HILUX L/16 2.4 SC 4X2 </h3>
                         <p class="text-center">
@@ -438,9 +515,63 @@
                       </div>
                     </div>
                 </div>
+                 --}}
+
+                <!-- INT 961 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 911 -->
+                      <div class="caption caption-default">
+                        <h3 class="text-center">TOYOTA HILUX L/16 2.8 DC 4X2 TDI SRV</h3>
+                        <p class="text-center">
+                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                                <div>
+                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2016 
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 62.482
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Rojo
+                                </div>
+                            </div>
+                        </p>
+                        <p class="text-center" >
+                            <h2 class="text-center precio">$ 900.000</h2>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- INT 903 -->
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-no-bg">
+                      <div class="caption caption-default">
+                        <h3 class="text-center">TOYOTA HILUX L/16 2.8 DC 4X4 TDI SRX AUT</h3>
+                        <p class="text-center">
+                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                                <div>
+                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2016 
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 150.000
+                                </div>
+                                <div>
+                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Gris Plata
+                                </div>
+                            </div>
+                        </p>
+                        <p class="text-center" >
+                            <h2 class="text-center precio">$ 1.100.000</h2>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- INT 911 -->
+                <div class="col-sm-12 col-md-4">
+                    <div class="thumbnail thumbnail-no-bg">
                       <div class="caption caption-default">
                         <h3 class="text-center">TOYOTA PRIUS 1.8 CVT L/17</h3>
                         <p class="text-center">
@@ -464,9 +595,9 @@
                     </div>
                 </div>
 
+                <!-- INT 872 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
-                        <!-- INT 872 -->
                       <div class="caption caption-default">
                         <h3 class="text-center">VOLKSWAGEN SAVEIRO 1.6 L/18</h3>
                         <p class="text-center">
