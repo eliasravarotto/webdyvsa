@@ -7,16 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
     <meta name="keywords" content="Derka y Vargas, Toyota, Chaco, Hilux, Corolla, Etios, Yaris, SW4, Camry, Prius, RAV4, Land Cruiser, Prado">
-    
-    <meta property="og:url"                content="https://www.derkayvargas.com/" />
-    <meta property="og:title"              content="Derka y Vargas" />
-    <meta property="og:description"        content="Concecionario oficial Toyota en Chaco" />
-    <meta property="og:image"              content="/imagenes/dyv_charata.jpg" />
-    
+    <link rel="shortcut icon" href="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">
+        
     @yield('mark-up-facebook')
     
-
-    <link rel="shortcut icon" href="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">

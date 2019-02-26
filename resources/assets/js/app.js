@@ -16,7 +16,6 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('banner-ppal', require('./components/frontend/banner_ppal.vue'));
 Vue.component('navbar-desk', require('./components/frontend/navbar_desk.vue'));
 Vue.component('detalle-modelo', require('./components/frontend/detalle_modelo.vue'));
 Vue.component('index-usados', require('./components/frontend/usados_index.vue'));

@@ -9,6 +9,7 @@ use App\Repositories\ModeloRepository;
 use App\TipoServicio;
 use App\Usado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
@@ -122,25 +123,27 @@ class FrontController extends Controller
         return $unidades;
     }
 
-    public function consultaUsado(Request $request)
+    public function usadosFilter(Request $request)
     {
-        //return $request;
-        $consulta = new Consulta;
-        $consulta->nombre = $request->nombre;
-        $consulta->telefono = $request->telefono;
-        $consulta->email = $request->email;
-        $consulta->mensaje = $request->mensaje;
-        $consulta->enviar_a = 'elias.ravarotto@gmail.com';
-        $consulta->save();
-        Mail::send('emails.template', ['data' => $request], function ($message) use ($request){
-
-            $unidad = $request->marca.' '.$request->modelo;
-            
-            $message->subject('Consulta sobre la unidad -'.$unidad);
-            $message->to('elias.ravarotto@gmail.com');
-            //$message->to('eliasravarotto@derkayvargas.com.ar');
-        });
-
-        return 'ok';
+        $cond = ' ';
+        if ($request->filtro_marca != '0') { $cond = $cond." AND usados.marca = '".$request->filtro_marca."'"; }
+        if ($request->filtro_color != '0') { $cond = $cond." AND usados.color = '".$request->filtro_color."'"; }
+        if ($request->filtro_anio != '0') { $cond = $cond." AND usados.anio = '".$request->filtro_anio."'"; }
+        return DB::select('SELECT
+                            usados.id,
+                            usados.dominio,
+                            usados.marca,
+                            usados.modelo,
+                            usados.anio,
+                            usados.km,
+                            usados.color,
+                            usados.precio,
+                            usados.descripcion,
+                            usados.foto,
+                            usados.interno
+                            FROM
+                            usados
+                            WHERE
+                            usados.id <> 0'.$cond);
     }
 }

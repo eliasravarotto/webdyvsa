@@ -1,4 +1,6 @@
 @extends('layout')
+
+@section('styles_sheets')
         <style type="text/css">
             .precio{
                     background-color: #016a87;
@@ -6,8 +8,6 @@
                     text-shadow: 0px 0px 0px #ffffff;
             }
         </style>
-
-@section('styles_sheets')
 @stop
 
 @section('content')
@@ -15,19 +15,16 @@
 	<article>
 		<section>
 			<div class="container">
-				<div class="page-header">
-				  <h1>ELEGÍ TU USADO<small></small></h1>
+				<div class="page-header flex justify-content-space-between" style="flex-direction: row;">
+                    <h1>ELEGÍ TU USADO<small></small></h1>
+                    <div class="flex align-items-center">
+                        <button class="btn btn-toyota btn-lg" data-toggle="collapse" data-target="#contacto-form">
+                        <i class="fa fa-envelope-o"></i> CONSULTAR
+                        </button>
+                    </div>
 				</div>
 				<div class="row">
-					<div class="col-sm-12 col-md-6 col-md-push-6">
-						{{-- <button class="btn btn-toyota btn-lg pull-right" data-toggle="modal" data-target="#contacto"> --}}
-						<button class="btn btn-toyota btn-lg pull-right" data-toggle="collapse" data-target="#contacto-form">
-							<i class="fa fa-envelope-o"></i> CONSULTAR
-						</button>
-						<br>
-						<br>
-					</div>
-					<div class="col-sm-12 col-md-6 col-md-pull-6">
+					<div class="col-sm-12 col-md-6">
 						<div id="contacto-form" @if($errors->isEmpty()) class="collapse" @endif>
 						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}
@@ -82,10 +79,10 @@
 					</div>
 				</div>
 				<br>
-				{{-- <index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados> --}}
+				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 			</div>
 		</section>
-
+        {{-- 
 		<section>
 			<div class="container">
 			<div class="row">
@@ -410,32 +407,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- INT 929 -->
-                {{-- <div class="col-sm-12 col-md-4">
-                    <div class="thumbnail thumbnail-no-bg">
-                        <div class="caption caption-default">
-                            <h3 class="text-center">TOYOTA HILUX L/05 2.5 SC 4X2</h3>
-                            <p class="text-center">
-                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
-                                <div>
-                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2010 
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 277.249
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
-                                </div>
-                            </div>
-                            </p>
-                            <p class="text-center" >
-                            <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
-                            <h2 class="text-center precio">$ 340.000</h2>
-                            </p>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
 
             <div class="row">
@@ -490,33 +461,7 @@
                       </div>
                     </div>
                 </div>
-                <!-- INT 901 -->
-                {{-- <div class="col-sm-12 col-md-4">
-                    <div class="thumbnail thumbnail-no-bg">
-                      <div class="caption caption-default">
-                        <h3 class="text-center">TOYOTA HILUX L/16 2.4 SC 4X2 </h3>
-                        <p class="text-center">
-                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
-                                <div>
-                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2016 
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 156.000
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
-                                </div>
-                            </div>
-                        </p>
-                        <p class="text-center" >
-                            <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
-                            <h2 class="text-center precio">$ 660.000</h2>
-                        </p>
-                      </div>
-                    </div>
-                </div>
-                 --}}
-
+                
                 <!-- INT 961 -->
                 <div class="col-sm-12 col-md-4">
                     <div class="thumbnail thumbnail-no-bg">
@@ -542,7 +487,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <!-- INT 903 -->
                 <div class="col-sm-12 col-md-4">
@@ -623,24 +568,15 @@
             </div>
             </div>
 		</section>
+        --}}
 	</article> 
 
 @stop
 
 @section('script')
-<script type="text/javascript">
-	$('#contacto-form').on('shown.bs.collapse', function (e) {
-    $('#cli').focus();
-})
-</script>
-	<!-- jQuery Easing -->
-	{{-- <script src="/gallery/js/jquery.easing.1.3.js"></script> --}}
-
-	<!-- Waypoints -->
-	{{-- <script src="/gallery/js/jquery.waypoints.min.js"></script> --}}
-	<!-- Portfolio Filter Mixitup -->
-	{{-- <script type="text/javascript" src="/gallery/js/jquery.mixitup.min.js"></script> --}}
-
-	<!-- Main JS (Do not remove) -->
-	{{-- <script src="/gallery/js/main.js"></script> --}}
+    <script type="text/javascript">
+    	$('#contacto-form').on('shown.bs.collapse', function (e) {
+        $('#cli').focus();
+    })
+    </script>
 @stop

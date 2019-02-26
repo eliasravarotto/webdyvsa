@@ -22,7 +22,7 @@ class CreateUsadosTable extends Migration
             $table->string('anio');
             $table->string('km')->nullable();;
             $table->string('color');
-            $table->string('precio')->nullable();;
+            $table->integer('precio')->nullable();;
             $table->string('descripcion')->nullable();
             $table->string('foto')->nullable();
             $table->timestamps();

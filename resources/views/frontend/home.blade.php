@@ -18,11 +18,13 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <div class="item active">
+      <div class="item">
         <img src="/imagenes/home/slide1.png" alt="">
       </div>
 
@@ -37,6 +39,10 @@
       <div class="item">
         <img src="/imagenes/home/portada_uva.png" alt="">
       </div>
+
+      <div class="item active">
+        <img src="/imagenes/home/slide5.png" alt="">
+      </div>
     </div>
 
     <!-- Left and right controls -->
@@ -49,29 +55,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-  <section class="container pad-top-50 pad-bot-25">
-      <div class="row">
-        <div class="col-md-5">
-          <img  class="img-responsive" src="/imagenes/etios_sorteo.jpg">
-        </div>
-        <div class="col-md-7">
-          <div style="padding-right: 10px; padding-left: 10px;">
-            <h2 class="text-center">¡PARTICIPA Y GANA, HACÉ LA CAMPAÑA DE AIRBAG Y GANATE UN ETIOS!</h2>
-            <br>
-            <p class="fs-18" style="text-align: justify;">Vení a cualquiera de nuestras sucursales con Posventa de #derkayvargas a hacer el servicio de Airbag del conductor y acompañante y participá de un sorteo por un Etios XLS Sedán que se realizará en Marzo 2019 junto con otros importantes premios. No te lo pierdas!!! </p>
-          </div>
-          <br>
-          <center>
-            <a class="btn btn-toyota" href="/documentos/campaña-airbag.pdf">
-              <i class="fa fa-file-pdf-o"></i>  BASES Y CONDICIONES
-            </a>
-          </center>
-        </div>
-      </div>
-  </section>
-
-  <hr class="container">
 
   <!-- Section -->
   <div class="container pad-top-bot-25">

@@ -1,198 +1,84 @@
 <template>
 <div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div class="form-group">
+                    <div class="row">
+                    <div class="col-sm-12 col-md-3 col-sm-pb-2">
+                        <select class="form-control" v-model="filtro_marca">
+                            <option value="0">--Marca--</option>
+                            <option v-for="marca in marcas" :value="marca">{{marca}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-sm-pb-2">
+                        <select class="form-control" v-model="filtro_color">
+                            <option value="0">--Color--</option>
+                            <option v-for="color in colores" :value="color">{{color}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-sm-pb-2">
+                        <select class="form-control" v-model="filtro_anio">
+                            <option value="0">--Año--</option>
+                            <option v-for="anio in anios" :value="anio">{{anio}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-3">
+                        <div class="flex justify-content-space-around">
+                        <a href="#" class="btn btn-default" @click.prevent="limpiarFiltro()"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-primary" @click.prevent="filtrar()"><i class="fa fa-filter" aria-hidden="true"></i> Filtrar</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 text-right">
+                <div class="form-inline">
+                    <div class="form-group">
+                            <label>Ordenar Por: </label>
+                            <select class="form-control" v-model="ordenar_por" @change="ordernarPor()">
+                                <option value="anio_may_men">Año mayor a menor</option>
+                                <option value="anio_men_may">Año menor a mayor</option>
+                                <option value="precio_may_men">Precio mayor a menor</option>
+                                <option value="precio_men_may">Precio menor a mayor</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
-        <div class="col-sm-12 col-md-4">
-            <div class="thumbnail thumbnail-no-bg">
-              <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-              <!-- INT 890 -->
+        <div v-for="unidad in unidades" class="col-sm-12 col-md-4">
+            <div class="thumbnail thumbnail-no-bg" style="height:415px">
+              <img v-show="unidad.foto" :src="unidad.foto" alt="">
+              <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
               <div class="caption caption-default">
-                <h3 class="text-center">CHERY TIGGO 5 2.0 4X2 LUXURY CVT L/17</h3>
-                <p class="text-center">
-                    <div style="display: flex; justify-content: space-around; font-size: 12px;">
-                        <div>
-                            <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2018  
-                        </div>
-                        <div>
-                            <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 8.800
-                        </div>
-                        <div>
-                            <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
-                        </div>
+                <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
+                <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
+                    <div>
+                        <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{unidad.anio}}  
                     </div>
-                </p>
-                <p class="text-center" >
-                    <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
-                    <h2 class="text-center precio">$ 800.000</h2>
-                </p>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4">
-            <div class="thumbnail thumbnail-no-bg">
-              <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-              <!-- INT 921 -->
-              <div class="caption caption-default">
-                <h3 class="text-center">FORD FIESTA 1.6 5P SE</h3>
-                <p class="text-center">
-                    <div style="display: flex; justify-content: space-around; font-size: 12px;">
-                        <div>
-                            <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2014 
-                        </div>
-                        <div>
-                            <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 44.500
-                        </div>
-                        <div>
-                            <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Blanco
-                        </div>
+                    <div>
+                        <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{unidad.km}}
                     </div>
-                </p>
-                <p class="text-center" >
-                    <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
-                    <h2 class="text-center precio">$ 300.000</h2>
-                </p>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4">
-            <div class="thumbnail thumbnail-no-bg">
-              <!-- <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt=""> -->
-              <!-- INT 851 -->
-              <div class="caption caption-default">
-                <h3 class="text-center">FORD FIESTA 1.6 5P SE PLUS</h3>
-                <p class="text-center">
-                    <div style="display: flex; justify-content: space-around; font-size: 12px;">
-                        <div>
-                            <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> 2014 
-                        </div>
-                        <div>
-                            <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> 76.000
-                        </div>
-                        <div>
-                            <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> Gris Oscuro
-                        </div>
+                    <div>
+                        <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{unidad.color}}
                     </div>
-                </p>
-                <p class="text-center" >
-                    <!-- <a v-bind:href="'#'" class="btn btn-default" role="button">VER DETALLES</a> -->
-                    <h2 class="text-center precio">$ 320.000</h2>
-                </p>
-              </div>
-            </div>
-        </div>
-    </div>
-
-           
-
-
-    <!-- Modal Para enviar consulta o mensaje -->
-    <div class="modal fade" id="contacto" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">CONSULTAR</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-            <div class="row">
-                <div class="col-md-12 col-xs-12 col-sm-12">
-                    <label>Nombre</label>
-                    <input class="form-control" type="text" name="nombre" v-model="nombre" >
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-xs-12 col-sm-12">
-                    <label>Teléfono</label>
-                    <input class="form-control" type="email" name="telefono" v-model="telefono">
-                </div>
-                    
-                <div class="col-md-6 col-xs-12 col-sm-12">
-                    <label>Email</label> (opcional)
-                    <input class="form-control" type="email" name="email" v-model="email">
-                </div>
-            </div>
-            <label>Mensaje</label>
-            <textarea class="form-control" v-model="mensaje"></textarea>
-        </form>
-        <br>
-        <div class="alert alert-info" role="alert">
-            <p>Al enviar el formulario un asesor se pondrá en contacto con usted a la brevedad.</p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-        <button type="button" class="btn btn-danger" v-on:click="enviarConsulta()">ENVIAR</button>
-      </div>
-    </div>
-    </div>
-    </div>
-
-    <!-- Modal Rspuesta Mensaje Enviado -->
-    <div class="modal" id="msj_enviado" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <h4>Su mensaje fue enviado correctamente. Un asesor estará en contacto con usted a la brevedad.</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">ACEPTAR</button>
-      </div>
-    </div>
-    </div>
-    </div>
-
-
-        <!-- Modal -->
-        <!-- <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">CONSULTAR</h4>
-              </div>
-              <div class="modal-body">
-                <h4 class="text-center text-uppercase">
-                    {{ usadoSelected.marca }} - {{ usadoSelected.modelo }} - {{ usadoSelected.año }} - {{ usadoSelected.color }}
-                </h4>
-                <form>
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12 col-sm-12">
-                            <label>Nombre</label>
-                            <input class="form-control" type="text" name="nombre" v-model="nombre" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-xs-12 col-sm-12">
-                            <label>Teléfono</label>
-                            <input class="form-control" type="email" name="telefono" v-model="telefono">
-                        </div>
-                            
-                        <div class="col-md-6 col-xs-12 col-sm-12">
-                            <label>Email</label> (opcional)
-                            <input class="form-control" type="email" name="email" v-model="email">
-                        </div>
-                    </div>
-                    <label>Mensaje</label>
-                    <textarea class="form-control" v-model="mensaje"></textarea>
-                </form>
-                <br>
-                <div class="alert alert-info" role="alert">
-                    <p>Al enviar el formulario un asesor se pondrá en contacto con usted a la brevedad.</p>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-                <button type="button" class="btn btn-danger" v-on:click="enviarConsulta()">ENVIAR</button>
+                <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
               </div>
             </div>
-          </div>
-        </div> -->
+            
+        </div>  
+        <div class="col-sm-12 col-md-12" v-show="unidades.length==0">
+            <div class="alert alert-info" role="alert">
+                <strong>Sin resultados!</strong> No hay unidades que coincidan con los datos ingresados.
+                <a href="#" @click.prevent="limpiarFiltro()">Ver todos</a>
+            </div>
+        </div>      
+    </div>
 </div>
 
 </template>
@@ -203,53 +89,115 @@
         data(){
             return {
                 unidades: '',
+                colores:[],
+                marcas:[],
+                anios:[],
                 usadoSelected : '',
-                nombre: '',
-                telefono: '',
-                email: '',
-                mensaje:'',
+                filtro_marca:'0',
+                filtro_color:'0',
+                filtro_anio:'0',
+                ordenar_por: ''
             }
         },
         mounted() {
-            //this.getUnidades();
             this.unidades = this.data.unidades;
+            this.cargarColores();
+            this.cargarMarcas();
+            this.cargarAnios();
         },
         methods:{
-            openModalContacto(unidad)
-            {
-                $('#contacto').modal('toggle');
-                this.usadoSelected = unidad;
+            cargarColores(){
+                self = this;
+                this.unidades.forEach(function(unidad) {
+                  if (!self.colores.includes(unidad.color.toUpperCase())) {
+                    self.colores.push(unidad.color.toUpperCase())
+                  }
+                });
+                this.colores.sort();
             },
-            enviarConsulta()
-            {
-                $('.en_proceso').show();
-                $('#contacto').modal('toggle');
-                // axios.post('/consultar/usado/'+this.usadoSelected.id, {
-                axios.post('/consultar/usado', {
-                    nombre: this.nombre,
-                    telefono: this.telefono,
-                    email: this.email,
-                    mensaje: this.mensaje,
-                    marca: '-',
-                    modelo: '-',
-                    // marca: this.usadoSelected.marca,
-                    // modelo: this.usadoSelected.modelo,
-                  })
-                  .then(function (response) {
-                    $('.en_proceso').hide();
-                    $('#msj_enviado').modal();
-                    this.usadoSelected = '';
-                    this.nombre = '';
-                    this.telefono = '';
-                    this.email = '';
-                    this.mensaje = '';
-                    this.marca = '';
-                    this.modelo = '';
-                  })
-                  .catch(function (error) {
-                    $('.en_proceso').hide();
-                    console.log(error);
-                  });
+            cargarMarcas(){
+                self = this;
+                this.unidades.forEach(function(unidad) {
+                  if (!self.marcas.includes(unidad.marca.toUpperCase())) {
+                    self.marcas.push(unidad.marca.toUpperCase())
+                  }
+                });
+                this.marcas.sort();
+            },
+            cargarAnios(){
+                self = this;
+                this.unidades.forEach(function(unidad) {
+                  if (!self.anios.includes(unidad.anio)) {
+                    self.anios.push(unidad.anio)
+                  }
+                });
+                this.anios.sort();
+            },
+            filtrar(){
+
+                if (this.filtro_anio == 0 && this.filtro_marca == 0 && this.filtro_color == 0){
+                    this.unidades = this.data.unidades;
+                }else{
+                    self = this;
+                    axios
+                        .post('/usados/filter',{
+                            filtro_marca: this.filtro_marca,
+                            filtro_color:this.filtro_color,
+                            filtro_anio:this.filtro_anio,
+                        })
+                        .then(res => this.unidades = res.data);
+                }
+
+            },
+            limpiarFiltro(){
+                this.unidades = this.data.unidades;
+                this.filtro_anio = 0;
+                this.filtro_color = 0;
+                this.filtro_marca = 0;
+            },
+            ordernarPor(){
+                switch(this.ordenar_por) {
+                  case 'anio_may_men':
+                    this.unidades = _.orderBy(this.unidades,
+                                    ['anio'],
+                                    ['desc']);
+                    break;
+                  case 'anio_men_may':
+                    this.unidades = _.orderBy(this.unidades,
+                                    ['anio'],
+                                    ['asc']);
+                    break;
+                  case 'precio_men_may':
+                    this.unidades = _.orderBy(this.unidades,
+                                    ['precio'],
+                                    ['asc']);
+                    break;
+                  case 'precio_may_men':
+                    this.unidades = _.orderBy(this.unidades,
+                                    ['precio'],
+                                    ['desc']);
+                    break;
+                  
+                }
+            },
+            removeDuplicates(originalArray, prop) {
+                 var newArray = [];
+                 var lookupObject  = {};
+                 for(var i in originalArray) {
+                    lookupObject[originalArray[i][prop]] = originalArray[i];
+                 }
+                 for(i in lookupObject) {
+                     newArray.push(lookupObject[i]);
+                 }
+                  return newArray;
+            },
+            formatearPrecio(num){
+                num = num.toString().replace(/\./g,'');
+                if(!isNaN(num)){
+                    num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
+                    num = num.split('').reverse().join('').replace(/^[\.]/,'');
+                    return num;
+                }
             }
         }
     }

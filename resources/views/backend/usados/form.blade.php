@@ -11,7 +11,7 @@
 				<div class="col-md-4">
 					<div class="form-group requerido">
 						<label class="control-label mb-1">Modelo</label>
-						<input name="modelo" type="text" class="form-control" value="{{ $usado->modelo }}">
+						<input name="modelo" type="text" class="form-control" value="{{ $usado->modelo }}" placeholder="Modelo Version">
 					</div>
 				</div>
 				<div class="col-md-2">
@@ -31,7 +31,7 @@
 				<div class="col-md-3">
 					<div class="form-group">
 						<label class="control-label mb-1">Km</label>
-						<input name="km" type="text" class="form-control" value="{{ $usado->km }}">
+						<input name="km" type="text" class="form-control" value="{{ $usado->km }}" placeholder="ej: 20.000">
 					</div>
 				</div>
 				<div class="col-md-3">
@@ -49,7 +49,7 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label class="control-label mb-1">Precio</label>
-						<input name="precio" type="text" class="form-control" value="{{ $usado->precio }}">
+						<input name="precio" type="text" class="form-control" value="{{ $usado->precio }}" placeholder="ej: 380.000">
 					</div>
 				</div>
 			</div>

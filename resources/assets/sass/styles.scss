@@ -18,6 +18,32 @@ footer {
   background-color: #635e5e;
 }
 
+/*-------------------------------------------
+// FLEXBOX SECTION
+-------------------------------------------*/
+
+.flex{
+  display: flex;
+}
+.justify-content-center{
+  justify-content: center;
+}
+.justify-content-space-between{
+  justify-content: space-between;
+}
+.justify-content-space-around{
+  justify-content: space-around;
+}
+.align-items-center{
+  align-items:center;
+}
+.align-items-end{
+  align-items:flex-end;
+}
+.align-items-start{
+  align-items:flex-start;
+}
+
 .flecha-bajar a {
   text-decoration: none;
   display: inline-block;
@@ -1026,6 +1052,22 @@ $gris-2:#626262;
 @media only screen and (max-width:992px) {
   .lista-contacto {
     display: none
+  }
+
+  .col-sm-pb-1 {
+    padding-bottom: 1rem;
+  }
+
+  .col-sm-pb-2 {
+    padding-bottom: 2rem;
+  }
+
+  .col-sm-pb-3 {
+    padding-bottom: 3rem;
+  }
+
+  .col-sm-pb-4 {
+    padding-bottom: 4rem;
   }
 
 }
