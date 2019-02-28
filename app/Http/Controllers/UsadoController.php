@@ -175,16 +175,24 @@ class UsadoController extends Controller
                     $imagenes_galeria[$i]->delete();
                 }
             }
-            if (file_exists(public_path().$usado->foto)) {
-                unlink(public_path().$usado->foto);
+
+            $unlink = '';
+            if ($usado->foto != null) {
+                if (unlink(public_path().$usado->foto)) {
+                    $unlink = '';
+                } else{
+                    $unlink = 'Error al eliminar la foto. No se encontró '.$usado->foto;
+                }
+                
             }
+
             $usado->delete();
 
         } catch (Exception $e) {
             return back()->with('error', 'Error!'.$e);
         }
        
-        return back()->with('success', 'La unidad fué eliminada correctamente!');
+        return back()->with('success', 'La unidad fué eliminada correctamente!'.$unlink);
 
     }
 

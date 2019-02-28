@@ -8,26 +8,26 @@
                     <div class="row">
                     <div class="col-sm-12 col-md-3 col-sm-pb-2">
                         <select class="form-control" v-model="filtro_marca">
-                            <option value="0">--Marca--</option>
+                            <option value="">--Marca--</option>
                             <option v-for="marca in marcas" :value="marca">{{marca}}</option>
                         </select>
                     </div>
                     <div class="col-sm-12 col-md-3 col-sm-pb-2">
                         <select class="form-control" v-model="filtro_color">
-                            <option value="0">--Color--</option>
+                            <option value="">--Color--</option>
                             <option v-for="color in colores" :value="color">{{color}}</option>
                         </select>
                     </div>
                     <div class="col-sm-12 col-md-3 col-sm-pb-2">
                         <select class="form-control" v-model="filtro_anio">
-                            <option value="0">--Año--</option>
+                            <option value="">--Año--</option>
                             <option v-for="anio in anios" :value="anio">{{anio}}</option>
                         </select>
                     </div>
                     <div class="col-sm-12 col-md-3">
                         <div class="flex justify-content-space-around">
-                        <a href="#" class="btn btn-default" @click.prevent="limpiarFiltro()"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-primary" @click.prevent="filtrar()"><i class="fa fa-filter" aria-hidden="true"></i> Filtrar</a>
+                        <a href="#" class="btn btn-default" @click.prevent="limpiarFiltro()"><i class="fa fa-refresh"></i></a>
+                        <a href="#" class="btn btn-primary a-cargando" @click.prevent="filtrar()"><i class="fa fa-filter"></i> Filtrar</a>
                         </div>
                     </div>
                     </div>
@@ -93,9 +93,9 @@
                 marcas:[],
                 anios:[],
                 usadoSelected : '',
-                filtro_marca:'0',
-                filtro_color:'0',
-                filtro_anio:'0',
+                filtro_marca:'',
+                filtro_color:'',
+                filtro_anio:'',
                 ordenar_por: ''
             }
         },
@@ -145,15 +145,21 @@
                             filtro_color:this.filtro_color,
                             filtro_anio:this.filtro_anio,
                         })
-                        .then(res => this.unidades = res.data);
+                        .then( function(res){
+                            self.unidades = res.data;
+                            $('.a-cargando').removeClass("disabled");
+                            $('.a-cargando').text("Filtrar");
+                            $('.a-cargando').prepend($("<i class='fa fa-filter'></i>"));
+                        });
                 }
 
             },
             limpiarFiltro(){
                 this.unidades = this.data.unidades;
-                this.filtro_anio = 0;
-                this.filtro_color = 0;
-                this.filtro_marca = 0;
+                this.filtro_anio = '';
+                this.filtro_color = '';
+                this.filtro_marca = '';
+                this.ordenar_por = '';
             },
             ordernarPor(){
                 switch(this.ordenar_por) {

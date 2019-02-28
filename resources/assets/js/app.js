@@ -16,10 +16,9 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('navbar-desk', require('./components/frontend/navbar_desk.vue'));
 Vue.component('detalle-modelo', require('./components/frontend/detalle_modelo.vue'));
-Vue.component('index-usados', require('./components/frontend/usados_index.vue'));
-Vue.component('show-usado', require('./components/frontend/usados_show.vue'));
+Vue.component('index-usados', require('./components/frontend/usados/index.vue'));
+Vue.component('show-usado', require('./components/frontend/usados/show.vue'));
 
 Vue.component('producto', require('./components/producto.vue'));
 

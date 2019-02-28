@@ -17,7 +17,7 @@
 				<div class="col-md-2">
 					<div class="form-group requerido">
 						<label class="control-label mb-1">Año</label>
-						<input name="anio" type="text" class="form-control" value="{{ $usado->anio }}">
+						<input name="anio" type="number" size="4" maxlength="4" class="form-control" value="{{ $usado->anio }}">
 					</div>
 				</div>
 				<div class="col-md-3">
@@ -49,7 +49,7 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label class="control-label mb-1">Precio</label>
-						<input name="precio" type="text" class="form-control" value="{{ $usado->precio }}" placeholder="ej: 380.000">
+						<input name="precio" type="number" class="form-control" value="{{ $usado->precio }}" placeholder="ej: 380000">
 					</div>
 				</div>
 			</div>

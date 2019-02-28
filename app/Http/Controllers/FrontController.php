@@ -125,10 +125,16 @@ class FrontController extends Controller
 
     public function usadosFilter(Request $request)
     {
-        $cond = ' ';
-        if ($request->filtro_marca != '0') { $cond = $cond." AND usados.marca = '".$request->filtro_marca."'"; }
-        if ($request->filtro_color != '0') { $cond = $cond." AND usados.color = '".$request->filtro_color."'"; }
-        if ($request->filtro_anio != '0') { $cond = $cond." AND usados.anio = '".$request->filtro_anio."'"; }
+        //$cond = ' ';
+        //if ($request->filtro_marca != '0') { $cond = $cond." AND usados.marca = '".$request->filtro_marca."'"; }
+        //if ($request->filtro_color != '0') { $cond = $cond." AND usados.color = '".$request->filtro_color."'"; }
+        //if ($request->filtro_anio != '0') { $cond = $cond." AND usados.anio = '".$request->filtro_anio."'"; }
+        
+        return Usado::marca($request->filtro_marca)
+                    ->color($request->filtro_color)
+                    ->anio($request->filtro_anio)
+                    ->get();
+
         return DB::select('SELECT
                             usados.id,
                             usados.dominio,

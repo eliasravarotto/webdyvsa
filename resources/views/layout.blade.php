@@ -87,9 +87,14 @@
         window.sr = ScrollReveal();
         sr.reveal('.thumbnail-lighten', {duration: 1500});
 
-        $(".btn-submit").click(function(){
-          $('.en_proceso').css("display","flex");
-          console.log("The paragraph was clicked.");
+        $(".a-cargando").click(function(){
+          $(this).addClass('disabled')
+                  .text('Cargando...');
+        });
+
+        $(".a-buscando").click(function(){
+          $(this).addClass('disabled')
+                  .text('Buscando...');
         });
 
         $('#form').submit(function(){
