@@ -21,7 +21,9 @@ footer {
 /*-------------------------------------------
 // FLEXBOX SECTION
 -------------------------------------------*/
-
+.d-block{
+  display: block;
+}
 .flex{
   display: flex;
 }

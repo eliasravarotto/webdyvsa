@@ -68,6 +68,10 @@
                     </div>
                 </div>
                 <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
+                <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                    <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                    CONSULTAR
+                </a>
               </div>
             </div>
             
