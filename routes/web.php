@@ -64,3 +64,4 @@ Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('te
 Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
 // Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
+Route::get('/dia-de-la-mujer','FrontController@publicidad');

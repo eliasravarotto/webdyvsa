@@ -42,6 +42,12 @@ class FrontController extends Controller
         return view('frontend.about-us');
     }
 
+    public function publicidad()
+    {
+        return view('frontend.promo');
+    }
+    
+
     public function contacto()
     {
         return view('frontend.contacto.index');
