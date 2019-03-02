@@ -2,16 +2,14 @@
 
 @section('content')
 	<article>
-		<section>
-			<div>
-				<img src="/imagenes/tpa/slide1.png" class="img-responsive" alt="Cinque Terre">
-			</div>
+		<section class="visible-lg visible-md">
+			<img src="/imagenes/tpa/slide1.png" class="img-responsive" alt="Cinque Terre">
 		</section>
 
 		<section>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+					<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
 						<div class="page-header">
 						  <h2 style="font-weight: bold;">ACCEDÉ A TU TOYOTA DE LA FORMA MÁS CONVENIENTE <br><small style="font-weight: bold;">¡TENEMOS UN PLAN PARA VOS!</small></h2>
 						</div>
@@ -21,7 +19,17 @@
 		</section>
 
 		<section>
-			<div class="container">
+			<div class="container my-3 visible-md visible-lg">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<img src="/imagenes/tpa/nuevo_tpa.png" class="img-responsive">
+					</div>		
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="container" id="planes-tpa">
 				<div class="row">
 					<div class="col-md-6">
 				        <div class="tarjeta">
@@ -131,10 +139,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 15.473,90</td>
-					        <td class="text-center" style="font-weight: bold;">$ 16.660,35</td>
-					        <td class="text-center" style="font-weight: bold;">$ 15.808,04</td>
-					        <td class="text-center" style="font-weight: bold;">$ 18.136,92</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.605,30</td>
+					        <td class="text-center" style="font-weight: bold;">$ 16.794,56</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.929,70</td>
+					        <td class="text-center" style="font-weight: bold;">$ 18.290,93</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -144,7 +152,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>01 de Febrero 2019</p>
+									<p>Vigencia 01 de Marzo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -192,10 +200,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 10.686,29</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.435,00</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.148,40</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.020,39</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.765,85</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.517,05</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.220,87</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.102,44</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -205,7 +213,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Febrero 2019</p>
+									<p>Vigencia 01 de Marzo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -252,10 +260,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 7.979,33</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.005,53</td>
-					        <td class="text-center" style="font-weight: bold;">$ 8.868,74</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.352,55</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.219,15</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.250,48</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.090,79</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.633,65</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -265,7 +273,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia a partir del 01/02/2019</p>
+									<p>Vigencia 01 de Marzo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -313,10 +321,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 5.779,17</td>
-					        <td class="text-center" style="font-weight: bold;">$ 6.595,06</td>
-					        <td class="text-center" style="font-weight: bold;">$ 6.674,80</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.657,93</td>
+					        <td class="text-center" style="font-weight: bold;">$ 5.959,36</td>
+					        <td class="text-center" style="font-weight: bold;">$ 6.955,13</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.017,86</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.896,71</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -326,7 +334,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Febrero 2019</p>
+									<p>Vigencia 01 de Marzo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
