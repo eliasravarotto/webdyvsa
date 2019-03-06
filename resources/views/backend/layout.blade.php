@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="{{asset('manifest.json')}}">
 
     <link href="{{ asset('css/app_backend.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -143,7 +144,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     
     <script src="{{ asset('js/app_backend.js') }}"></script>
+
     @yield('page-script')
+    
     <script type="text/javascript">
         $(document).ready(function () {
 
