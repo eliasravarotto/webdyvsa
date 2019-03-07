@@ -1,5 +1,21 @@
 @extends('layout')
 
+@section('styles_sheets')
+  <style type="text/css">
+  .experiencia-hibrida .owl-nav{
+    display: flex;
+    justify-content: center;
+  }    
+  .experiencia-hibrida .owl-prev,
+  .experiencia-hibrida .owl-next{
+    font-size: 3rem !important;
+    margin: 10px 30px 0px 30px !important;
+    color: #3097d1 !important;
+  }
+  
+  </style>
+@stop
+
 @section('content')
 
 	<!-- Navbar Desktop -->
@@ -56,12 +72,111 @@
     </a>
   </div>
 
+  <section>
+    <div class="container">
+      <div class="page-header text-center">
+        <h2>Toyota Experiencia Híbrida <br>  <small>Derribando mitos</small></h2>
+      </div>
+      
+      <div class="owl-carousel experiencia-hibrida">
+        {{-- #1 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vUPgPSLEJ30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Los híbridos tienen menos reacción que una babosa'</span>
+          </div>
+        </div>
+
+        {{-- #2 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iby4FQ2lMac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Hay que enchufarlos y no ahorran nada'</span>
+          </div>
+        </div>
+
+        {{-- #3 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4fWTx0RcP10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Entre más sofisticada la tecnología, más fácil de romperse'</span>
+          </div>
+        </div>
+
+        {{-- #4 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/WKphpOopcXw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Los híbridos son carritos de golf'</span>
+          </div>
+        </div>
+        {{-- #5 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QV5LS-Np90A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Manejar un híbrido es más difícil que chuparse el codo'</span>
+          </div>
+        </div>
+        {{-- #6 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UZqDSIcaadg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Con los híbridos nadie te garantiza nada'</span>
+          </div>
+        </div>
+        {{-- #7 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GZ_MxuDo6sU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Para que un híbrido consuma menos, tenés que ser piloto profesional'</span>
+          </div>
+        </div>
+        {{-- #8 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TOQ6IbwtvzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Los híbridos no se bancan que les llenes el baúl'</span>
+          </div>
+        </div>
+        {{-- #9 --}}
+        <div class="thumbnail thumbnail-no-bg">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LPAZngILST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
+            <span>MITO: 'Mantener un híbrido es carísimo'</span>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <a href="/toyota-hibrid-experience" class="btn btn-toyota">VER MÁS</a>
+      </div>
+    
+    </div>
+  </section>
+
   <!-- Section -->
   <div class="container pad-top-bot-25">
-    <div class="tooltip" style="background-color: black">Hover over me
-      <span class="tooltiptext">Tooltip text</span>
+    {{-- <p class="text-center" style="font-size: 25px; color: #626262">MODELOS</p> --}}
+    <div class="page-header text-center">
+      <h2>MODELOS</h2>
     </div>
-    <p class="text-center" style="font-size: 25px; color: #626262">MODELOS</p>
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
         <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
@@ -180,5 +295,34 @@
 @stop
 
 @section('script')
+
+<script type="text/javascript">
+  //Init Owl Caroucel 
+      $(".owl-carousel").owlCarousel({
+        loop: false,
+        margin:0,
+        nav: true,
+        stagePadding:10,
+        autoWidth: false,
+        navText:['<i class="fa fa-chevron-left" title="Anterior"></i>', '<i class="fa fa-chevron-right"></i>'],
+        responsive:{
+          0: {
+            items: 1
+          },
+          800: {
+            items: 2,
+            margin: 20,
+          },
+          500: {
+            items: 2,
+            margin: 20,
+          },
+          1000: {
+            items: 4,
+            margin: 20,
+          }
+        }
+      });
+</script>
 
 @stop

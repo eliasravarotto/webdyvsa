@@ -5,7 +5,7 @@
 <section>
 	<div class="visible-xs visible-sm" 
 		 style="background: url(/imagenes/home/thexp3.jpg) 	no-repeat 30%;
-    	 	height: 50vh;
+    	 	height: 40vh;
     		background-size: cover;
     		margin-bottom: -55px;">
 		<div class="texto-encabezado" style="height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
@@ -123,6 +123,19 @@
 						<span>MITO: 'Mantener un híbrido es carísimo'</span>
 					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="row" style="-webkit-box-shadow: 0px 0px 19px -5px rgba(0,0,0,0.75);
+								-moz-box-shadow: 0px 0px 19px -5px rgba(0,0,0,0.75);
+								box-shadow: 0px 0px 19px -5px rgba(0,0,0,0.75);
+								margin: 0px">
+			<div class="col-sm-12 col-md-6 flex flex-d-col justify-content-center align-items-center" style="min-height: 192px;">
+				<h2>¿Querés probarlo?</h2>
+                <a href="/test-drive/create" class="btn btn-toyota btn-lg mt-3" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
+			</div>
+			<div class="col-sm-12 col-md-6 text-center">
+				<img class="img-resposive" src="/imagenes/modelos/prius/colores/blanco_perla.jpg">
 			</div>
 		</div>
 	</div>

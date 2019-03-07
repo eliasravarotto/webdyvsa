@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
     <meta name="keywords" content="Derka y Vargas, Toyota, Chaco, Hilux, Corolla, Etios, Yaris, SW4, Camry, Prius, RAV4, Land Cruiser, Prado">
+    
     <link rel="shortcut icon" href="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">
-        
-    @yield('mark-up-facebook')
+    <link rel="manifest" href="{{asset('manifest.json')}}">
     
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+
+    <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet"> --}}
+    
+    @yield('mark-up-facebook')
 
     @yield('styles_sheets')
 
@@ -37,9 +42,15 @@
   <!---------------------------------------------
   //Script Section 
   ------------------------------------------- -->
+  <!-- Facebook -->
   <div id="fb-root"></div>
+  <!-- Main -->
   <script src="{{ asset('js/app.js') }}"></script>
+  <!-- Owl Carucel -->
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <!-- Scroll Reveal -->
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <!-- Google Recaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <!-- Google Analytics -->
   @if (env('IS_PROD'))
@@ -49,13 +60,13 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-132697927-2');
-    </script> 
+    </script>
   @endif
 
-  @yield('script')
-
+  <!-- Script -->
   <script type="text/javascript">
-    (function($) {
+    $(document).ready(function(){
+
         $('[data-toggle="tooltip"]').tooltip();   
         
         var $animation_elements = $('.et-waypoint'),
@@ -103,8 +114,11 @@
             .attr('disabled', 'disabled');
           return true;
         });
-    })(jQuery);
+      
+    });
   </script>
+
+  @yield('script')
 
 </body>
 </html>
