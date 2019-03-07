@@ -18,15 +18,15 @@
 			</div>
 		</section>
 
-		<section>
-			<div class="container my-3 visible-md visible-lg">
+		{{-- <section>
+			<div class="container my-3 visible-xs visible-sm">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
 						<img src="/imagenes/tpa/nuevo_tpa.png" class="img-responsive">
 					</div>		
 				</div>
 			</div>
-		</section>
+		</section> --}}
 
 		<section>
 			<div class="container" id="planes-tpa">
