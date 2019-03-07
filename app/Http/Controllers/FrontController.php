@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Consulta;
 use App\ImagenGaleriaUsado;
 use App\Modelo;
+use App\PushSubscriptions;
 use App\Repositories\ModeloRepository;
 use App\TipoServicio;
 use App\Usado;
@@ -63,6 +64,21 @@ class FrontController extends Controller
         return $slides_img;
     }
 
+    public function thexpe()
+    {
+        return view('frontend.thexp');
+    }
+    
+    public function subscribeClient(Request $request, $token)
+    {
+        $subs = new PushSubscriptions;
+
+        $subs->token = $token;
+
+        $subs->save();
+
+        return;
+    }
 
 
     //------------MODELOS------------------//
