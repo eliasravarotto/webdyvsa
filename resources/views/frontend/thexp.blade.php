@@ -135,7 +135,7 @@
                 <a href="/test-drive/create" class="btn btn-toyota btn-lg mt-3" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
 			</div>
 			<div class="col-sm-12 col-md-6 text-center">
-				<img class="img-resposive" src="/imagenes/modelos/prius/colores/blanco_perla.jpg">
+				<img class="img-responsive" src="/imagenes/modelos/prius/colores/blanco_perla.jpg">
 			</div>
 		</div>
 	</div>
