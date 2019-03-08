@@ -3,7 +3,7 @@
 @section('content')
 	<article>
 		<section class="visible-lg visible-md">
-			<img src="/imagenes/tpa/slide1.png" class="img-responsive" alt="Cinque Terre">
+			<img src="/imagenes/tpa/slide_nuevo.png" class="img-responsive" alt="Cinque Terre">
 		</section>
 
 		<section>
