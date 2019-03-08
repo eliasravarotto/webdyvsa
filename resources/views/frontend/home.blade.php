@@ -36,6 +36,7 @@
       <li data-target="#myCarousel" data-slide-to="2"></li>
       <li data-target="#myCarousel" data-slide-to="4"></li>
       <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -56,8 +57,12 @@
         <img src="/imagenes/home/portada_uva.png" alt="">
       </div>
 
-      <div class="item active">
+      <div class="item">
         <img src="/imagenes/home/slide5.png" alt="">
+      </div>
+
+      <div class="item active">
+        <img src="/imagenes/home/slide6.png" alt="">
       </div>
     </div>
 
