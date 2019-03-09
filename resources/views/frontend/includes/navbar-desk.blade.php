@@ -11,7 +11,7 @@
                   <ul class="dropdown-menu dropdown-hover">
                   	@foreach(\App\Helpers\Helper::getModelos() as $modelo)
                     <li>
-                    	<a class="text-uppercase" href="/modelos/{{$modelo->nombre}}">{{ $modelo->nombre }}</a>
+                    	<a class="text-uppercase" href="/modelos/{{$modelo->nombre}}">{{ $modelo->nombre }} @if($modelo->id == 35) <span class="label label-primary">HÍBRIDO</span>  @endif </a>
                     </li>
                     @endforeach
                   </ul>
