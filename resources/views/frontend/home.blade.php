@@ -12,6 +12,13 @@
     margin: 10px 30px 0px 30px !important;
     color: #3097d1 !important;
   }
+
+  .titleContainer {
+        background-color: #0E436E;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
   
   </style>
 @stop
@@ -82,8 +89,19 @@
       <div class="page-header text-center">
         <h2>Toyota Experiencia Híbrida <br>  <small>Derribando mitos</small></h2>
       </div>
-      
-      <div class="owl-carousel experiencia-hibrida">
+      <a href="/tecnologia-hibrida">
+        <div 
+           style="background: url(/imagenes/tecnohibrida.jpg)   no-repeat 30%;
+              height: 40vh;
+              background-size: cover;
+              ">
+        </div>
+        <div class="titleContainer">
+          <h4 class="containerCenter"> ¿QUÉ ES LA TECNOLOGÍA HÍBRIDA?</h4>
+        </div>
+      </a>
+
+      <div class="owl-carousel experiencia-hibrida mt-3">
         {{-- #1 --}}
         <div class="thumbnail thumbnail-no-bg">
           <div class="embed-responsive embed-responsive-16by9">

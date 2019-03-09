@@ -68,6 +68,7 @@ Route::post('/contacto','MensajeEmailController@store');
 // Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
 Route::get('/dia-de-la-mujer','FrontController@publicidad');
 Route::get('/toyota-hibrid-experience','FrontController@thexpe');
+Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 
 
@@ -80,8 +81,8 @@ Route::get('/push', function(){
 	$data = array(
 				   	"data" => 
 					    	["notification" =>
-					    		["title" => "FCM Message",
-					    		 "body" => "This is an FCM Message",
+					    		["title" => "NUEVA UNIDAD",
+					    		 "body" => "Hay nuevas unidades usadas.",
 					    		 "icon" => "https://www.derkayvargas.com/imagenes/logo-toyota.png",
 					    		]
 					    	],

@@ -68,9 +68,23 @@ class FrontController extends Controller
     {
         return view('frontend.thexp');
     }
+    public function tecnoHibrid()
+    {
+        return view('frontend.tecnohibrida');
+    }
+
+    public function checkIfTokenExist(Request $request, $token)
+    {
+        return;
+    }
     
     public function subscribeClient(Request $request, $token)
     {
+
+        if (PushSubscriptions::where('token', '=', $token)->count() > 0) {
+            return;
+        } 
+
         $subs = new PushSubscriptions;
 
         $subs->token = $token;
@@ -78,6 +92,7 @@ class FrontController extends Controller
         $subs->save();
 
         return;
+
     }
 
 
