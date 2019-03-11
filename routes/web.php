@@ -53,7 +53,7 @@ Route::group(['middleware' => 'auth'], function(){
 							    	["notification" =>
 							    		["title" => "NUEVA UNIDAD",
 							    		 "body" => "Hay nuevas unidades usadas.",
-							    		 "icon" => "https://www.derkayvargas.com/imagenes/logo-toyota.png",
+							    		 "icon" => "https://www.derkayvargas.com/imagenes/logo_dyv.png",
 							    		 "click_action" => "https://www.derkayvargas.com/usados"
 							    		]
 							    	],
