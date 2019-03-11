@@ -92,7 +92,17 @@ class FrontController extends Controller
         $subs->save();
 
         return;
+    }
 
+    public function unsubscribeClient(Request $request, $token)
+    {
+        $subs = PushSubscriptions::where('token', '=', $token)->exists();
+
+        if ($subs) {
+            return PushSubscriptions::where('token', '=', $token)->delete();
+        }
+
+        return 'no exist';
     }
 
 

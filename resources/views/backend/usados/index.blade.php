@@ -8,6 +8,7 @@
     <div class="card-body">
         <div class="row">
           <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
+            <a href="/push" class="btn btn-info mr-2"><i class="fa fa-bell-o" aria-hidden="true"></i> Notificar</a>
             <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
           </div>
         </div>

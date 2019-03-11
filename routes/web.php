@@ -20,9 +20,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
 
-
 	Route::get('/admin', 'BackendController@inicio');
-
 
 	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 	Route::resource('admin/modelos','ModelosController');
@@ -45,6 +43,40 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin/servicios','TipoServicioController');
 	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
+
+	Route::get('/push', function(){
+
+		$tokens = PushSubscriptions::all()->pluck('token')->toArray();;
+
+			$data = array(
+						   	"data" => 
+							    	["notification" =>
+							    		["title" => "NUEVA UNIDAD",
+							    		 "body" => "Hay nuevas unidades usadas.",
+							    		 "icon" => "https://www.derkayvargas.com/imagenes/logo-toyota.png",
+							    		 "click_action" => "https://www.derkayvargas.com/usados"
+							    		]
+							    	],
+			  				"registration_ids" => $tokens
+			  			);
+			  
+			$data_string = json_encode($data); 
+
+		   $ch = curl_init();
+		   curl_setopt($ch, CURLOPT_URL, "https://fcm.googleapis.com/fcm/send");
+		   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		                                            "content-type: application/json",
+		                                            "Authorization: key=AAAApfZBaXY:APA91bEYw2wELGsLG2WsxFmrEj-xmPvKdpPqv6y8OeTa7mDA3HMSkKZhcJ5tE3uDXSInXReVy-cJvC4f20_7ySbfqZhXCSeLrf5JEccLdQjd3mNkx8mduKjh5Gdg07SZbF4AIGsZ1Db-",
+		                                            ));
+		   curl_setopt($ch, CURLOPT_POST, TRUE);
+		   curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string); 
+		   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		   curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+		   $result = curl_exec($ch);
+		   curl_close($ch);
+
+		   return back()->with('success', 'Notificación enviada! '.$result);
+	});
 
 });
 
@@ -70,39 +102,4 @@ Route::get('/dia-de-la-mujer','FrontController@publicidad');
 Route::get('/toyota-hibrid-experience','FrontController@thexpe');
 Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
-
-
-
-
-Route::get('/push', function(){
-
-	$tokens = PushSubscriptions::all()->pluck('token')->toArray();;
-
-	$data = array(
-				   	"data" => 
-					    	["notification" =>
-					    		["title" => "NUEVA UNIDAD",
-					    		 "body" => "Hay nuevas unidades usadas.",
-					    		 "icon" => "https://www.derkayvargas.com/imagenes/logo-toyota.png",
-					    		]
-					    	],
-	  				"registration_ids" => $tokens
-	  			);
-	  
-	$data_string = json_encode($data); 
-
-   $ch = curl_init();
-   curl_setopt($ch, CURLOPT_URL, "https://fcm.googleapis.com/fcm/send");
-   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                                            "content-type: application/json",
-                                            "Authorization: key=AAAApfZBaXY:APA91bEYw2wELGsLG2WsxFmrEj-xmPvKdpPqv6y8OeTa7mDA3HMSkKZhcJ5tE3uDXSInXReVy-cJvC4f20_7ySbfqZhXCSeLrf5JEccLdQjd3mNkx8mduKjh5Gdg07SZbF4AIGsZ1Db-",
-                                            ));
-   curl_setopt($ch, CURLOPT_POST, TRUE);
-   curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string); 
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-   curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-   $result = curl_exec($ch);
-   curl_close($ch); 
-   return $result;
-
-});
+Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');

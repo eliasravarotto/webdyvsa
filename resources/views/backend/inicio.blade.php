@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-{{-- <div class="row">
+<div class="row">
 	<div class="col-sm-12 col-md-4 my-1">
 		<div class="card tarjeta-dash">
   			<div class="card-body">
@@ -80,54 +80,13 @@
   			</div>
 		</div>
 	</div>
-</div> --}}
-
-  <div id="token"></div>
-    <div id="msg"></div>
-    <div id="notis"></div>
-    <div id="err"></div>
-
+</div>
 @stop
 
 @section('page-script')
-<!-- Google FCM -->
+    <!-- Google FCM -->
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
-    <script>
-      MsgElem = document.getElementById("msg")
-      TokenElem = document.getElementById("token")
-      NotisElem = document.getElementById("notis")
-      ErrElem = document.getElementById("err")
-      // Initialize Firebase
-      // TODO: Replace with your project's customized code snippet
-      var config = {
-        apiKey: "AIzaSyChcPHdTMHnIsraLntqj0j1S7OSdVzM1vQ",
-        projectId: "web---derka-y-va-1538676350230",
-        messagingSenderId: "712801085814",
-      };
-      firebase.initializeApp(config);
-
-      const messaging = firebase.messaging();
-        messaging
-            .requestPermission()
-            .then(function () {
-                MsgElem.innerHTML = "Notification permission granted." 
-                console.log("Notification permission granted.");
-
-                // get the token in the form of promise
-                return messaging.getToken()
-            })
-            .then(function(token) {
-                TokenElem.innerHTML = "token is : " + token
-            })
-            .catch(function (err) {
-                ErrElem.innerHTML =  ErrElem.innerHTML + "; " + err
-                console.log("Unable to get permission to notify.", err);
-            });
-
-        messaging.onMessage(function(payload) {
-            console.log("Message received. ", payload);
-            NotisElem.innerHTML = NotisElem.innerHTML + JSON.stringify(payload) 
-        });
-    </script>> 
+    <script src="{{ asset('js/sw-push-msg.js') }}"></script>
+    <!-- end -->
 @stop

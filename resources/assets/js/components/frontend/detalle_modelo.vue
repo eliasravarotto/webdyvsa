@@ -26,7 +26,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div v-for="(img, index) in slider_ppal_images" v-bind:class="[index == 0 ? 'item active' : 'item']">
-                <img v-bind:src="img.url" alt="New york" style="width:100%;">
+                <img v-bind:src="img.url" style="width:100%">
             </div>
         </div>
         <!-- Left and right controls -->

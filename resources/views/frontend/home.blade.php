@@ -312,13 +312,23 @@
        
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p class="text-primary" style="font-size: 17px; font-weight: bold;">Suscríbete para recibir las últimas novedades.</p>
+        <button id="push-button" class="btn btn-default"><img width="35" src="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">SUSCRIBIRSE</button>
+      </div>
+    </div>
     </div>
   </section>
  
 @stop
 
 @section('script')
-
+<!-- Google FCM -->
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
+<script src="{{ asset('js/sw-push-msg.js') }}"></script>
+<!-- end -->
 <script type="text/javascript">
   //Init Owl Caroucel 
       $(".owl-carousel").owlCarousel({
