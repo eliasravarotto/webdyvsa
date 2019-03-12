@@ -5,8 +5,10 @@
 	<article>
 		<section>
 			<div style="width: 100%">
-				<img src="/imagenes/home/slide6.png" class="img-responsive visible-md visible-lg">
-				<img src="/imagenes/tcf/hilux-uva-mobile.jpg" class="img-responsive visible-xs visible-sm w-100">
+				<a href="">
+					<img src="/imagenes/home/slide6.png" class="img-responsive visible-md visible-lg">
+					<img src="/imagenes/TCF/hilux-uva-mobile.jpg" class="img-responsive visible-xs visible-sm w-100">
+				</a>
 			</div>
 		</section>
 		<section>
