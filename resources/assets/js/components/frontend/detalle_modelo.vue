@@ -123,15 +123,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                 </div>
             </div>
             <section style="width: 100%" v-if="tieneTestDrive">
-                <div class="row row-well" style=" display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
-                    <div class="" style="width: 50%; display: flex; justify-content: center; padding-left: 50px;">
-                        <h2>
-                            <span>
-                                ¿Querés probarlo?
-                            </span>
-                        </h2>
+                <div class="row row-well flex justify-content-center align-items-center" style="flex-wrap: wrap;">                    <div class="flex pr-2">
+                        <h2>¿Querés probarlo?</h2>
                     </div>
-                    <div style="width: 50%;display: flex; justify-content: center; padding-right: 50px;">
+                    <div class="flex pl-2">
                         <a href="/test-drive/create" class="btn btn-toyota btn-lg" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
                     </div>
                 </div>
