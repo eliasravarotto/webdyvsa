@@ -95,7 +95,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
-		<section class="pad-top-50 pad-bot-50" style="height: auto;">
+		<section class="pad-top-50" style="height: auto;">
 			<div class="container">
 				<h2 class="text-center bold">Servicio al Cliente</h2>
 				<h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3>
@@ -118,21 +118,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				<div class="features row">
 					<div class="col-md-4 col-sm-6 col-xs-6">
 						<h3 class="text-center bold"><i class="fa fa-coffee" aria-hidden="true"></i> Living de Espera</h3>
-						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Toyota respalda todos sus vehículos con garantía de 3 años o 100.000 km (lo que ocurra primero) y es transferible a nuevos propietarios. Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquier de nuestras sucursales en Chaco donde gustosamente procesarán su solicitud.</p>
-						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Comodidad total durante la espera.</p>
+						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Toyota respalda todos sus vehículos con garantía de 3 años o 100.000 km (lo que ocurra primero) y es transferible a nuevos propietarios. Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquier de nuestras sucursales en Chaco donde gustosamente procesarán su solicitud.</p> --}}
+						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Comodidad total durante la espera.</p> --}}
 					</div>	
 					<div class="col-md-4 col-sm-6 col-xs-6">
 						<h3 class="text-center bold"><i class="material-icons">local_car_wash</i> Lavado Incluido</h3>
-						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Lavado incluido en el mantenimiento..</p>
+						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Lavado incluido en el mantenimiento..</p> --}}
 					</div>	
 					<div class="col-md-4 col-sm-12">
 						<h3 class="text-center bold"><i class="fa fa-wrench" aria-hidden="true"></i> Herramientas Especiales</h3>
-						<p style="font-size: 18px; text-align: justify; line-height: 1.7">
+						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">
 							Bahía de trabajo especialmente acondicionada con herramental especial.
-						</p>
+						</p> --}}
 					</div>	
 				</div>
-				<div class="well" style="padding: 15px 35px 15px 35px; margin-top: 25px;">
+			</div>
+		</section>
+
+		<section>
+			<div class="container mt-3">
+				<div class="well" style="padding: 15px 35px 15px 35px;">
 					<div class="row">
 					<div class="col-md-7" style="padding: 0px;">
 						<p style="font-size: 20px; font-weight: bold;">La calidad de siempre, más coveniente que nunca.</p>

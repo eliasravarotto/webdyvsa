@@ -61,14 +61,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>Versiones</th>
+                            <th style="font-size: 15px">VERSIONES</th>
                             <th></th>
                           </tr>
                         </thead>
                         <tbody>                         
                           <tr v-for="version in versiones"> 
-                            <td style="width: 75%;">{{ version.nombre }}</td>
-                            <td>{{ version.precio }}</td>
+                            <td style="font-size: 15px; width: 75%;">{{ version.nombre }}</td>
+                            <td style="font-size: 15px"> {{version.moneda}} $ {{ version.precio }}</td>
                           </tr>
                     </tbody>
                         </table>

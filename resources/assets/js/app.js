@@ -25,3 +25,5 @@ Vue.component('producto', require('./components/producto.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+window.swal = require('sweetalert2');

@@ -1,4 +1,4 @@
-@extends('backend.sufee_admin.index')
+@extends('backend.layout')
 
 @section('content')
 <style type="text/css">
