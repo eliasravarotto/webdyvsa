@@ -26,6 +26,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     padding: 0px;
 }
 
+#garantia p{
+	font-size: 16px;
+}
+
+#garantia ul li{
+	font-size: 16px;
+}
+
 </style>
 
 @section('content')
