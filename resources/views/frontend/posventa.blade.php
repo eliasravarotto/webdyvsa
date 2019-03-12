@@ -19,6 +19,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	padding-bottom: 15px;
 }
 
+.titleContainer {
+    background-color: #0E436E;
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+}
+
 </style>
 
 @section('content')
@@ -141,6 +148,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
+		<section id="garantia">
+			<div class="container">
+				<div class="page-header">
+				  <h1>GARANTÍA</h1>
+				</div>
+				<div class="row flex" style="flex-wrap: wrap;">
+					<div class="col-md-3 col-sm-12 visible-md visible-lg">
+						<img class="img-responsive" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png">
+					</div>
+					<div class="col-md-9 col-sm-12 flex align-items-center">
+						<p>Para asegurar que la experiencia de posesión de sus vehículos sea única, Toyota respalda sus productos con algo más que palabras. Como los primeros en confiar en nuestros productos somos nosotros mismos, le ofrecemos la mejor garantía posible. Por este motivo los vehículos Toyota 0 (cero) kilometro vendidos y entregados a partir del 1 de septiembre de 2018 comienzan a gozar de una garantía que lo ampara por 5 años o 150.000 Km. (lo que ocurra primero). Esto significa un mayor valor para su Toyota y una mayor tranquilidad para usted, siempre.</p>
+					</div>
+				</div>
+				
+				<h3>ADEMÁS</h3>
+				<ul>
+					<li>Todos los vehículos Toyota 0 (cero) kilometro vendidos y entregados antes del 1 de Septiembre de 2018, continúan gozando de la ya conocida Garantía que lo ampara por 3 años o 100.000 Km (lo que ocurra primero) y comienza con la fecha de entrega de su vehículo.</li>
+					<li>La garantía Toyota es transferible a los nuevos propietarios.</li>
+					<li>Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquiera de nuestros concesionarios autorizados Toyota, los cuales gustosamente procesarán su solicitud.</li>
+				</ul>
+
+				<h3>NO COMERCIALIZAMOS GARANTÍA EXTENDIDA:</h3>
+				<p>Atento a las recientes consultas recibidas, nos vemos en la obligación de aclarar que Toyota Argentina S.A., (en adelante Toyota), no vende ni oferta, ya sea en forma directa o a través de la red de concesionarios oficiales, y por tanto no hace publicaciones en la web, ni remite mensajes de texto, ni contacta directamente a los usuarios, servicios de garantía extendida. Por todo ello, hacemos propicia la oportunidad para recordarles que contamos con una red de concesionarios oficiales en todo el país, donde encontraran profesionales capacitados para informar acerca de la Garantía Limitada por Vehículo Nuevo Toyota. Ingresa al buscador de concesionarios y conoce el más cercano a tu domicilio: http://www.toyota.com.ar/find-a-dealer/index.html. Ante cualquier duda sugerimos comunicarse con nuestro Centro de Atención al Cliente al: 0800-888-8696 (Lunes a Viernes de 9:00 a 13:00 hs. y de 14:00 a 17:00 hs.).</p>
+				
+				
+				<div class="text-center visible-xs visible-sm">
+					<img class="img-responsive" style="display: inline-block;" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png">
+				</div>
+			</div>
+		</section>
+
 		<section class="pad-bot-50 pad-top-50">
 			<img src="/imagenes/posventa/mto_exp.png" class="img-responsive">
 		</section>
@@ -181,46 +219,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 @section('script')
 
 <script>
-	{{--var sucursales = {!! \App\Helpers\Helper::getSucursalesPosventa() !!}; --}}
-	// var locations = [
- //      [sucursales[0].nombre, sucursales[0].map_lat, sucursales[0].map_lng, 4],
- //      [sucursales[1].nombre, sucursales[1].map_lat, sucursales[1].map_lng, 3],
- //      [sucursales[2].nombre, sucursales[2].map_lat, sucursales[2].map_lng, 2],
- //      // [sucursales[3].nombre, sucursales[3].map_lat, sucursales[3].map_lng, 1],
-	// ];
-
-
-    // var map = new google.maps.Map(document.getElementById('map'), {
-    //   zoom: 8,
-    //   center: new google.maps.LatLng(-27.041598, -60.149756),
-    //   mapTypeId: google.maps.MapTypeId.ROADMAP
-    // });
-
-    // var infowindow = new google.maps.InfoWindow();
-
-    // var marker, i;
-
-    // for (i = 0; i < sucursales.length; i++) {  
-    //   marker = new google.maps.Marker({
-    //     //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-    //     position: new google.maps.LatLng(sucursales[i].map_lat, sucursales[i].map_lng),
-    //     map: map
-    //   });
-
-    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    //     return function() {
-    //       infowindow.setContent(locations[i][0]);
-    //       infowindow.open(map, marker);
-    //     }
-    //   })(marker, i));
-    // }
-
-    // function goto(e, lat, lng){
-    // 	e.preventDefault();
-    // 	var newPos = new google.maps.LatLng(lat,lng);
-    // 	map.setOptions({center:newPos,zoom:15});
-    // }
-
     $('.iframe_map').hide();
     $('#map_suc_1').show();
 
