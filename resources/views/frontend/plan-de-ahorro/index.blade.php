@@ -1,5 +1,27 @@
 @extends('layout')
 
+@section('styles_sheets')
+<style type="text/css">
+	.preguntas-frecuentes ol li{
+		margin-bottom: 9px;
+	}
+	.preguntas-frecuentes ol{
+		margin-top: 10px;
+	}
+	.preguntas-frecuentes span{
+		font-weight: 400;
+	    line-height: 1;
+	    color: #777;
+	    font-size: 1.9rem;
+	}
+
+	@media only screen and (max-width : 768px) {
+		.preguntas-frecuentes{ padding: 0 40px; }
+	}
+
+</style>
+@stop
+
 @section('content')
 	<article>
 		<section class="visible-lg visible-md">
@@ -351,6 +373,40 @@
 		<br>
 		<section>
 			<div class="container">
+				<div class="page-header">
+				  <h2>¿Qué es un Plan de Ahorro?</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-3 col-xs-12 preguntas-frecuentes">
+				  		<span>Preguntas Frecuentes</span>
+						<ol>
+							<li><a onclick="saltarA(event, 0)" href="#">¿Qué es un Plan de Ahorro?</a></li>
+							<li><a onclick="saltarA(event, 18)" href="#">¿Cuáles son las ventajas?</a></li>
+							<li><a onclick="saltarA(event, 70)" href="#">¿Cuáles son los requisitos?</a></li>
+							<li><a onclick="saltarA(event, 90)" href="#">¿Qué conceptos componen?</a></li>
+							<li><a onclick="saltarA(event, 152)" href="#">¿El valor de la cuota es variable?</a></li>
+							<li><a onclick="saltarA(event, 170)" href="#">¿Cómo se conforma un grupo?</a></li>
+							<li><a onclick="saltarA(event, 196)" href="#">Adjudicación unidades en grupo</a></li>
+							<li><a onclick="saltarA(event, 210)" href="#">¿Qué es una licitación?</a></li>
+							<li><a onclick="saltarA(event, 252)" href="#">¿Qué es un plan 70-30?</a></li>
+							<li><a onclick="saltarA(event, 269)" href="#">¿Qué es un plan 100%?</a></li>
+							<li><a onclick="saltarA(event, 285)" href="#">¿Qué es la integración mínima?</a></li>
+						</ol>
+					</div>
+					<div class="col-md-9 col-sm-9 col-xs-12" id="video-container">
+						<div class="text-center">
+							<video id="video-explicativo" controls style="height: auto;width: 100%">
+							  <source src="/videos/tpa.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<br>
+		<section>
+			<div class="container">
 				<div class="well">
 					<div class="row">
 						<div class="col-md-4">
@@ -599,38 +655,16 @@
 	}(document, 'script', 'facebook-jssdk'));
 	//---------------End-----------------------------------------------------------------//
 
-	//---------------Google Maps------------------------------------------------------//
-	{{--var sucursales = {!! \App\Helpers\Helper::getSucursalesPlanDeAhorro() !!};--}}
-	// var map = new google.maps.Map(document.getElementById('map'), {
- //      zoom: 8,
- //      center: new google.maps.LatLng(-27.041598, -60.149756),
- //      mapTypeId: google.maps.MapTypeId.ROADMAP
- //    });
-
- //    var infowindow = new google.maps.InfoWindow();
-
- //    var marker, i;
-
- //    for (i = 0; i < sucursales.length; i++) {  
- //      marker = new google.maps.Marker({
- //        position: new google.maps.LatLng(sucursales[i].map_lat, sucursales[i].map_lng),
- //        map: map
- //      });
-
- //      google.maps.event.addListener(marker, 'click', (function(marker, i) {
- //        return function() {
- //          infowindow.setContent(locations[i][0]);
- //          infowindow.open(map, marker);
- //        }
- //      })(marker, i));
- //    }
-
- //    function goto(e, lat, lng){
- //    	e.preventDefault();
- //    	var newPos = new google.maps.LatLng(lat,lng);
- //    	map.setOptions({center:newPos,zoom:15});
- //    }
-    //------End Google Maps.---------------------------------------------------//
+	
+    function saltarA(e, time){
+    	e.preventDefault();
+    	window.location.hash = '#video-container';
+    	var vid = document.getElementById("video-explicativo");
+     	vid.play();
+     	vid.pause();
+     	vid.currentTime = time;
+     	vid.play();
+    }
 
     function masDetalles(e){
 		e.preventDefault();
