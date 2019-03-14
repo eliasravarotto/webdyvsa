@@ -173,7 +173,7 @@
   			<div class="container">
 	  			<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center;align-items: center;">
 					<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-	  					<img class="img-responsive" src="http://homu.com.ar/wp-content/uploads/2017/05/financial-web-SEP.jpg">
+	  					{{-- <img class="img-responsive" src="http://homu.com.ar/wp-content/uploads/2017/05/financial-web-SEP.jpg"> --}}
 					</div>
 					<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12" id="form-contacto">
 						<h2 class="text-center h1-titulo-form">FORMULARIO DE CONTACTO<br>
