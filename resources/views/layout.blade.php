@@ -116,21 +116,15 @@
         });
 
         // swal.fire({
-        //   title: 'Suscríbete',
+        //   title: 'Suscríbete a Nuestra Web',
         //   text: "Al suscribirte recibiras las últimas novedades.",
-        //   type: 'warning',
+        //   // type: 'warning',
         //   showCancelButton: true,
         //   confirmButtonColor: '#3085d6',
         //   cancelButtonText: 'Más tarde',
         //   confirmButtonText: 'ACEPTAR'
         // }).then((result) => {
-        //   if (result.value) {
-        //     Swal.fire(
-        //       'Deleted!',
-        //       'Your file has been deleted.',
-        //       'success'
-        //     )
-        //   }
+        //   if (true) {}
         // })
       
     });

@@ -66,7 +66,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			<div class="container arrow_box">
 				<div class="page-header">
 		  			<h1>PRECIOS VIGENTES </h1>
-					<p><b>Desde:</b> 01-01-2019 - <b>Hasta:</b> 31-01-2019</p>
+					<p><b>Desde:</b> 01-01-2019 - <b>Hasta:</b> 31-03-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped">

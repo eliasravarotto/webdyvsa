@@ -24,10 +24,6 @@
 	                        </button>
 	                    </div>
 					</div>
-					<div class="col-sm-12 text-center">
-			        <p class="text-primary" style="font-size: 17px; font-weight: bold;">Suscríbete para recibir las últimas actualizaciones.</p>
-			        <button id="push-button" class="btn btn-default"><img width="35" src="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}"> SUSCRIBIRSE</button>
-			      </div>
 			    </div>
 					<div class="row">
 						<div class="col-sm-12 col-md-6">
