@@ -298,21 +298,42 @@
     <div class="container">
       <img src="{{asset('imagenes/logos/social_media.jpg')}}" style="width: 100%">
       <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
-        <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
+        <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
+          <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 text-center" style="margin: 20px 0;">
+          {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
+          @php $count = 0 @endphp
+          @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
+            @if ($count == 9) @break @endif
+            @php $count++ @endphp
+            <a class="group" rel="group1" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}"></a>
+          @endforeach
+         
+        </div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 text-center" style="margin: 20px 0;">
-        {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
-        @php $count = 0 @endphp
-        @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
-          @if ($count == 9) @break @endif
-          @php $count++ @endphp
-          <a class="group" rel="group1" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}"></a>
-        @endforeach
-       
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="page-header text-center"><h2 style="color: #dfa599">Felicidades a las ganadoras del Sorteo Dia de la Mujer</h2></div>
+        </div>
       </div>
-    </div>
-
+      <div class="row">
+        <div class="col-sm-12 col-md-offset-2 col-md-4 text-center">
+          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades Barboza María GANADORA del sorteo día de la mujer sucursal &quot;Villa Ángela&quot; ☺️</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3">Sábado, 16 de marzo de 2019</a></blockquote></div>
+        </div>
+        <div class="col-sm-12 col-md-4 text-center">
+          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2412348415443948/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412348415443948/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades Monzón Macarena GANADORA del sorteo día de la mujer Casa Central  &quot;P. R. Sáenz Peña&quot; 😀</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412348415443948/?type=3">Viernes, 15 de marzo de 2019</a></blockquote></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-12 col-md-offset-2 col-md-4 text-center">
+          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2412342588777864/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412342588777864/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades Cimbaro Jimena GANADORA del sorteo día de la mujer sucursal &quot;Resistencia&quot; 👏</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412342588777864/?type=3">Viernes, 15 de marzo de 2019</a></blockquote></div>
+        </div>
+        <div class="col-sm-12 col-md-4 text-center">
+          {{-- <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3&amp;theater" data-width="500" data-show-text="false"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades Barboza María GANADORA del sorteo día de la mujer sucursal &quot;Villa Ángela&quot; ☺️</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3">Sábado, 16 de marzo de 2019</a></blockquote></div> --}}
+        </div>
+      </div>
     </div>
   </section>
  
