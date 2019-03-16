@@ -71,7 +71,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                             <td style="font-size: 15px"> {{version.moneda}} $ {{ version.precio }}</td>
                           </tr>
                     </tbody>
-                        </table>
+                    </table>
+                    <div class="alert alert-info" role="alert">El precio NO icluye Flete ni gastos de Inscripción.</div>
                 </div>
             </div>
         </section>
@@ -160,7 +161,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                                     </a>                                
                                 </div>
                             </div>
-
 
                             <!-- The Modal ------------------------------->
                             <div id="moda_show_imagen" class="modal-img">
