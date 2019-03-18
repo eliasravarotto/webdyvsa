@@ -56,8 +56,9 @@
         <img src="/imagenes/home/slide2.png" alt="">
       </div>
 
-      <div class="item">
-        <img src="/imagenes/home/slide3.png" alt="">
+      <div class="item active">
+        <img src="/imagenes/home/slide3desk.png" alt="" class="visible-lg visible-md">
+        <img src="/imagenes/home/slide3mobile.png" alt="" class="visible-xs visible-sm">
       </div>
 
       <div class="item">
@@ -68,7 +69,7 @@
         <img src="/imagenes/home/slide5.png" alt="">
       </div>
 
-      <div class="item active">
+      <div class="item">
         <img src="/imagenes/home/slide6.png" alt="">
       </div>
     </div>
