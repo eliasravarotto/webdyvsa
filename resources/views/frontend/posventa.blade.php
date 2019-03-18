@@ -34,6 +34,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	font-size: 16px;
 }
 
+.arrow_box{
+	border-bottom: 4px solid #51a8b1 !important;
+}
+.arrow_box:before {
+	border-color: rgba(194,225,245,0) !important;
+    border-top-color: #51a8b1 !important;
+}
+
 </style>
 
 @section('content')
@@ -63,7 +71,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		</section>
 
 		<section class="pad-top-50">
-			<div class="container arrow_box">
+			<div class="container ">
 				<div class="page-header">
 		  			<h1>PRECIOS VIGENTES </h1>
 					<p><b>Desde:</b> 01-01-2019 - <b>Hasta:</b> 31-03-2019</p>
@@ -92,6 +100,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 						</tbody>
 					</table>
 	  			</div>
+			</div>
+		</section>
+
+		<section class="pad-bot-50 container arrow_box">
+			<div class="row">
+				<div class="col-md-12">
+					<img src="/imagenes/posventa/neumaticos_desk.png" class="img-responsive visible-md visible-lg">
+					<img src="/imagenes/posventa/neumaticos_mobile.png" class="img-responsive visible-xs visible-sm">
+				</div>
 			</div>
 		</section>
 
