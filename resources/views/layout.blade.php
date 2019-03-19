@@ -22,7 +22,6 @@
     @yield('mark-up-facebook')
 
     @yield('styles_sheets')
-
 </head>
 
 <body>
@@ -114,18 +113,6 @@
             .attr('disabled', 'disabled');
           return true;
         });
-
-        // swal.fire({
-        //   title: 'Suscríbete a Nuestra Web',
-        //   text: "Al suscribirte recibiras las últimas novedades.",
-        //   // type: 'warning',
-        //   showCancelButton: true,
-        //   confirmButtonColor: '#3085d6',
-        //   cancelButtonText: 'Más tarde',
-        //   confirmButtonText: 'ACEPTAR'
-        // }).then((result) => {
-        //   if (true) {}
-        // })
       
     });
   </script>

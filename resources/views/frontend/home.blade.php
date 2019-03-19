@@ -19,11 +19,17 @@
         text-align: center;
         padding: 10px;
     }
-  
   </style>
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="INICIO" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+@stop
+
 @section('content')
+<meta property="og:url" content="https://www.derkayvargas.com" />
 
 	<!-- Navbar Desktop -->
 	{{-- <navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.3);', position: ''}"></navbar-desk> --}}
