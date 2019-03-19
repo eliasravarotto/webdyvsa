@@ -12,7 +12,7 @@
 
 @section('mark-up-facebook')
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="INICIO" />
+    <meta property="og:title" content="Usados Destacados" />
     <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 
