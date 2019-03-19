@@ -21,7 +21,7 @@
 </header>
 
 @if (Request::path() == '/')
-<div class="bienvebidos visible-xs visible-sm" style="background: url(/imagenes/dyv_charata.jpg) no-repeat center bottom;
+{{-- <div class="bienvebidos visible-xs visible-sm" style="background: url(/imagenes/home/slide3mobile.png) no-repeat center bottom;
     background-size: cover;
     height: 90vh;">
 
@@ -36,7 +36,7 @@
         </a>
       </div>
   </div>
-</div>
+</div> --}}
 @endif
 
 @if (Request::path() == 'plan-de-ahorro')

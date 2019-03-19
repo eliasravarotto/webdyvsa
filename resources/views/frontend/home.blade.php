@@ -23,25 +23,16 @@
 @stop
 
 @section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="INICIO" />
     <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 
 @section('content')
-<meta property="og:url" content="https://www.derkayvargas.com" />
-
-	<!-- Navbar Desktop -->
-	{{-- <navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.3);', position: ''}"></navbar-desk> --}}
-  <!-- Text Overlay -->
-  {{-- <div class="overlay"><h1>Overlay Text Here!</h1></div> --}}
-
-  <!-- Banner Principal -->
-  {{-- <banner-ppal v-bind:data="{ slides_img: {{collect($slides_img)}} }"></banner-ppal> --}}
-
-  
+  <img src="/imagenes/home/slide3mobile.png" alt="" class="visible-xs visible-sm img-responsive">
   <!-- Carusel Principal -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide visible-lg visible-md" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -64,7 +55,6 @@
 
       <div class="item active">
         <img src="/imagenes/home/slide3desk.png" alt="" class="visible-lg visible-md">
-        <img src="/imagenes/home/slide3mobile.png" alt="" class="visible-xs visible-sm">
       </div>
 
       <div class="item">
