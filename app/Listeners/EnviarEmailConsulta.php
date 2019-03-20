@@ -32,7 +32,7 @@ class EnviarEmailConsulta
 
         Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta, $asunto){
             $message->subject($asunto);
-            $message->to($consulta->enviar_a);
+            $message->to($consulta->enviar_a)->cc('rukyguerra@derkayvargas.com.ar');
         });
     }
 }
