@@ -31,6 +31,7 @@
 
 @section('content')
   <img src="/imagenes/home/slide3mobile.png" alt="" class="visible-xs visible-sm img-responsive">
+  
   <!-- Carusel Principal -->
   <div id="myCarousel" class="carousel slide visible-lg visible-md" data-ride="carousel">
     <!-- Indicators -->
@@ -81,6 +82,7 @@
     </a>
   </div>
 
+  <!-- TOYOTA HIBRID EXPERIENCE -->
   <section>
     <div class="container">
       <div class="page-header text-center">
@@ -191,7 +193,7 @@
     </div>
   </section>
 
-  <!-- Section -->
+  <!-- MODELOS -->
   <div class="container pad-top-bot-25">
     {{-- <p class="text-center" style="font-size: 25px; color: #626262">MODELOS</p> --}}
     <div class="page-header text-center">
@@ -291,6 +293,7 @@
     </div>
   </div>
 
+  <!-- SOCIAL MEDIA -->
   <section id="services" style="border-top: 1px solid #01b2aa;">
     <div class="container">
       <img src="{{asset('imagenes/logos/social_media.jpg')}}" style="width: 100%">
@@ -331,6 +334,19 @@
           <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2413474385331351/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413474385331351/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades a la nueva ganadora Lopez Veronica, sorteo día de la mujer sucursal &quot;Charata&quot; ☺️</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413474385331351/?type=3">Sábado, 16 de marzo de 2019</a></blockquote></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="page-header text-center">
+              <h2>Torneo Federativo de Golf 2019</h2>
+            </div>
+          </div>
+      </div>
+      <img class="img-responsive" src="/imagenes/home/afiche_federativo.png">
     </div>
   </section>
  
