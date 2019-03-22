@@ -19,3 +19,5 @@ window.Vue = require('vue');
 const app = new Vue({
     el: '#app'
 });
+
+window.swal = require('sweetalert2');
