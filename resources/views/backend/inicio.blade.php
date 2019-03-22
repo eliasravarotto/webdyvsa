@@ -81,6 +81,7 @@
 		</div>
 	</div>
 </div>
+<p id="token"></p>
 @stop
 
 @section('page-script')

@@ -51,8 +51,8 @@ Route::group(['middleware' => 'auth'], function(){
 			$data = array(
 						   	"data" => 
 							    	["notification" =>
-							    		["title" => "NUEVA UNIDAD",
-							    		 "body" => "Hay nuevas unidades usadas.",
+							    		["title" => "NOVEDADES DERKA Y VARGAS",
+							    		 "body" => "Ingresó una nueva unidad usada.",
 							    		 "icon" => "https://www.derkayvargas.com/imagenes/logo_dyv.png",
 							    		 "click_action" => "https://www.derkayvargas.com/usados"
 							    		]
