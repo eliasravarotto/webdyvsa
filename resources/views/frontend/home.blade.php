@@ -30,10 +30,9 @@
 @stop
 
 @section('content')
-  <img src="/imagenes/home/slide3mobile.png" alt="" class="visible-xs visible-sm img-responsive">
   
   <!-- Carusel Principal -->
-  <div id="myCarousel" class="carousel slide visible-lg visible-md" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -42,6 +41,7 @@
       <li data-target="#myCarousel" data-slide-to="4"></li>
       <li data-target="#myCarousel" data-slide-to="5"></li>
       <li data-target="#myCarousel" data-slide-to="6"></li>
+      <li data-target="#myCarousel" data-slide-to="7"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -55,7 +55,7 @@
       </div>
 
       <div class="item active">
-        <img src="/imagenes/home/slide3desk.png" alt="" class="visible-lg visible-md">
+        <img src="/imagenes/home/slide.png" alt="">
       </div>
 
       <div class="item">
@@ -68,6 +68,9 @@
 
       <div class="item">
         <img src="/imagenes/home/slide6.png" alt="">
+      </div>
+      <div class="item">
+        <img src="/imagenes/home/hilux_accesorios.png" alt="">
       </div>
     </div>
 
