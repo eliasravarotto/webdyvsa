@@ -349,6 +349,43 @@
       <img class="img-responsive" src="/imagenes/home/afiche_federativo.png">
     </div>
   </section>
+
+  <section>
+    <div class="container" id="la_hora_del_planeta">
+      <div class="row">
+          <div class="col-sm-12">
+            <div class="page-header text-center">
+              <h2>La Hora Del Planeta</h2>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <p style="font-size: 1.7rem">La Hora del Planeta es el evento de concientización ambiental más importante del mundo.
+              La iniciativa surgió en Sídney, Australia, en 2007 y convocó a dos millones de personas.
+              Siete años después, más de 7000 ciudades de 160 países de todos los continentes,
+              incluyendo la Antártida, apagaran sus luces. Más de 1300 monumentos y edificios
+              emblemáticos se oscurecerán, como la Ópera en Sídney, el City Hall en Londres, el Empire
+              State en Nueva York, la Torre Eiffel en París y El Planetario en Buenos Aires.
+              El cambio climático es el problema ambiental más importante al que se enfrenta la
+              humanidad. Se trata de un cambio de clima atribuido, directa o indirectamente, a la actividad
+              humana, que altera la composición de la atmósfera mundial y aumenta la temperatura media
+              de la superficie global por encima de los 2ºC. Esto genera graves consecuencias como
+              pérdida de biodiversidad, derretimiento de glaciares, fenómenos climáticos extremos,
+              acidificación de océanos, cambios en los hábitats, entre otros. Estos impactos repercuten en
+              las comunidades, afectando gravemente a millones de personas, causando miles de
+              muertes y generando pérdidas de mil millones de dólares por año en todo el mundo. El
+              cambio climático ya es un hecho real. El cambio climático ya llegó y podemos verlo y sus
+              impactos son severamente preocupantes y, en muchos casos, irreversibles. </p>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <center>
+              <img class="img-responsive" src="/imagenes/home/planeta.png">
+            </center>
+          </div>
+      </div>
+    </div>
+  </section>
  
 @stop
 
