@@ -396,22 +396,13 @@
       </div>
       <div class="row">
           <div class="col-sm-12 col-md-6">
-            <p style="font-size: 1.7rem">La Hora del Planeta es el evento de concientización ambiental más importante del mundo.
-              La iniciativa surgió en Sídney, Australia, en 2007 y convocó a dos millones de personas.
-              Siete años después, más de 7000 ciudades de 160 países de todos los continentes,
-              incluyendo la Antártida, apagaran sus luces. Más de 1300 monumentos y edificios
-              emblemáticos se oscurecerán, como la Ópera en Sídney, el City Hall en Londres, el Empire
-              State en Nueva York, la Torre Eiffel en París y El Planetario en Buenos Aires.
-              El cambio climático es el problema ambiental más importante al que se enfrenta la
-              humanidad. Se trata de un cambio de clima atribuido, directa o indirectamente, a la actividad
-              humana, que altera la composición de la atmósfera mundial y aumenta la temperatura media
-              de la superficie global por encima de los 2ºC. Esto genera graves consecuencias como
-              pérdida de biodiversidad, derretimiento de glaciares, fenómenos climáticos extremos,
-              acidificación de océanos, cambios en los hábitats, entre otros. Estos impactos repercuten en
-              las comunidades, afectando gravemente a millones de personas, causando miles de
-              muertes y generando pérdidas de mil millones de dólares por año en todo el mundo. El
-              cambio climático ya es un hecho real. El cambio climático ya llegó y podemos verlo y sus
-              impactos son severamente preocupantes y, en muchos casos, irreversibles. </p>
+            <p class="text-justify" style="font-size: 1.7rem">La Hora del Planeta es el evento de concientización ambiental más importante del mundo. El cambio climático es el problema ambiental más trascendental al que se enfrenta la humanidad y ya es un hecho real, podemos verlo y sus impactos son severamente preocupantes y, en muchos casos, irreversibles.
+
+            Por eso millones de personas alrededor del mundo apagarán las luces para celebrar La Hora del Planeta, una iniciativa global de WWF, la Organización Mundial de Conservación, coordinada en nuestro país por la Fundación Vida Silvestre Argentina, realizada para demostrar que el cambio climático nos importa.
+
+            Este sábado 30 de marzo a las 20.30 hs únete a la familia Toyota, apagá la luz y conectate con la naturaleza junto a miles de personas en todo el mundo.
+
+            Invitá a participar a tus familiares y amigo! 😉</p>
           </div>
           <div class="col-sm-12 col-md-6">
             <center>
