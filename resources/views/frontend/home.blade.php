@@ -30,62 +30,94 @@
 @stop
 
 @section('content')
-  
-  <!-- Carusel Principal -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-      <li data-target="#myCarousel" data-slide-to="5"></li>
-      <li data-target="#myCarousel" data-slide-to="6"></li>
-      <li data-target="#myCarousel" data-slide-to="7"></li>
-    </ol>
+  <!---------------------------------------------------------------------
+    SLIDER PRINCIPAL
+  ----------------------------------------------------------------------->
+  <section>
+    <!-- Carusel Principal DESKCTOP-->
+    <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+      </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item">
-        <img src="/imagenes/home/slide1.png" alt="">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item">
+          <img src="/imagenes/home/slide1.png" alt="">
+        </div>
+
+        <div class="item">
+          <img src="/imagenes/home/slide2.png" alt="">
+        </div>
+
+        <div class="item active">
+          <img src="/imagenes/home/slide.png" alt="">
+        </div>
+
+        <div class="item">
+          <img src="/imagenes/home/portada_uva.png" alt="">
+        </div>
+
+        <div class="item">
+          <img src="/imagenes/home/slide5.png" alt="">
+        </div>
+
+        <div class="item">
+          <img src="/imagenes/home/slide6.png" alt="">
+        </div>
+        <div class="item">
+          <img src="/imagenes/home/hilux_accesorios.png" alt="">
+        </div>
       </div>
 
-      <div class="item">
-        <img src="/imagenes/home/slide2.png" alt="">
-      </div>
-
-      <div class="item active">
-        <img src="/imagenes/home/slide.png" alt="">
-      </div>
-
-      <div class="item">
-        <img src="/imagenes/home/portada_uva.png" alt="">
-      </div>
-
-      <div class="item">
-        <img src="/imagenes/home/slide5.png" alt="">
-      </div>
-
-      <div class="item">
-        <img src="/imagenes/home/slide6.png" alt="">
-      </div>
-      <div class="item">
-        <img src="/imagenes/home/hilux_accesorios.png" alt="">
-      </div>
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+    <!-- Carusel Principal MOBILE-->
+    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
+      </ol>
 
-  <!-- TOYOTA HIBRID EXPERIENCE -->
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="/imagenes/home/slide_sm.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="/imagenes/home/hilux_accesorios_sm.jpeg" alt="">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#carousel-mobile" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-mobile" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  
+  <!---------------------------------------------------------------------
+    TOYOTA HIBRID EXPERIENCE
+  ----------------------------------------------------------------------->
   <section>
     <div class="container">
       <div class="page-header text-center">
@@ -317,24 +349,24 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <div class="page-header text-center"><h2 style="color: #dfa599">Felicidades a las ganadoras del Sorteo Dia de la Mujer</h2></div>
+          <div class="page-header text-center"><h2>Felicidades a los ganadores Experiencia Corolla</h2><p><i class="fa fa-calendar-o" aria-hidden="true"></i> 23-03-2019</p></div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12 col-md-offset-2 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades Barboza María GANADORA del sorteo día de la mujer sucursal &quot;Villa Ángela&quot; ☺️</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413438505334939/?type=3">Sábado, 16 de marzo de 2019</a></blockquote></div>
+          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pcb.2429067363772053/2429060497106073/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060497106073/?type=3" class="fb-xfbml-parse-ignore">Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060497106073/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
         </div>
         <div class="col-sm-12 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2412348415443948/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412348415443948/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades Monzón Macarena GANADORA del sorteo día de la mujer Casa Central  &quot;P. R. Sáenz Peña&quot; 😀</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412348415443948/?type=3">Viernes, 15 de marzo de 2019</a></blockquote></div>
+          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pcb.2429067363772053/2429060560439400/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060560439400/?type=3" class="fb-xfbml-parse-ignore">Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060560439400/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-sm-12 col-md-offset-2 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2412342588777864/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412342588777864/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades Cimbaro Jimena GANADORA del sorteo día de la mujer sucursal &quot;Resistencia&quot; 👏</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2412342588777864/?type=3">Viernes, 15 de marzo de 2019</a></blockquote></div>
+          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pb.127409800604499.-2207520000.1553689513./2429329410412515/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429329410412515/?type=3" class="fb-xfbml-parse-ignore"><p>Muchas felicidades  Sandoval Aldo Ramon por participar de la #experienciacorolla en realizar un test drive el sábado 23, y ganar un hermoso premio 👉😉🎊</p>Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429329410412515/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
         </div>
         <div class="col-sm-12 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/a.128065830538896/2413474385331351/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413474385331351/?type=3" class="fb-xfbml-parse-ignore"><p>Felicidades a la nueva ganadora Lopez Veronica, sorteo día de la mujer sucursal &quot;Charata&quot; ☺️</p>Publicado por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2413474385331351/?type=3">Sábado, 16 de marzo de 2019</a></blockquote></div>
+          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pb.127409800604499.-2207520000.1553689513./2429277657084357/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429277657084357/?type=3" class="fb-xfbml-parse-ignore"><p>Muchas felicidades Lirussi German por participar de la #experienciacorolla en realizar un test drive el sábado 23, y ganar un hermoso premio 👉😉🎊</p>Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429277657084357/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
         </div>
       </div>
     </div>

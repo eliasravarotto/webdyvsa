@@ -4,15 +4,75 @@
 @section('content')
 	<article>
 		<section>
-			<div style="width: 100%">
-				<a href="">
-					<img src="/imagenes/home/slide6.png" class="img-responsive visible-md visible-lg">
-					<img src="/imagenes/TCF/hilux-uva-mobile.jpg" class="img-responsive visible-xs visible-sm w-100">
-				</a>
-			</div>
-		</section>
+		    <!-- Carusel Principal DESKCTOP-->
+		    <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
+		      <ol class="carousel-indicators">
+		        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		        <li data-target="#myCarousel" data-slide-to="1"></li>
+		        <li data-target="#myCarousel" data-slide-to="2"></li>
+		        <li data-target="#myCarousel" data-slide-to="3"></li>
+		        <li data-target="#myCarousel" data-slide-to="4"></li>
+		      </ol>
+
+		      <!-- Wrapper for slides -->
+		      <div class="carousel-inner">
+		        <div class="item">
+		          <img src="/imagenes/home/slide1.png" alt="">
+		        </div>
+
+		        <div class="item">
+		          <img src="/imagenes/home/slide.png" alt="">
+		        </div>
+
+		        <div class="item">
+		          <img src="/imagenes/home/slide4.png" alt="">
+		        </div>
+
+		        <div class="item">
+		          <img src="/imagenes/home/slide5.png" alt="">
+		        </div>
+
+		        <div class="item active">
+		          <img src="/imagenes/home/slide6.png" alt="">
+		        </div>
+		      </div>
+
+		      <!-- Left and right controls -->
+		      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		        <span class="glyphicon glyphicon-chevron-left"></span>
+		        <span class="sr-only">Previous</span>
+		      </a>
+		      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		        <span class="glyphicon glyphicon-chevron-right"></span>
+		        <span class="sr-only">Next</span>
+		      </a>
+		    </div>
+
+		    <!-- Carusel Principal MOBILE-->
+		    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm" data-ride="carousel">
+		      <ol class="carousel-indicators">
+		        <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
+		      </ol>
+
+		      <div class="carousel-inner">
+		        <div class="item active">
+		          <img src="/imagenes/home/slide_sm.jpeg" alt="">
+		        </div>
+		      </div>
+
+		      <a class="left carousel-control" href="#carousel-mobile" data-slide="prev">
+		        <span class="glyphicon glyphicon-chevron-left"></span>
+		        <span class="sr-only">Previous</span>
+		      </a>
+		      <a class="right carousel-control" href="#carousel-mobile" data-slide="next">
+		        <span class="glyphicon glyphicon-chevron-right"></span>
+		        <span class="sr-only">Next</span>
+		      </a>
+		    </div>
+	  	</section>
+
 		<section>
-			<div class="container">
+			<div class="container visible-md visible-lg">
 				<div class="page-header" >
 					<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center; align-items: center;">
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -25,6 +85,23 @@
 							<p class="text-justify fs-16">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
 							</p>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container visible-sm visible-xs mb-3">
+				<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center; align-items: center;">
+					<div class="col-sm-12 col-xs-12">
+			  			{{-- <h1>FINANCIACIÓN <small></small></h1> --}}
+			  			<center>
+			  			<img class="img-responsive" src="/imagenes/TCF/Toyota_Compania_Financiera.jpg">
+			  			</center>
+						<p class="text-justify fs-16">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
+						</p>
+					</div>
+					<div class="col-sm-12 col-xs-12" >
+						<center>
+			  			<img class="img-responsive" src="/imagenes/TCF/slide6_sm.jpg">
+			  			</center>
 					</div>
 				</div>
 			</div>
@@ -97,7 +174,7 @@
 		  	</div> 
   		</section>
 
-  				<section class="pad-top-50 pad-bot-50" style="height: auto;">
+		<section class="pad-top-50 pad-bot-50" style="height: auto;">
 	      <div class="container">
 	        {{-- <h2 class="text-center bold">Servicio al Cliente</h2> --}}
 	        {{-- <h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3> --}}
