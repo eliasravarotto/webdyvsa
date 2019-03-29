@@ -52,27 +52,39 @@
     <div class="row">
         <div v-for="unidad in unidades" class="col-sm-12 col-md-4">
             <div class="thumbnail thumbnail-no-bg" style="height:455px">
-              <img v-show="unidad.foto" :src="unidad.foto" alt="">
-              <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
-              <div class="caption caption-default">
-                <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
-                <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
-                    <div>
-                        <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{unidad.anio}}  
-                    </div>
-                    <div>
-                        <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{unidad.km}}
-                    </div>
-                    <div>
-                        <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{unidad.color}}
-                    </div>
+                <div class="pos-rel">
+                    <img v-show="unidad.foto" :src="unidad.foto" alt="">
+                    <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
+
+                    <a href="#" class="block2-overlay trans-0-4">
+                        <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
+                            <!-- Button-->
+                            <a target="_blank" href="#" class="btn btn-rojo-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
+                                DETALLES
+                            </a>
+                        </div>
+                    </a>
                 </div>
-                <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
-                <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
-                    <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
-                    CONSULTAR
-                </a>
-              </div>
+
+                <div class="caption caption-default">
+                    <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
+                    <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
+                        <div>
+                            <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{unidad.anio}}  
+                        </div>
+                        <div>
+                            <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{unidad.km}}
+                        </div>
+                        <div>
+                            <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{unidad.color}}
+                        </div>
+                    </div>
+                    <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
+                    <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                        <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                        CONSULTAR
+                    </a>
+                </div>
             </div>
             
         </div>  
@@ -212,3 +224,58 @@
         }
     }
 </script>
+
+<style type="text/css">
+    .block2-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+    }
+
+    .trans-0-4 {
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        -moz-transition: all .4s;
+        transition: all .4s;
+    }
+
+    .block2-overlay:hover {
+        opacity: 1;
+    }
+    .block2-overlay:hover .block2-btn-addcart {
+        bottom: 35px;
+    }
+
+    .block2-btn-addcart {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        bottom: -45px;
+    }
+    .w-size1 {
+        width: 161px;
+    }
+
+
+    .thumbnail > div > img, .thumbnail > div > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pos-rel{
+    position: relative;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+</style>

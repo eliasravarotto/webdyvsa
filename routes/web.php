@@ -53,7 +53,7 @@ Route::group(['middleware' => 'auth'], function(){
 							    	["notification" =>
 							    		["title" => "NOVEDADES DERKA Y VARGAS",
 							    		 "body" => "Ingresó una nueva unidad usada.",
-							    		 "icon" => "https://www.derkayvargas.com/imagenes/logo_dyv.png",
+							    		 "icon" => "https://www.derkayvargas.com/imagenes/icons/dyv100x100.png",
 							    		 "click_action" => "https://www.derkayvargas.com/usados"
 							    		]
 							    	],

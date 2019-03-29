@@ -20,7 +20,6 @@ Vue.component('detalle-modelo', require('./components/frontend/detalle_modelo.vu
 Vue.component('index-usados', require('./components/frontend/usados/index.vue'));
 Vue.component('show-usado', require('./components/frontend/usados/show.vue'));
 
-Vue.component('producto', require('./components/producto.vue'));
 
 const app = new Vue({
     el: '#app'

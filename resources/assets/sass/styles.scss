@@ -29,6 +29,10 @@ footer {
   display: flex;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .justify-content-center {
   justify-content: center;
 }
@@ -715,6 +719,15 @@ $gris-2:#626262;
   border: solid 2px #258e1d;
   color: white;
 }
+
+.btn-black{background-color:#000;color: #FFF;}
+.btn-black:hover{color: #FFF;}
+
+.btn-rojo-pastel {
+    background-color: #ca3f3f;
+    color: #FFF;
+}
+.btn-rojo-pastel:hover{color: #FFF;}
 
 /*------------------------------------------------*/
 .tarjeta {
