@@ -59,9 +59,9 @@
                     <a href="#" class="block2-overlay trans-0-4">
                         <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
                             <!-- Button-->
-                            <a target="_blank" href="#" class="btn btn-rojo-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
+                            <!-- <a target="_blank" href="#" class="btn btn-rojo-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
                                 DETALLES
-                            </a>
+                            </a> -->
                         </div>
                     </a>
                 </div>

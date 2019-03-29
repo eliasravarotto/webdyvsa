@@ -2,12 +2,25 @@
 
 namespace App;
 
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 
 class Usado extends Model
 {
-     protected $table = 'usados';
+    use HasSlug;
 
+    protected $table = 'usados';
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom(['marca', 'modelo', 'color'])
+            ->saveSlugsTo('slug');
+    }
 
  	public function scopeMarca($query, $marca)
     {

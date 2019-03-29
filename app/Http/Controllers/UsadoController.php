@@ -120,8 +120,10 @@ class UsadoController extends Controller
         $usado->km = $request->km;
         $usado->color = $request->color;
         $usado->precio = $request->precio;
+        $usado->interno = $request->interno;
         $usado->descripcion = $request->descripcion;
-        $usado->update();
+        $usado->generateSlug();
+        $usado->save();
 
         //Actualizar foto y borrar
         if ($request->hasFile('foto')) {
