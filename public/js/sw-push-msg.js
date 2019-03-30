@@ -100,7 +100,7 @@ function initializePush() {
   isSubscribed = userToken !== null
 
   //updateBtn();
-   ptoken.innerHTML=userToken;
+   //ptoken.innerHTML=userToken;
 
   if (!isSubscribed) {
 
