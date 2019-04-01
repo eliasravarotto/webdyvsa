@@ -382,36 +382,7 @@
       </div>
       <img class="img-responsive" src="/imagenes/home/afiche_federativo.png">
     </div>
-  </section>
-
-  <section>
-    <div class="container" id="la_hora_del_planeta">
-      <div class="row">
-          <div class="col-sm-12">
-            <div class="page-header text-center">
-              <h2>La Hora Del Planeta</h2>
-            </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <p class="text-justify" style="font-size: 1.7rem">La Hora del Planeta es el evento de concientización ambiental más importante del mundo. El cambio climático es el problema ambiental más trascendental al que se enfrenta la humanidad y ya es un hecho real, podemos verlo y sus impactos son severamente preocupantes y, en muchos casos, irreversibles.
-
-            Por eso millones de personas alrededor del mundo apagarán las luces para celebrar La Hora del Planeta, una iniciativa global de WWF, la Organización Mundial de Conservación, coordinada en nuestro país por la Fundación Vida Silvestre Argentina, realizada para demostrar que el cambio climático nos importa.
-
-            Este sábado 30 de marzo a las 20.30 hs únete a la familia Toyota, apagá la luz y conectate con la naturaleza junto a miles de personas en todo el mundo.
-
-            Invitá a participar a tus familiares y amigo! 😉</p>
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <center>
-              <img class="img-responsive" src="/imagenes/home/planeta.png">
-            </center>
-          </div>
-      </div>
-    </div>
-  </section>
- 
+  </section> 
 @stop
 
 @section('script')
