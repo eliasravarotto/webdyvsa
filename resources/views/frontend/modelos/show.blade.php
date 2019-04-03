@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - {{$modelo->nombre}}</title>
+  <meta name="description" content="Derka y Vargas Toyota, {{$modelo->nombre}}, {{$modelo->nombre}} versiones, {{$modelo->nombre}} precios">
+@stop
+
 @section('content')
 	<detalle-modelo 
 		v-bind:data="{ 

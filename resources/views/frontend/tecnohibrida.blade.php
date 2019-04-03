@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Tecnología Híbrida</title>
+  <meta name="description" content="Conocé la tecnología híbrida. Que es la tecnología híbrida?. Que es un auto híbrido?. Como funciona un auto híbrido?">
+@stop
+
 @section('styles_sheets')
 	<style type="text/css">
 		.titleContainer {

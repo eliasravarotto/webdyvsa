@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Modelos</title>
+  <meta name="description" content="Derka y Vargas Toyota, modelos, versiones, precios">
+@stop
+
 @section('content')
 	<article>
 		<section>

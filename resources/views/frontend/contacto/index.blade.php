@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Contacto</title>
+  <meta name="description" content="Derka y Vargas Datos de Contacto, telefono, email, direccion">
+@stop
+
 @section('content')
 
 	<!-- Navbar Desktop -->

@@ -2,12 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Derka y Vargas Concesionario Oficial TOYOTA</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
-    <meta name="keywords" content="Derka y Vargas, Toyota, Chaco, Hilux, Corolla, Etios, Yaris, SW4, Camry, Prius, RAV4, Land Cruiser, Prado">
+    <meta name="keywords" content="Derka y Vargas, Toyota, Chaco, Hilux, Corolla, Etios, Yaris, SW4, Camry, Prius, RAV4, Land Cruiser, Prado, Posventa, Postventa, Servicios, Mantenimiento Express">
     
+    @yield('title_and_meta')
+    
+    <!--===============================================================================================-->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--===============================================================================================-->
     <link rel="shortcut icon" href="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">
     <!--===============================================================================================-->
@@ -28,6 +29,7 @@
     @yield('mark-up-facebook')
 
     @yield('styles_sheets')
+
 </head>
 
 <body>

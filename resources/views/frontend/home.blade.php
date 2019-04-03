@@ -1,5 +1,17 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas Concesionario Oficial TOYOTA</title>
+  <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
+@stop
+
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="INICIO" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+@stop
+
 @section('styles_sheets')
   <style type="text/css">
   .experiencia-hibrida .owl-nav{
@@ -22,12 +34,6 @@
   </style>
 @stop
 
-@section('mark-up-facebook')
-    <meta property="og:url" content="https://www.derkayvargas.com" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="INICIO" />
-    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
-@stop
 
 @section('content')
   <!---------------------------------------------------------------------

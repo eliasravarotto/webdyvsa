@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Test Drive</title>
+  <meta name="description" content="Derka y Vargas Solicitar Testdrive, solicitar prueba de manejo">
+@stop
+
 @section('content')
 
 	@if (session('status'))

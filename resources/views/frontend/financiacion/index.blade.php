@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Financiación</title>
+  <meta name="description" content="Derka y Vargas Financiación, TCF, Toyota Compañia Financiera, Créditos UVA">
+@stop
 
 @section('content')
 	<article>

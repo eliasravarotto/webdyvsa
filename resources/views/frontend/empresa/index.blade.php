@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Empresa</title>
+  <meta name="description" content="Derka y Vargas Servicios de Posventa, Mantenimiento express, Plan de mantenimiento Toyota, Servicio técnico oficial Toyota">
+@stop
+
 @section('styles_sheets')
   <style type="text/css">
   	.row-politica{

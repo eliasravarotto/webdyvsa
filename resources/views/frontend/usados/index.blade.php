@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Usados Seleccionados</title>
+  <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados, financiacion usados">
+@stop
+
 @section('styles_sheets')
         <style type="text/css">
             .precio{

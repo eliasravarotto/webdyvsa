@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Plan de Ahorro</title>
+  <meta name="description" content="Plan de Ahorro Toyota Resistencia, Charata, Saenz Peña, Villa Angela">
+@stop
+
 @section('styles_sheets')
 <style type="text/css">
 	.preguntas-frecuentes ol li{

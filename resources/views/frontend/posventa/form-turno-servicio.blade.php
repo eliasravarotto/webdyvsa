@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('title_and_meta')
+  <title>Derka y Vargas - Turnos Online</title>
+  <meta name="description" content="Derka y Vargas Servicios de Posventa, Turnos online, Solicitar Turnos Online">
+@stop
+
 @section('content')
 
 	<!-- Navbar Desktop -->
