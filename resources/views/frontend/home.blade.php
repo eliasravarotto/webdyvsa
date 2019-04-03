@@ -134,6 +134,7 @@
         </div>
       </a>
 
+      <!--
       <div class="owl-carousel experiencia-hibrida mt-3">
         {{-- #1 --}}
         <div class="thumbnail thumbnail-no-bg">
@@ -223,6 +224,7 @@
       <div class="row text-center">
         <a href="/toyota-hibrid-experience" class="btn btn-toyota">VER MÁS</a>
       </div>
+      -->
     
     </div>
   </section>

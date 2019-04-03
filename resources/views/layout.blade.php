@@ -8,17 +8,22 @@
     <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
     <meta name="keywords" content="Derka y Vargas, Toyota, Chaco, Hilux, Corolla, Etios, Yaris, SW4, Camry, Prius, RAV4, Land Cruiser, Prado">
     
+    <!--===============================================================================================-->
     <link rel="shortcut icon" href="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">
+    <!--===============================================================================================-->
     <link rel="manifest" href="{{asset('manifest.json')}}">
-    
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
+    <!--===============================================================================================-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--===============================================================================================-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
-
+    <!--===============================================================================================-->
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css" />
+    <!--===============================================================================================-->
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+    <!--===============================================================================================-->
     <link href="{{ asset('/css/stm-icons.css') }}" rel="stylesheet" type="text/css" />
+    <!--===============================================================================================-->
     
     @yield('mark-up-facebook')
 
@@ -39,19 +44,22 @@
     @include('frontend.includes.footer')
   </div>
 
-  <!---------------------------------------------
-  //Script Section 
-  ------------------------------------------- -->
+  <!--===============================================================================================-->
   <!-- Facebook -->
   <div id="fb-root"></div>
+  <!--===============================================================================================-->
   <!-- Main -->
   <script src="{{ asset('js/app.js') }}"></script>
+  <!--===============================================================================================-->
   <!-- Owl Carucel -->
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <!--===============================================================================================-->
   <!-- Scroll Reveal -->
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <!--===============================================================================================-->
   <!-- Google Recaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
+  <!--===============================================================================================-->
   <!-- Google Analytics -->
   @if (env('IS_PROD'))
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
@@ -62,7 +70,7 @@
       gtag('config', 'UA-132697927-2');
     </script>
   @endif
-
+  <!--===============================================================================================-->
   <!-- Script -->
   <script type="text/javascript">
     $(document).ready(function(){

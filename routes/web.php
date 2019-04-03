@@ -100,8 +100,8 @@ Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('te
 Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
 Route::get('/empresa','FrontController@empresa');
-Route::get('/toyota-hibrid-experience','FrontController@thexpe');
 Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
+// Route::get('/toyota-hibrid-experience','FrontController@thexpe');
 // Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');

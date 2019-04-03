@@ -2,5 +2,8 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/app_backend.css": "/css/app_backend.css",
+    "/css/sm-core-css.css": "/css/sm-core-css.css",
+    "/css/sm-mint.css": "/css/sm-mint.css",
+    "/css/stm-icons.css": "/css/stm-icons.css",
     "/js/app_backend.js": "/js/app_backend.js"
 }
