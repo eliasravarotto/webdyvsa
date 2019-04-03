@@ -53,6 +53,28 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label class="control-label mb-1">Combustible</label>
+						<select class="form-control" name="combustible">
+							<option @if($usado->combustible == null) selected @endif></option>
+							<option value="NAFTA" @if($usado->combustible == 'NAFTA') selected @endif>NAFTA</option>
+							<option value="DIESEL" @if($usado->combustible == 'DIESEL') selected @endif>DIESEL</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label mb-1">Transmisión</label>
+						<select class="form-control" name="transmision">
+							<option @if($usado->transmision == null) selected @endif></option>
+							<option @if($usado->transmision == 'MANUAL') selected @endif value="MANUAL">MANUAL</option>
+							<option @if($usado->transmision == 'AUTOMÁTICA') selected @endif value="AUTOMÁTICA">AUTOMÁTICA</option>
+						</select>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-12 col-md-4">
 			<div id="div_file">

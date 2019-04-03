@@ -1,180 +1,235 @@
 <style type="text/css">
-	.hide-bullets {
-list-style:none;
-margin-left: -40px;
-margin-top:20px;
+.hide-bullets {
+    list-style:none;
+    /*margin-left: -40px;*/
+    margin-top:20px;
 }
+
+/*CABECERA*/
+.single-car-prices {
+    /*background-color: #3c98ff;*/
+    background-color: #016a87;
+}
+.single-regular-price {
+    padding: 22px 0 13px;
+    vertical-align: middle;
+}
+.single-regular-price>.labeled {
+    margin-right: 7px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    vertical-align: middle;
+    text-transform: uppercase;
+}   
+.single-regular-price>.h3 {
+    position: relative;
+    top: -1px;
+    left: 1px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+/*Cuerpo*/
+.single-car-data {
+    padding: 12px 26px 13px 23px;
+    margin-bottom: 26px;
+    border: #016a87 1px solid;
+    /*background-color: #f0f2f5;*/
+}
+.stm_cargurus_wrapper {
+    border-top: 1px solid #d5d9e0;
+    padding-top: 15px;
+    margin: 22px 0 15px;
+    text-align: center;
+}
+
+.single-car-data>table tr td.t-label {
+    padding-right: 3px;
+    text-transform: uppercase;
+    color: #888;
+    font-size: 1.5rem;
+}
+
+.single-car-data>table tr td {
+    padding: 11px 0 6px;
+}
+table>tbody tr td {
+    padding: 9px 0 8px;
+    /*font-size: 12px;*/
+    color: #888;
+    border-bottom: 1px solid #d5d9e0;
+}
+
+.single-car-data>table tr td.t-value {
+    padding-left: 3px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 18px;
+}
+.single-car-data>table tr td {
+    padding: 11px 0 6px;
+}
+
+.carousel-inner > div > img{
+  width:100%;
+}
+
 </style>
 <template>
 	<div>
-		<!-- Slider -->
-
-            <div id="slider">
-                <!-- Top part of the slider -->
+        <div class="container">
+            <ol class="breadcrumb">
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/usados">Usados</a></li>
+              <li class="active">{{unidad.marca}} {{unidad.modelo}}</li>
+            </ol>
+            <div id="main_area">
+                <!-- Slider -->
                 <div class="row">
-                    <div class="col-sm-12 col-md-6  " id="carousel-bounding-box">
-                        <div class="carousel slide" id="myCarousel">
-                            <!-- Carousel items -->
-                            <div class="carousel-inner">
-                                <div v-for="(imagen, index) in imagenes" :class="index == 0 ? 'active item' : 'item'" :data-slide-number="index">
-                                    <img :src="imagen.url">
+                    <div class="col-xs-12" id="slider">
+                        <!-- Top part of the slider -->
+                        <div class="row">
+                            <div class="col-sm-7" id="carousel-bounding-box">
+                                <div class="carousel slide" id="myCarousel">
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        <div v-for="(imagen, i) in imagenes" :class="{ 'active item flex': i==0, 'item flex': i!=0 }" :data-slide-number="i">
+                                            <img class="text-center" :src="imagen.url">
+                                        </div>
+                                    </div>
+                                    <!-- Carousel nav -->
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
+                                    </a>                                
                                 </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="stm-single-car-side">
+                                    <!--Pricio-->
+                                    <div class="single-car-prices">
+                                        <div class="single-regular-price text-center">
+                                            <span class="labeled">Precio</span>
+                                            <span class="h3">$ {{formatearPrecio(unidad.precio)}}</span>
+                                        </div>
+                                    </div>
 
-                            </div><!-- Carousel nav -->
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>                                       
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>                                       
-                            </a>                                
-                        </div>
-                        <!--/Slider Small-->
-                        <div class="row hidden-xs" id="slider-thumbs">
-                            <!-- Bottom switcher of slider -->
-                            <ul class="hide-bullets" style="display: flex; justify-content: center;">
-                                <li v-for="(imagen, index) in imagenes" class="col-md-3">
-                                    <a class="thumbnail hand" :id="'carousel-selector-'+index"><img :src="imagen.url" v-on:click="showImage(imagen)"></a>
-                                </li>
-                            </ul>                 
+                                    <!--Datos-->
+                                    <div class="single-car-data">
+                                        <!-- <div class="stm_cargurus_wrapper cg_style">
+                                            <span data-cg-vin="5UXFE43599L261101" data-cg-price="12390"><span data-cg-error="no information"></span></span>
+                                        </div> -->
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="t-label">Marca</td>
+                                                    <td class="t-value h6">{{unidad.marca}}</td>
+                                                </tr>
+                                                                                        
+                                                <tr>
+                                                    <td class="t-label">Modelo/Version</td>
+                                                    <td class="t-value h6">{{unidad.modelo}}</td>
+                                                </tr>
+                                                                                        
+                                                <tr>
+                                                    <td class="t-label"> Año</td>
+                                                    <td class="t-value h6">{{unidad.anio}}</td>
+                                                </tr>
+                                                <!--VIN NUMBER-->
+                                                <tr>
+                                                    <td class="t-label"> <i class="stm-service-icon-color_type"></i> Color</td>
+                                                    <td class="t-value t-vin h6">{{unidad.color}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"> <i class="stm-icon-road"></i> Km</td>
+                                                    <td class="t-value t-vin h6">{{unidad.km}} KM.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="stm-icon-engine_fill"></i> Transmisión</td>
+                                                    <td class="t-value t-vin h6">{{unidad.transmision}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="stm-icon-fuel"></i> Combustible</td>
+                                                    <td class="t-value t-vin h6">{{unidad.combustible}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                                        <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                                        CONSULTAR
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- <div id="slide-content" style="display: none;">
+                                <div v-for="(imagen, i) in imagenes" :id="'slide-content-'+i">
+                                    <h2>Slider One</h2>
+                                    <p>Lorem Ipsum Dolor</p>
+                                    <p class="sub-text">October 24 2014 - <a href="#">Read more</a></p>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
+                </div>
+                <!--/Slider-->
+                <div class="row hidden-xs" id="slider-thumbs">
+                    <!-- Bottom switcher of slider -->
+                    <ul class="hide-bullets" style="margin: 15px 0px 15px 0px">
+                        <li class="col-sm-2" v-for="(imagen, i) in imagenes">
+                            <a class="thumbnail" :id="'carousel-selector-'+i" @click.prevent="activeImg(i)">
+                                <img :src="imagen.url">
+                            </a>
+                        </li>
+                    </ul>                 
+                </div>
+            </div>
+        </div>
 
-                    <div class="col-sm-12 col-md-6" id="carousel-text">
-                        <div class="panel panel-default">
-                          <div class="panel-body">
-                            <label class="text-uppercase" style="font-family:ToyotaFont; font-size: 25px; color: #404048">
-                                {{ unidad.marca }} {{ unidad.modelo }} {{ unidad.version }} 
-                            </label>
-                            <div style="display: flex; justify-content: space-between; font-size: 18px;">
-                                <div>
-                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{ unidad.anio }}
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{ unidad.km }}
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{ unidad.color }}
-                                </div>
-                            </div>
-                            <div class="text-justify">
-                                <p>{{unidad.descripcion}}</p>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="text-center">CONSULTAR POR ESTA UNIDAD
-                                    <!-- <span class="text-uppercase">{{unidad.marca}} {{unidad.modelo}} {{unidad.color}}</span> -->
-                                </h4>
-                                <form style="padding: 10px;">
-                                    <div class="row">
-                                        <div class="col-md-12 col-xs-12 col-sm-12">
-                                            <label>Nombre</label>
-                                            <input class="form-control" type="text" name="nombre" v-model="form.nombre" >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-xs-12 col-sm-12">
-                                            <label>Teléfono</label>
-                                            <input class="form-control" type="email" name="telefono" v-model="form.telefono">
-                                        </div>
-                                            
-                                        <div class="col-md-6 col-xs-12 col-sm-12">
-                                            <label>Email</label> (opcional)
-                                            <input class="form-control" type="email" name="email" v-model="form.email">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-xs-12 col-sm-12">
-                                            <label>Mensaje</label>
-                                            <textarea class="form-control" v-model="form.mensaje"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-top: 20px;">
-                                        <div class="col-md-12 col-xs-12 col-sm-12">
-                                            <a  class="btn btn-default btn-submit" v-on:click.prevent="enviarConsulta()">ENVIAR</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            </div>
-                        </div>
-                        <!-- <a class="btn btn-default btn-block btn-lg" href="">CONSULTAR</a> -->
-                        <!-- <div class="row">
-                            <div class="col-md-9 col-sm-9 col-xs-9">
-                                <div class="text-right">
-                                    <p style="font-size: 18px; font-weight: bold;">Podés enviarnos tu consulta vía Whatsapp</p>
-                                    <b style="font-size: 25px;">3625-123456</b>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <div>
-                                    <img src="/imagenes/icons/whatsapp-icon.png" style="height: 70px;">                             
-                                </div>
-                            </div>
-                        </div> -->
+       <!--  <section>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                      <h2 class="text-center">OTROS USADOS <br> <small>Quizás te interese otro</small></h2>
                     </div>
                 </div>
             </div>
-
-            <section>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="page-header">
-                          <h2 class="text-center">OTROS USADOS <br> <small>Quizás te interese otro</small></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                  <div v-for="unidad in otrasUnidades" class="col-sm-6 col-md-4">
-                    <div class="thumbnail thumbnail-no-bg">
-                      <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt="">
-                      <div class="caption caption-default">
-                        <h3 class="text-center">{{unidad.marca}} {{unidad.modelo}} {{unidad.version}}</h3>                        
-                        <p class="text-center">
-                            <div style="display: flex; justify-content: space-around; font-size: 12px;">
-                                <div>
-                                    <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{ unidad.anio }}
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{ unidad.km }}
-                                </div>
-                                <div>
-                                    <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{ unidad.color }}
-                                </div>
+            <div class="row">
+              <div v-for="unidad in otrasUnidades" class="col-sm-6 col-md-4">
+                <div class="thumbnail thumbnail-no-bg">
+                  <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt="">
+                  <div class="caption caption-default">
+                    <h3 class="text-center">{{unidad.marca}} {{unidad.modelo}} {{unidad.version}}</h3>                        
+                    <p class="text-center">
+                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
+                            <div>
+                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{ unidad.anio }}
                             </div>
-                        </p>
-                        <p class="text-center" >
-                            <a v-bind:href="'/usados/'+unidad.id" class="btn btn-default" role="button">VER DETALLES</a>
-                        </p>
-                      </div>
-                    </div>
+                            <div>
+                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{ unidad.km }}
+                            </div>
+                            <div>
+                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{ unidad.color }}
+                            </div>
+                        </div>
+                    </p>
+                    <p class="text-center" >
+                        <a v-bind:href="'/usados/'+unidad.id" class="btn btn-default" role="button">VER DETALLES</a>
+                    </p>
                   </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a class="btn btn-info" href="/usados">VER TODOS</a>
-                    </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a class="btn btn-info" href="/usados">VER TODOS</a>
                 </div>
-            </section>
-        
-        <!--/Slider-->
-        <!-- <div class="row hidden-xs" id="slider-thumbs">
-            <ul class="hide-bullets" style="display: flex; justify-content: center;">
-                <li v-for="(imagen, index) in imagenes" class="col-sm-2">
-                    <a class="thumbnail hand" :id="'carousel-selector-'+index"><img :src="imagen.url" v-on:click="showImage(imagen)"></a>
-                </li>
-            </ul>                 
-        </div> -->
-
-        <!-- The Modal ------------------------------->
-        <div id="moda_show_imagen" class="modal-img">
-            <!-- The Close Button -->
-            <span class="close-on-click">&times;</span>
-            <!-- Modal Content (The Image) -->
-            <img class="modal-content" id="img01" src="#">
-        </div>
-
+            </div>
+        </section> -->
 	</div>
 </template>
 
@@ -195,64 +250,38 @@ margin-top:20px;
             }
         },
         mounted() {
-            this.initJS();
             this.unidad = this.data.unidad;
             this.imagenes = this.data.imagenes;
-        },
-        created() {
-            this.otrosUsados();
+            $('#myCarousel').carousel({
+                    interval: 5000
+            });
+     
+            $('#carousel-text').html($('#slide-content-0').html());
+     
+            // When the carousel slides, auto update the text
+            $('#myCarousel').on('slid.bs.carousel', function (e) {
+                     var id = $('.item.active').data('slide-number');
+                    $('#carousel-text').html($('#slide-content-'+id).html());
+            });
+                    
         },
         methods:{
             openModalContacto(unidad)
             {
-                $('#contacto').modal('toggle');
-                this.dataModalContacto = unidad;
+
             },
             showImage(img){
-                // Get the modal
-                var modal = document.getElementById('moda_show_imagen');
-                // Get the image and insert it inside the modal - use its "alt" text as a caption
-                //var img = document.getElementById('myImg');
-                var modalImg = document.getElementById("img01");
-                modalImg.src = img.url;
-                modal.style.display = "flex";
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close-on-click")[0];
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function() { 
-                    $("#moda_show_imagen").fadeOut()
-                }
+               
+                
             },
             otrosUsados(){
                 self = this;
-                axios
-                    .get('/usados/get-last')
-                    .then(function (response) {
-                        console.log(response.data);
-                        self.otrasUnidades = response.data;
-                    })
-            },
-            initJS()
-            {
-            	//SRC https://bootsnipp.com/snippets/featured/carousel-extended-320-compatible
-		        $('#myCarousel').carousel({
-		                interval: 5000
-		        });
-
-		       $('[id^=carousel-selector-]').click( function(){
-		            var id = this.id.substr(this.id.lastIndexOf("-") + 1);
-		            var id = parseInt(id);
-		            $('#myCarousel').carousel(id);
-		        });
-		 
-		        //$('#carousel-text').html($('#slide-content-0').html());
-		 
-		        // When the carousel slides, auto update the text
-		        // $('#myCarousel').on('slid.bs.carousel', function (e) {
-		        //          var id = $('.item.active').data('slide-number');
-		        //         $('#carousel-text').html($('#slide-content-'+id).html());
-		        // });
-			
+                // axios
+                //     .get('/usados/get-last')
+                //     .then(function (response) {
+                //         console.log(response.data);
+                //         self.otrasUnidades = response.data;
+                //     })
             },
             enviarConsulta()
             {
@@ -275,6 +304,17 @@ margin-top:20px;
                   .catch(function (error) {
                     console.log(error);
                   });
+            },
+            activeImg(id){
+                $('#myCarousel').carousel(id);
+            },
+            formatearPrecio(num){
+                num = num.toString().replace(/\./g,'');
+                if(!isNaN(num)){
+                    num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
+                    num = num.split('').reverse().join('').replace(/^[\.]/,'');
+                    return num;
+                }
             }
         }
     }

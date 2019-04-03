@@ -53,6 +53,8 @@ class UsadoController extends Controller
         $usado->km = $request->km;
         $usado->precio = $request->precio;
         $usado->color = $request->color;
+        $usado->combustible = $request->combustible;
+        $usado->transmision = $request->transmision;
         $usado->descripcion = $request->descripcion;
         $usado->save();
 
@@ -121,6 +123,8 @@ class UsadoController extends Controller
         $usado->color = $request->color;
         $usado->precio = $request->precio;
         $usado->interno = $request->interno;
+        $usado->combustible = $request->combustible;
+        $usado->transmision = $request->transmision;
         $usado->descripcion = $request->descripcion;
         $usado->generateSlug();
         $usado->save();

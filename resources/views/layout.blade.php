@@ -18,6 +18,7 @@
 
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('/css/stm-icons.css') }}" rel="stylesheet" type="text/css" />
     
     @yield('mark-up-facebook')
 

@@ -56,10 +56,9 @@
                     <img v-show="unidad.foto" :src="unidad.foto" alt="">
                     <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
 
-                    <a href="#" class="block2-overlay trans-0-4">
+                    <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
                         <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
-                            <!-- Button-->
-                            <!-- <a target="_blank" href="#" class="btn btn-rojo-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
+                            <!-- <a :href="'/usados/'+unidad.slug" class="btn btn-rojo-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
                                 DETALLES
                             </a> -->
                         </div>
@@ -70,13 +69,13 @@
                     <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
                     <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
                         <div>
-                            <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{unidad.anio}}  
+                            <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
                         </div>
                         <div>
-                            <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{unidad.km}}
+                            <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
                         </div>
                         <div>
-                            <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{unidad.color}}
+                            <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
                         </div>
                     </div>
                     <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>

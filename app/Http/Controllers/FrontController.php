@@ -68,9 +68,15 @@ class FrontController extends Controller
     {
         return view('frontend.thexp');
     }
+
     public function tecnoHibrid()
     {
         return view('frontend.tecnohibrida');
+    }
+
+    public function empresa()
+    {
+        return view('frontend.empresa.index');
     }
 
     public function checkIfTokenExist(Request $request, $token)
@@ -156,10 +162,12 @@ class FrontController extends Controller
         return view('frontend.usados.index', compact('unidades'));
     }
 
-    public function usadosShow($id)
+    public function usadosShow($slug)
     {
-        $unidad = Usado::find($id);
-        $imagenes = ImagenGaleriaUsado::where('usado_id','=', $id)->get();
+        $unidad = Usado::where('slug', '=', $slug)->firstOrFail();;
+        //$imagenes = ImagenGaleriaUsado::where('usado_id','=', $id)->get();
+        $imagenes = $unidad->imagenes()->get();
+
         return view('frontend.usados.show', compact('unidad', 'imagenes'));
     }
 

@@ -23,7 +23,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="page-header flex justify-content-space-between" style="flex-direction: row;">
-	                    <h1>ELEGÍ TU USADO<small></small></h1>
+	                    <h2>ELEGÍ TU USADO<small></small></h2>
 	                    <div class="flex align-items-center">
 	                        <button class="btn btn-toyota btn-lg" data-toggle="collapse" data-target="#contacto-form">
 	                        <i class="fa fa-envelope-o"></i> CONSULTAR
@@ -32,7 +32,11 @@
 					</div>
 			    </div>
 					<div class="row">
-						<div class="col-sm-12 col-md-6">
+						<ol class="breadcrumb">
+			              <li><a href="/">Inicio</a></li>
+			              <li class="active">Usados</li>
+			            </ol>
+						<div class="col-sm-12 col-md-6 col-md-offset-3">
 							<div id="contacto-form" @if($errors->isEmpty()) class="collapse" @endif>
 							<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 								{{ csrf_field() }}

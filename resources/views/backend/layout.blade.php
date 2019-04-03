@@ -82,6 +82,12 @@
                         SERVICIOS
                     </a>
                 </li>
+                <li>
+                    <a href="{{url('admin/notificacion-push')}}">
+                       <i class="fa fa-bell" style="font-size: 1.3rem; vertical-align: sub !important"></i>
+                        MENSAJE PUSH
+                    </a>
+                </li>
             </ul>
         </nav>
 

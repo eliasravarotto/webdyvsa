@@ -49,4 +49,9 @@ class Usado extends Model
         return $query;
     }
 
+    public function imagenes()
+    {
+        return $this->hasMany('App\ImagenGaleriaUsado');
+    }
+
 }

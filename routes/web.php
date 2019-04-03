@@ -43,6 +43,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin/servicios','TipoServicioController');
 	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
+	Route::get('admin/notificacion-push','BackendController@createPushNotication')->name('create_push_notification');
+	Route::post('admin/notificacion-push','BackendController@sendPushNotication')->name('send_push_notification');
 
 	Route::get('/push', function(){
 
@@ -89,17 +91,17 @@ Route::get('/nosotros','FrontController@aboutUs');
 Route::get('/modelos/{modelo}','FrontController@modelo');
 Route::get('/modelos','FrontController@getModelos');
 Route::get('/usados','FrontController@usadosIndex');
+Route::get('/usados/{slug}','FrontController@usadosShow');
 Route::get('/usados/get-last','FrontController@ultimosUsados');
-Route::get('/usados/{id}','FrontController@usadosShow');
 Route::post('/usados/filter','FrontController@usadosFilter');
 Route::get('/turno-servicios/create','TurnoServicioController@create');
 Route::post('/turno-servicios','TurnoServicioController@store');
 Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('test_drive_form');
 Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
-// Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
-Route::get('/dia-de-la-mujer','FrontController@publicidad');
+Route::get('/empresa','FrontController@empresa');
 Route::get('/toyota-hibrid-experience','FrontController@thexpe');
 Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
+// Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');

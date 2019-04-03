@@ -28,14 +28,12 @@
                     <li><a href="/turno-servicios/create">Turnos ONLINE</a></li>
                   </ul>
                 </li>
-                <!-- <li class="dropdown dropdown-hover">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NOSOTROS <span class="caret"></span></a>
+                <li class="dropdown dropdown-hover">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPRESA <span class="caret"></span></a>
                   <ul class="dropdown-menu dropdown-hover">
-                    <li><a href="#">La Empresa</a></li>
-                    <li><a href="#">Historia</a></li>
-                    <li><a href="#">Misión-Visión-Valores</a></li>
+                    <li><a href="/empresa#politica-ambiental">Política Ambiental</a></li>
                   </ul>
-                </li> -->
+                </li>
                 <li class=""><a href="/contacto">CONTACTO</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
