@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'stm-icon';
-	src: url(//motors.stylemixthemes.com/classified/wp-content/uploads/sites/2/stm_fonts/stm-icon/stm-icon.eot?oyuy2n);
-	src: url(//motors.stylemixthemes.com/classified/wp-content/uploads/sites/2/stm_fonts/stm-icon/stm-icon.eot?oyuy2n#iefix) format('embedded-opentype'),
-	 	url(//motors.stylemixthemes.com/classified/wp-content/uploads/sites/2/stm_fonts/stm-icon/stm-icon.ttf?oyuy2n) format('truetype'), 
-	 	url(//motors.stylemixthemes.com/classified/wp-content/uploads/sites/2/stm_fonts/stm-icon/stm-icon.woff?oyuy2n) format('woff'), 
-	 	url(//motors.stylemixthemes.com/classified/wp-content/uploads/sites/2/stm_fonts/stm-icon/stm-icon.svg?oyuy2n#stm-icon) format('svg');
+	src: url(/fonts/stm-icon.eot);
+	src: url(/fonts/stm-icon.eot) format('embedded-opentype'),
+	 	 url(/fonts/stm-icon.ttf) format('truetype'), 
+	 	 url(/fonts/stm-icon.woff) format('woff');
+	 	 // url(//motors.stylemixthemes.com/classified/wp-content/uploads/sites/2/stm_fonts/stm-icon/stm-icon.svg?oyuy2n#stm-icon) format('svg');
 	font-weight: 400;
 	font-style: normal
 }
@@ -277,8 +277,11 @@
 
 @font-face {
 	font-family: 'stm-service-default';
-	src: url(//motors.stylemixthemes.com/classified/wp-content/themes/motors/assets/css/../fonts/service-fonts/stm-service-default.eot?vcgqsx);
-	src: url(//motors.stylemixthemes.com/classified/wp-content/themes/motors/assets/css/../fonts/service-fonts/stm-service-default.eot?vcgqsx#iefix) format('embedded-opentype'), url(//motors.stylemixthemes.com/classified/wp-content/themes/motors/assets/css/../fonts/service-fonts/stm-service-default.ttf?vcgqsx) format('truetype'), url(//motors.stylemixthemes.com/classified/wp-content/themes/motors/assets/css/../fonts/service-fonts/stm-service-default.woff?vcgqsx) format('woff'), url(//motors.stylemixthemes.com/classified/wp-content/themes/motors/assets/css/../fonts/service-fonts/stm-service-default.svg?vcgqsx#stm-service-default) format('svg');
+	src: url('/fonts/stm-service-default.eot');
+	src: url('/fonts/stm-service-default.eot') format('embedded-opentype'), 
+	url('/fonts/stm-service-default.ttf') format('truetype'), 
+	url('/fonts/stm-service-default.woff') format('woff'); 
+	// url(//motors.stylemixthemes.com/classified/wp-content/themes/motors/assets/css/../fonts/service-fonts/stm-service-default.svg?vcgqsx#stm-service-default) format('svg');
 	font-weight: 400;
 	font-style: normal
 }
