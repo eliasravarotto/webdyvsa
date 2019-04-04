@@ -165,8 +165,13 @@ class FrontController extends Controller
     public function usadosShow($slug)
     {
         $unidad = Usado::where('slug', '=', $slug)->firstOrFail();;
-        //$imagenes = ImagenGaleriaUsado::where('usado_id','=', $id)->get();
         $imagenes = $unidad->imagenes()->get();
+
+        //Agrego la foto de la unidad al array de imagenes de la galeria.
+        $img = ['id' => null, 'url' => $unidad->foto];
+        $imagenes = $imagenes->toArray();
+        array_push($imagenes, $img);
+        $imagenes = collect($imagenes);
 
         return view('frontend.usados.show', compact('unidad', 'imagenes'));
     }

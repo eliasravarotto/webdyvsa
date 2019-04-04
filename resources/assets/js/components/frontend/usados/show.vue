@@ -8,7 +8,8 @@
 /*CABECERA*/
 .single-car-prices {
     /*background-color: #3c98ff;*/
-    background-color: #016a87;
+    /*background-color: #016a87;*/
+    background-color: #644093;
 }
 .single-regular-price {
     padding: 22px 0 13px;
