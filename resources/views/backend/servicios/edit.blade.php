@@ -10,7 +10,7 @@
 			 <input name="_method" type="hidden" value="PUT">
 			{{ csrf_field() }}
 			@include('backend.servicios.form')
-			<div class="row">
+			<div class="row mt-3">
 				<div class="col-md-12">
 					<a href="/admin/servicios/" class="btn btn-secondary pull-left">Cancelar</a>
 					<button type="submit" name="add_another" value="Guardar y Continuar" class="btn btn-primary pull-right">Guardar y Continuar</button>

@@ -48,6 +48,70 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     border-top-color: #51a8b1 !important;
 }
 
+
+/* Tabs panel */
+.tabbable-panel {
+  border:1px solid #eee;
+  padding: 10px;
+}
+
+/* Default mode */
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #f3565d;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover {
+     border: 0px solid #ddd !important; 
+}
 </style>
 
 @section('content')
@@ -89,6 +153,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 						    <th style="text-align: center; font-size: 20px;"></th>
 						    <th style="text-align: center; font-size: 20px;">COROLLA</th>
 						    <th style="text-align: center; font-size: 20px;">ETIOS</th>
+						    <th style="text-align: center; font-size: 20px;">YARIS</th>
+						    <th style="text-align: center; font-size: 20px;">INNOVA</th>
+						    <th style="text-align: center; font-size: 20px;">PRIUS</th>
 						    <th style="text-align: center; font-size: 20px;">HILUX 4x2</th>
 						    <th style="text-align: center; font-size: 20px;">Hilux/SW4 4x4</th>
 						  </tr>
@@ -99,6 +166,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 								<td style="text-align: center;font-size: 20px;"><b>{{ $servicio->nombre }}</b></td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->corolla }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->etios }}</td>
+								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->yaris }}</td>
+								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->innova }}</td>
+								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->prius }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux_sw4_4x4 }}</td>
 							</tr>
@@ -108,6 +178,82 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	  			</div>
 			</div>
 		</section>
+
+		{{-- <div class="container">
+			<div class="">
+		  			<h1>PRECIOS VIGENTES </h1>
+					<p><b>Desde:</b> 01-01-2019 - <b>Hasta:</b> 31-03-2019</p>
+				</div>
+		    <div class="row">
+				<div class="col-md-12">
+					<div class="tabbable-line">
+						<ul class="nav nav-tabs ">
+							<li class="active">
+								<a href="#tab_default_1" data-toggle="tab">
+								ETIOS - YARIS - COROLLA - PRIUS</a>
+							</li>
+							<li>
+								<a href="#tab_default_2" data-toggle="tab">
+								HILUX - SW4 - INNOVA</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab_default_1">
+								<div class="table-responsive pad-bot-50">          
+									<table class="table table-striped">
+										<thead>
+										  <tr>
+										    <th style="text-align: center; font-size: 20px;"></th>
+										    <th style="text-align: center; font-size: 20px;">ETIOS</th>
+										    <th style="text-align: center; font-size: 20px;">YARIS</th>
+										    <th style="text-align: center; font-size: 20px;">COROLLA</th>
+										    <th style="text-align: center; font-size: 20px;">PRIUS</th>
+										  </tr>
+										</thead>
+										<tbody>
+											@foreach($servicios as $servicio)
+											<tr>
+												<td style="text-align: center;font-size: 20px;"><b>{{ $servicio->nombre }}</b></td>
+												<td style="text-align: center;font-size: 20px;">$ {{ $servicio->etios }}</td>
+												<td style="text-align: center;font-size: 20px;">$ {{ $servicio->yaris }}</td>
+												<td style="text-align: center;font-size: 20px;">$ {{ $servicio->corolla }}</td>
+												<td style="text-align: center;font-size: 20px;">$ {{ $servicio->prius }}</td>
+											</tr>
+										  	@endforeach
+										</tbody>
+									</table>
+					  			</div>
+							</div>
+							<div class="tab-pane" id="tab_default_2">
+								<div class="table-responsive pad-bot-50">          
+									<table class="table table-striped">
+										<thead>
+										  <tr>
+										    <th style="text-align: center; font-size: 20px;"></th>
+										    <th style="text-align: center; font-size: 20px;">INNOVA</th>
+										    <th style="text-align: center; font-size: 20px;">HILUX</th>
+										    <th style="text-align: center; font-size: 20px;">Hilux/SW4 4x4</th>
+										  </tr>
+										</thead>
+										<tbody>
+											@foreach($servicios as $servicio)
+											<tr>
+												<td style="text-align: center;font-size: 20px;"><b>{{ $servicio->nombre }}</b></td>
+													<td style="text-align: center;font-size: 20px;">$ {{ $servicio->innova }}</td>
+													<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux }}</td>
+													<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux_sw4_4x4 }}</td>
+												</tr>
+										  	@endforeach
+										</tbody>
+									</table>
+					  			</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ --}}
 
 		<section class="pad-bot-50 container arrow_box">
 			<div class="row">

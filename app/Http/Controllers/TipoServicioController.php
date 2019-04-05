@@ -48,6 +48,9 @@ class TipoServicioController extends Controller
         $servicio->corolla = $request->corolla;
         $servicio->hilux = $request->hilux;
         $servicio->hilux_sw4_4x4 = $request->hilux_sw4_4x4;
+        $servicio->yaris = $request->yaris;
+        $servicio->innova = $request->innova;
+        $servicio->prius = $request->prius;
         $servicio->save();
 
         if(Input::get('add_another'))
@@ -99,6 +102,9 @@ class TipoServicioController extends Controller
         $servicio->corolla = $request->corolla;
         $servicio->hilux = $request->hilux;
         $servicio->hilux_sw4_4x4 = $request->hilux_sw4_4x4;
+        $servicio->yaris = $request->yaris;
+        $servicio->innova = $request->innova;
+        $servicio->prius = $request->prius;
         $servicio->update();
 
         return redirect()->action('TipoServicioController@index');

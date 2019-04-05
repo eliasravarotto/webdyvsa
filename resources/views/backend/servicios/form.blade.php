@@ -1,10 +1,10 @@
 <div class="row">
-	
-
 	<div class="col-sm-4">
 		<label class="control-label mb-1">Nombre del Servicio</label> 
 		<input name="nombre" type="text" value="{{$servicio->nombre}}" class="form-control">
 	</div> 
+</div>
+<div class="row">
 	<div class="col-sm-2">
 		<label class="control-label">Etios</label>
 		<div class="input-group">
@@ -13,7 +13,6 @@
 			  </div>
 			<input name="etios" placeholder="Precio" type="text" value="{{$servicio->etios}}" class="form-control">
 		</div>
-		
 	</div> 
 	<div class="col col-sm-2">
 		<label class="control-label mb-1">Corolla</label>
@@ -42,5 +41,33 @@
 			<input name="hilux_sw4_4x4" placeholder="Precio" type="text" value="{{$servicio->hilux_sw4_4x4}}" class="form-control">
       	</div>
 	</div> 
-
+	<div class="col col-sm-2">
+		<label class="control-label mb-1">Yaris</label> 
+		<div class="input-group">
+	        <div class="input-group-prepend">
+			    <span class="input-group-text">$</span>
+			  </div>
+			<input name="yaris" placeholder="Precio" type="text" value="{{$servicio->yaris}}" class="form-control">
+      	</div>
+	</div>
+	<div class="col col-sm-2">
+		<label class="control-label mb-1">Prius</label> 
+		<div class="input-group">
+	        <div class="input-group-prepend">
+			    <span class="input-group-text">$</span>
+			  </div>
+			<input name="prius" placeholder="Precio" type="text" value="{{$servicio->prius}}" class="form-control">
+      	</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col col-sm-2">
+		<label class="control-label mb-1">Innova</label> 
+		<div class="input-group">
+	        <div class="input-group-prepend">
+			    <span class="input-group-text">$</span>
+			  </div>
+			<input name="innova" placeholder="Precio" type="text" value="{{$servicio->innova}}" class="form-control">
+      	</div>
+	</div>   
 </div>
