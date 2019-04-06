@@ -8,7 +8,7 @@
 @section('styles_sheets')
   <style type="text/css">
   	.row-politica{
-  		background:url({{asset('imagenes/empresa/fondo-politica-ambiental.png')}});
+  		background:url({{asset('imagenes/empresa/fondo-politica-ambiental-2.png')}});
   		background-size: cover;
   	}
   	.politica h3{
@@ -39,10 +39,11 @@
 @section('content')
 
 <section>
-	<div class="container" id="politica-ambiental">
+	<div class="container my-3" id="politica-ambiental">
 		<div class="row row-politica">
-			<div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10">
-				<div class="politica">
+      <div class="col-md-12 col-xs-offset-1 col-xs-10">
+			{{-- <div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10"> --}}
+				{{-- <div class="politica">
 					<h3 class="text-center">POLITICA AMBIENTAL</h3>
 					<p>La dirección y todo el personal de Derka y Vargas S. A., se comprometen a cumplir con los requisitos y regulaciones legales vigentes y otros requerimientos con vista a la preservación del medio ambiente. Además, la organización establece sus propios objetivos y alimenta el constante desarrollo de mejoras basándose en una educación sistemática, tomando a la prevención de la contaminación ambiental como base para la mejora continua del Sistema de gestión ambiental.</p>
 					<br>
@@ -54,7 +55,8 @@
 						<li><i class="fa fa-check"></i> Comprometiendo a los proveedores en el cumplimiento de los requisitos de la Organización.</li>
 						<li><i class="fa fa-check"></i> Realizando todas estas actividades en un marco de rentabilidad y progreso.</li>
 					</ul>
-				</div>
+				</div> --}}
+        <img src="{{asset('imagenes/empresa/fondo-politica-ambiental.png')}}" class="img-responsive">
 			</div>
 		</div>
 	</div>
