@@ -2,7 +2,7 @@
 
 @section('title_and_meta')
   <title>Derka y Vargas - Usados Seleccionados</title>
-  <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados, financiacion usados">
+  <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados, financiacion usados, autos usados en cuotas, autos usados en Villa Angela, autos usados en Saenz peña, autos usados en Charata, autos usados en Resistencia">
 @stop
 
 @section('styles_sheets')

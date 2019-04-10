@@ -166,10 +166,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 15.605,30</td>
-					        <td class="text-center" style="font-weight: bold;">$ 16.794,56</td>
-					        <td class="text-center" style="font-weight: bold;">$ 15.929,70</td>
-					        <td class="text-center" style="font-weight: bold;">$ 18.290,93</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.785,17</td>
+					        <td class="text-center" style="font-weight: bold;">$ 16.978,27</td>
+					        <td class="text-center" style="font-weight: bold;">$ 16.096,24</td>
+					        <td class="text-center" style="font-weight: bold;">$ 18.501,75</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -227,10 +227,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 10.765,85</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.517,05</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.220,87</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.102,44</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.862,98</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.617,22</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.309,34</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.202,61</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -287,10 +287,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 8.219,15</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.250,48</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.090,79</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.633,65</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.305,90</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.339,08</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.171,11</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.735,32</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -348,10 +348,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 5.959,36</td>
-					        <td class="text-center" style="font-weight: bold;">$ 6.955,13</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.017,86</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.896,71</td>
+					        <td class="text-center" style="font-weight: bold;">$ 6.023,31 </td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.020,58</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.077,28</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.981,44</td>
 					      </tr>
 					    </tbody>
 				  	</table>
