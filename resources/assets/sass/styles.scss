@@ -68,6 +68,10 @@ footer {
   animation: flecha-animada 2s ease-in-out infinite;
 }
 
+.o-flw-hiden{
+  overflow: hidden;
+}
+
 @keyframes flecha-animada {
   from {
     transform: translateY(0);
@@ -263,7 +267,7 @@ footer .row {
 }
 
 .encabezado .logo img {
-  width: 300px;
+  width: 270px;
   height: auto;
 }
 
@@ -770,7 +774,7 @@ $gris-2:#626262;
 
 .header-ppal {
   background-color: white;
-  padding: 10px 0px 10px 0px;
+  padding: 8px 0px;
 }
 
 .lista-contacto li a,

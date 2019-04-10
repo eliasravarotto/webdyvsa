@@ -1,7 +1,7 @@
 <header class="encabezado navbar-fixed-top visible-xs visible-sm">
   <div class="container">
     <a href="#" class="logo">
-      <img src="/imagenes/logo-empresa.png">
+      <img src="/imagenes/logos/logo-dyv.png">
     </a>
     <button type="button" class="boton-menu" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
       <i class="fa fa-bars"></i>

@@ -52,7 +52,7 @@
     <div class="row">
         <div v-for="unidad in unidades" class="col-sm-12 col-md-4">
             <div class="thumbnail thumbnail-no-bg" style="height:455px">
-                <div class="pos-rel">
+                <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                     <img v-show="unidad.foto" :src="unidad.foto" alt="">
                     <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
 
