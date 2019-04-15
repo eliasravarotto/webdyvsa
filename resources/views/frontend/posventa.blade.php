@@ -122,6 +122,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					<img src="/imagenes/posventa/neumaticos_desk.png" class="img-responsive visible-md visible-lg">
 					<img src="/imagenes/posventa/neumaticos_mobile.png" class="img-responsive visible-xs visible-sm">
 				</div>
+				<div class="col-md-12">
+					<img src="/imagenes/posventa/promo-servicio-desk.png" class="img-responsive">
+				</div>
 			</div>
 		</section>
 
