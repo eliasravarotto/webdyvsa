@@ -378,19 +378,6 @@
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="page-header text-center">
-              <h2>Torneo Federativo de Golf 2019</h2>
-            </div>
-          </div>
-      </div>
-      <img class="img-responsive" src="/imagenes/home/afiche_federativo.png">
-    </div>
-  </section> 
 @stop
 
 @section('script')
