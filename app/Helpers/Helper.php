@@ -21,6 +21,13 @@ class Helper
 		return $sucursales;
 	}
 
+	public static function getSucursalesConvencional()
+	{
+		$sucursales = Sucursal::where('negocio_id', '=', 1)->get();
+
+		return $sucursales;
+	}
+
 	public static function getSucursalesPlanDeAhorro()
 	{
 		$sucursales = Sucursal::where('negocio_id', '=', 2)->get();

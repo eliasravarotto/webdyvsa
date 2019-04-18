@@ -5,6 +5,13 @@
   <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados, financiacion usados, autos usados en cuotas, autos usados en Villa Angela, autos usados en Saenz peña, autos usados en Charata, autos usados en Resistencia, autos usados en Chaco">
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com/usados" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="DERKA Y VARGAS USADOS" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+@stop
+
 @section('styles_sheets')
         <style type="text/css">
             .precio{

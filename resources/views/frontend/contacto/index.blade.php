@@ -5,6 +5,13 @@
   <meta name="description" content="Derka y Vargas Datos de Contacto, telefono, email, direccion">
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com/contacto" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="CONTACTO DERKA Y VARGAS" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+@stop
+
 @section('content')
 
 	<!-- Navbar Desktop -->
@@ -20,7 +27,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad-bot-25">
+				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 pad-bot-25 col-lg-offset-1 col-md-offset-1">
 					@if (session('status'))
 						<div class="alert alert-warning alert-dismissible toast" role="alert">
 						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -38,7 +45,7 @@
 			  			<iframe class="iframe_map" id="map_suc_6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.7362498019697!2d-60.4403663807801!3d-26.78467607731101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94412d1c14ba7d7b%3A0x3f41780d9ada61c!2sDerka+y+Vargas!5e0!3m2!1ses-419!2sus!4v1550060476101" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			  		</div>
 				</div>
-				<div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-xs-12" id="sucursales">
+				<div class="col-lg-6  col-md-6  col-sm-12 col-xs-12" id="sucursales">
 					<div class="visible-xs visible-sm" style="margin-top: 85px"></div>
 					<div class="contact-details">
 	                    <div class="media">
@@ -46,10 +53,10 @@
 	                            <i class="fa fa-map-marker"></i>
 	                        </div>
 	                        <div class="media-body">
-	                            <h4>DIRECCIÓNES SUCURSALES</h4>
-	                            @foreach(\App\Helpers\Helper::getSucursales() as $sucursal)
+	                            <h4>DIRECCIÓNES</h4>
+	                            @foreach(\App\Helpers\Helper::getSucursalesConvencional() as $sucursal)
 									{{-- <p><b>{{$sucursal->localidad}}</b> - <a href="#" style="color: black" onclick="goto(event, {{$sucursal->map_lat}},{{ $sucursal->map_lng }}); $(document).scrollTo('#map');">{{$sucursal->direccion}}</a></p> --}}
-									<p><b>{{$sucursal->localidad}}</b> - <a href="#" style="color: black" onclick="mostrarMapa(event, {{$sucursal->id}})">{{$sucursal->direccion}}</a></p>
+									<p><b>{{$sucursal->nombre}}</b> - <a href="#" style="color: black" onclick="mostrarMapa(event, {{$sucursal->id}})">{{$sucursal->direccion}}</a></p>
 								@endforeach
 	                        </div>
 	                    </div>
@@ -59,8 +66,8 @@
 	                        </div>
 	                        <div class="media-body">
 	                            <h4>NÚMEROS DE TELÉFONO</h4>
-	                            @foreach(\App\Helpers\Helper::getSucursales() as $sucursal)
-									<p><b>{{$sucursal->localidad}}</b> - <a href="tel:{{$sucursal->telefono}}">{{$sucursal->telefono}}</a></p>
+	                            @foreach(\App\Helpers\Helper::getSucursalesConvencional() as $sucursal)
+									<p><b>{{$sucursal->nombre}}</b> - <a href="tel:{{$sucursal->telefono}}">{{$sucursal->telefono}}</a></p>
 								@endforeach
 	                        </div>
 	                    </div>
@@ -70,7 +77,7 @@
 	                        </div>
 	                        <div class="media-body">
 	                            <h4>DIRECCIONES DE EMAIL</h4>
-	                            @foreach(\App\Helpers\Helper::getSucursales() as $sucursal)
+	                            @foreach(\App\Helpers\Helper::getSucursalesConvencional() as $sucursal)
 		                            <p>
 		                                <a href="mailto:{{$sucursal->email}}">{{$sucursal->email}}</a>
 		                            </p>

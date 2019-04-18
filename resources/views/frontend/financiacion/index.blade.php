@@ -5,6 +5,13 @@
   <meta name="description" content="Derka y Vargas Financiación, TCF, Toyota Compañia Financiera, Créditos UVA">
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com/financiacion" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="FINANCIACION" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+@stop
+
 @section('content')
 	<article>
 		<section>

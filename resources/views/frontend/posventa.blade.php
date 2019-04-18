@@ -5,6 +5,13 @@
   <meta name="description" content="Derka y Vargas Servicios de Posventa, Mantenimiento express, Plan de mantenimiento Toyota, Servicio técnico oficial Toyota">
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com/posventa" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="POSVENTA DERKA Y VARGAS" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+@stop
+
 <style type="text/css">
 .row-well{
 	background: #f4f4f4;
@@ -48,6 +55,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     border-top-color: #51a8b1 !important;
 }
 
+#modal-turno-wapp .modal-header{
+	background-color: #ed3237;
+	color: #fafafa;
+}
+#modal-turno-wapp .modal-header .close{
+	opacity: 0.8;
+}
+#modal-turno-wapp .modal-header .close span{
+	color: #fafafa;
+}
 
 </style>
 
@@ -122,6 +139,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					<img src="/imagenes/posventa/neumaticos_desk.png" class="img-responsive visible-md visible-lg">
 					<img src="/imagenes/posventa/neumaticos_mobile.png" class="img-responsive visible-xs visible-sm">
 				</div>
+			</div>
+			<br>
+			<div class="row">
 				<div class="col-md-12">
 					<img src="/imagenes/posventa/promo-servicio-desk.png" class="img-responsive">
 				</div>
@@ -176,13 +196,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 						<p style="font-size: 20px; font-weight: bold;">La calidad de siempre, más coveniente que nunca.</p>
 						<p style="text-align: justify;">Nadie conoce mejor tu Toyota como Toyota, por eso acercate a cualquiera de nuestras sucursales con servicio de Posventa para contar con el respaldo de un servicio técnico oficial. </p>	
 						<a href="/turno-servicios/create" class="btn btn-toyota">SOLICITAR TURNO ONLINE</a>
-						<a href="https://wa.me/543625270614"  class="btn btn-toyota btn-whatsapp" target="_blank">ENVIAR WHATSAPP</a>
+						<a href="#"  class="btn btn-toyota btn-whatsapp" data-toggle="modal" data-target="#modal-turno-wapp">ENVIAR WHATSAPP</a>
+						{{-- <a href="https://wa.me/543625270614"  class="btn btn-toyota btn-whatsapp" data-toggle="modal" data-target="#myModal">ENVIAR WHATSAPP</a> --}}
+						<!-- Modal -->
+						<div class="modal fade" id="modal-turno-wapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document" style="min-width: 90%">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">SELECCIONAR SUCURSAL</h4>
+						      </div>
+						      <div class="modal-body">
+						        <div class="list-group">
+					        		@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
+								  		<a href="https://wa.me/{{$sucursal->whatsapp_posventa}}?text=Hola,%20necesito%20un%20turno%20para%20mi%20Toyota" class="list-group-item" target="_blank" onclick="$('.modal').modal('toggle')" style="font-size: 2.2rem">{{$sucursal->nombre}}</a>
+								  	@endforeach
+								</div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
 					</div>
 					<div class="col-md-offset-1 col-md-4 via-whatsapp" style="padding: 0px;">
 						<div style="width: 100%; display: flex; justify-content: space-around; align-items: center;">
 							<div class="text-right">
-								<p style="font-size: 20px; font-weight: bold;">Solicitá un turno vía Whatsapp</p>
-								<b style="font-size: 25px;">3625-270614</b>
+								<p style="font-size: 2.3rem; font-weight: bold;">Solicitá un turno vía Whatsapp</p>
 							</div>
 							<div>
 								<img src="{{asset('imagenes/icons/whatsapp-icon.png')}}" style="height: 75px;">								
@@ -192,6 +233,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					</div>
 				</div>
 			</div>
+
 		</section>
 
 		<section id="garantia">
@@ -239,10 +281,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 							<ul class="list-unstyled list-locations">
 								@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
 									<li>
-										{{-- <a href="#" onclick="goto(event, {{$sucursal->map_lat}},{{ $sucursal->map_lng }})"><img src="/imagenes/icons/map-marker.png" style="width: 22px; margin-bottom: 4px;">{{$sucursal->nombre}}</a> --}}
 										<a href="#" onclick="mostrarMapa(event, {{$sucursal->id}})"><img src="/imagenes/icons/map-marker.png" style="width: 22px; margin-bottom: 4px;">{{$sucursal->nombre}}</a>
 										<div style="font-size: 15px; padding-left: 22px;">{{ $sucursal->direccion }}</div>
-										<div style="font-size: 15px; padding-left: 22px;"><i class="fa fa-phone-square" aria-hidden="true"></i> {{ $sucursal->telefono }}</div>
+										<div style="font-size: 15px; padding-left: 22px;"><i class="fa fa-phone-square"></i> {{ $sucursal->telefono }}</div>
+										<div style="font-size: 15px; padding-left: 22px;"><i class="fa fa-whatsapp"></i> {{ $sucursal->whatsapp_posventa }}</div>
 									</li>
 								@endforeach
 							</ul>

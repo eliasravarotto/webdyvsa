@@ -2,7 +2,14 @@
 
 @section('title_and_meta')
   <title>Derka y Vargas - Plan de Ahorro</title>
-  <meta name="description" content="Plan de Ahorro Toyota Resistencia, Charata, Saenz Peña, Villa Angela">
+  <meta name="description" content="Plan de Ahorro Toyota Resistencia, Charata, Saenz Peña, Villa Angela, Toyota Cuotas Sin Interes, Plan sin interes Toyota, Plan de Ahorro Etios, Plan de Ahorro Hilux, Plan de Ahorro Yaris, Plan de Ahorro Corolla, Que es un plan de ahorro">
+@stop
+
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com/plan-de-ahorro" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="PLAN DE AHORRO DERKA Y VARGAS" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 
 @section('styles_sheets')
@@ -601,10 +608,9 @@
 	                            <i class="fa fa-map-marker"></i>
 	                        </div>
 	                        <div class="media-body">
-	                            <h4>DIRECCIÓNES SUCURSALES</h4>
+	                            <h4>DIRECCIÓNES</h4>
 	                            @foreach(\App\Helpers\Helper::getSucursalesPlanDeAhorro() as $sucursal)
-									{{-- <p><b>{{$sucursal->localidad}}</b> - <a href="#" style="color: black" onclick="goto(event, {{$sucursal->map_lat}},{{ $sucursal->map_lng }}); $(document).scrollTo('#map');">{{$sucursal->direccion}}</a></p> --}}
-									<p><b>{{$sucursal->localidad}}</b> - <a href="#" style="color: black" onclick="mostrarMapa(event, {{$sucursal->id}})">{{$sucursal->direccion}}</a></p>
+									<p><b>{{$sucursal->nombre}}</b> - <a href="#" style="color: black" onclick="mostrarMapa(event, {{$sucursal->id}})">{{$sucursal->direccion}}</a></p>
 								@endforeach
 	                        </div>
 	                    </div>

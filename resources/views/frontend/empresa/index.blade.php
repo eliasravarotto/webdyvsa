@@ -5,6 +5,13 @@
   <meta name="description" content="Derka y Vargas Servicios de Posventa, Mantenimiento express, Plan de mantenimiento Toyota, Servicio técnico oficial Toyota">
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com/empresa" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="EMPRESA DERKA Y VARGAS" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+@stop
+
 @section('styles_sheets')
   <style type="text/css">
   	.row-politica{
