@@ -2,7 +2,7 @@
 
 @section('title_and_meta')
   <title>Derka y Vargas - Usados - {{$unidad->marca}} {{$unidad->modelo}}</title>
-  <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados, financiacion usados {{$unidad->marca}} {{$unidad->modelo}}">
+  <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota Chaco, financiacion usados {{$unidad->marca}} {{$unidad->modelo}}">
 @stop
 
 @section('mark-up-facebook')

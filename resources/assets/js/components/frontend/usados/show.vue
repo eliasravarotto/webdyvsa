@@ -195,14 +195,20 @@ table>tbody tr td {
                 </div>
             </div>
             <div class="well">
-                <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son
-                los siguientes:
-                </p>
-                <ul class="list-unstyled">
-                    <li>- Garantía de 1 año o 20.000 km.</li>
-                    <li>- Vehículos que fueron atendidos en concesionarios oficiales.</li>
-                    <li>- 150 puntos de inspección realizados por técnicos capacitados.</li>
-                </ul>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-2 text-center">
+                        <img src="/imagenes/logo-uct.png" class="img-responsive" style="max-height: 125px; display: inline; margin-bottom: 10px;">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-10">
+                        <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
+                        <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
+                        <ul class="list-unstyled">
+                            <li> - Garantía de 1 año o 20.000 km.</li>
+                            <li> - Vehículos que fueron atendidos en concesionarios oficiales.</li>
+                            <li> - 150 puntos de inspección realizados por técnicos capacitados.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
