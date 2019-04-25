@@ -50,8 +50,8 @@
       </div>
     </div>
     <div class="row">
-        <div v-for="unidad in unidades" class="col-sm-12 col-md-4">
-            <div v-if="unidad.visible" class="thumbnail thumbnail-no-bg" style="height:455px">
+        <div v-for="unidad in unidades" class="col-sm-12 col-md-4" v-if="unidad.visible && !unidad.uct">
+            <div class="thumbnail thumbnail-no-bg" style="height:455px">
                 <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                 <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
                     <img v-show="unidad.foto" :src="unidad.foto" alt="">
@@ -85,15 +85,57 @@
                     </a>
                 </div>
             </div>
-            
         </div>  
         <div class="col-sm-12 col-md-12" v-show="unidades.length==0">
             <div class="alert alert-info" role="alert">
                 <strong>Sin resultados!</strong> No hay unidades que coincidan con los datos ingresados.
                 <a href="#" @click.prevent="limpiarFiltro()">Ver todos</a>
             </div>
-        </div>      
+        </div>
+
     </div>
+        <div class="page-header flex" style="justify-content: space-between;">
+            <img src="imagenes/logo-uct.png" style="height: 70px;">
+            <h2>Usados Certificados</h2>
+        </div>
+        <div class="row">
+        <div v-for="unidad in unidades_uct" class="col-sm-12 col-md-4" v-if="unidad.visible && unidad.uct">
+            <div class="thumbnail thumbnail-no-bg" style="height:455px">
+                <div class="pos-rel o-flw-hiden" style="max-height: 250px">
+                <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                    <img v-show="unidad.foto" :src="unidad.foto" alt="">
+                    <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
+                    <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
+                        <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
+                            <a :href="'/usados/'+unidad.slug" class="btn btn-rojo-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
+                                DETALLES
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="caption caption-default">
+                    <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
+                    <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
+                        <div>
+                            <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
+                        </div>
+                        <div>
+                            <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
+                        </div>
+                        <div>
+                            <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
+                        </div>
+                    </div>
+                    <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
+                    <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                        <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                        CONSULTAR
+                    </a>
+                </div>
+            </div>
+        </div>  
+        </div>  
 </div>
 
 </template>
@@ -104,6 +146,7 @@
         data(){
             return {
                 unidades: '',
+                unidades_uct: '',
                 colores:[],
                 marcas:[],
                 anios:[],
@@ -116,6 +159,7 @@
         },
         mounted() {
             this.unidades = this.data.unidades;
+            this.unidades_uct = this.data.unidades;
             this.cargarColores();
             this.cargarMarcas();
             this.cargarAnios();
