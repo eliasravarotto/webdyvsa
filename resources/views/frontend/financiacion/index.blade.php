@@ -21,16 +21,11 @@
 		        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		        <li data-target="#myCarousel" data-slide-to="1"></li>
 		        <li data-target="#myCarousel" data-slide-to="2"></li>
-		        <li data-target="#myCarousel" data-slide-to="3"></li>
 		      </ol>
 
 		      <!-- Wrapper for slides -->
 		      <div class="carousel-inner">
 		        <div class="item active">
-		          <img src="/imagenes/home/innova.png" alt="">
-		        </div>
-
-		        <div class="item">
 		          <img src="/imagenes/home/slide.png" alt="">
 		        </div>
 
@@ -57,15 +52,11 @@
 		    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm" data-ride="carousel">
 		      <ol class="carousel-indicators">
 		        <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
-		        <li data-target="#carousel-mobile" data-slide-to="1" class=""></li>
 		      </ol>
 
 		      <div class="carousel-inner">
 		        <div class="item active">
 		          <img src="/imagenes/home/slide_sm.jpeg" alt="">
-		        </div>
-		        <div class="item">
-		          <img src="/imagenes/home/innova_sm.png" alt="">
 		        </div>
 		      </div>
 
