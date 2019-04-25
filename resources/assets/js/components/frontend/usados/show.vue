@@ -157,6 +157,11 @@ table>tbody tr td {
                                                     <td class="t-label"><i class="stm-icon-fuel"></i> Combustible</td>
                                                     <td class="t-value t-vin h6">{{unidad.combustible}}</td>
                                                 </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="fa fa-certificate"></i> Certificado Toyota</td>
+                                                    <td class="t-value t-vin h6" v-if="unidad.uct">SI</td>
+                                                    <td class="t-value t-vin h6" v-else>NO</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -187,6 +192,53 @@ table>tbody tr td {
                             </a>
                         </li>
                     </ul>                 
+                </div>
+            </div>
+            <div class="well">
+                <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son
+                los siguientes:
+                </p>
+                <ul class="list-unstyled">
+                    <li>- Garantía de 1 año o 20.000 km.</li>
+                    <li>- Vehículos que fueron atendidos en concesionarios oficiales.</li>
+                    <li>- 150 puntos de inspección realizados por técnicos capacitados.</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- Carusel DESKCTOP-->
+                    <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                      </ol>
+
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner">
+                        <div class="item active">
+                          <img src="/imagenes/home/slide.png" alt="">
+                        </div>
+
+                        <div class="item">
+                          <img src="/imagenes/home/portada_uva.png" alt="">
+                        </div>
+
+                        <div class="item">
+                          <img src="/imagenes/home/slide6.png" alt="">
+                        </div>
+                      </div>
+
+                      <!-- Left and right controls -->
+                      <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                      </a> -->
+                    </div>
                 </div>
             </div>
         </div>

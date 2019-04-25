@@ -51,11 +51,11 @@
     </div>
     <div class="row">
         <div v-for="unidad in unidades" class="col-sm-12 col-md-4">
-            <div class="thumbnail thumbnail-no-bg" style="height:455px">
+            <div v-if="unidad.visible" class="thumbnail thumbnail-no-bg" style="height:455px">
                 <div class="pos-rel o-flw-hiden" style="max-height: 250px">
+                <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
                     <img v-show="unidad.foto" :src="unidad.foto" alt="">
                     <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
-
                     <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
                         <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
                             <a :href="'/usados/'+unidad.slug" class="btn btn-rojo-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">

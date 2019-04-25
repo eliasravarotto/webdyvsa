@@ -74,6 +74,15 @@
 						</select>
 					</div>
 				</div>
+				<div class="col-md-2">
+				<div class="form-group">
+				  <label class="control-label mb-1">UCT</label>
+				  <select class="form-control" name="uct">
+						<option @if($usado->uct == 0) selected @endif value="0">NO</option>
+						<option @if($usado->uct == 1) selected @endif value="1">SI</option>
+					</select>
+				</div>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-4">

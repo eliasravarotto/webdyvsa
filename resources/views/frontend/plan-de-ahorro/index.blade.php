@@ -416,12 +416,19 @@
 				</div>
 			</div>
 		</section>
+
 		<br>
+
 		<section>
 			<div class="container">
-				<div class="well">
+				<div class="row">
+					<div class="col-md-6 col-xs-12 col-sm-12">
+						<img src="{{asset('imagenes/tpa/plan_adjudicados.png')}}" class="img-responsive">
+					</div>
+					<div class="col-md-6 col-xs-12 col-sm-12">
+						<div class="well">
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
 				                <div class="caption caption-default">
 				                	<h1 class="text-center"><i class="fa fa-car" style="font-size: 90px; color: black;"></i></h1>
@@ -480,7 +487,7 @@
 						  </div>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
 				                <div class="caption caption-default">
 				                	<h1 class="text-center"><i class="fa fa-users" style="font-size: 90px; color: black;"></i></h1>
@@ -492,19 +499,19 @@
 		        			</div>
 						</div>
 
-						<div class="col-md-4">
+						{{-- <div class="col-md-4">
 							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
 				                <div class="caption caption-default">
 				                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
 				                    <h4 class="text-center">Licitación Online</h4>
 				                    <p class="text-center">
-				                    	{{-- Completá online el formulario de pre-licitación para el próximo acto de adjudicación. --}}
+				                    	Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
 				                    	Proximamente.
 				                    </p>
-				                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
+				                    <a href="/posventa" class="btn btn-toyota">VER</a>
 				                </div>
 		        			</div>
-						</div>
+						</div> --}}
 					</div>
 					<div class="row">
 						<div class="col-sm-12 col-md-12">
@@ -514,13 +521,16 @@
 						</div>
 					</div>
 				</div>
+					</div>
+				</div>
+				
 			</div>
 		</section>
-
+		<br>
 		<section>
 			<div class="container">
 			<div class="row">
-				<blockquote style="border-left: 5px solid #e81f39;">
+				<blockquote style="border-left: 5px solid #e81f39; margin: 0 15px;">
 					<div class="row">
 						<div class="col-md-2">
 							<i class="fa fa-home" style="font-size: 100px"></i> 
@@ -534,7 +544,7 @@
 			</div>
 			</div>
 		</section>
-
+		<br>
 		<section>
 			<div class="container">
 				<div class="row">

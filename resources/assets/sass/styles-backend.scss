@@ -95,7 +95,7 @@ a:focus {
     text-align: left
 }
 
-#sidebar ul li a:hover{
+#sidebar ul li a:hover {
     text-decoration: none;
 }
 
@@ -111,7 +111,6 @@ a:focus {
     padding: 20px;
     background: $azul_oscuro
 }
-
 
 #sidebar ul.components {
     padding: 20px 0;
@@ -188,12 +187,11 @@ a.article:hover {
 }
 
 /* ----------MEDIAQUERIES NAVBAR-------------------- */
+
 /*--------------------------------------------------*/
 
 /* ----------MEDIAQUERIES SIDEBAR-------------------- */
-@media (min-width: 992px) { 
-
-
+@media (min-width:992px) {
 }
 
 @media (max-width:768px) {
@@ -273,3 +271,4 @@ a.article:hover {
 .tarjeta-dash .card-body div h6 {
     font-weight: bold
 }
+
