@@ -17,7 +17,6 @@
             .precio{
                     background-color: #016a87;
                     color: #fafafa !important;
-                    /*text-shadow: 0px 0px 0px #ffffff;*/
             }
         </style>
 @stop

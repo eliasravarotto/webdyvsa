@@ -111,7 +111,7 @@ table>tbody tr td {
                             </div>
                             <div class="col-sm-5">
                                 <div class="stm-single-car-side">
-                                    <!--Pricio-->
+                                    <!-- Pricio -->
                                     <div class="single-car-prices">
                                         <div class="single-regular-price text-center">
                                             <span class="labeled">Precio</span>
