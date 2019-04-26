@@ -15,7 +15,7 @@ class UsadoController extends Controller
      */
     public function index(Request $request)
     {
-        $usados = Usado::orderBy('orden', 'ASC')->get();
+        $usados = Usado::all();
 
         if( $request->ajax() ){
             return $usados;

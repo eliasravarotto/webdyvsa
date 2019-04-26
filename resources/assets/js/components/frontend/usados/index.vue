@@ -163,8 +163,14 @@
             this.cargarColores();
             this.cargarMarcas();
             this.cargarAnios();
+            this.orderByOrden();
         },
         methods:{
+            orderByOrden(){
+                this.unidades = _.orderBy(this.unidades,
+                                    ['orden'],
+                                    ['asc']);
+            },
             cargarColores(){
                 self = this;
                 this.unidades.forEach(function(unidad) {
