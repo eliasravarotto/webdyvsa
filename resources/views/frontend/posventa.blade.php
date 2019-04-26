@@ -146,6 +146,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					<img src="/imagenes/posventa/promo-servicio-desk.png" class="img-responsive">
 				</div>
 			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-12">
+					<img src="/imagenes/posventa/alineado-desk.png" class="img-responsive">
+				</div>
+			</div>
 		</section>
 
 		<section class="pad-top-50" style="height: auto;">
