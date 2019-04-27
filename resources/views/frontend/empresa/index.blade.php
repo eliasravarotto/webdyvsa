@@ -51,6 +51,12 @@
       <img src="{{asset('imagenes/empresa/fondo-politica-ambiental.png')}}" class="img-responsive">
     </div>
   </div>
+
+  <div class="row my-3">
+    <div class="col-md-offset-2 col-md-8 col-xs-12">
+      <img src="{{asset('imagenes/empresa/donacion.png')}}" class="img-responsive">
+    </div>
+  </div>
 </div>
 {{-- <section>
 	<div class="container" id="politica-ambiental">
