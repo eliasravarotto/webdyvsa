@@ -18,8 +18,14 @@ class FrontController extends Controller
     public function home()
     {
         $productos = Modelo::all();
+
         $slides_img = $this->imagesSlideHome();
-        return view('frontend.home', compact('productos', 'slides_img'));
+
+        $push_cookie = \Request::cookie('quiere_suscribirse', 1, 3600*24);
+
+        //return $push_cookie;
+
+        return view('frontend.home', compact('productos', 'slides_img', 'push_cookie'));
     }
 
     public function posventa()

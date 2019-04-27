@@ -110,9 +110,9 @@
 
 @section('script')
     <!-- Google FCM -->
-    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+    {{-- <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
-    <script src="{{ asset('js/sw-push-msg.js') }}"></script>
+    <script src="{{ asset('js/sw-push-msg.js') }}"></script> --}}
     <!-- end -->
     <script type="text/javascript">
     	$('#contacto-form').on('shown.bs.collapse', function (e) {

@@ -95,29 +95,34 @@ function unsubscribeUser() {
 // INIT PUSH - 1
 function initializePush() {
 
+
   userToken = localStorage.getItem('pushToken')
 
   isSubscribed = userToken !== null
 
+  var existe = cookieExist();
+
   //updateBtn();
-   //ptoken.innerHTML=userToken;
+  //ptoken.innerHTML=userToken;
 
-  if (!isSubscribed) {
+  if (!existe) {
+    if (!isSubscribed) {
 
-    swal.fire({
-        title: 'Suscríbete a Nuestra Web',
-        text: "Al suscribirte recibiras las últimas novedades.",
-        // type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonText: 'Más tarde',
-        confirmButtonText: 'ACEPTAR'
-      }).then((result) => {
-        if (result.value) {
-          if (isSubscribed) return unsubscribeUser()
-          return subscribeUser()
-        } 
-      })
+      swal.fire({
+          title: 'Suscríbete a Nuestra Web',
+          text: "Al suscribirte recibiras las últimas novedades.",
+          // type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonText: 'Más tarde',
+          confirmButtonText: 'ACEPTAR'
+        }).then((result) => {
+          if (result.value) {
+            if (isSubscribed) return unsubscribeUser()
+            return subscribeUser()
+          } 
+        })
+    }
   }
 
   // CHANGE SUBSCRIPTION ON CLICK
@@ -147,3 +152,23 @@ window.addEventListener('load', () => {
       console.log('Push not supported.');
   }
 })
+
+
+function cookieExist() {
+  var existe;
+  if (document.cookie.indexOf("visited=") >= 0) {
+    existe = true;
+  }
+  else {
+    // set a new cookie
+    expiry = new Date();
+    expiry.setTime(expiry.getTime()+(5*60*1000)); // Ten minutes
+
+    // Date()'s toGMTSting() method will format the date correctly for a cookie
+    document.cookie = "visited=yes; expires=" + expiry.toGMTString();
+
+    existe = false;
+  }
+  
+  return existe;
+}
