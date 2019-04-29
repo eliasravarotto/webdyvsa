@@ -3,6 +3,7 @@ namespace App\Helpers;
 
 use App\Sucursal;
 use App\Modelo;
+use App\Post;
 
 
 class Helper
@@ -63,5 +64,19 @@ class Helper
 	public static function getModelos()
 	{
 		return Modelo::all();
+	}
+
+	public static function postRecientes($limit)
+	{
+		$posts = Post::take($limit)->orderBy('created_at', 'DESC')->get();
+
+		return $posts;
+	}
+
+	public static function postPopulares($limit)
+	{
+		$posts = Post::take($limit)->orderBy('orden', 'DESC')->get();
+
+		return $posts;
 	}
 }

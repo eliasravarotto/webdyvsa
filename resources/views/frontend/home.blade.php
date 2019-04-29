@@ -133,104 +133,13 @@
         <div class="titleContainer">
           <h4 class="containerCenter"> ¿QUÉ ES LA TECNOLOGÍA HÍBRIDA?</h4>
         </div>
-      </a>
-
-      <!--
-      <div class="owl-carousel experiencia-hibrida mt-3">
-        {{-- #1 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/vUPgPSLEJ30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Los híbridos tienen menos reacción que una babosa'</span>
-          </div>
-        </div>
-
-        {{-- #2 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/iby4FQ2lMac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Hay que enchufarlos y no ahorran nada'</span>
-          </div>
-        </div>
-
-        {{-- #3 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/4fWTx0RcP10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Entre más sofisticada la tecnología, más fácil de romperse'</span>
-          </div>
-        </div>
-
-        {{-- #4 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/WKphpOopcXw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Los híbridos son carritos de golf'</span>
-          </div>
-        </div>
-        {{-- #5 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/QV5LS-Np90A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Manejar un híbrido es más difícil que chuparse el codo'</span>
-          </div>
-        </div>
-        {{-- #6 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/UZqDSIcaadg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Con los híbridos nadie te garantiza nada'</span>
-          </div>
-        </div>
-        {{-- #7 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/GZ_MxuDo6sU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Para que un híbrido consuma menos, tenés que ser piloto profesional'</span>
-          </div>
-        </div>
-        {{-- #8 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/TOQ6IbwtvzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Los híbridos no se bancan que les llenes el baúl'</span>
-          </div>
-        </div>
-        {{-- #9 --}}
-        <div class="thumbnail thumbnail-no-bg">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/LPAZngILST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-            <span>MITO: 'Mantener un híbrido es carísimo'</span>
-          </div>
-        </div>
-      </div>
-      <div class="row text-center">
-        <a href="/toyota-hibrid-experience" class="btn btn-toyota">VER MÁS</a>
-      </div>
-      -->
-    
+      </a>  
     </div>
   </section>
 
-  <!-- MODELOS -->
+  <!---------------------------------------------------------------------
+    MODELOS
+  ----------------------------------------------------------------------->
   <div class="container pad-top-bot-25">
     {{-- <p class="text-center" style="font-size: 25px; color: #626262">MODELOS</p> --}}
     <div class="page-header text-center">
@@ -316,7 +225,9 @@
       </div>
   </section>
 
-  <!--Parallax Section -->
+  <!---------------------------------------------------------------------
+    PARALLAX
+  ----------------------------------------------------------------------->
   <div class="parallax bg3">
     <div class="container">
       <div class="row">
@@ -330,7 +241,9 @@
     </div>
   </div>
 
-  <!-- SOCIAL MEDIA -->
+  <!---------------------------------------------------------------------
+    SOCIAL MEDIA
+  ----------------------------------------------------------------------->
   <section id="services" style="border-top: 1px solid #01b2aa;">
     <div class="container">
       <img src="{{asset('imagenes/logos/social_media.jpg')}}" style="width: 100%">
@@ -349,28 +262,107 @@
          
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="page-header text-center"><h2>Felicidades a los ganadores Experiencia Corolla</h2><p><i class="fa fa-calendar-o" aria-hidden="true"></i> 23-03-2019</p></div>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------
+    NOTICIAS RECIENTES
+  ----------------------------------------------------------------------->
+  <section class="mt-3">
+    <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-8">
+        <div class="vc_column-inner ">
+          <div class="wpb_wrapper">
+            <div class="stm_widget_recent_news">
+              <div class="recent-top">
+                <div class="left">
+                  <h4>NOTICIAS Y EVENTOS</h4>
+                </div>
+                <div class="right">
+                    <ul class="cat-list recent-cat-list">
+                        <li class="recent_news_cat" data-slug="all">
+                            <a href="#" class="heading-font">Ver Todo</a>
+                        </li>
+                        {{-- <li class="recent_news_cat" data-slug="interview">
+                            <span class="heading-font">Noticias</span>
+                        </li>
+                        <li class="recent_news_cat" data-slug="news">
+                            <span class="heading-font">Eventos</span>
+                        </li> --}}
+                    </ul>
+                </div>
+              </div>
+              <div class="recentNewsAnimate">
+                @foreach(\App\Helpers\Helper::postRecientes(2) as $post)
+                    <a href="#" title="{{$post->titulo}}" class="stm_magazine_single_list no_deco post-208 type-post status-publish format-standard has-post-thumbnail hentry category-news tag-future tag-interior tag-multimedia">
+                      <div class="magazine-list-img">
+                        <img width="255" height="160" src="{{$post->imagen_portada}}" class="attachment-stm-img-255-160 size-stm-img-255-160 wp-post-image" alt="">
+                        {{-- <div class="fa-round"><i class="fa fa-share"></i></div> --}}
+                      </div>
+                      <div class="stm-magazine-loop-data">
+                        <h3 class="top-content">
+                          {{$post->titulo}}
+                        </h3>
+                        <div class="middle-content">
+                          <div class="magazine-category normal-font">
+                            New        
+                          </div>
+                          <div class="magazine-loop-date">
+                              <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
+                              {{date('d M Y', strtotime($post->created_at))}}
+                          </div>
+                          <div class="magazine-loop-reviews">
+                            <i class="stm-icon-ico_mag_reviews"></i> 4
+                          </div>
+                          <div class="magazine-loop-views">
+                            <i class="stm-icon-ico_mag_eye"></i> 157
+                          </div>
+                        </div>
+                        <div class="bottom-content">
+                          <p>{{str_limit(strip_tags($post->contenido), 150, '...')}}</p>
+                        </div>
+                      </div>
+                    </a>
+                @endforeach
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-offset-2 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pcb.2429067363772053/2429060497106073/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060497106073/?type=3" class="fb-xfbml-parse-ignore">Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060497106073/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
-        </div>
-        <div class="col-sm-12 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pcb.2429067363772053/2429060560439400/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060560439400/?type=3" class="fb-xfbml-parse-ignore">Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429060560439400/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="vc_column-inner ">
+          <div class="wpb_wrapper">
+            <div class="stm-most-popular-posts">
+              <h2>MÁS POPULARES</h2>
+              @foreach(\App\Helpers\Helper::postPopulares(6) as $post)
+              <a href="#" class="stm-magazine-news clearfix">
+                  <div class="image">
+                      <img width="190" height="132" src="{{$post->imagen_portada}}" class="attachment-stm-img-190-132 size-stm-img-190-132 wp-post-image" alt="">        
+                  </div>
+                  <div class="stm-post-content">
+                      <div class="title heading-font">
+                        {{str_limit(strip_tags($post->contenido), 50, '...')}}    
+                      </div>
+                      <div class="recomended-data">
+                          <div class="comments-number normal-font">
+                            <i class="stm-service-icon-calendar_service"></i> 
+                            {{date('d M Y', strtotime($post->created_at))}}          
+                          </div>
+                          {{-- <div class="magazine-loop-views">
+                              <i class="stm-icon-ico_mag_eye"></i>
+                              <div class="normal-font">795</div>
+                          </div> --}}
+                      </div>
+                  </div>
+              </a>
+              @endforeach
+            </div>
+          </div>
         </div>
       </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-12 col-md-offset-2 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pb.127409800604499.-2207520000.1553689513./2429329410412515/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429329410412515/?type=3" class="fb-xfbml-parse-ignore"><p>Muchas felicidades  Sandoval Aldo Ramon por participar de la #experienciacorolla en realizar un test drive el sábado 23, y ganar un hermoso premio 👉😉🎊</p>Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429329410412515/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
-        </div>
-        <div class="col-sm-12 col-md-4 text-center">
-          <div class="fb-post" data-href="https://www.facebook.com/derkayvargas/photos/pb.127409800604499.-2207520000.1553689513./2429277657084357/?type=3&amp;theater" data-width="500" data-show-text="true"><blockquote cite="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429277657084357/?type=3" class="fb-xfbml-parse-ignore"><p>Muchas felicidades Lirussi German por participar de la #experienciacorolla en realizar un test drive el sábado 23, y ganar un hermoso premio 👉😉🎊</p>Publicada por <a href="https://www.facebook.com/derkayvargas/">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a> en&nbsp;<a href="https://developers.facebook.com/derkayvargas/photos/a.128065830538896/2429277657084357/?type=3">Martes, 26 de marzo de 2019</a></blockquote></div>
-        </div>
-      </div>
+    </div>
     </div>
   </section>
 @stop

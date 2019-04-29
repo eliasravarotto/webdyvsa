@@ -154,6 +154,9 @@
     
     <script src="{{ asset('js/app_backend.js') }}"></script>
 
+    <!-- CKEditor JS -->
+    <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
+
     @yield('page-script')
     
     <script type="text/javascript">

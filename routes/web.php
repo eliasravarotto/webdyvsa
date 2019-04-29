@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/turnos-servicios/{id}','TurnoServicioController@show')->name('solicitud_show');
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
 	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
+	Route::resource('admin/posts','PostController');
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin/servicios','TipoServicioController');
 	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
