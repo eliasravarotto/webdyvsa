@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\ImagenGaleriaPost;
 use App\Post;
 use App\PostTema;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -55,6 +56,7 @@ class PostController extends Controller
         $post->tema_id=$request->tema_id;
         $post->contenido = $request->contenido;
         $post->orden = $request->orden;
+        $post->generateSlug();
         $post->save();
 
         if ($request->hasFile('imagen_portada')) {
@@ -100,6 +102,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        //return $request;
+
         $this->validate($request, [
             'titulo' => 'required',
             'tema_id' => 'required',
@@ -127,8 +132,23 @@ class PostController extends Controller
             $post->update();
         }
 
+        $total = count($request->img_galeria);
+        if ($total>0) {
+            for( $i=0 ; $i < $total ; $i++ ) { 
+                $file = $request->file('img_galeria')[$i];
+                $originalname = $request->file('img_galeria')[$i]->getClientOriginalName();
+                $filename = md5(date('Y-m-d H:i:s:u').$originalname);
+                $file->move(public_path().'/imagenes/posts/'.$post->id.'/',$filename);
+                $imagen = new ImagenGaleriaPost;
+                $imagen->post_id = $post->id;
+                $imagen->url = '/imagenes/posts/'.$post->id.'/'.$filename;
+                $imagen->save();
+            }
+        }
+
         $post->update();
 
+        return redirect('/admin/posts')->with('success', 'Datos guardados correctamente.');
     }
 
     /**
@@ -145,5 +165,20 @@ class PostController extends Controller
         } else{
             return back()->with('error', 'No se pudo eliminar el post!');
         }
+    }
+
+    public function deleteImgGaleria($id)
+    {
+        $img = ImagenGaleriaPost::find($id);
+        unlink(public_path().$img->url);
+        $img->delete();
+        return back()->with('success', 'La imagen fué eliminada correctamente!');
+    }
+
+    public function showPost($slug)
+    {
+        $post = Post::where('slug', '=', $slug)->first();
+
+        return view('frontend.posts.show', compact('post'));
     }
 }

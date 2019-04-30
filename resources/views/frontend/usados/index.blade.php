@@ -32,17 +32,16 @@
 	<article>
 		<section>
 			<div class="container">
-
-						<div class="page-header">
-		                    <h2>ELEGÍ TU USADO<small></small></h2>
-						</div>
-						<ol class="breadcrumb">
-			              <li><a href="/">Inicio</a></li>
-			              <li class="active">Usados</li>
-			            </ol>
-
+				<div class="page-header">
+	                <h2>ELEGÍ TU USADO<small></small></h2>
+				</div>
+				<ol class="breadcrumb">
+	              <li><a href="/">Inicio</a></li>
+	              <li class="active">Usados</li>
+	            </ol>
 					
 				<br>
+				
 				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 
 				<div class="row">

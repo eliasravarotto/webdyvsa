@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
 	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
 	Route::resource('admin/posts','PostController');
+	Route::get('admin/usados/borrar_img_post/{id}','PostController@deleteImgGaleria')->name('borrar_img_post');
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin/servicios','TipoServicioController');
 	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
@@ -101,8 +102,10 @@ Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('te
 Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
 Route::get('/empresa','FrontController@empresa');
+Route::get('/responsabilidad-social-empresarial','FrontController@rse');
 Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
-// Route::get('/toyota-hibrid-experience','FrontController@thexpe');
-// Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');
+Route::get('/posts/{slug}','PostController@showPost')->name('show_post');
+// Route::get('/toyota-hibrid-experience','FrontController@thexpe');
+// Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');

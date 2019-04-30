@@ -295,7 +295,7 @@
               </div>
               <div class="recentNewsAnimate">
                 @foreach(\App\Helpers\Helper::postRecientes(2) as $post)
-                    <a href="#" title="{{$post->titulo}}" class="stm_magazine_single_list no_deco post-208 type-post status-publish format-standard has-post-thumbnail hentry category-news tag-future tag-interior tag-multimedia">
+                    <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm_magazine_single_list no_deco post-208 type-post status-publish format-standard has-post-thumbnail hentry category-news tag-future tag-interior tag-multimedia">
                       <div class="magazine-list-img">
                         <img width="255" height="160" src="{{$post->imagen_portada}}" class="attachment-stm-img-255-160 size-stm-img-255-160 wp-post-image" alt="">
                         {{-- <div class="fa-round"><i class="fa fa-share"></i></div> --}}
@@ -337,23 +337,24 @@
             <div class="stm-most-popular-posts">
               <h2>MÁS POPULARES</h2>
               @foreach(\App\Helpers\Helper::postPopulares(6) as $post)
-              <a href="#" class="stm-magazine-news clearfix">
+              <a href="{{ route('show_post', $post->slug) }}" class="stm-magazine-news clearfix">
                   <div class="image">
                       <img width="190" height="132" src="{{$post->imagen_portada}}" class="attachment-stm-img-190-132 size-stm-img-190-132 wp-post-image" alt="">        
                   </div>
                   <div class="stm-post-content">
                       <div class="title heading-font">
-                        {{str_limit(strip_tags($post->contenido), 50, '...')}}    
+                        {{str_limit(strip_tags($post->titulo), 50, '...')}}    
                       </div>
                       <div class="recomended-data">
+                          <div class="magazine-loop-views">
+                              <div class="magazine-category-tema normal-font">
+                                {{$post->tema->tema}}        
+                              </div>
+                          </div>
                           <div class="comments-number normal-font">
                             <i class="stm-service-icon-calendar_service"></i> 
                             {{date('d M Y', strtotime($post->created_at))}}          
                           </div>
-                          {{-- <div class="magazine-loop-views">
-                              <i class="stm-icon-ico_mag_eye"></i>
-                              <div class="normal-font">795</div>
-                          </div> --}}
                       </div>
                   </div>
               </a>

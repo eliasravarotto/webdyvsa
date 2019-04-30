@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Consulta;
 use App\ImagenGaleriaUsado;
 use App\Modelo;
+use App\Post;
 use App\PushSubscriptions;
 use App\Repositories\ModeloRepository;
 use App\TipoServicio;
 use App\Usado;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
@@ -84,6 +87,17 @@ class FrontController extends Controller
     {
         return view('frontend.empresa.index');
     }
+
+
+    public function rse(Request $request)
+    {
+        $posts = DB::select('SELECT * FROM posts INNER JOIN posts_temas ON posts_temas.id = posts.tema_id WHERE posts.tema_id = 1');
+
+        $posts = $this->arrayPaginator($posts, $request);
+
+        return view('frontend.rse.index', compact('posts'));
+    }
+
 
     public function checkIfTokenExist(Request $request, $token)
     {
@@ -196,5 +210,22 @@ class FrontController extends Controller
                     ->color($request->filtro_color)
                     ->anio($request->filtro_anio)
                     ->get();
+    }
+
+
+    public function arrayPaginator($array, $request, $cantidad_registros = 20)
+    {
+        $page = Input::get('page', 1);
+        $perPage = $cantidad_registros;
+        $offset = ($page * $perPage) - $perPage;
+
+        return new LengthAwarePaginator(
+                        array_slice($array, $offset, $perPage, true), 
+                        count($array), 
+                        $perPage, 
+                        $page,
+                        ['path' => $request->url(), 
+                        'query' => $request->query()]
+                    );
     }
 }
