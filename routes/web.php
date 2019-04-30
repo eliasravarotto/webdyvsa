@@ -102,7 +102,7 @@ Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('te
 Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
 Route::get('/empresa','FrontController@empresa');
-Route::get('/responsabilidad-social-empresarial','FrontController@rse');
+Route::get('/responsabilidad-social-empresarial','FrontController@rse')->name('rse');
 Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');

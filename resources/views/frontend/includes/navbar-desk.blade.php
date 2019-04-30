@@ -32,6 +32,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPRESA <span class="caret"></span></a>
                   <ul class="dropdown-menu dropdown-hover">
                     <li><a href="/empresa#politica-ambiental">Política Ambiental</a></li>
+                    <li><a href="{{route('rse')}}">Responsabilidad Social Empresarial</a></li>
                   </ul>
                 </li>
                 <li class=""><a href="/contacto">CONTACTO</a></li>
