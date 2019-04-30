@@ -59,12 +59,6 @@ class PostController extends Controller
         $post->generateSlug();
         $post->save();
 
-        if (isset($post->created_at)) {
-            $post->created_at = $request->created_at;
-            $post->update();
-        }
-
-
         if ($request->hasFile('imagen_portada')) {
             $foto = $request->file('imagen_portada');
             $foto_name = $request->file('imagen_portada')->getClientOriginalName();
