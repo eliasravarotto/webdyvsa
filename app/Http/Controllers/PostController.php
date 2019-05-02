@@ -121,7 +121,7 @@ class PostController extends Controller
         if ($request->hasFile('imagen_portada')) {
             if ($post->imagen_portada != null) {
                 if(file_exists(public_path().$post->imagen_portada)){
-                    unlink(public_path().$post->foto);    
+                    unlink(public_path().$post->imagen_portada);    
                 }
             }
 
