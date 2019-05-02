@@ -107,7 +107,20 @@
 			</div>
 		</section>
 
-		<section>
+		<section class="mt-3">
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-xs-6 col-md-6 text-center">
+  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-etios.jpg')}}">
+  					</div>
+  					<div class="col-xs-6 col-md-6 text-center">
+  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-yaris.jpg')}}">
+  					</div>
+  				</div>
+  			</div>
+  		</section>
+
+		<section class="mt-3">
   			<div class="container">
 	  			{{-- <div class="panel-group" id="accordion"> --}}
 				    <div class="panel panel-default">

@@ -77,7 +77,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
             </div>
         </section>
 
-        <section class="arrow_box container pad-top-bot-20">
+        <section v-if="modelo.id == 29 || modelo.id == 30">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <img v-if="modelo.id == 29" style="max-width: 100%; height: auto;" src="/imagenes/TCF/720x90_etios.png">
+                    <img v-if="modelo.id == 30" style="max-width: 100%; height: auto;" src="/imagenes/TCF/720x90_yaris.png">
+                </div>
+            </div>
+        </section>
+
+        <section class="container pad-top-bot-20">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left">
                     <h3>{{ modelo.slogan }}</h3>
@@ -135,24 +144,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
         </section>
 
 
-        <section class="pad-top-bot-50" v-if="imagenes_galeria.length > 0">
+        <!-- <section class="pad-top-bot-50" v-if="imagenes_galeria.length > 0">
             <div class="container">
-                <!-- Slider -->
                 <div class="row">
                     <div class="col-xs-12" id="slider">
-                        <!-- Top part of the slider -->
                         <div class="row">
                             <div class="col-md-6" id="carousel-bounding-box">
                                 <div class="carousel slide" id="myCarouselmin">
 
-                                    <!-- Carousel items -->
                                     <div class="carousel-inner">
                                         <div v-for="(img, index) in imagenes_galeria" v-bind:class="[index == 0 ? activeClass : 'item']" v-bind:data-slide-number="img.id">
                                             <img v-bind:src="img.url">
                                         </div>
                                     </div>
 
-                                    <!-- Carousel nav -->
                                     <a class="left carousel-control" href="#myCarouselmin" role="button" data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left"></span>                                       
                                     </a>
@@ -162,11 +167,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                                 </div>
                             </div>
 
-                            <!-- The Modal ------------------------------->
                             <div id="moda_show_imagen" class="modal-img">
-                                <!-- The Close Button -->
                                 <span class="close-on-click">&times;</span>
-                                <!-- Modal Content (The Image) -->
                                 <img class="modal-content" id="img01" src="#">
                             </div>
 
@@ -184,9 +186,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                         </div>
                     </div>
                 </div>
-                <!--/Slider-->
             </div>
-        </section>
+        </section> -->
 
         <section class="pad-top-bot-20" style="background-color: #f0fdff;">
             <div class="container pad-top-bot-50">

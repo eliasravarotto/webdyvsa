@@ -96,7 +96,6 @@
                 //check to see if this element is within viewport
                 if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
                     $element.addClass('.slide-left');
-                    console.log('asas')
                 } else {
                     $element.removeClass('.slide-left-show');
                 }

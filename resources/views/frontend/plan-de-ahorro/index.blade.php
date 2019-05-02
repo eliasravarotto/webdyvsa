@@ -173,10 +173,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 15.785,17</td>
-					        <td class="text-center" style="font-weight: bold;">$ 16.978,27</td>
-					        <td class="text-center" style="font-weight: bold;">$ 16.096,24</td>
-					        <td class="text-center" style="font-weight: bold;">$ 18.501,75</td>
+					        <td class="text-center" style="font-weight: bold;">$ 16.164,04</td>
+					        <td class="text-center" style="font-weight: bold;">$ 17.365,25</td>
+					        <td class="text-center" style="font-weight: bold;">$ 16.447,05</td>
+					        <td class="text-center" style="font-weight: bold;">$ 18.945,83</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -186,7 +186,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Abril 2019</p>
+									<p>Vigencia 01 de Mayo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -234,10 +234,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 10.862,98</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.617,22</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.309,34</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.202,61</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.079,97</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.841,00</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.506,99</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.426,38</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -247,7 +247,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Abril 2019</p>
+									<p>Vigencia 01 de Mayo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -294,10 +294,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 8.305,90</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.339,08</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.171,11</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.735,32</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.488,32</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.525,40</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.340,02</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.949,14</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -307,7 +307,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Abril 2019</p>
+									<p>Vigencia 01 de Mayo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -355,10 +355,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 6.023,31 </td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.020,58</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.077,28</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.981,44</td>
+					        <td class="text-center" style="font-weight: bold;">$ 6.155,84 </td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.156,23</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.200,42</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.157,06</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -368,7 +368,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Abril 2019</p>
+									<p>Vigencia 01 de Mayo 2019</p>
 								</div>
 							</blockquote>
 				  		</div>

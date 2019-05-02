@@ -137,6 +137,16 @@
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <img class="img-responsive" src="{{asset('imagenes/home/yaris_experience.png')}}" title="yaris_experience yarisday">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!---------------------------------------------------------------------
     MODELOS
   ----------------------------------------------------------------------->
