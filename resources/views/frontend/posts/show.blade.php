@@ -35,6 +35,15 @@
       <li class="active">{{$post->titulo}}</li>
   </ol>
 
+  <h2>{{$post->titulo}}</h2>
+
+  <div class="row">
+    <div class="col-xs-12">
+      {!!$post->contenido!!}
+    </div>
+
+  </div>
+
 </div>
 
 @stop
