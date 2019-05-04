@@ -30,10 +30,11 @@
   }
 
 .features-big-wrap {
-      display: block;
+    display: block;
     overflow: hidden;
     position: relative;
     float: left;
+    margin-bottom: 15px;
 }
 
 .features-big-wrap .stm-magazine-loop-data {

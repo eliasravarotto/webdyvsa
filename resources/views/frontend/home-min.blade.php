@@ -328,12 +328,6 @@
                               <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
                               {{date('d M Y', strtotime($post->created_at))}}
                           </div>
-                          <div class="magazine-loop-reviews">
-                            <i class="stm-icon-ico_mag_reviews"></i> 4
-                          </div>
-                          <div class="magazine-loop-views">
-                            <i class="stm-icon-ico_mag_eye"></i> 157
-                          </div>
                         </div>
                         <div class="bottom-content">
                           <p>{{str_limit(strip_tags($post->contenido), 150, '...')}}</p>
