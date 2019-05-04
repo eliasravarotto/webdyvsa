@@ -48,6 +48,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
         <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
       </ol>
 
       <!-- Wrapper for slides -->
@@ -58,6 +59,10 @@
 
         <div class="item">
           <img src="/imagenes/home-min/portada_uva.png" alt="">
+        </div>
+
+        <div class="item">
+          <img src="/imagenes/tpa/slide_nuevo.png" alt="">
         </div>
 
         <div class="item">
@@ -89,8 +94,6 @@
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-mobile" data-slide-to="1" class=""></li>
         <li data-target="#carousel-mobile" data-slide-to="2" class=""></li>
-        <li data-target="#carousel-mobile" data-slide-to="3" class=""></li>
-        <li data-target="#carousel-mobile" data-slide-to="4" class=""></li>
       </ol>
 
       <!-- Wrapper for slides -->
@@ -100,6 +103,9 @@
         </div>
         <div class="item">
           <img src="/imagenes/home-min/hilux_accesorios_sm.jpeg" alt="">
+        </div>
+        <div class="item" style="min-height: 285px;">
+          <img src="/imagenes/tpa/slide_nuevo.png" alt="">
         </div>
       </div>
 
@@ -137,7 +143,7 @@
     </div>
   </section>
 
-  <section>
+  {{-- <section>
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
@@ -145,7 +151,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!---------------------------------------------------------------------
     MODELOS

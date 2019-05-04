@@ -17,10 +17,9 @@
               <tr>
                 <th>Int.</th>
                 <th>Dominio</th>
-                <th>Modelo</th>
                 <th>Marca</th>
-                <th>Año</th>
-                <th>Km</th>
+                <th>Modelo</th>
+                <th>Km - Año - Color</th>
                 <th>Precio</th>
                 <th></th>
               </tr>
@@ -30,10 +29,9 @@
                 <tr>
                     <td>{{ $usado->interno }}</td>
                     <td>{{ $usado->dominio }}</td>
-                    <td>{{ $usado->modelo }}</td>
                     <td>{{ $usado->marca }}</td>
-                    <td>{{ $usado->anio }}</td>
-                    <td>{{ $usado->km }}</td>
+                    <td>{{ $usado->modelo }}</td>
+                    <td>{{ $usado->km }} km - {{ $usado->anio }} - {{$usado->color}}</td>
                     <td>$ {{ $usado->precio }}</td>
                     <td>
                         <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
