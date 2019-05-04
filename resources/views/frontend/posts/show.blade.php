@@ -12,13 +12,6 @@
     <meta property="og:image" content="{{$post->imagen_portada}}"/>
 @stop
 
-@section('styles_sheets')
-  <style type="text/css">
-
-
-  </style>
-@stop
-
 @section('mark-up-facebook')
     {{-- <meta property="og:url" content="https://www.derkayvargas.com" />
     <meta property="og:type" content="article" />
@@ -31,7 +24,19 @@
 <div class="container mt-3">
 	<ol class="breadcrumb">
       <li><a href="/">Inicio</a></li>
-      <li><a href="/">{{$post->tema->tema}}</a></li>
+      @switch($post->tema->tema)
+          @case('RSE')
+            <li><a href="{{route('rse')}}">{{$post->tema->tema}}</a></li>
+            @break
+          @case('NOTICIAS')
+            <li><a href="{{route('noticias')}}">{{$post->tema->tema}}</a></li>
+            @break
+          @case('EVENTOS')
+            <li><a href="{{route('eventos')}}">{{$post->tema->tema}}</a></li>
+            @break
+          @default
+          <li><a href="#">{{$post->tema->tema}}</a></li>
+      @endswitch
       <li class="active">{{$post->titulo}}</li>
   </ol>
 
@@ -39,9 +44,11 @@
 
   <div class="row">
     <div class="col-xs-12">
-      {!!$post->contenido!!}
+      <div style="overflow: hidden;">
+          <img class="img-portada" src="{{$post->imagen_portada}}" style="max-height: 275px; float: right;">
+          <div>{!!$post->contenido!!}</div>
+      </div>
     </div>
-
   </div>
 
 </div>

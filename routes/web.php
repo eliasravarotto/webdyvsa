@@ -104,6 +104,8 @@ Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
 Route::get('/empresa','FrontController@empresa');
 Route::get('/responsabilidad-social-empresarial','FrontController@rse')->name('rse');
+Route::get('/noticias','FrontController@rse')->name('noticias');
+Route::get('/eventos','FrontController@rse')->name('eventos');
 Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');
