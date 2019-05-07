@@ -197,7 +197,7 @@
           <img class="img-responsive visible-md visible-lg" src="{{asset('imagenes/home-min/yaris-day.png')}}" title="yaris_experience yarisday">
           <img class="img-responsive visible-sm visible-xs" src="{{asset('imagenes/home-min/yaris-day-mobile1.png')}}" title="yaris_experience yarisday">
         </div>
-        <div class="col-xs-12 col-sm-7" style="padding: 0 45px;">
+        <div class="col-xs-12 col-sm-7" style="padding: 0 25px;">
           <h3>Subite al YarisDay</h3>
           <div class="middle-content">
             <div class="magazine-loop-date">
