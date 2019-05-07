@@ -31,6 +31,46 @@
         text-align: center;
         padding: 10px;
     }
+
+    
+    .middle-content{
+        display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+
+  .magazine-loop-date{
+        display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: left;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    margin-right: 20px;
+  }
+
   </style>
 @stop
 
@@ -126,75 +166,104 @@
   ----------------------------------------------------------------------->
   <section>
     <div class="container">
-      <div class="page-header text-center">
-        <h2>Toyota Experiencia Híbrida <br>  <small>Derribando mitos</small></h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="title-section mt-3">
+            <h3>Toyota Experiencia Híbrida <br>  <small>Derribando mitos</small></h3>
+          </div>
+          <a href="/tecnologia-hibrida">
+            <div 
+               style="background: url(/imagenes/home-min/tecnohibrida.jpg)   no-repeat 30%;
+                  height: 40vh;
+                  background-size: cover;
+                  ">
+            </div>
+            <div class="titleContainer">
+              <h4 class="containerCenter"> ¿QUÉ ES LA TECNOLOGÍA HÍBRIDA?</h4>
+            </div>
+          </a>  
+        </div>
       </div>
-      <a href="/tecnologia-hibrida">
-        <div 
-           style="background: url(/imagenes/home-min/tecnohibrida.jpg)   no-repeat 30%;
-              height: 40vh;
-              background-size: cover;
-              ">
-        </div>
-        <div class="titleContainer">
-          <h4 class="containerCenter"> ¿QUÉ ES LA TECNOLOGÍA HÍBRIDA?</h4>
-        </div>
-      </a>  
     </div>
   </section>
 
-  {{-- <section>
+  <section>
     <div class="container">
+      <div class="title-section mt-3">
+        <h3>YARISDAY <br>  <small>Creá tu momento!</small></h3>
+      </div>
       <div class="row">
-        <div class="col-xs-12">
-          <img class="img-responsive" src="{{asset('imagenes/home-min/yaris_experience.png')}}" title="yaris_experience yarisday">
+        <div class="col-xs-12 col-sm-5">
+          <img class="img-responsive visible-md visible-lg" src="{{asset('imagenes/home-min/yaris-day.png')}}" title="yaris_experience yarisday">
+          <img class="img-responsive visible-sm visible-xs" src="{{asset('imagenes/home-min/yaris-day-mobile1.png')}}" title="yaris_experience yarisday">
+        </div>
+        <div class="col-xs-12 col-sm-7" style="padding: 0 45px;">
+          <h3>Subite al YarisDay</h3>
+          <div class="middle-content">
+            <div class="magazine-loop-date">
+              <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i>
+              Sábado 11 de Mayo
+            </div>
+            <div class="magazine-loop-date">
+              <i class="fa fa-map-marker" style="margin-right: 5px;"></i>
+              Paseo Libertad Resistencia
+            </div>
+          </div>
+            <p class="text-muted">
+            👉Crea tu propio momento y viví una experiencia diferente! 
+              Este sábado 11 de mayo "Subite" al #YARISDAY 🚗 en el Paseo Libertad Resistencia, 
+              a partir de las 10 de la mañana hasta las 21 hs.
+              😁 Viví la experiencia Yaris.
+            </p>
+            <p class="text-muted">Te esperamos❗️</p>
         </div>
       </div>
     </div>
-  </section> --}}
+  </section>
 
   <!---------------------------------------------------------------------
     MODELOS
   ----------------------------------------------------------------------->
-  <div class="container pad-top-bot-25">
-    {{-- <p class="text-center" style="font-size: 25px; color: #626262">MODELOS</p> --}}
-    <div class="page-header text-center">
-      <h2>MODELOS</h2>
+  <section>
+    <div class="container">
+      <div class="title-section mt-3">
+        <h3>MODELOS</h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
+          <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
+            <img src="/imagenes/home-min/hilux.png" alt="...">
+            <div class="caption text-center">
+              <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px">
+              <hr>
+              <h4 class="text-uppercase">La superación por encima del cambio</h4>
+            </div>
+          </a>          
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
+          <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border">
+            <img src="/imagenes/home-min/corolla.png" alt="...">
+            <div class="caption text-center">
+              <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;">
+              <hr>
+              <h4 class="text-uppercase">SEGUÍ AVANZANDO</h4>
+            </div>
+          </a>          
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
+          <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border">
+            <img src="/imagenes/home-min/etios.png" alt="...">
+            <div class="caption text-center">
+              <img src="/imagenes/modelos/etios/logo.png" style="height: 40px">
+              <hr>
+              <h4 class="text-uppercase">Mi primer Toyota</h4>
+            </div>
+          </a>          
+        </div>
+      </div>
+      <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
-          <img src="/imagenes/home-min/hilux.png" alt="...">
-          <div class="caption text-center">
-            <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px">
-            <hr>
-            <h4 class="text-uppercase">La superación por encima del cambio</h4>
-          </div>
-        </a>          
-      </div>
-      <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border">
-          <img src="/imagenes/home-min/corolla.png" alt="...">
-          <div class="caption text-center">
-            <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;">
-            <hr>
-            <h4 class="text-uppercase">SEGUÍ AVANZANDO</h4>
-          </div>
-        </a>          
-      </div>
-      <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-        <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border">
-          <img src="/imagenes/home-min/etios.png" alt="...">
-          <div class="caption text-center">
-            <img src="/imagenes/modelos/etios/logo.png" style="height: 40px">
-            <hr>
-            <h4 class="text-uppercase">Mi primer Toyota</h4>
-          </div>
-        </a>          
-      </div>
-    </div>
-    <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
-  </div>
+  </section>
   
   <hr class="container">
 
