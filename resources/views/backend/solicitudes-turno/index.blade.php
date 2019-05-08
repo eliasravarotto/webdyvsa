@@ -1,4 +1,4 @@
-@extends('backend.layout')
+  @extends('backend.layout')
 
 @section('content')
 <div class="card">
@@ -8,25 +8,25 @@
     <table class="table table-sm table-hover">
         <thead>
           <tr>
-            <th>Fecha</th>
+            <th>Fecha Solicitud</th>
+            <th>Fecha Turno</th>
             <th>Cliente</th>
             <th>Teléfono</th>
-            <th>Sucursal</th>
-            <th>Servicio</th>
+            {{-- <th>Sucursal</th> --}}
+            {{-- <th>Servicio</th> --}}
             <th>Comentario</th>
-            <th>Created_at</th>
           </tr>
         </thead>
         <tbody>
           @foreach($solicitudes as $solicitud)
           <tr class="pointer" onclick="location.href = '{{route('solicitud_show', $solicitud->id)}}'">
+            <td>{{ date('d-m-Y', strtotime($solicitud->created_at))}}</td>
             <td>{{ date('d-m-Y', strtotime($solicitud->fecha))}}</td>
             <td>{{$solicitud->cliente}}</td>
             <td>{{$solicitud->telefono}}</td>
-            <td>{{$solicitud->sucursal}}</td>
-            <td>{{$solicitud->tipo_de_servicio}}</td>
-            <td>{{$solicitud->comentario}}</td>
-            <td>{{ date('d-m-Y H:m', strtotime($solicitud->created_at))}}</td>
+            {{-- <td>{{$solicitud->sucursal}}</td> --}}
+            {{-- <td>{{$solicitud->tipo_de_servicio}}</td> --}}
+            <td>{{str_limit(strip_tags($solicitud->comentario), 40, '...')}}</td>
             @endforeach
           </tr>
         </tbody>

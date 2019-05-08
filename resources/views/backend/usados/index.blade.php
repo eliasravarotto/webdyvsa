@@ -1,16 +1,22 @@
 @extends('backend.layout')
 
 @section('content')
-<div class="card" id="app_index">
-    <div class="card-header">
-        <strong class="card-title">Listado de Unidades Usadas</strong>
-    </div>
-    <div class="card-body">
         <div class="row">
           <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
             <a href="/push" class="btn btn-info mr-2"><i class="fa fa-bell-o" aria-hidden="true"></i> Notificar</a>
             <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
           </div>
+        </div>
+<div class="card" id="app_index">
+    {{-- <div class="card-header">
+        <strong class="card-title">Listado de Unidades Usadas</strong>
+    </div> --}}
+    <div class="card-body">
+        <div class="form-inline">
+          <div class="form-group mr-2 mb-2">
+            <input type="number" id="nro-int" class="form-control" placeholder="Interno" onkeyup="filtrar(event)">
+          </div>
+          <button type="submit" class="btn btn-default mb-2" onclick="limpiar()">Limpiar</button>
         </div>
         <table class="table table-sm table-hover">
             <thead>
@@ -24,15 +30,15 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tbody-usados">
                 @foreach($usados as $usado)
-                <tr>
-                    <td>{{ $usado->interno }}</td>
+                <tr class="usado-row" id="usado-row-{{$usado->interno}}">
+                    <td id="usado-int">{{ $usado->interno }}</td>
                     <td>{{ $usado->dominio }}</td>
                     <td>{{ $usado->marca }}</td>
                     <td>{{ $usado->modelo }}</td>
                     <td>{{ $usado->km }} km - {{ $usado->anio }} - {{$usado->color}}</td>
-                    <td>$ {{ $usado->precio }}</td>
+                    <td><b>$ {{ $usado->precio }}</b></td>
                     <td>
                         <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
                             {{ csrf_field() }}
@@ -49,5 +55,35 @@
 </div>
 @stop
 
-@section('script')
+@section('page-script')
+<script type="text/javascript">
+    function filtrar(e){
+        e.preventDefault();
+        var interno = document.getElementById("nro-int").value;
+
+        $('#tbody-usados tr').each(function(){
+
+            var value = $(this).find('#usado-int').html();
+            interno = interno.toString();
+            //console.log(value == interno);
+            if (value != interno){
+               $('#usado-row-'+value).hide();
+            } else{
+               $('#usado-row-'+value).show();
+           }
+        });
+
+        if (interno == '') {
+            $('.usado-row').show();
+        }
+
+    }
+
+    function limpiar()
+    {
+        interno = '';
+        document.getElementById("nro-int").value = '';
+        $('.usado-row').show();
+    }
+</script>
 @stop
