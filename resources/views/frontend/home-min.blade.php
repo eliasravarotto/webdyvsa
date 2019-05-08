@@ -71,6 +71,31 @@
     margin-right: 20px;
   }
 
+  .uct a{
+    text-decoration: none;
+  }
+  .uct .uct-content{
+    border: 3px #afafb1 ridge;
+  }
+
+  .uct .row-uct{
+    color: white;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+  }
+
+  .uct .black{
+    background-color: black;
+  }
+
+  .uct .bg-rojo{
+    background-color: #cc2032;
+  }
+
+  .uct .txt-negro{
+    color: black
+  }
+
   </style>
 @stop
 
@@ -160,32 +185,6 @@
       </a>
     </div>
   </section>
-  
-  <!---------------------------------------------------------------------
-    TOYOTA HIBRID EXPERIENCE
-  ----------------------------------------------------------------------->
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="title-section mt-3">
-            <h3>Toyota Experiencia Híbrida <br>  <small>Derribando mitos</small></h3>
-          </div>
-          <a href="/tecnologia-hibrida">
-            <div 
-               style="background: url(/imagenes/home-min/tecnohibrida.jpg)   no-repeat 30%;
-                  height: 40vh;
-                  background-size: cover;
-                  ">
-            </div>
-            <div class="titleContainer">
-              <h4 class="containerCenter"> ¿QUÉ ES LA TECNOLOGÍA HÍBRIDA?</h4>
-            </div>
-          </a>  
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section>
     <div class="container">
@@ -216,6 +215,53 @@
               😁 Viví la experiencia Yaris.
             </p>
             <p class="text-muted">Te esperamos❗️</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------
+    TOYOTA HIBRID EXPERIENCE
+  ----------------------------------------------------------------------->
+  <section>
+    <div class="container uct">
+      <div class="title-section mt-3">
+        <h3>USADOS CERTIFICADOS <br>  <small>AUTOS COMO NUEVOS</small></h3>
+      </div>
+      <a href="/usados#certificados-toyota">
+      <div class="uct-content">
+        <div class="row-uct bg-rojo text-center">
+            <span>¿QUÉ ES UN USADO CERTIFICADO?</span>  
+        </div>
+        <div class="row-uct txt-negro text-center">
+            <span><b>CONOCELOS</b></span>  
+        </div>
+      </div>
+      </a>
+    </div>
+  </section>
+  
+  <!---------------------------------------------------------------------
+    TOYOTA HIBRID EXPERIENCE
+  ----------------------------------------------------------------------->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="title-section mt-3">
+            <h3>Toyota Experiencia Híbrida <br>  <small>Derribando mitos</small></h3>
+          </div>
+          <a href="/tecnologia-hibrida">
+            <div 
+               style="background: url(/imagenes/home-min/tecnohibrida.jpg)   no-repeat 30%;
+                  height: 40vh;
+                  background-size: cover;
+                  ">
+            </div>
+            <div class="titleContainer">
+              <h4 class="containerCenter"> ¿QUÉ ES LA TECNOLOGÍA HÍBRIDA?</h4>
+            </div>
+          </a>  
         </div>
       </div>
     </div>

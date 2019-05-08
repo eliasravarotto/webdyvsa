@@ -60,7 +60,7 @@
     <div v-if="unidades_filtered != ''">
         <div class="row">
             <div v-for="unidad in unidades_filtered" class="col-sm-12 col-md-4" v-if="unidad.visible">
-                <div class="thumbnail thumbnail-no-bg" style="height:455px">
+                <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                     <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                     <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
                         <img v-show="unidad.foto" :src="unidad.foto" alt="">
@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    <div v-if="unidades_filtered == ''">
+    <div v-if="unidades_filtered == ''" id="certificados-toyota">
         <div class="title-section mb-1">
             <h3>USADOS CERTIFICADOS</h3>
         </div>
@@ -126,7 +126,7 @@
             </div>
         <div class="row">
             <div v-for="unidad in unidades_uct" class="col-sm-12 col-md-4" v-if="unidad.visible && unidad.uct">
-                <div class="thumbnail thumbnail-no-bg" style="height:455px">
+                <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                     <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                     <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
                         <img v-show="unidad.foto" :src="unidad.foto" alt="">
@@ -171,7 +171,7 @@
         </div>
         <div class="row">
             <div v-for="unidad in unidades" class="col-sm-12 col-md-4" v-if="unidad.visible && !unidad.uct">
-                <div class="thumbnail thumbnail-no-bg" style="height:455px">
+                <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                     <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                     <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
                         <img v-show="unidad.foto" :src="unidad.foto" alt="">
@@ -419,6 +419,10 @@
 
 a:hover{
     text-decoration: none;
+}
+
+.caption{
+    background-color: cyan;
 }
 
 </style>

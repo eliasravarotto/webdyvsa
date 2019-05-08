@@ -12,13 +12,6 @@
     <meta property="og:image" content="{{$post->imagen_portada}}"/>
 @stop
 
-@section('mark-up-facebook')
-    {{-- <meta property="og:url" content="https://www.derkayvargas.com" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="INICIO" />
-    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" /> --}}
-@stop
-
 @section('content')
 
 <div class="container mt-3">
