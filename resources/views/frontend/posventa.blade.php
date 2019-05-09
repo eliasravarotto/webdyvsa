@@ -73,7 +73,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	<article>
 		<section>
 			<div style="width: 100%">
-				<img src="/imagenes/posventa/slide.jpg" class="img-responsive" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco alt="Promo Neumáticos Bridgestone en cuotas. Derka y Vargas Servicios de Posventa" ">
+				<img src="/imagenes/posventa/slide.jpg" class="img-responsive" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco">
 			</div>
 		</section>
 
@@ -94,12 +94,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
+		{{-- <section class="container">
+			<h1>Elegí el mejor Servicio Posventa</h1>
+			<p>Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas y dejá tu Toyota en las mejores manos.</p>
+			<p></p>
+		</section> --}}
 		<section class="pad-top-50">
 			<div class="container ">
-				<div class="page-header">
-		  			<h1>PRECIOS VIGENTES </h1>
-					<p><b>Desde:</b> 01-04-2019 - <b>Hasta:</b> 30-04-2019</p>
+				<div class="title-section">
+					<h1>Elegí el mejor Servicio de Posventa</h1>
 				</div>
+				<p style="font-size: 1.7rem">Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas y dejá tu Toyota en las mejores manos.</p>
+				<br>
+				<p style="font-size: 1.7rem">PRECIOS VIGENTES</p>
+				<p><b>Desde:</b> 01-04-2019 - <b>Hasta:</b> 30-04-2019</p>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped">
 						<thead>
