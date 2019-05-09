@@ -37,7 +37,7 @@
 @section('content')
 	<article>
 		<section class="visible-lg visible-md">
-			<img src="/imagenes/tpa/slide_nuevo.png" class="img-responsive" alt="Cinque Terre">
+			<img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" class="img-responsive" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco">
 		</section>
 
 		<section>
@@ -77,7 +77,7 @@
 				        			</a>
 				        		</div>
 				        		<div class="contenido-derecha">
-				        			<img src="/imagenes/tpa/tarjeta-etios.png">
+				        			<img src="/imagenes/tpa/tarjeta-etios.png" alt="Etios Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 				        		</div>
 				        	</div>
 				        </div>
@@ -95,7 +95,7 @@
 				        			</a>
 				        		</div>
 				        		<div class="contenido-derecha">
-				          			<img src="/imagenes/tpa/tarjeta-yaris.png">
+				          			<img src="/imagenes/tpa/tarjeta-yaris.png" alt="Yaris Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 				        		</div>
 				        	</div>
 				        </div>     
@@ -114,7 +114,7 @@
 				        			</a>
 				        		</div>
 				        		<div class="contenido-derecha">
-				          			<img src="/imagenes/tpa/tarjeta-hilux-4x2.png">
+				          			<img src="/imagenes/tpa/tarjeta-hilux-4x2.png" alt="Hilux Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 				        		</div>
 				        	</div>
 				        </div>      
@@ -131,7 +131,7 @@
 				        			</a>
 				        		</div>
 				        		<div class="contenido-derecha">
-				          			<img src="/imagenes/tpa/tarjeta-hilux-4x4.png">
+				          			<img src="/imagenes/tpa/tarjeta-hilux-4x4.png" alt="Hilux Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 				        		</div>
 				        	</div>
 				        </div>      
@@ -385,9 +385,9 @@
 		<br>
 		<section>
 			<div class="container">
-				<div class="page-header">
-				  <h2>¿Qué es un Plan de Ahorro?</h2>
-				</div>
+				  <div class="title-section mt-3">
+			        <h2>¿Qué es un Plan de Ahorro? <br>  <small>Accedé a un 0KM 100% en Cuotas</small></h2>
+			      </div>
 				<div class="row">
 					<div class="col-md-3 col-sm-3 col-xs-12 preguntas-frecuentes">
 				  		<span>Preguntas Frecuentes</span>
@@ -423,7 +423,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-xs-12 col-sm-12">
-						<img src="{{asset('imagenes/tpa/plan_adjudicados.png')}}" class="img-responsive">
+						<img src="{{asset('imagenes/tpa/plan_adjudicados.png')}}" class="img-responsive" alt="Planes de Ahorro Adjudicados en Chaco, cuotas bajas para tener tu 0km">
 					</div>
 					<div class="col-md-6 col-xs-12 col-sm-12">
 						<div class="well">

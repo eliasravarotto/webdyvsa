@@ -26,14 +26,14 @@
 		      <!-- Wrapper for slides -->
 		      <div class="carousel-inner">
 		        <div class="item active">
-		          <img src="/imagenes/home/slide.png" alt="">
+		          <img src="/imagenes/home-min/creditos-uva.png" alt="Toyota Creditos Uva Derka y Vargas">
 		        </div>
 
 		        <div class="item">
-		          <img src="/imagenes/home/slide4.png" alt="">
+		          <img src="/imagenes/home-min/creditos-uva-toyota-cf.png" alt="Toyota Creditos Uva">
 		        </div>
 		        <div class="item">
-		          <img src="/imagenes/home/slide6.png" alt="">
+		          <img src="/imagenes/home-min/creditos-uva-hilux.png" alt="Toyota Creditos Uva Hilux 2019">
 		        </div>
 		      </div>
 
@@ -56,7 +56,7 @@
 
 		      <div class="carousel-inner">
 		        <div class="item active">
-		          <img src="/imagenes/home/slide_sm.jpeg" alt="">
+		          <img src="/imagenes/home-min/creditos-uva_sm.jpeg" alt="Toyota Creditos Uva Hilux 2019">
 		        </div>
 		      </div>
 
@@ -78,7 +78,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 				  			{{-- <h1>FINANCIACIÓN <small></small></h1> --}}
 				  			<center>
-				  			<img class="img-responsive" src="/imagenes/TCF/Toyota_Compania_Financiera.jpg">
+				  			<img class="img-responsive" src="/imagenes/TCF/Toyota_Compania_Financiera.jpg" alt="Toyota Compañia Financiera Derka y Vrgas Chaco">
 				  			</center>
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" >
@@ -93,7 +93,7 @@
 					<div class="col-sm-12 col-xs-12">
 			  			{{-- <h1>FINANCIACIÓN <small></small></h1> --}}
 			  			<center>
-			  			<img class="img-responsive" src="/imagenes/TCF/Toyota_Compania_Financiera.jpg">
+			  			<img class="img-responsive" src="/imagenes/TCF/Toyota_Compania_Financiera.jpg" alt="Toyota Compañia Financiera Derka y Vrgas Chaco">
 			  			</center>
 						<p class="text-justify fs-16">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
 						</p>
@@ -111,10 +111,10 @@
   			<div class="container">
   				<div class="row">
   					<div class="col-xs-6 col-md-6 text-center">
-  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-etios.jpg')}}">
+  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-etios.jpg')}}" alt="Financiacion Etios Tasa 19,9% en 24 meses. Accedé a un Toyota 0km con la mejor financiación">
   					</div>
   					<div class="col-xs-6 col-md-6 text-center">
-  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-yaris.jpg')}}">
+  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-yaris.jpg')}}" alt="Financiacion nuevo Yaris Tasa 19,9% en 24 meses. Accedé a un Toyota 0km con la mejor financiación">
   					</div>
   				</div>
   			</div>

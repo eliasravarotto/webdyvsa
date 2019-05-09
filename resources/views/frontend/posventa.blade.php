@@ -73,7 +73,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	<article>
 		<section>
 			<div style="width: 100%">
-				<img src="/imagenes/posventa/slide.jpg" class="img-responsive">
+				<img src="/imagenes/posventa/slide.jpg" class="img-responsive" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco alt="Promo Neumáticos Bridgestone en cuotas. Derka y Vargas Servicios de Posventa" ">
 			</div>
 		</section>
 
@@ -136,20 +136,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		<section class="pad-bot-50 container arrow_box">
 			<div class="row">
 				<div class="col-md-12">
-					<img src="/imagenes/posventa/neumaticos_desk.png" class="img-responsive visible-md visible-lg">
-					<img src="/imagenes/posventa/neumaticos_mobile.png" class="img-responsive visible-xs visible-sm">
+					<img src="/imagenes/posventa/neumaticos_desk.png" class="img-responsive visible-md visible-lg" alt="Promo Neumáticos Bridgestone en cuotas. Derka y Vargas Servicios de Posventa" title="Promo Neumaticos. Derka y Vargas">
+					<img src="/imagenes/posventa/neumaticos_mobile.png" class="img-responsive visible-xs visible-sm" alt="Promo Neumáticos Bridgestone en cuotas. Derka y Vargas Servicios de Posventa" title="Promo Neumaticos. Derka y Vargas">
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-12">
-					<img src="/imagenes/posventa/promo-servicio-desk.png" class="img-responsive">
+					<img src="/imagenes/posventa/promo-servicio-desk.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-xs-12">
-					<img src="/imagenes/posventa/alineado-desk.png" class="img-responsive">
+					<img src="/imagenes/posventa/alineado-desk.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire. Alineado y balanceo 3D ultima generacion. Promo 12%">
 				</div>
 			</div>
 		</section>
@@ -232,7 +232,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 								<p style="font-size: 2.3rem; font-weight: bold;">Solicitá un turno vía Whatsapp</p>
 							</div>
 							<div>
-								<img src="{{asset('imagenes/icons/whatsapp-icon.png')}}" style="height: 75px;">								
+								<img src="{{asset('imagenes/icons/whatsapp-icon.png')}}" style="height: 75px;" alt="Turno por whatsapp Servicio de Posventa Chaco">								
 							</div>
 						</div>
 					</div>
@@ -249,7 +249,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				</div>
 				<div class="row flex" style="flex-wrap: wrap;">
 					<div class="col-md-3 col-sm-12 visible-md visible-lg">
-						<img class="img-responsive" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png">
+						<img class="img-responsive" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png" alt="Garantía 5 años Toyota. Garantia Derka y Vargas Chaco">
 					</div>
 					<div class="col-md-9 col-sm-12 flex align-items-center">
 						<p>Para asegurar que la experiencia de posesión de sus vehículos sea única, Toyota respalda sus productos con algo más que palabras. Como los primeros en confiar en nuestros productos somos nosotros mismos, le ofrecemos la mejor garantía posible. Por este motivo los vehículos Toyota 0 (cero) kilometro vendidos y entregados a partir del 1 de septiembre de 2018 comienzan a gozar de una garantía que lo ampara por 5 años o 150.000 Km. (lo que ocurra primero). Esto significa un mayor valor para su Toyota y una mayor tranquilidad para usted, siempre.</p>
@@ -274,7 +274,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		</section>
 
 		<section class="pad-bot-50 pad-top-50">
-			<img src="/imagenes/posventa/mto_exp.png" class="img-responsive">
+			<img src="/imagenes/posventa/mantenimiento-express.png" class="img-responsive" alt="mantenimiento express toyota Chaco">
 		</section>
 
 		<section class="pad-top-50 pad-bot-50">

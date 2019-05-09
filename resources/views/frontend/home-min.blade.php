@@ -119,26 +119,26 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/imagenes/home-min/slide.png" alt="">
+          <img src="/imagenes/home-min/creditos-uva.png" alt="Nuevos Creditos Uva Toyota Derka y Vargas">
         </div>
 
         <div class="item">
-          <img src="/imagenes/home-min/portada_uva.png" alt="">
+          <img src="/imagenes/home-min/creditos-uva-toyota-cf.png" alt="Nuevos Creditos Uva Toyota Compañia Financiera">
         </div>
 
         <div class="item">
-          <img src="/imagenes/tpa/slide_nuevo.png" alt="">
+          <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="Nuevo Toyota Plan de Ahorro Derka y Vargas, Nuevas cuotas">
         </div>
 
         <div class="item">
-          <img src="/imagenes/home-min/slide5.png" alt="">
+          <img src="/imagenes/home-min/servicio-posventa-chaco.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
         </div>
 
         <div class="item">
-          <img src="/imagenes/home-min/slide6.png" alt="">
+          <img src="/imagenes/home-min/creditos-uva-hilux.png" alt="Nuevos Creditos Uva Hilux 2019 Tasa 9%">
         </div>
         <div class="item">
-          <img src="/imagenes/home-min/hilux_accesorios.png" alt="">
+          <img src="/imagenes/home-min/hilux_accesorios.png" alt="Promo Accesorios para Hilux Chaco">
         </div>
       </div>
 
@@ -164,13 +164,13 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/imagenes/home-min/slide_sm.jpeg" alt="">
+          <img src="/imagenes/home-min/creditos-uva_sm.jpeg" alt="">
         </div>
         <div class="item">
           <img src="/imagenes/home-min/hilux_accesorios_sm.jpeg" alt="">
         </div>
         <div class="item" style="min-height: 285px;">
-          <img src="/imagenes/tpa/slide_nuevo.png" alt="">
+          <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="">
         </div>
       </div>
 
@@ -278,9 +278,9 @@
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
           <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/hilux.png" alt="...">
+            <img src="/imagenes/home-min/hilux.png" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
             <div class="caption text-center">
-              <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px">
+              <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
               <hr>
               <h4 class="text-uppercase">La superación por encima del cambio</h4>
             </div>
@@ -288,9 +288,9 @@
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
           <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/corolla.png" alt="...">
+            <img src="/imagenes/home-min/corolla.png" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
             <div class="caption text-center">
-              <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;">
+              <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
               <hr>
               <h4 class="text-uppercase">SEGUÍ AVANZANDO</h4>
             </div>
@@ -298,9 +298,9 @@
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
           <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/etios.png" alt="...">
+            <img src="/imagenes/home-min/etios.png" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
             <div class="caption text-center">
-              <img src="/imagenes/modelos/etios/logo.png" style="height: 40px">
+              <img src="/imagenes/modelos/etios/logo.png" style="height: 40px" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
               <hr>
               <h4 class="text-uppercase">Mi primer Toyota</h4>
             </div>
@@ -320,9 +320,9 @@
             <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
                 <img src="/imagenes/home-min/team_service.jpg" alt="...">
                 <div class="caption caption-default">
-                    <h4 class="text-center">Llamado a Revisión Técnica</h4>
+                    <h4 class="text-center">Revisión Técnica y Servicios de Posventa</h4>
                     <p class="text-justify">
-                      Descubrí los servicios que te ayudan a cuidar tu Toyota. 
+                      Descubrí los servicios de Posventa en <b>Derka y Vargas</b> que te ayudan a cuidar tu Toyota. 
                     </p>
                     <a href="/posventa" class="btn btn-toyota">IR A POSVENTA</a>
                 </div>
