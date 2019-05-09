@@ -38,7 +38,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div style="overflow: hidden;">
-          <img class="img-portada" src="{{$post->imagen_portada}}" style="max-height: 275px; float: right;">
+          <img class="img-portada" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="max-height: 275px; float: right;">
           <div>{!!$post->contenido!!}</div>
       </div>
     </div>

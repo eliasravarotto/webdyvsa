@@ -46,7 +46,8 @@ class PostController extends Controller
             'titulo' => 'required',
             'tema_id' => 'required',
             'imagen_portada' => 'image',
-            'contenido' => 'required'
+            'contenido' => 'required',
+            'alt_img' => 'required'
         ]);
 
         $post = new Post;
@@ -56,6 +57,7 @@ class PostController extends Controller
         $post->tema_id=$request->tema_id;
         $post->contenido = $request->contenido;
         $post->orden = $request->orden;
+        $post->alt_img = $request->alt_img;
         $post->generateSlug();
         $post->save();
 
@@ -109,7 +111,8 @@ class PostController extends Controller
             'titulo' => 'required',
             'tema_id' => 'required',
             'imagen_portada' => 'image',
-            'contenido' => 'required'
+            'contenido' => 'required',
+            'alt_img' => 'required'
         ]);
 
         $post = Post::find($id);
@@ -117,6 +120,7 @@ class PostController extends Controller
         $post->tema_id=$request->tema_id;
         $post->contenido = $request->contenido;
         $post->orden = $request->orden;
+        $post->alt_img = $request->alt_img;
 
         if ($request->hasFile('imagen_portada')) {
             if ($post->imagen_portada != null) {

@@ -21,13 +21,13 @@
 					</div>
 				</div>
 				<div class="col-md-6">
-					<div class="form-group requerido">
+					<div class="form-group">
 						<label class="control-label mb-1">Creado</label>
 						<input class="form-control" type="datetime-local" name="created_at">
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="form-group requerido">
+					<div class="form-group">
 						<label class="control-label mb-1">Orden</label>
 						<input class="form-control" type="number" name="orden">
 					</div>
@@ -49,6 +49,14 @@
 				<label class="control-label mb-1">Foto</label>
 				<input type="file" name="foto">
 			</div> --}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+		<div class="form-group requerido">
+			<label class="control-label mb-1">ATTR Alt Img</label>
+			<textarea class="form-control" name="alt_img">{{ $post->alt_img or old('alt_img') }}</textarea>
+		</div>
 		</div>
 	</div>
 	<div class="row">

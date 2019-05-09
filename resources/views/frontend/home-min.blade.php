@@ -189,15 +189,15 @@
   <section>
     <div class="container">
       <div class="title-section mt-3">
-        <h3>YARISDAY <br>  <small>Creá tu momento!</small></h3>
+        <h3>YARIS DAY <br>  <small>Creá tu momento!</small></h3>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-5">
-          <img class="img-responsive visible-md visible-lg" src="{{asset('imagenes/home-min/yaris-day.png')}}" title="yaris_experience yarisday">
-          <img class="img-responsive visible-sm visible-xs" src="{{asset('imagenes/home-min/yaris-day-mobile1.png')}}" title="yaris_experience yarisday">
+          <img class="img-responsive visible-md visible-lg" alt="Yaris Day Toyota Derka y Vargas yarisday Test Drive" src="{{asset('imagenes/home-min/yaris-day-toyota.png')}}" title="yaris_experience yarisday">
+          <img class="img-responsive visible-sm visible-xs" alt="Yaris Day Toyota Derka y Vargas yarisday Test Drive" src="{{asset('imagenes/home-min/yaris-day-toyota-mobile1.png')}}" title="yaris_experience yarisday">
         </div>
         <div class="col-xs-12 col-sm-7" style="padding: 0 25px;">
-          <h3>Subite al YarisDay</h3>
+          <h3>Subite al Yaris Day</h3>
           <div class="middle-content">
             <div class="magazine-loop-date">
               <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i>
@@ -428,7 +428,7 @@
                 @foreach(\App\Helpers\Helper::postRecientes(2) as $post)
                     <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm_magazine_single_list no_deco post-208 type-post status-publish format-standard has-post-thumbnail hentry category-news tag-future tag-interior tag-multimedia">
                       <div class="magazine-list-img">
-                        <img width="255" height="160" src="{{$post->imagen_portada}}" class="attachment-stm-img-255-160 size-stm-img-255-160 wp-post-image" alt="">
+                        <img width="255" height="160" src="{{$post->imagen_portada}}" class="attachment-stm-img-255-160 size-stm-img-255-160 wp-post-image" alt="{{$post->alt_img}}" title="{{$post->titulo}}">
                         {{-- <div class="fa-round"><i class="fa fa-share"></i></div> --}}
                       </div>
                       <div class="stm-magazine-loop-data">
@@ -464,7 +464,7 @@
               @foreach(\App\Helpers\Helper::postPopulares(6) as $post)
               <a href="{{ route('show_post', $post->slug) }}" class="stm-magazine-news clearfix">
                   <div class="image">
-                      <img width="190" height="132" src="{{$post->imagen_portada}}" class="attachment-stm-img-190-132 size-stm-img-190-132 wp-post-image" alt="">        
+                      <img width="190" height="132" src="{{$post->imagen_portada}}" class="attachment-stm-img-190-132 size-stm-img-190-132 wp-post-image" alt="{{$post->alt_img}}" title="{{$post->titulo}}">        
                   </div>
                   <div class="stm-post-content">
                       <div class="title heading-font">
