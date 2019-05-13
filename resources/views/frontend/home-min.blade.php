@@ -186,40 +186,6 @@
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="title-section mt-3">
-        <h3>YARIS DAY <br>  <small>Creá tu momento!</small></h3>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-5">
-          <img class="img-responsive visible-md visible-lg" alt="Yaris Day Toyota Derka y Vargas yarisday Test Drive" src="{{asset('imagenes/home-min/yaris-day-toyota.png')}}" title="yaris_experience yarisday">
-          <img class="img-responsive visible-sm visible-xs" alt="Yaris Day Toyota Derka y Vargas yarisday Test Drive" src="{{asset('imagenes/home-min/yaris-day-toyota-mobile1.png')}}" title="yaris_experience yarisday">
-        </div>
-        <div class="col-xs-12 col-sm-7" style="padding: 0 25px;">
-          <h3>Subite al Yaris Day</h3>
-          <div class="middle-content">
-            <div class="magazine-loop-date">
-              <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i>
-              Sábado 11 de Mayo
-            </div>
-            <div class="magazine-loop-date">
-              <i class="fa fa-map-marker" style="margin-right: 5px;"></i>
-              Paseo Libertad Resistencia
-            </div>
-          </div>
-            <p class="text-muted">
-            👉Crea tu propio momento y viví una experiencia diferente! 
-              Este sábado 11 de mayo "Subite" al #YARISDAY 🚗 en el Paseo Libertad Resistencia, 
-              a partir de las 10 de la mañana hasta las 21 hs.
-              😁 Viví la experiencia Yaris.
-            </p>
-            <p class="text-muted">Te esperamos❗️</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!---------------------------------------------------------------------
     TOYOTA HIBRID EXPERIENCE
   ----------------------------------------------------------------------->
