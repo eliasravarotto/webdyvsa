@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title_and_meta')
-  <title>Servicios de Posventa</title>
+  <title>Servicios de Posventa Toyota</title>
   <meta name="description" content="Derka y Vargas Servicios de Posventa y Servicios de Postventa, Mantenimiento express, Plan de mantenimiento Toyota, Servicio técnico oficial Toyota">
 @stop
 
@@ -144,7 +144,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		<section class="pad-bot-50 container arrow_box">
 			<!--NEUMATICOS-->
 			<div class="title-section">
-	            <h3>Neumáticos BRIDGESTO <br>  <small>Conocé los descuentos que tenemos para vos!</small></h3>
+	            <h3>Neumáticos BRIDGESTONE <br>  <small>Conocé los descuentos que tenemos para vos!</small></h3>
           	</div>
 			<div class="row">
 				<div class="col-md-12">
