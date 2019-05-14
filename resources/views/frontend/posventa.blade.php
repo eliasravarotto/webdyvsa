@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('title_and_meta')
-  <title>Derka y Vargas - Posventa</title>
-  <meta name="description" content="Derka y Vargas Servicios de Posventa, Mantenimiento express, Plan de mantenimiento Toyota, Servicio técnico oficial Toyota">
+  <title>Servicios de Posventa</title>
+  <meta name="description" content="Derka y Vargas Servicios de Posventa y Servicios de Postventa, Mantenimiento express, Plan de mantenimiento Toyota, Servicio técnico oficial Toyota">
 @stop
 
 @section('mark-up-facebook')
@@ -142,6 +142,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		</section>
 
 		<section class="pad-bot-50 container arrow_box">
+			<!--NEUMATICOS-->
+			<div class="title-section">
+	            <h3>Neumáticos BRIDGESTO <br>  <small>Conocé los descuentos que tenemos para vos!</small></h3>
+          	</div>
 			<div class="row">
 				<div class="col-md-12">
 					<img src="/imagenes/posventa/neumaticos_desk.png" class="img-responsive visible-md visible-lg" alt="Promo Neumáticos Bridgestone en cuotas. Derka y Vargas Servicios de Posventa" title="Promo Neumaticos. Derka y Vargas">
@@ -149,12 +153,47 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				</div>
 			</div>
 			<br>
+
+			<!--PROMO SERVICIOS-->
+			<div class="title-section">
+	            <h3>Neumáticos BRIDGESTO <br>  <small>Conocé los descuentos que tenemos para vos!</small></h3>
+          	</div>
+          	<p class="fs-17">💥No te quedes sin disfrutar de esta Súper PROMOCIÓN! 📌 Tu SERVICIO + 10 puntos de control:</p>
+          	<ul class="list-inline">
+          		<li>• Luces</li>
+				<li>• Frenos </li>
+				<li>• Amortiguadores </li>
+				<li>• Estado de neumáticos y calibración </li>
+				<li>• Nivel de líquidos</li>
+				<li>• Control computarizado (inyección, luces testigos)</li>
+				<li>• Pérdidas de fluidos </li>
+				<li>• Control tren delantero </li>
+				<li>• Crucetas</li>
+				<li>• Lubricación malacate y control rueda auxilio.</li>
+          	</ul>
+          	<p class="fs-17">✅ Modelos comprendidos entre los años 2005 al 2015 📌 Pagando efectivo 10% OFF, con tarjeta VISA, 3 cuotas sin interés Tarjeta TUYA, 6 cuotas sin interés.</p>
 			<div class="row">
-				<div class="col-md-12">
-					<img src="/imagenes/posventa/promo-servicio-desk.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
+				<div class="col-md-4 col-xs-12">
+					<img src="/imagenes/posventa/promo-service-hilux.png" class="img-responsive text-left" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<img src="/imagenes/posventa/promo-service-etios.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<img src="/imagenes/posventa/promo-service-corolla.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
 				</div>
 			</div>
+			<p class="fs-17">No dudes en consultarnos!!! escríbenos un WhatsApp ☺️</p>
+			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Sáenz Peña <a href="https://derkayvargas.page.link/turnos-saenzpena"> https://derkayvargas.page.link/turnos-saenzpena</a></p>
+			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Resistencia <a href="https://derkayvargas.page.link/turnos-resistencia"> https://derkayvargas.page.link/turnos-resistencia</a></p>
+			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Charata <a href="https://derkayvargas.page.link/turnos-charata"> https://derkayvargas.page.link/turnos-charata</a></p>
+			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Charata <a href="https://derkayvargas.page.link/turnos-charata2"> https://derkayvargas.page.link/turnos-charata2</a></p>
 			<br>
+
+			<!--ALINEADO Y BALANCEO-->
+			<div class="title-section">
+	            <h3>ALINEADO Y BALANCEO 3D <br>  <small>Ultima Generación</small></h3>
+          	</div>
 			<div class="row">
 				<div class="col-xs-12">
 					<img src="/imagenes/posventa/alineado-desk.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire. Alineado y balanceo 3D ultima generacion. Promo 12%">
