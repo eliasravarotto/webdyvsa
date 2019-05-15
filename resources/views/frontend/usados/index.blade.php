@@ -15,9 +15,25 @@
 @section('styles_sheets')
         <style type="text/css">
             .precio{
-                    background-color: #016a87;
+                    background-color: #797979;
                     color: #fafafa !important;
             }
+
+            .caption {
+			    background-color: #d2a7bf;
+			}
+
+			.caption-default>h3, .caption-default>h4, .text-shadow {
+			    color: #ffffff!important;
+			}
+
+			.thumbnail .caption {
+				color: white;
+			}
+			.btn-celeste-pastel {
+			    background-color: #5a8cb5;
+			    color: #fff;
+			}
         </style>
 @stop
 

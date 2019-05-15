@@ -123,6 +123,7 @@ footer {
   animation: rotateRct 1.2s ease-in-out infinite;/*, color-change 1.3s ease-in-out infinite;*/
 }
 
+
 .contact-details .media {
   margin: 0 0 30px;
 }
@@ -950,18 +951,15 @@ $gris-2:#626262;
 
 .caption-default > h4 {
   color: #404048 !important;
-  text-shadow: 0px 0px 0px #ffffff;
-  font-weight: bold;
+  // text-shadow: 0px 0px 0px #ffffff;
 }
 
 .caption-default > h3 {
   color: #404048 !important;
-  text-shadow: 0px 0px 0px #ffffff;
-  font-weight: bold;
+  // text-shadow: 0px 0px 0px #ffffff;
 }
 
 .text-shadow {
-  font-weight: bold;
   color: #404048 !important;
   text-shadow: 0px 0px 0px #ffffff;
 }
