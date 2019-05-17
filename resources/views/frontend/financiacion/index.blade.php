@@ -109,6 +109,9 @@
 
 		<section class="mt-3">
   			<div class="container">
+  				<div class="title-section">
+            		<h3>FINANCIACIÓN ETIOS Y YARIS</h3>
+          		</div>
   				<div class="row">
   					<div class="col-xs-6 col-md-6 text-center">
   						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-etios.jpg')}}" alt="Financiacion Etios Tasa 19,9% en 24 meses. Accedé a un Toyota 0km con la mejor financiación">
@@ -119,6 +122,47 @@
   				</div>
   			</div>
   		</section>
+
+	<!---------------------------------------------------------------------
+    FINANCIACIÓN COROLLA
+  ----------------------------------------------------------------------->
+  <section>
+    <div class="container">
+      <div class="title-section mt-3">
+        <h3>FINANCIACIÓN COROLLA   <small>Llévate tu Corolla financiado hasta $400.000</small></h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <img src="{{asset('imagenes/home-min/financiacion-toyota-corolla.png')}}" class="img-responsive">
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <br>
+          <p>
+            💥 NO TE QUEDES SIN TU COROLLA
+            Bonificación especial hasta el 31 de mayo❗️
+          </p>
+          <p>
+            ✅ Flete <b>$0</b>
+            ✅ Gastos de inscripción <b>$0</b>
+          </p>
+          <p>
+            📌 Financiación Actual 
+          </p>
+          <p>
+            <b>24 meses</b>
+            🔖Cuota tradicional promedio $ 30.587,45
+            👉🔖Bonificada 19,9% $ 21.109,45 
+          </p>
+          <p>
+            <b>12 meses</b>
+            🔖Cuota tradicional promedio $ 47.479,25
+            👉🔖Bonificada 19,9% $ 37.811,94
+          </p>
+          <br><p class="text-muted"><em>Promoción válida hasta el 31/05/2019</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 		<section class="mt-3">
   			<div class="container">

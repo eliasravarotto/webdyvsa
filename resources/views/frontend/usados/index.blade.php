@@ -55,10 +55,16 @@
 					
 				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 
-				<div class="row">
-					<div class="col-sm-12 col-md-6 col-md-offset-3">
+				<div class="title-section">
+			        <h3>SU CONSULTA NO ES MOLESTIA</h3>
+		      	</div>
+				<div class="row mt-2">
+					<div class="col-sm-12 col-md-6">
+						<p class="fs-17">Conocé los autos usados que tenemos para vos. Encontrá las mejores opciones en Chaco de unidades usadas en todas las marcas.</p>
+						<p class="fs-17">También contamos Usados Certificados por Toyota (UCT). <a href="https://derkayvargas.com/usados#certificados-toyota">¿Qué es un UCT?</a></p>
+					</div>
+					<div class="col-sm-12 col-md-6">
 						<div id="contacto-form" @if($errors->isEmpty()) @endif>
-						<div class="page-header"><h2>CONSULTAR</h2></div>
 						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}
 							<input type="hidden" name="from" value="usados">

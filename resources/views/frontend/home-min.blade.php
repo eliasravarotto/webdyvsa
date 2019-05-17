@@ -113,7 +113,6 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
         <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
       </ol>
 
       <!-- Wrapper for slides -->
@@ -137,9 +136,6 @@
         <div class="item">
           <img src="/imagenes/home-min/creditos-uva-hilux.png" alt="Nuevos Creditos Uva Hilux 2019 Tasa 9%">
         </div>
-        <div class="item">
-          <img src="/imagenes/home-min/hilux_accesorios.png" alt="Promo Accesorios para Hilux Chaco">
-        </div>
       </div>
 
       <!-- Left and right controls -->
@@ -158,19 +154,15 @@
       <ol class="carousel-indicators">
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-mobile" data-slide-to="1" class=""></li>
-        <li data-target="#carousel-mobile" data-slide-to="2" class=""></li>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/imagenes/home-min/creditos-uva_sm.jpeg" alt="">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/hilux_accesorios_sm.jpeg" alt="">
+          <img src="/imagenes/home-min/creditos-uva_sm.jpeg" alt="Toyota financiacion creditos uva">
         </div>
         <div class="item" style="min-height: 285px;">
-          <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="">
+          <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="Toyota financiacion plan de ahorro">
         </div>
       </div>
 
@@ -186,8 +178,53 @@
     </div>
   </section>
 
+
   <!---------------------------------------------------------------------
-    TOYOTA HIBRID EXPERIENCE
+    FINANCIACIÓN COROLLA
+  ----------------------------------------------------------------------->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="title-section visible-xs visible-sm">
+            <h3>FINANCIACIÓN COROLLA   <small>Llévate tu Corolla financiado hasta $400.000</small></h3>
+          </div>
+          <img src="{{asset('imagenes/home-min/financiacion-toyota-corolla.png')}}" class="img-responsive">
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="title-section visible-md visible-lg">
+            <h3>FINANCIACIÓN COROLLA   <small>Llévate tu Corolla financiado hasta $400.000</small></h3>
+          </div>
+          <br>
+          <p>
+            💥 NO TE QUEDES SIN TU COROLLA
+            Bonificación especial hasta el 31 de mayo❗️
+          </p>
+          <p>
+            ✅ Flete <b>$0</b>
+            ✅ Gastos de inscripción <b>$0</b>
+          </p>
+          <p>
+            📌 Financiación Actual 
+          </p>
+          <p>
+            <b>24 meses</b>
+            🔖Cuota tradicional promedio $ 30.587,45
+            👉🔖Bonificada 19,9% $ 21.109,45 
+          </p>
+          <p>
+            <b>12 meses</b>
+            🔖Cuota tradicional promedio $ 47.479,25
+            👉🔖Bonificada 19,9% $ 37.811,94
+          </p>
+          <br><p class="text-muted"><em>Promoción válida hasta el 31/05/2019</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------
+    USADOS CERTIFICADOS
   ----------------------------------------------------------------------->
   <section>
     <div class="container uct">
