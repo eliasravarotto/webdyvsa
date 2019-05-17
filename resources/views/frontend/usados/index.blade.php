@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title_and_meta')
-  <title>Derka y Vargas - Usados Seleccionados</title>
+  <title>Autos Usados</title>
   <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota Chaco, financiacion usados, autos usados en cuotas, autos usados en Villa Angela, autos usados en Saenz peña, autos usados en Charata, autos usados en Resistencia, autos usados en Chaco">
 @stop
 

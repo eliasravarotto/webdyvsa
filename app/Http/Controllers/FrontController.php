@@ -186,7 +186,7 @@ class FrontController extends Controller
 
     public function usadosIndex()
     {
-        $unidades = Usado::all();
+        $unidades = Usado::orderBy('orden', 'ASC')->get();
 
         return view('frontend.usados.index', compact('unidades'));
     }

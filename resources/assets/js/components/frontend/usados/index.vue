@@ -244,7 +244,7 @@
             this.cargarColores();
             this.cargarMarcas();
             this.cargarAnios();
-            this.orderByOrden();
+            //this.orderByOrden();
             this.hayUct = this.versihayuct();
 
         },
