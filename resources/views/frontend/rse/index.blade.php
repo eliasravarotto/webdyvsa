@@ -183,7 +183,7 @@
       <li><a href="/">Inicio</a></li>
       <li class="active">RSE</li>
   </ol>
-  <!--
+  
   <div class="row">
     <div class="col-xs-12 col-md-12">
         <div class="vc_column-inner ">
@@ -264,8 +264,8 @@
         @endforeach
     </div>
   </div>
-  -->
-  <div class="row">
+  
+  {{-- <div class="row">
     <div class="col-xs-12">
       <h3>Responsabilidad Social Empresarial</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -285,7 +285,7 @@
           <a href="#" onclick="leerMas()">Leer más</a>
         </p>
     </div>
-  </div>
+  </div> --}}
 </div>
 
 @stop

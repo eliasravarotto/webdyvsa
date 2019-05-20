@@ -28,6 +28,7 @@
                     <li><a href="/turno-servicios/create">Turnos ONLINE</a></li>
                   </ul>
                 </li>
+                <li><a href="{{route('rse')}}">RSE</a></li>
                 {{-- <li class="dropdown dropdown-hover">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPRESA <span class="caret"></span></a>
                   <ul class="dropdown-menu dropdown-hover">
