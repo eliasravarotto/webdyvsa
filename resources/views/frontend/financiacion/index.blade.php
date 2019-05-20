@@ -125,8 +125,8 @@
 
 	<!---------------------------------------------------------------------
     FINANCIACIÓN COROLLA
-  ----------------------------------------------------------------------->
-  <section>
+  	----------------------------------------------------------------------->
+  	<section>
     <div class="container">
       <div class="title-section mt-3">
         <h3>FINANCIACIÓN COROLLA   <small>Llévate tu Corolla financiado hasta $400.000</small></h3>
@@ -162,74 +162,106 @@
         </div>
       </div>
     </div>
-  </section>
+  	</section>
 
-		<section class="mt-3">
-  			<div class="container">
-	  			{{-- <div class="panel-group" id="accordion"> --}}
-				    <div class="panel panel-default">
-				      <div class="panel-heading">
-				        {{-- <h4 class="panel-title panel-title-financial"> --}}
-				        <h4 class="panel-title panel-title-financial">
-				          <a id="creditos_prend" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-				          	<h4>
-				          		{{-- <i class="fa fa-plus" id="plus_creditos_prend" style="display: none;"></i>
-				          		<i class="fa fa-minus" id="minus_creditos_prend"></i> --}}
-				          		 Créditos Prendarios
-				          	</h4>
-				          </a>
-				        </h4>
-				      </div>
-				      {{-- <div id="collapse1" class="panel-collapse collapse in"> --}}
-				        <div class="panel-body">
-				        	<p style="font-size: 17px;">Nuestros planes de financiación aplican hasta el 75% del valor de la unidad. El 25% restante se abona junto a la entrega de la unidad y la firma del crédito prendario. Tenemos planes a Tasa Fija en pesos y en plazos de hasta 60 meses. Puede consultarnos también por nuestros planes de Tasa Variable. </p>
-				        	<a class="btn btn-default" href="https://www.toyotacfa.com.ar/creditos-prendarios">MÁS DETALLES</a>
-				        </div>
-				      </div>
-				    {{-- </div> --}}
-				    <div class="panel panel-default">
-				      <div class="panel-heading">
-				        <h4 class="panel-title panel-title-financial">
-				          <a id="leasing" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-				          	<h4>
-				          		{{-- <i class="fa fa-plus" id="plus_leasing"></i>
-				          		<i class="fa fa-minus" id="minus_leasing" style="display: none;"></i> --}}
-				          		Leasing
-				          	</h4>
-				          </a>
-				        </h4>
-				      </div>
-				      {{-- <div id="collapse2" class="panel-collapse collapse"> --}}
-				        <div class="panel-body">
-				        	<p style="font-size: 17px;">El leasing es un arrendamiento financiero que le permite disponer del uso y goce del vehículo mediante el pago de un canon mensual. Incluye la opción de compra al finalizar el contrato, en el caso que el cliente desee quedarse con el vehículo.</p>
-			        		<div class="well">
-					        	<div class="row">
-					        			
-				  					<div class="col-md-6 col-xs-12 col-sm-12">
-				  						<h4>Beneficios Económicos y Financieros</h4>
-				  						<ul class="list-unstyled">
-				  							<li><i class="fa fa-check" aria-hidden="true"></i> Opción de compra al finalizar el contrato</li>
-				  							<li><i class="fa fa-check" aria-hidden="true"></i> Financiación a Tasa Fija</li>
-				  							<li><i class="fa fa-check" aria-hidden="true"></i> Uso y goce del vehículo mediante el pago de un canon mensual </li>
-				  						</ul>
-				  					</div>
-				  					<div class="col-md-6 col-xs-12 col-sm-12">
-				  						<h4>Beneficios Fiscales</h4>
-				  						<ul class="list-unstyled">
-				  							<li><i class="fa fa-check" aria-hidden="true"></i> El IVA se abona mensualmente con los cánones y no al momento de la compra del vehículo</li>
-				  							<li><i class="fa fa-check" aria-hidden="true"></i> Amortización acelerada</li>
-				  							<li><i class="fa fa-check" aria-hidden="true"></i> No se encuentra alcanzado por el impuesto a la ganancia mínima presunta (dependiendo del tipo de vehículo y de la condición impositiva del tomador)</li>
-				  						</ul>
-				  					</div>
-	  							</div>
-			        		</div>
-			        		<a class="btn btn-default" href="https://www.toyotacfa.com.ar/leasing">MÁS DETALLES</a>
-				        </div>
-				      {{-- </div> --}}
-				    </div>
-			  	{{-- </div>  --}}
-		  	</div> 
-  		</section>
+  	<section>
+    <div class="container">
+      <div class="title-section mt-3">
+        <h3>FINANCIACIÓN ETIOS Y YARIS   <small>Llévate tu Etios o Yaris Financiado hasta  $300.000</small></h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <img src="{{asset('imagenes/home-min/financiacion-toyota-etios-yaris.png')}}" class="img-responsive">
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <br>
+          	<p>💥 APROVECHA BONIFICACIÓN especial❗️</p>
+
+			<p>✅ Financia hasta $300.000 tu próximo Etios o Yaris.</p>
+
+			<p>Hacelo en 12 o 24 cuotas con una tasa de 19.9%.</p>
+
+			<p>✅ No dudes en consultarnos </p>
+			
+
+			<p>📌 Cuotas promedio!</p>
+
+			<p>👉 24 MESES $ 15.832,45</p>
+
+			<p>👉 12 MESES $ 28.358,95</p>
+
+          <br><p class="text-muted"><em>Promoción válida hasta el 31/05/2019</em></p>
+        </div>
+      </div>
+    </div>
+  	</section>
+
+	<section class="mt-3">
+			<div class="container">
+  			{{-- <div class="panel-group" id="accordion"> --}}
+			    <div class="panel panel-default">
+			      <div class="panel-heading">
+			        {{-- <h4 class="panel-title panel-title-financial"> --}}
+			        <h4 class="panel-title panel-title-financial">
+			          <a id="creditos_prend" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+			          	<h4>
+			          		{{-- <i class="fa fa-plus" id="plus_creditos_prend" style="display: none;"></i>
+			          		<i class="fa fa-minus" id="minus_creditos_prend"></i> --}}
+			          		 Créditos Prendarios
+			          	</h4>
+			          </a>
+			        </h4>
+			      </div>
+			      {{-- <div id="collapse1" class="panel-collapse collapse in"> --}}
+			        <div class="panel-body">
+			        	<p style="font-size: 17px;">Nuestros planes de financiación aplican hasta el 75% del valor de la unidad. El 25% restante se abona junto a la entrega de la unidad y la firma del crédito prendario. Tenemos planes a Tasa Fija en pesos y en plazos de hasta 60 meses. Puede consultarnos también por nuestros planes de Tasa Variable. </p>
+			        	<a class="btn btn-default" href="https://www.toyotacfa.com.ar/creditos-prendarios">MÁS DETALLES</a>
+			        </div>
+			      </div>
+			    {{-- </div> --}}
+			    <div class="panel panel-default">
+			      <div class="panel-heading">
+			        <h4 class="panel-title panel-title-financial">
+			          <a id="leasing" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+			          	<h4>
+			          		{{-- <i class="fa fa-plus" id="plus_leasing"></i>
+			          		<i class="fa fa-minus" id="minus_leasing" style="display: none;"></i> --}}
+			          		Leasing
+			          	</h4>
+			          </a>
+			        </h4>
+			      </div>
+			      {{-- <div id="collapse2" class="panel-collapse collapse"> --}}
+			        <div class="panel-body">
+			        	<p style="font-size: 17px;">El leasing es un arrendamiento financiero que le permite disponer del uso y goce del vehículo mediante el pago de un canon mensual. Incluye la opción de compra al finalizar el contrato, en el caso que el cliente desee quedarse con el vehículo.</p>
+		        		<div class="well">
+				        	<div class="row">
+				        			
+			  					<div class="col-md-6 col-xs-12 col-sm-12">
+			  						<h4>Beneficios Económicos y Financieros</h4>
+			  						<ul class="list-unstyled">
+			  							<li><i class="fa fa-check" aria-hidden="true"></i> Opción de compra al finalizar el contrato</li>
+			  							<li><i class="fa fa-check" aria-hidden="true"></i> Financiación a Tasa Fija</li>
+			  							<li><i class="fa fa-check" aria-hidden="true"></i> Uso y goce del vehículo mediante el pago de un canon mensual </li>
+			  						</ul>
+			  					</div>
+			  					<div class="col-md-6 col-xs-12 col-sm-12">
+			  						<h4>Beneficios Fiscales</h4>
+			  						<ul class="list-unstyled">
+			  							<li><i class="fa fa-check" aria-hidden="true"></i> El IVA se abona mensualmente con los cánones y no al momento de la compra del vehículo</li>
+			  							<li><i class="fa fa-check" aria-hidden="true"></i> Amortización acelerada</li>
+			  							<li><i class="fa fa-check" aria-hidden="true"></i> No se encuentra alcanzado por el impuesto a la ganancia mínima presunta (dependiendo del tipo de vehículo y de la condición impositiva del tomador)</li>
+			  						</ul>
+			  					</div>
+  							</div>
+		        		</div>
+		        		<a class="btn btn-default" href="https://www.toyotacfa.com.ar/leasing">MÁS DETALLES</a>
+			        </div>
+			      {{-- </div> --}}
+			    </div>
+		  	{{-- </div>  --}}
+	  	</div> 
+		</section>
 
 		<section class="pad-top-50 pad-bot-50" style="height: auto;">
 	      <div class="container">
