@@ -27,6 +27,7 @@
                 <th>Modelo</th>
                 <th>Km - Año - Color</th>
                 <th>Precio</th>
+                <th>Visible</th>
                 <th></th>
               </tr>
             </thead>
@@ -36,9 +37,15 @@
                     <td id="usado-int">{{ $usado->interno }}</td>
                     <td>{{ $usado->dominio }}</td>
                     <td>{{ $usado->marca }}</td>
-                    <td>{{ $usado->modelo }}</td>
+                    <td>{{str_limit(strip_tags($usado->modelo), 12, '...')}}</td>
                     <td>{{ $usado->km }} km - {{ $usado->anio }} - {{$usado->color}}</td>
                     <td><b>$ {{ $usado->precio }}</b></td>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">
+                          <label class="custom-control-label" for="{{$usado->id}}"></label>
+                        </div>
+                    </td>
                     <td>
                         <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
                             {{ csrf_field() }}
@@ -84,6 +91,19 @@
         interno = '';
         document.getElementById("nro-int").value = '';
         $('.usado-row').show();
+    }
+
+    function actualizarVisible(chk){
+        var id = chk.id;
+        var visible;
+
+        if ($('#'+id).is(":checked")) { visible = 1 } else { visible = 0 }
+        
+        axios
+            .get('/admin/usados/actualizar-visible/'+id, { params: { visible: visible }})
+            .then(function(res) {
+                console.log(res.data)
+            })
     }
 </script>
 @stop

@@ -14,6 +14,20 @@
 
 @section('styles_sheets')
   <style type="text/css">
+    .escarapela-mb{
+      position: fixed;
+      right: -15px;
+      top: 35px;
+      z-index: 100;
+    }
+
+    .escarapela{
+      position: fixed;
+      right: -5px;
+      top: -5px;
+      z-index: 19;
+    }
+
   .experiencia-hibrida .owl-nav{
     display: flex;
     justify-content: center;

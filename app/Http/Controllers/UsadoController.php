@@ -212,4 +212,12 @@ class UsadoController extends Controller
         $img_galeria->delete();
         return back()->with('success', 'La imagen fué eliminada correctamente!');
     }
+
+    public function actualizarVisible(Request $request, $id)
+    {
+        $usado = Usado::find($id);
+        $usado->visible = $request->visible;
+        $usado->update();
+        return $usado;
+    }
 }

@@ -33,6 +33,8 @@
 </head>
 
 <body>
+  <img src="/imagenes/arg.png" class="escarapela visible-md visible-lg">
+  <img src="/imagenes/arg.png" class="escarapela-mb visible-xs visible-sm">
   @include('frontend.includes.flash-message')
   @include('frontend.includes.menu-fab')
 
