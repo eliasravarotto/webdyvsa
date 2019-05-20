@@ -107,7 +107,7 @@
 			</div>
 		</section>
 
-		<section class="mt-3">
+		{{-- <section class="mt-3">
   			<div class="container">
   				<div class="title-section">
             		<h3>FINANCIACIÓN ETIOS Y YARIS</h3>
@@ -121,7 +121,7 @@
   					</div>
   				</div>
   			</div>
-  		</section>
+  		</section> --}}
 
 	<!---------------------------------------------------------------------
     FINANCIACIÓN COROLLA
