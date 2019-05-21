@@ -150,23 +150,58 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	  			</div>
 			</div>
 		</section>
+		<section>
+
+		<div class="container">
+			<div class="title-section">
+				<h1>Accesorios Hilux <br> <small> Elegí el que más te convenga</small></h1>
+			</div>
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
+
+			<!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="{{asset('imagenes/posventa/accesorios_toyota_hiluxk1-min.png')}}" alt="...">
+			      <div class="carousel-caption">
+			        ...
+			      </div>
+			    </div>
+			    <div class="item">
+			      <img src="{{asset('imagenes/posventa/accesorios_toyota_hiluxk2-min.png')}}" alt="...">
+			      <div class="carousel-caption">
+			        ...
+			      </div>
+			    </div>
+			    <div class="item">
+			      <img src="{{asset('imagenes/posventa/accesorios_toyota_hiluxk3-min.png')}}" alt="...">
+			      <div class="carousel-caption">
+			        ...
+			      </div>
+			    </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+			</div>
+		</section>
 
 		<section class="pad-bot-50 container arrow_box">
-			<!--NEUMATICOS-->
-			<div class="title-section">
-	            <h3>Neumáticos BRIDGESTONE <br>  <small>Conocé los descuentos que tenemos para vos!</small></h3>
-          	</div>
-			<div class="row">
-				<div class="col-md-12">
-					<img src="/imagenes/posventa/neumaticos_desk.png" class="img-responsive visible-md visible-lg" alt="Promo Neumáticos Bridgestone en cuotas. Derka y Vargas Servicios de Posventa" title="Promo Neumaticos. Derka y Vargas">
-					<img src="/imagenes/posventa/neumaticos_mobile.png" class="img-responsive visible-xs visible-sm" alt="Promo Neumáticos Bridgestone en cuotas. Derka y Vargas Servicios de Posventa" title="Promo Neumaticos. Derka y Vargas">
-				</div>
-			</div>
-			<br>
-
 			<!--PROMO SERVICIOS-->
 			<div class="title-section">
-	            <h3>Neumáticos BRIDGESTO <br>  <small>Conocé los descuentos que tenemos para vos!</small></h3>
+	            <h3>Súper Promo Servicios</h3>
           	</div>
           	<p class="fs-17">💥No te quedes sin disfrutar de esta Súper PROMOCIÓN! 📌 Tu SERVICIO + 10 puntos de control:</p>
           	<ul class="list-inline">
