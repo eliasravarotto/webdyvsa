@@ -77,15 +77,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
             </div>
         </section>
 
-        <section v-if="modelo.id == 29 || modelo.id == 30">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <img v-if="modelo.id == 29" style="max-width: 100%; height: auto;" src="/imagenes/TCF/720x90_etios.png">
-                    <img v-if="modelo.id == 30" style="max-width: 100%; height: auto;" src="/imagenes/TCF/720x90_yaris.png">
-                </div>
-            </div>
-        </section>
-
         <section class="container pad-top-bot-20">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left">

@@ -83,7 +83,23 @@
 					</select>
 				</div>
 				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label class="control-label mb-1">Orden</label>
+						<input type="number" class="form-control" name="orden" value="{{\App\Helpers\Helper::getHighOrdenUsados()}}">
+					</div>
+				</div>
+				<div class="col-md-1">
+					<div class="form-group">
+						<label class="control-label mb-1">Visible</label>
+						<div class="custom-control custom-checkbox">
+                          <input type="checkbox" name="visible" class="custom-control-input" id="visible" @if($usado->visible == 1) checked="" @endif>
+                          <label class="custom-control-label" for="visible"></label>
+                        </div>
+					</div>
+				</div>
 			</div>
+			
 		</div>
 		<div class="col-sm-12 col-md-4">
 			<div id="div_file">

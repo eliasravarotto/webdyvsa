@@ -4,6 +4,7 @@ namespace App\Helpers;
 use App\Sucursal;
 use App\Modelo;
 use App\Post;
+use App\Usado;
 
 
 class Helper
@@ -78,5 +79,10 @@ class Helper
 		$posts = Post::take($limit)->orderBy('orden', 'DESC')->get();
 
 		return $posts;
+	}
+
+	public static function getHighOrdenUsados()
+	{
+		return Usado::where('orden', '<>', null)->orderBy('orden', 'DESC')->first()->orden;
 	}
 }

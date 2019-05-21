@@ -66,6 +66,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	color: #fafafa;
 }
 
+.tabla-servicios th{
+	background-color: #ee3237;
+	color: #f1eeea;
+}
+
 </style>
 
 @section('content')
@@ -78,18 +83,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		</section>
 
 		<section>
-			<div class="container">
-			<div class="row row-well" style=" display: flex; justify-content: center; align-items: center; flex-wrap: nowrap;">
-				<div class="" style="width: 50%; display: flex; justify-content: center; padding-left: 50px;">
-					<h2>
-						<span>
+			<div class="container mt-3">
+			<div class="row">
+			    <div class="col-md-offset-2 col-xs-12 col-md-4 vcenter text-center">
+			        <div>
+			        	<span style="font-size: 2.8rem">
 							¿Necesitás un servicio?
 						</span>
-					</h2>
-				</div>
-				<div style="width: 50%;display: flex; justify-content: center; padding-right: 50px;">
-					<a href="/turno-servicios/create" class="btn btn-toyota btn-lg">SOLICITAR TURNO</a>
-				</div>
+			        </div>
+			    </div>
+			    <div class="col-xs-12 col-md-4  vcenter text-center">
+			        <div>
+			        	{{-- <a href="/turno-servicios/create" class="btn btn-toyota btn-lg">SOLICITAR TURNO</a> --}}
+			        	<a href="#solicitar-turno-online" class="btn btn-toyota btn-lg">SOLICITAR TURNO</a>
+			        </div>
+			    </div>
 			</div>
 			</div>
 		</section>
@@ -105,11 +113,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 					<h1>Elegí el mejor Servicio de Posventa</h1>
 				</div>
 				<p style="font-size: 1.7rem">Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas y dejá tu Toyota en las mejores manos.</p>
-				<br>
-				<p style="font-size: 1.7rem">PRECIOS VIGENTES</p>
-				<p><b>Desde:</b> 01-04-2019 - <b>Hasta:</b> 30-04-2019</p>
+
+				<div class="mt-3">
+					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-04-2019 - <b>Hasta:</b> 30-04-2019</p>
+				</div>
 				<div class="table-responsive pad-bot-50">          
-					<table class="table table-striped">
+					<table class="table table-striped tabla-servicios">
 						<thead>
 						  <tr>
 						    <th style="text-align: center; font-size: 20px;"></th>
@@ -242,7 +252,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		</section>
 
 		<section>
-			<div class="container mt-3">
+			<div class="container mt-3" id="solicitar-turno-online">
 				<div class="well" style="padding: 15px 35px 15px 35px;">
 					<div class="row">
 					<div class="col-md-7" style="padding: 0px;">

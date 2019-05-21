@@ -57,6 +57,8 @@ class UsadoController extends Controller
         $usado->transmision = $request->transmision;
         $usado->descripcion = $request->descripcion;
         $usado->uct = $request->uct;
+        $request->visible == 'on' ? $usado->visible = 1 : $usado->visible = 0;
+        $usado->orden = $request->orden;
         $usado->save();
 
         if ($request->hasFile('foto')) {
@@ -115,7 +117,7 @@ class UsadoController extends Controller
      */
     public function update(Request $request, Usado $usado)
     {
-        // return $request;
+        //return $request;
         $usado = Usado::find( $usado->id); 
         $usado->dominio = $request->dominio;
         $usado->marca = $request->marca;
@@ -129,6 +131,8 @@ class UsadoController extends Controller
         $usado->transmision = $request->transmision;
         $usado->descripcion = $request->descripcion;
         $usado->uct = $request->uct;
+        $request->visible == 'on' ? $usado->visible = 1 : $usado->visible = 0;
+        $usado->orden = $request->orden;
         $usado->generateSlug();
         $usado->save();
 

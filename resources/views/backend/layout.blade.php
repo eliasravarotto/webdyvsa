@@ -88,6 +88,12 @@
                         MENSAJE PUSH
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('posts.index')}}">
+                       <i class="fa fa-file-text-o" style="font-size: 1.3rem; vertical-align: sub !important"></i>
+                        ENTRADAS
+                    </a>
+                </li>
             </ul>
         </nav>
 
