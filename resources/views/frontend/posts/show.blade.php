@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title_and_meta')
-  <title>Derka y Vargas - Empresa</title>
+  <title>{{$post->titulo}}</title>
   <meta name="description" content="Derka y Vargas Responsabilidad Social Empresarial, Noticias Toyota Chaco, Eventos Toyota Chaco">
 @stop
 
