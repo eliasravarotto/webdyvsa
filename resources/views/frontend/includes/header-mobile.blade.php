@@ -3,8 +3,10 @@
     <a href="#" class="logo">
       <img src="/imagenes/logos/logo-dyv.png">
     </a>
-    <button type="button" class="boton-menu" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
-      <i class="fa fa-bars"></i>
+    <button type="button" id="sidebarCollapse" class="navbar-btn" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
     <nav id="menu-principal" class="collapse">
       <ul>

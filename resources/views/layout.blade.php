@@ -44,6 +44,7 @@
       top: -5px;
       z-index: 19;
     }
+
     </style>
 
 </head>
@@ -53,6 +54,7 @@
   <img src="/imagenes/arg.png" class="escarapela-mb visible-xs visible-sm">
   @include('frontend.includes.flash-message')
   @include('frontend.includes.menu-fab')
+  {{-- @include('frontend.includes.chat-whatsapp') --}}
 
   <div id="app">
     @include('frontend.includes.header-desk')
@@ -140,6 +142,21 @@
             .val("Enviando Mensaje...")
             .attr('disabled', 'disabled');
           return true;
+        });
+
+        //JQuery Open Close Menu Collapse
+        $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+        });
+
+        $("#open-close-chats-wapp").click(function(event){
+          event.preventDefault();
+          $("#wapp-content-chats").toggle("medium");
+        });
+        $("#close-chats-wapp").click(function(event){
+          event.preventDefault();
+          $("#wapp-content-chats").toggle("medium");
         });
       
     });

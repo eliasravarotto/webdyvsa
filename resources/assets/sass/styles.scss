@@ -19,9 +19,9 @@ footer {
 }
 
 .vcenter {
-    display: inline-block !important;
-    vertical-align: middle !important;
-    float: none !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  float: none !important;
 }
 
 /*-------------------------------------------
@@ -128,7 +128,6 @@ footer {
   border-radius: 0;  /*-webkit-animation: rotateRct 1.2s ease-in-out infinite, color-change 1.3s ease-in-out infinite;*/
   animation: rotateRct 1.2s ease-in-out infinite;/*, color-change 1.3s ease-in-out infinite;*/
 }
-
 
 .contact-details .media {
   margin: 0 0 30px;
@@ -301,19 +300,102 @@ footer .row {
 
 #menu-principal ul a {
   display: block;
-  padding: 1.1rem 0;
+  padding: 1rem 0;
   text-align: center;
   color: #777;
   text-transform: uppercase;
   border-top: 1px solid #dac7cf;
   text-decoration: none;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
 }
 
 #menu-principal ul a:hover,
 #menu-principal ul li.active a {
   background-color: #e01e37;
   color: #fff;
+}
+
+/* -------------------------------------------------------------------------
+BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
+---------------------------------------------------------------------------- */
+#sidebarCollapse {
+  width: 40px;
+  height: 40px;
+  // background: #f5f5f5;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+#sidebarCollapse span {
+  width: 75%;
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  background: #373737;
+  transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+  transition-delay: 0s;
+}
+
+#sidebarCollapse span:first-of-type {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+
+#sidebarCollapse span:nth-of-type(2) {
+  opacity: 0;
+}
+
+#sidebarCollapse span:last-of-type {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+  transform: none;
+  opacity: 1;
+  margin: 7px auto;
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+  margin-left: auto;
+}
+
+/* ---------MEDIAQUERIES----------------------------- */
+@media (max-width:992px) {
+  #sidebar {
+    margin-left: -250px;
+    transform: rotateY(90deg);
+  }
+
+  #sidebar.active {
+    margin-left: 0;
+    transform: none;
+  }
+
+  #sidebarCollapse span:first-of-type,
+  #sidebarCollapse span:nth-of-type(2),#sidebarCollapse span:last-of-type {
+    transform: none;
+    opacity: 1;
+    margin: 7px auto;
+  }
+
+  #sidebarCollapse.active span {
+    margin: 0 auto;
+  }
+
+  #sidebarCollapse.active span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+
+  #sidebarCollapse.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  #sidebarCollapse.active span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+  }
+
 }
 
 /*--------------FIN NUEVA BARRA MOBILE----------------------*/
@@ -526,12 +608,15 @@ footer .row {
 .my-3 {
   margin: 3rem 0rem !important;
 }
+
 .mt-1 {
   margin-top: 1rem !important;
 }
+
 .mt-2 {
   margin-top: 2rem !important;
 }
+
 .mt-3 {
   margin-top: 3rem !important;
 }
@@ -539,9 +624,11 @@ footer .row {
 .mb-1 {
   margin-bottom: 1rem !important;
 }
+
 .mb-2 {
   margin-bottom: 2rem !important;
 }
+
 .mb-3 {
   margin-bottom: 3rem !important;
 }
@@ -2070,4 +2157,271 @@ opacity: 1;
   text-transform: uppercase;
   font-size: 26px;
   margin-bottom: 0;
+}
+
+/*--------------------------------------------
+// ESTILOS CHAT WHATSAPP
+---------------------------------------------*/
+.wptwa-container .wptwa-toggle,
+.wptwa-container .wptwa-mobile-close,
+.wptwa-container .wptwa-description,
+.wptwa-container .wptwa-description a {
+  background-color: #00e676;
+  color: rgba(255, 255, 255, 1);
+}
+
+.wptwa-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  white-space: nowrap;
+  line-height: 100%;
+  padding: 12px 20px;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16);    
+  /*transition: box-shadow 80ms ease-in-out,width .4s ease .2s;*/
+}
+
+.wptwa-toggle,
+.wptwa-box {
+  z-index: 9999999;
+}
+
+.wptwa-toggle,
+.wptwa-box .wptwa-description,
+.wptwa-button,
+.wptwa-mobile-close {
+  background: #0DC152;
+  color: white;
+}
+
+/**/
+.wptwa-container .wptwa-box {
+  background-color: #fff;
+}
+
+.wptwa-show .wptwa-box {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.wptwa-box.wptwa-js-ready {
+  display: block;
+  -webkit-box-shadow: 0px 0px 38px -15px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 38px -15px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 38px -15px rgba(0, 0, 0, 0.75);
+}
+
+.wptwa-box {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background: white;
+  max-width: 360px;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 8px 25px -5px rgba(45, 62, 79, .15);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  background: white;    /*transition: all .3s;*/
+}
+
+.wptwa-toggle,
+.wptwa-box {
+  z-index: 9999999;
+}
+
+.wptwa-container *,
+.wptwa-button * {
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*flechita chat*/
+.wptwa-container .wptwa-box:before,
+.wptwa-container .wptwa-box:after {
+  background-color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.wptwa-container .wptwa-box:before {
+  box-shadow: none;
+  background: white;
+  transform: none;
+  bottom: 0;
+  width: 19px;
+  right: 17px;
+  border-color: white;
+}
+
+.wptwa-container .wptwa-box:before,
+.wptwa-container .wptwa-box:after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 22px;
+  width: 13px;
+  height: 13px;
+  background: white;
+  transform: rotate(45deg);
+  z-index: -1;
+  border: 1px solid #f5f5f5;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .02);
+}
+
+/*header*/
+.wptwa-container .wptwa-toggle,
+.wptwa-container .wptwa-mobile-close,
+.wptwa-container .wptwa-description,
+.wptwa-container .wptwa-description a {
+  background-color: #0DC152;
+  color: rgba(255, 255, 255, 1);
+}
+
+.wptwa-box .wptwa-description {
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+}
+
+.wptwa-toggle,
+.wptwa-box .wptwa-description,
+.wptwa-button,
+.wptwa-mobile-close {
+  background: #0DC152;
+  color: white;
+}
+
+.wptwa-container *,
+.wptwa-button * {
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**/
+.wptwa-box .wptwa-description + .wptwa-close {
+  visibility: visible;
+  color: #232f3c;
+}
+
+.wptwa-box .wptwa-close {
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  opacity: .7;
+  visibility: hidden;    /*transition: opacity .3s;*/
+}
+
+/**/
+.wptwa-box .wptwa-people {
+  overflow: auto;
+  padding: 10px;
+}
+
+/*chats-list*/
+.wptwa-box .wptwa-account,
+.wptwa-container .wptwa-account.wptwa-offline:hover {
+  border-color: #f5f5f5;
+}
+
+.wptwa-container .wptwa-gdpr,
+.wptwa-container .wptwa-account {
+  color: rgba(85, 85, 85, 1);
+}
+
+.wptwa-box .wptwa-account {
+  padding: 10px;
+  border-top: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.wptwa-container .wptwa-account:hover {
+  background-color: rgba(245, 245, 245, 1);
+  border-color: rgba(245, 245, 245, 1);
+  color: rgba(85, 85, 85, 1);
+}
+
+.wptwa-box .wptwa-account:hover {
+  background: #f7f7f7;
+  border-radius: 6px;
+}
+
+.wptwa-container a:hover,
+.wptwa-button:hover {
+  text-decoration: none;
+}
+
+/*chat-avatar-img*/
+.wptwa-box .wptwa-face {
+  float: left;
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.wptwa-box .wptwa-face img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50px;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.wptwa-container img,
+.wptwa-button img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: top;
+}
+
+.wptwa-box .wptwa-face:after {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: transparent url('/imagenes/icons/chat-wapp.png') center center no-repeat;
+  background-size: cover;
+  z-index: 4;
+}
+
+/*chat-titulo-nombre*/
+.wptwa-box .wptwa-info {
+  float: left;
+  width: calc(100% - 40px);
+  padding-left: 10px;
+}
+
+.wptwa-box .wptwa-title,
+.wptwa-box .wptwa-offline-text {
+  font-size: 12px;
+  line-height: 1.5em;
+  opacity: .6;
+  display: block;
+}
+
+.wptwa-box .wptwa-name {
+  display: block;
+  font-weight: bold;
 }
