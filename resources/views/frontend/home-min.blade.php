@@ -200,7 +200,10 @@
           </div>
       <div class="row">
         <div class="col-md-6 col-xs-12">
-          <iframe width="424" height="238" src="https://www.youtube.com/embed/WaR7TnQWXP4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <video id="video-explicativo" controls style="height: auto;width: 100%">
+                <source src="/videos/rav4-presentacion.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
         </div>
         <div class="col-md-6 col-xs-12">
           {{-- <div class="title-section visible-md visible-lg">
