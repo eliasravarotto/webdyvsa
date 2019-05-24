@@ -1,4 +1,4 @@
-<header class="header-ppal">
+<header class="header-ppal" style="position: relative; z-index: 100">
       <div class="row row-no-margin">
         <div class="col-md-3 col-sm-12 col-xs-12 text-left  center-on-mobile">
           <a href="/" class="pull-left">
