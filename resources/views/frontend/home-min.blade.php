@@ -192,19 +192,47 @@
     </div>
   </section>
 
+  <br>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="title-section visible-xs visible-sm">
+            <h3>Lanzamiento nueva Toyota Rav4 Híbrida</h3>
+          </div>
+          <img src="https://derkayvargas.com/imagenes/posts/20/WhatsApp%20Image%202019-05-22%20at%2016.10.00.jpeg" class="img-responsive">
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="title-section visible-md visible-lg">
+            <h3>Lanzamiento nueva Toyota Rav4 Híbrida</h3>
+          </div>
+          <br>
+          <p class="fs-17">✅ El futuro está en Toyota y Derka y Vargas te lo va a mostrar.</p>
 
+          <p class="fs-17">👉 Por eso el día 24 de mayo te invitamos a conocer la nueva Rav4 Híbrida que combina aventura, confort y seguridad!</p>
+
+          <p class="fs-17">Lugar: </p>
+
+            <p class="fs-17">📌 En casa central Belgrano 872 Sáenz Peña.</p>
+
+            <p class="fs-17">📌Sucursal Resistencia, Ruta N. Avellaneda km 11,9.</p>
+
+          <p class="fs-17">Fecha y Hora: 24-05-2019 a las 19 hs.</p>
+
+          <p class="fs-17">Te vas a sorprender❗️</p>
+
+          <p class="fs-17">Te esperamos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    <br>
   <!---------------------------------------------------------------------
     FINANCIACIÓN COROLLA
   ----------------------------------------------------------------------->
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-xs-12">
-          <div class="title-section visible-xs visible-sm">
-            <h3>FINANCIACIÓN COROLLA   <small>Llévate tu Corolla financiado hasta $400.000</small></h3>
-          </div>
-          <img src="{{asset('imagenes/home-min/financiacion-toyota-corolla.png')}}" class="img-responsive">
-        </div>
         <div class="col-md-6 col-xs-12">
           <div class="title-section visible-md visible-lg">
             <h3>FINANCIACIÓN COROLLA   <small>Llévate tu Corolla financiado hasta $400.000</small></h3>
@@ -232,6 +260,12 @@
             👉🔖Bonificada 19,9% $ 37.811,94
           </p>
           <br><p class="text-muted"><em>Promoción válida hasta el 31/05/2019</em></p>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="title-section visible-xs visible-sm">
+            <h3>FINANCIACIÓN COROLLA   <small>Llévate tu Corolla financiado hasta $400.000</small></h3>
+          </div>
+          <img src="{{asset('imagenes/home-min/financiacion-toyota-corolla.png')}}" class="img-responsive">
         </div>
       </div>
     </div>
