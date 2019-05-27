@@ -195,9 +195,9 @@
   <br>
   <section>
     <div class="container">
-          <div class="title-section">
-            <h3>Lanzamiento nueva Toyota Rav4 Híbrida</h3>
-          </div>
+      <div class="title-section visible-sm visible-xs">
+          <h3>Toyota Argentina presentó la nueva RAV4</h3>
+      </div>
       <div class="row">
         <div class="col-md-6 col-xs-12">
           <video id="video-explicativo" controls style="height: auto;width: 100%">
@@ -206,24 +206,11 @@
               </video>
         </div>
         <div class="col-md-6 col-xs-12">
-          {{-- <div class="title-section visible-md visible-lg">
-            <h3>Lanzamiento nueva Toyota Rav4 Híbrida</h3>
-          </div> --}}
-          <p class="fs-17">✅ El futuro está en Toyota y Derka y Vargas te lo va a mostrar.</p>
-
-          <p class="fs-17">👉 Por eso el día 24 de mayo te invitamos a conocer la nueva Rav4 Híbrida que combina aventura, confort y seguridad!</p>
-
-          <p class="fs-17">Lugar: </p>
-
-            <p class="fs-17">📌 En casa central Belgrano 872 Sáenz Peña.</p>
-
-            <p class="fs-17">📌Sucursal Resistencia, Ruta N. Avellaneda km 11,9.</p>
-
-          <p class="fs-17">Fecha y Hora: 24-05-2019 a las 19 hs.</p>
-
-          <p class="fs-17">Te vas a sorprender❗️</p>
-
-          <p class="fs-17">Te esperamos.</p>
+          <div class="title-section visible-md visible-lg">
+            <h3>Toyota Argentina presentó la nueva RAV4</h3>
+          </div>
+          <p style="font-size: 2rem">La Nueva RAV4 Hybrid, modelo que estrena un diseño robusto y sofisticado, sistema híbrido, equipamiento de seguridad, tracción integral inteligente y una plataforma basada en la Nueva Arquitectura Global de Toyota.</p>
+          <a class="btn btn-toyota" href="https://www.toyota.com.ar/prensa/noticias-de-argentina/toyota-argentina-amplia-su-line-up-hibrido-y-estrena-equipamiento-de-seguridad-con-la-nueva-rav4" target="_blank">Ver más</a>
         </div>
       </div>
     </div>
