@@ -30,28 +30,29 @@
 
     @yield('styles_sheets')
 
-    <style type="text/css">
+    {{-- <style type="text/css">
       .escarapela-mb{
-      position: fixed;
-      right: -15px;
-      top: 35px;
-      z-index: 100;
-    }
+        position: fixed;
+        right: -15px;
+        top: 35px;
+        z-index: 100;
+      }
 
-    .escarapela{
-      position: fixed;
-      right: -5px;
-      top: -5px;
-      z-index: 19;
-    }
+      .escarapela{
+        position: fixed;
+        right: -5px;
+        top: -5px;
+        z-index: 19;
+      }
 
-    </style>
+    </style> --}}
 
 </head>
 
 <body>
-  <img src="/imagenes/arg.png" class="escarapela visible-md visible-lg">
-  <img src="/imagenes/arg.png" class="escarapela-mb visible-xs visible-sm">
+  {{-- <img src="/imagenes/arg.png" class="escarapela visible-md visible-lg">
+  <img src="/imagenes/arg.png" class="escarapela-mb visible-xs visible-sm"> --}}
+  
   @include('frontend.includes.flash-message')
   @include('frontend.includes.menu-fab')
   {{-- @include('frontend.includes.chat-whatsapp') --}}
@@ -166,3 +167,13 @@
 
 </body>
 </html>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-end">
+      redes sociales
+    </div>
+  </div>
+  
+</div>
