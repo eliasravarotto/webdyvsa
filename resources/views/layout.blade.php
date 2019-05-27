@@ -167,13 +167,3 @@
 
 </body>
 </html>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col d-flex justify-content-end">
-      redes sociales
-    </div>
-  </div>
-  
-</div>

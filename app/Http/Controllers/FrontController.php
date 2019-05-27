@@ -237,4 +237,10 @@ class FrontController extends Controller
                         'query' => $request->query()]
                     );
     }
+
+
+    public function nuevaRav4()
+    {
+        return view('frontend.modelos.rav4');
+    }
 }

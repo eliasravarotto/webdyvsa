@@ -8,6 +8,7 @@ use App\ImagenGaleriaModelo;
 use App\ImagenSliderModelo;
 use App\Modelo;
 use App\ParallaxModelo;
+use App\TipoVehiculo;
 use App\Version;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,8 @@ class ModelosController extends Controller
     public function create()
     {
         $modelo = new Modelo;
-        return view('backend.modelos.create', compact('modelo'));
+        $tiposVehiculos  = TipoVehiculo::all();
+        return view('backend.modelos.create', compact('modelo', 'tiposVehiculos'));
     }
 
     /**
@@ -56,6 +58,7 @@ class ModelosController extends Controller
 
         $modelo = new Modelo;
         $modelo->nombre = $request->nombre;
+        $modelo->tipo_vehiculo_id = $request->tipo_vehiculo_id;
         $modelo->slogan = $request->slogan;
         $modelo->descripcion = $request->descripcion;
         $modelo->link_ficha_tecnica = $request->ficha_tecnica;
@@ -90,8 +93,9 @@ class ModelosController extends Controller
     public function edit($id)
     {
         $modelo = Modelo::find($id);
+        $tiposVehiculos  = TipoVehiculo::all();
 
-        return view('backend.modelos.edit', compact('modelo'));
+        return view('backend.modelos.edit', compact('modelo', 'tiposVehiculos'));
     }
 
     /**
@@ -125,6 +129,7 @@ class ModelosController extends Controller
 
         $modelo->nombre = $request->nombre;
         $modelo->slogan = $request->slogan;
+        $modelo->tipo_vehiculo_id = $request->tipo_vehiculo_id;
         $modelo->descripcion = $request->descripcion;
         $modelo->link_ficha_tecnica = $request->ficha_tecnica;
         $modelo->link_catalogo = $request->catalogo;

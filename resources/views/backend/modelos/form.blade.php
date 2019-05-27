@@ -1,7 +1,16 @@
 <div class="form-group row">
-  	<div class="col-4">
+  	<div class="col-2">
 	  <label class="control-label mb-1">Nombre</label>
 	  <input name="nombre" type="text" class="form-control" value="{{ $modelo->nombre }}">
+	</div>
+	<div class="col-2">
+	  <label for="cc-payment" class="control-label mb-1">Tipo Vehículo</label>
+	  <select class="form-control" name="tipo_vehiculo_id">
+	  	<option></option>
+	  	@foreach( $tiposVehiculos as $tipo)
+	  	<option value="{{$tipo->id}}" @if($tipo->id == $modelo->tipo_vehiculo_id) selected @endif>{{$tipo->tipo}}</option>
+	  	@endforeach
+	  </select>
 	</div>
 	<div class="col-8">
 	  <label for="cc-payment" class="control-label mb-1">Slogan</label>

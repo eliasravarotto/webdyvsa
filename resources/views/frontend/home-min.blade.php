@@ -259,6 +259,58 @@
   </section>
 
   <!---------------------------------------------------------------------
+    MODELOS
+  ----------------------------------------------------------------------->
+  <section>
+    <div class="container">
+      <div class="title-section mt-3">
+        <h3>MODELOS DESTACADOS</h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="{{route('nueva_rav4')}}">
+          <img src="{{asset('imagenes/home-min/nueva-rav4-mb.png')}}" class="img-responsive visible-xs visible-sm">
+          <img src="{{asset('imagenes/home-min/nueva-rav4.png')}}" class="img-responsive visible-md visible-lg">
+          </a>
+        </div>
+       </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
+          <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
+            <img src="/imagenes/home-min/hilux.png" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
+            <div class="caption text-center">
+              <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
+              <hr>
+              <h4 class="text-uppercase">La superación por encima del cambio</h4>
+            </div>
+          </a>          
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
+          <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border">
+            <img src="/imagenes/home-min/corolla.png" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
+            <div class="caption text-center">
+              <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
+              <hr>
+              <h4 class="text-uppercase">SEGUÍ AVANZANDO</h4>
+            </div>
+          </a>          
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
+          <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border">
+            <img src="/imagenes/home-min/etios.png" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
+            <div class="caption text-center">
+              <img src="/imagenes/modelos/etios/logo.png" style="height: 40px" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
+              <hr>
+              <h4 class="text-uppercase">Mi primer Toyota</h4>
+            </div>
+          </a>          
+        </div>
+      </div>
+      <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------
     USADOS CERTIFICADOS
   ----------------------------------------------------------------------->
   <section>
@@ -305,50 +357,6 @@
     </div>
   </section>
 
-  <!---------------------------------------------------------------------
-    MODELOS
-  ----------------------------------------------------------------------->
-  <section>
-    <div class="container">
-      <div class="title-section mt-3">
-        <h3>MODELOS</h3>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-          <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/hilux.png" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
-            <div class="caption text-center">
-              <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
-              <hr>
-              <h4 class="text-uppercase">La superación por encima del cambio</h4>
-            </div>
-          </a>          
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-          <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/corolla.png" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
-            <div class="caption text-center">
-              <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
-              <hr>
-              <h4 class="text-uppercase">SEGUÍ AVANZANDO</h4>
-            </div>
-          </a>          
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-          <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/etios.png" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
-            <div class="caption text-center">
-              <img src="/imagenes/modelos/etios/logo.png" style="height: 40px" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
-              <hr>
-              <h4 class="text-uppercase">Mi primer Toyota</h4>
-            </div>
-          </a>          
-        </div>
-      </div>
-      <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
-    </div>
-  </section>
-  
   <hr class="container">
 
   <section class="pad-top-25 pad-bot-50" style="height: auto;">

@@ -7,11 +7,11 @@
 
 @section('content')
 	<article>
-		<section>
+		{{-- <section>
 			<div style="width: 100%">
 				<img src="/imagenes/tcf/banner_ppal.jpg" class="img-responsive" alt="">
 			</div>
-		</section>
+		</section> --}}
 
 		<div class="container">
 			<section class="pad-top-bot-50" style="padding-left: 8%; padding-right: 8%;">

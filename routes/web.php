@@ -111,5 +111,6 @@ Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');
 Route::get('/posts/{slug}','PostController@showPost')->name('show_post');
+Route::get('nueva-rav4-hibrida','FrontController@nuevaRav4')->name('nueva_rav4');
 // Route::get('/toyota-hibrid-experience','FrontController@thexpe');
 // Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
