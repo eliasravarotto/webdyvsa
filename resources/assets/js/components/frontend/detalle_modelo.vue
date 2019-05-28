@@ -1,17 +1,3 @@
-<style type="text/css">
-.row-well{
-    background: #f4f4f4;
-background: -moz-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(7%, #fefefe), color-stop(43%, #f6f6f6), color-stop(100%, #ededed));
-background: -webkit-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: -o-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: -ms-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: linear-gradient(to right, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
-    height: 100px;
-}
-
-</style>
 <template>
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -134,63 +120,49 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
             </section>
         </section>
 
+        <div class="component title-wrapper title-wrapper--highlighted container">
+            <div class="title-wrapper__wrapper">
+                <small class="subtitle">Características</small>
+                <h1 class="title">Características Destacadas</h1>
+            </div>
+        </div>
 
-        <!-- <section class="pad-top-bot-50" v-if="imagenes_galeria.length > 0">
+        <section>
             <div class="container">
-                <div class="row">
-                    <div class="col-xs-12" id="slider">
-                        <div class="row">
-                            <div class="col-md-6" id="carousel-bounding-box">
-                                <div class="carousel slide" id="myCarouselmin">
-
-                                    <div class="carousel-inner">
-                                        <div v-for="(img, index) in imagenes_galeria" v-bind:class="[index == 0 ? activeClass : 'item']" v-bind:data-slide-number="img.id">
-                                            <img v-bind:src="img.url">
-                                        </div>
-                                    </div>
-
-                                    <a class="left carousel-control" href="#myCarouselmin" role="button" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
-                                    </a>
-                                    <a class="right carousel-control" href="#myCarouselmin" role="button" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
-                                    </a>                                
-                                </div>
-                            </div>
-
-                            <div id="moda_show_imagen" class="modal-img">
-                                <span class="close-on-click">&times;</span>
-                                <img class="modal-content" id="img01" src="#">
-                            </div>
-
-                            <div class="col-md-6 hidden-xs" id="carousel-text">
-                                <div class="row hidden-xs" id="slider-thumbs">
-                                    <div v-for="img in imagenes_galeria" class="col-md-6">
-                                        <div class="item-hover">
-                                            <a class="thumbnail" v-bind:id="'carousel-selector-'+img.id">
-                                                <img class="hand" v-bind:src="img.url" v-on:click="showImage(img)">
-                                            </a>
-                                        </div>
-                                     </div>   
-                                </div>                 
-                            </div>
+                <div v-for="(item, i) in features">
+                    <div v-if="(i % 2 === 0) && (item.descripcion != '')" class="row row-caracteristica" style="padding: 3rem 0rem">
+                        <div class="col-xs-12 col-md-6 imagen-container">
+                            <img :src="item.img" class="img-responsive">
+                        </div>
+                        <div class="col-xs-12 col-md-6 descripcion">
+                            <h2>{{item.titulo}}</h2>
+                            <p>{{item.descripcion}}</p>
+                        </div>
+                    </div>
+                    <div v-if="(i % 2 != 0) && (item.descripcion != '')" class="row row-caracteristica" style="padding: 3rem 0rem">
+                        <div class="col-xs-12 col-md-6 col-md-push-6 imagen-container">
+                            <img :src="item.img" class="img-responsive">
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-md-pull-6 descripcion">
+                            <h2>{{item.titulo}}</h2>
+                            <p>{{item.descripcion}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
-        <section class="pad-top-bot-20" style="background-color: #f0fdff;">
+        <!-- <section class="photo" :style="'background: url('+parallax.imagen+')'"></section> -->
+
+        <section class="" style="background-color: #f7f7f7;">
             <div class="container pad-top-bot-50">
                 <div class="row">
-                    <div v-for="item in features" class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+                    <div class="owl-carousel owl-theme">
+                        <div v-for="item in features" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
                             <img v-bind:src="item.img" alt="...">
                             <div class="caption caption-default">
-                                <h4 class="text-center">{{ item.titulo }}</h4>
-                                <p class="text-justify">
-                                    {{ item.descripcion }}
-                                </p>
+                                <!-- <h4 class="text-center">{{ item.descripcion }}</h4> -->
+                                <p class="text-center">{{ item.descripcion }}</p>
                             </div>
                         </div>
                     </div>
@@ -200,7 +172,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
         <!--Parallax Section -->
-        <div class="parallax bg3 visible-md visible-lg" v-bind:style="'background-image: url('+parallax.imagen+')'">
+        <!-- <div class="parallax bg3 visible-md visible-lg" v-bind:style="'background-image: url('+parallax.imagen+')'">
           <div class="container">
             <div class="row">
               <div class="col-xs-12">
@@ -211,7 +183,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
     </article>
 </div>
 </template>
@@ -330,6 +302,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                         $('#carousel-text').html($('#slide-content-'+id).html());
                 });
 
+                $(document).ready(function() {
+                    $('.owl-carousel').owlCarousel({
+                        stagePadding: 50,
+                        loop:true,
+                        margin:10,
+                        nav:false,
+                        autoPlay: 3000, //Set AutoPlay to 3 seconds
+                        items : 3,
+                        itemsDesktop : [1199,3],
+                        itemsDesktopSmall : [979,2],
+                        responsive:{
+                            0:{
+                                items:1
+                            },
+                            600:{
+                                items:2
+                            },
+                            1000:{
+                                items:4
+                            }
+                        }
+                    })
+                })
+
             },
             changeColor(id, name_color){
                 this.model_color_selected = name_color;
@@ -348,3 +344,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
         }
     }
 </script>
+<style type="text/css">
+.owl-theme .owl-dots .owl-dot span {
+    width: 40px;
+}
+
+.owl-carousel .item p{
+    color: black;
+    font-size: 1.9rem;
+    font-weight: 400;
+}
+
+.row-caracteristica .imagen-container img{
+    border-radius: 6px; 
+}
+
+.row-caracteristica .descripcion h2{
+    font-weight: 100; 
+    margin-left: 5rem; 
+    margin-right: 5rem
+}
+.row-caracteristica .descripcion p{
+    font-size: 1.8rem; 
+    line-height: 2;  
+    font-weight: 100; 
+    font-weight: 100; 
+    margin-left: 5rem; 
+    margin-right: 5rem
+}
+
+.row-well{
+    background: #f4f4f4;
+background: -moz-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(7%, #fefefe), color-stop(43%, #f6f6f6), color-stop(100%, #ededed));
+background: -webkit-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: -o-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: -ms-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+background: linear-gradient(to right, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+    height: 100px;
+}
+</style>

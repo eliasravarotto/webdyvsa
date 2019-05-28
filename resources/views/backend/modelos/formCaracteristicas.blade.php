@@ -12,12 +12,39 @@
 		height: 59%;
 		margin-right: 10px;
 	}
+
+  .card .item{
+    position: relative;
+  }
+  .card .item a{
+    position: absolute;
+    right: 0;
+  }
+
 </style>
 <div class="card" id="form">
     <div class="card-header">
         <strong class="card-title">Características {{ $modelo->nombre }}</strong>
     </div>
     <div class="card-body">
+      <div class="container">
+        <div class="owl-carousel owl-theme">
+          @foreach($modelo->caracteristicas as $caracteristica)
+                <div class="card item">
+                  <img src="{{$caracteristica->img}}" class="card-img-top">
+                  <div class="card-body">
+                    <p class="card-text">
+                      {{ $caracteristica->titulo }}
+                    </p>
+                  </div>
+                  <a href="{{ route('borrar_caracterisica_modelo', $caracteristica->id) }}" style="position: absolute;" onclick="return confirm('Desea eliminar el item?');" class="btn btn-danger delete-user">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </div>
+          @endforeach
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-12 text-right">
           <a style="color: white" v-on:click="addField()" class="btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i></a>
@@ -57,12 +84,10 @@
           <div class="row form-group container">
               <div class="col-9">
                   <a class="btn btn-dark" href="/admin/modelos" style="color: white">
-                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                    <span id="payment-button-amount">Cancelar</span>
+                   Cancelar
                   </a>
                   <button type="submit" class="btn btn-info">
-                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                    <span id="payment-button-amount">Guardar</span>
+                    Guardar
                   </button>
               </div>
           </div>
@@ -71,19 +96,42 @@
 </div>
 @stop
 
-@section('script')
+@section('page-script')
     <script type="text/javascript">
         function removeField(id){
             $('#field_'+id).remove();
                 this.index--;
-                console.log(id);
         }
         new Vue({
           el: '#form',
           data: {
             index: 1
           },
-          mounted(){ },
+          mounted(){
+            //$(document).ready(function() {
+                    $('.owl-carousel').owlCarousel({
+                        stagePadding: 50,
+                        loop:false,
+                        margin:10,
+                        nav:false,
+                        autoPlay: 3000, //Set AutoPlay to 3 seconds
+                        items : 3,
+                        itemsDesktop : [1199,3],
+                        itemsDesktopSmall : [979,2],
+                        responsive:{
+                            0:{
+                                items:1
+                            },
+                            600:{
+                                items:2
+                            },
+                            1000:{
+                                items:4
+                            }
+                        }
+                    })
+                //})
+          },
           methods:{
             addField(){
                 var field = `

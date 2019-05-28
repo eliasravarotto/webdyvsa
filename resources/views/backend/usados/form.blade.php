@@ -86,7 +86,7 @@
 				<div class="col-md-2">
 					<div class="form-group">
 						<label class="control-label mb-1">Orden</label>
-						<input type="number" class="form-control" name="orden" value="{{\App\Helpers\Helper::getHighOrdenUsados()}}">
+						<input type="number" class="form-control" name="orden" @if($usado->orden != null)value="{{$usado->orden}}" @else value="{{\App\Helpers\Helper::getHighOrdenUsados()}}" @endif>
 					</div>
 				</div>
 				<div class="col-md-1">

@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
 	Route::resource('admin/posts','PostController');
 	Route::get('admin/usados/borrar_img_post/{id}','PostController@deleteImgGaleria')->name('borrar_img_post');
+	Route::get('admin/modelo/borrar_caracterisica_modelo/{id}','ModelosController@borrarCaracteristica')->name('borrar_caracterisica_modelo');
 	Route::get('admin/usados/actualizar-visible/{id}','UsadoController@actualizarVisible');
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin/servicios','TipoServicioController');

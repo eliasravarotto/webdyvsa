@@ -12,4 +12,10 @@ class Modelo extends Model
      * @var string
      */
     protected $table = 'modelos';
+
+
+    public function caracteristicas()
+    {
+        return $this->hasMany('App\CaracteristicaModelo');
+    }
 }

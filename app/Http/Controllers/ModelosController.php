@@ -218,9 +218,10 @@ class ModelosController extends Controller
         return redirect('admin/modelos');
    }
 
-    public function editCaracteristicas($id)
+    public function editCaracteristicas(Modelo $id)
     {
-        $modelo = Modelo::find($id);
+        $modelo = $id;
+
         return view('backend.modelos.formCaracteristicas', compact('modelo'));
     }
 
@@ -245,6 +246,14 @@ class ModelosController extends Controller
 
         return redirect('admin/modelos');
 
+    }
+
+    public function borrarCaracteristica(CaracteristicaModelo $id)
+    {
+        if ($id->delete()) {
+            return back()->with('success', 'El item fué eliminada correctamente!');
+        }
+            return back()->with('error', 'No se ha podido eliminar el item');
     }
 
     public function editParallax($id)
