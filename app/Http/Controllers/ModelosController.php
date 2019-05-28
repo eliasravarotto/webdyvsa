@@ -10,6 +10,7 @@ use App\Modelo;
 use App\ParallaxModelo;
 use App\TipoVehiculo;
 use App\Version;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 
@@ -249,8 +250,12 @@ class ModelosController extends Controller
     }
 
     public function borrarCaracteristica(CaracteristicaModelo $id)
-    {
+    {   
+        
         if ($id->delete()) {
+            if ($id->img != null) {
+                File::delete(public_path().$id->img);
+            }
             return back()->with('success', 'El item fué eliminada correctamente!');
         }
             return back()->with('error', 'No se ha podido eliminar el item');
