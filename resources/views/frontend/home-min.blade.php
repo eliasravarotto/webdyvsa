@@ -123,21 +123,15 @@
     <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        {{-- <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li> --}}
+        <li data-target="#myCarousel" data-slide-to="4"></li>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-        <div class="item active">
-          <img src="/imagenes/home-min/portada-corolla.png" alt="Nuevos Creditos Uva Toyota Derka y Vargas">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/portada-corolla-2.png" alt="Nuevos Creditos Uva Toyota Derka y Vargas">
-        </div>
-        {{-- 
+        
         <div class="item active">
           <img src="/imagenes/home-min/creditos-uva.png" alt="Nuevos Creditos Uva Toyota Derka y Vargas">
         </div>
@@ -156,7 +150,7 @@
 
         <div class="item">
           <img src="/imagenes/home-min/creditos-uva-hilux.png" alt="Nuevos Creditos Uva Hilux 2019 Tasa 9%">
-        </div> --}}
+        </div>
       </div>
 
       <!-- Left and right controls -->
@@ -171,7 +165,7 @@
     </div>
 
     <!-- Carusel Principal MOBILE-->
-    {{-- <div id="carousel-mobile" class="carousel slide visible-xs visible-sm" data-ride="carousel">
+    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-mobile" data-slide-to="1" class=""></li>
@@ -196,7 +190,7 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div> --}}
+    </div>
   </section>
 
   <br>
