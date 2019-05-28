@@ -130,7 +130,7 @@
         <section>
             <div class="container">
                 <div v-for="(item, i) in features">
-                    <div v-if="(i % 2 === 0) && (item.descripcion != '')" class="row row-caracteristica" style="padding: 3rem 0rem">
+                    <div v-if="(i % 2 === 0) && (item.descripcion != null)" class="row row-caracteristica" style="padding: 3rem 0rem">
                         <div class="col-xs-12 col-md-6 imagen-container">
                             <img :src="item.img" class="img-responsive">
                         </div>
@@ -139,7 +139,7 @@
                             <p>{{item.descripcion}}</p>
                         </div>
                     </div>
-                    <div v-if="(i % 2 != 0) && (item.descripcion != '')" class="row row-caracteristica" style="padding: 3rem 0rem">
+                    <div v-if="(i % 2 != 0) && (item.descripcion != null)" class="row row-caracteristica" style="padding: 3rem 0rem">
                         <div class="col-xs-12 col-md-6 col-md-push-6 imagen-container">
                             <img :src="item.img" class="img-responsive">
                         </div>
@@ -162,7 +162,7 @@
                             <img v-bind:src="item.img" alt="...">
                             <div class="caption caption-default">
                                 <!-- <h4 class="text-center">{{ item.descripcion }}</h4> -->
-                                <p class="text-center">{{ item.descripcion }}</p>
+                                <p class="text-center">{{ item.titulo }}</p>
                             </div>
                         </div>
                     </div>
