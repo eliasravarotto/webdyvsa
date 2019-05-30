@@ -174,6 +174,7 @@
                 <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                     <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                     <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                    <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
                         <img v-show="unidad.foto" :src="unidad.foto" alt="">
                         <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
                         <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
@@ -419,6 +420,13 @@
 
 a:hover{
     text-decoration: none;
+}
+
+.ribbon-custom{
+    margin: 20px !important;
+    right: -65px !important;
+    border: solid 1px #fff;
+    font-family: 'Play', sans-serif;
 }
 
 </style>

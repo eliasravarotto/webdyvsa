@@ -99,15 +99,25 @@
 					</div>
 				</div>
 			</div>
-			
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label class="control-label mb-1">Estado</label>
+						<select class="form-control" name="estado">
+							<option value="DISPONIBLE">Disponible</option>
+							<option value="RESERVADO">Reservado</option>
+						</select>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-12 col-md-4">
 			<div id="div_file">
 			 	{{-- <img id='output'> --}}
 			 	@if($usado->foto != null)
-			 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="{{$usado->foto}}" alt="">
+			 		<img id='foto' style="width: 155px; margin-bottom: 10px;" src="{{$usado->foto}}" alt="">
 			 	@else
-			 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
+			 		<img id='foto' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
 			    @endif
 			    <p id="texto">Click o Arrastrar para cambiar imagen</p>
 			    <input type='file' name="foto" accept='image/*' onchange='openFile(event)' title=" ">
@@ -203,7 +213,6 @@
 	    }
 
 	    function updateNameImg(index){
-	    	console.log(index);
 	    	var name = document.getElementById('file_'+index).value.split(/(\\|\/)/g).pop();
 	    	$('#label_img_'+index).html(name);
 	    }
@@ -228,19 +237,5 @@
 	        $('#images_new').append(field);
 	        index++;
 	    }
-
-	    //Script field foto
-	    var openFile = function(event) {
-	    var input = event.target;
-
-	    var reader = new FileReader();
-	    reader.onload = function(){
-	      var dataURL = reader.result;
-	      var output = document.getElementById('output');
-	      output.src = dataURL;
-	    };
-	    reader.readAsDataURL(input.files[0]);
-	  };
-
 	</script>
 @stop
