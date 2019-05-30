@@ -23,7 +23,7 @@ class CreatePortadaModelosTable extends Migration
             $table->integer('modelo_id')->unsigned();
             $table->foreign('modelo_id')->references('id')->on('modelos');
             
-            $table->string('html')->nullable();
+            $table->text('html')->nullable();
             $table->timestamps();
         });
     }
