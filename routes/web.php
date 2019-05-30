@@ -32,8 +32,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::put('admin/modelos/{id}/edit/caracteristicas','ModelosController@updateCaracteristicas');
 	Route::get('admin/modelos/{id}/edit/parallax','ModelosController@editParallax');
 	Route::put('admin/modelos/{id}/edit/parallax','ModelosController@updateParallax');
-	Route::get('admin/modelos/{id}/edit/slider','ModelosController@editSlider');
-	Route::put('admin/modelos/{id}/edit/slider','ModelosController@updateSlider');
+	Route::get('admin/modelos/{id}/edit/portada','ModelosController@editPortada');
+	Route::put('admin/modelos/{id}/edit/portada','ModelosController@updatePortada');
 	Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
 	Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
 	Route::get('admin/turnos-servicios','TurnoServicioController@index')->name('solicitudes_index');

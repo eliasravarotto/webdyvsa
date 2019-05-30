@@ -8,10 +8,11 @@ use App\ImagenGaleriaModelo;
 use App\ImagenSliderModelo;
 use App\Modelo;
 use App\ParallaxModelo;
+use App\PortadaModelo;
 use App\TipoVehiculo;
 use App\Version;
-use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 
 class ModelosController extends Controller
@@ -165,6 +166,9 @@ class ModelosController extends Controller
 
     }
 
+    //------------------------------------------------------------
+    // COLORES MODELO
+    // -----------------------------------------------------------
     public function editColores($id)
     {
         $modelo = Modelo::find($id);
@@ -193,6 +197,9 @@ class ModelosController extends Controller
         return redirect('admin/modelos');
     }
 
+    //------------------------------------------------------------
+    // GALERIA MODELO
+    // -----------------------------------------------------------
     public function editGaleria($id)
     {
         $modelo = Modelo::find($id);
@@ -217,8 +224,11 @@ class ModelosController extends Controller
         }
         
         return redirect('admin/modelos');
-   }
+    }
 
+    //------------------------------------------------------------
+    // CARACTERISTICAS MODELO
+    // -----------------------------------------------------------
     public function editCaracteristicas(Modelo $id)
     {
         $modelo = $id;
@@ -261,6 +271,9 @@ class ModelosController extends Controller
             return back()->with('error', 'No se ha podido eliminar el item');
     }
 
+    //------------------------------------------------------------
+    // PARALLAX / BANNER MODELO
+    // -----------------------------------------------------------
     public function editParallax($id)
     {
         $modelo = Modelo::find($id);
@@ -283,30 +296,67 @@ class ModelosController extends Controller
         return redirect('admin/modelos');
     }
 
-    public function editSlider($id)
+    //------------------------------------------------------------
+    // PORTADA MODELO
+    // -----------------------------------------------------------
+    public function editPortada($id)
     {
         $modelo = Modelo::find($id);
-        return view('backend.modelos.formSlider', compact('modelo'));
+        
+        //return view('backend.modelos.formSlider', compact('modelo'));
+        return view('backend.modelos.formPortada', compact('modelo'));
     }
 
-    public function updateSlider(Request $request, $id)
+    public function updatePortada(Request $request, $id)
     {
         $modelo = Modelo::find($id);
+        
         $modelo_name = strtolower($modelo->nombre);
 
-        $total = count($request->img_slider);
-        if ($total>0) {
-            for( $i=0 ; $i < $total ; $i++ ) {
-                $file = $request->file('img_slider')[$i];
-                $filename = $request->file('img_slider')[$i]->getClientOriginalName();
-                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/slider/',$filename);
-                $imagen_slider = new ImagenSliderModelo;
-                $imagen_slider->modelo_id = $modelo->id;
-                $imagen_slider->url = '/imagenes/modelos/'.$modelo_name.'/slider/'.$filename;
-                $imagen_slider->save();
+        if ($request->create == 1) {
+
+            $portada = new PortadaModelo;
+            
+            if ($request->hasFile('foto_desk')) {
+                $portada->imagen_desktop = $request->file('foto_desk')->store('public/portada-modelos'); 
             }
-        } 
-        return redirect('admin/modelos');
+
+            if ($request->hasFile('foto_mobile')) {
+                $portada->imagen_mobile = $request->file('foto_mobile')->store('public/portada-modelos');
+            }
+            if ($request->hasFile('foto_logo')) {
+                $portada->logo = $request->file('foto_logo')->store('public/portada-modelos'); 
+            }
+
+            $portada->html = $request->html;
+
+            $portada->modelo_id = $id;
+
+            $portada->save();
+
+        } else{
+
+            $portada = $modelo->portada()->first();
+
+            if ($request->hasFile('foto_desk')) {
+                $portada->imagen_desktop = $request->file('foto_desk')->store('public/portada-modelos'); 
+            }
+
+            if ($request->hasFile('foto_mobile')) {
+                $portada->imagen_mobile = $request->file('foto_mobile')->store('public/portada-modelos');
+            }
+            if ($request->hasFile('foto_logo')) {
+                $portada->logo = $request->file('foto_logo')->store('public/portada-modelos'); 
+            }
+
+            $portada->html = $request->html;
+
+            $portada->modelo_id = $id;
+
+            $portada->update();
+        }
+
+        return back()->with('success', 'Portada Actualizada!');
     }
 
     public function editVersiones($id)

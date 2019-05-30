@@ -162,6 +162,11 @@ table>tbody tr td {
                                                     <td class="t-value t-vin h6" v-if="unidad.uct">SI</td>
                                                     <td class="t-value t-vin h6" v-else>NO</td>
                                                 </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="fa fa-certificate"></i> Disponibilidad</td>
+                                                    <td v-if="unidad.estado == 'RESERVADO'" class="t-value t-vin h6" style="color: #ee1a2f;">{{unidad.estado}}</td>
+                                                    <td v-else   class="t-value t-vin h6">{{unidad.estado}}</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

@@ -14,7 +14,7 @@
 	}
 </style>
 <div class="card" id="form">
-    <div class="card-header bg-secondary">
+    <div class="card-header">
         <strong class="card-title">Editar {{ $modelo->nombre }}</strong>
     </div>
     <div class="card-body">
@@ -24,13 +24,11 @@
             @include('backend.modelos.form')
             <div class="row form-group">
                 <div class="col-9">
-                    <a class="btn btn-dark" href="/admin/modelos" style="color: white">
-                      <i class="fa fa-lock fa-lg"></i>&nbsp;
-                      <span id="payment-button-amount">Cancelar</span>
+                    <a class="btn btn-dark" href="/admin/modelos">
+                      Cancelar
                     </a>
                     <button type="submit" class="btn btn-info">
-                      <i class="fa fa-lock fa-lg"></i>&nbsp;
-                      <span id="payment-button-amount">Guardar</span>
+                      Guardar
                     </button>
                 </div>
             </div>
@@ -38,7 +36,7 @@
     </div>
 </div>
 
-<div class="card border border-primary">
+<div class="card border border-primary mt-1">
     <div class="card-header">
       <strong class="card-title">Características {{ $modelo->nombre }} 
         <small>
@@ -52,7 +50,21 @@
     </div>
 </div>
 
-<div class="card border border-primary">
+<div class="card border border-primary mt-1">
+    <div class="card-header">
+      <strong class="card-title">Portada {{ $modelo->nombre }} 
+        <small>
+          <span class="float-right mt-1">
+            <a href="/admin/modelos/{{$modelo->id}}/edit/portada">
+              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
+            </a>
+          </span>
+        </small>
+      </strong>
+    </div>
+</div>
+
+<div class="card border border-primary mt-1">
     <div class="card-header">
       <strong class="card-title">Colores {{ $modelo->nombre }} 
         <small>
@@ -66,7 +78,7 @@
     </div>
 </div>
 
-<div class="card border border-primary">
+<div class="card border border-primary mt-1">
     <div class="card-header">
       <strong class="card-title">Galeria {{ $modelo->nombre }} 
         <small>
@@ -80,7 +92,7 @@
     </div>
 </div>
 
-<div class="card border border-primary">
+<div class="card border border-primary mt-1">
     <div class="card-header">
       <strong class="card-title">Parallax {{ $modelo->nombre }} 
         <small>
@@ -94,21 +106,7 @@
     </div>
 </div>
 
-<div class="card border border-primary">
-    <div class="card-header">
-      <strong class="card-title">Slider {{ $modelo->nombre }} 
-        <small>
-          <span class="float-right mt-1">
-            <a href="/admin/modelos/{{$modelo->id}}/edit/slider">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
-            </a>
-          </span>
-        </small>
-      </strong>
-    </div>
-</div>
-
-<div class="card border border-primary">
+<div class="card border border-primary my-1">
     <div class="card-header">
       <strong class="card-title">Versiones {{ $modelo->nombre }} 
         <small>

@@ -1,32 +1,32 @@
 <template>
 <div>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <!--
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li> 
-        </ol> -->
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div v-for="(img, index) in slider_ppal_images" v-bind:class="[index == 0 ? 'item active' : 'item']">
-                <img v-bind:src="img.url" style="width:100%">
-            </div>
-        </div>
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
-    
     <article>
+        <!-- <section class="component hero-features" style="" data-component="" data-content-id="54">
+            <div class="hero-features__image hero-features__image--desktop visible-lg visible-sm visible-md" style="background-image: url(/imagenes/modelos/nueva-rav4/nueva-rav4-portada.jpg)"></div>
+            <div class="hero-features__image hero-features__image--mobile visible-xs " style="background-image: url(/imagenes/modelos/nueva-rav4/nueva-rav4-portada-mb.jpg)"></div>
+
+            <div class="hero-features__wrapper container">
+                <h1 class="hero-features__title">
+                    <img src="/imagenes/modelos/nueva-rav4/logo-rav4.png" alt="" class="hero-features__title-img">
+                </h1>
+
+                <ul class="hero-features__list">
+                    <li class="hero-features__item">
+                        <h2 class="title">Seguridad</h2>
+                        <p class="text">Nuevo sistema de seguridad activa Toyota Safety Sense (versiones Limited ) y 7 airbags en todas sus versiones.</p>
+                    </li>
+                    <li class="hero-features__item">
+                        <h2 class="title">Performance</h2>
+                        <p class="text">Excelente potencia y rendimiento gracias a su innovador sistema híbrido auto recargable.</p>
+                    </li>
+                    <li class="hero-features__item">
+                        <h2 class="title">Diseño</h2>
+                        <p class="text">Robusto, sofisticado y funcional, propia de una verdadera SUV.</p>
+                    </li>
+                </ul>
+            </div>
+        </section> -->
+
         <section class="container pad-top-bot-20">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -109,7 +109,7 @@
                     </ul>
                 </div>
             </div>
-            <section style="width: 100%" v-if="tieneTestDrive">
+            <!-- <section style="width: 100%" v-if="tieneTestDrive">
                 <div class="row row-well flex justify-content-center align-items-center" style="flex-wrap: wrap;">                    <div class="flex pr-2">
                         <h2>¿Querés probarlo?</h2>
                     </div>
@@ -117,12 +117,11 @@
                         <a href="/test-drive/create" class="btn btn-toyota btn-lg" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </section>
 
         <div class="component title-wrapper title-wrapper--highlighted container">
             <div class="title-wrapper__wrapper">
-                <small class="subtitle">Características</small>
                 <h1 class="title">Características Destacadas</h1>
             </div>
         </div>
@@ -282,36 +281,15 @@
                     $("#img_"+li.id).show();
                 }
 
-                $('#myCarouselmin').carousel({
-                        interval: 5000
-                });
-         
-                $('#carousel-text').html($('#slide-content-0').html());
-         
-                //Handles the carousel thumbnails
-               $('[id^=carousel-selector-]').click( function(){
-                    var id = this.id.substr(this.id.lastIndexOf("-") + 1);
-                    var id = parseInt(id);
-                    $('#myCarouselmin').carousel(id);
-                });
- 
- 
-                // When the carousel slides, auto update the text
-                $('#myCarouselmin').on('slid.bs.carousel', function (e) {
-                         var id = $('.item.active').data('slide-number');
-                        $('#carousel-text').html($('#slide-content-'+id).html());
-                });
-
+                
                 $(document).ready(function() {
                     $('.owl-carousel').owlCarousel({
                         stagePadding: 50,
-                        loop:true,
+                        loop:false,
                         margin:10,
                         nav:false,
                         autoPlay: 3000, //Set AutoPlay to 3 seconds
                         items : 3,
-                        itemsDesktop : [1199,3],
-                        itemsDesktopSmall : [979,2],
                         responsive:{
                             0:{
                                 items:1
@@ -339,9 +317,7 @@
                 $("#img_"+id).show();
             }
         },
-        computed: {
-          
-        }
+        computed: {}
     }
 </script>
 <style type="text/css">

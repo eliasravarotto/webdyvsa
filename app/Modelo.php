@@ -18,4 +18,9 @@ class Modelo extends Model
     {
         return $this->hasMany('App\CaracteristicaModelo');
     }
+
+    public function portada()
+    {
+        return $this->hasOne('App\PortadaModelo');
+    }
 }
