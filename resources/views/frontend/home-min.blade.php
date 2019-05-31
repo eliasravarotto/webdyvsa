@@ -110,6 +110,10 @@
     color: black
   }
 
+  .innovar p{
+    font-size: 1.8rem;
+  }
+
   </style>
 @stop
 
@@ -193,6 +197,34 @@
     </div>
   </section>
 
+  <!---------------------------------------------------------------------
+    INNOVAR
+  ----------------------------------------------------------------------->
+  <section>
+    <a href="https://derkayvargas.com/posts/veni-a-innovar-sabado-86-en-el-paseo-libertad-resistencia">
+    <div class="container">
+      <div class="title-section mt-3">
+        <h3>Vení a INNOVAR<br><small>Sábado 8/6 en el Paseo Libertad Resistencia</small></h3>
+      </div>
+      <div class="row">
+        <div class="col-md-7 col-xs-12">
+          <img class="img-responsive" src="https://derkayvargas.com/imagenes/posts/21/61582661_2541596709185784_2357093861819416576_n.jpg">
+        </div>
+        <div class="col-md-5 col-xs-12 innovar">
+          <p>👉&nbsp;Se acerca el&nbsp;<a href="https://www.facebook.com/hashtag/d%C3%ADadelpadre?epa=HASHTAG">#d&iacute;adelpadre</a>&nbsp;y queremos invitarte a que vivamos una jornada diferente a vos y tu familia.<br />
+          <br />
+          ✔️S&uacute;mate a INNOVAR con nosotros y disfrutar de esta fiesta, donde habr&aacute; sorpresas y hermosos sorteos&nbsp;😀<br />
+          <br />
+          🚫&nbsp;NO lo olvides s&aacute;bado 8/6 en el Paseo Libertad Resistencia, a partir de las 10 de la ma&ntilde;ana hasta las 21 Hs.<br />
+          <br />
+          ✅&nbsp;Viv&iacute; la experiencia de&nbsp;<a href="https://www.facebook.com/hashtag/innovar?epa=HASHTAG">#innovar</a>&nbsp;con<a href="https://www.facebook.com/hashtag/derkayvargas?epa=HASHTAG">#derkayvargas</a>&nbsp;🤩<br />
+          <br />
+          <a href="https://www.facebook.com/hashtag/toyotainnova?epa=HASHTAG">#toyotainnova</a>&nbsp;<a href="https://www.facebook.com/hashtag/toyota?epa=HASHTAG">#toyota</a>&nbsp;<a href="https://www.facebook.com/hashtag/experienciatoyota?epa=HASHTAG">#experienciatoyota</a></p>
+        </div>
+      </div>
+    </div>
+    </a>
+  </section>
   <br>
   <section>
     <div class="container">
@@ -311,7 +343,7 @@
     </div>
   </section>
 
-  <!---------------------------------------------------------------------
+    <!---------------------------------------------------------------------
     USADOS CERTIFICADOS
   ----------------------------------------------------------------------->
   <section>
