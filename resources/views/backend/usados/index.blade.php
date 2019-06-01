@@ -27,6 +27,7 @@
                 <th>Modelo</th>
                 <th>Km - Año - Color</th>
                 <th>Precio</th>
+                <th>Disp.</th>
                 <th>Visible</th>
                 <th></th>
               </tr>
@@ -40,6 +41,7 @@
                     <td>{{str_limit(strip_tags($usado->modelo), 12, '...')}}</td>
                     <td>{{ $usado->km }} km - {{ $usado->anio }} - {{$usado->color}}</td>
                     <td><b>$ {{ $usado->precio }}</b></td>
+                    <td>@if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif</td>
                     <td>
                         <div class="custom-control custom-checkbox">
                           <input type="checkbox" class="custom-control-input" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">

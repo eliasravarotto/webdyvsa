@@ -104,8 +104,8 @@
 					<div class="form-group">
 						<label class="control-label mb-1">Estado</label>
 						<select class="form-control" name="estado">
-							<option value="DISPONIBLE">Disponible</option>
-							<option value="RESERVADO">Reservado</option>
+							<option @if($usado->estado == "DISPONIBLE" || $usado->estado == null ) selected @endif value="DISPONIBLE">Disponible</option>
+							<option @if($usado->estado == "RESERVADO") selected @endif value="RESERVADO">Reservado</option>
 						</select>
 					</div>
 				</div>

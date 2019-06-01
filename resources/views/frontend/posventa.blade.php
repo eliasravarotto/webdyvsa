@@ -150,9 +150,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	  			</div>
 			</div>
 		</section>
-		<section>
 
-		<div class="container">
+		{{-- <section>
+			<div class="container">
 			<div class="title-section">
 				<h1>Accesorios Hilux <br> <small> Elegí el que más te convenga</small></h1>
 			</div>
@@ -196,7 +196,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			  </a>
 			</div>
 			</div>
-		</section>
+		</section> --}}
 
 		<section class="pad-bot-50 container arrow_box">
 			<!--PROMO SERVICIOS-->
