@@ -2,30 +2,18 @@
 <div>
     <article>
         <!-- <section class="component hero-features" style="" data-component="" data-content-id="54">
-            <div class="hero-features__image hero-features__image--desktop visible-lg visible-sm visible-md" style="background-image: url(/imagenes/modelos/nueva-rav4/nueva-rav4-portada.jpg)"></div>
-            <div class="hero-features__image hero-features__image--mobile visible-xs " style="background-image: url(/imagenes/modelos/nueva-rav4/nueva-rav4-portada-mb.jpg)"></div>
+            <div class="hero-features__image hero-features__image--desktop visible-lg visible-sm visible-md" :style="'background-image: url('+data.modelo.portada.imagen_desktop+')'"></div>
+            <div class="hero-features__image hero-features__image--mobile visible-xs " :style="'background-image: url('+data.modelo.portada.imagen_mobile+')'"></div>
 
             <div class="hero-features__wrapper container">
                 <h1 class="hero-features__title">
-                    <img src="/imagenes/modelos/nueva-rav4/logo-rav4.png" alt="" class="hero-features__title-img">
+                    <img :src="data.modelo.portada.logo" alt="" class="hero-features__title-img">
                 </h1>
-
-                <ul class="hero-features__list">
-                    <li class="hero-features__item">
-                        <h2 class="title">Seguridad</h2>
-                        <p class="text">Nuevo sistema de seguridad activa Toyota Safety Sense (versiones Limited ) y 7 airbags en todas sus versiones.</p>
-                    </li>
-                    <li class="hero-features__item">
-                        <h2 class="title">Performance</h2>
-                        <p class="text">Excelente potencia y rendimiento gracias a su innovador sistema híbrido auto recargable.</p>
-                    </li>
-                    <li class="hero-features__item">
-                        <h2 class="title">Diseño</h2>
-                        <p class="text">Robusto, sofisticado y funcional, propia de una verdadera SUV.</p>
-                    </li>
-                </ul>
+                <div v-html="data.modelo.portada.html"></div>
             </div>
         </section> -->
+
+
 
         <section class="container pad-top-bot-20">
             <div class="row">
@@ -235,6 +223,8 @@
             this.initJS();
 
             this.cobrarGastos = this.cobrarFle01Tranf();
+
+            console.log(this.modelo.portada);
         },
         methods:{
             cobrarFle01Tranf(){
