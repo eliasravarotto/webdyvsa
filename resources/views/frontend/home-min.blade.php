@@ -128,10 +128,20 @@
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
+        <div class="item active">
+          <img src="/imagenes/home-min/financiacion-etios-yaris.png" alt="financiocion etios y yaris">
+        </div>
+
+        <div class="item">
+          <img src="/imagenes/home-min/financiacion-corolla.png" alt="financiocion corolla">
+        </div>
+
         <div class="item active">
           <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="Nuevo Toyota Plan de Ahorro Derka y Vargas, Nuevas cuotas">
         </div>

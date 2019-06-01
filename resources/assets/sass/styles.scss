@@ -25,6 +25,22 @@ footer {
 }
 
 /*-------------------------------------------
+// SLIDER INDICATORS
+-------------------------------------------*/
+.carousel-indicators li {
+    display: inline-block;
+    width: 35px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000\9;
+    background-color: transparent;
+}
+
+/*-------------------------------------------
 // FLEXBOX SECTION
 -------------------------------------------*/
 .d-block {
