@@ -14,62 +14,7 @@
 
 @section('content')
 	<article>
-		<section>
-		    <!-- Carusel Principal DESKCTOP-->
-		    <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
-		      <ol class="carousel-indicators">
-		        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		        <li data-target="#myCarousel" data-slide-to="1"></li>
-		        <li data-target="#myCarousel" data-slide-to="2"></li>
-		      </ol>
-
-		      <!-- Wrapper for slides -->
-		      <div class="carousel-inner">
-		        <div class="item active">
-		          <img src="/imagenes/home-min/creditos-uva.png" alt="Toyota Creditos Uva Derka y Vargas">
-		        </div>
-
-		        <div class="item">
-		          <img src="/imagenes/home-min/creditos-uva-toyota-cf.png" alt="Toyota Creditos Uva">
-		        </div>
-		        <div class="item">
-		          <img src="/imagenes/home-min/creditos-uva-hilux.png" alt="Toyota Creditos Uva Hilux 2019">
-		        </div>
-		      </div>
-
-		      <!-- Left and right controls -->
-		      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-		        <span class="glyphicon glyphicon-chevron-left"></span>
-		        <span class="sr-only">Previous</span>
-		      </a>
-		      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-		        <span class="glyphicon glyphicon-chevron-right"></span>
-		        <span class="sr-only">Next</span>
-		      </a>
-		    </div>
-
-		    <!-- Carusel Principal MOBILE-->
-		    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm" data-ride="carousel">
-		      <ol class="carousel-indicators">
-		        <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
-		      </ol>
-
-		      <div class="carousel-inner">
-		        <div class="item active">
-		          <img src="/imagenes/home-min/creditos-uva_sm.jpeg" alt="Toyota Creditos Uva Hilux 2019">
-		        </div>
-		      </div>
-
-		      <a class="left carousel-control" href="#carousel-mobile" data-slide="prev">
-		        <span class="glyphicon glyphicon-chevron-left"></span>
-		        <span class="sr-only">Previous</span>
-		      </a>
-		      <a class="right carousel-control" href="#carousel-mobile" data-slide="next">
-		        <span class="glyphicon glyphicon-chevron-right"></span>
-		        <span class="sr-only">Next</span>
-		      </a>
-		    </div>
-	  	</section>
+		
 
 		<section>
 			<div class="container visible-md visible-lg">
@@ -107,22 +52,6 @@
 			</div>
 		</section>
 
-		{{-- <section class="mt-3">
-  			<div class="container">
-  				<div class="title-section">
-            		<h3>FINANCIACIÓN ETIOS Y YARIS</h3>
-          		</div>
-  				<div class="row">
-  					<div class="col-xs-6 col-md-6 text-center">
-  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-etios.jpg')}}" alt="Financiacion Etios Tasa 19,9% en 24 meses. Accedé a un Toyota 0km con la mejor financiación">
-  					</div>
-  					<div class="col-xs-6 col-md-6 text-center">
-  						<img style="max-width: 100%;height: auto;" src="{{asset('imagenes/TCF/300x250-yaris.jpg')}}" alt="Financiacion nuevo Yaris Tasa 19,9% en 24 meses. Accedé a un Toyota 0km con la mejor financiación">
-  					</div>
-  				</div>
-  			</div>
-  		</section> --}}
-
 	<!---------------------------------------------------------------------
     FINANCIACIÓN COROLLA
   	----------------------------------------------------------------------->
@@ -158,7 +87,7 @@
             🔖Cuota tradicional promedio $ 47.479,25
             👉🔖Bonificada 19,9% $ 37.811,94
           </p>
-          <br><p class="text-muted"><em>Promoción válida hasta el 31/05/2019</em></p>
+          <br><p class="text-muted"><em>Promoción válida hasta el 28/06/2019</em></p>
         </div>
       </div>
     </div>
@@ -190,7 +119,7 @@
 
 			<p>👉 12 MESES $ 28.358,95</p>
 
-          <br><p class="text-muted"><em>Promoción válida hasta el 31/05/2019</em></p>
+          <br><p class="text-muted"><em>Promoción válida hasta el 28/06/2019</em></p>
         </div>
       </div>
     </div>
