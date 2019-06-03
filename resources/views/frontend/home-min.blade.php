@@ -142,7 +142,7 @@
           <img src="/imagenes/home-min/financiacion-corolla.png" alt="financiocion corolla">
         </div>
 
-        <div class="item active">
+        <div class="item">
           <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="Nuevo Toyota Plan de Ahorro Derka y Vargas, Nuevas cuotas">
         </div>
 
@@ -292,7 +292,7 @@
     </div>
   </section>
 
-    <!---------------------------------------------------------------------
+  <!---------------------------------------------------------------------
     USADOS CERTIFICADOS
   ----------------------------------------------------------------------->
   <section>
