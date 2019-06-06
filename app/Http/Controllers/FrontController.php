@@ -15,6 +15,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class FrontController extends Controller
 {
@@ -107,6 +108,10 @@ class FrontController extends Controller
         return view('frontend.rse.index', compact('posts'));
     }
 
+    public function rseProgramaDesarrolloConcesionarios(Request $request)
+    {
+        return view('frontend.rse.programa-rse-concesionarios');
+    }
 
     public function checkIfTokenExist(Request $request, $token)
     {
@@ -147,6 +152,16 @@ class FrontController extends Controller
     {
         
         $modelo = Modelo::where('nombre', '=', $modelo)->first();
+
+        $modelo->portada = $modelo->portada()->first();
+
+        if ($modelo->portada != null) {
+            $modelo->portada->imagen_desktop = Storage::url($modelo->portada->imagen_desktop);
+            $modelo->portada->imagen_mobile = Storage::url($modelo->portada->imagen_mobile);
+            $modelo->portada->logo = Storage::url($modelo->portada->logo);
+        }
+
+        //return $modelo;
         
         $imagenesSlider = $modeloRepo->getImagenesSlider($modelo->id);
         $imagenesColores = $modeloRepo->getImagenesColores($modelo->id);
@@ -154,10 +169,8 @@ class FrontController extends Controller
         $caracteristicas = $modeloRepo->getCaracteristicas($modelo->id);
         $versiones = $modeloRepo->getVersiones($modelo->id);
         $parallax = $modeloRepo->getParallax($modelo->id);
-        //return $imagenesGaleria;
-        //return $imagenesSlider;
-        //return $parallax;
-        //$versiones =
+
+
         return view('frontend.modelos.show', 
                     compact('modelo',
                             'imagenesSlider', 
@@ -242,5 +255,10 @@ class FrontController extends Controller
     public function nuevaRav4()
     {
         return view('frontend.modelos.rav4');
+    }
+
+    public function planNacional()
+    {
+        return view('frontend.plan-nacional');
     }
 }

@@ -115,3 +115,5 @@ Route::get('/posts/{slug}','PostController@showPost')->name('show_post');
 Route::get('nueva-rav4-hibrida','FrontController@nuevaRav4')->name('nueva_rav4');
 // Route::get('/toyota-hibrid-experience','FrontController@thexpe');
 // Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
+Route::get('/responsabilidad-social-empresarial/programa-desarrollo-concesionarios-2018','FrontController@rseProgramaDesarrolloConcesionarios')->name('programa_desarrollo_concesionarios');
+Route::get('/nuevo-plan-nacional','FrontController@planNacional')->name('nuevo_plan_nacional');

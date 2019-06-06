@@ -31,8 +31,8 @@
 
     @yield('styles_sheets')
 
-    {{-- <style type="text/css">
-      .escarapela-mb{
+    <style type="text/css">
+      /*.escarapela-mb{
         position: fixed;
         right: -15px;
         top: 35px;
@@ -44,9 +44,47 @@
         right: -5px;
         top: -5px;
         z-index: 19;
+      }*/
+
+      @if (Request::path() != '/')
+        .navbar-ppal>li>a {
+            color: #373737;
+            font-weight: 700;
+        }
+
+        .nav>li>a:focus, .nav>li>a:hover {
+            text-decoration: none;
+            background-color: transparent!important;
+            color: #eb0a1e;
+        }
+
+        .navbar-wrapper{
+          border-bottom: #ebebeb solid 2px;
+          border-top: #ebebeb solid 1px;
+          position: relative; 
+          background:rgb(255, 255, 255); 
+        }
+        .btn-oval{
+          color: black !important; 
+          border-radius: 20px !important; 
+          border: 2px solid #e01e37 !important;
+        }
+      @else
+        .btn-oval{
+          color: #fafafa !important; 
+          background-color: rgba(0, 0, 0, 0.3); 
+          border-radius: 20px !important; 
+          border: 2px solid rgb(0, 0, 0) !important;
+        }
+      @endif
+
+      .btn-oval:hover{
+        background-color: black !important;
+        color: white !important;
+        border: 2px solid rgb(0, 0, 0) !important;
       }
 
-    </style> --}}
+    </style>
 
 </head>
 

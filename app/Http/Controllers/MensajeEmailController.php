@@ -48,7 +48,6 @@ class MensajeEmailController extends Controller
      */
     public function store(ReCaptchataTestFormRequest $request)
     {
-
         if ($request->email == null) {
             $this->validate($request, [
                 'from' => 'required',
@@ -90,6 +89,11 @@ class MensajeEmailController extends Controller
                 case 'usados':
                     $from = 'usados';
                     $asunto ='Consulta desde Pagina Web TPA';
+                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                    break;
+                case 'financiacion_plan_nacional':
+                    $from = 'Financiacion Plan Nacional';
+                    $asunto ='Consulta por Financiación Nuevo Plan Nacional';
                     $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
                     break;
                 default:
