@@ -14,8 +14,6 @@
 
 @section('content')
 	<article>
-		
-
 		<section>
 			<div class="container visible-md visible-lg">
 				<div class="page-header" >
@@ -52,6 +50,25 @@
 			</div>
 		</section>
 
+	<!---------------------------------------------------------------------
+    BANNER PLAN NACIONAL
+  	----------------------------------------------------------------------->
+  <section class="mt-1">
+    <div class="container">
+      <div class="title-section mt-3">
+        <a href="{{route('nuevo_plan_nacional')}}">
+        <h3 style="color: black">Nuevo Plan Nacional Para tu 0km<br><small>TENEMOS DESCUENTOS IMPERDIBLES EN TU NUEVO TOYOTA‼️</small></h3>
+        </a>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="{{route('nuevo_plan_nacional')}}">
+            <img src="{{asset('imagenes/nuevo-plan-nacional.jpeg')}}" class="img-responsive">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 	<!---------------------------------------------------------------------
     FINANCIACIÓN COROLLA
   	----------------------------------------------------------------------->
