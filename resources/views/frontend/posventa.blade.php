@@ -372,7 +372,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		<section class="pad-top-50 pad-bot-50">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
+					{{-- <div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
 						<h2 class="bold" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
 						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>
 						<div style="font-size: 22px">
@@ -387,6 +387,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 								@endforeach
 							</ul>
 						</div>
+					</div> --}}
+					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
+						<h2 class="bold" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
+						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>
+						<div class="contact-details mt-3">
+		                    <div class="media">
+		                        <div class="media-left">
+		                            <i class="fa fa-map-marker"></i>
+		                        </div>
+		                        <div class="media-body">
+		                            <h4>DIRECCIÓNES</h4>
+		                            @foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
+										<p><b>{{$sucursal->nombre}}</b> - <a href="#" style="color: black" onclick="mostrarMapa(event, {{$sucursal->id}})">{{$sucursal->direccion}}</a></p>
+									@endforeach
+		                        </div>
+		                    </div>
+		                    <div class="media">
+		                        <div class="media-left">
+		                            <i class="fa fa-phone"></i>
+		                        </div>
+		                        <div class="media-body">
+		                            <h4>NÚMEROS DE TELÉFONO</h4>
+		                            @foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
+										<p><b>{{$sucursal->localidad}}</b> - <a href="tel:{{$sucursal->telefono}}">{{$sucursal->telefono}}</a></p>
+									@endforeach
+		                        </div>
+		                    </div>
+		                    <div class="media">
+		                        <div class="media-left">
+		                            <i class="fa fa-envelope"></i>
+		                        </div>
+		                        <div class="media-body">
+		                            <h4>DIRECCIONES DE EMAIL</h4>
+		                            <p>
+		                                <a href="mailto:posventa-sp@derkayvargas.com.ar">posventa-sp@derkayvargas.com.ar</a>
+		                            </p>
+		                            <p>
+		                                <a href="mailto:posventa-resistencia@derkayvargas.com.ar">posventa-resistencia@derkayvargas.com.ar</a>
+		                            </p>
+		                            <p>
+		                                <a href="mailto:posventa-charata@derkayvargas.com.ar">posventa-charata@derkayvargas.com.ar</a>
+		                            </p>
+		                        </div>
+		                    </div>
+		                </div>
 					</div>
 					<div class="col-md-6" style="min-height: 400px; " id="map" >
 						<iframe class="iframe_map" id="map_suc_1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.7362498019697!2d-60.4403663807801!3d-26.78467607731101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94412d1c14ba7d7b%3A0x3f41780d9ada61c!2sDerka+y+Vargas!5e0!3m2!1ses-419!2sus!4v1550060476101" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

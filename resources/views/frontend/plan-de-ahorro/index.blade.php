@@ -635,6 +635,17 @@
 								@endforeach
 	                        </div>
 	                    </div>
+	                    <div class="media">
+	                        <div class="media-left">
+	                            <i class="fa fa-envelope"></i>
+	                        </div>
+	                        <div class="media-body">
+	                            <h4>DIRECCIONES DE EMAIL</h4>
+	                            <p>
+	                                <a href="mailto:plandeahorro@derkayvargas.com.ar">plandeahorro@derkayvargas.com.ar</a>
+	                            </p>
+	                        </div>
+	                    </div>
 	                </div>
 				</div>
 			</div>

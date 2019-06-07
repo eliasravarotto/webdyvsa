@@ -77,11 +77,10 @@
 	                        </div>
 	                        <div class="media-body">
 	                            <h4>DIRECCIONES DE EMAIL</h4>
-	                            @foreach(\App\Helpers\Helper::getSucursalesConvencional() as $sucursal)
-		                            <p>
-		                                <a href="mailto:{{$sucursal->email}}">{{$sucursal->email}}</a>
-		                            </p>
-								@endforeach
+	                            <p> <b>Ventas:</b> <a href="mailto:ventas@derkayvargas.com.ar">ventas@derkayvargas.com.ar</a></p>
+	                            <p> <b>Administración:</b> <a href="mailto:administracion@derkayvargas.com.ar">administracion@derkayvargas.com.ar</a></p>
+	                            <p> <b>Gestoría:</b> <a href="mailto:gestoria@derkayvargas.com.ar">gestoria@derkayvargas.com.ar</a></p>
+	                            <p> <b>RSE</b> <a href="mailto:rse@derkayvargas.com.ar">rse@derkayvargas.com.ar</a></p>
 	                        </div>
 	                    </div>
 	                </div>
