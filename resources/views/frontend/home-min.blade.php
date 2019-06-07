@@ -188,13 +188,32 @@
   </section>
 
   <!---------------------------------------------------------------------
+    BANNER PLAN NACIONAL
+  ----------------------------------------------------------------------->
+  <section class="mt-1">
+    <div class="container">
+      <div class="title-section mt-3">
+        <a href="{{route('nuevo_plan_nacional')}}">
+        <h3 style="color: black">Nuevo Plan Nacional Para tu 0km<br><small>TENEMOS DESCUENTOS IMPERDIBLES EN TU NUEVO TOYOTA‼️</small></h3>
+        </a>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="{{route('nuevo_plan_nacional')}}">
+            <img src="{{asset('imagenes/nuevo-plan-nacional.jpeg')}}" class="img-responsive">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---------------------------------------------------------------------
     INNOVAR
   ----------------------------------------------------------------------->
   <section>
     <a href="https://derkayvargas.com/posts/veni-a-innovar-sabado-86-en-el-paseo-libertad-resistencia">
     <div class="container">
       <div class="title-section mt-3">
-        <h3>Vení a INNOVAR<br><small>Sábado 8/6 en el Paseo Libertad Resistencia</small></h3>
+        <h3 style="color: black">Vení a INNOVAR<br><small>Sábado 8/6 en el Paseo Libertad Resistencia</small></h3>
       </div>
       <div class="row">
         <div class="col-md-7 col-xs-12">

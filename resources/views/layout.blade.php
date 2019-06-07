@@ -46,6 +46,10 @@
         z-index: 19;
       }*/
 
+      a:hover{
+        text-decoration: none;
+      }
+
       @if (Request::path() != '/')
         .navbar-ppal>li>a {
             color: #373737;
