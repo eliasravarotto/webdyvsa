@@ -71,6 +71,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	color: #f1eeea;
 }
 
+p{
+	font-size: 18px;
+}
 </style>
 
 @section('content')
@@ -151,52 +154,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</div>
 		</section>
 
-		{{-- <section>
+		<section>
 			<div class="container">
-			<div class="title-section">
-				<h1>Accesorios Hilux <br> <small> Elegí el que más te convenga</small></h1>
-			</div>
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
-			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-			  </ol>
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<div class="title-section">
+							<h1>CONTROL PRE-VIAJE</h1>
+						</div>
+						<p>✔️✔️ ESTE FINDE LARGO VIAJÁ TRANQUILO Y SEGURO ✔️✔️🙂</p>
 
-			<!-- Wrapper for slides -->
-			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="{{asset('imagenes/posventa/accesorios_toyota_hiluxk1-min.png')}}" alt="...">
-			      <div class="carousel-caption">
-			        ...
-			      </div>
-			    </div>
-			    <div class="item">
-			      <img src="{{asset('imagenes/posventa/accesorios_toyota_hiluxk2-min.png')}}" alt="...">
-			      <div class="carousel-caption">
-			        ...
-			      </div>
-			    </div>
-			    <div class="item">
-			      <img src="{{asset('imagenes/posventa/accesorios_toyota_hiluxk3-min.png')}}" alt="...">
-			      <div class="carousel-caption">
-			        ...
-			      </div>
-			    </div>
+						<p>👉 Realiza el control de estos puntos en tu Toyota para tu próximo viaje en #derkayvargas 🚨- SIN TURNO - </p>
 
-			  <!-- Controls -->
-			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			    <span class="sr-only">Previous</span>
-			  </a>
-			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			    <span class="sr-only">Next</span>
-			  </a>
+						<ul class="list-unstyled visible-xs visible-sm">
+							<li>⚙️ Control de fluidos y niveles</li>
+							<li>⚙️ Control y calibrado de neumáticos</li>
+							<li>⚙️ Tren delantero y amortiguadores </li>
+							<li>⚙️ Control de frenos </li>
+							<li>⚙️ Control de luces</li>
+							<li>⚙️ Control de crucetas (hilux) </li>
+						</ul>
+
+						<ul class="list-unstyled list-inline visible-md visible-lg">
+							<li>⚙️ Control de fluidos y niveles</li>
+							<li>⚙️ Control y calibrado de neumáticos</li>
+							<li>⚙️ Tren delantero y amortiguadores </li>
+							<li>⚙️ Control de frenos </li>
+							<li>⚙️ Control de luces</li>
+							<li>⚙️ Control de crucetas (hilux) </li>
+						</ul>
+
+						<a href="https://www.facebook.com/hashtag/posventaoficialtoyota?epa=HASHTAG">#POSVENTAOFICIALTOYOTA</a> <a href="https://www.facebook.com/hashtag/toyota?epa=HASHTAG">#TOYOTA</a>
+					</div>
+					<div class="col-xs-12 col-md-8">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/control-hilux.jpeg')}}">
+					</div>
+				</div>
 			</div>
-			</div>
-		</section> --}}
+		</section>
 
 		<section class="pad-bot-50 container arrow_box">
 			<!--PROMO SERVICIOS-->
