@@ -210,7 +210,7 @@
   <!---------------------------------------------------------------------
     NUEVA RAV4
   ----------------------------------------------------------------------->
-  <section>
+  <section class="mt-3">
     <div class="container">
       <div class="title-section visible-sm visible-xs">
           <h3>Toyota Argentina presentó la nueva RAV4</h3>
