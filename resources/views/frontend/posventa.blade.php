@@ -119,7 +119,7 @@ p{
 
 				<div class="mt-3">
 					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-04-2019 - <b>Hasta:</b> 30-04-2019</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-04-2019 - <b>Hasta:</b> 30-06-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
