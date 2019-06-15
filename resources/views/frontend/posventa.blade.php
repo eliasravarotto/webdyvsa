@@ -154,43 +154,6 @@ p{
 			</div>
 		</section>
 
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-4">
-						<div class="title-section">
-							<h1>CONTROL PRE-VIAJE</h1>
-						</div>
-						<p>✔️✔️ ESTE FINDE LARGO VIAJÁ TRANQUILO Y SEGURO ✔️✔️🙂</p>
-
-						<p>👉 Realiza el control de estos puntos en tu Toyota para tu próximo viaje en #derkayvargas 🚨- SIN TURNO - </p>
-
-						<ul class="list-unstyled visible-xs visible-sm">
-							<li>⚙️ Control de fluidos y niveles</li>
-							<li>⚙️ Control y calibrado de neumáticos</li>
-							<li>⚙️ Tren delantero y amortiguadores </li>
-							<li>⚙️ Control de frenos </li>
-							<li>⚙️ Control de luces</li>
-							<li>⚙️ Control de crucetas (hilux) </li>
-						</ul>
-
-						<ul class="list-unstyled list-inline visible-md visible-lg">
-							<li>⚙️ Control de fluidos y niveles</li>
-							<li>⚙️ Control y calibrado de neumáticos</li>
-							<li>⚙️ Tren delantero y amortiguadores </li>
-							<li>⚙️ Control de frenos </li>
-							<li>⚙️ Control de luces</li>
-							<li>⚙️ Control de crucetas (hilux) </li>
-						</ul>
-
-						<a href="https://www.facebook.com/hashtag/posventaoficialtoyota?epa=HASHTAG">#POSVENTAOFICIALTOYOTA</a> <a href="https://www.facebook.com/hashtag/toyota?epa=HASHTAG">#TOYOTA</a>
-					</div>
-					<div class="col-xs-12 col-md-8">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/control-hilux.jpeg')}}">
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<section class="pad-bot-50 container arrow_box">
 			<!--PROMO SERVICIOS-->
