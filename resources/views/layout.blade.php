@@ -26,6 +26,9 @@
     <!--===============================================================================================-->
     <link href="{{ asset('/css/stm-icons.css') }}" rel="stylesheet" type="text/css" />
     <!--===============================================================================================-->
+    <!-- Estilos Cookie Consent -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <!--===============================================================================================-->
     
     @yield('mark-up-facebook')
 
@@ -204,6 +207,29 @@
         });
       
     });
+  </script>
+
+  <!-- JS Cookie Consent -->
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "#f1d600"
+        }
+      },
+      "position": "bottom-left",
+      "content": {
+        "message": "Para mejorar tu experiencia en nuestra web utilizamos cookies. Si aceptas o continúas navegando significa que aceptas su uso. Obten más información sobre qué son las cookies. ",
+        "dismiss": "Aceptar",
+        "link": "Leer más",
+        "href": "https://www.cookiesandyou.com/about-cookies/"
+      }
+    })});
   </script>
 
   @yield('script')
