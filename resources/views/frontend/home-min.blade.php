@@ -198,9 +198,14 @@
         </a>
       </div>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6 col-xs-12">
           <a href="{{route('nuevo_plan_nacional')}}">
-            <img src="{{asset('imagenes/nuevo-plan-nacional.jpeg')}}" class="img-responsive">
+            <img src="{{asset('imagenes/financiacion/nuevo-plan-nacional-corolla-yaris.jpeg')}}" class="img-responsive">
+          </a>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <a href="{{route('nuevo_plan_nacional')}}">
+            <img src="{{asset('imagenes/financiacion/nuevo-plan-nacional-etios-yaris.jpeg')}}" class="img-responsive">
           </a>
         </div>
       </div>
