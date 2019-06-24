@@ -50,19 +50,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
 
-		{{-- <section>
-			<div class="container my-3 visible-xs visible-sm">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<img src="/imagenes/tpa/nuevo_tpa.png" class="img-responsive">
-					</div>		
-				</div>
-			</div>
-		</section> --}}
-
-		<section>
 			<div class="container" id="planes-tpa">
 				<div class="row">
 					<div class="col-md-6">
@@ -381,8 +369,24 @@
 
 			  </div>
 			</div>
+
+			<div class="container">
+				<div class="title-section mt-3">
+			        <h2>Subite ya a tu nuevo Toyota<br>  <small>Conoce nuestros planes adjudicados</small></h2>
+			      </div>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="{{asset('imagenes/tpa/adjudicados-tpa-corolla.jpeg')}}" class="img-responsive"> <br>
+					</div>
+					<div class="col-md-6">
+						<img src="{{asset('imagenes/tpa/adjudicados-tpa-etios.jpeg')}}" class="img-responsive">
+					</div>
+				</div>
+			</div>
 		</section>
+		
 		<br>
+		
 		<section>
 			<div class="container">
 				  <div class="title-section mt-3">
