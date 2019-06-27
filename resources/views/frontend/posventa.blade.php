@@ -13,15 +13,18 @@
 @stop
 
 <style type="text/css">
-.row-well{
+p {
+	font-size: 18px;
+}
+.row-well {
 	background: #f4f4f4;
-background: -moz-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(7%, #fefefe), color-stop(43%, #f6f6f6), color-stop(100%, #ededed));
-background: -webkit-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: -o-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: -ms-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-background: linear-gradient(to right, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+	background: -moz-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(7%, #fefefe), color-stop(43%, #f6f6f6), color-stop(100%, #ededed));
+	background: -webkit-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+	background: -o-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+	background: -ms-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+	background: linear-gradient(to right, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=1);
 	height: 100px;
 }
 
@@ -66,51 +69,68 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	color: #fafafa;
 }
 
-.tabla-servicios th{
+.tabla-servicios th {
 	background-color: #ee3237;
 	color: #f1eeea;
 }
 
-p{
-	font-size: 18px;
+/*--------------------------------------------------------------
+TOYOTA RECALL
+--------------------------------------------------------------*/
+.toyota-recall p {
+	color: #f7f7f7;
 }
+
+.toyota-recall h1 {
+	color: white;
+}
+
+.toyota-recall a {
+	color: white;
+}
+
+.toyota-recall .row{
+	background:url({{asset('imagenes/posventa/recallbanner.jpg')}});
+	background-size: cover;
+	background-position: center;
+	padding: 10rem 3rem;
+}
+
+@media(max-width:992px){
+	.toyota-recall{
+		padding:0px !important;
+	}
+	.toyota-recall .col-xs-12{
+		padding: 5rem;
+	}
+}
+
 </style>
 
 @section('content')
-
 	<article>
 		<section>
-			<div style="width: 100%">
+			<div class="banner-ppal-posventa visible-md visible-lg" style="width: 100%">
 				<img src="/imagenes/posventa/slide.jpg" class="img-responsive" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco">
 			</div>
 		</section>
 
 		<section>
-			<div class="container mt-3">
-			<div class="row">
-			    <div class="col-md-offset-2 col-xs-12 col-md-4 vcenter text-center">
-			        <div>
-			        	<span style="font-size: 2.8rem">
-							¿Necesitás un servicio?
-						</span>
-			        </div>
-			    </div>
-			    <div class="col-xs-12 col-md-4  vcenter text-center">
-			        <div>
-			        	{{-- <a href="/turno-servicios/create" class="btn btn-toyota btn-lg">SOLICITAR TURNO</a> --}}
-			        	<a href="#solicitar-turno-online" class="btn btn-toyota btn-lg">SOLICITAR TURNO</a>
-			        </div>
-			    </div>
-			</div>
+			<div class="container py-6 toyota-recall">
+				<div class="row">
+					<div class="col-md-7 col-xs-12 vcenter">
+	                    <p class="subtitle text-center">Recall</p>
+	                    <h1 class="text-center">Llamado a Revisión Técnica</h1>
+	                    <p class="text-center">Ahora podés averiguar si tu vehículo está alcanzado a una campaña<br> especial de servicio vigente, ingresando el número de Chasis o Patente.</p>
+	                </div>
+					<div class="col-md-4 col-xs-12 vcenter text-center">
+							<a href="https://www.toyota.com.ar/servicios-y-accesorios/recall" target="_blank" class="btn btn-outline btn-default">CONSULTAR</a>
+	                </div>
+				</div>
 			</div>
 		</section>
 
-		{{-- <section class="container">
-			<h1>Elegí el mejor Servicio Posventa</h1>
-			<p>Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas y dejá tu Toyota en las mejores manos.</p>
-			<p></p>
-		</section> --}}
-		<section class="pad-top-50">
+		<section>
 			<div class="container ">
 				<div class="title-section">
 					<h1>Elegí el mejor Servicio de Posventa</h1>

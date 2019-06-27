@@ -213,33 +213,6 @@
   </section>
 
   <!---------------------------------------------------------------------
-    NUEVA RAV4
-  ----------------------------------------------------------------------->
-  <section class="mt-3">
-    <div class="container">
-      <div class="title-section visible-sm visible-xs">
-          <h3>Toyota Argentina presentó la nueva RAV4</h3>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-xs-12">
-          <video id="video-explicativo" controls style="height: auto;width: 100%">
-                <source src="/videos/rav4-presentacion.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-        </div>
-        <div class="col-md-6 col-xs-12">
-          <div class="title-section visible-md visible-lg">
-            <h3>Toyota Argentina presentó la nueva RAV4</h3>
-          </div>
-          <p style="font-size: 2rem">La Nueva RAV4 Hybrid, modelo que estrena un diseño robusto y sofisticado, sistema híbrido, equipamiento de seguridad, tracción integral inteligente y una plataforma basada en la Nueva Arquitectura Global de Toyota.</p>
-          <a class="btn btn-toyota" href="https://www.toyota.com.ar/prensa/noticias-de-argentina/toyota-argentina-amplia-su-line-up-hibrido-y-estrena-equipamiento-de-seguridad-con-la-nueva-rav4" target="_blank">Ver más</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br>
-
-  <!---------------------------------------------------------------------
     MODELOS
   ----------------------------------------------------------------------->
   <section>
