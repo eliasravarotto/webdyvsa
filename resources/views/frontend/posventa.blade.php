@@ -97,15 +97,11 @@ TOYOTA RECALL
 }
 
 @media(max-width:992px){
-	.toyota-recall{
+	.toyota-recall, .toyota-recall .row{
 		padding:0px !important;
 	}
 	.toyota-recall .col-xs-12{
 		padding: 5rem;
-	}
-
-	.toyota-recall .row {
-	    padding: 2rem 0.7rem;
 	}
 }
 .py-6{
