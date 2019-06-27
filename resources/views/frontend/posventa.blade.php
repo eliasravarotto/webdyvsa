@@ -105,6 +105,10 @@ TOYOTA RECALL
 	}
 }
 
+.py-6{
+	padding-bottom: 6rem;
+	padding-top: 6rem;
+}
 </style>
 
 @section('content')
