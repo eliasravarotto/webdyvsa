@@ -103,6 +103,10 @@ TOYOTA RECALL
 	.toyota-recall .col-xs-12{
 		padding: 5rem;
 	}
+
+	.toyota-recall .row {
+	    padding: 3rem 1.5rem;
+	}
 }
 .py-6{
 	padding-bottom: 6rem;
