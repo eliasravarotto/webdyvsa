@@ -105,7 +105,7 @@ TOYOTA RECALL
 	}
 
 	.toyota-recall .row {
-	    padding: 3rem 1rem;
+	    padding: 2rem 0.7rem;
 	}
 }
 .py-6{
