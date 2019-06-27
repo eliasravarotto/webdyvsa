@@ -104,11 +104,11 @@ TOYOTA RECALL
 		padding: 5rem;
 	}
 }
-
 .py-6{
 	padding-bottom: 6rem;
 	padding-top: 6rem;
 }
+
 </style>
 
 @section('content')
