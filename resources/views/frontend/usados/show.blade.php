@@ -8,7 +8,7 @@
 @section('mark-up-facebook')
     <meta property="og:url" content="https://www.derkayvargas.com/usados/{{$unidad->slug}}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="DERKA Y VARGAS USADOS" />
+    <meta property="og:title" content="{{$unidad->marca}} {{$unidad->modelo}}" />
     <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 
