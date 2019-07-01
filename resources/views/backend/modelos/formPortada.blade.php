@@ -11,7 +11,7 @@
 	    	<div class="row">
 		    	<div class="col-md-3">
 					<div id="div_file">
-					 	@if($modelo->portada()->first()->imagen_desktop != null)
+					 	@if($modelo->portada()->first() != null)
 					 		<img id='foto_desk' style="width: 155px; margin-bottom: 10px;" src="{{Storage::url($modelo->portada()->first()->imagen_desktop)}}" alt="">
 					 	@else
 					 		<img id='foto_desk' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
@@ -22,7 +22,7 @@
 				</div>
 				<div class="col-md-3">
 					<div id="div_file">
-					 	@if($modelo->portada()->first()->imagen_mobile != null)
+					 	@if($modelo->portada()->first() != null)
 					 		<img id='foto_mobile' style="width: 155px; margin-bottom: 10px;" src="{{Storage::url($modelo->portada()->first()->imagen_mobile)}}" alt="">
 					 	@else
 					 		<img id='foto_mobile' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
