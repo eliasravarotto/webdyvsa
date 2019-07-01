@@ -174,7 +174,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de  Junio 2019</p>
+									<p>Vigencia 01 de Julio 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -235,7 +235,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de  Junio 2019</p>
+									<p>Vigencia 01 de Julio 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -295,7 +295,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de  Junio 2019</p>
+									<p>Vigencia 01 de Julio 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -356,7 +356,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de  Junio 2019</p>
+									<p>Vigencia 01 de Julio 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
