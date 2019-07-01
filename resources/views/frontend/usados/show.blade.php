@@ -9,11 +9,7 @@
     <meta property="og:url" content="https://www.derkayvargas.com/usados/{{$unidad->slug}}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="DERKA Y VARGAS USADOS" />
-    @if($unidad->foto != null)
-    <meta property="og:image" content="{{asset($unidad->foto)}}" />
-    @else
     <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
-    @endif
 @stop
 
 @section('styles_sheets')
