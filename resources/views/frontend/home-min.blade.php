@@ -163,7 +163,7 @@
     </div>
 
     <!-- Carusel Principal MOBILE-->
-    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm" data-ride="carousel">
+    <div id="carousel-mobile" class="carousel slide" style="display: none;" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
       </ol>
@@ -197,7 +197,7 @@
         <h3 style="color: black">Nuevo Plan Nacional Para tu 0km<br><small>TENEMOS DESCUENTOS IMPERDIBLES EN TU NUEVO TOYOTA‼️</small></h3>
         </a>
       </div>
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-md-6 col-xs-12">
           <a href="{{route('nuevo_plan_nacional')}}">
             <img src="{{asset('imagenes/financiacion/nuevo-plan-nacional-corolla-yaris.jpeg')}}" class="img-responsive">
@@ -208,6 +208,20 @@
             <img src="{{asset('imagenes/financiacion/nuevo-plan-nacional-etios-yaris.jpeg')}}" class="img-responsive">
           </a>
         </div>
+      </div> --}}
+      <div class="owl-carousel owl-md owl-theme">
+        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/financiacion/plan-nacional-hilux.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+        </a>
+        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/financiacion/plan-nacional-corolla-yaris.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+        </a>
+        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/financiacion/plan-nacional-etios-yaris.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+        </a>
+        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/financiacion/plan-nacional-innova.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+        </a>
       </div>
     </div>
   </section>
@@ -501,31 +515,28 @@
 <!-- end -->
 <script type="text/javascript">
   //Init Owl Caroucel 
-      $(".owl-carousel").owlCarousel({
-        loop: false,
-        margin:0,
-        nav: true,
-        stagePadding:10,
-        autoWidth: false,
-        navText:['<i class="fa fa-chevron-left" title="Anterior"></i>', '<i class="fa fa-chevron-right"></i>'],
+      $('.owl-carousel.owl-md').owlCarousel({
+        stagePadding: 50,
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay: true,
+        autoPlaySpeed: 5000,
+        autoPlayTimeout: 5000,
+        autoplayHoverPause: true,
+        items : 3,
         responsive:{
-          0: {
-            items: 1
-          },
-          800: {
-            items: 2,
-            margin: 20,
-          },
-          500: {
-            items: 2,
-            margin: 20,
-          },
-          1000: {
-            items: 4,
-            margin: 20,
-          }
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:2
+            }
         }
-      });
+    })
 </script>
 
 @stop

@@ -621,6 +621,42 @@ BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
   line-height: 2.1
 }
 
+.mx-1{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.mx-2{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.mx-3{
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.mx-4{
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.mr-1{
+  margin-right: 1rem;
+}
+.mr-2{
+  margin-right: 2rem;
+}
+.mr-3{
+  margin-right: 3rem;
+}
+.ml-1{
+  margin-left: 1rem;
+}
+.ml-2{
+  margin-left: 2rem;
+}
+.ml-3{
+  margin-left: 3rem;
+}
+
 .my-3 {
   margin: 3rem 0rem !important;
 }
@@ -665,6 +701,46 @@ BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
   padding-right: 3rem
 }
 
+.py-1{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-2{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-3{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-4{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-5{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.py-6{
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.py-7{
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.py-8{
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
 /*ANCHOS-------------------------------------------*/
 .w-100 {
   width: 100%
@@ -707,6 +783,10 @@ BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
   font-weight: bold;
 }
 
+.border-rad-4{ border-radius: 4px }
+.border-rad-5{ border-radius: 5px }
+.border-rad-6{ border-radius: 6px }
+.border-rad-7{ border-radius: 7px }
 /*--------------------COLORES--------------------------------
 --------------------------------------------------------------*/
 $rojo-toyota: #e01e37;
@@ -1536,7 +1616,7 @@ opacity: 1;
 
 @media only screen and (min-width:481px) {
   .btn-group-vertical {
-    top: calc(90% - 100px);
+    top: calc(93% - 100px);
   }
 
 }
@@ -2587,4 +2667,73 @@ NUEVOS ESTILOS - Seccion show modelo
   position: relative;
   padding-top: 3.5rem;
   padding-bottom: 1.75rem;
+}
+
+
+/*---------------------------------------
+CAROUSEL FADE EFECT
+---------------------------------------*/
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+
+/*---------------------------------------
+CAROUSEL C/CONTENIDO A LA DERECHA
+---------------------------------------*/
+.carousel-caption {
+  position: relative;
+  left: 0%;
+  right: 0%;
+  bottom: 0px;
+  z-index: 10;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #000;
+  text-shadow: none;
+  & .btn {
+    text-shadow: none; 
+  }
+}
+
+.carousel {
+    position: relative;
+}
+
+.controllers {
+    position: absolute;
+    top: 0px;
+}
+
+.carousel-control.left, 
+.carousel-control.right {
+    background-image: none;
+}
+
+/*-----------------------------------
+OWL CAROUCEL
+-----------------------------------*/
+.owl-theme .owl-dots .owl-dot span {
+    width: 40px !important;
 }
