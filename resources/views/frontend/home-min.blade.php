@@ -197,18 +197,6 @@
         <h3 style="color: black">Nuevo Plan Nacional Para tu 0km<br><small>TENEMOS DESCUENTOS IMPERDIBLES EN TU NUEVO TOYOTA‼️</small></h3>
         </a>
       </div>
-      {{-- <div class="row">
-        <div class="col-md-6 col-xs-12">
-          <a href="{{route('nuevo_plan_nacional')}}">
-            <img src="{{asset('imagenes/financiacion/nuevo-plan-nacional-corolla-yaris.jpeg')}}" class="img-responsive">
-          </a>
-        </div>
-        <div class="col-md-6 col-xs-12">
-          <a href="{{route('nuevo_plan_nacional')}}">
-            <img src="{{asset('imagenes/financiacion/nuevo-plan-nacional-etios-yaris.jpeg')}}" class="img-responsive">
-          </a>
-        </div>
-      </div> --}}
       <div class="owl-carousel owl-md owl-theme">
         <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
           <img src="{{asset('imagenes/financiacion/plan-nacional-hilux.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
