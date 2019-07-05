@@ -369,20 +369,6 @@
 
 			  </div>
 			</div>
-
-			<div class="container">
-				<div class="title-section mt-3">
-			        <h2>Subite ya a tu nuevo Toyota<br>  <small>Conoce nuestros planes adjudicados</small></h2>
-			      </div>
-				<div class="row">
-					<div class="col-md-6">
-						<img src="{{asset('imagenes/tpa/adjudicados-tpa-corolla.jpeg')}}" class="img-responsive"> <br>
-					</div>
-					<div class="col-md-6">
-						<img src="{{asset('imagenes/tpa/adjudicados-tpa-etios.jpeg')}}" class="img-responsive">
-					</div>
-				</div>
-			</div>
 		</section>
 		
 		<br>
@@ -421,13 +407,14 @@
 			</div>
 		</section>
 
-		<br>
-
-		<section>
+		<section class="my-4">
 			<div class="container">
+				<div class="title-section mt-3">
+			        <h2>Subite ya a tu nuevo Toyota<br>  <small>Conoce nuestros planes adjudicados</small></h2>
+			      </div>
 				<div class="row">
 					<div class="col-md-6 col-xs-12 col-sm-12">
-						<img src="{{asset('imagenes/tpa/plan_adjudicados.png')}}" class="img-responsive" alt="Planes de Ahorro Adjudicados en Chaco, cuotas bajas para tener tu 0km">
+						<img src="{{asset('imagenes/tpa/adjudicados-tpa-etios.png')}}" class="img-responsive" alt="Planes de Ahorro Adjudicados en Chaco, cuotas bajas para tener tu 0km">
 					</div>
 					<div class="col-md-6 col-xs-12 col-sm-12">
 						<div class="well">
@@ -528,24 +515,6 @@
 					</div>
 				</div>
 				
-			</div>
-		</section>
-		<br>
-		<section>
-			<div class="container">
-			<div class="row">
-				<blockquote style="border-left: 5px solid #e81f39; margin: 0 15px;">
-					<div class="row">
-						<div class="col-md-2">
-							<i class="fa fa-home" style="font-size: 100px"></i> 
-						</div>		
-						<div class="col-md-10">
-							<h3><b>Atención a domicilio</b></h3>
-				  			<p>Ofrecemos asesoramiento comercial en domicilio, laboral o particular. Conocé nuestro equipo y concertá una entrevista ahora!</p>
-						</div>		
-					</div>
-				</blockquote>
-			</div>
 			</div>
 		</section>
 		<br>
