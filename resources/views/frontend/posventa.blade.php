@@ -178,51 +178,15 @@ TOYOTA RECALL
 			</div>
 		</section>
 
-
-		<section class="pad-bot-50 container arrow_box">
-			<!--PROMO SERVICIOS-->
-			<div class="title-section">
-	            <h3>Súper Promo Servicios</h3>
-          	</div>
-          	<p class="fs-17">💥No te quedes sin disfrutar de esta Súper PROMOCIÓN! 📌 Tu SERVICIO + 10 puntos de control:</p>
-          	<ul class="list-inline">
-          		<li>• Luces</li>
-				<li>• Frenos </li>
-				<li>• Amortiguadores </li>
-				<li>• Estado de neumáticos y calibración </li>
-				<li>• Nivel de líquidos</li>
-				<li>• Control computarizado (inyección, luces testigos)</li>
-				<li>• Pérdidas de fluidos </li>
-				<li>• Control tren delantero </li>
-				<li>• Crucetas</li>
-				<li>• Lubricación malacate y control rueda auxilio.</li>
-          	</ul>
-          	<p class="fs-17">✅ Modelos comprendidos entre los años 2005 al 2015 📌 Pagando efectivo 10% OFF, con tarjeta VISA, 3 cuotas sin interés Tarjeta TUYA, 6 cuotas sin interés.</p>
-			<div class="row">
-				<div class="col-md-4 col-xs-12">
-					<img src="/imagenes/posventa/promo-service-hilux.png" class="img-responsive text-left" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
+		<section>
+			<div class="container ">
+				<div class="title-section">
+					<h1>RENOVA tus Neumáticos Bridgestone</h1>
 				</div>
-				<div class="col-md-4 col-xs-12">
-					<img src="/imagenes/posventa/promo-service-etios.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
-				</div>
-				<div class="col-md-4 col-xs-12">
-					<img src="/imagenes/posventa/promo-service-corolla.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire.">
-				</div>
-			</div>
-			<p class="fs-17">No dudes en consultarnos!!! escríbenos un WhatsApp ☺️</p>
-			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Sáenz Peña <a href="https://derkayvargas.page.link/turnos-saenzpena"> https://derkayvargas.page.link/turnos-saenzpena</a></p>
-			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Resistencia <a href="https://derkayvargas.page.link/turnos-resistencia"> https://derkayvargas.page.link/turnos-resistencia</a></p>
-			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Charata <a href="https://derkayvargas.page.link/turnos-charata"> https://derkayvargas.page.link/turnos-charata</a></p>
-			<p class="fs-17"><i class="fa fa-whatsapp" style="color: #189d0e; font-weight: bold;"></i> Charata <a href="https://derkayvargas.page.link/turnos-charata2"> https://derkayvargas.page.link/turnos-charata2</a></p>
-			<br>
-
-			<!--ALINEADO Y BALANCEO-->
-			<div class="title-section">
-	            <h3>ALINEADO Y BALANCEO 3D <br>  <small>Ultima Generación</small></h3>
-          	</div>
-			<div class="row">
-				<div class="col-xs-12">
-					<img src="/imagenes/posventa/alineado-desk.png" class="img-responsive" alt="Servicio de Posventa Chaco. Luces Frenos Crucetas amortiguadores filtro de aire. Alineado y balanceo 3D ultima generacion. Promo 12%">
+				<div class="row">
+					<div class="col-sm-12 col-md-6 col-md-offset-3">
+						<img src="{{asset('imagenes/posventa/nb.jpg')}}" class="img-responsive">
+					</div>
 				</div>
 			</div>
 		</section>
@@ -312,7 +276,6 @@ TOYOTA RECALL
 					</div>
 				</div>
 			</div>
-
 		</section>
 
 		<section id="garantia">
@@ -322,7 +285,7 @@ TOYOTA RECALL
 				</div>
 				<div class="row flex" style="flex-wrap: wrap;">
 					<div class="col-md-3 col-sm-12 visible-md visible-lg">
-						<img class="img-responsive" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png" alt="Garantía 5 años Toyota. Garantia Derka y Vargas Chaco">
+						<img class="img-responsive" src="https://www.toyota.com.ar/storage/contents/4QUWQizPkX.jpg" alt="Garantía 5 años Toyota. Garantia Derka y Vargas Chaco">
 					</div>
 					<div class="col-md-9 col-sm-12 flex align-items-center">
 						<p>Para asegurar que la experiencia de posesión de sus vehículos sea única, Toyota respalda sus productos con algo más que palabras. Como los primeros en confiar en nuestros productos somos nosotros mismos, le ofrecemos la mejor garantía posible. Por este motivo los vehículos Toyota 0 (cero) kilometro vendidos y entregados a partir del 1 de septiembre de 2018 comienzan a gozar de una garantía que lo ampara por 5 años o 150.000 Km. (lo que ocurra primero). Esto significa un mayor valor para su Toyota y una mayor tranquilidad para usted, siempre.</p>
