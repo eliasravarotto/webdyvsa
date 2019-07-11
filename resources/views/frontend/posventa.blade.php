@@ -181,8 +181,9 @@ TOYOTA RECALL
 		<section>
 			<div class="container ">
 				<div class="title-section">
-					<h3>RENOVA tus Neumáticos Bridgestone <br> <small>PROMOCIÓN VALIDA HASTA EL 31/07/2019</small></h3>
+					<h3>Conoce los descuentos imperdibles que tenemos para vos! <br> <small>PROMOCIÓN VALIDA HASTA EL 31/07/2019</small></h3>
 				</div>
+				<div class="owl-carousel owl-md owl-theme">
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
 						<img src="{{asset('imagenes/posventa/nb.jpg')}}" class="img-responsive">
@@ -203,6 +204,12 @@ TOYOTA RECALL
 
 						<p><a target="_blank" href="https://derkayvargas.page.link/repuestos-charata"><i class="fa fa-whatsapp"></i> Charata </a></p>
 					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-md-10 col-md-offset-1">
+						<img src="{{asset('imagenes/posventa/accesorios-h.jpg')}}" class="img-responsive">
+					</div>
+				</div>
 				</div>
 			</div>
 		</section>
@@ -421,6 +428,30 @@ TOYOTA RECALL
 	        scrollTop: $('#map').offset().top - 20 //#DIV_ID is an example. Use the id of your destination on the page
 	    }, 'slow');
 	}
+
+
+	$('.owl-carousel.owl-md').owlCarousel({
+        stagePadding: 50,
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay: true,
+        autoPlaySpeed: 5000,
+        autoPlayTimeout: 5000,
+        autoplayHoverPause: true,
+        items : 3,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+    })
 
     </script>
 @stop
