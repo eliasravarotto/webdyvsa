@@ -143,7 +143,7 @@ TOYOTA RECALL
 
 				<div class="mt-3">
 					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-04-2019 - <b>Hasta:</b> 30-06-2019</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-07-2019  <b>Hasta:</b> 31-07-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
@@ -152,9 +152,9 @@ TOYOTA RECALL
 						    <th style="text-align: center; font-size: 20px;"></th>
 						    <th style="text-align: center; font-size: 20px;">COROLLA</th>
 						    <th style="text-align: center; font-size: 20px;">ETIOS</th>
-						    <th style="text-align: center; font-size: 20px;">YARIS</th>
+						    {{-- <th style="text-align: center; font-size: 20px;">YARIS</th>
 						    <th style="text-align: center; font-size: 20px;">INNOVA</th>
-						    <th style="text-align: center; font-size: 20px;">PRIUS</th>
+						    <th style="text-align: center; font-size: 20px;">PRIUS</th> --}}
 						    <th style="text-align: center; font-size: 20px;">HILUX 4x2</th>
 						    <th style="text-align: center; font-size: 20px;">Hilux/SW4 4x4</th>
 						  </tr>
@@ -165,9 +165,9 @@ TOYOTA RECALL
 								<td style="text-align: center;font-size: 20px;"><b>{{ $servicio->nombre }}</b></td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->corolla }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->etios }}</td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->yaris }}</td>
+								{{-- <td style="text-align: center;font-size: 20px;">$ {{ $servicio->yaris }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->innova }}</td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->prius }}</td>
+								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->prius }}</td> --}}
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux }}</td>
 								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux_sw4_4x4 }}</td>
 							</tr>
@@ -181,11 +181,27 @@ TOYOTA RECALL
 		<section>
 			<div class="container ">
 				<div class="title-section">
-					<h1>RENOVA tus Neumáticos Bridgestone</h1>
+					<h3>RENOVA tus Neumáticos Bridgestone <br> <small>PROMOCIÓN VALIDA HASTA EL 31/07/2019</small></h3>
 				</div>
 				<div class="row">
-					<div class="col-sm-12 col-md-6 col-md-offset-3">
+					<div class="col-sm-12 col-md-6">
 						<img src="{{asset('imagenes/posventa/nb.jpg')}}" class="img-responsive">
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<p>🔥 Ahora con esta Super Promoción de JULIO podes RENOVAR tus neumáticos Bridgestone en efectivo / débito y cómodas cuotas con tu tarjeta de crédito.</p>
+
+						<p>💸 Pagando en efectivo - débito 15% de descuento‼️</p>
+
+						<p>✅ Visa, 3 cuotas sin interés.</p>
+						<p>✅ Tuya, 6 cuotas sin interés.</p>
+
+						<p>👉 para recibir un presupuesto, nuestros whatsApp, son:</p>
+
+						<p><a target="_blank" href="https://derkayvargas.page.link/repuestos-saenz-pena"><i class="fa fa-whatsapp"></i> Sáenz Peña</a></p>
+
+						<p><a target="_blank" href="https://derkayvargas.page.link/repuestos-resistencia"><i class="fa fa-whatsapp"></i> Resistencia </a></p>
+
+						<p><a target="_blank" href="https://derkayvargas.page.link/repuestos-charata"><i class="fa fa-whatsapp"></i> Charata </a></p>
 					</div>
 				</div>
 			</div>
@@ -280,8 +296,8 @@ TOYOTA RECALL
 
 		<section id="garantia">
 			<div class="container">
-				<div class="page-header">
-				  <h1>GARANTÍA</h1>
+				<div class="title-section">
+			  		<h1>GARANTÍA</h1>
 				</div>
 				<div class="row flex" style="flex-wrap: wrap;">
 					<div class="col-md-3 col-sm-12 visible-md visible-lg">
@@ -294,9 +310,9 @@ TOYOTA RECALL
 				
 				<h3>ADEMÁS</h3>
 				<ul>
-					<li>Todos los vehículos Toyota 0 (cero) kilometro vendidos y entregados antes del 1 de Septiembre de 2018, continúan gozando de la ya conocida Garantía que lo ampara por 3 años o 100.000 Km (lo que ocurra primero) y comienza con la fecha de entrega de su vehículo.</li>
-					<li>La garantía Toyota es transferible a los nuevos propietarios.</li>
-					<li>Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquiera de nuestros concesionarios autorizados Toyota, los cuales gustosamente procesarán su solicitud.</li>
+					<li><p>Todos los vehículos Toyota 0 (cero) kilometro vendidos y entregados antes del 1 de Septiembre de 2018, continúan gozando de la ya conocida Garantía que lo ampara por 3 años o 100.000 Km (lo que ocurra primero) y comienza con la fecha de entrega de su vehículo.</p></li>
+					<li><p>La garantía Toyota es transferible a los nuevos propietarios.</p></li>
+					<li><p>Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquiera de nuestros concesionarios autorizados Toyota, los cuales gustosamente procesarán su solicitud.</p></li>
 				</ul>
 
 				<h3>NO COMERCIALIZAMOS GARANTÍA EXTENDIDA:</h3>

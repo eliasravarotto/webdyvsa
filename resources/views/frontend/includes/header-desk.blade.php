@@ -1,8 +1,8 @@
 <header class="header-ppal" style="position: relative; z-index: 100">
       <div class="row row-no-margin">
-        <div class="col-md-3 col-sm-12 col-xs-12 text-left  center-on-mobile">
-          <a href="/" class="pull-left">
-            <img src="{{ asset('/imagenes/logos/logo-dyv.png') }}"  style="height: 49px;">
+        <div class="col-md-3 col-sm-12 col-xs-12 text-left center-on-mobile">
+          <a href="/">
+            <img src="{{ asset('/imagenes/logos/logo-dyv.png') }}"  style="height: 42px;margin-top: 7px;">
           </a>
         </div>
         <div class="col-md-6 text-left visible-md visible-lg">
