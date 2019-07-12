@@ -1,8 +1,9 @@
 <template>
 <div>
     <div class="panel panel-default">
-        <div class="panel-heading text-right">
-            <a href="#" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="color: darkmagenta;">
+        <div class="panel-heading d-flex justify-content-space-between">
+            <p>¿Que vehículo estás buscando?</p>
+            <a class="text-right" href="#" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="color: darkmagenta;">
                 <i class="fa fa-filter" aria-hidden="true"></i> Filtros
             </a>
         </div>
@@ -368,65 +369,3 @@
         }
     }
 </script>
-
-<style type="text/css">
-    .block2-overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.3);
-        opacity: 0;
-    }
-
-    .trans-0-4 {
-        -webkit-transition: all .4s;
-        -o-transition: all .4s;
-        -moz-transition: all .4s;
-        transition: all .4s;
-    }
-
-    .block2-overlay:hover {
-        opacity: 1;
-    }
-    .block2-overlay:hover .block2-btn-addcart {
-        bottom: 35px;
-    }
-
-    .block2-btn-addcart {
-        position: absolute;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-        bottom: -45px;
-    }
-    .w-size1 {
-        width: 161px;
-    }
-
-
-    .thumbnail > div > img, .thumbnail > div > a > img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.pos-rel{
-    position: relative;
-}
-
-a:hover{
-    text-decoration: none;
-}
-
-.ribbon-custom{
-    margin: 20px !important;
-    right: -65px !important;
-    border: solid 1px #fff;
-    font-family: 'Play', sans-serif;
-}
-
-</style>

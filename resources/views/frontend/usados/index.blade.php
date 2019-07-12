@@ -13,28 +13,117 @@
 @stop
 
 @section('styles_sheets')
-        <style type="text/css">
-            .precio{
-                    background-color: #797979;
-                    color: #fafafa !important;
-            }
+<style type="text/css">
+	.precio {
+		background-color: #797979;
+		color: #fafafa !important;
+	}
 
-            .caption {
-			    background-color: #d2a7bf;
-			}
+	.caption {
+		background-color: #d2a7bf;
+	}
 
-			.caption-default>h3, .caption-default>h4, .text-shadow {
-			    color: #ffffff!important;
-			}
+	.caption-default>h3,
+	.caption-default>h4,
+	.text-shadow {
+		color: #ffffff !important;
+	}
 
-			.thumbnail .caption {
-				color: white;
-			}
-			.btn-celeste-pastel {
-			    background-color: #5a8cb5;
-			    color: #fff;
-			}
-        </style>
+	.thumbnail .caption {
+		color: white;
+	}
+
+	.btn-celeste-pastel {
+		background-color: #5a8cb5;
+		color: #fff;
+	}
+
+	.block2-overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.3);
+		opacity: 0;
+	}
+
+	.trans-0-4 {
+		-webkit-transition: all .4s;
+		-o-transition: all .4s;
+		-moz-transition: all .4s;
+		transition: all .4s;
+	}
+
+	.block2-overlay:hover {
+		opacity: 1;
+	}
+
+	.block2-overlay:hover .block2-btn-addcart {
+		bottom: 35px;
+	}
+
+	.block2-btn-addcart {
+		position: absolute;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		bottom: -45px;
+	}
+
+	.w-size1 {
+		width: 161px;
+	}
+
+	.thumbnail > div > img,
+	.thumbnail > div > a > img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.pos-rel {
+		position: relative;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	.ribbon-custom {
+		margin: 20px !important;
+		right: -65px !important;
+		border: solid 1px #fff;
+		font-family: 'Play', sans-serif;
+	}
+
+	.panel-default {
+		margin-top: -80px;
+		border-radius: 6px;
+		box-shadow: 0 10px 14px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+		border-color: #f8f8f8;
+		background-color: #f8f8f8;
+	}
+
+	.panel-default>.panel-heading {
+		background-color: #f8f8f8;
+		border-bottom: 0px solid transparent;
+	}
+
+	.panel-default>.panel-heading p,
+	.panel-default>.panel-heading a {
+		font-size: 18px;
+	}
+
+	@media only screen and (max-width:992px) {
+		.panel-default {
+			margin-top: -100px;
+		}
+
+	}
+</style>
 @stop
 
 @section('mark-up-facebook')
@@ -46,13 +135,11 @@
 @section('content')
 	
 	<article>
+		<section style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 250px;background-size: cover;"></section>
+		<br>
 		<section>
 			<div class="container">
-				<ol class="breadcrumb mt-3">
-	              <li><a href="/">Inicio</a></li>
-	              <li class="active">Usados</li>
-	            </ol>
-					
+				
 				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 
 				<div class="title-section">
