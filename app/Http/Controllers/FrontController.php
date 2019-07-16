@@ -112,6 +112,11 @@ class FrontController extends Controller
     {
         return view('frontend.rse.programa-rse-concesionarios');
     }
+    
+    public function rseProgramaDyv(Request $request)
+    {
+        return view('frontend.rse.programa-rse-dyv');
+    }
 
     public function checkIfTokenExist(Request $request, $token)
     {
