@@ -187,6 +187,25 @@
     </div>
   </section>
 
+  <section>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-xs-12 col-md-5">
+          <img src="{{asset('imagenes/home-min/dia-del-amigo.jpg')}}" class="img-responsive">
+        </div>
+        <div class="col-xs-12 col-md-7">
+          <div class="title-section">
+        <h3>TEST DRIVE SÁBADO 20 DE JULIO</h3>
+      </div>
+          <p style="font-size: 18px;">👉 Este Sábado 20 #díadelamigo queremos invitarte a que vivas una jornada diferente con los tuyos! un día a puro #fierros a puro TEST DRIVE</p>
+          <p style="font-size: 18px;">✔️ Súmate y no solo conoce el Toyota de tus sueños, si no también manéjalos 😀 🦹‍♂️🚗🚙🚕</p>
+          <p style="font-size: 18px;">🚫 NO lo olvides este sábado 20/07 en el Paseo Libertad Resistencia, a partir de las 10 de la mañana hasta las 21 Hs.</p>
+          <p style="font-size: 18px;">✅ Viví la experiencia de manejar un Toyota con #derkayvargas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!---------------------------------------------------------------------
     BANNER PLAN NACIONAL
   ----------------------------------------------------------------------->
