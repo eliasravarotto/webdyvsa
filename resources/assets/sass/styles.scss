@@ -791,6 +791,10 @@ BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
 .border-rad-5{ border-radius: 5px }
 .border-rad-6{ border-radius: 6px }
 .border-rad-7{ border-radius: 7px }
+
+.box-shadow{
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
 /*--------------------COLORES--------------------------------
 --------------------------------------------------------------*/
 $rojo-toyota: #e01e37;

@@ -16,12 +16,12 @@
         <li><a href="/financiacion">Financiación</a></li>
         <li>
           <a href="{{route('nuevo_plan_nacional')}}">
-            <img src="{{asset('imagenes/plan-nacional.png')}}" height="30px">  Nuevo Plan Nacional
+            <img src="{{asset('imagenes/plan-nacional.png')}}" height="30px"> Plan Nacional
           </a>
         </li>
         <li><a href="/usados">Usados</a></li>
         <li><a href="/posventa">Posventa</a></li>
-        <li><a href="/empresa">Empresa</a></li>
+        <li><a href="/responsabilidad-social-empresarial">RSE</a></li>
         <li><a href="{{route('rse')}}">RESPONSABILIDAD SOCIAL EMPRESARIAL</a></li>
         <li><a href="/contacto">Contacto</a></li>
 
