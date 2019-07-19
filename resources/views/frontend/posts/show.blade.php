@@ -33,14 +33,25 @@
       <li class="active">{{$post->titulo}}</li>
   </ol>
 
-  <h2>{{$post->titulo}}</h2>
-
   <div class="row">
-    <div class="col-xs-12">
-      <div style="overflow: hidden;">
+    <div class="col-xs-12 col-md-12 text-center">
+      <img class="img-responsive" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
+    </div>
+    <div class="col-xs-12 col-md-10 col-offset-md-1">
+      <h2>{{$post->titulo}}</h2>
+    <ul class="list-unstyled list-inline data-post">
+      <li class="text-muted"><i aria-hidden="true" class="fa fa-calendar"></i> {{$post->created_at}}</li> 
+      <li class="text-muted">
+        <div class="magazine-loop-views">
+          <div class="magazine-category-tema normal-font">{{$post->tema->tema}}</div>
+        </div>
+      </li>
+    </ul>
+      {{-- <div style="overflow: hidden;">
           <img class="img-portada" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="max-height: 275px; float: right;">
           <div>{!!$post->contenido!!}</div>
-      </div>
+      </div> --}}
+    <div>{!!$post->contenido!!}</div>
     </div>
   </div>
 
