@@ -37,7 +37,7 @@
     <div class="col-xs-12 col-md-12 text-center">
       <img class="img-responsive box-shadow border-rad-7" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
     </div>
-    <div class="col-xs-12 col-md-10 col-offset-md-1">
+    <div class="col-xs-12 col-md-12">
       <h2>{{$post->titulo}}</h2>
     <ul class="list-unstyled list-inline data-post">
       <li class="text-muted"><i aria-hidden="true" class="fa fa-calendar"></i> {{$post->created_at}}</li> 
