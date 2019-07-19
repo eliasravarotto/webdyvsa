@@ -178,6 +178,22 @@ TOYOTA RECALL
 			</div>
 		</section>
 
+				<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-4">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/service-hilux.png')}}">
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/service-corolla.png')}}">
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/service-etios.png')}}">
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section>
 			<div class="container ">
 				<div class="title-section">
@@ -436,9 +452,9 @@ TOYOTA RECALL
         margin:10,
         nav:false,
         autoplay: true,
-        autoPlaySpeed: 5000,
-        autoPlayTimeout: 5000,
-        autoplayHoverPause: true,
+        autoPlaySpeed: 2000,
+        autoPlayTimeout: 3000,
+        autoplayHoverPause: false,
         items : 3,
         responsive:{
             0:{

@@ -418,7 +418,7 @@
   </section>
 
   <!---------------------------------------------------------------------
-    NOTICIAS RECIENTES
+    NOVEDADES DERKA Y VARGAS
   ----------------------------------------------------------------------->
   <section class="mt-3">
     <div class="container">
@@ -429,7 +429,7 @@
             <div class="stm_widget_recent_news">
               <div class="recent-top">
                 <div class="left">
-                  <h4>NOTICIAS Y EVENTOS</h4>
+                  <h4>NOVEDADES DERKA Y VARGAS</h4>
                 </div>
                 <div class="right">
                     <ul class="cat-list recent-cat-list">
