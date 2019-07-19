@@ -15,7 +15,7 @@
 @section('content')
 
 <div class="container mt-3">
-	<ol class="breadcrumb">
+{{-- 	<ol class="breadcrumb">
       <li><a href="/">Inicio</a></li>
       @switch($post->tema->tema)
           @case('RSE')
@@ -31,11 +31,11 @@
           <li><a href="#">{{$post->tema->tema}}</a></li>
       @endswitch
       <li class="active">{{$post->titulo}}</li>
-  </ol>
+  </ol> --}}
 
   <div class="row">
     <div class="col-xs-12 col-md-12 text-center">
-      <img class="img-responsive" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
+      <img class="img-responsive box-shadow border-rad-7" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
     </div>
     <div class="col-xs-12 col-md-10 col-offset-md-1">
       <h2>{{$post->titulo}}</h2>

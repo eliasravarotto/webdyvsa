@@ -482,7 +482,7 @@
           <div class="wpb_wrapper">
             <div class="stm-most-popular-posts">
               <h2>MÁS POPULARES</h2>
-              @foreach(\App\Helpers\Helper::postPopulares(6) as $post)
+              @foreach(\App\Helpers\Helper::postRecientes(6) as $post)
               <a href="{{ route('show_post', $post->slug) }}" class="stm-magazine-news clearfix">
                   <div class="image">
                       <img width="190" height="132" src="{{$post->imagen_portada}}" class="attachment-stm-img-190-132 size-stm-img-190-132 wp-post-image" alt="{{$post->alt_img}}" title="{{$post->titulo}}">        
