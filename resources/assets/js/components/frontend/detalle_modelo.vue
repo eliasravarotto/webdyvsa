@@ -13,8 +13,6 @@
             </div>
         </section> -->
 
-
-
         <section class="container pad-top-bot-20">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -46,7 +44,7 @@
                           </tr>
                     </tbody>
                     </table>
-                    <div class="alert alert-info" role="alert" v-if="cobrarGastos">El precio NO icluye Flete ni gastos de Inscripción.</div>
+                    <div class="alert alert-info" role="alert">El precio NO icluye Flete ni gastos de Inscripción.</div>
                 </div>
             </div>
         </section>
@@ -199,7 +197,6 @@
                 link_ficha_tecnica: '',
                 link_catalogo: '', 
                 tieneTestDrive: '',
-                cobrarGastos: '',
             }
         },
         mounted() {
@@ -221,21 +218,8 @@
             }
 
             this.initJS();
-
-            this.cobrarGastos = this.cobrarFle01Tranf();
-
-            console.log(this.modelo.portada);
         },
         methods:{
-            cobrarFle01Tranf(){
-                var ids = [33, 35, 36, 37, 38, 39];
-
-                if (ids.includes(this.modelo.id)) {
-                   return true;
-                }
-
-                return false;
-            },
             showImage(img){
                 // Get the modal
                 var modal = document.getElementById('moda_show_imagen');
