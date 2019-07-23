@@ -767,6 +767,9 @@ BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
   font-size: 16px;
 }
 
+.fz17{
+    font-size: 17px;
+  }
 .fs-17 {
   font-size: 17px;
 }
@@ -1296,6 +1299,7 @@ $gris-2:#626262;
 
 /*----MEDIA QUERYS-------------------------------------------------
 ---------------------------------------------------------------------*/
+
 @media only screen and (max-width:450px) {
   .encabezado .logo img {
     width: 250px;
@@ -2744,4 +2748,15 @@ OWL CAROUCEL
 -----------------------------------*/
 .owl-theme .owl-dots .owl-dot span {
     width: 40px !important;
+}
+
+
+/*-------------------------------------
+USADOS DESTACADOS
+-------------------------------------*/
+.usados-destacados {
+  margin: -170px 0px 0px 0px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
 }

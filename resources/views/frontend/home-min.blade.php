@@ -85,33 +85,8 @@
     margin-right: 20px;
   }
 
-  .uct a{
-    text-decoration: none;
-  }
-  .uct .uct-content{
-    border: 3px #afafb1 ridge;
-  }
-
-  .uct .row-uct{
-    color: white;
-    padding: 1rem 1.5rem;
-    font-size: 2rem;
-  }
-
-  .uct .black{
-    background-color: black;
-  }
-
-  .uct .bg-rojo{
-    background-color: #cc2032;
-  }
-
-  .uct .txt-negro{
-    color: black
-  }
-
-  .innovar p{
-    font-size: 1.8rem;
+  .fz17{
+    font-size: 17px;
   }
 
   </style>
@@ -219,7 +194,7 @@
   ----------------------------------------------------------------------->
   <section>
     <div class="container">
-      <div class="title-section mt-3">
+      <div class="title-section my-3">
         <h3>MODELOS DESTACADOS</h3>
       </div>
       <div class="row">
@@ -262,31 +237,35 @@
           </a>          
         </div>
       </div>
-      <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER TODOS</a></p>
+      <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER MODELOS</a></p>
     </div>
   </section>
 
   <!---------------------------------------------------------------------
-    USADOS CERTIFICADOS
+    USADOS DESTACADOS
   ----------------------------------------------------------------------->
-  <section>
-    <div class="container uct">
-      <div class="title-section mt-3">
-        <h3>USADOS CERTIFICADOS <br>  <small>AUTOS COMO NUEVOS</small></h3>
-      </div>
-      <a href="/usados#certificados-toyota">
-      <div class="uct-content">
-        <div class="row-uct bg-rojo text-center">
-            <span>¿QUÉ ES UN USADO CERTIFICADO?</span>  
-        </div>
-        <div class="row-uct txt-negro text-center">
-            <span><b>CONOCELOS</b></span>  
-        </div>
-      </div>
-      </a>
-    </div>
+  <div class=" my-3">
+  <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
   </section>
-  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row usados-destacados box-shadow">
+          <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
+            <img class="img-responsive" src="{{asset('/imagenes/usados-destacados.png')}}">
+          </div>
+          <div class="col-xs-12 col-md-7 text-center">
+            <p class="text-left fz17">
+            Conocé la selección de vehículos usados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
+            </p>
+            <a href="/usados" class="btn btn-outline btn-danger text-center">VER TODOS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+ 
   <!---------------------------------------------------------------------
     TOYOTA HIBRID EXPERIENCE
   ----------------------------------------------------------------------->
