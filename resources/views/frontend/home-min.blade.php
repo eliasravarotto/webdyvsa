@@ -263,7 +263,7 @@
           </div>
           <div class="col-xs-12 col-md-7 text-center">
             <p class="text-left fz17">
-            Conocé la selección de vehículos usados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
+            Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
             </p>
             <a href="/usados" class="btn btn-outline btn-danger text-center">VER TODOS</a>
           </div>
