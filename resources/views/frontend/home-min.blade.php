@@ -89,6 +89,13 @@
     font-size: 17px;
   }
 
+  .usados-destacados {
+  margin: -170px 0px 0px 0px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+
   </style>
 @stop
 
