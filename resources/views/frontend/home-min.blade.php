@@ -111,17 +111,19 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/imagenes/home-min/financiacion-etios-yaris.png" alt="financiocion etios y yaris">
-        </div>
-
-        <div class="item">
-          <img src="/imagenes/home-min/financiacion-corolla.png" alt="financiocion corolla">
+          {{-- <img src="http://homu.com.ar/wp-content/uploads/2019/05/rav4-destop-1.jpg" alt="Nuevo Toyota Plan de Ahorro Derka y Vargas, Nuevas cuotas"> --}}
+          <section 
+          style="background: url({{asset('imagenes/home-min/rav4-portada.jpg')}});
+          height: 539px;
+          background-position: bottom;
+          background-size: cover;">
+            
+          </section>
         </div>
 
         <div class="item">
