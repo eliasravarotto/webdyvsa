@@ -183,16 +183,19 @@
       </div>
       <div class="owl-carousel owl-md owl-theme">
         <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/plan-nacional-hilux.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+          <img src="{{asset('imagenes/home-min/ultimos-dias.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
         </a>
         <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/plan-nacional-corolla-yaris.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+          <img src="{{asset('imagenes/financiacion/ultimos-dias1.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
         </a>
         <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/plan-nacional-etios-yaris.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+          <img src="{{asset('imagenes/financiacion/ultimos-dias2.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
         </a>
         <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/plan-nacional-innova.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+          <img src="{{asset('imagenes/financiacion/ultimos-dias3.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+        </a>
+        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/financiacion/ultimos-dias4.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
         </a>
       </div>
     </div>
@@ -493,7 +496,7 @@
   //Init Owl Caroucel 
       $('.owl-carousel.owl-md').owlCarousel({
         stagePadding: 50,
-        loop:true,
+        loop:false,
         margin:10,
         nav:false,
         autoplay: true,
