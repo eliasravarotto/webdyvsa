@@ -27,22 +27,16 @@
 	<p class="text-muted">✅ Consúltanos Y SE DUEÑO DE UN TOYOTA 0 KM 🚗🚙 </p>
 	<div class="owl-carousel owl-md owl-theme">
 		<div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/plan-nacional-hilux.jpeg')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
-			<p class="text-muted">📌 Tu Hilux a una tasa del 19,9%, con un descuento de $120.000 del nuevo Plan Nacional, en todas sus versiones!</p>
+			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/ultimos-dias1.png')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
 		</div>
 		<div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/plan-nacional-innova.jpeg')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
-			<p class="text-muted">📌 Nueva Innova a una tasa del 19,9%, con un descuento de $90.000 del nuevo Plan Nacional, en todas sus versiones!</p>
+			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/ultimos-dias2.png')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
 		</div>
 		<div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/plan-nacional-corolla-yaris.jpeg')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
-			<p class="text-muted">📌 Accede a un Corolla, tasa del 19,9%, con un descuento de $90.000 del nuevo Plan Nacional, en todas sus versiones!</p>
-			<p class="text-muted">📌 También lo podes hacer con el nuevo Yaris a una tasa del 19,9 con un descuento de $ 90.000 del nuevo Plan Nacional en las versiones ( XLS 4P y 5P) y S ( 4P y 5P )</p>
+			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/ultimos-dias3.png')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
 		</div>
 		<div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/plan-nacional-etios-yaris.jpeg')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
-			<p class="text-muted">📌 Etios a una tasa del 19,9%, con un descuento de $50.000 del nuevo Plan Nacional, en todas sus versiones!</p>
-			<p class="text-muted">📌 En la versión ( XS 4P y 5P) del nuevo Yaris a una tasa del 19,9 con un descuento de $ 50.000 del nuevo Plan Nacional</p>
+			<img style="border-radius: 5px;" src="{{asset('imagenes/financiacion/ultimos-dias4.png')}}" class="img-responsive" alt="Nuevo Plan Nacional Para tu 0km">
 		</div>
 	</div>
 	
