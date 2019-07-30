@@ -63,6 +63,7 @@
             <div v-for="unidad in unidades_filtered" class="col-sm-12 col-md-4" v-if="unidad.visible">
                 <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:auto">
                     <div class="pos-rel o-flw-hiden" style="max-height: 250px">
+                    <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
                     <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
                         <img v-show="unidad.foto" :src="unidad.foto" alt="">
                         <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
@@ -129,6 +130,7 @@
             <div v-for="unidad in unidades_uct" class="col-sm-12 col-md-4" v-if="unidad.visible && unidad.uct">
                 <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                     <div class="pos-rel o-flw-hiden" style="max-height: 250px">
+                    <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
                     <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
                         <img v-show="unidad.foto" :src="unidad.foto" alt="">
                         <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
