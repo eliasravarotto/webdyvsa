@@ -77,15 +77,12 @@ class TurnoServicioController extends Controller
             switch ($turno->sucursal_id) {
                 case 1:
                     array_push($receptopres, "fabianaaranda@derkayvargas.com.ar");
-                    //array_push($receptopres, "eliasravarotto@derkayvargas.com.ar");
                     break;
                 case 2:
                     array_push($receptopres, "franciscozago@derkayvargas.com.ar", "marcoruiz@derkayvargas.com.ar", "federicow@derkayvargas.com.ar");
-                    //array_push($receptopres, "eliasravarotto@derkayvargas.com.ar");
                     break;
                 case 3:
                     array_push($receptopres, "fabianaaranda@derkayvargas.com.ar");
-                    //array_push($receptopres, "eliasravarotto@derkayvargas.com.ar");
                     break;
             }
             

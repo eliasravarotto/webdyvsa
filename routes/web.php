@@ -89,7 +89,7 @@ Route::group(['middleware' => 'auth'], function(){
 // Route::get('/min','FrontController@homeMin');
 Route::get('/','FrontController@homeMin');
 Route::get('/financiacion','FrontController@financiacion');
-Route::get('/posventa','FrontController@posventa');
+Route::get('/posventa','FrontController@posventa')->name('posventa');
 Route::get('/plan-de-ahorro','FrontController@planDeAhorro');
 Route::get('/contacto','FrontController@contacto')->name('contacto');
 Route::get('/nosotros','FrontController@aboutUs');

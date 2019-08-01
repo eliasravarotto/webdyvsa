@@ -172,9 +172,34 @@
   </section>
 
   <!---------------------------------------------------------------------
+    USADOS DESTACADOS
+  ----------------------------------------------------------------------->
+  <div class=" my-3">
+    <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
+    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row usados-destacados box-shadow">
+            <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
+              <img class="img-responsive" src="{{asset('/imagenes/usados-destacados.png')}}">
+            </div>
+            <div class="col-xs-12 col-md-7 text-center">
+              <p class="text-left fz17">
+              Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
+              </p>
+              <a href="/usados" class="btn btn-outline btn-danger text-center">VER TODOS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---------------------------------------------------------------------
     BANNER PLAN NACIONAL
   ----------------------------------------------------------------------->
-  <section class="mt-1">
+ {{--  <section class="mt-1">
     <div class="container">
       <div class="title-section mt-3">
         <a href="{{route('nuevo_plan_nacional')}}">
@@ -199,7 +224,7 @@
         </a>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!---------------------------------------------------------------------
     MODELOS
@@ -253,31 +278,6 @@
     </div>
   </section>
 
-  <!---------------------------------------------------------------------
-    USADOS DESTACADOS
-  ----------------------------------------------------------------------->
-  <div class=" my-3">
-  <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
-  </section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="row usados-destacados box-shadow">
-          <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
-            <img class="img-responsive" src="{{asset('/imagenes/usados-destacados.png')}}">
-          </div>
-          <div class="col-xs-12 col-md-7 text-center">
-            <p class="text-left fz17">
-            Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
-            </p>
-            <a href="/usados" class="btn btn-outline btn-danger text-center">VER TODOS</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
- 
   <!---------------------------------------------------------------------
     TOYOTA HIBRID EXPERIENCE
   ----------------------------------------------------------------------->

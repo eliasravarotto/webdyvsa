@@ -113,12 +113,18 @@ TOYOTA RECALL
 
 @section('content')
 	<article>
+		<!---------------------------------------------------------------------
+	    BANNER
+	  	----------------------------------------------------------------------->
 		<section>
 			<div class="banner-ppal-posventa visible-md visible-lg" style="width: 100%">
 				<img src="/imagenes/posventa/slide.jpg" class="img-responsive" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco">
 			</div>
 		</section>
 
+		<!---------------------------------------------------------------------
+	    RECALL
+	  	----------------------------------------------------------------------->
 		<section>
 			<div class="container py-6 toyota-recall">
 				<div class="row">
@@ -134,6 +140,9 @@ TOYOTA RECALL
 			</div>
 		</section>
 
+		<!---------------------------------------------------------------------
+	    PRECIOS SERVICIOS
+	  	----------------------------------------------------------------------->
 		<section>
 			<div class="container ">
 				<div class="title-section">
@@ -178,7 +187,10 @@ TOYOTA RECALL
 			</div>
 		</section>
 
-				<section>
+		<!---------------------------------------------------------------------
+	    PROMOS Y DESCUENTOS
+	  	----------------------------------------------------------------------->
+		<section>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-4">
@@ -193,7 +205,7 @@ TOYOTA RECALL
 				</div>
 			</div>
 		</section>
-
+		{{-- 
 		<section>
 			<div class="container ">
 				<div class="title-section">
@@ -229,7 +241,10 @@ TOYOTA RECALL
 				</div>
 			</div>
 		</section>
-
+ --}}
+		<!---------------------------------------------------------------------
+	    SERVICIO AL CLIENTE
+	  	----------------------------------------------------------------------->
 		<section class="pad-top-50" style="height: auto;">
 			<div class="container">
 				<h2 class="text-center bold">Servicio al Cliente</h2>
@@ -270,6 +285,9 @@ TOYOTA RECALL
 			</div>
 		</section>
 
+		<!---------------------------------------------------------------------
+	    SOLICITAR TURNO
+	  	----------------------------------------------------------------------->
 		<section>
 			<div class="container mt-3" id="solicitar-turno-online">
 				<div class="well" style="padding: 15px 35px 15px 35px;">
@@ -277,9 +295,8 @@ TOYOTA RECALL
 					<div class="col-md-7" style="padding: 0px;">
 						<p style="font-size: 20px; font-weight: bold;">La calidad de siempre, más coveniente que nunca.</p>
 						<p style="text-align: justify;">Nadie conoce mejor tu Toyota como Toyota, por eso acercate a cualquiera de nuestras sucursales con servicio de Posventa para contar con el respaldo de un servicio técnico oficial. </p>	
-						<a href="/turno-servicios/create" class="btn btn-toyota">SOLICITAR TURNO ONLINE</a>
-						<a href="#"  class="btn btn-toyota btn-whatsapp" data-toggle="modal" data-target="#modal-turno-wapp">ENVIAR WHATSAPP</a>
-						{{-- <a href="https://wa.me/543625270614"  class="btn btn-toyota btn-whatsapp" data-toggle="modal" data-target="#myModal">ENVIAR WHATSAPP</a> --}}
+						<a href="/turno-servicios/create" class="btn btn-toyota my-1">SOLICITAR TURNO ONLINE</a>
+						<a href="#"  class="btn btn-toyota btn-whatsapp my-1" data-toggle="modal" data-target="#modal-turno-wapp">ENVIAR WHATSAPP</a>
 						<!-- Modal -->
 						<div class="modal fade" id="modal-turno-wapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 						  <div class="modal-dialog" role="document" style="min-width: 90%">
@@ -317,6 +334,9 @@ TOYOTA RECALL
 			</div>
 		</section>
 
+		<!---------------------------------------------------------------------
+	    GARANTIA
+	  	----------------------------------------------------------------------->
 		<section id="garantia">
 			<div class="container">
 				<div class="title-section">

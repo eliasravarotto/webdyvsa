@@ -41,7 +41,7 @@
 	<!---------------------------------------------------------------------
     BANNER PLAN NACIONAL
   	----------------------------------------------------------------------->
-	<section>
+	{{-- <section>
 		<div class="container">
 		  <div class="title-section mt-3">
 		    <a href="{{route('nuevo_plan_nacional')}}">
@@ -63,43 +63,7 @@
 		    </a>
 		  </div>
 		</div>
-	</section>
-
-	<!---------------------------------------------------------------------
-    3CARDS
-  	----------------------------------------------------------------------->
-  	<section class="pad-top-50 pad-bot-50 my-3" style="height: auto;">
-      <div class="container">
-      	<div class="container">
-		  	<div class="row">
-			    <div class="col-md-4">
-			      <div class="card-component calculator-bg" onclick="window.open('https://www.toyotacfa.com.ar/simulador-creditos', '_blank');">
-			        <h3>Simulá tu préstamo</h3>
-			        <p class="fz17">
-			        Créditos prendarios, Leasing.	
-                      Elegí el modelo y el mejor plan de financiación para vos.
-                    </p>
-			      </div>
-			    </div>
-			    <div class="col-md-4">
-			      <div class="card-component prestamo-bg" onclick="window.open('https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF', '_blank');">
-			        <h3>Solicitá tu préstamo</h3>
-			        <p class="fz17">
-	                  En pocos y simples pasos obtené información en tu e-mail.
-	                </p>
-			      </div>
-			    </div>
-			    <div class="col-md-4">
-			      <div class="card-component email-bg" onclick="masDetalles(event)">
-			        <h3>¿Más detalles?</h3>
-			        <p class="fz17">
-	                  Completá el formulario y te contactaremos a la brevedad para asesorarte.
-	                </p>
-			      </div>
-			    </div>
-		 	 </div>
-      </div>
-	</section>
+	</section> --}}
 
 	<section>
 		<div class="container">
@@ -175,6 +139,45 @@
 	  	</div> 
 	</section>
 
+	<!---------------------------------------------------------------------
+    3CARDS
+  	----------------------------------------------------------------------->
+  	<section class="pad-top-50 pad-bot-50 my-3" style="height: auto;">
+      <div class="container">
+      	<div class="container">
+		  	<div class="row">
+			    <div class="col-md-4">
+			      <div class="card-component calculator-bg" onclick="window.open('https://www.toyotacfa.com.ar/simulador-creditos', '_blank');">
+			        <h3>Simulá tu préstamo</h3>
+			        <p class="fz17">
+			        Créditos prendarios, Leasing.	
+                      Elegí el modelo y el mejor plan de financiación para vos.
+                    </p>
+			      </div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="card-component prestamo-bg" onclick="window.open('https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF', '_blank');">
+			        <h3>Solicitá tu préstamo</h3>
+			        <p class="fz17">
+	                  En pocos y simples pasos obtené información en tu e-mail.
+	                </p>
+			      </div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="card-component email-bg" onclick="masDetalles(event)">
+			        <h3>¿Más detalles?</h3>
+			        <p class="fz17">
+	                  Completá el formulario y te contactaremos a la brevedad para asesorarte.
+	                </p>
+			      </div>
+			    </div>
+		 	 </div>
+      </div>
+	</section>
+
+	<!---------------------------------------------------------------------
+    FORMULARIO DE CONTACTO
+  	----------------------------------------------------------------------->
 	<section>
 		<div class="container">
 			<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center;align-items: center;">
@@ -231,7 +234,8 @@
 			</div>
 		</div>
 	</section>
-    </article>
+
+</article>
 @stop
 @section('script')
 <script type="text/javascript">

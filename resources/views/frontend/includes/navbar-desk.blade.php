@@ -1,10 +1,10 @@
 <div>
 	<div class="navbar-wrapper visible-md visible-lg" 
-		 @if (Request::path() == '/') style="background: rgba(0,0,0,0.3)" @endif
+		 @if (Request::path() == '/') style="background: rgba(0,0,0,0.6)" @endif
 		 >
         <div class="navbar navbar-static-top" style="">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="display: flex !important; justify-content: center;">
-                <ul class="nav navbar-nav navbar-ppal fromLeft" style="width: 15%;    display: flex;
+                {{-- <ul class="nav navbar-nav navbar-ppal fromLeft" style="width: 15%;    display: flex;
                   justify-content: center;
                   align-items: center;">
                   <li class="">
@@ -14,8 +14,8 @@
                             Nuevo Plan Nacional
                     </button>
                   </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-ppal fromLeft" style="width: 70%; display: flex; justify-content: center;">
+                </ul> --}}
+                <ul class="nav navbar-nav navbar-ppal fromLeft" style="width: 100%; display: flex; justify-content: center;">
                   <li class="dropdown dropdown-hover">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MODELOS <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-hover">
@@ -49,8 +49,8 @@
                   {{-- <li><a href="/responsabilidad-social-empresarial">RSE</a></li> --}}
                   <li class=""><a href="/contacto">CONTACTO</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-ppal fromLeft" style="width: 15%">
-               </ul>
+                {{-- <ul class="nav navbar-nav navbar-ppal fromLeft" style="width: 15%">
+                </ul> --}}
             </div><!-- /.navbar-collapse -->
         </div>
 	</div>  

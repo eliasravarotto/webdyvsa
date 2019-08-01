@@ -44,7 +44,7 @@ class FrontController extends Controller
     public function posventa()
     {
         $servicios = TipoServicio::all();
-        return view('frontend.posventa', compact('servicios'));
+        return view('frontend.posventa.index', compact('servicios'));
     }
 
     public function planDeAhorro()
