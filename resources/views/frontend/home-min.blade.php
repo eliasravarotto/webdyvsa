@@ -199,7 +199,7 @@
   <!---------------------------------------------------------------------
     BANNER PLAN NACIONAL
   ----------------------------------------------------------------------->
- {{--  <section class="mt-1">
+  {{-- <section class="mt-1">
     <div class="container">
       <div class="title-section mt-3">
         <a href="{{route('nuevo_plan_nacional')}}">
@@ -208,23 +208,39 @@
       </div>
       <div class="owl-carousel owl-md owl-theme">
         <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/home-min/ultimos-dias.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-        </a>
-        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/ultimos-dias1.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-        </a>
-        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/ultimos-dias2.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-        </a>
-        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/ultimos-dias3.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-        </a>
-        <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/financiacion/ultimos-dias4.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+          <img src="{{asset('imagenes/0km-agosto.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
         </a>
       </div>
     </div>
   </section> --}}
+  <div class="container">
+  <div class="title-section mt-3">
+    <h3 style="color: black">Plan Nacional Para tu 0km<br><small>EN JULIO SEGUIMOS CON ESTOS DESCUENTOS IMPERDIBLES</small></h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+          <img class="img-responsive" src="{{asset('imagenes/0km-agosto.jpeg')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
+    </div>
+    <div class="col-xs-12 col-md-6 my-3">
+        <p style="color: #636b6f; font-size: 17px">📌 Tu <b>HILUX</b> con un descuento de <b>$120.000</b> del nuevo Plan Nacional, en todas sus versiones 4x2!</p>
+
+        <p style="color: #636b6f; font-size: 17px">📌 Accede a tu próximo <b>COROLLA</b> con un descuento de <b>$90.000</b> del nuevo Plan Nacional, en todas sus versiones!</p>
+
+        <p style="color: #636b6f; font-size: 17px">📌 También podes acceder al nuevo <b>YARIS</b> con un descuento de <b>$ 90.000</b> del nuevo Plan Nacional en las versiones ( XLS 4P y 5P) y S ( 4P y 5P )</p>
+
+        <p style="color: #636b6f; font-size: 17px">📌 <b>ETIOS</b> con un descuento de <b>$50.000 </b>del nuevo Plan Nacional, en todas sus versiones!</p>
+
+        <p style="color: #636b6f; font-size: 17px">📌 En la versión ( XS 5P) del nuevo <b>YARIS</b> a un descuento de <b>$ 50.000</b> del nuevo Plan Nacional</p>
+
+        <p style="color: #636b6f; font-size: 17px">➡️ Vigencia: hasta el 31 de agosto de 2019</p>
+        
+        <p>
+          <a href="https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20Plan%20Nacional%200km" class="btn btn-toyota btn-whatsapp my-1"><i class="fa fa-whatsapp"></i> CONSULTAR</a> 
+          <a href="https://m.me/derkayvargas" class="btn btn-primary"><i class="fa fa-facebook"></i> Envíanos un mensaje de Facebook</a> 
+        </p>
+    </div>
+  </div>
+  </div>
 
   <!---------------------------------------------------------------------
     MODELOS
