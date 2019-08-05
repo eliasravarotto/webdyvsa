@@ -161,10 +161,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 17.461,40</td>
-					        <td class="text-center" style="font-weight: bold;">$ 18.690,35</td>
-					        <td class="text-center" style="font-weight: bold;">$ 17.648,29</td>
-					        <td class="text-center" style="font-weight: bold;">$ 20.466,46</td>
+					        <td class="text-center" style="font-weight: bold;">$ 17.933,40</td>
+					        <td class="text-center" style="font-weight: bold;">$ 19.172,44</td>
+					        <td class="text-center" style="font-weight: bold;">$ 18.085,31</td>
+					        <td class="text-center" style="font-weight: bold;">$ 21.019,69</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -173,8 +173,8 @@
 				  			<blockquote style="border-left: 5px solid #e81f39;">
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
-									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Julio 2019</p>
+									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
+									<p>Vigencia 01 de Agosto 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -222,10 +222,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 11.649,31</td>
-					        <td class="text-center" style="font-weight: bold;">$ 13.428,14</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.025,59</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.013,52</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.269,29</td>
+					        <td class="text-center" style="font-weight: bold;">$ 14.067,50</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.590,30</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.652,88</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -234,8 +234,8 @@
 				  			<blockquote style="border-left: 5px solid #e81f39;">
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
-									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Julio 2019</p>
+									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
+									<p>Vigencia 01 de Agosto 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -282,10 +282,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 9.112,13</td>
-					        <td class="text-center" style="font-weight: bold;">$ 10.162,55</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.917,60</td>
-					        <td class="text-center" style="font-weight: bold;">$ 10.680,30</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.340,47</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.395,77</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.129,03</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.947,94</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -294,8 +294,8 @@
 				  			<blockquote style="border-left: 5px solid #e81f39;">
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
-									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Julio 2019</p>
+									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
+									<p>Vigencia 01 de Agosto 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -343,10 +343,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 6.637,15 </td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.648,85</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.647,64</td>
-					        <td class="text-center" style="font-weight: bold;">$ 8.794,83</td>
+					        <td class="text-center" style="font-weight: bold;">$ 6.816,18 </td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.832,10</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.814,00</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.032,07</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -355,8 +355,8 @@
 				  			<blockquote style="border-left: 5px solid #e81f39;">
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
-									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/toyota_plan/">toyotaplan.com.ar</a></p>
-									<p>Vigencia 01 de Julio 2019</p>
+									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
+									<p>Vigencia 01 de Agosto 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
