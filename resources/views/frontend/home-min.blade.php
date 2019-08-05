@@ -215,7 +215,7 @@
   </section> --}}
   <div class="container">
   <div class="title-section mt-3">
-    <h3 style="color: black">Plan Nacional Para tu 0km<br><small>EN JULIO SEGUIMOS CON ESTOS DESCUENTOS IMPERDIBLES</small></h3>
+    <h3 style="color: black">Plan Nacional Para tu 0km<br><small>EN AGOSTO SEGUIMOS CON ESTOS DESCUENTOS IMPERDIBLES</small></h3>
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-6">

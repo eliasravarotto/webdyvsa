@@ -66,7 +66,29 @@
 	</section> --}}
 
 	<section>
-		<div class="container">
+		<div class="container mt-3">
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<img class="img-responsive box-shadow" src="{{asset('imagenes/financiacion/agosto0km.jpg')}}">
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<p class="mt-3" style="color: #636b6f; font-size: 17px">📌 Tu <b>HILUX</b> con un descuento de <b>$120.000</b> del nuevo Plan Nacional, en todas sus versiones 4x2!</p>
+			        <p style="color: #636b6f; font-size: 17px">📌 Accede a tu próximo <b>COROLLA</b> con un descuento de <b>$90.000</b> del nuevo Plan Nacional, en todas sus versiones!</p>
+			        <p style="color: #636b6f; font-size: 17px">📌 También podes acceder al nuevo <b>YARIS</b> con un descuento de <b>$ 90.000</b> del nuevo Plan Nacional en las versiones ( XLS 4P y 5P) y S ( 4P y 5P )</p>
+			        <p style="color: #636b6f; font-size: 17px">📌 <b>ETIOS</b> con un descuento de <b>$50.000 </b>del nuevo Plan Nacional, en todas sus versiones!</p>
+			        <p style="color: #636b6f; font-size: 17px">📌 En la versión ( XS 5P) del nuevo <b>YARIS</b> a un descuento de <b>$ 50.000</b> del nuevo Plan Nacional</p>
+			        <p style="color: #636b6f; font-size: 17px">➡️ Vigencia: hasta el 31 de agosto de 2019</p>
+					<p>
+			          <a href="https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20Plan%20Nacional%200km" class="btn btn-toyota btn-whatsapp my-1"><i class="fa fa-whatsapp"></i> CONSULTAR</a> 
+			          <a href="https://m.me/derkayvargas" class="btn btn-primary"><i class="fa fa-facebook"></i> Envíanos un mensaje de Facebook</a> 
+			        </p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container mt-3">
 			<div class="page-header" >
 				<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center; align-items: center;">
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -81,6 +103,42 @@
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<!---------------------------------------------------------------------
+    3CARDS
+  	----------------------------------------------------------------------->
+  	<section class="my-3" style="height: auto;">
+      <div class="container">
+      	<div class="container">
+		  	<div class="row">
+			    <div class="col-md-4">
+			      <div class="card-component calculator-bg" onclick="window.open('https://www.toyotacfa.com.ar/simulador-creditos', '_blank');">
+			        <h3>Simulá tu préstamo</h3>
+			        <p class="fz17">
+			        Créditos prendarios, Leasing.	
+                      Elegí el modelo y el mejor plan de financiación para vos.
+                    </p>
+			      </div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="card-component prestamo-bg" onclick="window.open('https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF', '_blank');">
+			        <h3>Solicitá tu préstamo</h3>
+			        <p class="fz17">
+	                  En pocos y simples pasos obtené información en tu e-mail.
+	                </p>
+			      </div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="card-component email-bg" onclick="masDetalles(event)">
+			        <h3>¿Más detalles?</h3>
+			        <p class="fz17">
+	                  Completá el formulario y te contactaremos a la brevedad para asesorarte.
+	                </p>
+			      </div>
+			    </div>
+		 	 </div>
+      </div>
 	</section>
 
 	<section class="mt-3">
@@ -137,42 +195,6 @@
 		        </div>
 		    </div>
 	  	</div> 
-	</section>
-
-	<!---------------------------------------------------------------------
-    3CARDS
-  	----------------------------------------------------------------------->
-  	<section class="pad-top-50 pad-bot-50 my-3" style="height: auto;">
-      <div class="container">
-      	<div class="container">
-		  	<div class="row">
-			    <div class="col-md-4">
-			      <div class="card-component calculator-bg" onclick="window.open('https://www.toyotacfa.com.ar/simulador-creditos', '_blank');">
-			        <h3>Simulá tu préstamo</h3>
-			        <p class="fz17">
-			        Créditos prendarios, Leasing.	
-                      Elegí el modelo y el mejor plan de financiación para vos.
-                    </p>
-			      </div>
-			    </div>
-			    <div class="col-md-4">
-			      <div class="card-component prestamo-bg" onclick="window.open('https://www.toyotacfa.com.ar/ToyotaAppForm/Login/MultiCanal?canal=WEB&cuit_cliente=0&cuit_dealer=0&id_campania_pao=0&id_cotizacion_seg=0&id_publicacion=0&id_sesion=0&tipo_persona=PF', '_blank');">
-			        <h3>Solicitá tu préstamo</h3>
-			        <p class="fz17">
-	                  En pocos y simples pasos obtené información en tu e-mail.
-	                </p>
-			      </div>
-			    </div>
-			    <div class="col-md-4">
-			      <div class="card-component email-bg" onclick="masDetalles(event)">
-			        <h3>¿Más detalles?</h3>
-			        <p class="fz17">
-	                  Completá el formulario y te contactaremos a la brevedad para asesorarte.
-	                </p>
-			      </div>
-			    </div>
-		 	 </div>
-      </div>
 	</section>
 
 	<!---------------------------------------------------------------------

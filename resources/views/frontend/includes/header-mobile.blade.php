@@ -14,11 +14,11 @@
         <li><a href="/modelos">Modelos</a></li>
         <li><a href="/plan-de-ahorro">Plan de Ahorro</a></li>
         <li><a href="/financiacion">Financiación</a></li>
-        {{-- <li>
+        <li>
           <a href="{{route('nuevo_plan_nacional')}}">
-            <img src="{{asset('imagenes/plan-nacional.png')}}" height="30px"> Plan Nacional
+            <img src="{{asset('imagenes/plan-nacional.png')}}" height="30px"> Plan Nacional Agost0KM
           </a>
-        </li> --}}
+        </li>
         <li><a href="/usados">Usados</a></li>
         <li><a href="/posventa">Posventa</a></li>
         <li><a href="/responsabilidad-social-empresarial">RSE</a></li>
