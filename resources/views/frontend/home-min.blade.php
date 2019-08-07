@@ -242,6 +242,30 @@
   </div>
   </div>
 
+    <!---------------------------------------------------------------------
+    MODELOS
+    ----------------------------------------------------------------------->
+    <section class="mt-1">
+    <div class="container">
+      <div class="title-section mt-3">
+        <a href="{{route('nuevo_plan_nacional')}}">
+        <h3 style="color: black">Prestamos TuAuto del Nuevo Banco del Chaco<br><small>No dejes pasar esta gran oportunidad de tener tu crédito, consultanos!</small></h3>
+        </a>
+      </div>
+      <div class="owl-carousel owl-md owl-theme">
+        <a href="#" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/home-min/tu-auto1.jpeg')}}" alt="">
+        </a>
+        <a href="#" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/home-min/tu-auto2.jpeg')}}" alt="">
+        </a>
+        <a href="#" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+          <img src="{{asset('imagenes/home-min/tu-auto3.jpeg')}}" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!---------------------------------------------------------------------
     MODELOS
   ----------------------------------------------------------------------->
@@ -512,7 +536,7 @@
   //Init Owl Caroucel 
       $('.owl-carousel.owl-md').owlCarousel({
         stagePadding: 50,
-        loop:false,
+        loop:true,
         margin:10,
         nav:false,
         autoplay: true,
