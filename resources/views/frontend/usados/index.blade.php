@@ -133,82 +133,77 @@
 @stop
 
 @section('content')
-	
-	<article>
-		<section style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 250px;background-size: cover;"></section>
-		<br>
+	<div class="container">
 		<section>
-			<div class="container">
-				
-				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
+			<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
+		</section>
 
-				<div class="title-section">
-			        <h3>SU CONSULTA NO ES MOLESTIA</h3>
-		      	</div>
-				<div class="row mt-2">
-					<div class="col-sm-12 col-md-6">
-						<p class="fs-17">Conocé los autos usados que tenemos para vos. Encontrá las mejores opciones en Chaco de unidades usadas en todas las marcas.</p>
-						<p class="fs-17">También contamos Usados Certificados por Toyota (UCT). <a href="https://derkayvargas.com/usados#certificados-toyota">¿Qué es un UCT?</a></p>
-					</div>
-					<div class="col-sm-12 col-md-6">
-						<div id="contacto-form" @if($errors->isEmpty()) @endif>
-						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
-							{{ csrf_field() }}
-							<input type="hidden" name="from" value="usados">
-							<div class="row">
-								<div class=" col-md-6">
-							    <label class="control-label">Nombre y Apellido</label>
-							    <input id="cli" type="text" class="form-control" name="cliente" required value="{{old('cliente')}}">
-						  	</div>
-						  	<div class=" col-md-6">
-							    <label class="control-label">Teléfono</label>
-							    <input type="text" class="form-control" name="telefono" value="{{old('telefono')}}">
-								<span class="text-danger">
-									{{  $errors->first('telefono') }}
-								</span>
-						  	</div>
-							</div>
-							<div class="row">
-								<div class=" col-md-12">
-									<label class="control-label">Email</label>
-							    <input type="email" class="form-control" name="email" value="{{old('email')}}">
-							    <span class="text-danger">
-									{{  $errors->first('email') }}
-								</span>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<label class="control-label">Mensaje</label>
-							    <textarea name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
-								</div>
-							</div>
-							<div class="row pad-top-20">
-								<div class="col-md-6">
-									<div class="g-recaptcha" 
-								           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
-								    </div>
-									@if ($errors->has('g-recaptcha-response'))
-									    <span class="text-danger">
-									        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-									    </span>
-									@endif
-								</div>
-								<div class="col-md-6 text-right">
-									{{-- <button type="submit" class="btn btn-default btn-submit">ENVIAR</button> --}}
-									{{-- <button type="submit"  class="btn btn-default">ENVIAR</button> --}}
-									<input type="submit" class="btn btn-default" value="ENVIAR">
-								</div>
-							</div>
-							<div class="alert alert-info mt-3" role="alert"><p>Un asesor de ventas se pondrá en contacto con usted a la brevedad.</p></div>
-						</form>
+		<section>
+			<div class="title-section">
+		        <h3>SU CONSULTA NO ES MOLESTIA</h3>
+		  	</div>
+			<div class="row mt-2">
+				<div class="col-sm-12 col-md-6">
+					<p class="fs-17">Conocé los autos usados que tenemos para vos. Encontrá las mejores opciones en Chaco de unidades usadas en todas las marcas.</p>
+					<p class="fs-17">También contamos Usados Certificados por Toyota (UCT). <a href="https://derkayvargas.com/usados#certificados-toyota">¿Qué es un UCT?</a></p>
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<div id="contacto-form" @if($errors->isEmpty()) @endif>
+					<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+						{{ csrf_field() }}
+						<input type="hidden" name="from" value="usados">
+						<div class="row">
+							<div class=" col-md-6">
+						    <label class="control-label">Nombre y Apellido</label>
+						    <input id="cli" type="text" class="form-control" name="cliente" required value="{{old('cliente')}}">
+					  	</div>
+					  	<div class=" col-md-6">
+						    <label class="control-label">Teléfono</label>
+						    <input type="text" class="form-control" name="telefono" value="{{old('telefono')}}">
+							<span class="text-danger">
+								{{  $errors->first('telefono') }}
+							</span>
+					  	</div>
 						</div>
+						<div class="row">
+							<div class=" col-md-12">
+								<label class="control-label">Email</label>
+						    <input type="email" class="form-control" name="email" value="{{old('email')}}">
+						    <span class="text-danger">
+								{{  $errors->first('email') }}
+							</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label class="control-label">Mensaje</label>
+						    <textarea name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
+							</div>
+						</div>
+						<div class="row pad-top-20">
+							<div class="col-md-6">
+								<div class="g-recaptcha" 
+							           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+							    </div>
+								@if ($errors->has('g-recaptcha-response'))
+								    <span class="text-danger">
+								        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+								    </span>
+								@endif
+							</div>
+							<div class="col-md-6 text-right">
+								{{-- <button type="submit" class="btn btn-default btn-submit">ENVIAR</button> --}}
+								{{-- <button type="submit"  class="btn btn-default">ENVIAR</button> --}}
+								<input type="submit" class="btn btn-default" value="ENVIAR">
+							</div>
+						</div>
+						<div class="alert alert-info mt-3" role="alert"><p>Un asesor de ventas se pondrá en contacto con usted a la brevedad.</p></div>
+					</form>
 					</div>
 				</div>
 			</div>
 		</section>
-	</article> 
-
+	</div>
 @stop
 
 @section('script')

@@ -205,43 +205,19 @@ TOYOTA RECALL
 				</div>
 			</div>
 		</section>
-		{{-- 
 		<section>
-			<div class="container ">
-				<div class="title-section">
-					<h3>Conoce los descuentos imperdibles que tenemos para vos! <br> <small>PROMOCIÓN VALIDA HASTA EL 31/07/2019</small></h3>
-				</div>
-				<div class="owl-carousel owl-md owl-theme">
+			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
-						<img src="{{asset('imagenes/posventa/nb.jpg')}}" class="img-responsive">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/ahora12.jpeg')}}">
 					</div>
 					<div class="col-sm-12 col-md-6">
-						<p>🔥 Ahora con esta Super Promoción de JULIO podes RENOVAR tus neumáticos Bridgestone en efectivo / débito y cómodas cuotas con tu tarjeta de crédito.</p>
-
-						<p>💸 Pagando en efectivo - débito 15% de descuento‼️</p>
-
-						<p>✅ Visa, 3 cuotas sin interés.</p>
-						<p>✅ Tuya, 6 cuotas sin interés.</p>
-
-						<p>👉 para recibir un presupuesto, nuestros whatsApp, son:</p>
-
-						<p><a target="_blank" href="https://derkayvargas.page.link/repuestos-saenz-pena"><i class="fa fa-whatsapp"></i> Sáenz Peña</a></p>
-
-						<p><a target="_blank" href="https://derkayvargas.page.link/repuestos-resistencia"><i class="fa fa-whatsapp"></i> Resistencia </a></p>
-
-						<p><a target="_blank" href="https://derkayvargas.page.link/repuestos-charata"><i class="fa fa-whatsapp"></i> Charata </a></p>
+						<img class="img-responsive" src="{{asset('imagenes/posventa/neumaticos.jpeg')}}">
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-12 col-md-10 col-md-offset-1">
-						<img src="{{asset('imagenes/posventa/accesorios-h.jpg')}}" class="img-responsive">
-					</div>
-				</div>
 				</div>
 			</div>
 		</section>
- --}}
+		
 		<!---------------------------------------------------------------------
 	    SERVICIO AL CLIENTE
 	  	----------------------------------------------------------------------->

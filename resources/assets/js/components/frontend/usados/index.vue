@@ -1,5 +1,7 @@
 <template>
 <div>
+    <section style="background:url('/public/imagenes/usados-seleccionados.png') center;height: 250px;background-size: cover;"></section>
+    <br>
     <div class="panel panel-default">
         <div class="panel-heading d-flex justify-content-space-between">
             <p>¿Que vehículo estás buscando?</p>
@@ -58,164 +60,189 @@
         </div>
     </div>
 
-    <div v-if="unidades_filtered != ''">
-        <div class="row">
-            <div v-for="unidad in unidades_filtered" class="col-sm-12 col-md-4" v-if="unidad.visible">
-                <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:auto">
-                    <div class="pos-rel o-flw-hiden" style="max-height: 250px">
-                    <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
-                    <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
-                        <img v-show="unidad.foto" :src="unidad.foto" alt="">
-                        <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
-                        <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
-                            <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
-                                <a :href="'/usados/'+unidad.slug" class="btn btn-celeste-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
-                                    DETALLES
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="caption caption-default">
-                        <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
-                        <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
-                            <div>
-                                <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
-                            </div>
-                            <div>
-                                <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
-                            </div>
-                            <div>
-                                <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
-                            </div>
-                        </div>
-                        <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
-                        <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
-                            <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
-                            CONSULTAR
-                        </a>
-                    </div>
-                </div>
-            </div>  
-            <div class="col-sm-12 col-md-12" v-show="unidades.length==0">
-                <div class="alert alert-info" role="alert">
-                    <strong>Sin resultados!</strong> No hay unidades que coincidan con los datos ingresados.
-                    <a href="#" @click.prevent="limpiarFiltro()">Ver todos</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div v-if="unidades_filtered == ''" id="certificados-toyota">
-        <div class="title-section mb-1">
-            <h3>USADOS CERTIFICADOS</h3>
-        </div>
-        <div class="well">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div v-if="unidades_filtered != ''">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-2 text-center">
-                        <img src="/imagenes/logo-uct.png" class="img-responsive" style="max-height: 125px; display: inline; margin-bottom: 10px;">
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-10">
-                        <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
-                        <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
-                        <ul class="list-unstyled">
-                            <li> - Garantía de 1 año o 20.000 km.</li>
-                            <li> - Vehículos que fueron atendidos en concesionarios oficiales.</li>
-                            <li> - 150 puntos de inspección realizados por técnicos capacitados.</li>
-                        </ul>
+                    <div v-for="unidad in unidades_filtered" class="col-sm-12 col-md-4" v-if="unidad.visible">
+                        <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:auto">
+                            <div class="pos-rel o-flw-hiden" style="max-height: 250px">
+                            <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
+                            <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                                <img v-show="unidad.foto" :src="unidad.foto" alt="">
+                                <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
+                                <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
+                                    <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
+                                        <a :href="'/usados/'+unidad.slug" class="btn btn-celeste-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
+                                            DETALLES
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="caption caption-default">
+                                <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
+                                <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
+                                    <div>
+                                        <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
+                                    </div>
+                                    <div>
+                                        <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
+                                    </div>
+                                    <div>
+                                        <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
+                                    </div>
+                                </div>
+                                <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
+                                <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                                    <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                                    CONSULTAR
+                                </a>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-sm-12 col-md-12" v-show="unidades.length==0">
+                        <div class="alert alert-info" role="alert">
+                            <strong>Sin resultados!</strong> No hay unidades que coincidan con los datos ingresados.
+                            <a href="#" @click.prevent="limpiarFiltro()">Ver todos</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        <div class="row">
-            <div v-for="unidad in unidades_uct" class="col-sm-12 col-md-4" v-if="unidad.visible && unidad.uct">
-                <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
-                    <div class="pos-rel o-flw-hiden" style="max-height: 250px">
-                    <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
-                    <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
-                        <img v-show="unidad.foto" :src="unidad.foto" alt="">
-                        <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
-                        <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
-                            <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
-                                <a :href="'/usados/'+unidad.slug" class="btn btn-celeste-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
-                                    DETALLES
-                                </a>
-                            </div>
-                        </a>
-                    </div>
 
-                    <div class="caption caption-default">
-                        <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
-                        <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
-                            <div>
-                                <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
+            <div v-if="unidades_filtered == ''" id="certificados-toyota">
+                <div class="title-section mb-1">
+                    <h3>USADOS CERTIFICADOS</h3>
+                </div>
+                <div class="well">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-2 text-center">
+                                <img src="/imagenes/logo-uct.png" class="img-responsive" style="max-height: 125px; display: inline; margin-bottom: 10px;">
                             </div>
-                            <div>
-                                <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
-                            </div>
-                            <div>
-                                <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
+                            <div class="col-xs-12 col-sm-12 col-md-10">
+                                <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
+                                <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
+                                <ul class="list-unstyled">
+                                    <li> - Garantía de 1 año o 20.000 km.</li>
+                                    <li> - Vehículos que fueron atendidos en concesionarios oficiales.</li>
+                                    <li> - 150 puntos de inspección realizados por técnicos capacitados.</li>
+                                </ul>
                             </div>
                         </div>
-                        <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
-                        <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
-                            <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
-                            CONSULTAR
-                        </a>
+                    </div>
+                <div class="row">
+                    <div v-for="unidad in unidades_uct" class="col-sm-12 col-md-4" v-if="unidad.visible && unidad.uct">
+                        <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
+                            <div class="pos-rel o-flw-hiden" style="max-height: 250px">
+                            <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
+                            <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                                <img v-show="unidad.foto" :src="unidad.foto" alt="">
+                                <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
+                                <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
+                                    <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
+                                        <a :href="'/usados/'+unidad.slug" class="btn btn-celeste-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
+                                            DETALLES
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="caption caption-default">
+                                <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
+                                <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
+                                    <div>
+                                        <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
+                                    </div>
+                                    <div>
+                                        <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
+                                    </div>
+                                    <div>
+                                        <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
+                                    </div>
+                                </div>
+                                <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
+                                <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                                    <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                                    CONSULTAR
+                                </a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="alert alert-info" role="alert" v-if="!hayUct">Por el momento no contamos con Usados Certificados en stock.</div>  
+            </div>
+
+            <div v-if="unidades_filtered == ''">
+                <div class="title-section mb-1">
+                    <h3>USADOS SELECCIONADOS</h3>
+                </div>
+                <div class="row">
+                    <div v-for="unidad in unidades" class="col-sm-12 col-md-4" v-if="unidad.visible && !unidad.uct">
+                        <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
+                            <div class="pos-rel o-flw-hiden" style="max-height: 250px">
+                            <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                            <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
+                                <img v-show="unidad.foto" :src="unidad.foto" alt="">
+                                <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
+                                <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
+                                    <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
+                                        <a :href="'/usados/'+unidad.slug" class="btn btn-celeste-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
+                                            DETALLES
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="caption caption-default">
+                                <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
+                                <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
+                                    <div>
+                                        <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
+                                    </div>
+                                    <div>
+                                        <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
+                                    </div>
+                                    <div>
+                                        <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
+                                    </div>
+                                </div>
+                                <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
+                                <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                                    <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                                    CONSULTAR
+                                </a>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-sm-12 col-md-12" v-show="unidades.length==0">
+                        <div class="alert alert-info" role="alert">
+                            <strong>Sin resultados!</strong> No hay unidades que coincidan con los datos ingresados.
+                            <a href="#" @click.prevent="limpiarFiltro()">Ver todos</a>
+                        </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
-        <div class="alert alert-info" role="alert" v-if="!hayUct">Por el momento no contamos con Usados Certificados en stock.</div>  
     </div>
-
-    <div v-if="unidades_filtered == ''">
-        <div class="title-section mb-1">
-            <h3>USADOS SELECCIONADOS</h3>
+      <div class="title-section mt-3">
+        <h3 style="color: black">PRESTAMOS TUAUTO DEL NUEVO BANCO DEL CHACO<br><small></small></h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-5">
+            <img src="imagenes/financiacion/nbch-usados.jpeg" class="img-responsive">
         </div>
-        <div class="row">
-            <div v-for="unidad in unidades" class="col-sm-12 col-md-4" v-if="unidad.visible && !unidad.uct">
-                <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
-                    <div class="pos-rel o-flw-hiden" style="max-height: 250px">
-                    <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
-                    <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
-                        <img v-show="unidad.foto" :src="unidad.foto" alt="">
-                        <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
-                        <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
-                            <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
-                                <a :href="'/usados/'+unidad.slug" class="btn btn-celeste-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
-                                    DETALLES
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="caption caption-default">
-                        <h4 class="text-center">{{unidad.marca}} {{ unidad.modelo }}</h4>
-                        <div style="display: flex; justify-content: space-around; font-size: 12px; flex-wrap: wrap;">
-                            <div>
-                                <label><i class="fa fa-calendar"></i> Año:</label> {{unidad.anio}}  
-                            </div>
-                            <div>
-                                <label><i class="stm-service-icon-listing-compare"></i> KM:</label> {{unidad.km}}
-                            </div>
-                            <div>
-                                <label><i class="stm-service-icon-color_type"></i> Color:</label> {{unidad.color}}
-                            </div>
-                        </div>
-                        <h2 class="text-center precio">$ {{formatearPrecio(unidad.precio)}}</h2>
-                        <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
-                            <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
-                            CONSULTAR
-                        </a>
-                    </div>
-                </div>
-            </div>  
-            <div class="col-sm-12 col-md-12" v-show="unidades.length==0">
-                <div class="alert alert-info" role="alert">
-                    <strong>Sin resultados!</strong> No hay unidades que coincidan con los datos ingresados.
-                    <a href="#" @click.prevent="limpiarFiltro()">Ver todos</a>
-                </div>
-            </div>
+        <div class="col-xs-12 col-md-6 my-3">
+            <p style="color: #636b6f; font-size: 17px">Accede a la exclusiva linea de prestamos <b>TuAuto</b> del Nuevo Banco del Chaco y subite a nuestros <b>USADOS SELECCIONADOS!</b></p>
+            <p style="color: #636b6f; font-size: 17px"><b>Tasa fija</b> 39% y plazo hasta 60 meses!</p>
+            <p style="color: #636b6f; font-size: 17px">No dejes pasar esta gran oportunidad de tener tu crédito, consultanos!</p>
+            <p>
+              <a href="https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20Prestamo%20TuAuto%200km" class="btn btn-toyota btn-whatsapp my-1"><i class="fa fa-whatsapp"></i> CONSULTAR</a> 
+              <a href="https://m.me/derkayvargas" class="btn btn-primary"><i class="fa fa-facebook"></i> Envíanos un mensaje de Facebook</a> 
+            </p>
+        </div>
+      </div>
+     <div class="row">
+        <div class="col-sm-12 col-md-5">
         </div>
     </div>
 
