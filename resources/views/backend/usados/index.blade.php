@@ -35,9 +35,9 @@
                 </thead>
                 <tbody id="tbody-usados">
                     @foreach($usados as $usado)
-                    <tr class="usado-row" id="usado-row-{{$usado->interno}}">
+                    <tr class="usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" id="usado-row-{{$usado->interno}}">
                         <td id="usado-int">{{ $usado->interno }}</td>
-                        <td>{{ $usado->dominio }}</td>
+                        <td id="usado-dom">{{ $usado->dominio }}</td>
                         <td>{{ $usado->marca }}</td>
                         <td>{{str_limit(strip_tags($usado->modelo), 12, '...')}}</td>
                         <td>{{ $usado->km }} km - {{ $usado->anio }} - {{$usado->color}}</td>
@@ -64,7 +64,7 @@
             </div>
     	</div>
     </div>
-    <ul class="list-group list-group-flush d-md-none" id="ul-usados">
+{{--     <ul class="list-group list-group-flush d-md-none" id="ul-usados">
         @foreach($usados as $usado)
             <li class="list-group-item usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" id="usado-row-{{$usado->interno}}">
                 <div class="row">
@@ -80,11 +80,11 @@
                         </form>
                     </div>
                 </div>
-                {{-- <span id="usado-int">{{$usado->interno}}</span> 
-                <span id="usado-dom">{{$usado->dominio}}</span>  --}}
+                <span id="usado-int">{{$usado->interno}}</span> 
+                <span id="usado-dom">{{$usado->dominio}}</span> 
             </li>
         @endforeach
-    </ul>
+    </ul> --}}
 @stop
 
 @section('page-script')
@@ -105,15 +105,25 @@
             document.getElementById("nro-dom").value = '';
         }
 
-        //$('#tbody-usados tr').each(function(){
-        $('#ul-usados li').each(function(){
+        $('.usado-row').hide();
+        $('#tbody-usados tr').each(function(){
+        //$('#ul-usados li').each(function(){
             var value = $(this).find(target_id_filtrar_por).html();
             valor_a_buscar = valor_a_buscar.toString().toUpperCase();
+
+            if (target_id_filtrar_por == '#usado-dom'){
+                if(value.includes(valor_a_buscar)){
+                    $('.usado-row-'+value).show();
+                    return;
+                };
+            }
+
             if (value != valor_a_buscar){
                $('.usado-row-'+value).hide();
             } else{
                $('.usado-row-'+value).show();
            }
+
         });
 
         if (valor_a_buscar == '') {
