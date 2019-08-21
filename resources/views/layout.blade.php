@@ -30,68 +30,46 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     <!--===============================================================================================-->
     
-    @yield('mark-up-facebook')
+  @yield('mark-up-facebook')
 
-    @yield('styles_sheets')
+  @yield('styles_sheets')
 
-    <style type="text/css">
-      /*.escarapela-mb{
-        position: fixed;
-        right: -15px;
-        top: 35px;
-        z-index: 100;
-      }
+  <style type="text/css">
+    a:hover {
+      text-decoration: none;
+    }
 
-      .escarapela{
-        position: fixed;
-        right: -5px;
-        top: -5px;
-        z-index: 19;
-      }*/
+    .navbar-ppal>li>a {
+      color: #373737;
+      font-weight: 700;
+    }
 
-      a:hover{
-        text-decoration: none;
-      }
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+      text-decoration: none;
+      background-color: transparent !important;
+      color: #eb0a1e;
+    }
 
-      @if (Request::path() != '/')
-        .navbar-ppal>li>a {
-            color: #373737;
-            font-weight: 700;
-        }
+    .navbar-wrapper {
+      border-bottom: #ebebeb solid 2px;
+      border-top: #ebebeb solid 1px;
+      position: relative;
+      background: rgb(255, 255, 255);
+    }
 
-        .nav>li>a:focus, .nav>li>a:hover {
-            text-decoration: none;
-            background-color: transparent!important;
-            color: #eb0a1e;
-        }
+    .btn-oval {
+      color: black !important;
+      border-radius: 20px !important;
+      border: 2px solid #e01e37 !important;
+    }
 
-        .navbar-wrapper{
-          border-bottom: #ebebeb solid 2px;
-          border-top: #ebebeb solid 1px;
-          position: relative; 
-          background:rgb(255, 255, 255); 
-        }
-        .btn-oval{
-          color: black !important; 
-          border-radius: 20px !important; 
-          border: 2px solid #e01e37 !important;
-        }
-      @else
-        .btn-oval{
-          color: #fafafa !important; 
-          background-color: rgba(0, 0, 0, 0.3); 
-          border-radius: 20px !important; 
-          border: 2px solid rgb(0, 0, 0) !important;
-        }
-      @endif
-
-      .btn-oval:hover{
-        background-color: black !important;
-        color: white !important;
-        border: 2px solid rgb(0, 0, 0) !important;
-      }
-
-    </style>
+    .btn-oval:hover {
+      background-color: black !important;
+      color: white !important;
+      border: 2px solid rgb(0, 0, 0) !important;
+    }
+  </style>
 
 </head>
 

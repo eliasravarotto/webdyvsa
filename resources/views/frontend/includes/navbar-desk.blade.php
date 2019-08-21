@@ -1,6 +1,6 @@
 <div>
 	<div class="navbar-wrapper visible-md visible-lg" 
-		 @if (Request::path() == '/') style="background: rgba(0,0,0,0.6)" @endif
+		 {{-- @if (Request::path() == '/') style="background: rgba(0,0,0,0.6)" @endif --}}
 		 >
         <div class="navbar navbar-static-top" style="">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="display: flex !important; justify-content: center;">
