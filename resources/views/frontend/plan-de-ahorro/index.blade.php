@@ -37,7 +37,8 @@
 @section('content')
 	<article>
 		<section class="visible-lg visible-md">
-			<img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" class="img-responsive" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco">
+			{{-- <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" class="img-responsive" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco"> --}}
+			<img src="/imagenes/tpa/plan-de-ahorro-auto.jpeg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
 		</section>
 
 		<section>
