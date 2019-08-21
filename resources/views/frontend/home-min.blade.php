@@ -112,29 +112,24 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
-
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          {{-- <img src="http://homu.com.ar/wp-content/uploads/2019/05/rav4-destop-1.jpg" alt="Nuevo Toyota Plan de Ahorro Derka y Vargas, Nuevas cuotas"> --}}
-          <section 
-          style="background: url({{asset('imagenes/home-min/rav4-portada.jpg')}});
-          height: 539px;
-          background-position: bottom;
-          background-size: cover;">
-            
-          </section>
+          <img src="/imagenes/home-min/portada-agosto.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
         </div>
-
         <div class="item">
-          <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="Nuevo Toyota Plan de Ahorro Derka y Vargas, Nuevas cuotas">
+          <section 
+            style="background: url({{asset('imagenes/home-min/rav4-portada.jpg')}});
+            height: 539px;
+            background-position: bottom;
+            background-size: cover;">
+          </section>
         </div>
 
         <div class="item">
           <img src="/imagenes/home-min/servicio-posventa-chaco.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
         </div>
       </div>
-
       <!-- Left and right controls -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -147,19 +142,17 @@
     </div>
 
     <!-- Carusel Principal MOBILE-->
-    <div id="carousel-mobile" class="carousel slide" style="display: none;" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide visible-xs visible-sm"  data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
       </ol>
 
-      <!-- Wrapper for slides -->
       <div class="carousel-inner">
-        <div class="item" style="min-height: 285px;">
-          <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" alt="Toyota financiacion plan de ahorro">
+        <div class="item active">
+          <img src="/imagenes/home-min/portada-agosto-mobile.jpg" alt="">
         </div>
       </div>
 
-      <!-- Left and right controls -->
       <a class="left carousel-control" href="#carousel-mobile" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
         <span class="sr-only">Previous</span>
