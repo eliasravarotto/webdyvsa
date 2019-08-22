@@ -152,7 +152,7 @@ TOYOTA RECALL
 
 				<div class="mt-3">
 					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-07-2019  <b>Hasta:</b> 31-07-2019</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-07-2019  <b>Hasta:</b> 31-08-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
@@ -194,13 +194,13 @@ TOYOTA RECALL
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-4">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/service-hilux.png')}}">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/service-hilux.jpeg')}}">
 					</div>
 					<div class="col-sm-12 col-md-4">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/service-corolla.png')}}">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/service-corolla.jpeg')}}">
 					</div>
 					<div class="col-sm-12 col-md-4">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/service-etios.png')}}">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/service-etios.jpeg')}}">
 					</div>
 				</div>
 			</div>
