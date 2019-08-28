@@ -184,6 +184,12 @@
           event.preventDefault();
           $("#wapp-content-chats").toggle("medium");
         });
+
+        //ERRORS FORMULARIO VOZ DEL CLIENTE
+        {{sizeof($errors) > 0 ? 'var hayError = true' : 'var hayError = false;'}};
+        if (hayError){
+            $('#myModal').modal('show');
+        }
       
     });
   </script>

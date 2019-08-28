@@ -54,7 +54,7 @@ class MensajeEmailController extends Controller
                 'cliente' => 'required',
                 'telefono' => 'required',
                 'mensaje' => 'required',
-                //'g-recaptcha-response' => 'required',
+                'g-recaptcha-response' => 'required',
             ]);
         }
         if ($request->telefono == null) {
@@ -63,7 +63,7 @@ class MensajeEmailController extends Controller
                 'cliente' => 'required',
                 'email' => 'required',
                 'mensaje' => 'required',
-                //'g-recaptcha-response' => 'required',
+                'g-recaptcha-response' => 'required',
             ]);
 
         }

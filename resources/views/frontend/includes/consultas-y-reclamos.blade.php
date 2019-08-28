@@ -33,19 +33,17 @@
 <div class="btn-group-vertical" role="group" style="
     /*padding: 10px 8px;*/
     position: fixed;
-    z-index: 99999;
+    z-index: 999;
     right: 10px;
     top:90%;
     background-color: white;
     /*border-radius: 50px;*/
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 ">
-<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   <i class="fa fa-comments" ></i> Dejanos tu Comentario
 </button>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade right" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -63,33 +61,33 @@
             <div class="row">
                 <div class=" col-md-12">
                     <label class="control-label">Nombre y Apellido</label>
-                    <input type="text" class="form-control" name="cliente" required value="{{old('cliente')}}">
+                    <input id="form-voc-nombreyap" type="text" class="form-control" name="cliente" required value="{{old('cliente')}}">
                 </div>
             </div>
             <div class="row">
                 <div class=" col-md-6 col-xs-12">
                     <label class="control-label">Teléfono</label>
-                    <input type="text" class="form-control" name="telefono" value="{{old('telefono')}}">
+                    <input id="form-voc-telefono" type="text" class="form-control" name="telefono" value="{{old('telefono')}}">
                     <span class="text-danger">
                         {{  $errors->first('telefono') }}
                     </span>
                 </div>
                 <div class=" col-md-6 col-xs-12">
                     <label class="control-label">Email</label>
-                <input type="email" class="form-control" name="email" value="{{old('email')}}">
-                <span class="text-danger">
-                    {{  $errors->first('email') }}
-                </span>
+                    <input id="form-voc-email" type="email" class="form-control" name="email" value="{{old('email')}}">
+                    <span class="text-danger">
+                        {{  $errors->first('email') }}
+                    </span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <label class="control-label">Mensaje</label>
-                <textarea name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
+                    <textarea id="form-voc-mensaje" name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
                 </div>
             </div>
             <div class="row pad-top-20">
-                {{-- <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="g-recaptcha" 
                            data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
                     </div>
@@ -98,7 +96,7 @@
                             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                         </span>
                     @endif
-                </div> --}}
+                </div>
             </div>
                 <p class="text-muted">Podés dejarnos un comentario, sugerencia o reclamo.</p>
                 <p class="text-muted">Los datos ingresados se mantendrán en total confidencialidad. </p>
@@ -114,3 +112,4 @@
     </div>
   </div>
 </div>
+{{-- Ver script de errores en layout.php --}}
