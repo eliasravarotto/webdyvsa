@@ -6,7 +6,7 @@ use App\Events\HaIngresadoUnaConsulta;
 use App\MensajeEmail;
 use Illuminate\Http\Request;
 use Validator;
-
+use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client;
 use App\Http\Requests\ReCaptchataTestFormRequest;
 
@@ -54,7 +54,7 @@ class MensajeEmailController extends Controller
                 'cliente' => 'required',
                 'telefono' => 'required',
                 'mensaje' => 'required',
-                'g-recaptcha-response' => 'required',
+                //'g-recaptcha-response' => 'required',
             ]);
         }
         if ($request->telefono == null) {
@@ -63,7 +63,7 @@ class MensajeEmailController extends Controller
                 'cliente' => 'required',
                 'email' => 'required',
                 'mensaje' => 'required',
-                'g-recaptcha-response' => 'required',
+                //'g-recaptcha-response' => 'required',
             ]);
 
         }
@@ -80,34 +80,65 @@ class MensajeEmailController extends Controller
                     $from = 'financiacion';
                     $asunto ='Consulta - Financiación';
                     $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                    $mensaje->from = $from;
+                    $mensaje->enviar_a = $enviar_a;
+                    $mensaje->save();
+
+                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
                 case 'tpa':
                     $from = 'tpa';
                     $asunto ='Consulta desde Pagina Web TPA';
                     $enviar_a = env('RECEPTOR_EMAILS_TPA');
+                    $mensaje->from = $from;
+                    $mensaje->enviar_a = $enviar_a;
+                    $mensaje->save();
+
+                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
                 case 'usados':
                     $from = 'usados';
                     $asunto ='Consulta desde Pagina Web TPA';
                     $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                    $mensaje->from = $from;
+                    $mensaje->enviar_a = $enviar_a;
+                    $mensaje->save();
+
+                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
                 case 'financiacion_plan_nacional':
                     $from = 'Financiacion Plan Nacional';
                     $asunto ='Consulta por Financiación Nuevo Plan Nacional';
                     $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                    $mensaje->from = $from;
+                    $mensaje->enviar_a = $enviar_a;
+                    $mensaje->save();
+
+                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                    break;
+                case 'la_voz_del_cliente':
+                    $from = 'la_voz_del_cliente';
+                    $asunto ='La voz del Cliente - Nuevo Mensaje';
+                    $enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
+                    $mensaje->from = $from;
+                    $mensaje->enviar_a = $enviar_a;
+                    $mensaje->save();
+                    Mail::send('emails.consulta', ['consulta' => $mensaje], function ($message) use ($mensaje, $asunto){
+                        $message->subject($asunto);
+                        $message->to($mensaje->enviar_a)->cc('rukyguerra@derkayvargas.com.ar');
+                    });
                     break;
                 default:
                     $from = 'contacto';
                     $asunto ='Consulta desde Pagina Web';
                     $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                    $mensaje->from = $from;
+                    $mensaje->enviar_a = $enviar_a;
+                    $mensaje->save();
+
+                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
             }
-
-            $mensaje->from = $from;
-            $mensaje->enviar_a = $enviar_a;
-            $mensaje->save();
-
-            event( new HaIngresadoUnaConsulta($mensaje, $asunto));
 
             return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
 
