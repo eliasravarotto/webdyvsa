@@ -95,7 +95,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- <section style="width: 100%" v-if="tieneTestDrive">
+            <section style="width: 100%" v-if="tieneTestDrive">
                 <div class="row row-well flex justify-content-center align-items-center" style="flex-wrap: wrap;">                    <div class="flex pr-2">
                         <h2>¿Querés probarlo?</h2>
                     </div>
@@ -103,7 +103,7 @@
                         <a href="/test-drive/create" class="btn btn-toyota btn-lg" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
                     </div>
                 </div>
-            </section> -->
+            </section>
         </section>
 
         <div class="component title-wrapper title-wrapper--highlighted container">

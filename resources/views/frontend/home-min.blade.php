@@ -111,21 +111,20 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/imagenes/home-min/portada-agosto.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
+          <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
         </div>
         <div class="item">
-          <section 
-            style="background: url({{asset('imagenes/home-min/rav4-portada.jpg')}});
-            height: 539px;
-            background-position: bottom;
-            background-size: cover;">
-          </section>
+          <img src="/imagenes/home-min/portada-tu-auto.png" alt="Banco del chaco autos 0km">
         </div>
-
+        <div class="item">
+          <img src="/imagenes/home-min/portada-agosto.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
+        </div>
         <div class="item">
           <img src="/imagenes/home-min/servicio-posventa-chaco.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
         </div>
@@ -144,13 +143,13 @@
     <!-- Carusel Principal MOBILE-->
     <div id="myCarousel" class="carousel slide visible-xs visible-sm"  data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
+        {{-- <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li> --}}
       </ol>
 
       <div class="carousel-inner">
-        <div class="item active">
+        {{-- <div class="item active">
           <img src="/imagenes/home-min/portada-agosto-mobile.jpg" alt="">
-        </div>
+        </div> --}}
       </div>
 
       <a class="left carousel-control" href="#carousel-mobile" data-slide="prev">
@@ -192,7 +191,7 @@
     <!---------------------------------------------------------------------
     MODELOS
     ----------------------------------------------------------------------->
-    <section class="mt-1">
+    {{-- <section class="mt-1">
     <div class="container">
       <div class="title-section mt-3">
         <a href="{{route('nuevo_plan_nacional')}}">
@@ -211,7 +210,7 @@
         </a>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!---------------------------------------------------------------------
     MODELOS
