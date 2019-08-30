@@ -28,6 +28,12 @@
 		.beneficios .flex{
 			margin: 17px 0px;
 		}
+
+	@media only screen and (max-width: 768px) {
+		#mu-call-to-action {
+		    background-position: right;
+		}
+	}
 	</style>
 @stop
 
@@ -65,14 +71,14 @@
 		</div>
 		<div class="row my-3">
 			<div class="col-sm-12 col-md-8 col-md-offset-2">
-				<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/motorCombustion.svg">
+				<img class="img-responsive" src="{{asset('/imagenes/hibridos/motorCombustion.svg')}}">
 			</div>
 			<div class="col-sm-12 mt-3">
 				<h3 class="text-center">SISTEMA INTELIGENTE QUE COMBINA CON EFICIENCIA EL USO DE AMBOS MOTORES</h3>
 				<p class="text-justify">Durante la aceleración, el motor naftero da potencia a las ruedas. Y en caso de necesidad el motor eléctrico brindaría la potencia requerida. Cuando se frena o desacelera, el motor eléctrico funciona como un generador, convirtiendo la energía cinética del vehículo en energía eléctrica, que se usa para cargar las baterías. Todo esto hace que vos nunca debas preocuparte por el estado de la batería ni por cargarla; el sistema lo hará por vos.</p>
 			</div>
 			<div class="col-sm-12">
-				<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/comoFunciona.svg">
+				<img class="img-responsive" src="{{asset('/imagenes/hibridos/comoFunciona.svg')}}">
 			</div>
 		</div>
 	</article>
@@ -86,7 +92,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/consumo.png">
+						<img class="img-responsive" src="imagenes/hibridos/consumo.png">
 					</div>
 					<div class="col-text">
 						<p>MÁXIMA EFICIENCIA EN CONSUMO</p>
@@ -97,7 +103,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/silenciosa.png">
+						<img class="img-responsive" src="imagenes/hibridos/silenciosa.png">
 					</div>
 					<div class="col-text">
 						<p>EXPERIENCIA DE MANEJO ÚNICA Y SILENCIOSA</p>
@@ -110,7 +116,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/autorecargable.png">
+						<img class="img-responsive" src="imagenes/hibridos/autorecargable.png">
 					</div>
 					<div class="col-text">
 						<p>AUTO-RECARGABLE</p>
@@ -121,7 +127,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/eco.png">
+						<img class="img-responsive" src="imagenes/hibridos/eco.png">
 					</div>
 					<div class="col-text">
 						<p>ECO-FRIENDLY</p>
@@ -134,7 +140,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/potencia.png">
+						<img class="img-responsive" src="imagenes/hibridos/potencia.png">
 					</div>
 					<div class="col-text">
 						<p>DOBLE POTENCIA</p>
@@ -145,7 +151,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="https://www.toyota.com.ar/hibridos/img/garantia.png">
+						<img class="img-responsive" src="imagenes/hibridos/garantia.png">
 					</div>
 					<div class="col-text">
 						<p>CONFIABLE</p>
@@ -157,146 +163,25 @@
 	</article>
 
 </section>
-
-<section style="margin-top: 70px;">
-	<div class="visible-xs visible-sm" 
-		 style="background: url(/imagenes/home/thexp3.jpg) 	no-repeat 30%;
-    	 	height: 40vh;
-    		background-size: cover;
-    		margin-bottom: -55px;">
-		<div class="texto-encabezado" style="height: 100%; display: flex; flex-direction: column; justify-content: space-around;">
-		  <div></div>
-		  <div class="flecha-bajar text-center" style="margin-bottom: -50px;">
-		    <a href="#">
-		      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-		    </a>
-		  </div>
-		</div>
-	</div>
-
-	<div class="visible-md visible-lg" style="height: 50vh; background: url(/imagenes/home/thexp3.jpg) center; background-size: cover; ">
-	</div>
-
-	<div class="container" style="margin-top: 70px">
+<section class="container">
+<div id="mu-call-to-action">
+	<div class="container">
 		<div class="row">
-			{{-- #1 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/vUPgPSLEJ30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<div class="col-md-12">
+				<div class="mu-call-to-action-area">
+					<div class="mu-call-to-action-left">
+						<h1>¿Querés probar un Toyota híbrido?</h1>
+						<p class="fs-15">Solicitá una pruba de manejo completando el formulario. Un asesor se comunicará con usted para confirmar la disponibilidad.</p>
+						<a href="{{route('test_drive_form')}}" class="mu-white-btn-sm">SOLICITAR TESTDRIVE <i class="fa fa-long-arrow-right"></i></a>
 					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Los híbridos tienen menos reacción que una babosa'</span>
-					</div>
-				</div>
-			</div>
-			{{-- #2 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/iby4FQ2lMac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Hay que enchufarlos y no ahorran nada'</span>
+					<div>
+						{{-- <img class="img-responsive" src="/imagenes/modelos/prius/colores/blanco_perla.jpg"> --}}
 					</div>
 				</div>
-			</div>
-			{{-- #3 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/4fWTx0RcP10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Entre más sofisticada la tecnología, más fácil de romperse'</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			{{-- #4 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/WKphpOopcXw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Los híbridos son carritos de golf'</span>
-					</div>
-				</div>
-			</div>
-			{{-- #5 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/QV5LS-Np90A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Manejar un híbrido es más difícil que chuparse el codo'</span>
-					</div>
-				</div>
-			</div>
-			{{-- #6 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/UZqDSIcaadg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Con los híbridos nadie te garantiza nada'</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			{{-- #7 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/GZ_MxuDo6sU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Para que un híbrido consuma menos, tenés que ser piloto profesional'</span>
-					</div>
-				</div>
-			</div>
-			{{-- #8 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/TOQ6IbwtvzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Los híbridos no se bancan que les llenes el baúl'</span>
-					</div>
-				</div>
-			</div>
-			{{-- #9 --}}
-			<div class="col-sm-12 col-md-4">
-				<div class="thumbnail thumbnail-no-bg">
-					<div class="embed-responsive embed-responsive-16by9">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/LPAZngILST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					<div class="caption text-center" style="padding: 9px 9px 0px 9px;">
-						<span>MITO: 'Mantener un híbrido es carísimo'</span>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row" style="-webkit-box-shadow: 0px 0px 19px -5px rgba(0,0,0,0.75);
-								-moz-box-shadow: 0px 0px 19px -5px rgba(0,0,0,0.75);
-								box-shadow: 0px 0px 19px -5px rgba(0,0,0,0.75);
-								margin: 0px">
-			<div class="col-sm-12 col-md-6 flex flex-d-col justify-content-center align-items-center" style="min-height: 192px;">
-				<h2>¿Querés probarlo?</h2>
-                <a href="/test-drive/create" class="btn btn-toyota btn-lg mt-3" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
-			</div>
-			<div class="col-sm-12 col-md-6 text-center">
-				<img class="img-responsive" src="/imagenes/modelos/prius/colores/blanco_perla.jpg">
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 
 

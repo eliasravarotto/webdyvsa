@@ -2689,3 +2689,87 @@ CARD COMPONENT
     margin: 20px;
   }
 } 
+
+
+#mu-call-to-action {
+    background-image: url('/imagenes/bg-testdrive.jpg');
+    /*float: left;*/
+    background-position: top left;
+    position: relative;
+    width: 100%;
+}
+#mu-call-to-action:before {
+    background: #ef3636;
+    content: '';
+    position: absolute;
+    opacity: 0.7;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.mu-call-to-action-area {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mu-call-to-action-left {
+    color: #fff;
+    display: inline;
+    float: left;
+    max-width: 70%;
+}
+.mu-call-to-action-left h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.mu-primary-btn {
+    background-color: #0091ea;
+    color: #fff;
+    border-radius: 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 15px 70px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.mu-white-btn {
+    background-color: #fff;
+    color: #000;
+    border-radius: 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 15px 70px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.mu-white-btn:hover {
+    color: #eb3232;
+}
+.mu-black-btn {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    border-radius: 25px;
+    text-transform: uppercase;
+    padding: 15px 70px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mu-white-btn-sm {
+    background-color: #fff;
+    color: #000;
+    border-radius: 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: 700;
+}

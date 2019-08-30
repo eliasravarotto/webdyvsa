@@ -16,7 +16,6 @@
 						parallax: {{ $parallax }},
 						versiones: {{ $versiones }} }">
 	</detalle-modelo>
-
 @stop
 
 @section('script')

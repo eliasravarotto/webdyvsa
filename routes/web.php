@@ -94,7 +94,7 @@ Route::get('/plan-de-ahorro','FrontController@planDeAhorro');
 Route::get('/contacto','FrontController@contacto')->name('contacto');
 Route::get('/nosotros','FrontController@aboutUs');
 Route::get('/modelos/{modelo}','FrontController@modelo');
-Route::get('/modelos','FrontController@getModelos');
+Route::get('/modelos','FrontController@getModelos')->name('modelos');
 Route::get('/usados','FrontController@usadosIndex');
 Route::get('/usados/{slug}','FrontController@usadosShow');
 Route::get('/usados/get-last','FrontController@ultimosUsados');

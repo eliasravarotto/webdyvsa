@@ -22,12 +22,26 @@
 	@endif
 
 	<article>
-		<section class="pad-bot-25">
+		<section>
+		<div id="mu-call-to-action">
 			<div class="container">
-				{{-- <div class="row" style="margin-top: 30px; margin-bottom: 30px; border-radius: 5px;"> --}}
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-call-to-action-area">
+							<div class="mu-call-to-action-left">
+								<h1>SOLICITAR TEST DRIVE<br><small style="color: #e0dfdf">Prueba de Manejo</small></h1></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<section class="py-3">
+			<div class="container">
 				<div class="row">
 					<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
-						<h1 class="text-center h1-titulo-form">SOLICITAR TEST DRIVE<br><small>Prueba de Manejo</small></h1>
+						{{-- <h1 class="text-center h1-titulo-form">SOLICITAR TEST DRIVE<br><small>Prueba de Manejo</small></h1> --}}
 						<form class="form-horizontal" action="/test-drive" method="POST" role="form" autocomplete="off">
 				  			{{ csrf_field() }}
 				  			<div class="form-group required">
