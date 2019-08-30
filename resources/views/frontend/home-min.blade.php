@@ -123,9 +123,6 @@
           <img src="/imagenes/home-min/portada-tu-auto.png" alt="Banco del chaco autos 0km">
         </div>
         <div class="item">
-          <img src="/imagenes/home-min/portada-agosto.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
-        </div>
-        <div class="item">
           <img src="/imagenes/home-min/servicio-posventa-chaco.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
         </div>
       </div>
