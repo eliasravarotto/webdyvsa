@@ -1,6 +1,5 @@
 <template>
 <div>
-    <section style="background:url('imagenes/usados-seleccionados.png') center;height: 250px;background-size: cover;"></section>
     <br>
     <div class="panel panel-default">
         <div class="panel-heading d-flex justify-content-space-between">

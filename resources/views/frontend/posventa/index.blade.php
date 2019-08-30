@@ -187,41 +187,20 @@ TOYOTA RECALL
 			</div>
 		</section>
 
-		<!---------------------------------------------------------------------
-	    PROMOS Y DESCUENTOS
-	  	----------------------------------------------------------------------->
 		<section>
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12 col-md-4">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/service-hilux.jpeg')}}">
-					</div>
-					<div class="col-sm-12 col-md-4">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/service-corolla.jpeg')}}">
-					</div>
-					<div class="col-sm-12 col-md-4">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/service-etios.jpeg')}}">
+					<div class="col-md-12">
+						<img class="img-responsive" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota.png')}}">
 					</div>
 				</div>
 			</div>
 		</section>
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-md-6">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/ahora12.jpeg')}}">
-					</div>
-					<div class="col-sm-12 col-md-6">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/neumaticos.jpeg')}}">
-					</div>
-				</div>
-			</div>
-		</section>
-		
+
 		<!---------------------------------------------------------------------
 	    SERVICIO AL CLIENTE
 	  	----------------------------------------------------------------------->
-		<section class="pad-top-50" style="height: auto;">
+		<section style="height: auto;">
 			<div class="container">
 				<h2 class="text-center bold">Servicio al Cliente</h2>
 				<h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3>
@@ -275,7 +254,7 @@ TOYOTA RECALL
 						<a href="#"  class="btn btn-toyota btn-whatsapp my-1" data-toggle="modal" data-target="#modal-turno-wapp">ENVIAR WHATSAPP</a>
 						<!-- Modal -->
 						<div class="modal fade" id="modal-turno-wapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						  <div class="modal-dialog" role="document" style="min-width: 90%">
+						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -284,7 +263,7 @@ TOYOTA RECALL
 						      <div class="modal-body">
 						        <div class="list-group">
 					        		@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
-								  		<a href="https://wa.me/{{$sucursal->whatsapp_posventa}}?text=Hola,%20necesito%20un%20turno%20para%20mi%20Toyota" class="list-group-item" target="_blank" onclick="$('.modal').modal('toggle')" style="font-size: 2.2rem">{{$sucursal->nombre}}</a>
+								  		<a href="https://wa.me/{{$sucursal->whatsapp_posventa}}?text=Hola,%20necesito%20un%20turno%20para%20mi%20Toyota" class="list-group-item" target="_blank" onclick="$('#modal-turno-wapp').modal('toggle')" style="font-size: 2.2rem">{{$sucursal->nombre}}</a>
 								  	@endforeach
 								</div>
 						      </div>

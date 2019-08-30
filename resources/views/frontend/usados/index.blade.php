@@ -133,6 +133,7 @@
 @stop
 
 @section('content')
+    <section style="background:url('imagenes/usados-seleccionados.png') center;height: 250px;background-size: cover;"></section>
 	<div class="container">
 		<section>
 			<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>

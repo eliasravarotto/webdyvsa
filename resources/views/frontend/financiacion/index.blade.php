@@ -38,57 +38,8 @@
 
 @section('content')
 	<article>
-	<!---------------------------------------------------------------------
-    BANNER PLAN NACIONAL
-  	----------------------------------------------------------------------->
-	{{-- <section>
+	<section>
 		<div class="container">
-		  <div class="title-section mt-3">
-		    <a href="{{route('nuevo_plan_nacional')}}">
-		    <h3 style="color: black">Nuevo Plan Nacional Para tu 0km<br><small>TENEMOS DESCUENTOS IMPERDIBLES EN TU NUEVO TOYOTA‼️</small></h3>
-		    </a>
-		  </div>
-		  <div class="owl-carousel owl-md owl-theme">
-		    <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-		      <img src="{{asset('imagenes/financiacion/ultimos-dias1.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-		    </a>
-		    <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-		      <img src="{{asset('imagenes/financiacion/ultimos-dias2.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-		    </a>
-		    <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-		      <img src="{{asset('imagenes/financiacion/ultimos-dias3.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-		    </a>
-		    <a href="{{route('nuevo_plan_nacional')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-		      <img src="{{asset('imagenes/financiacion/ultimos-dias4.png')}}" alt="Nuevo plan Nacional 0KM mes de Julio 2019, Toyota Hilux, Corolla, Yaris, Etios...">
-		    </a>
-		  </div>
-		</div>
-	</section> --}}
-
-	<section>
-		<div class="container mt-3">
-			<div class="row">
-				<div class="col-xs-12 col-md-6">
-					<img class="img-responsive box-shadow" src="{{asset('imagenes/financiacion/agosto0km.jpg')}}">
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<p class="mt-3" style="color: #636b6f; font-size: 17px">📌 Tu <b>HILUX</b> con un descuento de <b>$120.000</b> del nuevo Plan Nacional, en todas sus versiones 4x2!</p>
-			        <p style="color: #636b6f; font-size: 17px">📌 Accede a tu próximo <b>COROLLA</b> con un descuento de <b>$90.000</b> del nuevo Plan Nacional, en todas sus versiones!</p>
-			        <p style="color: #636b6f; font-size: 17px">📌 También podes acceder al nuevo <b>YARIS</b> con un descuento de <b>$ 90.000</b> del nuevo Plan Nacional en las versiones ( XLS 4P y 5P) y S ( 4P y 5P )</p>
-			        <p style="color: #636b6f; font-size: 17px">📌 <b>ETIOS</b> con un descuento de <b>$50.000 </b>del nuevo Plan Nacional, en todas sus versiones!</p>
-			        <p style="color: #636b6f; font-size: 17px">📌 En la versión ( XS 5P) del nuevo <b>YARIS</b> a un descuento de <b>$ 50.000</b> del nuevo Plan Nacional</p>
-			        <p style="color: #636b6f; font-size: 17px">➡️ Vigencia: hasta el 31 de agosto de 2019</p>
-					<p>
-			          <a href="https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20Plan%20Nacional%200km" class="btn btn-toyota btn-whatsapp my-1"><i class="fa fa-whatsapp"></i> CONSULTAR</a> 
-			          <a href="https://m.me/derkayvargas" class="btn btn-primary"><i class="fa fa-facebook"></i> Envíanos un mensaje de Facebook</a> 
-			        </p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="container mt-3">
 			<div class="page-header" >
 				<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center; align-items: center;">
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -100,6 +51,16 @@
 						<p class="text-justify fs-16">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
 						</p>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<img class="img-responsive box-shadow" src="{{asset('imagenes/financiacion/precios-congelados-min.png')}}">
 				</div>
 			</div>
 		</div>
@@ -147,9 +108,7 @@
 		      <div class="panel-heading">
 		        <h4 class="panel-title panel-title-financial">
 		          <a id="creditos_prend" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-		          	<h4>
-		          		 Créditos Prendarios
-		          	</h4>
+		          	<h4>Créditos Prendarios</h4>
 		          </a>
 		        </h4>
 		      </div>

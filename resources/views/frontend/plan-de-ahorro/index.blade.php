@@ -372,7 +372,15 @@
 			</div>
 		</section>
 		
-		<br>
+		<section class="py-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-2">
+						<img class="img-responsive box-shadow" src="{{asset('imagenes/tpa/cuota-mas-baja.jpeg')}}">
+					</div>
+				</div>
+			</div>
+		</section>
 		
 		<section>
 			<div class="container">
@@ -412,110 +420,105 @@
 			<div class="container">
 				<div class="title-section mt-3">
 			        <h2>Subite ya a tu nuevo Toyota<br>  <small>Conoce nuestros planes adjudicados</small></h2>
-			      </div>
+		      	</div>
 				<div class="row">
-					<div class="col-md-6 col-xs-12 col-sm-12">
-						<img src="{{asset('imagenes/tpa/adjudicados-tpa-etios.png')}}" class="img-responsive" alt="Planes de Ahorro Adjudicados en Chaco, cuotas bajas para tener tu 0km">
-					</div>
-					<div class="col-md-6 col-xs-12 col-sm-12">
+					<div class="col-md-offset-3 col-md-6 col-xs-12 col-sm-12">
 						<div class="well">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-				                <div class="caption caption-default">
-				                	<h1 class="text-center"><i class="fa fa-car" style="font-size: 90px; color: black;"></i></h1>
-				                    <h4 class="text-center">Adjudicados</h4>
-				                    <p class="text-justify">
-				                      Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados 
-				                    </p>
-				                    <center>
-				                    {{-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modal_adjudicados">VER LISTADO</a> --}}
-				                    </center>
-				                </div>
-		        			</div>
-						</div>
-						<!-- Modal ADJUDICADOS-->
-						<div id="modal_adjudicados" class="modal" role="dialog">
-						  <div class="modal-dialog" style="width: 100%">
-						    <!-- Modal content-->
-						    <div class="modal-content" >
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal">&times;</button>
-						        <h4 class="modal-title">LISTADO DE PLANES ADJUDICADOS</h4>
-						      </div>
-						      <div class="modal-body">
-						        <table class="table table-hover">
-								    <thead>
-								      <tr>
-								        <th>Firstname</th>
-								        <th>Lastname</th>
-								        <th>Email</th>
-								      </tr>
-								    </thead>
-								    <tbody>
-								      <tr>
-								        <td>John</td>
-								        <td>Doe</td>
-								        <td>john@example.com</td>
-								      </tr>
-								      <tr>
-								        <td>Mary</td>
-								        <td>Moe</td>
-								        <td>mary@example.com</td>
-								      </tr>
-								      <tr>
-								        <td>July</td>
-								        <td>Dooley</td>
-								        <td>july@example.com</td>
-								      </tr>
-								    </tbody>
-								  </table>
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-						      </div>
-						    </div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+						                <div class="caption caption-default">
+						                	<h1 class="text-center"><i class="fa fa-car" style="font-size: 90px; color: black;"></i></h1>
+						                    <h4 class="text-center">Adjudicados</h4>
+						                    <p class="text-justify">
+						                      Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados 
+						                    </p>
+						                    <center>
+						                    {{-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modal_adjudicados">VER LISTADO</a> --}}
+						                    </center>
+						                </div>
+				        			</div>
+								</div>
+								<!-- Modal ADJUDICADOS-->
+								{{-- <div id="modal_adjudicados" class="modal" role="dialog">
+								  <div class="modal-dialog" style="width: 100%">
+								    <div class="modal-content" >
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal">&times;</button>
+								        <h4 class="modal-title">LISTADO DE PLANES ADJUDICADOS</h4>
+								      </div>
+								      <div class="modal-body">
+								        <table class="table table-hover">
+										    <thead>
+										      <tr>
+										        <th>Firstname</th>
+										        <th>Lastname</th>
+										        <th>Email</th>
+										      </tr>
+										    </thead>
+										    <tbody>
+										      <tr>
+										        <td>John</td>
+										        <td>Doe</td>
+										        <td>john@example.com</td>
+										      </tr>
+										      <tr>
+										        <td>Mary</td>
+										        <td>Moe</td>
+										        <td>mary@example.com</td>
+										      </tr>
+										      <tr>
+										        <td>July</td>
+										        <td>Dooley</td>
+										        <td>july@example.com</td>
+										      </tr>
+										    </tbody>
+										  </table>
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+								      </div>
+								    </div>
 
-						  </div>
-						</div>
+								  </div>
+								</div> --}}
 
-						<div class="col-md-6">
-							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-				                <div class="caption caption-default">
-				                	<h1 class="text-center"><i class="fa fa-users" style="font-size: 90px; color: black;"></i></h1>
-				                    <h4 class="text-center">Agrupados</h4>
-				                    <p class="text-justify">
-									Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
-				                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
-				                </div>
-		        			</div>
-						</div>
+								<div class="col-md-6">
+									<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+						                <div class="caption caption-default">
+						                	<h1 class="text-center"><i class="fa fa-users" style="font-size: 90px; color: black;"></i></h1>
+						                    <h4 class="text-center">Agrupados</h4>
+						                    <p class="text-justify">
+											Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
+						                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
+						                </div>
+				        			</div>
+								</div>
 
-						{{-- <div class="col-md-4">
-							<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-				                <div class="caption caption-default">
-				                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
-				                    <h4 class="text-center">Licitación Online</h4>
-				                    <p class="text-center">
-				                    	Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
-				                    	Proximamente.
-				                    </p>
-				                    <a href="/posventa" class="btn btn-toyota">VER</a>
-				                </div>
-		        			</div>
-						</div> --}}
-					</div>
-					<div class="row">
-						<div class="col-sm-12 col-md-12">
-							<center>
-								<a class="btn btn-toyota" href="#" onclick="masDetalles(event)">CONSULTAR</a>
-							</center>
+								{{-- <div class="col-md-4">
+									<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
+						                <div class="caption caption-default">
+						                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
+						                    <h4 class="text-center">Licitación Online</h4>
+						                    <p class="text-center">
+						                    	Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
+						                    	Proximamente.
+						                    </p>
+						                    <a href="/posventa" class="btn btn-toyota">VER</a>
+						                </div>
+				        			</div>
+								</div> --}}
+							</div>
+							<div class="row">
+								<div class="col-sm-12 col-md-12">
+									<center>
+										<a class="btn btn-toyota" href="#" onclick="masDetalles(event)">CONSULTAR</a>
+									</center>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-					</div>
-				</div>
-				
 			</div>
 		</section>
 		<br>
