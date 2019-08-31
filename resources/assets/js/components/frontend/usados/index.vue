@@ -227,13 +227,13 @@
         <h3 style="color: black">PRESTAMOS TUAUTO DEL NUEVO BANCO DEL CHACO<br><small></small></h3>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-md-5">
-            <img src="imagenes/financiacion/nbch-usados.jpeg" class="img-responsive">
+        <div class="col-xs-12 col-md-6">
+            <img class="img-responsive box-shadow" src="/imagenes/home-min/portada-usados-sm.png">
         </div>
         <div class="col-xs-12 col-md-6 my-3">
-            <p style="color: #636b6f; font-size: 17px">Accede a la exclusiva linea de prestamos <b>TuAuto</b> del Nuevo Banco del Chaco y subite a nuestros <b>USADOS SELECCIONADOS!</b></p>
-            <p style="color: #636b6f; font-size: 17px"><b>Tasa fija</b> 39% y plazo hasta 60 meses!</p>
-            <p style="color: #636b6f; font-size: 17px">No dejes pasar esta gran oportunidad de tener tu crédito, consultanos!</p>
+            <p style="color: #636b6f; font-size: 20px">Accede a la exclusiva linea de prestamos <b>TuAuto</b> del Nuevo Banco del Chaco y subite a nuestros <b>USADOS SELECCIONADOS!</b></p>
+            <p style="color: #636b6f; font-size: 20px"><b>Tasa fija</b> 39% y plazo hasta 60 meses!</p>
+            <p style="color: #636b6f; font-size: 20px">No dejes pasar esta gran oportunidad de tener tu crédito, consultanos!</p>
             <p>
               <a href="https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20Prestamo%20TuAuto%200km" class="btn btn-toyota btn-whatsapp my-1"><i class="fa fa-whatsapp"></i> CONSULTAR</a> 
               <a href="https://m.me/derkayvargas" class="btn btn-primary"><i class="fa fa-facebook"></i> Envíanos un mensaje de Facebook</a> 

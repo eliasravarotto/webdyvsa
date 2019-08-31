@@ -191,7 +191,8 @@ TOYOTA RECALL
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<img class="img-responsive" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota.png')}}">
+						<img class="img-responsive visible-lg visible-md" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota.png')}}">
+						<img class="img-responsive visible-xs visible-sm" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota-sm.png')}}">
 					</div>
 				</div>
 			</div>

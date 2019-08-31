@@ -39,6 +39,19 @@
 @section('content')
 	<article>
 	<section>
+		<div class="container py-1">
+			<div class="row">
+				<div class="col-md-6 col-sm-12 py-1">
+					<img class="img-responsive box-shadow" src="/imagenes/home-min/portada-tu-auto-sm.png">
+				</div>
+				<div class="col-md-6 col-sm-12 py-1">
+					<img class="img-responsive box-shadow" src="/imagenes/home-min/portada-usados-sm.png">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
 		<div class="container">
 			<div class="page-header" >
 				<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center; align-items: center;">
@@ -51,16 +64,6 @@
 						<p class="text-justify fs-16">Toyota Financial Services Corporation es la entidad de servicios financieros de Toyota Motor Corporation,  con presencia en 30 países repartidos en todos los continentes y con más de 10.000.000 clientes, es una de las mayores financieras de marca del Mundo.En enero 2005 Toyota Compañía Financiera de Argentina S.A. inicia sus operaciones en el país con el objetivo de brindar la más alta gama de servicios financieros para los usuarios TOYOTA
 						</p>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<img class="img-responsive box-shadow" src="{{asset('imagenes/financiacion/precios-congelados-min.png')}}">
 				</div>
 			</div>
 		</div>
