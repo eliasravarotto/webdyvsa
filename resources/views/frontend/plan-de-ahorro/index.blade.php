@@ -130,7 +130,7 @@
 
 			<!-- Modal HILUX_100-->
 			<div id="modal_hilix_100" class="modal" role="dialog">
-			  <div class="modal-dialog" style="width: 100%">
+			  <div class="modal-dialog" >
 			    <!-- Modal content-->
 			    <div class="modal-content" >
 			      <div class="modal-header">
@@ -162,10 +162,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 17.933,40</td>
-					        <td class="text-center" style="font-weight: bold;">$ 19.172,44</td>
-					        <td class="text-center" style="font-weight: bold;">$ 18.085,31</td>
-					        <td class="text-center" style="font-weight: bold;">$ 21.019,69</td>
+					        <td class="text-center" style="font-weight: bold;">$ 20.623,79</td>
+					        <td class="text-center" style="font-weight: bold;">$ 21.920,36</td>
+					        <td class="text-center" style="font-weight: bold;">$ 20.576,38</td>
+					        <td class="text-center" style="font-weight: bold;">$ 24.173,09</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -175,7 +175,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Agosto 2019</p>
+									<p>Vigencia 01 de Septiembre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -191,7 +191,7 @@
 
 			<!-- Modal HILUX_70/30-->
 			<div id="modal_hilix_70_30" class="modal" role="dialog">
-			  <div class="modal-dialog" style="width: 100%">
+			  <div class="modal-dialog">
 			    <!-- Modal content-->
 			    <div class="modal-content" >
 			      <div class="modal-header">
@@ -223,10 +223,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 12.269,29</td>
-					        <td class="text-center" style="font-weight: bold;">$ 14.067,50</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.590,30</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.652,88</td>
+					        <td class="text-center" style="font-weight: bold;">$ 14.109,57</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.965,32</td>
+					        <td class="text-center" style="font-weight: bold;">$ 14.266,56</td>
+					        <td class="text-center" style="font-weight: bold;">$ 14.550,71</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -236,7 +236,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Agosto 2019</p>
+									<p>Vigencia 01 de Septiembre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -252,7 +252,7 @@
 
 			<!-- Modal YARIS-->
 			<div id="modal_yaris" class="modal" role="dialog">
-			  <div class="modal-dialog" style="width: 100%">
+			  <div class="modal-dialog">
 			    <!-- Modal content-->
 			    <div class="modal-content" >
 			      <div class="modal-header">
@@ -283,10 +283,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 9.340,47</td>
-					        <td class="text-center" style="font-weight: bold;">$ 10.395,77</td>
-					        <td class="text-center" style="font-weight: bold;">$ 10.129,03</td>
-					        <td class="text-center" style="font-weight: bold;">$ 10.947,94</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.900,62</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.989,28</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.573,59</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.776,59</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -296,7 +296,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Agosto 2019</p>
+									<p>Vigencia 01 de Septiembre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -312,7 +312,7 @@
 
 			<!-- Modal ETIOS-->
 			<div id="modal_etios" class="modal" role="dialog">
-			  <div class="modal-dialog" style="width: 100%">
+			  <div class="modal-dialog">
 			    <!-- Modal content-->
 			    <div class="modal-content" >
 			      <div class="modal-header">
@@ -344,10 +344,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 6.816,18 </td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.832,10</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.814,00</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.032,07</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.885,75 </td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.926,83</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.807,81</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.449,35</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -357,7 +357,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Agosto 2019</p>
+									<p>Vigencia 01 de Septiembre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
