@@ -79,7 +79,7 @@
   
   @include('frontend.includes.flash-message')
   @include('frontend.includes.consultas-y-reclamos')
-  {{-- @include('frontend.includes.menu-fab') --}}
+  @include('frontend.includes.menu-fab')
   {{-- @include('frontend.includes.chat-whatsapp') --}}
 
   <div id="app">

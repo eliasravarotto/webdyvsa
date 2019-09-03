@@ -1,7 +1,7 @@
 <div class="btn-group-vertical" role="group" style="
     /*padding: 10px 8px;*/
     position: fixed;
-    z-index: 99999;
+    z-index: 999;
     right: 10px;
     
     /*border-radius: 50px;*/
@@ -45,7 +45,7 @@
   	<img src="/imagenes/icons/turno_posventa.png" height="30px" >
     <span class="hidden-xs">TURNOS</span>
   </a>
-  <a class="btn btn-default " href="/contacto" 
+  {{-- <a class="btn btn-default " href="/contacto" 
       data-toggle="tooltip" 
       data-trigger="hover" 
       data-placement="left" 
@@ -58,19 +58,6 @@
 					</div>">
   	<img src="/imagenes/icons/contacto.png" height="30px">
     <span class="hidden-xs">CONTACTO</span>
-  </a>
-  {{-- <a class="btn btn-default " href="/contacto"  
-      data-toggle="tooltip" 
-      data-trigger="hover" 
-      data-placement="left" 
-      data-html="true" 
-      data-title="
-                  	<div style='max-width:300px;position:relative;overflow:auto;'>
-	                  	<div>
-							<b style='font-size:15px'>ESCRÍBENOS</b>
-						</div>
-					</div>">
-  	<img src="/imagenes/icons/contact_us.png" height="30px">
   </a> --}}
 </div>
 
