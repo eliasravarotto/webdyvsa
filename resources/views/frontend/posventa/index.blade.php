@@ -152,7 +152,7 @@ TOYOTA RECALL
 
 				<div class="mt-3">
 					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-07-2019  <b>Hasta:</b> 31-08-2019</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-09-2019  <b>Hasta:</b> 30-09-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
@@ -187,12 +187,29 @@ TOYOTA RECALL
 			</div>
 		</section>
 
+		<!---------------------------------------------------------------------
+	    PROMOS Y DESCUENTOS
+	  	----------------------------------------------------------------------->
 		<section>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<img class="img-responsive visible-lg visible-md" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota.png')}}">
 						<img class="img-responsive visible-xs visible-sm" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota-sm.png')}}">
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-corolla.jpeg')}}">
+					</div>
+					<div class="col-md-4">
+						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-etios.jpeg')}}">
+					</div>
+					<div class="col-md-4">
+						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-hilux.jpeg')}}">
 					</div>
 				</div>
 			</div>
