@@ -18,7 +18,7 @@
               <button type="submit" class="btn btn-default mb-2" onclick="limpiar()">Limpiar</button>
             </div>
 
-            <div class="d-none d-sm-none d-md-block">
+            <div class="">
             <table class="table table-sm table-hover">
                 <thead>
                   <tr>
