@@ -48,25 +48,23 @@ class MensajeEmailController extends Controller
      */
     public function store(ReCaptchataTestFormRequest $request)
     {
-        if ($request->email == null) {
-            $this->validate($request, [
-                'from' => 'required',
-                'cliente' => 'required',
-                'telefono' => 'required',
-                'mensaje' => 'required',
-                'g-recaptcha-response' => 'required',
-            ]);
-        }
-        if ($request->telefono == null) {
-            $this->validate($request, [
-                'from' => 'required',
-                'cliente' => 'required',
-                'email' => 'required',
-                'mensaje' => 'required',
-                'g-recaptcha-response' => 'required',
-            ]);
+        $this->validate($request, [
+            'from' => 'required',
+            'cliente' => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            'mensaje' => 'required',
+            // 'g-recaptcha-response' => 'required',
+        ]);
+        // if ($request->telefono == null) {
+        //     $this->validate($request, [
+        //         'from' => 'required',
+        //         'cliente' => 'required',
+        //         'mensaje' => 'required',
+        //         'g-recaptcha-response' => 'required',
+        //     ]);
 
-        }
+        // }
 
         try {
             $mensaje = new MensajeEmail;
@@ -83,7 +81,7 @@ class MensajeEmailController extends Controller
                     $mensaje->from = $from;
                     $mensaje->enviar_a = $enviar_a;
                     $mensaje->save();
-
+                    $this->enviarRtaAutomatica($mensaje->email); 
                     event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
                 case 'tpa':
@@ -93,7 +91,7 @@ class MensajeEmailController extends Controller
                     $mensaje->from = $from;
                     $mensaje->enviar_a = $enviar_a;
                     $mensaje->save();
-
+                    $this->enviarRtaAutomatica($mensaje->email); 
                     event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
                 case 'usados':
@@ -103,7 +101,7 @@ class MensajeEmailController extends Controller
                     $mensaje->from = $from;
                     $mensaje->enviar_a = $enviar_a;
                     $mensaje->save();
-
+                    $this->enviarRtaAutomatica($mensaje->email); 
                     event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
                 case 'financiacion_plan_nacional':
@@ -127,6 +125,7 @@ class MensajeEmailController extends Controller
                         $message->subject($asunto);
                         $message->to($mensaje->enviar_a)->cc('rukyguerra@derkayvargas.com.ar');
                     });
+                    $this->enviarRtaAutomatica($mensaje->email); 
                     break;
                 default:
                     $from = 'contacto';
@@ -135,7 +134,7 @@ class MensajeEmailController extends Controller
                     $mensaje->from = $from;
                     $mensaje->enviar_a = $enviar_a;
                     $mensaje->save();
-
+                    $this->enviarRtaAutomatica($mensaje->email); 
                     event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
             }
@@ -191,5 +190,13 @@ class MensajeEmailController extends Controller
     public function destroy(MensajeEmail $mensajeEmail)
     {
         //
+    }
+
+    public function enviarRtaAutomatica($email)
+    {
+        Mail::send('emails.rta-aut', [], function ($message) use ($email){
+            $message->subject('Recibimos tu mensaje');
+            $message->to($email);
+        });
     }
 }

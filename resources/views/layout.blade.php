@@ -108,6 +108,7 @@
   <!-- Google Recaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <!--===============================================================================================-->
+    
   <!-- Google Analytics -->
   @if (env('IS_PROD'))
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
@@ -189,6 +190,27 @@
         {{sizeof($errors) > 0 ? 'var hayError = true' : 'var hayError = false;'}};
         if (hayError){
             $('#myModal').modal('show');
+        }
+
+        {{ session('success') ? 'var session_success = true' : 'var session_success = false;'}};
+        if (session_success){
+          swal.fire({
+            position: 'top-end',
+            type: 'success',
+            title: 'Su mensaje se envió correctamente.',
+            showConfirmButton: false,
+            timer: 3500
+          })
+        }
+        {{ session('error') ? 'var session_error = true' : 'var session_error = false;'}};
+        if (session_error){
+          swal.fire({
+            position: 'top-end',
+            type: 'error',
+            title: 'Lo sentimos, algo salió mal. Porfavor intente más tarde.',
+            showConfirmButton: false,
+            timer: 3500
+          })
         }
       
     });
