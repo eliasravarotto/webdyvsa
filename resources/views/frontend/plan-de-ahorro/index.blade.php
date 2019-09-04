@@ -36,9 +36,9 @@
 
 @section('content')
 	<article>
-		<section class="visible-lg visible-md">
-			{{-- <img src="/imagenes/tpa/nuevo-plan-de-ahorro-toyota.png" class="img-responsive" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco"> --}}
-			<img src="/imagenes/tpa/plan-de-ahorro-auto.jpeg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
+		<section>
+			<img class="visible-lg visible-md" src="/imagenes/tpa/plan-de-ahorro-auto.jpeg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
+			<img class="img-responsive visible-xs visible-sm" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
 		</section>
 
 		<section>
@@ -375,8 +375,11 @@
 		<section class="py-1">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-10 col-md-offset-2">
+					<div class="col-md-6">
 						<img class="img-responsive box-shadow" src="{{asset('imagenes/tpa/cuota-mas-baja.jpeg')}}">
+					</div>
+					<div class="col-md-6">
+						<img class="img-responsive box-shadow visible-md visible-lg" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
 					</div>
 				</div>
 			</div>
