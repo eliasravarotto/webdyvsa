@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="row pad-top-20">
-                {{-- <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="g-recaptcha" 
                            data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
                     </div>
@@ -101,7 +101,7 @@
                             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                         </span>
                     @endif
-                </div> --}}
+                </div>
             </div>
                 <p class="text-muted">Podés dejarnos un comentario, sugerencia o reclamo.</p>
                 <p class="text-muted">Los datos ingresados se mantendrán en total confidencialidad. </p>
