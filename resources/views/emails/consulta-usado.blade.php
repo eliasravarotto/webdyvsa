@@ -11,10 +11,6 @@
 </head>
 <body>
 
-	<div style="display: flex; justify-content: flex-end;">
-  		<img src="https://derkayvargas.com/_files/200000005-b0396b1366/200/dyv_logo_700px-01.png" style="height: 50px; width: 50px">
-	</div>
-
   <h4>Consulta Sobre Unidad Usada</h4>
   <table class="table table-striped" style="width: 80%">
           <tbody>

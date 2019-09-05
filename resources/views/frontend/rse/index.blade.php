@@ -207,97 +207,18 @@ a{
   font-size: 1.7rem;
   text-align: justify;
 }
+
+.p-absolute{
+  position: absolute;
+  background-color: darkcyan;
+  bottom: 25%
+}
 </style>
 
 
 @stop
 
 @section('content')
-
-{{-- <div class="container mt-3">
-	<ol class="breadcrumb">
-      <li><a href="/">Inicio</a></li>
-      <li class="active">RSE</li>
-  </ol>
-  
-  <div class="row">
-    <div class="col-xs-12 col-md-12">
-        <div class="vc_column-inner ">
-          <div class="wpb_wrapper">
-            <div class="stm_widget_recent_news">
-              <div class="recentNewsAnimate">
-                @foreach($posts as $post)
-                    <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="visible-md visible-lg stm_magazine_single_list no_deco post-208 type-post status-publish format-standard has-post-thumbnail hentry category-news tag-future tag-interior tag-multimedia">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <div class="magazine-list-img">
-                            <img width="255" height="160" src="{{$post->imagen_portada}}" class="attachment-stm-img-255-160 size-stm-img-255-160 wp-post-image" alt="">
-                          </div>
-                        </div>
-                        <div class="col-md-9">
-                          <div class="stm-magazine-loop-data">
-                            <h3>
-                              {{$post->titulo}}
-                            </h3>
-                            <div class="middle-content">
-                              <div class="magazine-category normal-font">
-                                {{$post->tema}}        
-                              </div>
-                              <div class="magazine-loop-date">
-                                  <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
-                                  {{date('d M Y', strtotime($post->created_at))}}
-                              </div>
-                              <div class="magazine-loop-reviews">
-                                <i class="stm-icon-ico_mag_reviews"></i> 4
-                              </div>
-                              <div class="magazine-loop-views">
-                                <i class="stm-icon-ico_mag_eye"></i> 157
-                              </div>
-                            </div>
-                            <div class="bottom-content">
-                              <p>{{str_limit(strip_tags($post->contenido), 200, '...')}}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                @endforeach
-              </div>
-            </div>
-          </div>
-        </div>
-        @foreach($posts as $post)
-            <div class="features-big-wrap">
-              <a href="{{ route('show_post', $post->slug) }}" title="Citroen CEO Redmund Dipak" class="visible-xs visible-sm stm_magazine_single_grid no_deco post-270 post type-post status-publish format-standard has-post-thumbnail hentry category-interview tag-brabus tag-future tag-interior tag-multimedia">
-                  <div class="magazine-grid-img">
-                      <img src="{{$post->imagen_portada}}" class="attachment-stm-img-690-410 size-stm-img-690-410 wp-post-image" alt="">        </div>
-                  <div class="stm-magazine-loop-data">
-                      <div class="magazine-category heading-font">
-                          {{$post->tema}}                
-                      </div>
-                      <div class="news-meta-wrap">
-                          <h3 class="ttc">{{$post->titulo}}</h3>
-                          <div class="left">
-                              <div class="magazine-loop-Date">
-                                  <i class="stm-service-icon-calendar_service" style="margin-right: 7px; font-size: 1.7rem"></i>
-                                  <div class="heading-font" style="font-size: 1.7rem">{{date('d M Y', strtotime($post->created_at))}}</div>
-                              </div>
-                          </div>
-                          <div class="right">
-                          </div>
-                      </div>
-                  </div>
-              </a>
-            </div>
-        @endforeach
-    </div>
-  </div>
-</div>
- --}}
-
-{{-- <section class="header-bg">
-  <h2>Responsabilidad Social Empresarial</h2>  
-</section> --}}
 
 <section class="header-rse py-1">
   <div class="container" style="box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-radius: 7px; padding: 0px !important">
@@ -376,111 +297,141 @@ a{
 
 <!-- Arbol RSE -->
 <section>
-  <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+  <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
     <div class="carousel-inner">
 
       <div class="item active">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
+        <div class="holder col-sm-12 col-md-5 py-4 col-md-offset-1">
           <img class="img-responsive" src="{{asset('imagenes/rse/arbol1.png')}}" alt="...">
         </div>
-        <div class="col-sm-4 col-md-6 py-5">
+        <div class="col-sm-4 col-md-5 py-5">
           <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera,</p>
+            <p class="text-muted"><span style="color: black; font-size: 18px;">Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera,</span></p>
           </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
+        <div class="holder col-sm-12 col-md-5 py-4 col-md-offset-1">
           <img class="img-responsive" src="{{asset('imagenes/rse/arbol2.png')}}" alt="...">
         </div>
-        <div class="col-sm-4 col-md-6 py-5">
+        <div class="col-sm-4 col-md-5 py-5">
           <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad,</p>
+            <p class="text-muted">Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, <span style="color: black; font-size: 18px;">nos enfocamos en el eje Educación para la Empleabilidad,</span></p>
           </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
+        <div class="holder col-sm-12 col-md-5 py-4 col-md-offset-1">
           <img class="img-responsive" src="{{asset('imagenes/rse/arbol3.png')}}" alt="...">
         </div>
-        <div class="col-sm-4 col-md-6 py-5">
+        <div class="col-sm-4 col-md-5 py-5">
           <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
+            <p class="text-muted" >Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, <span style="color: black; font-size: 18px;">y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</span></p>
           </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
+        <div class="holder col-sm-12 col-md-5 py-4 col-md-offset-1">
           <img class="img-responsive" src="{{asset('imagenes/rse/arbol4.png')}}" alt="...">
         </div>
-        <div class="col-sm-4 col-md-6 py-5">
+        <div class="col-sm-4 col-md-5 py-5">
           <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
-            <p>Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom</p>
+            <p class="text-muted" class="text-muted">Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
+            <p class="text-muted" class="text-muted"><span style="color: black; font-size: 18px;">Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom</span></p>
           </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
+        <div class="holder col-sm-12 col-md-5 py-4 col-md-offset-1">
           <img class="img-responsive" src="{{asset('imagenes/rse/arbol5.png')}}" alt="...">
         </div>
-        <div class="col-sm-4 col-md-6 py-5">
+        <div class="col-sm-4 col-md-5 py-5">
           <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
-            <p>Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom y estudiantes secundarios con sendos proyectos de artesanías y vitrofusión.</p>
+            <p class="text-muted">Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
+            <p class="text-muted">Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom <span style="color: black; font-size: 18px;">y estudiantes secundarios con sendos proyectos de artesanías y vitrofusión.</span></p>
           </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
+        <div class="holder col-sm-12 col-md-5 py-4 col-md-offset-1">
           <img class="img-responsive" src="{{asset('imagenes/rse/arbol6.png')}}" alt="...">
         </div>
-        <div class="col-sm-4 col-md-6 py-5">
+        <div class="col-sm-4 col-md-5 py-5">
           <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
-            <p>Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom y estudiantes secundarios con sendos proyectos de artesanías y vitrofusión.</p>
-            <p>Articulamos acciones con actores internos (voluntarios corporativos) y externos (Legislatura, Gobierno, Universidad, OSC), siendo la educación uno de los pilares para el logro de los resultados esperados de este Programa.</p>
-          </div>
+            <p class="text-muted">Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
+            <p class="text-muted">Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom y estudiantes secundarios con sendos proyectos de artesanías y vitrofusión.</p>
+            <p class="text-muted"><span style="color: black; font-size: 18px;">Articulamos acciones con actores internos (voluntarios corporativos) y externos (Legislatura, Gobierno, Universidad, OSC), siendo la educación uno de los pilares para el logro de los resultados esperados de este Programa.</span></p>          </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
+        <div class="holder col-sm-12 col-md-5 py-4 col-md-offset-1">
           <img class="img-responsive" src="{{asset('imagenes/rse/arbol7.png')}}" alt="...">
         </div>
-        <div class="col-sm-4 col-md-6 py-5">
+        <div class="col-sm-4 col-md-5 py-5">
           <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
-            <p>Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom y estudiantes secundarios con sendos proyectos de artesanías y vitrofusión.</p>
-            <p>Articulamos acciones con actores internos (voluntarios corporativos) y externos (Legislatura, Gobierno, Universidad, OSC), siendo la educación uno de los pilares para el logro de los resultados esperados de este Programa.</p>
-            <p>Al mismo tiempo, otro gran desafío que podrá fortalecer nuestros objetivos es la implementación de los Estándares GRI4, como también la sanción de la Ley de RSE en la Provincia del Chaco, cuyo anteproyecto está a cargo de nuestra responsable de RSE.</p>
-            <p>Nos sustenta además la Agenda 2030, con su visión ambiciosa del desarrollo sostenible que integra sus dimensiones económica, social y ambiental.
+            <p class="text-muted">Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
+            <p class="text-muted">Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom y estudiantes secundarios con sendos proyectos de artesanías y vitrofusión.</p>
+            <p class="text-muted">Articulamos acciones con actores internos (voluntarios corporativos) y externos (Legislatura, Gobierno, Universidad, OSC), siendo la educación uno de los pilares para el logro de los resultados esperados de este Programa.</p>
+            <p class="text-muted"><span style="color: black; font-size: 18px;">Al mismo tiempo, otro gran desafío que podrá fortalecer nuestros objetivos es la implementación de los Estándares GRI4, como también la sanción de la Ley de RSE en la Provincia del Chaco, cuyo anteproyecto está a cargo de nuestra responsable de RSE.</span></p>
+            <p class="text-muted"><span style="color: black; font-size: 18px;">Nos sustenta además la Agenda 2030, con su visión ambiciosa del desarrollo sostenible que integra sus dimensiones económica, social y ambiental.</span></p>
           </div>
         </div>
       </div>
-
-      {{-- <div class="item">
-        <div class="holder col-sm-12 col-md-4 py-4 col-md-offset-1">
-          <img class="img-responsive" src="{{asset('imagenes/rse/arbol8.png')}}" alt="...">
-        </div>
-        <div class="col-sm-4 col-md-6 py-5">
-          <div class="carousel-caption">
-            <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera, nos enfocamos en el eje Educación para la Empleabilidad, y dentro de éste, el eje Emprendedurismo con jóvenes y mujeres N.B.I.</p>
-            <p>Con el desafío de lograr reducir los índices de desempleo y desocupación en la provincia del Chaco, a más de lograr fortalecer la cultura de estos grupos, como también su sustentabilidad, iniciamos acciones con mujeres artesanas emprendedoras Qom y estudiantes secundarios con sendos proyectos de artesanías y vitrofusión.</p>
-            <p>Articulamos acciones con actores internos (voluntarios corporativos) y externos (Legislatura, Gobierno, Universidad, OSC), siendo la educación uno de los pilares para el logro de los resultados esperados de este Programa.</p>
-            <p>Al mismo tiempo, otro gran desafío que podrá fortalecer nuestros objetivos es la implementación de los Estándares GRI4, como también la sanción de la Ley de RSE en la Provincia del Chaco, cuyo anteproyecto está a cargo de nuestra responsable de RSE.</p>
-            <p>Nos sustenta además la Agenda 2030, con su visión ambiciosa del desarrollo sostenible que integra sus dimensiones económica, social y ambiental.
-            </p>
-          </div>
-        </div>
-      </div> --}}
     </div>
   </div>
+
+  <div class="container">
+    {{-- <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div id="carousel-example" class="carousel carousel-fade" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example" data-slide-to="1"></li>
+            <li data-target="#carousel-example" data-slide-to="2"></li>
+          </ol>
+
+          <div class="carousel-inner" role="listbox">
+            <div class="item active text-center">
+              <img src="{{asset('imagenes/rse/arbol1.png')}}" style="width: 70%; display: inline-block" alt="...">
+              <div class="carousel-caption p-absolute">
+                <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera,</p>
+              </div>
+            </div>
+            <div class="item text-center">
+              <img src="{{asset('imagenes/rse/arbol2.png')}}" style="width: 70%; display: inline-block" alt="...">
+              <div class="carousel-caption p-absolute">
+                <p>nos enfocamos en el eje Educación para la Empleabilidad,</p>
+              </div>
+            </div>
+            <div class="item text-center">
+              <img src="{{asset('imagenes/rse/arbol3.png')}}" style="width: 70%; display: inline-block" alt="...">
+              <div class="carousel-caption p-absolute">
+                <h3>Lorem</h3>
+                <p>Impsum</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div> --}}
+  </div>
+
 </section>
 
 @stop

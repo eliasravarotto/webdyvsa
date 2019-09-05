@@ -78,7 +78,7 @@
   <img src="/imagenes/arg.png" class="escarapela-mb visible-xs visible-sm"> --}}
   
   @include('frontend.includes.flash-message')
-  @include('frontend.includes.consultas-y-reclamos')
+  @include('frontend.includes.la-voz-del-cliente')
   @include('frontend.includes.menu-fab')
   {{-- @include('frontend.includes.chat-whatsapp') --}}
 
@@ -164,8 +164,17 @@
                   .text('Buscando...');
         });
 
+        //Desactivar Boton submit del #form al enviar el formulario
         $('#form').submit(function(){
-          $("input[type='submit']", this)
+          $("button[type='submit']", this)
+            .val("Enviando Mensaje...")
+            .attr('disabled', 'disabled');
+          return true;
+        });
+
+        //Desactivar Boton submit del #form-voz-d-cli al enviar el formulario
+        $('#form-voz-d-cli').submit(function(){
+          $("button[type='submit']", this)
             .val("Enviando Mensaje...")
             .attr('disabled', 'disabled');
           return true;
@@ -187,10 +196,16 @@
         });
 
         //ERRORS FORMULARIO VOZ DEL CLIENTE
-        {{sizeof($errors) > 0 ? 'var hayError = true' : 'var hayError = false;'}};
-        if (hayError){
-            $('#myModal').modal('show');
-        }
+        @if(sizeof($errors) > 0)
+          @if( $errors->vdc_from != null ||
+              $errors->vdc_cliente != null ||
+              $errors->vdc_email != null ||
+              $errors->vdc_telefono != null ||
+              $errors->vdc_mensaje != null )
+              $('#myModal').modal('show');
+          @endif
+        @endif
+          
 
         {{ session('success') ? 'var session_success = true' : 'var session_success = false;'}};
         if (session_success){

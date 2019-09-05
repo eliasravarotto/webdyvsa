@@ -54,19 +54,10 @@ class MensajeEmailController extends Controller
             'email' => 'required',
             'telefono' => 'required',
             'mensaje' => 'required',
-            // 'g-recaptcha-response' => 'required',
+            'g-recaptcha-response' => 'required',
         ]);
-        // if ($request->telefono == null) {
-        //     $this->validate($request, [
-        //         'from' => 'required',
-        //         'cliente' => 'required',
-        //         'mensaje' => 'required',
-        //         'g-recaptcha-response' => 'required',
-        //     ]);
 
-        // }
 
-        try {
             $mensaje = new MensajeEmail;
             $mensaje->cliente = $request->cliente;
             $mensaje->telefono = $request->telefono;
@@ -114,19 +105,6 @@ class MensajeEmailController extends Controller
 
                     event( new HaIngresadoUnaConsulta($mensaje, $asunto));
                     break;
-                case 'la_voz_del_cliente':
-                    $from = 'la_voz_del_cliente';
-                    $asunto ='La voz del Cliente - Nuevo Mensaje';
-                    $enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
-                    $mensaje->from = $from;
-                    $mensaje->enviar_a = $enviar_a;
-                    $mensaje->save();
-                    Mail::send('emails.consulta', ['consulta' => $mensaje], function ($message) use ($mensaje, $asunto){
-                        $message->subject($asunto);
-                        $message->to($mensaje->enviar_a)->cc('rukyguerra@derkayvargas.com.ar');
-                    });
-                    $this->enviarRtaAutomatica($mensaje->email); 
-                    break;
                 default:
                     $from = 'contacto';
                     $asunto ='Consulta desde Pagina Web';
@@ -140,11 +118,42 @@ class MensajeEmailController extends Controller
             }
 
             return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+    }
 
-        } catch (Exception $e) {
+    public function storeVozDelCli(ReCaptchataTestFormRequest $request)
+    {
+        $this->validate($request, [
+            'vdc_from' => 'required',
+            'vdc_cliente' => 'required',
+            'vdc_email' => 'required',
+            'vdc_telefono' => 'required',
+            'vdc_mensaje' => 'required',
+            'g-recaptcha-response' => 'required',
+        ], [
+            'vdc_cliente.required' => 'El campo nombre y apellido es obligatorio',
+            'vdc_email.required' => 'El campo email es obligatorio',
+            'vdc_telefono.required' => 'El campo teléfono es obligatorio',
+            'vdc_mensaje.required' => 'El campo mensaje es obligatorio',
+        ]);
 
-            return back()->with('success','Lo sentimos ha ocurrido un error, por favor intente mas tarde.');
-        }
+        $mensaje = new MensajeEmail;
+        $mensaje->cliente = $request->vdc_cliente;
+        $mensaje->telefono = $request->vdc_telefono;
+        $mensaje->email = $request->vdc_email;
+        $mensaje->mensaje = $request->vdc_mensaje;
+        $mensaje->from = $request->vdc_from;
+        $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
+        $mensaje->save();
+        $asunto ='La voz del Cliente - Nuevo Mensaje';
+        Mail::send('emails.consulta', ['consulta' => $mensaje], function ($message) use ($mensaje, $asunto){
+            $message->subject($asunto);
+            $message->to($mensaje->enviar_a)
+                    ->cc(['rukyguerra@derkayvargas.com.ar','fabianaaranda@derkayvargas.com.ar']);
+        });
+        $this->enviarRtaAutomatica($mensaje->email); 
+
+        return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+
     }
 
     /**

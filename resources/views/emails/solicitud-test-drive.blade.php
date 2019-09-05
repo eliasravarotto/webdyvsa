@@ -15,9 +15,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
-  <div style="display: flex; justify-content: flex-end;">
-  	{{-- <img src="https://derkayvargas.com/_files/200000005-b0396b1366/200/dyv_logo_700px-01.png" style="height: 50px; width: 50px"> --}}
-  </div>
   <div>
   <h4>Nueva Solicitud de Test Drive</h4>
   <table class="table table-striped" style="width: 80%">

@@ -1,4 +1,4 @@
-<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form">
 	{{ csrf_field() }}
 	<input type="hidden" name="from" value="contacto">
 	<div class="row">
@@ -41,9 +41,7 @@
 			@endif
 		</div>
 		<div class="col-md-6 text-right">
-			{{-- <button type="submit" class="btn btn-default btn-submit">ENVIAR</button> --}}
-			{{-- <button type="submit"  class="btn btn-default">ENVIAR</button> --}}
-			<input type="submit" class="btn btn-default" value="ENVIAR">
+			<button type="submit"  class="btn btn-default">ENVIAR</button>
 		</div>
 	</div>
 </form>
