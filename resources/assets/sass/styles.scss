@@ -621,6 +621,10 @@ BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
   color: #f05f40 !important;
 }
 
+.text-dark {
+  color: rgba(0,0,0,.87) !important;
+}
+
 .dropdown-menu > li > a {
   line-height: 2.1
 }
@@ -850,6 +854,10 @@ $gris-2:#626262;
 /*BOTONES------------------------------------------------*/
 .btn {
   border-radius: 0px !important;
+}
+
+.btn-round{
+  border-radius: 50px !important;
 }
 
 .btn-circle {
@@ -1196,6 +1204,10 @@ $gris-2:#626262;
   text-decoration: none;
   background-color: transparent !important;
   color: white;
+}
+
+.navbar-ppal >li.active {
+  border-bottom: solid 4px #f30727;
 }
 
 /*NAVBAR Mobile & Tablets----------------------------------------------------------------
@@ -2729,15 +2741,18 @@ CARD COMPONENT
     margin-bottom: 5px;
 }
 
-.mu-primary-btn {
-    background-color: #0091ea;
-    color: #fff;
+.mu-btn{
     border-radius: 25px;
     display: inline-block;
     text-transform: uppercase;
     padding: 15px 70px;
     font-size: 18px;
     font-weight: 700;
+}
+
+.mu-primary-btn {
+    background-color: #0091ea;
+    color: #fff;
 }
 .mu-white-btn {
     background-color: #fff;
@@ -2752,24 +2767,29 @@ CARD COMPONENT
 .mu-white-btn:hover {
     color: #eb3232;
 }
+
 .mu-black-btn {
     background-color: #000;
     color: #fff;
-    display: inline-block;
-    border-radius: 25px;
-    text-transform: uppercase;
-    padding: 15px 70px;
-    font-size: 18px;
-    font-weight: 700;
 }
 
 .mu-white-btn-sm {
     background-color: #fff;
     color: #000;
-    border-radius: 25px;
-    display: inline-block;
-    text-transform: uppercase;
-    padding: 15px 40px;
-    font-size: 14px;
-    font-weight: 700;
+}
+
+.mu-light-btn {
+  background-color: #eeeeee;
+  color: #313131;
+}
+
+.mu-default-btn {
+    color: #636b6f;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.mu-light-btn:hover {
+  background-color: #cccfd0;
+  color: #000;
 }

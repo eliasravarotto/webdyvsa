@@ -14,14 +14,16 @@
     		<div class="container">
     			<section class="pad-top-bot-50" style="padding-left: 8%; padding-right: 8%;">
     				<div class="row">
-    					{{-- @foreach($modelos->slice(0,4) as $modelo) --}}
     					@foreach($modelos as $modelo)
-    					<div class=" col-sm-6 col-md-3">
-    					    <a href="/modelos/{{$modelo->nombre}}" style="text-decoration: none;" class="thumbnail thumbnail-hover thumbnail-no-border thumbnail-no-bg">
-    					      <img src="{{$modelo->img_modelo}}" alt="..." style="">
-    					      <div class="caption" style="border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 5px ">
-    					        <p class="text-uppercase text-center fs-20 gray-2">{{$modelo->nombre}}</p>
-    					      </div>
+    					<div class="col-sm-6 col-md-3 py-1 px-1">
+    					    <a class="thumbnail thumbnail-hover thumbnail-no-border thumbnail-no-bg" href="/modelos/{{$modelo->nombre}}" style="text-decoration: none; padding: 8px">
+    					      <img src="{{$modelo->img_modelo}}" alt="...">
+                              <div class="d-flex">
+                                  <img class="img-responsive" src="{{$modelo->img_logo}}">
+                              </div>
+                              <div class="d-flex justify-content-center">
+                                <span class="btn btn-default text-center btn-round">Ver modelo</span>
+                              </div>
     					    </a>
     				  	</div>
     					@endforeach

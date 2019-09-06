@@ -318,14 +318,14 @@ class ModelosController extends Controller
             $portada = new PortadaModelo;
             
             if ($request->hasFile('foto_desk')) {
-                $portada->imagen_desktop = $request->file('foto_desk')->store('public/portada-modelos'); 
+                $portada->imagen_desktop = $request->file('foto_desk')->store('modelo-portada', ['disk' => 'public_uploads']); 
             }
 
             if ($request->hasFile('foto_mobile')) {
-                $portada->imagen_mobile = $request->file('foto_mobile')->store('public/portada-modelos');
+                $portada->imagen_mobile = $request->file('foto_mobile')->store('modelo-portada', ['disk' => 'public_uploads']);
             }
             if ($request->hasFile('foto_logo')) {
-                $portada->logo = $request->file('foto_logo')->store('public/portada-modelos'); 
+                $portada->logo = $request->file('foto_logo')->store('modelo-portada', ['disk' => 'public_uploads']); 
             }
 
             $portada->html = $request->html;

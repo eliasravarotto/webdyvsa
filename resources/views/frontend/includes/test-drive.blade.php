@@ -8,8 +8,7 @@
 						<p class="fs-17">Solicitá una pruba de manejo completando el formulario. Un asesor se comunicará con usted para confirmar la disponibilidad.</p>
 					</div>
 					<div>
-						
-					<a href="{{route('test_drive_form')}}" class="mu-white-btn">SOLICITAR TESTDRIVE <i class="fa fa-long-arrow-right"></i></a>
+						<a href="{{route('test_drive_form')}}" class="mu-btn mu-white-btn">SOLICITAR TESTDRIVE <i class="fa fa-long-arrow-right"></i></a>
 					</div>
 				</div>
 			</div>

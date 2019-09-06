@@ -174,38 +174,13 @@
               <p class="text-left fz17">
               Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
               </p>
-              <a href="/usados" class="btn btn-outline btn-danger text-center">VER TODOS</a>
+              <a href="/usados" class="btn btn-default btn-round btn-lg text-center">VER USADOS</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-    <!---------------------------------------------------------------------
-    MODELOS
-    ----------------------------------------------------------------------->
-    {{-- <section class="mt-1">
-    <div class="container">
-      <div class="title-section mt-3">
-        <a href="{{route('nuevo_plan_nacional')}}">
-        <h3 style="color: black">Prestamos TuAuto del Nuevo Banco del Chaco<br><small>No dejes pasar esta gran oportunidad de tener tu crédito, consultanos!</small></h3>
-        </a>
-      </div>
-      <div class="owl-carousel owl-md owl-theme">
-        <a href="#" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/home-min/tu-auto1.jpeg')}}" alt="">
-        </a>
-        <a href="#" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/home-min/tu-auto2.jpeg')}}" alt="">
-        </a>
-        <a href="#" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-          <img src="{{asset('imagenes/home-min/tu-auto3.jpeg')}}" alt="">
-        </a>
-      </div>
-    </div>
-  </section> --}}
-
   <!---------------------------------------------------------------------
     MODELOS
   ----------------------------------------------------------------------->
@@ -221,40 +196,22 @@
           <img src="{{asset('imagenes/home-min/nueva-rav4.png')}}" class="img-responsive visible-md visible-lg">
           </a>
         </div>
-       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-          <a href="/modelos/hilux" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/hilux.png" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
-            <div class="caption text-center">
-              <img src="/imagenes/modelos/hilux/logo-hilux.png" style="height: 70px" alt="nueva Hilux 2019 Toyota Derka y Dargas Chaco">
-              <hr>
-              <h4 class="text-uppercase">La superación por encima del cambio</h4>
-            </div>
-          </a>          
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-          <a href="/modelos/corolla" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/corolla.png" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
-            <div class="caption text-center">
-              <img src="/imagenes/modelos/corolla/logo-corolla.png" style="height: 55px;" alt="nuevo Corolla 2019 Toyota Derka y Dargas Chaco">
-              <hr>
-              <h4 class="text-uppercase">SEGUÍ AVANZANDO</h4>
-            </div>
-          </a>          
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" style="margin: 20px 0;">
-          <a href="/modelos/etios" class="thumbnail thumbnail-lighten thumbnail-no-border">
-            <img src="/imagenes/home-min/etios.png" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
-            <div class="caption text-center">
-              <img src="/imagenes/modelos/etios/logo.png" style="height: 40px" alt="nuevo Etios 2019 Toyota Derka y Dargas Chaco">
-              <hr>
-              <h4 class="text-uppercase">Mi primer Toyota</h4>
-            </div>
-          </a>          
-        </div>
       </div>
-      <p class="text-center" style="font-size: 20px;"><a class="btn btn-outline btn-danger" href="/modelos">VER MODELOS</a></p>
+      <div class="owl-carousel owl-theme py-3">
+          @foreach(\App\Helpers\Helper::getModelos() as $modelo)
+          <a href="/modelos/{{$modelo->nombre}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+            <div class="d-flex justify-content-center">
+              <img class="img-responsive" style="width: 50%" src="{{$modelo->img_logo}}">
+            </div>
+            <img src="{{$modelo->img_modelo}}" alt="Toyota {{$modelo->modelo}} 2019">
+            <p class="text-center text-dark text-uppercase" style="font-size: 12px">{{$modelo->slogan}}</p>
+            <div class="d-flex justify-content-center">
+              <span class="btn btn-default btn-round">Ver modelo</span>
+            </div>
+          </a>
+          @endforeach
+      </div>
+      <p class="text-center"><a class="mu-light-btn mu-btn" href="/modelos">VER TODOS LOS MODELOS</a></p>
     </div>
   </section>
 
@@ -474,25 +431,28 @@
 <!-- end -->
 <script type="text/javascript">
   //Init Owl Caroucel 
-      $('.owl-carousel.owl-md').owlCarousel({
+
+      $('.owl-carousel').owlCarousel({
         stagePadding: 50,
-        loop:true,
-        margin:10,
+        loop:false,
+        margin:40,
         nav:false,
         autoplay: true,
         autoPlaySpeed: 5000,
         autoPlayTimeout: 5000,
         autoplayHoverPause: true,
+        pagination: false,
+        dots: false,
         items : 3,
         responsive:{
             0:{
                 items:1
             },
             600:{
-                items:1
+                items:2
             },
             792:{
-                items:2
+                items:3
             }
         }
     })
