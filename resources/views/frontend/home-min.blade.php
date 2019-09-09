@@ -140,7 +140,6 @@
       <ol class="carousel-indicators">
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-mobile" data-slide-to="1"></li>
-        <li data-target="#carousel-mobile" data-slide-to="2"></li>
       </ol>
 
       <div class="carousel-inner">
@@ -149,9 +148,6 @@
         </div>
         <div class="item">
           <img src="/imagenes/home-min/portada-tu-auto-sm.png" alt="">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/septiembre0km.jpeg" alt="">
         </div>
       </div>
     </div>
