@@ -118,6 +118,9 @@
           <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
         </div>
         <div class="item">
+          <img src="/imagenes/home-min/portada-plan-dyv.png" alt="Banco del chaco autos 0km">
+        </div>
+        <div class="item">
           <img src="/imagenes/home-min/portada-tu-auto.png" alt="Banco del chaco autos 0km">
         </div>
         <div class="item">
@@ -141,6 +144,7 @@
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-mobile" data-slide-to="1"></li>
         <li data-target="#carousel-mobile" data-slide-to="2"></li>
+        <li data-target="#carousel-mobile" data-slide-to="3"></li>
       </ol>
 
       <div class="carousel-inner">
