@@ -382,36 +382,30 @@
 					</div>
 				</div>
 				<div class="row py-3">
-					<div class="col-md-6">
-						<div class="row py-3">
-							<div class="col-md-3 text-center">
-								<span class="text-center" style="font-size: 10rem; color:#e01e37"><i class="fa fa-users"></i></span><br>
-							</div>
-							<div class="col-md-9">
-								<div class="w-100 text-center-sm">
-									<span style="font-size: 3rem">Agrupados</span>
-								</div>
-								<p class="py-1 text-justify" style="font-size: 1.8rem; color: #999">Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
-								<div class="w-100 text-center-sm">
-									<a class="btn btn-black btn-round text-center-sm" href="#" data-toggle="modal" data-target="#modal_agrupados">Ver listado</a>
-								</div>
-							</div>
+					<div class="col-md-1" id="agrupados">
+					</div>
+					<div class="col-md-5 py-2" id="agrupados">
+						<div class="w-100 d-flex justify-content-center align-items-center">
+							<img src="/imagenes/tpa/agrupados.png" style="max-width: 50%">
+						</div>
+						<div class="w-100 text-center">
+							<span style="font-size: 3rem">Agrupados</span>
+						</div>
+						<p class="py-1 text-center" style="font-size: 1.8rem; color: #999">Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
+						<div class="w-100 text-center">
+							<a class="btn btn-black btn-round text-center-sm" href="#" data-toggle="modal" data-target="#modal_agrupados">Ver listado</a>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="row py-3">
-							<div class="col-md-3 text-center-sm">
-								<span class="text-center" style="font-size: 10rem; color:#e01e37"><i class="stm-service-icon-car-listing"></i></span><br>
-							</div>
-							<div class="col-md-9">
-								<div class="w-100 text-center-sm">
-									<span style="font-size: 3rem">Adjudicados</span>
-								</div>
-								<p class="py-1 text-justify" style="font-size: 1.8rem; color: #999">Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados.</p>
-								<div class="w-100 text-center-sm">
-									<a class="btn btn-black btn-round text-center-sm" href="#" onclick="masDetalles(event)">Consultar</a>
-								</div>
-							</div>
+					<div class="col-md-5 py-2" id="adjudicados">
+						<div class="w-100 d-flex justify-content-center align-items-center">
+							<img src="/imagenes/tpa/adjudicados.png" class="img-responsive" style="max-width: 50%">
+						</div>
+						<div class="w-100 text-center">
+							<span style="font-size: 3rem">Adjudicados</span>
+						</div>
+						<p class="py-1 text-center" style="font-size: 1.8rem; color: #999">Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados.</p>
+						<div class="w-100 text-center">
+							<a class="btn btn-black btn-round text-center-sm" href="#" onclick="masDetalles(event)">Consultar</a>
 						</div>
 					</div>
 				</div>
@@ -425,9 +419,10 @@
         			<h4 class="modal-title">Listado de Agrupados</h4>
 			      </div>
 			      <div class="modal-body">
-			        <table class="table table-hover">
+			      	<a href="#" class="btn-danger btn-round" onclick="toggleForm()">Consultar</a>
+			        <table id="tabla-agrupados" class="table table-hover py-1" style="margin:20px 0px; ">
 					    <thead>
-					      <tr style="background-color: black">
+					      <tr style="background-color: #af8e8e">
 					        <th class="text-center" style="color: white; font-weight: bold;">G/O</th>
 					        <th class="text-center" style="color: white; font-weight: bold;">Unidad</th>
 					        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Modalidad</th>
@@ -449,12 +444,56 @@
 						      @endforeach
 					    </tbody>
 				  	</table>
+				  	<div class="row" id="form-agrupados" style="display: none; margin-top: 25px">
+				  		<div class="col-md-offset-2 col-md-8">
+				  		<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+							{{ csrf_field() }}
+							<input type="hidden" name="from" value="tpa">
+							<div class="row">
+								<div class=" col-md-6">
+							    <label class="control-label">Nombre y Apellido</label>
+							    <input type="text" class="form-control cliente" name="cliente" required value="{{old('cliente')}}">
+						  	</div>
+						  	<div class=" col-md-6">
+							    <label class="control-label">Teléfono</label>
+							    <input type="text" class="form-control" name="telefono" required value="{{old('telefono')}}">
+						  	</div>
+							</div>
+							<div class="row">
+								<div class=" col-md-12">
+									<label class="control-label">Email</label>
+							    <input type="email" class="form-control" name="email" value="{{old('email')}}">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label class="control-label">Mensaje</label>
+							    <textarea name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
+								</div>
+							</div>
+							<div class="row pad-top-20">
+								<div class="col-md-6">
+									<div class="g-recaptcha" 
+								           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+								    </div>
+									@if ($errors->has('g-recaptcha-response'))
+									    <span class="text-danger">
+									        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+									    </span>
+									@endif
+								</div>
+								<div class="col-md-6 text-right">
+									<input type="submit" class="btn btn-danger btn-round" name="ENVIAR">
+								</div>
+							</div>
+						</form>
+						</div>
+				  	</div>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
 			      </div>
 			    </div>
-
 			  </div>
 			</div>
 		</section>
@@ -630,6 +669,10 @@
 	}(document, 'script', 'facebook-jssdk'));
 	//---------------End-----------------------------------------------------------------//
 
+	function toggleForm(){
+		$('#tabla-agrupados').toggle()
+		$('#form-agrupados').toggle()
+	}
 	
     function saltarA(e, time){
     	e.preventDefault();
