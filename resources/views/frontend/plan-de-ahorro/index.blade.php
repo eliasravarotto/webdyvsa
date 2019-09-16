@@ -419,7 +419,8 @@
         			<h4 class="modal-title">Listado de Agrupados</h4>
 			      </div>
 			      <div class="modal-body">
-			      	<a href="#" class="btn-danger btn-round" onclick="toggleForm()">Consultar</a>
+			      	<a href="#" id="btn-consultar-agrupados" class="btn-danger btn-round" onclick="toggleForm()">Consultar</a>
+			      	<a href="#" id="btn-ver-listado-agrupados" class="btn-danger btn-round d-none" onclick="toggleListadoAgrupados()" style="display: none">Ver Listado</a>
 			        <table id="tabla-agrupados" class="table table-hover py-1" style="margin:20px 0px; ">
 					    <thead>
 					      <tr style="background-color: #af8e8e">
@@ -672,6 +673,15 @@
 	function toggleForm(){
 		$('#tabla-agrupados').toggle()
 		$('#form-agrupados').toggle()
+		$('#btn-consultar-agrupados').hide()
+		$('#btn-ver-listado-agrupados').show()
+	}
+
+	function toggleListadoAgrupados(){
+		$('#tabla-agrupados').toggle()
+		$('#form-agrupados').toggle()
+		$('#btn-ver-listado-agrupados').hide()
+		$('#btn-consultar-agrupados').show()
 	}
 	
     function saltarA(e, time){
