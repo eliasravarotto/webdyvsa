@@ -2,7 +2,7 @@
 
 @section('title_and_meta')
   <title>Derka y Vargas - Plan de Ahorro</title>
-  <meta name="description" content="Plan de Ahorro Toyota Resistencia, Charata, Saenz Peña, Villa Angela, Toyota Cuotas Sin Interes, Plan sin interes Toyota, Plan de Ahorro Etios, Plan de Ahorro Hilux, Plan de Ahorro Yaris, Plan de Ahorro Corolla, Que es un plan de ahorro">
+  <meta name="description" content="Plan de Ahorro Toyota Resistencia, Charata, Saenz Peña, Villa Angela, Toyota Cuotas Sin Interes, Plan sin interes Toyota, Plan de Ahorro Etios, Plan de Ahorro Hilux, Plan de Ahorro Yaris, Plan de Ahorro Corolla, Que es un plan de ahorro. Autos 100% financiados sin interes. Toyota 100% financiado">
 @stop
 
 @section('mark-up-facebook')
@@ -39,19 +39,19 @@
 		<section>
 			<img class="visible-lg visible-md" src="/imagenes/tpa/plan-de-ahorro-auto.jpeg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
 			<img class="img-responsive visible-xs visible-sm" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
-		</section>
-
-		<section>
+			
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
-						<div class="page-header">
-						  <h2 style="font-weight: bold;">ACCEDÉ A TU TOYOTA DE LA FORMA MÁS CONVENIENTE <br><small style="font-weight: bold;">¡TENEMOS UN PLAN PARA VOS!</small></h2>
-						</div>
+						<div class="title-section mt-3">
+			            	<h3>ACCEDÉ A TU TOYOTA DE LA FORMA MÁS CONVENIENTE <br>  <small>¡TENEMOS UN PLAN PARA VOS!</small></h3>
+			          	</div>
 					</div>
 				</div>
 			</div>
+		</section>
 
+		<section>
 			<div class="container" id="planes-tpa">
 				<div class="row">
 					<div class="col-md-6">
@@ -371,6 +371,93 @@
 			  </div>
 			</div>
 		</section>
+
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
+						<div class="title-section mt-3">
+			            	<h3>OPORTUNIDADES<br>  <small>Conoce los agrupados y planes adjudicados</small></h3>
+			          	</div>
+					</div>
+				</div>
+				<div class="row py-3">
+					<div class="col-md-6">
+						<div class="row py-3">
+							<div class="col-md-3 text-center">
+								<span class="text-center" style="font-size: 10rem; color:#e01e37"><i class="fa fa-users"></i></span><br>
+							</div>
+							<div class="col-md-9">
+								<div class="w-100 text-center-sm">
+									<span style="font-size: 3rem">Agrupados</span>
+								</div>
+								<p class="py-1 text-justify" style="font-size: 1.8rem; color: #999">Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
+								<div class="w-100 text-center-sm">
+									<a class="btn btn-black btn-round text-center-sm" href="#" data-toggle="modal" data-target="#modal_agrupados">Ver listado</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row py-3">
+							<div class="col-md-3 text-center-sm">
+								<span class="text-center" style="font-size: 10rem; color:#e01e37"><i class="stm-service-icon-car-listing"></i></span><br>
+							</div>
+							<div class="col-md-9">
+								<div class="w-100 text-center-sm">
+									<span style="font-size: 3rem">Adjudicados</span>
+								</div>
+								<p class="py-1 text-justify" style="font-size: 1.8rem; color: #999">Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados.</p>
+								<div class="w-100 text-center-sm">
+									<a class="btn btn-black btn-round text-center-sm" href="#" onclick="masDetalles(event)">Consultar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal AGRUPADOS-->
+			<div id="modal_agrupados" class="modal" role="dialog">
+			  <div class="modal-dialog modal-lg" >
+			    <div class="modal-content" >
+			      <div class="modal-header">
+			      	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title">Listado de Agrupados</h4>
+			      </div>
+			      <div class="modal-body">
+			        <table class="table table-hover">
+					    <thead>
+					      <tr style="background-color: black">
+					        <th class="text-center" style="color: white; font-weight: bold;">G/O</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Unidad</th>
+					        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Modalidad</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Avance Cuotas</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Precio Venta</th>
+					        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Cuota Pura</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					    	@foreach(\App\Helpers\Helper::getAgrupados() as $agrupado)
+						      <tr>
+						        <td class="text-center" style="font-weight: bold;">{{$agrupado->grupo}}/{{$agrupado->orden}}</td>
+						        <td class="text-center" style="font-weight: bold;">{{$agrupado->unidad}}</td>
+						        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$agrupado->modalidad}}</td>
+						        <td class="text-center" style="font-weight: bold;">{{$agrupado->avance_cuotas}}</td>
+						        <td class="text-center" style="font-weight: bold;">$ {{number_format($agrupado->precio_venta, 2, ',', '.')}}</td>
+						        <td class="text-center visible-md visible-lg" style="font-weight: bold;">$ {{ number_format($agrupado->cuota_pura, 2, ',', '.')}}</td>
+						      </tr>
+						      @endforeach
+					    </tbody>
+				  	</table>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+		</section>
 		
 		<section class="py-1">
 			<div class="container">
@@ -413,112 +500,6 @@
 							  <source src="/videos/tpa.mp4" type="video/mp4">
 								Your browser does not support the video tag.
 							</video>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="my-4">
-			<div class="container">
-				<div class="title-section mt-3">
-			        <h2>Subite ya a tu nuevo Toyota<br>  <small>Conoce nuestros planes adjudicados</small></h2>
-		      	</div>
-				<div class="row">
-					<div class="col-md-offset-3 col-md-6 col-xs-12 col-sm-12">
-						<div class="well">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-						                <div class="caption caption-default">
-						                	<h1 class="text-center"><i class="fa fa-car" style="font-size: 90px; color: black;"></i></h1>
-						                    <h4 class="text-center">Adjudicados</h4>
-						                    <p class="text-justify">
-						                      Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados 
-						                    </p>
-						                    <center>
-						                    {{-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modal_adjudicados">VER LISTADO</a> --}}
-						                    </center>
-						                </div>
-				        			</div>
-								</div>
-								<!-- Modal ADJUDICADOS-->
-								{{-- <div id="modal_adjudicados" class="modal" role="dialog">
-								  <div class="modal-dialog" style="width: 100%">
-								    <div class="modal-content" >
-								      <div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								        <h4 class="modal-title">LISTADO DE PLANES ADJUDICADOS</h4>
-								      </div>
-								      <div class="modal-body">
-								        <table class="table table-hover">
-										    <thead>
-										      <tr>
-										        <th>Firstname</th>
-										        <th>Lastname</th>
-										        <th>Email</th>
-										      </tr>
-										    </thead>
-										    <tbody>
-										      <tr>
-										        <td>John</td>
-										        <td>Doe</td>
-										        <td>john@example.com</td>
-										      </tr>
-										      <tr>
-										        <td>Mary</td>
-										        <td>Moe</td>
-										        <td>mary@example.com</td>
-										      </tr>
-										      <tr>
-										        <td>July</td>
-										        <td>Dooley</td>
-										        <td>july@example.com</td>
-										      </tr>
-										    </tbody>
-										  </table>
-								      </div>
-								      <div class="modal-footer">
-								        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-								      </div>
-								    </div>
-
-								  </div>
-								</div> --}}
-
-								<div class="col-md-6">
-									<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-						                <div class="caption caption-default">
-						                	<h1 class="text-center"><i class="fa fa-users" style="font-size: 90px; color: black;"></i></h1>
-						                    <h4 class="text-center">Agrupados</h4>
-						                    <p class="text-justify">
-											Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
-						                    {{-- <a href="/posventa" class="btn btn-toyota">VER</a> --}}
-						                </div>
-				        			</div>
-								</div>
-
-								{{-- <div class="col-md-4">
-									<div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-						                <div class="caption caption-default">
-						                	<h1 class="text-center"><i class="fa fa-laptop" style="font-size: 90px; color: black;"></i></h1>
-						                    <h4 class="text-center">Licitación Online</h4>
-						                    <p class="text-center">
-						                    	Completá online el formulario de pre-licitación para el próximo acto de adjudicación.
-						                    	Proximamente.
-						                    </p>
-						                    <a href="/posventa" class="btn btn-toyota">VER</a>
-						                </div>
-				        			</div>
-								</div> --}}
-							</div>
-							<div class="row">
-								<div class="col-sm-12 col-md-12">
-									<center>
-										<a class="btn btn-toyota" href="#" onclick="masDetalles(event)">CONSULTAR</a>
-									</center>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -631,25 +612,7 @@
 			</div>
 			</div>
 		</section>
-
-		{{-- <section>
-			<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div style="width: calc(100% - 2px );
-							    border: solid 1px #d8d8d8;
-							    border-radius: 4px;
-							    padding:10px; font-size: 15px;
-							    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-							    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-							    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
-						<b>Próximo Vencimiento:</b> Sr. Cliente el próximo vencimiento de su cuota es el <b>10/12/2018.</b>
-					</div>
-				</div>		
-			</div>
-			</div>
-		</section> --}}
-			<br>
+		<br>
 		</div>
     </article>
 @stop

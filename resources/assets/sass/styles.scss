@@ -858,6 +858,7 @@ $gris-2:#626262;
 
 .btn-round{
   border-radius: 50px !important;
+  padding: 6px 20px;
 }
 
 .btn-circle {
@@ -966,7 +967,9 @@ $gris-2:#626262;
 }
 
 .btn-black:hover {
-  color: #FFF;
+    color: #fff;
+    background-color: #b3182c;
+    border-color: #941424;
 }
 
 .btn-rojo-pastel {
@@ -1335,6 +1338,10 @@ $gris-2:#626262;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .text-center-sm{
+    text-align: center;
   }
 
 }

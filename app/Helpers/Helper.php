@@ -5,6 +5,7 @@ use App\Sucursal;
 use App\Modelo;
 use App\Post;
 use App\Usado;
+use App\TpaAgrupado;
 
 
 class Helper
@@ -84,5 +85,10 @@ class Helper
 	public static function getHighOrdenUsados()
 	{
 		return Usado::where('orden', '<>', null)->orderBy('orden', 'DESC')->first()->orden;
+	}
+
+	public static function getAgrupados()
+	{
+		return TpaAgrupado::all();
 	}
 }
