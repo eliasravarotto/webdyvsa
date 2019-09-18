@@ -6,6 +6,7 @@ use App\Modelo;
 use App\Post;
 use App\Usado;
 use App\TpaAgrupado;
+use App\TpaAdjudicado;
 
 
 class Helper
@@ -90,5 +91,10 @@ class Helper
 	public static function getAgrupados()
 	{
 		return TpaAgrupado::all();
+	}
+
+	public static function getAdjudicados()
+	{
+		return TpaAdjudicado::all();
 	}
 }

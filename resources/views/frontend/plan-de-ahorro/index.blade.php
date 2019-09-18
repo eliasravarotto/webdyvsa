@@ -58,9 +58,10 @@
 				        <div class="tarjeta">
 				        	<div class="tarjeta-contenido">
 				        		<div class="contenido-izquierda">
-				        			<h2>ETIOS X</h2>
-				        			<p>5 Puertas</p>
-				        			<p>Plan 100%</p>
+				        			<h2>ETIOS X <br>	
+				        			<small>5 Puertas</small>
+				        			</h2>
+				        			<p style="font-size: 2rem">Plan 100%</p>
 				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_etios">
 				        				DETALLES
 				        			</a>
@@ -76,28 +77,31 @@
 				        <div class="tarjeta">
 				        	<div class="tarjeta-contenido">
 				        		<div class="contenido-izquierda">
-				        			<h2>YARIS XS</h2>
-				        			<p>5 Puertas</p>
-				        			<p>Plan 100%</p>
-				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_yaris">
+				        			<h2>ETIOS X <br>	
+				        			<small>5 Puertas</small>
+				        			</h2>
+				        			<p style="font-size: 2rem">Plan 70/30</p>
+				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_etios_7030">
 				        				DETALLES
 				        			</a>
 				        		</div>
 				        		<div class="contenido-derecha">
-				          			<img src="/imagenes/tpa/tarjeta-yaris.png" alt="Yaris Plan de Ahorro Toyota Chaco. Derka y Vargas.">
+				          			<img src="/imagenes/tpa/tarjeta-etios.png" alt="Etios Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 				        		</div>
 				        	</div>
 				        </div>     
 			      	</div>
 				</div>
+
 				<div class="row">
 					<div class="col-md-6">
 				        <div class="tarjeta">
 				        	<div class="tarjeta-contenido">
 				        		<div class="contenido-izquierda">
-				        			<h2>HILUX</h2>
-				        			<p>CD 4x2 DX</p>
-				        			<p>Plan 70/30</p>
+				        			<h2>HILUX <br>
+				        			<small>CD 4x2 DX</small>
+				        			</h2>
+				        			<p style="font-size: 2rem">Plan 70/30</p>
 				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_hilix_70_30">
 				        				DETALLES
 				        			</a>
@@ -112,9 +116,10 @@
 				        <div class="tarjeta">
 				        	<div class="tarjeta-contenido">
 				        		<div class="contenido-izquierda">
-				        			<h2>HILUX</h2>
-				        			<p>CD 4x4 DX</p>
-				        			<p>Plan 100%</p>
+				        			<h2>HILUX <br>
+				        			<small>CD 4x4 DX</small>
+				        			</h2>
+				        			<p style="font-size: 2rem">Plan 100%</p>
 				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_hilix_100">
 				        				DETALLES
 				        			</a>
@@ -124,6 +129,26 @@
 				        		</div>
 				        	</div>
 				        </div>      
+			      	</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+				        <div class="tarjeta">
+				        	<div class="tarjeta-contenido">
+				        		<div class="contenido-izquierda">
+				        			<h2>YARIS XS <br>
+				        			<small>5 Puertas</small>
+				        			</h2>
+				        			<p style="font-size: 2rem">Plan 100%</p>
+				        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_yaris">
+				        				DETALLES
+				        			</a>
+				        		</div>
+				        		<div class="contenido-derecha">
+				          			<img src="/imagenes/tpa/tarjeta-yaris.png" alt="Yaris Plan de Ahorro Toyota Chaco. Derka y Vargas.">
+				        		</div>
+				        	</div>
+				        </div>     
 			      	</div>
 				</div>
 			</div>
@@ -370,6 +395,66 @@
 
 			  </div>
 			</div>
+
+			<!-- Modal ETIOS 70/30-->
+			<div id="modal_etios_7030" class="modal" role="dialog">
+			  <div class="modal-dialog">
+			    <!-- Modal content-->
+			    <div class="modal-content" >
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			      </div>
+			      <div class="modal-body">
+					  <h2 class="text-center">Etios X 5P</h2>
+					<table class="table table-hover table-bordered">
+					    <tbody>
+					      <tr>
+					        <th>Modalidad</th>
+					        <td>70/30</td>
+					      </tr>
+					      <tr>
+					        <th>Plazo</th>
+					        <td>84 Cuotas</td>
+					      </tr>
+					    </tbody>
+				  	</table>
+			        <table class="table table-hover">
+					    <thead>
+					      <tr style="background-color: black">
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuota 1</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 2 a 5</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 6 a 24</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Cuotas 25 a 84</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td class="text-center" style="font-weight: bold;">$ 5.655,80</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.105,89</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.262,05</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.458,41</td>
+					      </tr>
+					    </tbody>
+				  	</table>
+				  	<div class="row">
+				  		<div class="col-md-12">
+				  			<blockquote style="border-left: 5px solid #e81f39;">
+								<div class="row">
+									<p>Integración Mínima 24 Cuotas</p>	
+									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
+									<p>Vigencia 01 de Septiembre 2019</p>
+								</div>
+							</blockquote>
+				  		</div>
+				  	</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
 		</section>
 
 		<section>
@@ -405,7 +490,7 @@
 						</div>
 						<p class="py-1 text-center" style="font-size: 1.8rem; color: #999">Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados.</p>
 						<div class="w-100 text-center">
-							<a class="btn btn-black btn-round text-center-sm" href="#" onclick="masDetalles(event)">Consultar</a>
+							<a class="btn btn-black btn-round text-center-sm" href="#" data-toggle="modal" data-target="#modal_adjudicados">Ver Listado</a>
 						</div>
 					</div>
 				</div>
@@ -446,6 +531,94 @@
 					    </tbody>
 				  	</table>
 				  	<div class="row" id="form-agrupados" style="display: none; margin-top: 25px">
+				  		<div class="col-md-offset-2 col-md-8">
+				  		<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
+							{{ csrf_field() }}
+							<input type="hidden" name="from" value="tpa">
+							<div class="row">
+								<div class=" col-md-6">
+							    <label class="control-label">Nombre y Apellido</label>
+							    <input type="text" class="form-control cliente" name="cliente" required value="{{old('cliente')}}">
+						  	</div>
+						  	<div class=" col-md-6">
+							    <label class="control-label">Teléfono</label>
+							    <input type="text" class="form-control" name="telefono" required value="{{old('telefono')}}">
+						  	</div>
+							</div>
+							<div class="row">
+								<div class=" col-md-12">
+									<label class="control-label">Email</label>
+							    <input type="email" class="form-control" name="email" value="{{old('email')}}">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label class="control-label">Mensaje</label>
+							    <textarea name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
+								</div>
+							</div>
+							<div class="row pad-top-20">
+								<div class="col-md-6">
+									<div class="g-recaptcha" 
+								           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+								    </div>
+									@if ($errors->has('g-recaptcha-response'))
+									    <span class="text-danger">
+									        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+									    </span>
+									@endif
+								</div>
+								<div class="col-md-6 text-right">
+									<input type="submit" class="btn btn-danger btn-round" name="ENVIAR">
+								</div>
+							</div>
+						</form>
+						</div>
+				  	</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- Modal ADJUDICADOS-->
+			<div id="modal_adjudicados" class="modal" role="dialog">
+			  <div class="modal-dialog modal-lg" >
+			    <div class="modal-content" >
+			      <div class="modal-header">
+			      	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title">Listado de Planes Adjudicados</h4>
+			      </div>
+			      <div class="modal-body">
+			      	<a href="#" id="btn-consultar-adjudicados" class="btn-danger btn-round" onclick="toggleFormAdjudicados()">Consultar</a>
+			      	<a href="#" id="btn-ver-listado-adjudicados" class="btn-danger btn-round d-none" onclick="toggleListadoAdjudicados()" style="display: none">Ver Listado</a>
+			        <table id="tabla-adjudicados" class="table table-hover py-1" style="margin:20px 0px; ">
+					    <thead>
+					      <tr style="background-color: #af8e8e">
+					        <th class="text-center" style="color: white; font-weight: bold;">G/O</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Unidad</th>
+					        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Modalidad</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Avance Cuotas</th>
+					        <th class="text-center" style="color: white; font-weight: bold;">Precio Venta</th>
+					        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Cuota Pura</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					    	@foreach(\App\Helpers\Helper::getAdjudicados() as $adjudicado)
+						      <tr>
+						        <td class="text-center" style="font-weight: bold;">{{$adjudicado->grupo}}/{{$adjudicado->orden}}</td>
+						        <td class="text-center" style="font-weight: bold;">{{$adjudicado->unidad}}</td>
+						        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$adjudicado->modalidad}}</td>
+						        <td class="text-center" style="font-weight: bold;">{{$adjudicado->avance_cuotas}}</td>
+						        <td class="text-center" style="font-weight: bold;">$ {{number_format($adjudicado->precio_venta, 2, ',', '.')}}</td>
+						        <td class="text-center visible-md visible-lg" style="font-weight: bold;">$ {{ number_format($adjudicado->cuota_pura, 2, ',', '.')}}</td>
+						      </tr>
+						      @endforeach
+					    </tbody>
+				  	</table>
+				  	<div class="row" id="form-adjudicados" style="display: none; margin-top: 25px">
 				  		<div class="col-md-offset-2 col-md-8">
 				  		<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}
@@ -677,11 +850,26 @@
 		$('#btn-ver-listado-agrupados').show()
 	}
 
+	function toggleFormAdjudicados(){
+		console.log('consuletar');
+		$('#tabla-adjudicados').toggle()
+		$('#form-adjudicados').toggle()
+		$('#btn-consultar-adjudicados').hide()
+		$('#btn-ver-listado-adjudicados').show()
+	}
+
 	function toggleListadoAgrupados(){
 		$('#tabla-agrupados').toggle()
 		$('#form-agrupados').toggle()
 		$('#btn-ver-listado-agrupados').hide()
 		$('#btn-consultar-agrupados').show()
+	}
+
+	function toggleListadoAdjudicados(){
+		$('#tabla-adjudicados').toggle()
+		$('#form-adjudicados').toggle()
+		$('#btn-ver-listado-adjudicados').hide()
+		$('#btn-consultar-adjudicados').show()
 	}
 	
     function saltarA(e, time){
