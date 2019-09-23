@@ -9,7 +9,7 @@
     <meta property="og:url" content="https://www.derkayvargas.com/modelos/etios" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Toyota {{$modelo->nombre}}" />
-    <meta property="og:image" content="{{$modelo->img_modelo}}" />
+    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 
 @section('content')
