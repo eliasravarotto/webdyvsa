@@ -8,7 +8,7 @@
 @section('mark-up-facebook')
     <meta property="og:url" content="https://www.derkayvargas.com/posventa" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="POSVENTA DERKA Y VARGAS" />
+    <meta property="og:title" content="SERVICIOS DE POSVENTA DERKA Y VARGAS" />
     <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 

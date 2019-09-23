@@ -5,6 +5,13 @@
   <meta name="description" content="Derka y Vargas Toyota, {{$modelo->nombre}}, {{$modelo->nombre}} versiones, {{$modelo->nombre}} precios">
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:url" content="https://www.derkayvargas.com/modelos/etios" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Toyota {{$modelo->nombre}}" />
+    <meta property="og:image" content="{{$modelo->img_modelo}}" />
+@stop
+
 @section('content')
 	<detalle-modelo 
 		v-bind:data="{ 
