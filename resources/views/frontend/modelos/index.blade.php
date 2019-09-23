@@ -8,7 +8,7 @@
 @section('mark-up-facebook')
     <meta property="og:url" content="https://www.derkayvargas.com/modelos/etios" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Toyota {{$modelo->nombre}}" />
+    <meta property="og:title" content="Toyota Listado de Modelos" />
     <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 
