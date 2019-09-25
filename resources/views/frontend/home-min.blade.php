@@ -85,6 +85,16 @@
     margin-right: 20px;
   }
 
+  @media (max-width:992px) {
+    .stm_widget_recent_news .stm_magazine_single_list .magazine-list-img,
+    .stm_widget_recent_news .stm_magazine_single_list .stm-magazine-loop-data{
+      width: 100%
+    }
+    .stm_widget_recent_news .stm_magazine_single_list {
+      flex-direction: column;
+    }
+  }
+
   .fz17{
     font-size: 17px;
   }
@@ -290,47 +300,7 @@
       </div>
   </section>
 
-  <!---------------------------------------------------------------------
-    PARALLAX
-  ----------------------------------------------------------------------->
-  <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2019.png);">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          {{-- &nbsp;
-          <div class="caption">
-            <span class="border et-waypoint">Derka y Vargas - Charata</span>
-          </div> --}}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!---------------------------------------------------------------------
-    SOCIAL MEDIA
-  ----------------------------------------------------------------------->
-  <section id="services" style="border-top: 1px solid #01b2aa;">
-    <div class="container">
-      <img src="{{asset('imagenes/home-min/social_media.jpg')}}" style="width: 100%">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
-          <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 text-center" style="margin: 20px 0;">
-          {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
-          @php $count = 0 @endphp
-          @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
-            @if ($count == 9) @break @endif
-            @php $count++ @endphp
-            <a class="group" rel="group1" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}"></a>
-          @endforeach
-         
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!---------------------------------------------------------------------
+    <!---------------------------------------------------------------------
     NOVEDADES DERKA Y VARGAS
   ----------------------------------------------------------------------->
   <section class="mt-3">
@@ -360,9 +330,9 @@
               </div>
               <div class="recentNewsAnimate">
                 @foreach(\App\Helpers\Helper::postRecientes(2) as $post)
-                    <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm_magazine_single_list no_deco post-208 type-post status-publish format-standard has-post-thumbnail hentry category-news tag-future tag-interior tag-multimedia">
+                    <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm_magazine_single_list">
                       <div class="magazine-list-img">
-                        <img width="255" height="160" src="{{$post->imagen_portada}}" class="attachment-stm-img-255-160 size-stm-img-255-160 wp-post-image" alt="{{$post->alt_img}}" title="{{$post->titulo}}">
+                        <img width="255" height="160" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}">
                         {{-- <div class="fa-round"><i class="fa fa-share"></i></div> --}}
                       </div>
                       <div class="stm-magazine-loop-data">
@@ -371,7 +341,7 @@
                         </h3>
                         <div class="middle-content">
                           <div class="magazine-category normal-font">
-                            New        
+                            {{$post->tema->tema}}       
                           </div>
                           <div class="magazine-loop-date">
                               <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
@@ -423,6 +393,46 @@
         </div>
       </div>
     </div>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------
+    PARALLAX
+  ----------------------------------------------------------------------->
+  <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2019.png);">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          {{-- &nbsp;
+          <div class="caption">
+            <span class="border et-waypoint">Derka y Vargas - Charata</span>
+          </div> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---------------------------------------------------------------------
+    SOCIAL MEDIA
+  ----------------------------------------------------------------------->
+  <section id="services" style="border-top: 1px solid #01b2aa;">
+    <div class="container">
+      <img src="{{asset('imagenes/home-min/social_media.jpg')}}" style="width: 100%">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
+          <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 text-center" style="margin: 20px 0;">
+          {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
+          @php $count = 0 @endphp
+          @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
+            @if ($count == 9) @break @endif
+            @php $count++ @endphp
+            <a class="group" rel="group1" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}"></a>
+          @endforeach
+         
+        </div>
+      </div>
     </div>
   </section>
 @stop
