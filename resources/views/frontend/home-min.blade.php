@@ -86,6 +86,13 @@
   }
 
   @media (max-width:992px) {
+    .stm_widget_recent_news .stm_magazine_single_list .magazine-list-img img{
+      margin-bottom: 25px;
+    }
+    .stm_widget_recent_news .stm_magazine_single_list .stm-magazine-loop-data{
+      padding: 0px;
+    }
+
     .stm_widget_recent_news .stm_magazine_single_list .magazine-list-img,
     .stm_widget_recent_news .stm_magazine_single_list .stm-magazine-loop-data{
       width: 100%
