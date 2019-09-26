@@ -68,7 +68,7 @@ p{
 }
 
 .justify-content-space-around {
-  justify-content: space-around;
+  justify-content: space-around !important;
 }
 
 .align-items-center {
@@ -2707,15 +2707,48 @@ CARD COMPONENT
   .card-component{
     margin: 20px;
   }
-} 
+}
 
+.bg-gradient-dark-opacity{
+  background-image: linear-gradient(0deg,rgba(0,0,0,0.68) 100%,rgba(0,0,0,0.68) 48.70%,rgba(0,0,0,0.00) 48.70%,rgba(0,0,0,0.00) 82.37%,rgba(0,0,0,0.68) 82.37%,rgba(0,0,0,0.68) 96.89%);
+}
 
-#mu-call-to-action {
-    background-image: url('/imagenes/bg-testdrive.jpg');
-    /*float: left;*/
+.bg-header-usados{
+  background-image: url('/imagenes/usados-seleccionados.png');
+  background-size: cover;
+}
+
+.bg-header-contacto{
+  background-image: url('/imagenes/dyv_charata.jpg');
+  background-size: cover;
+}
+
+.bg-header-tpa-avanzados{
+  background-image: url('/imagenes/tpa/plan-de-ahorro-header.jpeg');
+  background-size: cover;
+  background-position: center !important;
+}
+.mu-call-to-action {
     background-position: top left;
     position: relative;
     width: 100%;
+}
+
+#mu-call-to-action {
+    background-image: url('/imagenes/bg-testdrive.jpg');
+    background-position: top left;
+    position: relative;
+    width: 100%;
+}
+.mu-call-to-action-dark:before {
+    content: '';
+    position: absolute;
+    opacity: 0.7;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.68) 100%, rgba(0, 0, 0, 0.68) 48.7%, rgba(0, 0, 0, 0) 48.7%, rgba(0, 0, 0, 0) 82.37%, rgba(0, 0, 0, 0.68) 82.37%, rgba(0, 0, 0, 0.68) 96.89%);
 }
 #mu-call-to-action:before {
     background: #ef3636;
@@ -2727,9 +2760,10 @@ CARD COMPONENT
     top: 0;
     bottom: 0;
 }
+
 .mu-call-to-action-area {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     padding: 70px 0;
     width: 100%;
     align-items: center;
@@ -2741,6 +2775,7 @@ CARD COMPONENT
     display: inline;
     float: left;
     max-width: 70%;
+    padding: 5px 25px;
 }
 .mu-call-to-action-left h2 {
     font-size: 24px;

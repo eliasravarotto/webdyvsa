@@ -91,6 +91,8 @@ Route::get('/','FrontController@homeMin');
 Route::get('/financiacion','FrontController@financiacion');
 Route::get('/posventa','FrontController@posventa')->name('posventa');
 Route::get('/plan-de-ahorro','FrontController@planDeAhorro');
+Route::get('/plan-de-ahorro/listado-planes-avanzados','FrontController@planesAvanzados')->name('planes_avanzados');
+Route::get('/plan-de-ahorro/listado-planes-adjudicados','FrontController@planesAdjudicados')->name('planes_adjudicados');
 Route::get('/contacto','FrontController@contacto')->name('contacto');
 Route::get('/nosotros','FrontController@aboutUs');
 Route::get('/modelos/{modelo}','FrontController@modelo');

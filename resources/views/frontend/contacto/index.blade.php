@@ -13,19 +13,25 @@
 @stop
 
 @section('content')
-
-	<!-- Navbar Desktop -->
-	{{-- <navbar-desk v-bind:data="{ bg_rgba: 'rgba(0,0,0,0.5);', position: 'relative' }"></navbar-desk> --}}
-	<div class="container">
-	<article>
-		<section class="pad-bot-25">
+<section>
+	<div class="mu-call-to-action mu-call-to-action-dark bg-header-contacto">
+		<div class="container">
 			<div class="row">
-				<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
-					<h2 class="text-center h1-titulo-form">CONTACTO<br>
-						<small>Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</small>
-					</h2>
+				<div class="col-md-12">
+					<div class="mu-call-to-action-area d-flex justify-content-space-around">
+						<div class="mu-call-to-action-left">
+							<h1><b>CONTACTO</b></h1>
+							<p class="visible-md visible-lg" style="color: #d8d8d8; font-size: 18px">Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</p>
+						</div>
+					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+</section>
+<div class="container">
+	<article>
+		<section class="py-4">
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 pad-bot-25 col-lg-offset-1 col-md-offset-1">
 					@if (session('status'))

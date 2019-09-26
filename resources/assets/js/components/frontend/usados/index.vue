@@ -3,8 +3,7 @@
     <br>
     <div class="panel panel-default">
         <div class="panel-heading d-flex justify-content-space-between">
-            <p>¿Que vehículo estás buscando?</p>
-            <a class="text-right" href="#" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="color: darkmagenta;">
+            <a class="text-left" href="#" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="color: darkmagenta;">
                 <i class="fa fa-filter" aria-hidden="true"></i> Filtros
             </a>
         </div>

@@ -100,7 +100,7 @@
 	}
 
 	.panel-default {
-		margin-top: -80px;
+		/*margin-top: -80px;*/
 		border-radius: 6px;
 		box-shadow: 0 10px 14px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
 		border-color: #f8f8f8;
@@ -119,7 +119,7 @@
 
 	@media only screen and (max-width:992px) {
 		.panel-default {
-			margin-top: -100px;
+			margin-top: -0px;
 		}
 
 	}
@@ -133,7 +133,22 @@
 @stop
 
 @section('content')
-    <section style="background:url('imagenes/usados-seleccionados.png') center;height: 250px;background-size: cover;"></section>
+<section>
+	<div class="mu-call-to-action mu-call-to-action-dark bg-header-usados">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="mu-call-to-action-area">
+						<div class="mu-call-to-action-left">
+							<h1><b>USADOS SELECCIONADOS</b></h1>
+							<p class="visible-md visible-lg" style="color: #f8f8f8; font-size: 20px">Encontrá el vehículo que estás buscando.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 	<div class="container">
 		<section>
 			<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
