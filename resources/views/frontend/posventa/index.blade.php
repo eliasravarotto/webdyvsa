@@ -200,7 +200,7 @@ TOYOTA RECALL
 				</div>
 			</div>
 
-			<div class="container">
+{{-- 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
 						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-corolla.jpeg')}}">
@@ -212,13 +212,13 @@ TOYOTA RECALL
 						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-hilux.jpeg')}}">
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</section>
 
 		<!---------------------------------------------------------------------
 	    SERVICIO AL CLIENTE
 	  	----------------------------------------------------------------------->
-		<section style="height: auto;">
+		<section class="py-4" style="height: auto;">
 			<div class="container">
 				<h2 class="text-center bold">Servicio al Cliente</h2>
 				<h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3>

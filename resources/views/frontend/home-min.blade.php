@@ -135,9 +135,6 @@
           <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
         </div>
         <div class="item">
-          <img src="/imagenes/home-min/portada-plan-dyv.png" alt="Banco del chaco autos 0km">
-        </div>
-        <div class="item">
           <img src="/imagenes/home-min/portada-tu-auto.png" alt="Banco del chaco autos 0km">
         </div>
         <div class="item">
@@ -156,12 +153,10 @@
     </div>
 
     <!-- Carusel Principal MOBILE-->
-    <div id="myCarousel" class="carousel slide visible-xs visible-sm"  data-ride="carousel">
+    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm"  data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-mobile" data-slide-to="1"></li>
-        <li data-target="#carousel-mobile" data-slide-to="2"></li>
-        <li data-target="#carousel-mobile" data-slide-to="3"></li>
       </ol>
 
       <div class="carousel-inner">
@@ -170,9 +165,6 @@
         </div>
         <div class="item">
           <img src="/imagenes/home-min/portada-tu-auto-sm.png" alt="">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/septiembre0km-sm.png" alt="">
         </div>
       </div>
     </div>
