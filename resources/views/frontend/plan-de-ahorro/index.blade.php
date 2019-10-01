@@ -160,7 +160,6 @@
 			    <div class="modal-content" >
 			      <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal">&times;</button>
-			        {{-- <h4 class="modal-title text-center">HILUX 100%</h4> --}}
 			      </div>
 			      <div class="modal-body">
 					  <h2 class="text-center">Hilux 4x4 DX CD</h2>
@@ -187,10 +186,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 20.623,79</td>
-					        <td class="text-center" style="font-weight: bold;">$ 21.920,36</td>
-					        <td class="text-center" style="font-weight: bold;">$ 20.576,38</td>
-					        <td class="text-center" style="font-weight: bold;">$ 24.173,09</td>
+					        <td class="text-center" style="font-weight: bold;">$ 22.666,14</td>
+					        <td class="text-center" style="font-weight: bold;">$ 24.006,38</td>
+					        <td class="text-center" style="font-weight: bold;">$ 22.467,41</td>
+					        <td class="text-center" style="font-weight: bold;">$ 26.566,93</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -200,7 +199,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Septiembre 2019</p>
+									<p>Vigencia 01 de Octubre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -248,10 +247,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 14.109,57</td>
-					        <td class="text-center" style="font-weight: bold;">$ 15.965,32</td>
-					        <td class="text-center" style="font-weight: bold;">$ 14.266,56</td>
-					        <td class="text-center" style="font-weight: bold;">$ 14.550,71</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.506,58</td>
+					        <td class="text-center" style="font-weight: bold;">$ 17.406,01</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.539,05</td>
+					        <td class="text-center" style="font-weight: bold;">$ 15.991,39</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -261,7 +260,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Septiembre 2019</p>
+									<p>Vigencia 01 de Octubre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -308,10 +307,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 10.900,62</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.989,28</td>
-					        <td class="text-center" style="font-weight: bold;">$ 11.573,59</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.776,59</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.881,61</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.991,25</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.481,90</td>
+					        <td class="text-center" style="font-weight: bold;">$ 13.926,40</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -321,7 +320,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Septiembre 2019</p>
+									<p>Vigencia 01 de Octubre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -369,10 +368,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 7.885,75 </td>
-					        <td class="text-center" style="font-weight: bold;">$ 8.926,83</td>
-					        <td class="text-center" style="font-weight: bold;">$ 8.807,81</td>
-					        <td class="text-center" style="font-weight: bold;">$ 10.449,35</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.358,92 </td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.411,13</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.247,47</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.076,35</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -382,7 +381,7 @@
 								<div class="row">
 									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Septiembre 2019</p>
+									<p>Vigencia 01 de Octubre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
@@ -429,10 +428,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 5.655,80</td>
-					        <td class="text-center" style="font-weight: bold;">$ 8.105,89</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.262,05</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.458,41</td>
+					        <td class="text-center" style="font-weight: bold;">$ 5.995,17</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.507,39</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.612,91</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.905,94</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -440,9 +439,8 @@
 				  		<div class="col-md-12">
 				  			<blockquote style="border-left: 5px solid #e81f39;">
 								<div class="row">
-									<p>Integración Mínima 24 Cuotas</p>	
 									<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-									<p>Vigencia 01 de Septiembre 2019</p>
+									<p>Vigencia 01 de Octubre 2019</p>
 								</div>
 							</blockquote>
 				  		</div>
