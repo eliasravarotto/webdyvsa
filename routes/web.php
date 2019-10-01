@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 	Route::resource('admin/modelos','ModelosController');
+	Route::resource('tpa_adjudicados','TpaAdjudicadosController');
+	Route::resource('tpa_agrupados','TpaAgrupadosController');
 	Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
 	Route::put('admin/modelos/{id}/edit/colores','ModelosController@updateColores');
 	Route::get('admin/modelos/{id}/edit/galeria','ModelosController@editGaleria');

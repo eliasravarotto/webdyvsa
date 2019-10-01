@@ -69,6 +69,20 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="#tpa_menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle arrow-right">
+                        <i class="fa fa-car"></i>
+                        TPA
+                    </a>
+                    <ul class="collapse list-unstyled" id="tpa_menu">
+                        <li>
+                            <a href="{{route('tpa_adjudicados.index')}}">Adjudicados</a>
+                        </li>
+                        <li>
+                            <a href="{{route('tpa_agrupados.index')}}">Avanzados</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="/admin/usados">
                         <i class="material-icons" style="vertical-align: sub !important;">directions_car</i>
                         USADOS
