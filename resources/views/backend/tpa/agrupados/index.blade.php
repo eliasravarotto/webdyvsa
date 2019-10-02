@@ -1,14 +1,6 @@
 @extends('backend.layout')
 
 @section('content')
-	@if(session()->has('success'))
-		<div class="alert alert-success" role="alert">
-		  {{session('success')}}
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		    <span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-	@endif
     <div class="row">
       <div class="col-md-12 d-flex justify-content-end" style="margin-bottom: 10px;">
         <a class="btn btn-primary" href="{{ route('tpa_agrupados.create') }}">Nuevo</a>
@@ -18,10 +10,10 @@
         <div class="card-body">
             <div class="form-inline">
               <div class="form-group mr-2 mb-2">
-                <input type="number" id="nro-int" class="form-control" placeholder="Interno" onkeyup="filtrar(event)">
+                <input type="number" id="grupo" class="form-control" placeholder="Grupo" onkeyup="filtrar(event)">
               </div>
               <div class="form-group mr-2 mb-2">
-                <input type="text" id="nro-dom" class="form-control" placeholder="Dominio" onkeyup="filtrar(event)">
+                <input type="text" id="orden" class="form-control" placeholder="Orden" onkeyup="filtrar(event)">
               </div>
               <button type="submit" class="btn btn-default mb-2" onclick="limpiar()">Limpiar</button>
             </div>
@@ -37,21 +29,21 @@
                     <th>Avance Cuotas</th>
                     <th>Precio Venta</th>
                     <th>Cuota Pura</th>
-                    <th>Created at</th>
+                    <th>Updated at</th>
                     <th></th>
                   </tr>
                 </thead>
-                <tbody id="tbody-usados">
+                <tbody id="tbody-agrupados">
                     @foreach($agrupados as $agrupado)
                     <tr class="agrupado-row agrupado-row-{{$agrupado->grupo}} agrupado-row-{{$agrupado->orden}}" id="agrupado-row-{{$agrupado->grupo}}-{{$agrupado->orden}}">
-                        <td id="agrupado-int">{{ $agrupado->grupo }}</td>
-                        <td id="agrupado-dom">{{ $agrupado->orden }}</td>
+                        <td id="agrupado-grupo">{{ $agrupado->grupo }}</td>
+                        <td id="agrupado-orden">{{ $agrupado->orden }}</td>
                         <td>{{ $agrupado->unidad }}</td>
                         <td class="text-center">{{$agrupado->modalidad}}</td>
                         <td class="text-center">{{ $agrupado->avance_cuotas }}</td>
-                        <td><b>$ {{ $agrupado->precio_venta }}</b></td>
-                        <td><b>$ {{ $agrupado->cuota_pura }}</b></td>
-                        <td> {{ $agrupado->created_at }}</td>
+                        <td><b>$ {{ number_format($agrupado->precio_venta, 2, ',', '.') }}</b></td>
+                        <td><b>$ {{ number_format($agrupado->cuota_pura, 2, ',', '.') }}</b></td>
+                        <td> {{ $agrupado->updated_at != null ? $agrupado->updated_at->diffForHumans() : '-' }}</td>
                         <td>
                             <form method="POST" action="{{ route('tpa_agrupados.destroy', $agrupado->id) }}">
                                 {{ csrf_field() }}
@@ -76,15 +68,16 @@
         var valor_a_buscar;
         var id_filtrar_por;
 
-        if (e.target.id == 'nro-dom'){
-            target_id_filtrar_por = '#agrupado-dom';
-            valor_a_buscar = document.getElementById("nro-dom").value;
-            document.getElementById("nro-int").value = '';
+        if (e.target.id == 'orden'){
+            target_id_filtrar_por = '#agrupado-orden';
+            valor_a_buscar = document.getElementById("orden").value;
+            document.getElementById("grupo").value = '';
         }
-        if(e.target.id == 'nro-int'){
-            target_id_filtrar_por = '#agrupado-int';
-            valor_a_buscar = document.getElementById("nro-int").value;
-            document.getElementById("nro-dom").value = '';
+        if(e.target.id == 'grupo'){
+            target_id_filtrar_por = '#agrupado-grupo';
+            valor_a_buscar = document.getElementById("grupo").value;
+            document.getElementById("orden").value = '';
+            console.log(valor_a_buscar);
         }
 
         $('.agrupado-row').hide();
@@ -93,7 +86,7 @@
             var value = $(this).find(target_id_filtrar_por).html();
             valor_a_buscar = valor_a_buscar.toString().toUpperCase();
 
-            if (target_id_filtrar_por == '#agrupado-dom'){
+            if (target_id_filtrar_por == '#agrupado-orden'){
                 if(value.includes(valor_a_buscar)){
                     $('.agrupado-row-'+value).show();
                     return;
@@ -117,8 +110,8 @@
     function limpiar()
     {
         interno = '';
-        document.getElementById("nro-int").value = '';
-        document.getElementById("nro-dom").value = '';
+        document.getElementById("grupo").value = '';
+        document.getElementById("orden").value = '';
         $('.agrupado-row').show();
     }
 

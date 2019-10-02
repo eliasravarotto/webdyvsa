@@ -18,10 +18,10 @@
         <div class="card-body">
             <div class="form-inline">
               <div class="form-group mr-2 mb-2">
-                <input type="number" id="nro-int" class="form-control" placeholder="Interno" onkeyup="filtrar(event)">
+                <input type="number" id="grupo" class="form-control" placeholder="Grupo" onkeyup="filtrar(event)">
               </div>
               <div class="form-group mr-2 mb-2">
-                <input type="text" id="nro-dom" class="form-control" placeholder="Dominio" onkeyup="filtrar(event)">
+                <input type="text" id="orden" class="form-control" placeholder="Orden" onkeyup="filtrar(event)">
               </div>
               <button type="submit" class="btn btn-default mb-2" onclick="limpiar()">Limpiar</button>
             </div>
@@ -41,16 +41,16 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody id="tbody-usados">
+                <tbody id="tbody-adjudicados">
                     @foreach($adjudicados as $adjudicado)
                     <tr class="adjudicado-row adjudicado-row-{{$adjudicado->grupo}} adjudicado-row-{{$adjudicado->orden}}" id="adjudicado-row-{{$adjudicado->grupo}}-{{$adjudicado->orden}}">
-                        <td id="adjudicado-int">{{ $adjudicado->grupo }}</td>
-                        <td id="adjudicado-dom">{{ $adjudicado->orden }}</td>
+                        <td id="adjudicado-grupo">{{ $adjudicado->grupo }}</td>
+                        <td id="adjudicado-orden">{{ $adjudicado->orden }}</td>
                         <td>{{ $adjudicado->unidad }}</td>
                         <td class="text-center">{{$adjudicado->modalidad}}</td>
                         <td class="text-center">{{ $adjudicado->avance_cuotas }}</td>
-                        <td><b>$ {{ $adjudicado->precio_venta }}</b></td>
-                        <td><b>$ {{ $adjudicado->cuota_pura }}</b></td>
+                        <td><b>$ {{ number_format($adjudicado->precio_venta, 2, ',', '.') }}</b></td>
+                        <td><b>$ {{  number_format($adjudicado->cuota_pura, 2, ',', '.')}}</b></td>
                         <td> {{ $adjudicado->created_at }}</td>
                         <td>
                             <form method="POST" action="{{ route('tpa_adjudicados.destroy', $adjudicado->id) }}">
@@ -76,15 +76,15 @@
         var valor_a_buscar;
         var id_filtrar_por;
 
-        if (e.target.id == 'nro-dom'){
-            target_id_filtrar_por = '#adjudicado-dom';
-            valor_a_buscar = document.getElementById("nro-dom").value;
-            document.getElementById("nro-int").value = '';
+        if (e.target.id == 'orden'){
+            target_id_filtrar_por = '#adjudicado-orden';
+            valor_a_buscar = document.getElementById("orden").value;
+            document.getElementById("grupo").value = '';
         }
-        if(e.target.id == 'nro-int'){
-            target_id_filtrar_por = '#adjudicado-int';
-            valor_a_buscar = document.getElementById("nro-int").value;
-            document.getElementById("nro-dom").value = '';
+        if(e.target.id == 'grupo'){
+            target_id_filtrar_por = '#adjudicado-grupo';
+            valor_a_buscar = document.getElementById("grupo").value;
+            document.getElementById("orden").value = '';
         }
 
         $('.adjudicado-row').hide();
@@ -93,7 +93,7 @@
             var value = $(this).find(target_id_filtrar_por).html();
             valor_a_buscar = valor_a_buscar.toString().toUpperCase();
 
-            if (target_id_filtrar_por == '#adjudicado-dom'){
+            if (target_id_filtrar_por == '#adjudicado-orden'){
                 if(value.includes(valor_a_buscar)){
                     $('.adjudicado-row-'+value).show();
                     return;
@@ -117,8 +117,8 @@
     function limpiar()
     {
         interno = '';
-        document.getElementById("nro-int").value = '';
-        document.getElementById("nro-dom").value = '';
+        document.getElementById("grupo").value = '';
+        document.getElementById("orden").value = '';
         $('.adjudicado-row').show();
     }
 
