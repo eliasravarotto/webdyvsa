@@ -89,6 +89,9 @@
 	                            <p> <b>Plan de Ahorro</b> <a href="mailto:toyotaplan@derkayvargas.com.ar">toyotaplan@derkayvargas.com.ar</a></p>
 	                            <p> <b>Administración:</b> <a href="mailto:administracion@derkayvargas.com.ar">administracion@derkayvargas.com.ar</a></p>
 	                            <p> <b>Gestoría:</b> <a href="mailto:gestoria@derkayvargas.com.ar">gestoria@derkayvargas.com.ar</a></p>
+	                            <p> <b>Posventa Sáenz Peña</b> <a href="mailto:posventa-sp@derkayvargas.com.ar">posventa-sp@derkayvargas.com.ar</a></p>
+	                            <p> <b>Posventa Resistencia</b> <a href="mailto:posventa-resistencia@derkayvargas.com.ar">posventa-resistencia@derkayvargas.com.ar</a></p>
+	                            <p> <b>Posventa Charata</b> <a href="mailto:posventa-charata@derkayvargas.com.ar">posventa-charata@derkayvargas.com.ar</a></p>
 	                            <p> <b>RSE</b> <a href="mailto:rse@derkayvargas.com.ar">rse@derkayvargas.com.ar</a></p>
 	                        </div>
 	                    </div>

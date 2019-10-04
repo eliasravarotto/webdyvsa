@@ -7,29 +7,44 @@
     <h6 class="card-subtitle mb-2 text-muted">Recibidos desde {{$from}}.</h6>    
     <table class="table table-sm table-hover table-responsive-xl">
         <thead>
-          <tr class="d-flex">
-            <th class="col-sm-3">Cliente</th>
-            <th class="col-sm-2">Teléfono</th>
-            {{-- <th>Email</th> --}}
-            <th class="col-sm-5">Mensaje</th>
-            {{-- <th>Enviado a</th> --}}
-            <th class="col-sm-2">Created_at</th>
+          <tr>
+            <th>Created_at</th>
+            <th>Cliente</th>
+            <th>Email</th>
+            <th>Mensaje</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           @foreach($mensajes as $mensaje)
-          <tr class="d-flex">
-            <td class="col-sm-3">{{$mensaje->cliente}}</td>
-            <td class="col-sm-2">{{$mensaje->telefono}}</td>
-            {{-- <td>{{$mensaje->email}}</td> --}}
-            <td class="col-sm-5">{{$mensaje->mensaje}}</td>
-            {{-- <td>{{$mensaje->enviar_a}}</td> --}}
-            <td class="col-sm-2">{{ date('d-m-Y H:m', strtotime($mensaje->created_at))}}</td>
+          <tr>
+            <td>{{ date('d-m-Y', strtotime($mensaje->created_at))}}</td>
+            <td>
+              @if(strlen($mensaje->cliente) > 25)
+                {{ substr($mensaje->cliente, 0, 25) . '...'}}
+              @else
+                {{$mensaje->cliente}}
+              @endif
+            </td>
+            <td>
+               @if(strlen($mensaje->email) > 25)
+                {{ substr($mensaje->email, 0, 25) . '...'}}
+              @else
+                {{$mensaje->email}}
+              @endif
+            </td>
+            <td>
+              @if(strlen($mensaje->mensaje) > 35)
+                {{ substr($mensaje->mensaje, 0, 35) . '...'}}
+              @else
+                {{$mensaje->mensaje}}
+              @endif
+            </td>
+            <td><a href="{{route('contacto_mensajes_show', [$mensaje->from, $mensaje->id])}}" class="btn btn-default"><i class="fa fa-eye"></i></a></td>
             @endforeach
           </tr>
         </tbody>
     </table>
-  </div>
 </div>
       
 

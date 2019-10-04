@@ -106,14 +106,14 @@
     font-size: 17px;
   }
 
-  .usados-destacados {
+.usados-destacados {
   margin: -170px 0px 0px 0px;
   padding: 15px;
   background-color: white;
   border-radius: 5px;
 }
 
-  </style>
+</style>
 @stop
 
 
@@ -217,14 +217,47 @@
               <img class="img-responsive" style="width: 50%" src="{{$modelo->img_logo}}">
             </div>
             <img src="{{$modelo->img_modelo}}" alt="Toyota {{$modelo->modelo}} 2019">
-            <p class="text-center text-dark text-uppercase" style="font-size: 12px">{{$modelo->slogan}}</p>
+            <p class="text-center text-dark text-uppercase" style="font-size: 17px">{{$modelo->slogan}}</p>
             <div class="d-flex justify-content-center">
-              <span class="btn btn-default btn-round">Ver modelo</span>
+              <span class="btn btn-default btn-round mu-btn">Ver modelo</span>
             </div>
           </a>
           @endforeach
       </div>
-      <p class="text-center"><a class="mu-light-btn mu-btn" href="/modelos">VER TODOS LOS MODELOS</a></p>
+      <p class="text-center"><a class="mu-light-btn mu-btn" href="/modelos">VER TODOS</a></p>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------
+    Posts Promos y Dtos
+  ----------------------------------------------------------------------->
+  <section class="py-3">
+    <div class="container">
+      <div class="row">
+          @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
+            <div class="col-md-4 col-sm-12">
+              <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm-magazine-vertical">
+                <img class="img-responsive" src="{{$post->imagen_portada}}">
+                <div class="stm-magazine-loop-data">
+                  <h3 class="top-content">{{$post->titulo}}</h3> 
+                  <div class="middle-content">
+                    {{-- <div class="magazine-category normal-font">{{$post->tema->tema}}</div> --}}
+                    <div class="magazine-loop-date">
+                      <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
+                        {{date('d M Y', strtotime($post->created_at))}}
+                    </div>
+                  </div> 
+                  <div class="bottom-content">
+                    <p>{{str_limit(strip_tags($post->contenido), 150, '...')}}</p>
+                  </div>
+                </div>
+              </a>
+              <center>
+                <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn btn-default btn-round">Leer más</a>
+              </center>
+          </div>
+          @endforeach
+      </div>
     </div>
   </section>
 
@@ -446,9 +479,9 @@
   //Init Owl Caroucel 
 
       $('.owl-carousel').owlCarousel({
-        stagePadding: 50,
+        stagePadding: 0,
         loop:false,
-        margin:40,
+        margin:0,
         nav:false,
         autoplay: true,
         autoPlaySpeed: 5000,

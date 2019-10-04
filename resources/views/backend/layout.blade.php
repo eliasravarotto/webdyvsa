@@ -154,16 +154,20 @@
             </nav>
             <div class="container">
                 @if (session('success'))
-                  <div class="alert alert-warning alert-dismissible toast" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('success') }}
-                  </div>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong><i class="fa fa-check-circle"></i></strong> {{session('success')}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
                 @endif
                 @if (session('error'))
-                  <div class="alert alert-danger alert-dismissible toast" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('error') }}
-                  </div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <strong>Error</strong> {{session('error')}}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
                 @endif
                 @yield('content')
             </div>

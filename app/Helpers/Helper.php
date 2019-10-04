@@ -83,6 +83,17 @@ class Helper
 		return $posts;
 	}
 
+	public static function getPostsPromosDtos($limit = null)
+	{
+		if ($limit == null) {
+			$posts = Post::where('tema_id', 5)->orderBy('orden', 'DESC')->get();
+		}else{
+			$posts = Post::where('tema_id', 5)->take($limit)->orderBy('orden', 'DESC')->get();
+		}
+
+		return $posts;
+	}
+
 	public static function getHighOrdenUsados()
 	{
 		return Usado::where('orden', '<>', null)->orderBy('orden', 'DESC')->first()->orden;

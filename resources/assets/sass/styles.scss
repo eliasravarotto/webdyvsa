@@ -6,7 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Exo', sans-serif;
+  // font-family: 'Exo', sans-serif;
 }
 
 body {
@@ -1514,6 +1514,48 @@ $gris-2:#626262;
   color: #aeaeae
 }
 
+.ul-footer-modelo li,
+.ul-footer-emails li,
+.ul-footer-sucursales li {
+  margin-bottom: 7px;
+}
+.ul-footer-emails li span,
+.ul-footer-sucursales li span{
+  color: #e4d6d7;
+  font-size: 18px;
+}
+
+.ul-footer-sucursales li span,
+.ul-footer-emails li span{
+  display: block;
+}
+
+.title-footer{
+      color: #fafafa;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-left: 4px solid #b78c33;
+    padding-left: 5px;
+}
+
+.btn-facebook{
+  background-color: #4267B2;
+  color: white;
+}
+.btn-instagram{
+  background-color: #2e5e86;
+  color: white;
+}
+.btn-twitter{
+      background-color: #55acee;
+      color: white;
+}
+.btn-twitter:hover, .btn-instagram:hover, .btn-facebook:hover{
+  color: #fafafa;
+  opacity: 0.7;
+}
+  
+
 /*.slide-left {
 position: relative;
 left: -500px;
@@ -2159,11 +2201,11 @@ opacity: 1;
 .title-section:before {
   content: "";
   display: block;
-  background: #3c98ff;
+  background: #f30727;
   width: 70px;
-  height: 3px;
+  height: 4px;
   position: absolute;
-  bottom: -3px;
+  bottom: -4px;
   left: 0;
   z-index: 1;
 }

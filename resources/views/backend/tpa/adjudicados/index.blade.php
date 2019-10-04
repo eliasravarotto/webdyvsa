@@ -1,14 +1,6 @@
 @extends('backend.layout')
 
 @section('content')
-	@if(session()->has('success'))
-		<div class="alert alert-success" role="alert">
-		  {{session('success')}}
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		    <span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-	@endif
     <div class="row">
       <div class="col-md-12 d-flex justify-content-end" style="margin-bottom: 10px;">
         <a class="btn btn-primary" href="{{ route('tpa_adjudicados.create') }}">Nuevo</a>
