@@ -162,6 +162,20 @@
 				<div class="col-sm-12 col-md-6">
 					<p class="fs-17">Conocé los autos usados que tenemos para vos. Encontrá las mejores opciones en Chaco de unidades usadas en todas las marcas.</p>
 					<p class="fs-17">También contamos Usados Certificados por Toyota (UCT). <a href="https://derkayvargas.com/usados#certificados-toyota">¿Qué es un UCT?</a></p>
+					<div class="contact-details">
+	                    <div class="media">
+	                        <div class="media-left">
+	                            <i class="fa fa-map-marker"></i>
+	                        </div>
+	                        <div class="media-body">
+	                            <h4>Sucursal Resistencia Usados</h4>
+								<p><i class="fa fa-phone"></i> <a href="tel:" style="color: black">0362 443 330 0</a></p>
+								<p><i class="fa fa-whatsapp"></i> <a style="color: black" href="https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20un%20vehículo%20Usado" target="_blank">+549 364 4178456</a></p>
+								<p><i class="fa fa-map-marker"></i> AV. Sarmiento 1890</p>
+								<p><i class="fa fa-envelope"></i> ventas@derkayvargas.com.ar</p>
+	                        </div>
+	                    </div>
+	                </div>
 				</div>
 				<div class="col-sm-12 col-md-6">
 					<div id="contacto-form" @if($errors->isEmpty()) @endif>
