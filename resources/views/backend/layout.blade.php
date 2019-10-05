@@ -78,7 +78,7 @@
                             <a href="{{route('tpa_adjudicados.index')}}">Adjudicados</a>
                         </li>
                         <li>
-                            <a href="{{route('tpa_agrupados.index')}}">Avanzados</a>
+                            <a href="{{route('tpa_agrupados.index')}}">Avanzados/Agrupados</a>
                         </li>
                     </ul>
                 </li>

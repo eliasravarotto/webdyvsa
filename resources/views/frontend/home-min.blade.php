@@ -132,6 +132,9 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
+          <img src="/imagenes/home-min/portada-hiace.jpg" alt="Nueva Hiace Toyota Furgon">
+        </div>
+        <div class="item">
           <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
         </div>
         <div class="item">
@@ -205,8 +208,8 @@
       <div class="row">
         <div class="col-xs-12">
           <a href="{{route('nueva_rav4')}}">
-          <img src="{{asset('imagenes/home-min/nueva-rav4-mb.png')}}" class="img-responsive visible-xs visible-sm">
-          <img src="{{asset('imagenes/home-min/nueva-rav4.png')}}" class="img-responsive visible-md visible-lg">
+          <a href="/modelos/Hiace"><img src="{{asset('imagenes/home-min/portada-hiace.jpg')}}" class="img-responsive visible-xs visible-sm"></a>
+          <a href="/modelos/Hiace"><img src="{{asset('imagenes/home-min/portada-hiace.jpg')}}" class="img-responsive visible-md visible-lg"></a>
           </a>
         </div>
       </div>

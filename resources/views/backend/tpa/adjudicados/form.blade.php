@@ -24,6 +24,7 @@
 						<select class="form-control" name="unidad">
 							<option value="Etios" @if($adjudicado->unidad == 'Etios') selected @endif>Etios</option>
 							<option value="Yaris" @if($adjudicado->unidad == 'Yaris') selected @endif>Yaris</option>
+							<option value="Corolla" @if($adjudicado->unidad == 'Corolla') selected @endif>Corolla</option>
 							<option value="Hilux" @if($adjudicado->unidad == 'Hilux') selected @endif>Hilux</option>
 						</select>
 						<span class="text-danger">{{$errors->first('unidad')}}</span>
