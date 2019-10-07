@@ -132,9 +132,6 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/imagenes/home-min/portada-hiace.jpg" alt="Nueva Hiace Toyota Furgon">
-        </div>
-        <div class="item">
           <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
         </div>
         <div class="item">
