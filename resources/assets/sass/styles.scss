@@ -19,7 +19,8 @@ footer {
 }
 
 p{
-  line-height: 3.2rem
+  line-height: 3.2rem;
+  font-size: 17px
 }
 
 .vcenter {
@@ -27,6 +28,7 @@ p{
   vertical-align: middle !important;
   float: none !important;
 }
+
 
 /*-------------------------------------------
 // SLIDER INDICATORS
@@ -621,10 +623,6 @@ BOTON MENU COLLAPSE (open-close) // JS : $('#sidebarCollapse').on('click')
   color: #f05f40 !important;
 }
 
-.text-dark {
-  color: rgba(0,0,0,.87) !important;
-}
-
 .dropdown-menu > li > a {
   line-height: 2.1
 }
@@ -818,6 +816,7 @@ $gris-toyota: #58595b;
 $gris: #58595b;
 $gris-1:#808080;
 $gris-2:#626262;
+$negro: #252525;
 
 .white {
   color: white !important;
@@ -849,136 +848,6 @@ $gris-2:#626262;
 
 .gray-toyota {
   color: $gris-toyota
-}
-
-/*BOTONES------------------------------------------------*/
-.btn {
-  border-radius: 0px !important;
-}
-
-.btn-round{
-  border-radius: 50px !important;
-  padding: 6px 20px;
-}
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
-
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
-}
-
-.btn-toyota {
-  color: #fff;
-  background-color: #e01e37;
-  border-color: #aa4a24;
-}
-
-.btn-toyota:hover {
-  color: #fff;
-  background-color: #000000;
-  border-color: #78341a;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: inherit;
-  transition: all .5s;
-}
-
-.btn-primary.btn-outline {
-  color: #428bca;
-}
-
-.btn-success.btn-outline {
-  color: #5cb85c;
-}
-
-.btn-info.btn-outline {
-  color: #5bc0de;
-}
-
-.btn-warning.btn-outline {
-  color: #f0ad4e;
-}
-
-.btn-danger.btn-outline {
-  color: #d9534f;
-}
-
-.btn-white.btn-outline {
-  color: #fafafa;
-  border: solid 2px white;
-}
-
-.btn-white.btn-outline:hover {
-  background-color: #ffffff;
-  color: black;
-}
-
-.btn-danger-1 {
-  background-color: $rojo-1;
-}
-
-.btn-primary.btn-outline:hover,
-.btn-success.btn-outline:hover,
-.btn-info.btn-outline:hover,
-.btn-warning.btn-outline:hover,
-.btn-danger.btn-outline:hover {
-  color: #fff;
-}
-
-.btn-whatsapp {
-  background-color: #24cd63;
-  border: solid 1px #24cd63;
-}
-
-.btn-whatsapp:hover,
-.btn-whatsapp:focus {
-  background-color: #13c154;
-  border: solid 1px #13c154;
-  color: white;
-}
-
-.btn-black {
-  background-color: #000;
-  color: #FFF;
-}
-
-.btn-black:hover {
-    color: #fff;
-    background-color: #b3182c;
-    border-color: #941424;
-}
-
-.btn-rojo-pastel {
-  background-color: #ca3f3f;
-  color: #FFF;
-}
-
-.btn-rojo-pastel:hover {
-  color: #FFF;
 }
 
 /*------------------------------------------------*/
@@ -2825,11 +2694,173 @@ CARD COMPONENT
     margin-bottom: 5px;
 }
 
+/*BOTONES------------------------------------------------*/
+.btn-link-underline{
+    color: $negro;
+    font-size: 18px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid $rojo-toyota;
+}
+
+.btn-link-underline:hover{
+    border-bottom: 3px solid $rojo-toyota;
+}
+
+.btn {
+  border-radius: 0px !important;
+}
+
+.btn-default {
+    color: $negro;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-default:hover {
+    color: $negro;
+    background-color: #e6e5e5;
+    border-color: #adadad;
+}
+
+.btn-round{
+  border-radius: 50px !important;
+  padding: 6px 20px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+.btn-toyota {
+  color: #fff;
+  background-color: #e01e37;
+  border-color: #aa4a24;
+}
+
+.btn-toyota:hover {
+  color: #fff;
+  background-color: #000000;
+  border-color: #78341a;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: inherit;
+  transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+  color: #428bca;
+}
+
+.btn-success.btn-outline {
+  color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+  color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+  color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+  color: #d9534f;
+}
+
+.btn-white.btn-outline {
+  color: #fafafa;
+  border: solid 2px white;
+}
+
+.btn-white.btn-outline:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.btn-danger-1 {
+  background-color: $rojo-1;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+  color: #fff;
+}
+
+.btn-whatsapp {
+  background-color: #24cd63;
+  border: solid 1px #24cd63;
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  background-color: #13c154;
+  border: solid 1px #13c154;
+  color: white;
+}
+
+.btn-black {
+  background-color: #000;
+  color: #FFF;
+}
+
+.btn-black:hover {
+    color: #fff;
+    background-color: #b3182c;
+    border-color: #941424;
+}
+
+.btn-rojo-pastel {
+  background-color: #ca3f3f;
+  color: #FFF;
+}
+
+.btn-rojo-pastel:hover {
+  color: #FFF;
+}
+
 .mu-btn{
     border-radius: 25px;
     display: inline-block;
     text-transform: uppercase;
     padding: 15px 70px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mu-btn-md{
+    border-radius: 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 10px 50px;
     font-size: 18px;
     font-weight: 700;
 }
@@ -2876,4 +2907,10 @@ CARD COMPONENT
 .mu-light-btn:hover {
   background-color: #cccfd0;
   color: #000;
+}
+
+
+
+.text-dark{
+  color: $negro;
 }

@@ -187,7 +187,7 @@
               <p class="text-left fz17">
               Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
               </p>
-              <a href="/usados" class="btn btn-default btn-round btn-lg text-center">VER USADOS</a>
+              <a href="/usados" class="btn-link-underline text-center ">VER USADOS</a>
             </div>
           </div>
         </div>
@@ -210,7 +210,7 @@
           </a>
         </div>
       </div>
-      <div class="owl-carousel owl-theme py-3">
+      <div class="owl-carousel owl-theme py-2">
           @foreach(\App\Helpers\Helper::getModelos() as $modelo)
           <a href="/modelos/{{$modelo->nombre}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
             <div class="d-flex justify-content-center">
@@ -219,12 +219,12 @@
             <img src="{{$modelo->img_modelo}}" alt="Toyota {{$modelo->modelo}} 2019">
             <p class="text-center text-dark text-uppercase" style="font-size: 17px">{{$modelo->slogan}}</p>
             <div class="d-flex justify-content-center">
-              <span class="btn btn-default btn-round mu-btn">Ver modelo</span>
+              <span class="btn btn-default btn-round mu-btn-md">Ver modelo</span>
             </div>
           </a>
           @endforeach
       </div>
-      <p class="text-center"><a class="mu-light-btn mu-btn" href="/modelos">VER TODOS</a></p>
+      <p class="text-center"><a class="btn-link-underline" href="/modelos">VER TODOS</a></p>
     </div>
   </section>
 
@@ -248,12 +248,12 @@
                     </div>
                   </div> 
                   <div class="bottom-content">
-                    <p>{{str_limit(strip_tags($post->contenido), 150, '...')}}</p>
+                    <p>{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
                   </div>
                 </div>
               </a>
-              <center>
-                <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn btn-default btn-round">Leer más</a>
+              <center class="my-1" >
+                <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
               </center>
           </div>
           @endforeach

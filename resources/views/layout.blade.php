@@ -116,7 +116,7 @@
     display: block;
     width: 100%;
     clear: both;
-    color: #333;
+    color: #252525;
     font-size: 22px!important;
     letter-spacing: 0;
 }
@@ -140,7 +140,7 @@
     -ms-flex-line-pack: center;
     align-content: center;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .stm-magazine-vertical
@@ -172,7 +172,6 @@
 .stm-magazine-loop-data 
 .bottom-content p {
     display: block;
-    font-size: 13px;
     color: #888;
     line-height: 20px;
     margin: 0;
@@ -183,6 +182,8 @@
   padding-left: 10px; 
   padding-right: 10px; 
 }
+
+
 
   </style>
 

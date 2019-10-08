@@ -71,14 +71,14 @@ class Helper
 
 	public static function postRecientes($limit)
 	{
-		$posts = Post::take($limit)->orderBy('created_at', 'DESC')->get();
+		$posts = Post::where('tema_id', '!=', 5)->take($limit)->orderBy('created_at', 'DESC')->get();
 
 		return $posts;
 	}
 
 	public static function postPopulares($limit)
 	{
-		$posts = Post::take($limit)->orderBy('orden', 'DESC')->get();
+		$posts = Post::where('tema_id', '!=', 5)->take($limit)->orderBy('orden', 'DESC')->get();
 
 		return $posts;
 	}
