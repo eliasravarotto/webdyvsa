@@ -187,8 +187,8 @@
 					    <tbody>
 					      <tr>
 					        <td class="text-center" style="font-weight: bold;">$ 22.666,14</td>
-					        <td class="text-center" style="font-weight: bold;">$ 24.006,38</td>
-					        <td class="text-center" style="font-weight: bold;">$ 22.467,41</td>
+					        <td class="text-center" style="font-weight: bold;">$ 25.581,15</td>
+					        <td class="text-center" style="font-weight: bold;">$ 25.782,09</td>
 					        <td class="text-center" style="font-weight: bold;">$ 26.566,93</td>
 					      </tr>
 					    </tbody>
@@ -248,8 +248,8 @@
 					    <tbody>
 					      <tr>
 					        <td class="text-center" style="font-weight: bold;">$ 15.506,58</td>
-					        <td class="text-center" style="font-weight: bold;">$ 17.406,01</td>
-					        <td class="text-center" style="font-weight: bold;">$ 15.539,05</td>
+					        <td class="text-center" style="font-weight: bold;">$ 18.044,10</td>
+					        <td class="text-center" style="font-weight: bold;">$ 16.177,14</td>
 					        <td class="text-center" style="font-weight: bold;">$ 15.991,39</td>
 					      </tr>
 					    </tbody>
@@ -307,10 +307,10 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 11.881,61</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.991,25</td>
-					        <td class="text-center" style="font-weight: bold;">$ 12.481,90</td>
-					        <td class="text-center" style="font-weight: bold;">$ 13.926,40</td>
+					        <td class="text-center" style="font-weight: bold;">$ 10.828,23</td>
+					        <td class="text-center" style="font-weight: bold;">$ 12.356,94</td>
+					        <td class="text-center" style="font-weight: bold;">$ 11.960,29</td>
+					        <td class="text-center" style="font-weight: bold;">$ 14.348,41</td>
 					      </tr>
 					    </tbody>
 				  	</table>
@@ -334,7 +334,7 @@
 			  </div>
 			</div>
 
-			<!-- Modal ETIOS-->
+			<!-- Modal ETIOS 100%-->
 			<div id="modal_etios" class="modal" role="dialog">
 			  <div class="modal-dialog">
 			    <!-- Modal content-->
@@ -369,8 +369,8 @@
 					    <tbody>
 					      <tr>
 					        <td class="text-center" style="font-weight: bold;">$ 8.358,92 </td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.411,13</td>
-					        <td class="text-center" style="font-weight: bold;">$ 9.247,47</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.539,02</td>
+					        <td class="text-center" style="font-weight: bold;">$ 9.375,36</td>
 					        <td class="text-center" style="font-weight: bold;">$ 11.076,35</td>
 					      </tr>
 					    </tbody>
@@ -428,9 +428,9 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 5.995,17</td>
-					        <td class="text-center" style="font-weight: bold;">$ 8.507,39</td>
-					        <td class="text-center" style="font-weight: bold;">$ 7.612,91</td>
+					        <td class="text-center" style="font-weight: bold;">$ 6.865,16</td>
+					        <td class="text-center" style="font-weight: bold;">$ 8.114,07</td>
+					        <td class="text-center" style="font-weight: bold;">$ 7.219,59</td>
 					        <td class="text-center" style="font-weight: bold;">$ 7.905,94</td>
 					      </tr>
 					    </tbody>
