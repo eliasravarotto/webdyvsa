@@ -10,12 +10,12 @@
     	<table class="table table-striped">
         <tbody>
           <tr>
-            <th>Apellido y Nombre</th>
+            <th style="width: 20%;">Apellido y Nombre</th>
             <td>{{ $mensaje->cliente }}</td>
           </tr>
           <tr>
             <th>Teléfono</th>
-            <td>{{ $solicitud->telefono }}</td>
+            <td>{{ $mensaje->telefono }}</td>
           </tr>
           <tr>
             <th>Email</th>
@@ -23,14 +23,18 @@
           </tr>        
           <tr>
             <th>Comentario</th>
-            <td>{{ $mensaje->comentario }}</td>
+            <td>{{ $mensaje->mensaje }}</td>
+          </tr>
+          <tr>
+            <th>Creado</th>
+            <td>{{ date('d-m-Y H:m', strtotime($mensaje->created_at))}}</td>
           </tr>
         </tbody>
   </table>
     	
 	    <div class="row">
 	    	<div class="col">
-	    		<a href="{{route('solicitudes_index')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Atras</a>
+	    		<a href="{{URL::previous()}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Atras</a>
 	    	</div>
 	    </div>
     	
