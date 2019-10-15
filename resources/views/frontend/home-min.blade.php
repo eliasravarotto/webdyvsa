@@ -132,6 +132,9 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
+          <img src="/imagenes/home-min/hiace-web.png" alt="Banco del Chaco autos usados">
+        </div>
+        <div class="item">
           <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
         </div>
         <div class="item">
@@ -165,6 +168,9 @@
         </div>
         <div class="item">
           <img src="/imagenes/home-min/portada-tu-auto-sm.png" alt="">
+        </div>
+        <div class="item">
+          <img src="/imagenes/home-min/hiacemovil.png" alt="">
         </div>
       </div>
     </div>
@@ -201,14 +207,6 @@
     <div class="container">
       <div class="title-section my-3">
         <h3>MODELOS DESTACADOS</h3>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <a href="{{route('nueva_rav4')}}">
-          <a href="/modelos/Hiace"><img src="{{asset('imagenes/home-min/portada-hiace.jpg')}}" class="img-responsive visible-xs visible-sm"></a>
-          <a href="/modelos/Hiace"><img src="{{asset('imagenes/home-min/portada-hiace.jpg')}}" class="img-responsive visible-md visible-lg"></a>
-          </a>
-        </div>
       </div>
       <div class="owl-carousel owl-theme py-2">
           @foreach(\App\Helpers\Helper::getModelos() as $modelo)
