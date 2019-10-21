@@ -8,7 +8,7 @@
     <div class="card-body">
     	<form action="{{ route('tpa_agrupados.store') }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
 			{{ csrf_field() }}
-			@include('backend.tpa.adjudicados.form')
+			@include('backend.tpa.agrupados.form')
 			<div class="row form-group my-3">
 				<div class="col-12">
 					<a href="{{ route('tpa_agrupados.index') }}" class="btn btn-secondary">

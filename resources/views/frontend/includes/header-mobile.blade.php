@@ -1,7 +1,7 @@
 <header class="encabezado navbar-fixed-top visible-xs visible-sm">
   <div class="container">
     <a href="/" class="logo">
-      <img src="/imagenes/logos/logo-dyv-primavera.png">
+      <img src="/imagenes/logos/logo-octubre.png">
     </a>
     <button type="button" id="sidebarCollapse" class="navbar-btn" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
         <span></span>
