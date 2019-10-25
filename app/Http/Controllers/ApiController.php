@@ -18,6 +18,10 @@ class ApiController extends Controller
     						->get();
     	}
 
-    	return response()->json(['novedades' => $posts ], 200);
+        foreach ($posts as $post) {
+            $post->url = 'https://www.derkayvargas.com/posts/'.$post->slug;;
+        }
+
+    	return response()->json(['data' => $posts ], 200);
     }
 }
