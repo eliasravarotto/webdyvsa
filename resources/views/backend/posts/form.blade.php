@@ -161,6 +161,12 @@
 	    
 	    reader.readAsDataURL(input.files[0]);
   	};
+
+  	// CONFIGURACION UTF-8 CKEDITOR
+  	CKEDITOR.config.entities  = false;
+	CKEDITOR.config.basicEntities = false;
+	CKEDITOR.config.entities_greek = false;
+	CKEDITOR.config.entities_latin = false;
 	
 </script>
 @stop

@@ -18,6 +18,6 @@ class ApiController extends Controller
     						->get();
     	}
 
-    	return response()->json(['data' => $posts ], 200);
+    	return response()->json(['novedades' => $posts ], 200);
     }
 }
