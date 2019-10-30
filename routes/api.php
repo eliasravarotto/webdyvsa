@@ -17,4 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('cliente')->get('/novedades/{categoria?}','ApiController@getNovedades');
+Route::middleware('cliente')->get('/novedades','ApiController@getNovedades');
+Route::middleware('cliente')->get('/modelos','ApiController@getModelos');
+Route::middleware('cliente')->get('/tipos-de-servicios','ApiController@getTiposServicios');
+Route::middleware('cliente')->post('/turno-servicio','TurnoServicioController@store');
+Route::middleware('cliente')->get('/sucursales/{sucursales_de?}','ApiController@getSucursales');

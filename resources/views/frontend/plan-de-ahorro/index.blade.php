@@ -428,7 +428,7 @@
 					    </thead>
 					    <tbody>
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">$ 6.865,16</td>
+					        <td class="text-center" style="font-weight: bold;">$ 5.995,17</td>
 					        <td class="text-center" style="font-weight: bold;">$ 8.114,07</td>
 					        <td class="text-center" style="font-weight: bold;">$ 7.219,59</td>
 					        <td class="text-center" style="font-weight: bold;">$ 7.905,94</td>
