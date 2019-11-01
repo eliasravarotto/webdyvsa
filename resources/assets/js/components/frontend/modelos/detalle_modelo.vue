@@ -51,14 +51,14 @@
 
         <section class="container pad-top-bot-20">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center et-waypoint slide-left">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
                     <h3>{{ modelo.slogan }}</h3>
                     <br>
                     <p class="text-justify">{{ modelo.descripcion }}</p>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a v-bind:href="modelo.link_ficha_tecnica" class="btn btn-default" target="_blank" rel="noopener noreferrer">
+                            <a v-bind:href="modelo.link_ficha_tecnica" class="btn btn-default" target="_blank">
                                 <i class="fa fa-download" aria-hidden="true"></i>
                                  Ficha Técnica
                             </a>

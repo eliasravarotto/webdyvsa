@@ -39,19 +39,6 @@
 @section('content')
 	<article>
 	<section>
-		<div class="container py-1">
-			<div class="row">
-				<div class="col-md-6 col-sm-12 py-1">
-					<img class="img-responsive box-shadow" src="/imagenes/home-min/portada-tu-auto-sm.png">
-				</div>
-				<div class="col-md-6 col-sm-12 py-1">
-					<img class="img-responsive box-shadow" src="/imagenes/home-min/portada-usados-sm.png">
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section>
 		<div class="container">
 			<div class="page-header" >
 				<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center; align-items: center;">

@@ -15,8 +15,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('detalle-modelo', require('./components/frontend/detalle_modelo.vue'));
+Vue.component('detalle-modelo', require('./components/frontend/modelos/detalle_modelo.vue'));
 Vue.component('index-usados', require('./components/frontend/usados/index.vue'));
 Vue.component('show-usado', require('./components/frontend/usados/show.vue'));
 

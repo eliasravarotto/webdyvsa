@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('title_and_meta')
-  <title>Derka y Vargas Concesionario Oficial TOYOTA</title>
-  <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
+    <title>Derka y Vargas Concesionario Oficial TOYOTA</title>
+    <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
 @stop
 
 @section('mark-up-facebook')
@@ -13,107 +13,14 @@
 @stop
 
 @section('styles_sheets')
-  <style type="text/css">
-    .escarapela-mb{
-      position: fixed;
-      right: -15px;
-      top: 35px;
-      z-index: 100;
-    }
-
-    .escarapela{
-      position: fixed;
-      right: -5px;
-      top: -5px;
-      z-index: 19;
-    }
-
-  .experiencia-hibrida .owl-nav{
-    display: flex;
-    justify-content: center;
-  }    
-  .experiencia-hibrida .owl-prev,
-  .experiencia-hibrida .owl-next{
-    font-size: 3rem !important;
-    margin: 10px 30px 0px 30px !important;
-    color: #3097d1 !important;
-  }
-
-  .titleContainer {
-        background-color: #0E436E;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-    }
-
-    
-    .middle-content{
-        display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    overflow: hidden;
-    padding: 20px 0;
-  }
-
-  .magazine-loop-date{
-        display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    float: left;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 16px;
-    margin-right: 20px;
-  }
-
-  @media (max-width:992px) {
-    .stm_widget_recent_news .stm_magazine_single_list .magazine-list-img img{
-      margin-bottom: 25px;
-    }
-    .stm_widget_recent_news .stm_magazine_single_list .stm-magazine-loop-data{
-      padding: 0px;
-    }
-
-    .stm_widget_recent_news .stm_magazine_single_list .magazine-list-img,
-    .stm_widget_recent_news .stm_magazine_single_list .stm-magazine-loop-data{
-      width: 100%
-    }
-    .stm_widget_recent_news .stm_magazine_single_list {
-      flex-direction: column;
-    }
-  }
-
-  .fz17{
-    font-size: 17px;
-  }
-
-.usados-destacados {
-  margin: -170px 0px 0px 0px;
-  padding: 15px;
-  background-color: white;
-  border-radius: 5px;
-}
-
-</style>
+    <style type="text/css">
+      .usados-destacados {
+        margin: -170px 0px 0px 0px;
+        padding: 15px;
+        background-color: white;
+        border-radius: 5px;
+      }
+    </style>
 @stop
 
 
@@ -200,6 +107,7 @@
       </div>
     </div>
   </div>
+
   <!---------------------------------------------------------------------
     MODELOS
   ----------------------------------------------------------------------->
@@ -208,7 +116,7 @@
       <div class="title-section my-3">
         <h3>MODELOS DESTACADOS</h3>
       </div>
-      <div class="owl-carousel owl-theme py-2">
+      <div class="owl-carousel owl-carousel-modelos owl-theme py-2">
           @foreach(\App\Helpers\Helper::getModelos() as $modelo)
           <a href="/modelos/{{$modelo->nombre}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
             <div class="d-flex justify-content-center">
@@ -262,8 +170,8 @@
   <!---------------------------------------------------------------------
     TOYOTA HIBRID EXPERIENCE
   ----------------------------------------------------------------------->
-  <section>
-    <div class="container">
+  <section class="py-3">
+    <div class="container container-hibrid-experience">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="title-section mt-3">
@@ -285,55 +193,10 @@
     </div>
   </section>
 
-  <hr class="container">
-
-  <section class="pad-top-25 pad-bot-50" style="height: auto;">
-      <div class="container">
-        <div class="row" >
-          <div class="col-md-4 col-sm-12">
-            <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-                <img src="/imagenes/home-min/team_service.jpg" alt="...">
-                <div class="caption caption-default">
-                    <h4 class="text-center">Revisión Técnica y Servicios de Posventa</h4>
-                    <p class="text-justify">
-                      Descubrí los servicios de Posventa en <b>Derka y Vargas</b> que te ayudan a cuidar tu Toyota. 
-                    </p>
-                    <a href="/posventa" class="btn btn-toyota">IR A POSVENTA</a>
-                </div>
-            </div>
-          </div>  
-          <div class="col-md-4 col-sm-12">
-            <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-                <img src="/imagenes/home-min/tpa_card.png" alt="...">
-                <div class="caption caption-default">
-                    <h4 class="text-center">Toyota Plan de Ahorro</h4>
-                    <p class="text-justify">
-                      Toyota Plan Argentina S.A. de Ahorro Para Fines Determinados ofrece un excelente medio para acceder a un vehículo de la marca a través del sistema de ahorro previo.
-                    </p>
-                    <a href="/plan-de-ahorro" class="btn btn-toyota">IR A PLAN DE AHORRO</a>
-                </div>
-            </div>
-          </div>  
-          <div class="col-md-4 col-sm-12">
-            <div class="thumbnail thumbnail-no-bg thumbnail-no-border">
-                <img src="/imagenes/home-min/tcf_card.jpg" alt="...">
-                <div class="caption caption-default">
-                    <h4 class="text-center">Financiá el placer de tener tu TOYOTA</h4>
-                    <p class="text-justify">
-                      Financiá tu Toyota con tasa preferencial. Te ofrecemos más oportunidades de tener tu 0km.
-                    </p>
-                    <a href="/financiacion" class="btn btn-toyota">IR A FINANCIACIÓN</a>
-                </div>
-            </div>
-          </div>  
-        </div>
-      </div>
-  </section>
-
-    <!---------------------------------------------------------------------
+  <!---------------------------------------------------------------------
     NOVEDADES DERKA Y VARGAS
   ----------------------------------------------------------------------->
-  <section class="mt-3">
+  <section class="py-3">
     <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-8">
@@ -341,22 +204,7 @@
           <div class="wpb_wrapper">
             <div class="stm_widget_recent_news">
               <div class="recent-top">
-                <div class="left">
                   <h4>NOVEDADES DERKA Y VARGAS</h4>
-                </div>
-                <div class="right">
-                    <ul class="cat-list recent-cat-list">
-                        <li class="recent_news_cat" data-slug="all">
-                            <a href="#" class="heading-font">Ver Todo</a>
-                        </li>
-                        {{-- <li class="recent_news_cat" data-slug="interview">
-                            <span class="heading-font">Noticias</span>
-                        </li>
-                        <li class="recent_news_cat" data-slug="news">
-                            <span class="heading-font">Eventos</span>
-                        </li> --}}
-                    </ul>
-                </div>
               </div>
               <div class="recentNewsAnimate">
                 @foreach(\App\Helpers\Helper::postRecientes(2) as $post)
@@ -429,18 +277,20 @@
   <!---------------------------------------------------------------------
     PARALLAX
   ----------------------------------------------------------------------->
-  <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2019.png);">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          {{-- &nbsp;
-          <div class="caption">
-            <span class="border et-waypoint">Derka y Vargas - Charata</span>
-          </div> --}}
+  <section class="visible-md visible-lg">
+    <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2019.png);">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            {{-- &nbsp;
+            <div class="caption">
+              <span class="border et-waypoint">Derka y Vargas - Charata</span>
+            </div> --}}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!---------------------------------------------------------------------
     SOCIAL MEDIA
@@ -473,33 +323,4 @@
 <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
 <script src="{{ asset('js/sw-push-msg.js') }}"></script>
 <!-- end -->
-<script type="text/javascript">
-  //Init Owl Caroucel 
-
-      $('.owl-carousel').owlCarousel({
-        stagePadding: 0,
-        loop:false,
-        margin:0,
-        nav:false,
-        autoplay: true,
-        autoPlaySpeed: 5000,
-        autoPlayTimeout: 5000,
-        autoplayHoverPause: true,
-        pagination: false,
-        dots: false,
-        items : 3,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            792:{
-                items:3
-            }
-        }
-    })
-</script>
-
 @stop

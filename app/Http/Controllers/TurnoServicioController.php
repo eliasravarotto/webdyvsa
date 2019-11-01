@@ -60,7 +60,6 @@ class TurnoServicioController extends Controller
      */
     public function store(ReCaptchataTestFormRequest $request)
     {
-  
             $turno = new TurnoServicio;
             $turno->cliente = $request->cliente;
             $turno->telefono = $request->telefono;
@@ -89,10 +88,11 @@ class TurnoServicioController extends Controller
             $turno->enviar_a = serialize($receptopres);
             $turno->save();
 
-            event( new SeHaSolicitadoUnTurno($turno));
+            //event( new SeHaSolicitadoUnTurno($turno));
 
             if($request->is('api/*')){
-                return response()->json(['mensaje' => 'Turno solicitado.' ], 200);
+                return response()->json(['mensaje' => 'Turno solicitado.',
+                                         'status' => 200 ], 200);
             }else{
                 return back()->with('success','Su turno fue solicitado, estaremos en contacto con usted a la brevedad para su confirmación');
             }

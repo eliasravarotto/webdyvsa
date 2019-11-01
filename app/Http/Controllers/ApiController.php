@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function getNovedades( Request $request ){
-
+    public function getNovedades( Request $request )
+    {
     	if ($request->categoria == null) {
     		$posts = Post::where('tema_id', '!=', 5)
                            ->orderBy('created_at', 'DESC')
@@ -30,25 +30,22 @@ class ApiController extends Controller
     	return response()->json($posts, 200);
     }
 
-    public function getModelos(Request $request){
-
+    public function getModelos(Request $request)
+    {
         $modelos = Modelo::all();
 
         return response()->json(['modelos' => $modelos ], 200);
     }
 
-    public function getTiposServicios(Request $request){
-
+    public function getTiposServicios(Request $request)
+    {
         $tiposServicios = TipoServicio::all();
 
         return response()->json(['tiposServicios' => $tiposServicios ], 200);
     }
 
-    public function storeTurnoServicio( Request $request ){
-        return $request;
-    }
-
-    public function getSucursales( Request $request, $sucursales_de = null ){
+    public function getSucursales( Request $request, $sucursales_de = null )
+    {
         switch ($sucursales_de) {
             case 'posventa':
                 $sucursales = Sucursal::where('tiene_posventa', 1)->get();
