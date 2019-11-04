@@ -46,7 +46,6 @@
 			        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Modalidad</th>
 			        <th class="text-center" style="color: white; font-weight: bold;">Avance Cuotas</th>
 			        <th class="text-center" style="color: white; font-weight: bold;">Precio Venta</th>
-			        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Cuota Pura</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -57,7 +56,6 @@
 				        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$agrupado->modalidad}}</td>
 				        <td class="text-center" style="font-weight: bold;">{{$agrupado->avance_cuotas}}</td>
 				        <td class="text-center" style="font-weight: bold;">$ {{number_format($agrupado->precio_venta, 2, ',', '.')}}</td>
-				        <td class="text-center visible-md visible-lg" style="font-weight: bold;">$ {{ number_format($agrupado->cuota_pura, 2, ',', '.')}}</td>
 				      </tr>
 				      @endforeach
 			    </tbody>

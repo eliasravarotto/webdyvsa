@@ -18,7 +18,7 @@
               <button type="submit" class="btn btn-default mb-2" onclick="limpiar()">Limpiar</button>
             </div>
 
-            <div class="">
+            <div class="d-none d-md-block d-lg-block d-xl-block">
             <table class="table table-sm table-hover">
                 <thead>
                   <tr>
@@ -41,7 +41,7 @@
                         <td>{{ $usado->marca }}</td>
                         <td>{{str_limit(strip_tags($usado->modelo), 12, '...')}}</td>
                         <td>{{ $usado->km }} km - {{ $usado->anio }} - {{$usado->color}}</td>
-                        <td><b>$ {{ $usado->precio }}</b></td>
+                        <td><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
                         <td>@if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif</td>
                         <td>
                             <div class="custom-control custom-checkbox">
@@ -61,6 +61,34 @@
                     @endforeach
                 </tbody>
     		</table>
+            </div>
+            <div class="d-block d-md-none d-lg-none d-xl-none">
+                <ul class="list-group list-group-flush">
+                    @foreach($usados as $usado)
+                    <li class="list-group-item usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" 
+                        id="usado-row-{{$usado->interno}}">
+                        <div class="d-flex w-100">
+                            @if($usado->foto != null)
+                            <img src="{{ Storage::url($usado->foto) }}" style="width: 60px">
+                            @else
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aR-2FHpyTZDEm14lQRd2wF2e6r8XgcKq-dluqRzuRztKplOw&s" style="width: 60px"> 
+                            @endif
+                            <div class="w-100">
+                                <div class="d-flex w-100">
+                                    <h5 class="card-title" style="width: 65%">{{$usado->marca}}</h5>
+                                    <h5 class="card-title text-right" style="width: 35%">$ {{  number_format($usado->precio, 0, ',', '.')}}</h5>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    {{$usado->modelo}}
+                                </h6>
+                                <h6 class="card-subtitle mt-1 text-muted">
+                                    {{$usado->dominio}} - {{$usado->anio}} - {{$usado->km}} km.
+                                </h6>
+                            </div>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
             </div>
     	</div>
     </div>
