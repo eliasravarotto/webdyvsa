@@ -70,19 +70,8 @@ class UsadoController extends Controller
             $usado->update();
         } 
 
-        $total = count($request->img_galeria);
-        if ($total>0) {
-            for( $i=0 ; $i < $total ; $i++ ) { 
-                $file = $request->file('img_galeria')[$i];
-                $originalname = $request->file('img_galeria')[$i]->getClientOriginalName();
-                $filename = md5(date('Y-m-d H:i:s:u').$originalname);
-                $file->move(public_path().'/imagenes/usados/'.$usado->id.'/',$filename);
-                $imagen = new ImagenGaleriaUsado;
-                $imagen->usado_id = $usado->id;
-                $imagen->url = '/imagenes/usados/'.$usado->id.'/'.$filename;
-                $imagen->save();
-            }
-        }
+        $this->uploadImages($request, $usado);
+
         return redirect('/admin/usados')->with('success', 'Datos guardados correctamente.');
     }
 
@@ -154,13 +143,21 @@ class UsadoController extends Controller
 
         }
 
-        $total = count($request->nuevas_imagenes);
+        $this->uploadImages($request, $usado);
+
+        return redirect('/admin/usados')->with('success', 'Los datos fueron actulizados correctamente.');
+    }
+
+    public function uploadImages( $request, $usado )
+    {
+        $total = count($request->img_galeria);
 
         if ($total>0) {
             for( $i=0 ; $i < $total ; $i++ ){
-                $file = $request->file('nuevas_imagenes')[$i];
-                //$filename = $request->file('nuevas_imagenes')[$i]->getClientOriginalName();
-                $filename = md5(date('Y-m-d H:i:s:u').$request->file('nuevas_imagenes')[$i]->getClientOriginalName());
+                $file = $request->file('img_galeria')[$i];
+                $extension = $request->file('img_galeria')[$i]->extension();
+                $originalName = $request->file('img_galeria')[$i]->getClientOriginalName();
+                $filename = md5(date('Y-m-d H:i:s:u').$originalName).'.'.$extension;
                 $file->move(public_path().'/imagenes/usados/'.$usado->id.'/',$filename);
                 $imagen = new ImagenGaleriaUsado;
                 $imagen->usado_id = $usado->id;
@@ -168,8 +165,8 @@ class UsadoController extends Controller
                 $imagen->save();
             }
         }
-   
-        return redirect('/admin/usados')->with('success', 'Los datos fueron actulizados correctamente.');
+
+        return;
     }
 
     /**

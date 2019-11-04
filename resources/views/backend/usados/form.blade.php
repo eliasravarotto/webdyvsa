@@ -149,9 +149,10 @@
 				<a href="#" onclick="addNewField(event)" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></a>
 			</div>
 		</div>
+		<div id="images_new" class="my-3"></div>
 		<div class="row my-3">
 			@foreach($imagenes_galeria as $imagen)
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-12 my-1">
 				<div class="thumbnail" style="position: relative;">
                       	<a href="{{ route('borrar_img_usado', $imagen->id) }}" style="position: absolute;" onclick="return confirm('Desea eliminar la imagen?');" class="btn btn-danger delete-user">
                       		<i class="fa fa-trash"></i>
@@ -161,7 +162,6 @@
 			</div>
       		@endforeach
 		</div>
-		<div id="images_new" class="my-3"></div>
 	</div>
 @else
 	<br>
@@ -223,7 +223,7 @@
 	    	var field = `
 	              	<div class="input-group my-2" id="field_${index}">
 					  <div class="custom-file">
-					    <input name="nuevas_imagenes[]" type="file" class="custom-file-input" onchange="updateNameImg(${index})" id="file_${index}">
+					    <input name="img_galeria[]" type="file" class="custom-file-input" onchange="updateNameImg(${index})" id="file_${index}">
 					    <label class="custom-file-label" id="label_img_${index}">Seleccionar imagen</label>
 					  </div>
 					  <div class="input-group-append">
