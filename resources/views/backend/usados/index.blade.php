@@ -68,15 +68,15 @@
                     <li class="list-group-item usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" 
                         id="usado-row-{{$usado->interno}}">
                         <div class="d-flex w-100">
-                            @if($usado->foto != null)
+                            {{-- @if($usado->foto != null)
                             <img src="{{ Storage::url($usado->foto) }}" style="width: 60px">
                             @else
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aR-2FHpyTZDEm14lQRd2wF2e6r8XgcKq-dluqRzuRztKplOw&s" style="width: 60px"> 
-                            @endif
+                            @endif --}}
                             <div class="w-100">
                                 <div class="d-flex w-100">
-                                    <h5 class="card-title" style="width: 65%">{{$usado->marca}}</h5>
-                                    <h5 class="card-title text-right" style="width: 35%">$ {{  number_format($usado->precio, 0, ',', '.')}}</h5>
+                                    <h6 class="card-title" style="width: 65%">{{$usado->marca}}</h6>
+                                    <h6 class="card-title text-right" style="width: 35%">$ {{  number_format($usado->precio, 0, ',', '.')}}</h6>
                                 </div>
                                 <h6 class="card-subtitle mb-2 text-muted">
                                     {{$usado->modelo}}
