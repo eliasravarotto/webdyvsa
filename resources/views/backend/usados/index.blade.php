@@ -1,6 +1,15 @@
 @extends('backend.layout')
 
 @section('content')
+<style type="text/css">
+    .precio{
+        color: black;
+    }
+    .precio:hover{
+        color: black;
+        text-decoration: none;
+    }
+</style>
     <div class="row">
       <div class="col-md-12 d-flex justify-content-end" style="margin-bottom: 10px;">
         <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
@@ -76,7 +85,11 @@
                             <div class="w-100">
                                 <div class="d-flex w-100">
                                     <h6 class="card-title" style="width: 65%">{{$usado->marca}}</h6>
-                                    <h6 class="card-title text-right" style="width: 35%">$ {{  number_format($usado->precio, 0, ',', '.')}}</h6>
+                                    <h6 class="card-title text-right" style="width: 35%">
+                                        <a href="#" class="precio">
+                                            $ {{  number_format($usado->precio, 0, ',', '.')}}
+                                        </a>
+                                    </h6>
                                 </div>
                                 <h6 class="card-subtitle mb-2 text-muted">
                                     {{$usado->modelo}}
