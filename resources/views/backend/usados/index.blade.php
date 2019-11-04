@@ -86,7 +86,7 @@
                                 <div class="d-flex w-100">
                                     <h6 class="card-title" style="width: 65%">{{$usado->marca}}</h6>
                                     <h6 class="card-title text-right" style="width: 35%">
-                                        <a href="#" class="precio">
+                                        <a href="{{ route('usados.edit', $usado->id) }}" class="precio">
                                             $ {{  number_format($usado->precio, 0, ',', '.')}}
                                         </a>
                                     </h6>
