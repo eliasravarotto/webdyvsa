@@ -152,7 +152,7 @@ TOYOTA RECALL
 
 				<div class="mt-3">
 					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-09-2019  <b>Hasta:</b> 30-09-2019</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-11-2019  <b>Hasta:</b> 30-11-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
@@ -190,29 +190,34 @@ TOYOTA RECALL
 		<!---------------------------------------------------------------------
 	    PROMOS Y DESCUENTOS
 	  	----------------------------------------------------------------------->
-		<section>
+		<section class="py-4">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<img class="img-responsive visible-lg visible-md" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota.png')}}">
-						<img class="img-responsive visible-xs visible-sm" src="{{asset('imagenes/posventa/descuentos-accesorios-toyota-sm.png')}}">
-					</div>
-				</div>
-			</div>
-
-{{-- 			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-corolla.jpeg')}}">
-					</div>
-					<div class="col-md-4">
-						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-etios.jpeg')}}">
-					</div>
-					<div class="col-md-4">
-						<img class="img-responsive box-shadow" src="{{asset('imagenes/posventa/service-hilux.jpeg')}}">
-					</div>
-				</div>
-			</div> --}}
+		      <div class="row">
+		          @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
+		            <div class="col-md-4 col-sm-12">
+		              <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm-magazine-vertical">
+		                <img class="img-responsive" src="{{$post->imagen_portada}}">
+		                <div class="stm-magazine-loop-data">
+		                  <h3 class="top-content">{{$post->titulo}}</h3> 
+		                  <div class="middle-content">
+		                    {{-- <div class="magazine-category normal-font">{{$post->tema->tema}}</div> --}}
+		                    <div class="magazine-loop-date">
+		                      <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
+		                        {{date('d M Y', strtotime($post->created_at))}}
+		                    </div>
+		                  </div> 
+		                  <div class="bottom-content">
+		                    <p>{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
+		                  </div>
+		                </div>
+		              </a>
+		              <center class="my-1" >
+		                <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
+		              </center>
+		          </div>
+		          @endforeach
+		      </div>
+		    </div>
 		</section>
 
 		<!---------------------------------------------------------------------
