@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="keywords" content="Derka y Vargas, Toyota, Chaco, Hilux, Corolla, Etios, Yaris, SW4, Camry, Prius, RAV4, Land Cruiser, Prado, Posventa, Postventa, Servicios, Mantenimiento Express">
-
-   @php
-    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
-    header("Pragma: no-cache"); // HTTP 1.0.
-    header("Expires: 0"); // Proxies.
-   @endphp
-
-    
+   
     @yield('title_and_meta')
     <!--===============================================================================================-->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -219,7 +212,7 @@
   <div id="fb-root"></div>
   <!--===============================================================================================-->
   <!-- Main -->
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
   <!--===============================================================================================-->
   <!-- Owl Carucel -->
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>

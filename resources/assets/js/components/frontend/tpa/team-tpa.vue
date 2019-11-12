@@ -1,7 +1,6 @@
 <template>
 	<div class="container">
 	    <h5 class="section-title h1">CONOCE AL STAFF</h5>
-
 		<!-- Ventas -->
 	    <h3 class="section-title">Ventas</h3>
 	    <div class="owl-carousel owl-carousel-team-tpa">
