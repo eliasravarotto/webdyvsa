@@ -72,6 +72,15 @@
 		"orden": "3"
 	},
 	{
+		"nombre": "Nicolas Macagno",
+		"telefono": "3624 107552",
+		"email": "",
+		"avatar": "nicolas-macagno.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Administración",
+		"orden": "3"
+	},
+	{
 		"nombre": "Yasin Assefh",
 		"telefono": "3624 327859",
 		"email": "",
