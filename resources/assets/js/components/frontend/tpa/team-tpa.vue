@@ -23,7 +23,7 @@
 	                    <div class="backside">
 	                        <div class="card">
 	                            <div class="card-body text-center mt-4">
-	                            	<img class="img-responsive" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"> 
+	                            	<!-- <img class="img-responsive" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png">  -->
 	                            </div>
 	                        </div>
 	                    </div>
@@ -53,7 +53,7 @@
 	                    <div class="backside">
 	                        <div class="card">
 	                            <div class="card-body text-center mt-4">
-	                            	<img class="img-responsive" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"> 
+	                            	<!-- <img class="img-responsive" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png">  -->
 	                            </div>
 	                        </div>
 	                    </div>
