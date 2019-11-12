@@ -1,0 +1,137 @@
+[
+	{
+		"nombre": "Ariel Mendoza",
+		"telefono": "3625 205276",
+		"email": "",
+		"avatar": "ariel-mendoza.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Gabriel Rusas",
+		"telefono": "3624 019735",
+		"email": "",
+		"avatar": "gabriel-rusas.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Leandro Canteros",
+		"telefono": "3624 069250",
+		"email": "",
+		"avatar": "leandro-canteros.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Rodrigo Gonzalez",
+		"telefono": "3624 008893",
+		"email": "",
+		"avatar": "rodrigo-gonzalez.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Rogelio Diaz",
+		"telefono": "3624 546710",
+		"email": "",
+		"avatar": "rogelio-diaz.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Samuel Breitenstein",
+		"telefono": "3625 239850",
+		"email": "",
+		"avatar": "samuel-breitenstein.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Cristian De Los Santos",
+		"telefono": "3624 107552",
+		"email": "",
+		"avatar": "cristian-de-los-santos.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Adjudicaciones",
+		"orden": "2"
+	},
+	{
+		"nombre": "Guillermo Bohlmann",
+		"telefono": "3624 107552",
+		"email": "",
+		"avatar": "guillermo-bohlmann.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Administración",
+		"orden": "3"
+	},
+	{
+		"nombre": "Yasin Assefh",
+		"telefono": "3624 327859",
+		"email": "",
+		"avatar": "yasin-assefh.jpg",
+		"sucursal": "Charata",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Dario Trachovsky",
+		"telefono": "3624 894923",
+		"email": "",
+		"avatar": "dario-trachovsky.jpg",
+		"sucursal": "Villa Angela",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Diego Ramirez",
+		"telefono": "3644 703431",
+		"email": "",
+		"avatar": "diego-ramirez.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Matias Villalba",
+		"telefono": "3644 454251",
+		"email": "",
+		"avatar": "matias-villalba.jpg",
+		"sucursal": "Resistencia",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Hernan Soria",
+		"telefono": "3644 741454",
+		"email": "",
+		"avatar": "hernan-soria.jpg",
+		"sucursal": "Saenz Peña",
+		"perfil": "Asesor de Ventas",
+		"orden": "1"
+	},
+	{
+		"nombre": "Hernan Villalba",
+		"telefono": "3644 595453",
+		"email": "",
+		"avatar": "hernan-villalba.jpg",
+		"sucursal": "Saenz Peña",
+		"perfil": "Administración",
+		"orden": "4"
+	},
+	{
+		"nombre": "Santiago Galiano",
+		"telefono": "3624 062298",
+		"email": "",
+		"avatar": "santiago-galiano.jpg",
+		"sucursal": "Saenz Peña",
+		"perfil": "Responsable Plan de Ahorro",
+		"orden": "1"
+	}
+]

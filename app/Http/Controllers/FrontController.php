@@ -272,8 +272,9 @@ class FrontController extends Controller
         return view('frontend.modelos.rav4');
     }
 
-    public function planNacional()
+    public function mobilityServices( Request $request )
     {
-        return view('frontend.plan-nacional');
+
     }
+
 }
