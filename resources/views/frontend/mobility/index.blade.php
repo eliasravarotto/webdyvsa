@@ -163,8 +163,12 @@ El Toyota que querés, por el tiempo que necesitás.">
 			<div class="col-md-7 text-center py-2">
 				<h1 class="color-mobility">Descarga la App en</h1>
 				<ul class="d-flex list-unstyled align-items-center justify-content-center py-2 flex-wrap" >
-					<li class="mx-2 mb-2"><a href="#"><img src="{{asset('imagenes/mobility/play-store.png')}}"></a></li>
-					<li class="mx-2 mb-2"><a href="#"><img src="{{asset('imagenes/mobility/app-store.png')}}"></a></li>
+					<li class="mx-2 mb-2">
+						<a href="https://play.google.com/store/apps/details?id=com.goodtravelsoftware.sharecar.toyotaargentina"><img src="{{asset('imagenes/mobility/play-store.png')}}"></a>
+					</li>
+					<li class="mx-2 mb-2">
+						<a href="https://apps.apple.com/ar/app/toyota-mobility-services/id1436690858"><img src="{{asset('imagenes/mobility/app-store.png')}}"></a>
+					</li>
 				</ul>
 			</div>
 		</div>
