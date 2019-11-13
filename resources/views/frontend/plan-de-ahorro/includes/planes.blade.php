@@ -1,3 +1,12 @@
+<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
+						<div class="title-section mt-3">
+			            	<h3>ACCEDÉ A TU TOYOTA DE LA FORMA MÁS CONVENIENTE <br>  <small>¡TENEMOS UN PLAN PARA VOS!</small></h3>
+			          	</div>
+					</div>
+				</div>
+			</div>
 <div class="container" id="planes-tpa">
 				<div class="row">
 					<div class="col-md-6">

@@ -42,60 +42,16 @@
 		<section>
 			<img class="visible-lg visible-md" src="/imagenes/tpa/plan-de-ahorro-auto.jpeg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
 			<img class="img-responsive visible-xs visible-sm" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
-			
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
-						<div class="title-section mt-3">
-			            	<h3>ACCEDÉ A TU TOYOTA DE LA FORMA MÁS CONVENIENTE <br>  <small>¡TENEMOS UN PLAN PARA VOS!</small></h3>
-			          	</div>
-					</div>
-				</div>
-			</div>
 		</section>
 
+		<!-- PLANES LISTA DE PRECIOS -->
 		<section>
 			@include('frontend.plan-de-ahorro.includes.planes')
 		</section>
 
+		<!-- PLANES AVANZADOS Y ADJUDICADOS -->
 		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">
-						<div class="title-section mt-3">
-			            	<h3>OPORTUNIDADES<br>  <small>Conoce los planes avanzados y adjudicados</small></h3>
-			          	</div>
-					</div>
-				</div>
-				<div class="row py-3">
-					<div class="col-md-1" id="agrupados">
-					</div>
-					<div class="col-md-5 py-2" id="agrupados">
-						<div class="w-100 d-flex justify-content-center align-items-center">
-							<img src="/imagenes/tpa/agrupados.png" style="max-width: 50%">
-						</div>
-						<div class="w-100 text-center">
-							<span style="font-size: 3rem">Planes Avanzados</span>
-						</div>
-						<p class="py-1 text-center" style="font-size: 1.8rem; color: #999">Tenemos a disposición planes de ahorro con avance de cuotas listos para ser licitados.</p>
-						<div class="w-100 text-center">
-							<a class="btn btn-black btn-round text-center-sm" href="{{route('planes_avanzados')}}">Ver listado</a>
-						</div>
-					</div>
-					<div class="col-md-5 py-2" id="adjudicados">
-						<div class="w-100 d-flex justify-content-center align-items-center">
-							<img src="/imagenes/tpa/adjudicados.png" class="img-responsive" style="max-width: 50%">
-						</div>
-						<div class="w-100 text-center">
-							<span style="font-size: 3rem">Adjudicados</span>
-						</div>
-						<p class="py-1 text-center" style="font-size: 1.8rem; color: #999">Si querés subirte ya a tu nuevo Toyota, consultá por nuestros planes adjudicados.</p>
-						<div class="w-100 text-center">
-							<a class="btn btn-black btn-round text-center-sm" href="{{route('planes_adjudicados')}}">Ver Listado</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			@include('frontend.plan-de-ahorro.includes.oportunidades')
 		</section>
 
 		<!-- TEAM SECTION -->
@@ -103,31 +59,20 @@
 		    <team-tpa></team-tpa>
 		</section>
 		
-		<section class="py-1">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<img class="img-responsive box-shadow" src="{{asset('imagenes/tpa/cuota-mas-baja.jpeg')}}">
-					</div>
-					<div class="col-md-6">
-						<img class="img-responsive box-shadow visible-md visible-lg" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<section>
+		<!-- VIDEO QUE ES UN TPA -->
+		<section class="py-3">
 			@include('frontend.plan-de-ahorro.includes.que-es-un-tpa')
 		</section>
 
-		<section>
+		<!-- FACEBOOK - FORMULARIO DE CONTACTO -->
+		<section class="py-3">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-12 col-xs-12 text-center">
 						<div class="fb-page" data-href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/">Toyota Plan de Ahorro - Derka y Vargas</a></blockquote></div>
 					</div>
 					<div class="col-md-6 col-sm-12 col-xs-12" id="form-contacto">
-						<h2>CONSULTÁ POR UN PLAN DE AHORRO <br>
+						<h2 class="mt-0">CONSULTÁ POR UN PLAN DE AHORRO <br>
 						<small>Un asesor se pondrá en contacto con usted a la brevedad.</small></h2>
 						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}
@@ -175,7 +120,8 @@
 			</div>
 		</section>
 
-		<section class="mar-top-40">
+		<!-- GOOGLE MAPS -->
+		<section class="py-3">
 			<div class="container">
 			<div class="row">
 				<div class="col-md-6">
@@ -226,8 +172,21 @@
 			</div>
 			</div>
 		</section>
-		<br>
-		</div>
+		
+		<!-- PUBLICIDAD -->
+		<section class="py-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<img class="img-responsive box-shadow" src="{{asset('imagenes/tpa/cuota-mas-baja.jpeg')}}">
+					</div>
+					<div class="col-md-6">
+						<img class="img-responsive box-shadow visible-md visible-lg" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
+					</div>
+				</div>
+			</div>
+		</section>
+
     </article>
 @stop
 

@@ -12,7 +12,10 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .browserSync({
+	    proxy: 'webdyvsa.test'
+	});
 
 mix.js('resources/assets/js/app_backend.js', 'public/js')
    .sass('resources/assets/sass/app_backend.scss', 'public/css');
