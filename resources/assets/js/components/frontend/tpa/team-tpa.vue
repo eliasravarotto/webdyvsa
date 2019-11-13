@@ -99,7 +99,7 @@
 		methods:{
 			initCarousel(){
 				$(document).ready(function(){
-					$('.owl-carousel').owlCarousel({
+					$('.owl-carousel.owl-carousel-team-tpa').owlCarousel({
 					      stagePadding: 0,
 					      loop:true,
 					      margin:15,

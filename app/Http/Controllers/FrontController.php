@@ -274,7 +274,7 @@ class FrontController extends Controller
 
     public function mobilityServices( Request $request )
     {
-
+        return view('frontend.mobility.index');
     }
 
 }

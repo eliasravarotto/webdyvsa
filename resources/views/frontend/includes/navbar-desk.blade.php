@@ -16,6 +16,7 @@
                       <li><a href="/turno-servicios/create">Turnos ONLINE</a></li>
                     </ul>
                   </li>
+                  <li class="{{Request::path() == route('mobility_services') ? 'active' : ''}}"><a href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a></li>
                   <li class=""><a href="{{route('rse')}}">RSE</a></li>
                   <li class="{{Request::path() == 'contacto' ? 'active' : ''}}"><a href="/contacto">CONTACTO</a></li>
                 </ul>
