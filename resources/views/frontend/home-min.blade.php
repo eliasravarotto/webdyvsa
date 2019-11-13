@@ -2,7 +2,7 @@
 
 @section('title_and_meta')
     <title>Derka y Vargas Concesionario Oficial TOYOTA</title>
-    <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco">
+    <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota en Chaco. Venta de 0KM, Usados Certificados Toyota, Usados Multimarcas. Servicios de Posventa. Plan de Ahorro 100% financiado">
 @stop
 
 @section('mark-up-facebook')
@@ -94,7 +94,7 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="row usados-destacados box-shadow">
             <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
-              <img class="img-responsive" src="{{asset('/imagenes/usados-destacados.png')}}">
+              <img class="img-responsive" src="{{asset('/imagenes/usados-destacados.png')}}" alt="Autos Usados destacados">
             </div>
             <div class="col-xs-12 col-md-7 text-center">
               <p class="text-left fz17">
@@ -120,7 +120,7 @@
           @foreach(\App\Helpers\Helper::getModelos() as $modelo)
           <a href="/modelos/{{$modelo->nombre}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
             <div class="d-flex justify-content-center">
-              <img class="img-responsive" style="width: 50%" src="{{$modelo->img_logo}}">
+              <img class="img-responsive" style="width: 50%" src="{{$modelo->img_logo}}" alt="Logo {{$modelo->modelo}}">
             </div>
             <img src="{{$modelo->img_modelo}}" alt="Toyota {{$modelo->modelo}} 2019">
             <p class="text-center text-dark text-uppercase" style="font-size: 17px">{{$modelo->slogan}}</p>
@@ -143,7 +143,7 @@
           @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
             <div class="col-md-4 col-sm-12">
               <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm-magazine-vertical">
-                <img class="img-responsive" src="{{$post->imagen_portada}}">
+                <img class="img-responsive" src="{{$post->imagen_portada}}" alt="{{$post->titulo}}">
                 <div class="stm-magazine-loop-data">
                   <h3 class="top-content">{{$post->titulo}}</h3> 
                   <div class="middle-content">
@@ -158,9 +158,9 @@
                   </div>
                 </div>
               </a>
-              <center class="my-1" >
+              <div class="w-100 text-center my-1" >
                 <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
-              </center>
+              </div>
           </div>
           @endforeach
       </div>
@@ -297,18 +297,18 @@
   ----------------------------------------------------------------------->
   <section id="services" style="border-top: 1px solid #01b2aa;">
     <div class="container">
-      <img src="{{asset('imagenes/home-min/social_media.jpg')}}" style="width: 100%">
+      <img src="{{asset('imagenes/home-min/social_media.jpg')}}" class="w-100" alt="imagen redes sociales png">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6" style="margin: 20px 0; text-align: center;">
+        <div class="col-xs-12 col-sm-12 col-md-6 my-3 text-center">
           <div class="fb-page" data-href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/derkayvargas/?fb_dtsg_ag=AdzKt-b82aFkFrwMmGTcDo8uWnv1ha_vNaqpeHCWe71aqg%3AAdwQGLLoHBxpCqZJIGcdxG2Hw5-amUyN5Mg8AFW893MHow">Derka y Vargas S.A. - Concesionario Oficial TOYOTA</a></blockquote></div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 text-center" style="margin: 20px 0;">
+        <div class="col-xs-12 col-sm-12 col-md-6 my-3 text-center">
           {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
           @php $count = 0 @endphp
           @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
             @if ($count == 9) @break @endif
             @php $count++ @endphp
-            <a class="group" rel="group1" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}"></a>
+            <a class="group" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}" alt="{{$post->caption->text}}"></a>
           @endforeach
          
         </div>

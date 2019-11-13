@@ -4,11 +4,11 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 logos-footer disabled">
 					<div class="logos-content d-flex justify-content-center align-items-center">
-					<div><img src="/imagenes/logos/logo_etc.png" class="img-responsive"></div>
-					<div><img src="/imagenes/logos/logo_mant_exp.png" class="img-responsive"></div>
-					<div><img src="/imagenes/logos/logo_eco.png" class="img-responsive"></div>
-					<div><img src="/imagenes/logos/logo_genuine_parts.png" class="img-responsive"></div>
-					<div><img src="/imagenes/logos/iram.png" class="img-responsive"></div>
+					<div><img src="/imagenes/logos/logo_etc.png" class="img-responsive" alt="Estilo Comercial Toyota"></div>
+					<div><img src="/imagenes/logos/logo_mant_exp.png" class="img-responsive" alt="Mantenimiento Express"></div>
+					<div><img src="/imagenes/logos/logo_eco.png" class="img-responsive" alt="Toyota ECO"></div>
+					<div><img src="/imagenes/logos/logo_genuine_parts.png" class="img-responsive" alt="GENUINE PARTS"></div>
+					<div><img src="/imagenes/logos/iram.png" class="img-responsive" alt="IRAM"></div>
 					</div>
 				</div>
 			</div>

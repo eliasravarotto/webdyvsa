@@ -23,7 +23,7 @@
 							<b style='font-size:14px'>HACER TESTDRIVE</b>
 						</div>
 					</div>">
-  	<img src="/imagenes/icons/test_drive.png" height="30px">
+  	<img src="/imagenes/icons/test_drive.png" height="30" alt="Hacer drive toyota">
     <span class="hidden-xs">TEST DRIVE</span>
   </a>
 
@@ -42,7 +42,7 @@
 							<b style='font-size:14px'>TURNO POSVENTA</b>
 						</div>
 					</div>">
-  	<img src="/imagenes/icons/turno_posventa.png" height="30px" >
+  	<img src="/imagenes/icons/turno_posventa.png" height="30"  alt="Solicitar turno posventa">
     <span class="hidden-xs">TURNOS</span>
   </a>
   {{-- <a class="btn btn-default " href="/contacto" 
@@ -56,7 +56,7 @@
 							<b style='font-size:15px'>CONTACTO</b>
 						</div>
 					</div>">
-  	<img src="/imagenes/icons/contacto.png" height="30px">
+  	<img src="/imagenes/icons/contacto.png" height="30" alt="">
     <span class="hidden-xs">CONTACTO</span>
   </a> --}}
 </div>

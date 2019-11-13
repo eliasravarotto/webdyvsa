@@ -54,7 +54,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body" style="padding: 35px;">
-        <form id="form-voz-d-cli" class="form-horizontal" action="/contacto-vdc" method="POST" role="form" autocomplete="off">
+        <form id="form-voz-d-cli" class="form-horizontal" action="/contacto-vdc" method="POST"  autocomplete="off">
             {{ csrf_field() }}
             <input type="hidden" name="vdc_from" value="la_voz_del_cliente">
             <div class="row">

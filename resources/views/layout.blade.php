@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -27,6 +27,9 @@
     <!--===============================================================================================-->
     <!-- Estilos Cookie Consent -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <!--===============================================================================================-->
+    <!-- Estilos TOAST -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <!--===============================================================================================-->
     
   @yield('mark-up-facebook')
@@ -182,9 +185,7 @@
   padding-right: 10px; 
 }
 
-
-
-  </style>
+</style>
 
 </head>
 
@@ -223,7 +224,9 @@
   <!-- Google Recaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <!--===============================================================================================-->
-    
+  <!-- TOAST JS -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <!--===============================================================================================-->
   <!-- Google Analytics -->
   @if (env('IS_PROD'))
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
