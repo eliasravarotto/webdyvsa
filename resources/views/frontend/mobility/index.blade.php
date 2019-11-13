@@ -55,7 +55,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 				<div class="col-xs-12 col-md-12">
 					<p><b>Toyota Mobility Services</b> es el nuevo sistema de alquiler de autos lanzado por TOYOTA, 
 					el cual posibilita el acceso a cualquier vehículo de la marca sin la necesidad de que lo compres, es decir, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes etc. </p>
-					<p><b>Muy pronto</b> en <b>Derka y Vargas</b> nos sumamos a éste servicio el cual estará disponible mediante una app tanto para Android como para iOS, vas a poder elegir cualquier modelo de la marca Toyota y retirarlo desde cualquiera de las “Estaciones Mobility”.</p>
+					<p><b>Muy pronto</b> en <b>Derka y Vargas</b> nos sumamos a este servicio, el cual estará disponible mediante una app tanto para Android como para iOS. Vas a poder elegir cualquier modelo de la marca Toyota y retirarlo desde cualquiera de las “Estaciones Mobility”.</p>
 				</div>
 			</div>
 			{{-- <div class="row">
