@@ -41,7 +41,7 @@ $(document).ready(function(){
   --------------------------------*/
   $('.owl-carousel.owl-carousel-modelos').owlCarousel({
       stagePadding: 0,
-      loop:false,
+      loop:true,
       margin:0,
       nav:false,
       autoplay: true,

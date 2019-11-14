@@ -27,6 +27,24 @@
 	    font-size: 1.9rem;
 	}
 
+	@media only screen and (max-width : 468px) {
+		#planes-tpa .tarjeta .tarjeta-contenido{
+			flex-direction: column;
+		}
+		#planes-tpa .tarjeta .tarjeta-contenido .contenido-izquierda{
+			display: none;
+		}
+		#planes-tpa .tarjeta .tarjeta-contenido .contenido-bottom{
+			display: flex;
+		}
+		#planes-tpa .tarjeta .tarjeta-contenido .contenido-derecha{
+			width: 100%
+		}
+		#planes-tpa .tarjeta .tarjeta-contenido .contenido-derecha img{
+			width: 90%
+		}
+	}
+
 	@media only screen and (max-width : 768px) {
 		.preguntas-frecuentes{ padding: 0 40px; }
 	}
@@ -34,6 +52,10 @@
 	.owl-carousel .owl-item img {
     	display: inline-block;
  	}
+ 	.modal-body {
+	    position: relative;
+	    padding: 5px;
+	}
 </style>
 @stop
 
