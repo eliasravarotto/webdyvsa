@@ -24,7 +24,7 @@
 	        		<div class="contenido-derecha">
 	        			<img src="/imagenes/tpa/tarjeta-etios.png" alt="Etios Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 	        		</div>
-	        		<div class="contenido-bottom justify-content-center flex-d-col align-items-center">
+	        		<div class="contenido-bottom d-none justify-content-center flex-d-col align-items-center">
 	        			<h2>ETIOS X <small>5 Puertas</small></h2>
 	        			<p style="font-size: 2rem">Plan 100%</p>
 	        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_etios">
@@ -50,7 +50,7 @@
 	        		<div class="contenido-derecha">
 	          			<img src="/imagenes/tpa/tarjeta-etios.png" alt="Etios Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 	        		</div>
-	        		<div class="contenido-bottom justify-content-center flex-d-col align-items-center">
+	        		<div class="contenido-bottom d-none justify-content-center flex-d-col align-items-center">
 	  					<h2>ETIOS X <small>5 Puertas</small></h2>
 	        			<p style="font-size: 2rem">Plan 70/30</p>
 	        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_etios_7030">
@@ -78,7 +78,7 @@
 	        		<div class="contenido-derecha">
 	          			<img src="/imagenes/tpa/tarjeta-hilux-4x2.png" alt="Hilux Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 	        		</div>
-	        		<div class="contenido-bottom justify-content-center flex-d-col align-items-center">
+	        		<div class="contenido-bottom d-none justify-content-center flex-d-col align-items-center">
 	        			<h2>HILUX <small>CD 4x2 DX</small></h2>
 	        			<p style="font-size: 2rem">Plan 70/30</p>
 	        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_hilix_70_30">
@@ -103,7 +103,7 @@
 	        		<div class="contenido-derecha">
 	          			<img src="/imagenes/tpa/tarjeta-hilux-4x4.png" alt="Hilux Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 	        		</div>
-	        		<div class="contenido-bottom justify-content-center flex-d-col align-items-center">
+	        		<div class="contenido-bottom d-none justify-content-center flex-d-col align-items-center">
 	        			<h2>HILUX <small>CD 4x4 DX</small></h2>
 	        			<p style="font-size: 2rem">Plan 100%</p>
 	        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_hilix_100">
@@ -131,7 +131,7 @@
 	        		<div class="contenido-derecha">
 	          			<img src="/imagenes/tpa/tarjeta-yaris.png" alt="Yaris Plan de Ahorro Toyota Chaco. Derka y Vargas.">
 	        		</div>
-	        		<div class="contenido-bottom justify-content-center flex-d-col align-items-center">
+	        		<div class="contenido-bottom d-none justify-content-center flex-d-col align-items-center">
 	        			<h2>YARIS XS <small>5 Puertas</small></h2>
 	        			<p style="font-size: 2rem">Plan 100%</p>
 	        			<a class="btn btn-default" href="#" data-toggle="modal" data-target="#modal_yaris">

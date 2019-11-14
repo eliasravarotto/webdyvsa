@@ -27,6 +27,10 @@
 	    font-size: 1.9rem;
 	}
 
+	.d-none{
+		display: none;
+	}
+
 	@media only screen and (max-width : 468px) {
 		#planes-tpa .tarjeta .tarjeta-contenido{
 			flex-direction: column;
