@@ -45,8 +45,8 @@ class TpaAgrupadosController extends Controller
             'unidad' => 'required|string',
             'modalidad' => 'required|string',
             'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|int',
-            'cuota_pura' => 'required|int'
+            'precio_venta' => 'required|numeric',
+            'cuota_pura' => 'required|numeric'
         ]);
 
         TpaAgrupado::create($request->all());
@@ -93,8 +93,8 @@ class TpaAgrupadosController extends Controller
             'unidad' => 'required|string',
             'modalidad' => 'required|string',
             'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|int',
-            'cuota_pura' => 'required|int'
+            'precio_venta' => 'required|numeric',
+            'cuota_pura' => 'required|numeric'
         ]);
 
         $agrupado = TpaAgrupado::find($id);

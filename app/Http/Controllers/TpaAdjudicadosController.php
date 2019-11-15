@@ -46,8 +46,8 @@ class TpaAdjudicadosController extends Controller
             'unidad' => 'required|string',
             'modalidad' => 'required|string',
             'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|int',
-            'cuota_pura' => 'required|int'
+            'precio_venta' => 'required|numeric',
+            'cuota_pura' => 'required|numeric'
         ]);
 
         TpaAdjudicado::create($request->all());
@@ -94,8 +94,8 @@ class TpaAdjudicadosController extends Controller
             'unidad' => 'required|string',
             'modalidad' => 'required|string',
             'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|int',
-            'cuota_pura' => 'required|int'
+            'precio_venta' => 'required|numeric',
+            'cuota_pura' => 'required|numeric'
         ]);
 
         $adjudicado = TpaAdjudicado::find($id);

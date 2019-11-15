@@ -36,7 +36,7 @@
 </div>
 </section>
 <div class="container">
-	<div class="row">
+	<div class="row py-4">
 		<div class="col-xs-12">
 			<table id="tabla-agrupados" class="table table-hover py-1" style="margin:20px 0px; ">
 			    <thead>
