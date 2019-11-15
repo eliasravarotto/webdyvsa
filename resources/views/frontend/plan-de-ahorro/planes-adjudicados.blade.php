@@ -13,6 +13,15 @@
 @stop
 
 @section('styles_sheets')
+<style type="text/css">
+.fz-20{
+	font-size: 20px;
+}
+
+span.bg-red{
+	background-color: #f30827;
+}
+</style>
 @stop
 
 @section('content')
@@ -37,7 +46,7 @@
 	<div class="container">
 		<div class="row py-4">
 			<div class="col-xs-12 d-flex">
-				<table id="tabla-agrupados" class="table table-hover py-1" style="margin:20px 0px; ">
+				<table id="tabla-agrupados" class="table table-hover py-1 visible-md visible-lg" style="margin:20px 0px; ">
 				    <thead>
 				      <tr style="background-color: #af8e8e">
 				        <th class="text-center" style="color: white; font-weight: bold;">G/O</th>
@@ -79,8 +88,46 @@
 					        	</span>
 					        </td>
 					      </tr>
-					      @endforeach
+				      	@endforeach
 				    </tbody>
+			  	</table>
+
+			  	<table class="table table-hover py-1 visible-xs visible-sm">
+	  				@php $valor_30porciento_etios = 247887;  @endphp
+		    		@foreach(\App\Helpers\Helper::getAdjudicados() as $agrupado)
+			  		<tr>
+			  			<td style="border-top: 5px solid #ddd;">
+				    		<div class="d-flex w-100 align-items-center">
+				    			<div class="w-25 fz-20 bold">{{$agrupado->unidad}}</div>
+				    			<div class="w-75 text-right"><label>Precio venta</label> <span class="badge fz-20 bg-red">${{number_format($agrupado->precio_venta, 0, ',', '.')}}</div></span>
+				    		</div>
+				    		<div class="d-flex w-100 justify-content-space-between my-1">
+				    			<div><label>G/O:</label> {{$agrupado->grupo}}/{{$agrupado->orden}}</div>
+				    			<div><label>Modalidad:</label> {{$agrupado->modalidad}}</div>
+				    			<div><label>Avance Cuotas:</label> {{$agrupado->avance_cuotas}}</div>
+				    		</div>
+				    		<div class="d-flex w-100">
+				    			<label class="mr-1">Cuota Pura </label> ${{number_format($agrupado->cuota_pura, 0, ',', '.')}}
+				    		</div>
+				    		<div class="d-flex w-100">
+				    			<label class="mr-1">Avance del plan en Cuota Pura</label>
+				    			@if( $agrupado->modalidad == '70/30' )
+					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 0, ',', '.')}}
+					        	@else
+					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 0, ',', '.')}}
+					        	@endif
+				    		</div>
+				    		<div class="d-flex w-100 align-items-center">
+				    			<label class="mr-1">Valor Ahorrado</label> 
+				    			@if( $agrupado->modalidad == '70/30' )
+					        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 0, ',', '.')}}</span>
+					        	@else
+					        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 0, ',', '.')}}</span>
+					        	@endif
+				    		</div>
+			  			</td>
+			  		</tr>
+		    		@endforeach
 			  	</table>
 			</div>
 		</div>
