@@ -48,9 +48,11 @@
 				        <th class="text-center" style="color: white; font-weight: bold; background-color: white; border-bottom: none; width: 35px"></th>
 				        <th class="text-center" style="color: white; font-weight: bold;">Cuota Pura</th>
 				        <th class="text-center" style="color: white; font-weight: bold;">Valor Avance del Plan en Cuota Pura</th>
+				        <th class="text-center" style="color: white; font-weight: bold;">Valor Ahorrado</th>
 				      </tr>
 				    </thead>
 				    <tbody>
+				    	@php $valor_30porciento_etios = 247887;  @endphp
 				    	@foreach(\App\Helpers\Helper::getAdjudicados() as $agrupado)
 					      <tr>
 					        <td class="text-center" style="font-weight: bold;">{{$agrupado->grupo}}/{{$agrupado->orden}}</td>
@@ -62,10 +64,19 @@
 					        <td class="text-center" style="font-weight: bold;">$ {{number_format($agrupado->cuota_pura, 2, ',', '.')}}</td>
 					        <td class="text-center" style="font-weight: bold;">
 					        	@if( $agrupado->modalidad == '70/30' )
-					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+247887 , 2, ',', '.')}}
+					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 2, ',', '.')}}
 					        	@else
 					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 2, ',', '.')}}
 					        	@endif
+					        </td>
+					        <td class="text-center" style="font-weight: bold;">
+					        	<span class=" badge" style="background-color: #28a745; font-size: 17px">
+					        	@if( $agrupado->modalidad == '70/30' )
+					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
+					        	@else
+					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 2, ',', '.')}}
+					        	@endif
+					        	</span>
 					        </td>
 					      </tr>
 					      @endforeach
