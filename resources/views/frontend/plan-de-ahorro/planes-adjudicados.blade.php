@@ -60,7 +60,13 @@
 					        <td class="text-center" style="font-weight: bold;"><span class="badge" style="background-color: #f30827; font-size: 17px">$ {{number_format($agrupado->precio_venta, 2, ',', '.')}}</span></td>
 					        <td class="text-center" style="font-weight: bold; border-top: none;"></td>
 					        <td class="text-center" style="font-weight: bold;">$ {{number_format($agrupado->cuota_pura, 2, ',', '.')}}</td>
-					        <td class="text-center" style="font-weight: bold;">$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 2, ',', '.')}}</td>
+					        <td class="text-center" style="font-weight: bold;">
+					        	@if( $agrupado->modalidad == '70/30' )
+					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+247887 , 2, ',', '.')}}
+					        	@else
+					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 2, ',', '.')}}
+					        	@endif
+					        </td>
 					      </tr>
 					      @endforeach
 				    </tbody>
