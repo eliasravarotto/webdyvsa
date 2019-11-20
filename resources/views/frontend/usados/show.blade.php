@@ -30,8 +30,8 @@
             <a href="/usados/{{$u->slug}}">
 			<div class="item thumbnail thumbnail-no-bg thumbnail-no-border mx-2">
                 <div class="pos-rel o-flw-hiden" style="max-height: 250px">
-                    {{--@if( $u->foto )<img src="{{Storage::url($u->foto)}}" alt=""> @endif--}}
-                    @if( $u->foto )<img src="/imagenes/default-img.png" alt=""> @endif
+                    @if( $u->foto )<img src="{{Storage::url($u->foto)}}" alt=""> @endif
+                    @if( !$u->foto )<img src="/imagenes/default-img.png" alt=""> @endif
                 </div>
                 <div class="caption caption-default">
                     <h4 class="text-center pb-0 mb-0">{{$u->marca}} {{ $u->modelo }}</h4>
