@@ -96,6 +96,8 @@ class TipoServicioController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        //return $request;
         $servicio = TipoServicio::find($id);
         $servicio->nombre = $request->nombre;
         $servicio->etios = $request->etios;
@@ -107,6 +109,9 @@ class TipoServicioController extends Controller
         $servicio->prius = $request->prius;
         $servicio->update();
 
+        if ($request->ajax())
+            return response()->json($servicio, 200);
+       
         return redirect()->action('TipoServicioController@index');
     }
 
@@ -119,6 +124,12 @@ class TipoServicioController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function listaDePrecios(Request $request)
+    {
+        $servicios = TipoServicio::all();
+        return view('backend.servicios.precios', compact('servicios'));
     }
 
 }

@@ -199,69 +199,7 @@ table>tbody tr td {
                     </ul>                 
                 </div>
             </div>
-            <div class="well">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-2 text-center">
-                        <img src="/imagenes/logo-uct.png" class="img-responsive" style="max-height: 125px; display: inline; margin-bottom: 10px;">
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-10">
-                        <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
-                        <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
-                        <ul class="list-unstyled">
-                            <li> - Garantía de 1 año o 20.000 km.</li>
-                            <li> - Vehículos que fueron atendidos en concesionarios oficiales.</li>
-                            <li> - 150 puntos de inspección realizados por técnicos capacitados.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    
-                </div>
-            </div>
         </div>
-
-       <!--  <section>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header">
-                      <h2 class="text-center">OTROS USADOS <br> <small>Quizás te interese otro</small></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-              <div v-for="unidad in otrasUnidades" class="col-sm-6 col-md-4">
-                <div class="thumbnail thumbnail-no-bg">
-                  <img src="http://www.asahimotors.com/img_usados/f4a794b36e28f0c09218da939414cc45.jpeg" alt="">
-                  <div class="caption caption-default">
-                    <h3 class="text-center">{{unidad.marca}} {{unidad.modelo}} {{unidad.version}}</h3>                        
-                    <p class="text-center">
-                        <div style="display: flex; justify-content: space-around; font-size: 12px;">
-                            <div>
-                                <label><i class="fa fa-calendar" aria-hidden="true"></i> Año:</label> {{ unidad.anio }}
-                            </div>
-                            <div>
-                                <label><i class="fa fa-tachometer" aria-hidden="true"></i> KM:</label> {{ unidad.km }}
-                            </div>
-                            <div>
-                                <label><i class="fa fa-paint-brush" aria-hidden="true"></i> Color:</label> {{ unidad.color }}
-                            </div>
-                        </div>
-                    </p>
-                    <p class="text-center" >
-                        <a v-bind:href="'/usados/'+unidad.id" class="btn btn-default" role="button">VER DETALLES</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <a class="btn btn-info" href="/usados">VER TODOS</a>
-                </div>
-            </div>
-        </section> -->
 	</div>
 </template>
 

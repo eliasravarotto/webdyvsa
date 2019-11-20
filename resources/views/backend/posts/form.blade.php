@@ -23,13 +23,13 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label mb-1">Creado</label>
-						<input class="form-control" type="datetime-local" name="created_at">
+						<input class="form-control" type="date" name="created_at" value="@if($post->created_at) {{$post->created_at->format('Y-m-d')}} @endif">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label class="control-label mb-1">Orden</label>
-						<input class="form-control" type="number" name="orden">
+						<input class="form-control" type="number" name="orden" value="{{ $post->orden or old('orden') }}">
 					</div>
 				</div>
 			</div>

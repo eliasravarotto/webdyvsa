@@ -20,7 +20,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
 
-	Route::get('/admin', 'BackendController@inicio');
+	Route::get('/admin', 'BackendController@inicio')->name('admin');
 
 	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 	Route::resource('admin/modelos','ModelosController');
@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/usados/actualizar-visible/{id}','UsadoController@actualizarVisible');
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin/servicios','TipoServicioController');
+	Route::get('admin/servicios-lista-de-precios','TipoServicioController@listaDePrecios')->name('servicios_lista_precios');
 	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
 	Route::get('admin/notificacion-push','BackendController@createPushNotication')->name('create_push_notification');
 	Route::post('admin/notificacion-push','BackendController@sendPushNotication')->name('send_push_notification');

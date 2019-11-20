@@ -8,6 +8,20 @@ use App\Usado;
 use App\TpaAgrupado;
 use App\TpaAdjudicado;
 
+/*
+	1. Sucursales - getSucursales
+	2. Sucursales Posventa - getSucursalesPosventa
+	3. Sucursales Convencional - getSucursalesConvencional
+	4. Sucursales Plan de Ahorro - getSucursalesPlanDeAhorro
+	5. API Instagram - getRecentPostInstagram
+	6. Modelos - getModelos
+	7. Posts recientes - postRecientes
+	8. Posts Populares - postPopulares
+	9. Posts Promos y Descuentos - getPostsPromosDtos
+	10. Plan de Ahorro - getAgrupados
+	11. Plan de Ahorro - getAdjudicados
+	12. Usados de Interés - getUsadosDeInteres
+*/
 
 class Helper
 {
@@ -94,11 +108,6 @@ class Helper
 		return $posts;
 	}
 
-	public static function getHighOrdenUsados()
-	{
-		return Usado::where('orden', '<>', null)->orderBy('orden', 'DESC')->first()->orden;
-	}
-
 	public static function getAgrupados()
 	{
 		return TpaAgrupado::all();
@@ -107,5 +116,34 @@ class Helper
 	public static function getAdjudicados()
 	{
 		return TpaAdjudicado::all();
+	}
+
+	public static function getUsadosDeInteres( Usado $usado_in_view )
+	{
+		$mod = explode(' ', $usado_in_view->modelo);
+		$mod = $mod[0];
+		$usados = Usado::where('id', '!=', $usado_in_view->id)
+						 ->where('visible', 1)
+						 ->where('estado', 'DISPONIBLE')
+						 ->where(function ($query) use ($mod, $usado_in_view) {
+							    $query->where('modelo', 'like', '%' . $mod . '%')
+							          ->orWhere('marca', 'like', '%' . $usado_in_view->marca . '%');
+						 })->get();
+		if ($usados->count() < 3) {
+			$usados_ids = $usados->pluck('id');
+			$all = Usado::where('id', '!=',$usado_in_view->id )
+						->whereNotIn('id', $usados_ids)
+						->get();
+			foreach ($all as $usado) {
+				$usados->push($usado);
+			}
+		}
+
+		return $usados->take(3);
+	}
+
+	public static function getHighOrdenUsados()
+	{
+		return Usado::where('orden', '<>', null)->orderBy('orden', 'DESC')->first()->orden;
 	}
 }

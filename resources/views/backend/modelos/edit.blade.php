@@ -42,7 +42,7 @@
         <small>
           <span class="float-right mt-1">
             <a href="/admin/modelos/{{$modelo->id}}/edit/caracteristicas">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
+              <i class="far fa-edit"  style="font-size: 25px;"></i>
             </a>
           </span>
         </small>
@@ -56,7 +56,7 @@
         <small>
           <span class="float-right mt-1">
             <a href="/admin/modelos/{{$modelo->id}}/edit/portada">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
+              <i class="far fa-edit"  style="font-size: 25px;"></i>
             </a>
           </span>
         </small>
@@ -70,7 +70,7 @@
         <small>
           <span class="float-right mt-1">
             <a href="/admin/modelos/{{$modelo->id}}/edit/colores">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
+              <i class="far fa-edit"  style="font-size: 25px;"></i>
             </a>
           </span>
         </small>
@@ -84,7 +84,7 @@
         <small>
           <span class="float-right mt-1">
             <a href="/admin/modelos/{{$modelo->id}}/edit/galeria">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
+              <i class="far fa-edit"  style="font-size: 25px;"></i>
             </a>
           </span>
         </small>
@@ -98,7 +98,7 @@
         <small>
           <span class="float-right mt-1">
             <a href="/admin/modelos/{{$modelo->id}}/edit/parallax">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
+              <i class="far fa-edit"  style="font-size: 25px;"></i>
             </a>
           </span>
         </small>
@@ -112,7 +112,7 @@
         <small>
           <span class="float-right mt-1">
             <a href="/admin/modelos/{{ $modelo->id }}/edit/versiones">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 25px;"></i>
+              <i class="far fa-edit"  style="font-size: 25px;"></i>
             </a>
           </span>
         </small>
@@ -142,7 +142,7 @@
                         <div class="input-group">
                             <input name="img_slider[]" type="file" class="form-control" style="height: 39px;">
                             <div class="input-group-btn">
-                                <a id="delete_field" class="btn btn-danger" onclick="removeField(${this.index})" style="color:white"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <a id="delete_field" class="btn btn-danger" onclick="removeField(${this.index})" style="color:white"><i class="fa fa-trash" ></i></a>
                             </div>
                         </div>
                     </div>`

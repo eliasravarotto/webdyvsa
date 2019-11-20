@@ -64,6 +64,31 @@ $(document).ready(function(){
       }
   })
 
+   $('.owl-carousel.owl-carousel-usados').owlCarousel({
+      stagePadding: 0,
+      loop:false,
+      margin:0,
+      nav:false,
+      autoplay: true,
+      autoPlaySpeed: 5000,
+      autoPlayTimeout: 5000,
+      autoplayHoverPause: true,
+      pagination: false,
+      dots: false,
+      items : 3,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:3
+          },
+          792:{
+              items:4
+          }
+      }
+  })
+
 
 });
 

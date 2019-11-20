@@ -48,7 +48,7 @@
                             <form method="POST" action="{{ route('tpa_agrupados.destroy', $agrupado->id) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                  <a href="{{ route('tpa_agrupados.edit', $agrupado->id) }}" class="btn btn-outline-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                  <a href="{{ route('tpa_agrupados.edit', $agrupado->id) }}" class="btn btn-outline-info"><i class="far fa-edit"></i></a>
                                   <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-outline-danger delete-user"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>

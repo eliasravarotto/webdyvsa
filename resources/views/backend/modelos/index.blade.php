@@ -25,7 +25,7 @@
                 <td>
                   {{-- <a href="{{ route('modelos.show', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}
                   <form action="{{ url('admin/modelos', ['id' => $modelo->id]) }}" method="post">
-                      <a href="{{ route('modelos.edit', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a href="{{ route('modelos.edit', $modelo->id) }}" class="btn btn-outline-info"><i class="far fa-edit"></i></a>
                       {!! method_field('delete') !!}
                       {!! csrf_field() !!}
                       <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
