@@ -23,4 +23,9 @@ class Modelo extends Model
     {
         return $this->hasOne('App\PortadaModelo');
     }
+
+    public function accesorios()
+    {
+        return $this->hasMany('App\Accesorio');
+    }
 }

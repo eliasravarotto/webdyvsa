@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\File;
 use App\ImagenGaleriaUsado;
 use App\MensajeEmail;
 use App\Modelo;
@@ -13,6 +14,7 @@ use App\Usado;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class BackendController extends Controller
 {
@@ -65,4 +67,5 @@ class BackendController extends Controller
 
 	   return back()->with('success', 'Notificación enviada! '.$result);
     }
+
 }

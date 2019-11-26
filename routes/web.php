@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
 	Route::get('admin/notificacion-push','BackendController@createPushNotication')->name('create_push_notification');
 	Route::post('admin/notificacion-push','BackendController@sendPushNotication')->name('send_push_notification');
+	Route::resource('admin_accesorios','AccesorioController');
 
 	Route::get('/push', function(){
 
@@ -125,3 +126,4 @@ Route::get('/responsabilidad-social-empresarial/programa-desarrollo-concesionari
 Route::get('/responsabilidad-social-empresarial/programa-rse-derkayvargas-2018-2021','FrontController@rseProgramaDyv')->name('programa_rse_dyv');
 Route::get('/empresa','FrontController@empresa');
 Route::get('/mobility-services-alquiler-de-autos-toyota','FrontController@mobilityServices')->name('mobility_services');
+Route::get('/posventa-accesorios','AccesorioController@indexFront')->name('accesorios');

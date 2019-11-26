@@ -63,5 +63,12 @@ window.openFile = function(event) {
       var output = document.getElementById(event.target.name)
       output.src = dataURL;
     };
+      console.log(input);
+      console.log(input.files[0]);
     reader.readAsDataURL(input.files[0]);
 };
+
+window.select2 = require('select2');
+$.fn.select2.defaults.set( "theme", "bootstrap" );
+
+

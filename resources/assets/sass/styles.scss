@@ -2714,6 +2714,11 @@ CARD COMPONENT
   background-size: cover;
 }
 
+.bg-header-accesorios{
+  background-image: url('/imagenes/posventa/bg-header-accesorios2.jpg');
+  background-size: cover;
+}
+
 .bg-header-tpa-avanzados{
   background-image: url('/imagenes/tpa/plan-de-ahorro-header.jpeg');
   background-size: cover;
@@ -2765,7 +2770,7 @@ CARD COMPONENT
     color: #fff;
     display: inline;
     float: left;
-    max-width: 70%;
+    /*max-width: 70%;*/
     padding: 5px 25px;
 }
 .mu-call-to-action-left h2 {

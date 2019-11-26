@@ -129,7 +129,7 @@ class Helper
 							    $query->where('modelo', 'like', '%' . $mod . '%')
 							          ->orWhere('marca', 'like', '%' . $usado_in_view->marca . '%');
 						 })->get();
-		if ($usados->count() < 3) {
+		if ($usados->count() < 4) {
 			$usados_ids = $usados->pluck('id');
 			$all = Usado::where('id', '!=',$usado_in_view->id )
 						->whereNotIn('id', $usados_ids)
@@ -139,7 +139,7 @@ class Helper
 			}
 		}
 
-		return $usados->take(3);
+		return $usados->take(4);
 	}
 
 	public static function getHighOrdenUsados()

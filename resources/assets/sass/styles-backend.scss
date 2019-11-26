@@ -34,3 +34,26 @@
     height: 100%;
     opacity: 0;
 }
+
+.has-search .form-control-feedback {
+    position: absolute !important;
+    z-index: 2 !important;
+    display: block !important;
+    width: 2.375rem !important;
+    height: 2.375rem !important;
+    line-height: 2.375rem !important;
+    text-align: center !important;
+    pointer-events: none !important;
+    color: #aaa !important;
+}
+.has-search .form-control {
+    padding-left: 2.375rem !important;
+}
+
+.sidebar-header {
+    background: transparent;
+    color: #adb5bd;
+    padding: 1.125rem 1.5rem .375rem 0.8rem;
+    font-size: .75rem;
+    text-transform: none;
+}
