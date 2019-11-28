@@ -40,13 +40,13 @@
     /*border-radius: 50px;*/
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 ">
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+{{-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-lvdc">
   <i class="fa fa-comments" ></i> Dejanos tu Comentario
-</button>
+</button> --}}
 </div>
 
 <!-- Modal -->
-<div class="modal fade right" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade right" id="modal-lvdc" tabindex="-1" role="dialog" aria-labelledby="modal-lvdcLabel">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background: url({{asset('/imagenes/la-voz-del-cliente.jpg')}}); height: 120px;    background-size: cover;

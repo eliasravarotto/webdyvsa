@@ -186,11 +186,11 @@
 			<div class="container mt-3">
 				<div class="d-flex list-product flex-wrap">
 					@foreach( $accesorios as $accesorio )
-					<div class="card ml-1">
+					<div class="card ml-1 mb-2">
 					  <img src="{{ $accesorio->foto()->public_path }}" class="card-img-top" alt="...">
 					  <div class="card-body">
 					  	<div class="product-price">
-					  		<span>$ {{ $accesorio->precio }}</span>
+					  		<span>$ {{  number_format($accesorio->precio, 2, ',', '.')}}</span>
 					  	</div>
 					  	<div class="product-title ">	
 					  		{{ $accesorio->nombre }}
@@ -202,7 +202,7 @@
 					    	</p>
 					  	</div>
 					  	<div class="product-buttons ">
-						  	<a href="#" class="btn btn-toyota btn-whatsapp my-1 btn-round" style="font-size: 17px">
+						  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}" class="btn btn-toyota btn-whatsapp my-1 btn-round" target="_blank" style="font-size: 17px">
 						  		<i class="fa fa-whatsapp"></i>
 						  		Consultar
 						  	</a>

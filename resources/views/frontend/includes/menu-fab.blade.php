@@ -3,62 +3,24 @@
     position: fixed;
     z-index: 999;
     right: 10px;
-    
-    /*border-radius: 50px;*/
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
 ">
-  <a class="btn btn-default " href="{{route('test_drive_form')}}" data-toggle="tooltip" 
-      data-trigger="hover" 
-      data-placement="left" 
-      data-html="true" 
-      data-title="
-                  	<div style='max-width:300px;position:relative;overflow:auto;'>
-	                  	<div style='width:100px;
-		                  	line-height:20px;
-		                  	float:left;
-							text-align:left;
-							padding-left:5px;
-							'>
-							<b style='font-size:14px'>HACER TESTDRIVE</b>
-						</div>
-					</div>">
-  	<img src="/imagenes/icons/test_drive.png" height="30" alt="Hacer drive toyota">
-    <span class="hidden-xs">TEST DRIVE</span>
-  </a>
-
-  <a class="btn btn-default " href="/turno-servicios/create" data-toggle="tooltip" 
-      data-trigger="hover" 
-      data-placement="left" 
-      data-html="true" 
-      data-title="
-                  	<div style='max-width:300px;position:relative;overflow:auto;'>
-	                  	<div style='width:100px;
-		                  	line-height:20px;
-		                  	float:left;
-							text-align:left;
-							padding-left:5px;
-							'>
-							<b style='font-size:14px'>TURNO POSVENTA</b>
-						</div>
-					</div>">
-  	<img src="/imagenes/icons/turno_posventa.png" height="30"  alt="Solicitar turno posventa">
-    <span class="hidden-xs">TURNOS</span>
-  </a>
-  {{-- <a class="btn btn-default " href="/contacto" 
-      data-toggle="tooltip" 
-      data-trigger="hover" 
-      data-placement="left" 
-      data-html="true" 
-      data-title="
-                  	<div style='max-width:300px;position:relative;overflow:auto;'>
-	                  	<div>
-							<b style='font-size:15px'>CONTACTO</b>
-						</div>
-					</div>">
-  	<img src="/imagenes/icons/contacto.png" height="30" alt="">
-    <span class="hidden-xs">CONTACTO</span>
-  </a> --}}
+  <section class="model-2">
+    <div class="float-btn-group">
+      <button class="btn-float btn-triger bg-rojo-toyota"><i class="icon-bars"></i></button>
+        <div class="btn-list">
+          <a class="btn-float bg-rojo-toyota" href="{{route('test_drive_form')}}"><i class="stm-icon-steering_wheel"></i></a>
+          <a class="btn-float btn-facebook" href="{{route('turno_servicio_create')}}"><i class="material-icons">build</i></a>
+          <a class="btn-float bg-whatsapp2" href="#" data-toggle="modal" data-target="#modal-lvdc"><i class="stm-icon-chat">   </i></a>
+        </div>
+    </div>
+    <div class="float-btn-group2">
+        <div class="btn-list">
+          <a class="bg-rojo-toyota" href="{{route('test_drive_form')}}" style="right: 50px; top: -152px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9">Hacer TESTDRIVE</a>
+          <a class="bg-rojo-toyota" href="{{route('turno_servicio_create')}}" style="right: 50px; top: -100px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9">Pedir TURNO</a>
+          <a class="bg-rojo-toyota" href="#" data-toggle="modal" data-target="#modal-lvdc" style="right: 50px; top: -44px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9 ">Dejar un COMENTARIO</a>
+        </div>
+      </div>
+  </section>
 </div>
 
 

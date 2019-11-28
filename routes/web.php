@@ -91,7 +91,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
-// Route::get('/min','FrontController@homeMin');
+Route::get('/icons','FrontController@icons');
 Route::get('/','FrontController@homeMin');
 Route::get('/financiacion','FrontController@financiacion');
 Route::get('/posventa','FrontController@posventa')->name('posventa');
@@ -106,7 +106,7 @@ Route::get('/usados','FrontController@usadosIndex');
 Route::get('/usados/{slug}','FrontController@usadosShow');
 Route::get('/usados/get-last','FrontController@ultimosUsados');
 Route::post('/usados/filter','FrontController@usadosFilter');
-Route::get('/turno-servicios/create','TurnoServicioController@create');
+Route::get('/turno-servicios/create','TurnoServicioController@create')->name('turno_servicio_create');
 Route::post('/turno-servicios','TurnoServicioController@store');
 Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('test_drive_form');
 Route::post('/test-drive','SolicitudTestDriveController@store');

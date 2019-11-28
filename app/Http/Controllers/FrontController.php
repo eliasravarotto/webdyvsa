@@ -277,4 +277,9 @@ class FrontController extends Controller
         return view('frontend.mobility.index');
     }
 
+    public function icons()
+    {
+        return view('frontend.icons');
+    }
+
 }

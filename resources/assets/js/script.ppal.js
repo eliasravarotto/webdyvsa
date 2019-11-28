@@ -4,6 +4,7 @@
     4. MENU FLOTANTE
     5. INIT OWL CAROUCEL
     6. SCRIPT FACEBOOK FAN PAGE
+    7. FABS BTNS
 ***********************************/
 
 $(document).ready(function(){
@@ -88,6 +89,14 @@ $(document).ready(function(){
           }
       }
   })
+
+  /*---------------------------------
+    7. FABS BTNS
+  ----------------------------------*/
+  $('.btn-triger').click(function(){
+    $(this).closest('.float-btn-group').toggleClass('open');
+    $('.float-btn-group2').toggleClass('open');
+  });
 
 
 });
