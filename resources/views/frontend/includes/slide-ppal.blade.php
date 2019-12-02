@@ -5,14 +5,14 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
+        {{-- <li data-target="#myCarousel" data-slide-to="4"></li> --}}
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-      	<div class="item active">
+      	{{-- <div class="item active">
           <img src="/imagenes/home-min/corolla2020.jpg" alt="Nuevo Toyota Corolla 2020">
-        </div>
-        <div class="item">
+        </div> --}}
+        <div class="item active">
           <img src="/imagenes/home-min/hiace-web.png" alt="Banco del Chaco autos usados">
         </div>
         <div class="item">
