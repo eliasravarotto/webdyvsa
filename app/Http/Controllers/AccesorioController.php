@@ -103,11 +103,8 @@ class AccesorioController extends Controller
      */
     public function update(Request $request, $accesorio_id)
     {
-        //return $request;
         $this->validate($request, [
             'nombre' => 'required|string',
-            'precio' => 'required|numeric',
-            'modelo_id' => 'required|int',
         ]);
 
         if ( !isset($request->imagenes) && !isset($request->imagenesOld)) {
@@ -162,15 +159,20 @@ class AccesorioController extends Controller
     {
        return $this->validate($request, [
             'nombre' => 'required|string',
-            'precio' => 'required|numeric',
-            'modelo_id' => 'required|int',
             'imagenes' => 'required|array|min:1',
         ]);
     }
 
     public function indexFront( Request $request )
     {
-        $accesorios = Accesorio::all();
-        return view('frontend.posventa.accesorios.index', compact('accesorios'));
+        $modelo_id = null;
+        if ($request->modelo_id != null) {
+            $modelo_id = $request->modelo_id;
+            $accesorios = Accesorio::where('modelo_id', $modelo_id)->get();
+        }else{
+            $accesorios = Accesorio::all();
+        }
+        $modelos = Modelo::orderBy('orden', 'asc')->get();
+        return view('frontend.posventa.accesorios.index', compact('accesorios', 'modelos', 'modelo_id'));
     }
 }

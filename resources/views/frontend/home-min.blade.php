@@ -20,6 +20,9 @@
         background-color: white;
         border-radius: 5px;
       }
+      .card .container-img {
+        height: 210px !important;
+      }
     </style>
 @stop
 
@@ -28,60 +31,7 @@
   <!---------------------------------------------------------------------
     SLIDER PRINCIPAL
   ----------------------------------------------------------------------->
-  <section>
-    <!-- Carusel Principal DESKCTOP-->
-    <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="/imagenes/home-min/hiace-web.png" alt="Banco del Chaco autos usados">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/portada-tu-auto.png" alt="Banco del chaco autos 0km">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/servicio-posventa-chaco.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
-        </div>
-      </div>
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-    <!-- Carusel Principal MOBILE-->
-    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm"  data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-mobile" data-slide-to="1"></li>
-      </ol>
-
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="/imagenes/home-min/portada-usados-sm.png" alt="">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/portada-tu-auto-sm.png" alt="">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/hiacemovil.png" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
+  @include('frontend.includes.slide-ppal')
 
   <!---------------------------------------------------------------------
     USADOS DESTACADOS
@@ -137,17 +87,16 @@
   <!---------------------------------------------------------------------
     Posts Promos y Dtos
   ----------------------------------------------------------------------->
-  <section class="py-3">
+  <section class="py-1">
     <div class="container">
       <div class="row">
           @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
-            <div class="col-md-4 col-sm-12">
-              <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm-magazine-vertical">
+            <div class="col-md-4 col-sm-12 py-2">
+             {{--  <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm-magazine-vertical">
                 <img class="img-responsive" src="{{$post->imagen_portada}}" alt="{{$post->titulo}}">
-                <div class="stm-magazine-loop-data">
+                <div class="stm-magazine-loop-data py-1">
                   <h3 class="top-content">{{$post->titulo}}</h3> 
                   <div class="middle-content">
-                    {{-- <div class="magazine-category normal-font">{{$post->tema->tema}}</div> --}}
                     <div class="magazine-loop-date">
                       <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
                         {{date('d M Y', strtotime($post->created_at))}}
@@ -160,8 +109,24 @@
               </a>
               <div class="w-100 text-center my-1" >
                 <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
+              </div>--}}
+              <div class="card d-flex flex-column justify-content-between">
+                <div class="container-img" style="background: url({{$post->imagen_portada}});"></div> 
+                  <div class="card-body d-flex flex-column justify-content-end">
+                    <div class="product-price">
+                        <a href="{{ route('show_post', $post->slug) }}">
+                          {{$post->titulo}}
+                        </a>
+                      </div> 
+                      <div class="product-description">
+                        <p class="card-text">{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
+                      </div> 
+                      <div class="product-buttons mb-2">
+                        <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
+                    </div>
+                </div>
               </div>
-          </div>
+            </div>
           @endforeach
       </div>
     </div>

@@ -14,6 +14,7 @@
   13. PARALLAX
   14. TEAM PLAN DE AHORRO
   15. FABS BTNS
+  16. CARDS BOOTSTRAP 4
 
 *********************************************/
 
@@ -142,11 +143,20 @@ p{
   display: flex;
 }
 
+.flex-column{
+  flex-direction:column;
+}
+
 .justify-content-center {
   justify-content: center;
 }
+.justify-content-end{
+  justify-content: flex-end;
+}
 
-.justify-content-space-between {
+.justify-content-space-between,
+.justify-content-between,
+ {
   justify-content: space-between;
 }
 
@@ -1789,6 +1799,124 @@ p{
   text-shadow: 1px 4px 1px #666;
 }
 
+/*--------------------------------------
+  16. CARDS BOOTSTRAP 4
+--------------------------------------*/
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.card img{
+  width: 100%
+}
+
+/* Estilos personalizados */
+.card .container-img{
+  height: 150px;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.product-price {
+    font-size: 27px;
+    font-weight: 600;
+    color: #fc4241;
+    text-align: left;
+    margin: 0px 0px 0px 10px;
+    order: 1;
+}
+.product-title {
+    font-family: "Raleway", Sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+        text-transform: uppercase;
+    font-style: normal;
+    line-height: 1.8em;
+    letter-spacing: 0px;
+    text-align: left;
+    margin: 0px 0px 0px 10px;
+    order: 2;
+    /*color: #777777*/
+}
+.product-description {
+    font-family: "Raleway", Sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+    font-style: normal;
+    line-height: 1.75em;
+    letter-spacing: 0px;
+    color: #1c1c1c;
+    text-align: left;
+    margin: 0px 30px 0px 10px;
+    order: 3;
+}
+.product-buttons {
+    margin: 6px 0px 0px 10px;
+    order: 4;
+}
+
+
+/* Estilos personalizados - GRID RESPONSIVE */
+.list-product .card{ height: 100%  }
+.list-product .card .card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.list-product .column:first-child{ padding-left: -7px; }
+.list-product .column{padding-left: 7px;}
+
+@media only screen and (min-width:1140px) {
+  .list-product .column{
+    width: 20% ;
+  }
+}
+
+@media only screen and (max-width:1140px) {
+  .list-product .column{
+    width: 25% ;
+  }
+}
+@media only screen and (max-width:960px) {
+  .list-product .column{
+    width: 33% ;
+  }
+}
+@media only screen and (max-width:768px) {
+  .list-product .column{
+    width: 50% ;
+  }
+}
+@media only screen and (max-width:576px) {
+  .list-product .column{
+    width: 100%;
+  }
+  .product-title,
+  .product-description
+   { font-size: 17px;  }
+}
 
 
 
@@ -3300,6 +3428,9 @@ CARD COMPONENT
   }
 }
 
+.bg-opacity-68{
+  background: rgba(0,0,0,.68);
+}
 .bg-gradient-dark-opacity{
   background-image: linear-gradient(0deg,rgba(0,0,0,0.68) 100%,rgba(0,0,0,0.68) 48.70%,rgba(0,0,0,0.00) 48.70%,rgba(0,0,0,0.00) 82.37%,rgba(0,0,0,0.68) 82.37%,rgba(0,0,0,0.68) 96.89%);
 }

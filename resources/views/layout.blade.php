@@ -184,7 +184,6 @@
   padding-left: 10px; 
   padding-right: 10px; 
 }
-
 </style>
 
 </head>
@@ -212,7 +211,6 @@
   <!-- Facebook -->
   <div id="fb-root"></div>
   <!--===============================================================================================-->
-  <!-- Main -->
   <script src="{{ mix('js/app.js') }}"></script>
   <!--===============================================================================================-->
   <!-- Owl Carucel -->
@@ -227,6 +225,8 @@
   <!-- TOAST JS -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <!--===============================================================================================-->
+  <script src="{{ asset('js/smoothproducts.min.js') }}"></script>
+  <!--===============================================================================================-->
   <!-- Google Analytics -->
   @if (env('IS_PROD'))
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
@@ -240,8 +240,10 @@
   <!--===============================================================================================-->
   <!-- Script -->
   <script type="text/javascript">
-
     $(document).ready(function(){
+    // $(window).load(function() {
+      $('.sp-wrap').smoothproducts();
+    // });
 
         $('[data-toggle="tooltip"]').tooltip();   
         

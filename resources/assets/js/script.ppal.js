@@ -93,9 +93,25 @@ $(document).ready(function(){
   /*---------------------------------
     7. FABS BTNS
   ----------------------------------*/
+  // Inicializar - Abrir el menu al cargar la pag.
+  setTimeout(function(){ 
+    $('.btn-triger').closest('.float-btn-group').toggleClass('open');
+    $('.float-btn-group2').toggleClass('open');
+  }, 2500);
+
+  // Abrir o cerrar el menu
   $('.btn-triger').click(function(){
     $(this).closest('.float-btn-group').toggleClass('open');
     $('.float-btn-group2').toggleClass('open');
+  });
+
+  // Mostrar descripcion al pasar el mouse
+  $(".btn-float").hover(function(){
+      var e = $(this).data('label');
+      $('#'+e).toggle()
+    }, function(){
+      var e = $(this).data('label');
+      $('#'+e).toggle()
   });
 
 

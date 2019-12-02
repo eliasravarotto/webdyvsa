@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title_and_meta')
-  <title>Derka y Vargas - Plan de Ahorro</title>
+  <title>Venta de Accesorios Originales Toyota</title>
   <meta name="description" content="Derka y Vargas donde comprar Hilux, Corolla, SW4, Innova, Cubiertas y Llantas, Accesorios Originales Toyota, Repuestos Originales, Repuestos Genuinos">
 @stop
 
@@ -22,11 +22,14 @@
     background-color: #fff;
 }
 
+#custom-search-input select{ font-size: 20px  }
+#custom-search-input select,
 #custom-search-input input{
     border: 0;
     box-shadow: none;
 }
 
+#custom-search-input a,
 #custom-search-input button{
     margin: 2px 0 0 0;
     background: none;
@@ -37,6 +40,7 @@
     border-left: solid 1px #ccc;
 }
 
+#custom-search-input a:hover,
 #custom-search-input button:hover{
     border: 0;
     box-shadow: none;
@@ -47,100 +51,14 @@
     font-size: 23px;
 }
 
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-}
-.card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-}
-.card-text:last-child {
-    margin-bottom: 0;
-}
 
-.card img{
-	width: 100%
-}
-
-.product-price {
-    font-size: 27px;
-    font-weight: 600;
-    color: #fc4241;
-    text-align: left;
-    margin: 0px 0px 0px 20px;
-    order: 1;
-}
-.product-title {
-    font-family: "Raleway", Sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-        text-transform: uppercase;
-    font-style: normal;
-    line-height: 1.8em;
-    letter-spacing: 0px;
-    text-align: left;
-    margin: 0px 0px 0px 20px;
-    order: 2;
-    /*color: #777777*/
-}
-.product-description {
-    font-family: "Raleway", Sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    text-transform: none;
-    font-style: normal;
-    line-height: 1.75em;
-    letter-spacing: 0px;
-    color: #1c1c1c;
-    text-align: left;
-    margin: 0px 30px 0px 20px;
-    order: 3;
-}
-.product-buttons {
-    margin: 6px 0px 0px 20px;
-    order: 4;
-}
-.list-product .card{ width: 250px }
-.list-product .card:first-child{ margin-left: 0px; }
-.list-product .card .card-body{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-@media only screen and (max-width:576px) {
-	.list-product .ml-1{
-		margin-left: 0rem;
-	}
-
-	.list-product .card{
-		width: 100%;
-	}
-
-	.product-title,
-	.product-description
-	 { font-size: 17px;  }
-
-}
 </style>
 @stop
 
 @section('content')
 	<article>
 		<section>
-			<div class="mu-call-to-action mu-call-to-action-dark bg-header-accesorios">
+			<div class="mu-call-to-action mu-call-to-action-dark bg-header-accesorios" style="background-position: right;">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -164,17 +82,29 @@
 				<h3>Encontra todos los accesorios disponibles</h3>
 				<div class="row">
 			        <div class="col-md-12">
-			        	<form action="" method="get" autocomplete="off">
-			            <div id="custom-search-input">
-			                <div class="input-group col-md-12">
-			                    <input type="text" class="form-control input-lg" name="texto_a_buscar" placeholder="Buscar" />
-			                    <span class="input-group-btn">
-			                        <button class="btn btn-info btn-lg" type="submit">
-			                            <i class="glyphicon glyphicon-search"></i>
-			                        </button>
-			                    </span>
-			                </div>
-			            </div>
+			        	<form action="" method="get" autocomplete="off" id="searchform">
+				            <div id="custom-search-input">
+				                <div class="input-group col-md-12">
+				                    {{-- <input type="text" class="form-control input-lg" name="texto_a_buscar" placeholder="Buscar" /> --}}
+				                    <select class="form-control input-lg" onchange="$('#searchform').submit()" name="modelo_id">
+			                    		<option value="">Buscar por modelo</option>
+				                    	@foreach( $modelos as $modelo )
+				                    		<option value="{{ $modelo->id }}" @if($modelo_id == $modelo->id) selected @endif>{{$modelo->nombre}}</option>
+				                    	@endforeach
+				                    </select>
+				                    <span class="input-group-btn">
+				                    	@if($modelo_id == null)
+				                        <button class="btn btn-info btn-lg" type="submit">
+				                            <i class="glyphicon glyphicon-search"></i>
+				                        </button>
+				                        @else
+				                        <a class="btn btn-info btn-lg" onclick="limpiarBusqueda(event)">
+				                            <i class="fa fa-times"></i> LIMPIAR
+				                        </a>
+				                        @endif
+				                    </span>
+				                </div>
+				            </div>
 			            </form>
 			        </div>
 				</div>
@@ -184,32 +114,50 @@
 
 		<section>
 			<div class="container mt-3">
-				<div class="d-flex list-product flex-wrap">
-					@foreach( $accesorios as $accesorio )
-					<div class="card ml-1 mb-2">
-					  <img src="{{ $accesorio->foto()->public_path }}" class="card-img-top" alt="...">
-					  <div class="card-body">
-					  	<div class="product-price">
-					  		<span>$ {{  number_format($accesorio->precio, 2, ',', '.')}}</span>
-					  	</div>
-					  	<div class="product-title ">	
-					  		{{ $accesorio->nombre }}
-					  	</div>
-					  	<div class="product-description">
-					    	<p class="card-text">
-					    		<i class="fa fa-car text-muted"></i>
-					    		{{ $accesorio->modelo()->first()->nombre }}
-					    	</p>
-					  	</div>
-					  	<div class="product-buttons ">
-						  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}" class="btn btn-toyota btn-whatsapp my-1 btn-round" target="_blank" style="font-size: 17px">
-						  		<i class="fa fa-whatsapp"></i>
-						  		Consultar
-						  	</a>
-					  	</div>
-					  </div>
-					</div>
-					@endforeach
+				<div class="d-flex list-product flex-wrap justify-content-start ">
+						@forelse  ( $accesorios as $accesorio )
+						<div class="column mt-1">
+							<div class="card d-flex flex-column justify-content-between">
+								<div class="container-img"  style="background: url({{ $accesorio->foto()->public_path }})"></div>
+
+								<div class="card-body d-flex flex-column justify-content-end">
+									<div class="product-price">
+									@if( $accesorio->precio )
+										<span>$ {{  number_format($accesorio->precio, 2, ',', '.')}}</span>
+									@else
+										<div style="height: 27px; width: 125px; background-color: #fafa"></div>
+									@endif
+									</div>
+
+									<div class="product-title ">	
+										{{ $accesorio->nombre }}
+									</div>
+									<div class="product-description">
+										<p class="card-text">
+											<i class="fa fa-car text-muted"></i>
+											{{ $accesorio->modelo()->first()->nombre }}
+										</p>
+									</div>
+									<div class="product-buttons ">
+									  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}?text=Hola%20me%20interesa%20el%20accesorio%20{{ str_replace(' ', '%20', $accesorio->nombre) }}" 
+									  	   class="btn btn-toyota btn-whatsapp my-1 btn-round" 
+									  	   target="_blank" 
+									  	   style="font-size: 17px">
+									  		<i class="fa fa-whatsapp"></i>
+									  		Consultar
+									  	</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						@empty
+						<div class="alert alert-info" role="alert">
+						  <p> 
+						  	<i class="fa fa-frown-o"></i> Lo sentimos, por el momento no hay accesorios cargados cara el modelo seleccionado. Puede consultar stock a traves del siguinte link de whatsapp. 
+						  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}"><b>Click aquí</b></a> 
+						  </p>
+						</div>
+						@endforelse 
 				</div>
 			</div>
 		</section>
@@ -218,5 +166,10 @@
 @stop
 
 @section('script')
-
+<script type="text/javascript">
+	function limpiarBusqueda(e){
+		e.preventDefault();
+		window.location.href = '/posventa-accesorios';
+	}
+</script>
 @stop

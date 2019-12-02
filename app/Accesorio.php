@@ -10,7 +10,6 @@ class Accesorio extends Model
 
     protected $fillable = ['nombre', 'precio', 'modelo_id', 'activo'];
 
-
     public function modelo()
     {
         return $this->belongsTo('App\Modelo');
