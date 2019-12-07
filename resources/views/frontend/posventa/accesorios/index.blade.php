@@ -153,7 +153,7 @@
 						@empty
 						<div class="alert alert-info" role="alert">
 						  <p> 
-						  	<i class="fa fa-frown-o"></i> Lo sentimos, por el momento no hay accesorios cargados cara el modelo seleccionado. Puede consultar stock a traves del siguinte link de whatsapp. 
+						  	<i class="fa fa-frown-o"></i> Lo sentimos, por el momento no hay accesorios cargados para el modelo seleccionado. Puede consultar stock a traves del siguinte link de whatsapp 
 						  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}"><b>Click aquí</b></a> 
 						  </p>
 						</div>
