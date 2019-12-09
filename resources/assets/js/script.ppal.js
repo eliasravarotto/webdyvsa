@@ -2,7 +2,7 @@
     1. Slider Principal
     2. Efecto Hover menú principal.
     4. MENU FLOTANTE
-    5. INIT OWL CAROUCEL
+    5. OWL CAROUCEL's
     6. SCRIPT FACEBOOK FAN PAGE
     7. FABS BTNS
 ***********************************/
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
 
   /*--------------------------------
-    5. INIT OWL CAROUCEL
+    5. OWL CAROUCEL's
   --------------------------------*/
   $('.owl-carousel.owl-carousel-modelos').owlCarousel({
       stagePadding: 0,

@@ -114,8 +114,11 @@
 
 		<section>
 			<div class="container mt-3">
-				<div class="d-flex list-product flex-wrap justify-content-start ">
-						@forelse  ( $accesorios as $accesorio )
+				@foreach( $modelos as $modelo )
+					@if( ($modelo->accesorios()->count() > 0) AND  $modelo_id == null) 
+					<h2 class="text-muted-2 text-uppercase	">{{ $modelo->nombre }}</h2>
+					<div class="d-flex list-product flex-wrap justify-content-start mb-3">
+						@foreach ( $modelo->accesorios()->get()->take(4) as $accesorio )
 						<div class="column mt-1">
 							<div class="card d-flex flex-column justify-content-between">
 								<div class="container-img"  style="background: url({{ $accesorio->foto()->public_path }})"></div>
@@ -150,15 +153,68 @@
 								</div>
 							</div>
 						</div>
-						@empty
-						<div class="alert alert-info" role="alert">
-						  <p> 
-						  	<i class="fa fa-frown-o"></i> Lo sentimos, por el momento no hay accesorios cargados para el modelo seleccionado. Puede consultar stock a traves del siguinte link de whatsapp 
-						  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}"><b>Click aquí</b></a> 
-						  </p>
+						@endforeach
+						<div class="column mt-1">
+							<a href="{{route('accesorios').'?modelo_id='.$modelo->id}}">
+							<div class="card d-flex justify-content-center align-items-center">
+								<h3>VER TODOS</h3>
+							</div>
+							</a>
 						</div>
-						@endforelse 
-				</div>
+					</div>
+					@endif
+
+					@if( $modelo_id != null) 
+					<div class="d-flex list-product flex-wrap justify-content-start mb-3">
+						@forelse ( $modelo->accesorios()->get() as $accesorio )
+						@if( $modelo_id == $modelo->id)
+						<div class="column mt-1">
+							<div class="card d-flex flex-column justify-content-between">
+								<div class="container-img"  style="background: url({{ $accesorio->foto()->public_path }})"></div>
+
+								<div class="card-body d-flex flex-column justify-content-end">
+									<div class="product-price">
+									@if( $accesorio->precio )
+										<span>$ {{  number_format($accesorio->precio, 2, ',', '.')}}</span>
+									@else
+										<div style="height: 27px; width: 125px; background-color: #fafa"></div>
+									@endif
+									</div>
+
+									<div class="product-title ">	
+										{{ $accesorio->nombre }}
+									</div>
+									<div class="product-description">
+										<p class="card-text">
+											<i class="fa fa-car text-muted"></i>
+											{{ $accesorio->modelo()->first()->nombre }}
+										</p>
+									</div>
+									<div class="product-buttons ">
+									  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}?text=Hola%20me%20interesa%20el%20accesorio%20{{ str_replace(' ', '%20', $accesorio->nombre) }}" 
+									  	   class="btn btn-toyota btn-whatsapp my-1 btn-round" 
+									  	   target="_blank" 
+									  	   style="font-size: 17px">
+									  		<i class="fa fa-whatsapp"></i>
+									  		Consultar
+									  	</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						@endif
+						@endforeach
+					</div>
+					@endif
+				@endforeach
+				
+				<div class="alert alert-info" role="alert">
+				  <p> 
+				  	<i class="fa fa-frown-o"></i> Lo sentimos, por el momento no hay accesorios cargados para el modelo seleccionado. Puede consultar stock a traves del siguinte link de whatsapp 
+				  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}"><b>Click aquí</b></a> 
+				  </p>
+				</div> 
+
 			</div>
 		</section>
 

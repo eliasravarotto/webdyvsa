@@ -166,6 +166,7 @@ class AccesorioController extends Controller
     public function indexFront( Request $request )
     {
         $modelo_id = null;
+        $modelo = null;
         if ($request->modelo_id != null) {
             $modelo_id = $request->modelo_id;
             $accesorios = Accesorio::where('modelo_id', $modelo_id)->get();
@@ -173,6 +174,7 @@ class AccesorioController extends Controller
             $accesorios = Accesorio::all();
         }
         $modelos = Modelo::orderBy('orden', 'asc')->get();
-        return view('frontend.posventa.accesorios.index', compact('accesorios', 'modelos', 'modelo_id'));
+        $modelo = Modelo::find($modelo_id);
+        return view('frontend.posventa.accesorios.index', compact('accesorios', 'modelos', 'modelo_id', 'modelo'));
     }
 }
