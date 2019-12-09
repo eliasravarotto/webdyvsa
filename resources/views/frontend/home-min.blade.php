@@ -111,7 +111,7 @@
                 <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
               </div>--}}
               <div class="card d-flex flex-column justify-content-between">
-                <div class="container-img" style="background: url({{$post->imagen_portada}});"></div> 
+                <div class="container-img" style="background: url('{{$post->imagen_portada}}');"></div> 
                   <div class="card-body d-flex flex-column justify-content-end">
                     <div class="product-price">
                         <a href="{{ route('show_post', $post->slug) }}">
