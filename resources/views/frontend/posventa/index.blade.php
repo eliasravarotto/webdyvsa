@@ -152,7 +152,7 @@ TOYOTA RECALL
 
 				<div class="mt-3">
 					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-11-2019  <b>Hasta:</b> 30-11-2019</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-12-2019  <b>Hasta:</b> 31-12-2019</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
@@ -188,6 +188,24 @@ TOYOTA RECALL
 		</section>
 
 		<!---------------------------------------------------------------------
+	    ACCESORIOS 
+	  	----------------------------------------------------------------------->
+		<section>
+			<div class="container py-4">
+				<div class="row features">
+					<div class="col-md-6 imagen-container">
+						<img class="img-responsive" src="http://www.yacopinisa.com/wp-content/uploads/2015/05/panel-accesorios.jpg">
+					</div>
+					<div class="col-md-6 descripcion">
+						<h2>ACCESORIOS ORIGINALES</h2>
+						<p class="mt-2">Elegí simpre por calidad y dale a tu toyota la exclusividad que se merece</p>
+						<a href="{{route('accesorios')}}" class="mu-btn mu-danger-btn ml-5 mt-2">VER ACCESORIOS</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!---------------------------------------------------------------------
 	    PROMOS Y DESCUENTOS
 	  	----------------------------------------------------------------------->
 		<section class="py-4">
@@ -195,26 +213,23 @@ TOYOTA RECALL
 		      <div class="row">
 		          @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
 		            <div class="col-md-4 col-sm-12">
-		              <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm-magazine-vertical">
-		                <img class="img-responsive" src="{{$post->imagen_portada}}">
-		                <div class="stm-magazine-loop-data">
-		                  <h3 class="top-content">{{$post->titulo}}</h3> 
-		                  <div class="middle-content">
-		                    {{-- <div class="magazine-category normal-font">{{$post->tema->tema}}</div> --}}
-		                    <div class="magazine-loop-date">
-		                      <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
-		                        {{date('d M Y', strtotime($post->created_at))}}
-		                    </div>
-		                  </div> 
-		                  <div class="bottom-content">
-		                    <p>{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
-		                  </div>
-		                </div>
-		              </a>
-		              <center class="my-1" >
-		                <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
-		              </center>
-		          </div>
+		              <div class="card d-flex flex-column justify-content-between">
+                <div class="container-img" style="background: url('{{$post->imagen_portada}}');"></div> 
+                  <div class="card-body d-flex flex-column justify-content-end">
+                    <div class="product-price">
+                        <a href="{{ route('show_post', $post->slug) }}">
+                          {{$post->titulo}}
+                        </a>
+                      </div> 
+                      <div class="product-description">
+                        <p class="card-text">{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
+                      </div> 
+                      <div class="product-buttons mb-2">
+                        <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
+                    </div>
+                </div>
+              </div>
+		          	</div>
 		          @endforeach
 		      </div>
 		    </div>

@@ -133,7 +133,7 @@
         <section>
             <div class="container">
                 <div v-for="(item, i) in features">
-                    <div v-if="(i % 2 === 0) && (item.descripcion != null)" class="row row-caracteristica" style="padding: 3rem 0rem">
+                    <div v-if="(i % 2 === 0) && (item.descripcion != null)" class="row features" style="padding: 3rem 0rem">
                         <div class="col-xs-12 col-md-6 imagen-container">
                             <img :src="item.img" class="img-responsive">
                         </div>
@@ -142,7 +142,7 @@
                             <p>{{item.descripcion}}</p>
                         </div>
                     </div>
-                    <div v-if="(i % 2 != 0) && (item.descripcion != null)" class="row row-caracteristica" style="padding: 3rem 0rem">
+                    <div v-if="(i % 2 != 0) && (item.descripcion != null)" class="row features" style="padding: 3rem 0rem">
                         <div class="col-xs-12 col-md-6 col-md-push-6 imagen-container">
                             <img :src="item.img" class="img-responsive">
                         </div>
@@ -321,24 +321,6 @@
     color: black;
     font-size: 1.9rem;
     font-weight: 400;
-}
-
-.row-caracteristica .imagen-container img{
-    border-radius: 6px; 
-}
-
-.row-caracteristica .descripcion h2{
-    font-weight: 100; 
-    margin-left: 5rem; 
-    margin-right: 5rem
-}
-.row-caracteristica .descripcion p{
-    font-size: 1.8rem; 
-    line-height: 2;  
-    font-weight: 100; 
-    font-weight: 100; 
-    margin-left: 5rem; 
-    margin-right: 5rem
 }
 
 .row-well{
