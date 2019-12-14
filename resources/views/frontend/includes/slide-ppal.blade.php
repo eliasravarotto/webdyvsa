@@ -3,26 +3,11 @@
     <div id="myCarousel" class="carousel slide visible-md visible-lg" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        {{-- <li data-target="#myCarousel" data-slide-to="4"></li> --}}
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-      	{{-- <div class="item active">
-          <img src="/imagenes/home-min/corolla2020.jpg" alt="Nuevo Toyota Corolla 2020">
-        </div> --}}
         <div class="item active">
-          <img src="/imagenes/home-min/hiace-web.png" alt="Banco del Chaco autos usados">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/portada-usados.png" alt="Banco del Chaco autos usados">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/portada-tu-auto.png" alt="Banco del chaco autos 0km">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/servicio-posventa-chaco.png" alt="Servicios de Posventa Toyota Chaco Resistencia Charata Villa Angela Saenz Peña">
+          <img src="/imagenes/home-min/corolla-hotsale.png" alt="Corolla el precio mas bajo, corolla con bonificacion">
         </div>
       </div>
       <!-- Left and right controls -->
@@ -37,21 +22,14 @@
     </div>
 
     <!-- Carusel Principal MOBILE-->
-    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm"  data-ride="carousel">
+    <div id="carousel-mobile" class="carousel slide visible-xs visible-sm"  data-ride="carousel" style="margin-top: 55px">
       <ol class="carousel-indicators">
         <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-mobile" data-slide-to="1"></li>
       </ol>
 
-      <div class="carousel-inner">
+      <div class="carousel-inner" style="padding: 10px">
         <div class="item active">
-          <img src="/imagenes/home-min/portada-usados-sm.png" alt="">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/portada-tu-auto-sm.png" alt="">
-        </div>
-        <div class="item">
-          <img src="/imagenes/home-min/hiacemovil.png" alt="">
+          <img src="/imagenes/home-min/corolla-hotsale-sm.png" alt="Corolla el precio mas bajo, corolla con bonificacion">
         </div>
       </div>
     </div>
