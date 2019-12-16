@@ -5,14 +5,6 @@
   <meta name="description" content="Derka y Vargas Responsabilidad Social Empresarial, Noticias Toyota Chaco, Eventos Toyota Chaco">
 @stop
 
-@section('mark-up-facebook')
-    <meta property="og:url" content="https://www.derkayvargas.com/post">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{$post->titulo}}">
-    <meta property="og:image" content="{{$post->imagen_portada}}">
-    <meta property="og:image" content="https://www.derkayvargas.com/imagenes/modelos/corolla/img-modelo.png">
-@stop
-
 @section('content')
 
 <div class="container mt-3">
@@ -49,11 +41,6 @@
             </li>
           </ul>
           <div>{!!$post->contenido!!}</div>
-          {!! Share::page('https://www.derkayvargas.com/post/'.$post->slug, $post->titulo)
-                  ->facebook()
-                  ->twitter()
-                  ->whatsapp()
-          !!}
         </div>
       </div>
     </div>
