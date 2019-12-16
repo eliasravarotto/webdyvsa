@@ -6,11 +6,11 @@
 @stop
 
 @section('mark-up-facebook')
-    <meta property="og:url" content="https://www.derkayvargas.com/post/{{$post->slug}}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{$post->titulo}}" />
-    <meta property="og:image" content="{{$post->imagen_portada}}"/>
-    <meta property="og:image" content="https://www.derkayvargas.com/imagenes/modelos/corolla/img-modelo.png"/>
+    <meta property="og:url" content="https://www.derkayvargas.com/post/{{$post->slug}}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{$post->titulo}}">
+    <meta property="og:image" content="{{$post->imagen_portada}}">
+    <meta property="og:image" content="https://www.derkayvargas.com/imagenes/modelos/corolla/img-modelo.png">
 @stop
 
 @section('content')
