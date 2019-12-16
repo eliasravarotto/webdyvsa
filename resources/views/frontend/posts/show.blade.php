@@ -5,6 +5,10 @@
   <meta name="description" content="Derka y Vargas Responsabilidad Social Empresarial, Noticias Toyota Chaco, Eventos Toyota Chaco">
 @stop
 
+@section('mark-up-facebook')
+    <meta property="og:image" content="{{$post->imagen_portada}}" />
+@stop
+
 @section('content')
 
 <div class="container mt-3">
