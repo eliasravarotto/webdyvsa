@@ -52,6 +52,21 @@
 }
 
 
+.btn-preview-img{
+	border:none;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	padding: 5px 10px;
+	color: white;
+	background-color:rgba(0, 0, 0, 0.7);
+}
+.btn-preview-img:hover{
+	color: white;
+	background-color:rgba(0, 0, 0, 0.9);
+}
+
+
 </style>
 @stop
 
@@ -116,12 +131,22 @@
 			<div class="container mt-3">
 				@foreach( $modelos as $modelo )
 					@if( ($modelo->accesorios()->count() > 0) AND  $modelo_id == null) 
-						<h2 class="text-muted-2 text-uppercase	">{{ $modelo->nombre }}</h2>
 						<div class="d-flex list-product flex-wrap justify-content-start mb-3">
-							@foreach ( $modelo->accesorios()->get()->take(4) as $accesorio )
-								<div class="column mt-1">
+							<div class="column mt-1">
+								<a href="{{route('accesorios').'?modelo_id='.$modelo->id}}">
+								<div class="card d-flex justify-content-center align-items-center">
+									<img src="{{$modelo->img_modelo }}">
+									<img src="{{ $modelo->img_logo }}">
+									<h4 class="visible-xs visible-sm">Ver Accesorios</h4>
+								</div>
+								</a>
+							</div>
+							@foreach ( $modelo->accesorios()->get()->take(3) as $accesorio )
+								<div class="column mt-1 visible-md visible-lg">
 									<div class="card d-flex flex-column justify-content-between">
-										<div onclick="imageView('{{ $accesorio->foto()->public_path }}')" class="container-img"  style="background: url({{ $accesorio->foto()->public_path }})"></div>
+										<div onclick="imageView('{{ $accesorio->foto()->public_path }}')" class="container-img"  style="background: url({{ $accesorio->foto()->public_path }})">
+											<button class="btn-preview-img"> <i class="fa fa-search-plus"></i> </button>
+										</div>
 										<div class="card-body d-flex flex-column justify-content-end">
 											<div class="product-price">
 											@if( $accesorio->precio )
@@ -134,12 +159,12 @@
 											<div class="product-title ">	
 												{{ $accesorio->nombre }}
 											</div>
-											<div class="product-description">
+											{{-- <div class="product-description">
 												<p class="card-text">
 													<i class="fa fa-car text-muted"></i>
 													{{ $accesorio->modelo()->first()->nombre }}
 												</p>
-											</div>
+											</div> --}}
 											<div class="product-buttons ">
 											  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}?text=Hola%20me%20interesa%20el%20accesorio%20{{ str_replace(' ', '%20', $accesorio->nombre) }}" 
 											  	   class="btn btn-toyota btn-whatsapp my-1 btn-round" 
@@ -153,7 +178,7 @@
 									</div>
 								</div>
 							@endforeach
-							<div class="column mt-1">
+							<div class="column mt-1 visible-md visible-lg">
 								<a href="{{route('accesorios').'?modelo_id='.$modelo->id}}">
 								<div class="card d-flex justify-content-center align-items-center">
 									<h3>VER TODOS</h3>
@@ -167,8 +192,10 @@
 						<div class="d-flex list-product flex-wrap justify-content-start mb-3">
 						@forelse ( $modelo->accesorios()->get() as $accesorio )
 						<div class="column mt-1">
-							<div class="card d-flex flex-column justify-content-between">
-								<div class="container-img" onclick="imageView('{{ $accesorio->foto()->public_path }}')"  style="background: url({{ $accesorio->foto()->public_path }})"></div>
+							<div class="card d-flex flex-column justify-content-between" style="position: relative;">
+								<div class="container-img" onclick="imageView('{{ $accesorio->foto()->public_path }}')"  style="background: url({{ $accesorio->foto()->public_path }})">
+									<button class="btn-preview-img"> <i class="fa fa-search-plus"></i> </button>
+								</div>
 								<div class="card-body d-flex flex-column justify-content-end">
 									<div class="product-price">
 									@if( $accesorio->precio )

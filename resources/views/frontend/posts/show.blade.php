@@ -10,6 +10,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{$post->titulo}}" />
     <meta property="og:image" content="{{$post->imagen_portada}}"/>
+    <meta property="og:image" content="https://www.derkayvargas.com/imagenes/modelos/corolla/img-modelo.png"/>
 @stop
 
 @section('content')
@@ -34,24 +35,33 @@
   </ol> --}}
 
   <div class="row">
-    <div class="col-xs-12 col-md-12 text-center">
-      <img class="img-responsive box-shadow border-rad-7" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
-    </div>
-    <div class="col-xs-12 col-md-12">
-      <h2>{{$post->titulo}}</h2>
-    <ul class="list-unstyled list-inline data-post">
-      <li class="text-muted"><i aria-hidden="true" class="fa fa-calendar"></i> {{$post->created_at}}</li> 
-      <li class="text-muted">
-        <div class="magazine-loop-views">
-          <div class="magazine-category-tema normal-font">{{$post->tema->tema}}</div>
-        </div>
-      </li>
-    </ul>
-      {{-- <div style="overflow: hidden;">
-          <img class="img-portada" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="max-height: 275px; float: right;">
+    <div class="col-xs-12 col-sm-12 col-md-8">
+      <div class="blog-1 blog-big">
+        <img class="img-responsive" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
+        <div class="detail">
+          <h3>{{$post->titulo}}</h3>
+          <ul class="list-unstyled list-inline data-post">
+            <li class="text-muted"><i aria-hidden="true" class="fa fa-calendar"></i> {{$post->created_at}}</li> 
+            <li class="text-muted">
+              <div class="magazine-loop-views">
+                <div class="magazine-category-tema normal-font">{{$post->tema->tema}}</div>
+              </div>
+            </li>
+          </ul>
           <div>{!!$post->contenido!!}</div>
-      </div> --}}
-    <div>{!!$post->contenido!!}</div>
+          {!! Share::page('https://www.derkayvargas.com/post/'.$post->slug, $post->titulo)
+                  ->facebook()
+                  ->twitter()
+                  ->whatsapp()
+          !!}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+      <div class="sidebar-right">
+        @include('frontend.posts.widget-recent-posts', [ 'postInView' => $post ])
+        @include('frontend.posts.widget-tags')
+      </div>
     </div>
   </div>
 

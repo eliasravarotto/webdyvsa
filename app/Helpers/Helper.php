@@ -1,12 +1,13 @@
 <?php
 namespace App\Helpers;
 
-use App\Sucursal;
 use App\Modelo;
 use App\Post;
-use App\Usado;
-use App\TpaAgrupado;
+use App\PostTema;
+use App\Sucursal;
 use App\TpaAdjudicado;
+use App\TpaAgrupado;
+use App\Usado;
 
 /*
 	1. Sucursales - getSucursales
@@ -18,9 +19,10 @@ use App\TpaAdjudicado;
 	7. Posts recientes - postRecientes
 	8. Posts Populares - postPopulares
 	9. Posts Promos y Descuentos - getPostsPromosDtos
-	10. Plan de Ahorro - getAgrupados
-	11. Plan de Ahorro - getAdjudicados
-	12. Usados de Interés - getUsadosDeInteres
+	10. Posts, Widget Right - getPostsWidgetRigth
+	11. Plan de Ahorro - getAgrupados
+	12. Plan de Ahorro - getAdjudicados
+	13. Usados de Interés - getUsadosDeInteres
 */
 
 class Helper
@@ -106,6 +108,32 @@ class Helper
 		}
 
 		return $posts;
+	}
+
+	public static function getPostsWidgetRigth( $postInView = null, $cant )
+	{
+		if ($postInView != null) {
+			$posts = Post::where('tema_id', $postInView->tema_id)
+						 ->where('id', '!=', $postInView->id)
+						 ->orderBy('orden', 'DESC')
+						 ->with(['tema']);
+			if ( $posts->count() < $cant ) {
+				$all = collect(Post::with(['tema'])->get());
+				$posts = collect($posts->get());
+				$posts = $posts->concat($all);
+				$posts = $posts->unique();
+			}else{
+				$posts = $posts->get();
+			}
+
+			return $posts->sortByDesc('created_at')->take($cant);
+		}
+	}
+
+	public static function getPostsTemas()
+	{
+		$temas = PostTema::all();
+		return $temas;
 	}
 
 	public static function getAgrupados()

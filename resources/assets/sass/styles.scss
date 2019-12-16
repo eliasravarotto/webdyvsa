@@ -17,6 +17,7 @@
   16. CARDS BOOTSTRAP 4
   17. MODAL IMAGE VIEWER
   18. FEATURES ROW
+  19. ENTRADAS - POSTS
 
 *********************************************/
 
@@ -176,6 +177,10 @@ p{
 
 .align-items-start {
   align-items: flex-start;
+}
+.align-self-center {
+    -ms-flex-item-align: center!important;
+    align-self: center!important;
 }
 
 .flex-d-col {
@@ -2033,14 +2038,104 @@ p{
     margin-right: 5rem
 }
 
-/*--------------PANELS------------------------*/
+/*------------------------------------
+  19. ENTRADAS - POSTS
+------------------------------------*/
+.sidebar-right {
+    /* margin: 0 0 30px 0; */
+    background: #fff;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+.widget {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-bottom: solid 1px #f7f7f7;
+}
+.sidebar-title {
+    font-size: 20px;
+    position: relative;
+    margin: 0 0 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.media-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.recent-posts .media img {
+    width: 90px;
+    border-radius: 2px;
+}
+
+.recent-posts .media h5 {
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+.recent-posts .media h5 a {
+    font-size: 15px;
+    color: #535353;
+}
+.recent-posts .listing-post-meta {
+    font-size: 13px;
+    font-weight: 500;
+    color: #757474;
+}
+.recent-posts .listing-post-meta a {
+    color: #757474;
+}
+.tags-box ul li {
+    display: inline-block;
+}
+.tags-box ul li a {
+    border: 1px solid #c5c5c5;
+    background: #fff;
+    color: #666;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 0 5px;
+    padding: 5px 13px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-radius: 3px;
+}
+.blog-1 {
+    margin-bottom: 30px;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.blog-big .detail {
+    padding: 30px 20px 20px;
+}
+
+.blog-big h3 {
+    font-size: 27px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+
+
+/*--------------PANEL------------------------*/
 .panel-title-financial > a > h4 {
   color: black;
   font-weight: bold;
   font-size: 23px;
 }
-
 /*--------------------------------------------*/
+
 
 /*----------------------------------------------------------------------------------
 Slider Principal + NavBar (Texto flotante)
@@ -2095,6 +2190,11 @@ Slider Principal + NavBar (Texto flotante)
 }
 
 @media (max-width:992px) {
+
+  .blog-big{
+    margin-top: 4rem;
+  }
+
   .image-service .is-image {
     width: 100%;
   }
