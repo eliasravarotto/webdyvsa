@@ -41,6 +41,12 @@
             </li>
           </ul>
           <div>{!!$post->contenido!!}</div>
+          {!!
+            Share::page(\Request::fullUrl())
+                ->facebook()
+                ->twitter()
+                ->whatsapp()
+            !!}
         </div>
       </div>
     </div>
