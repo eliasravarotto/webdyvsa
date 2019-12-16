@@ -1,7 +1,7 @@
 <div class="widget recent-posts">
     <h3 class="sidebar-title">Recent Posts</h3>
     @foreach(\App\Helpers\Helper::getPostsWidgetRigth( $postInView,  5 ) as $post)
-        <div class="media mb-4">
+        <div class="media mb-2">
             <a class="pr-3" href="{{ route('show_post', $post->slug) }}">
                 <img class="media-object" src="{{ $post->imagen_portada }}" alt="img no aviable">
             </a>

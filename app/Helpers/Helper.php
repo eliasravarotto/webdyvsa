@@ -118,7 +118,7 @@ class Helper
 						 ->orderBy('orden', 'DESC')
 						 ->with(['tema']);
 			if ( $posts->count() < $cant ) {
-				$all = collect(Post::with(['tema'])->get());
+				$all = collect(Post::where('tema_id', '!=', $postInView->tema_id)->with(['tema'])->get());
 				$posts = collect($posts->get());
 				$posts = $posts->concat($all);
 				$posts = $posts->unique();
