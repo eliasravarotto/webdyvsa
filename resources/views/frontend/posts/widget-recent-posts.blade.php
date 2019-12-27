@@ -1,5 +1,5 @@
 <div class="widget recent-posts">
-    <h3 class="sidebar-title">Recent Posts</h3>
+    <h3 class="sidebar-title">Posts Recientes</h3>
     @foreach(\App\Helpers\Helper::getPostsWidgetRigth( $postInView,  5 ) as $post)
         <div class="media mb-2">
             <a class="pr-3" href="{{ route('show_post', $post->slug) }}">

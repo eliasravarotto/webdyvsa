@@ -1,5 +1,5 @@
 <div>
-	<div class="navbar-wrapper visible-md visible-lg">
+	<div class="navbar-wrapper d-none d-lg-block visible-lg visible-md">
         <div class="navbar navbar-static-top" style="">
             <div class="collapse navbar-collapse d-flex justify-content-center" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-ppal fromLeft d-flex justify-content-center" style="width: 100%;">

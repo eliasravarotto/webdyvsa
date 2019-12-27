@@ -18,7 +18,7 @@
     <!--===============================================================================================-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--===============================================================================================-->
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('/css/app_.css') }}" rel="stylesheet" type="text/css" />
     <!--===============================================================================================-->
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
@@ -200,8 +200,46 @@
 
   <div id="app">
     @include('frontend.includes.header-desk')
-    @include('frontend.includes.navbar-desk')
     @include('frontend.includes.header-mobile')
+
+
+    <nav class="navbar navbar-expand-lg d-none d-lg-block">
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul class="navbar-nav navbar-ppal">
+          <li class="nav-item">
+            <a class="nav-link {{Request::path() == 'modelos' ? 'active' : ''}}" href="{{route('modelos')}}">MODELOS</a>
+          </li>
+          <li class="nav-item {{Request::path() == 'plan-de-ahorro' ? 'active' : ''}}">
+            <a class="nav-link" href="/plan-de-ahorro">PLAN DE AHORRO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/usados">USADOS</a>
+          </li>
+          <li class="nav-item {{Request::path() == 'financiacion' ? 'active' : ''}}">
+            <a class="nav-link" href="/financiacion">FINANCIACION</a>
+          </li>
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              POSVENTA
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Servicios y Accesorios</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Turnos Online</a>
+            </div>
+          </li>
+          <li class="nav-item {{Request::path() == route('mobility_services') ? 'active' : ''}}">
+            <a class="nav-link" href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('rse')}}">RSE</a>
+          </li>
+          <li class="nav-item {{Request::path() == 'contacto' ? 'active' : ''}}">
+            <a class="nav-link" href="/contacto">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     @yield('content')
 
@@ -213,7 +251,7 @@
   <div id="fb-root"></div>
   <!--===============================================================================================-->
   <!-- Main -->
-  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ mix('js/app_.js') }}"></script>
   <!--===============================================================================================-->
   <!-- Owl Carucel -->
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>

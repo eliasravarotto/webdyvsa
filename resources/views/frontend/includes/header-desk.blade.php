@@ -1,4 +1,4 @@
-<header class="header-ppal visible-md visible-lg">
+<header class="header-ppal d-none d-lg-block visible-md visible-lg">
       <div class="row row-no-margin">
         <div class="col-md-3 col-sm-12 col-xs-12 text-left center-on-mobile">
           <a href="/">

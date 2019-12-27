@@ -19,7 +19,7 @@ return [
         ],
         'twitter' => [
             'uri' => 'https://twitter.com/intent/tweet',
-            'text' => 'Default share text',
+            'text' => 'Default share text'
         ],
         'linkedin' => [
             'uri' => 'http://www.linkedin.com/shareArticle',

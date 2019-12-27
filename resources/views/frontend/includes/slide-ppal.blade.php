@@ -7,6 +7,9 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
+          <img src="/imagenes/home-min/mobility.jpg" alt="Corolla el precio mas bajo, corolla con bonificacion">
+        </div>
+        <div class="item">
           <img src="/imagenes/home-min/corolla-hotsale.png" alt="Corolla el precio mas bajo, corolla con bonificacion">
         </div>
       </div>

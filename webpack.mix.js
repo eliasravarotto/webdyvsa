@@ -12,13 +12,13 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
-   .browserSync({
-	    proxy: 'webdyvsa.test'
-	});
+   .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.js('resources/assets/js/app_backend.js', 'public/js')
    .sass('resources/assets/sass/app_backend.scss', 'public/css');
+
+mix.js('resources/assets/js/app_.js', 'public/js')
+   .sass('resources/assets/sass/app_.scss', 'public/css');  
 
 mix.sass('resources/assets/sass/sm-core-css.scss', 'public/css');
 mix.sass('resources/assets/sass/sm-mint.scss', 'public/css');
@@ -27,3 +27,7 @@ mix.sass('resources/assets/sass/stm-icons.scss', 'public/css');
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.browserSync({
+	proxy: 'webdyvsa.test'
+});

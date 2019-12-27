@@ -90,6 +90,20 @@ $(document).ready(function(){
       }
   })
 
+   $('.owl-carousel.owl-carousel-ppal').owlCarousel({
+      stagePadding: 0,
+      loop:true,
+      margin:7,
+      nav:false,
+      autoplay: true,
+      autoPlaySpeed: 5000,
+      autoPlayTimeout: 5000,
+      autoplayHoverPause: true,
+      pagination: false,
+      dots: false,
+      items : 1,
+  })
+
   /*---------------------------------
     7. FABS BTNS
   ----------------------------------*/

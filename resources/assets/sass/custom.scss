@@ -104,10 +104,10 @@ body {
 }
 
 
-p{
-  line-height: 3.2rem;
-  font-size: 17px
-}
+// p{
+//   line-height: 3.2rem;
+//   font-size: 17px
+// }
 
 .vcenter {
   display: inline-block !important;
@@ -117,6 +117,7 @@ p{
 
 
 /*-------------------------------------------
+  1. SLIDER BOOTSTRAP CUSTOM INDICATORS - OWL-CAROUSEL
 -------------------------------------------*/
 .carousel-indicators li {
     display: inline-block;
@@ -129,6 +130,13 @@ p{
     cursor: pointer;
     background-color: #000\9;
     background-color: transparent;
+}
+
+.owl-carousel.owl-carousel-ppal{
+  padding: 5px 10px;
+}
+.owl-carousel.owl-carousel-ppal img{
+  border-radius: 7px;
 }
 
 /*-------------------------------------------

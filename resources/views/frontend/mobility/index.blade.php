@@ -33,6 +33,10 @@ El Toyota que querés, por el tiempo que necesitás.">
 
 @section('content')
 	<section>
+		<img src="/imagenes/home-min/mobility.jpg visible-md visible-lg" class="w-100">
+	</section>
+
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 py-2 px-3">

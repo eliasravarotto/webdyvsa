@@ -1,4 +1,4 @@
-<header class="encabezado navbar-fixed-top visible-xs visible-sm">
+<header class="encabezado navbar-fixed-top visible-xs visible-sm d-block d-lg-none d-xl-none">
   <div class="container">
     <a href="/" class="logo">
       <img src="{{ asset('/imagenes/logos/logo-diciembre.png') }}" alt="logo derka y vargas">

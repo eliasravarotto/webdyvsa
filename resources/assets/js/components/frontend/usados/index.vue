@@ -1,72 +1,54 @@
 <template>
 <div>
-    <br>
-    <div class="panel panel-default">
-        <div class="panel-heading d-flex justify-content-space-between">
-            <a class="text-left" href="#" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="color: darkmagenta;">
-                <i class="fa fa-filter" aria-hidden="true"></i> Filtros
-            </a>
-        </div>
-        <div id="collapseExample" class="collapse in">
-          <div class="panel-body">
-            <div class="row">
-                <div class="col-md-8 col-sm-12">
-                    <div class="form-group">
-                        <div class="row">
-                        <div class="col-sm-12 col-md-3 col-sm-pb-2">
-                            <select class="form-control" v-model="filtro_marca">
-                                <option value="">--Marca--</option>
-                                <option v-for="marca in marcas" :value="marca">{{marca}}</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-md-3 col-sm-pb-2">
-                            <select class="form-control" v-model="filtro_color">
-                                <option value="">--Color--</option>
-                                <option v-for="color in colores" :value="color">{{color}}</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-md-3 col-sm-pb-2">
-                            <select class="form-control" v-model="filtro_anio">
-                                <option value="">--Año--</option>
-                                <option v-for="anio in anios" :value="anio">{{anio}}</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-md-3">
-                            <div class="flex justify-content-space-around">
-                            <a href="#" class="btn btn-default" @click.prevent="limpiarFiltro()"><i class="fa fa-refresh"></i></a>
-                            <a href="#" class="btn btn-primary a-cargando" @click.prevent="filtrar()"><i class="fa fa-filter"></i> Filtrar</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            <div class="my-1">
+                <div class="title-section">
+                    <h3>Filtros</h3>
                 </div>
-                <div class="col-md-4 col-sm-12 text-right">
-                    <div class="form-inline">
-                        <div class="form-group">
-                                <label>Ordenar Por: </label>
-                                <select class="form-control" v-model="ordenar_por" @change="ordernarPor()">
-                                    <option value="anio_may_men">Año mayor a menor</option>
-                                    <option value="anio_men_may">Año menor a mayor</option>
-                                    <option value="precio_may_men">Precio mayor a menor</option>
-                                    <option value="precio_men_may">Precio menor a mayor</option>
-                                </select>
-                        </div>
-                    </div>
+                <div class="mb-1 mt-2">
+                    <select class="form-control" v-model="filtro_marca">
+                        <option value="">--Marca--</option>
+                        <option v-for="marca in marcas" :value="marca">{{marca}}</option>
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select class="form-control" v-model="filtro_color">
+                        <option value="">--Color--</option>
+                        <option v-for="color in colores" :value="color">{{color}}</option>
+                    </select>
+                </div>
+                <div class="mb-1">
+                     <select class="form-control" v-model="filtro_anio">
+                        <option value="">--Año--</option>
+                        <option v-for="anio in anios" :value="anio">{{anio}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ordenar Por: </label>
+                    <select class="form-control" v-model="ordenar_por" @change="ordernarPor()">
+                        <option value="anio_may_men">Año mayor a menor</option>
+                        <option value="anio_men_may">Año menor a mayor</option>
+                        <option value="precio_may_men">Precio mayor a menor</option>
+                        <option value="precio_men_may">Precio menor a mayor</option>
+                    </select>
+                </div>
+                <div class="flex justify-content-end">
+                    <a href="#" class="btn btn-default mx-1" @click.prevent="limpiarFiltro()"><i class="fa fa-trash"></i> Limpiar Filtro</a>
+                    <a href="#" class="btn btn-primary a-cargando" @click.prevent="filtrar()"><i class="fa fa-filter"></i> Aplicar</a>
                 </div>
             </div>
-          </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-9">
             <div v-if="unidades_filtered != ''">
                 <div class="row">
                     <div v-for="unidad in unidades_filtered" class="col-sm-12 col-md-4" v-if="unidad.visible">
                         <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:auto">
                             <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                             <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
-                            <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                            <div class="item-usado-certificado">
+                                <img src="/imagenes/logo-uct-new.png" class="w-100">
+                            </div>
                                 <img v-show="unidad.foto" :src="unidad.foto" alt="">
                                 <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
                                 <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
@@ -109,31 +91,37 @@
             </div>
 
             <div v-if="unidades_filtered == ''" id="certificados-toyota">
-                <div class="title-section mb-1">
-                    <h3>USADOS CERTIFICADOS</h3>
-                </div>
-                <div class="well">
+                <section class="my-1">
+                    <div class="title-section mb-1">
+                        <h3>USADOS CERTIFICADOS</h3>
+                    </div>
+
+                    <div class="card py-1 px-1">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-2 text-center">
-                                <img src="/imagenes/logo-uct.png" class="img-responsive" style="max-height: 125px; display: inline; margin-bottom: 10px;">
+                                <img src="/imagenes/logo-uct-h-new.png" class="img-responsive">
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-10">
-                                <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
+                                <h4 class="mt-0">¿Qué es un Usado Certificado TOYOTA?</h4>
                                 <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
-                                <ul class="list-unstyled">
-                                    <li> - Garantía de 1 año o 20.000 km.</li>
-                                    <li> - Vehículos que fueron atendidos en concesionarios oficiales.</li>
-                                    <li> - 150 puntos de inspección realizados por técnicos capacitados.</li>
+                                <ul class="list-unstyled list-inline">
+                                    <li> <i class="fa fa-check text-success"></i> Garantía de 1 año o 20.000 km.</li>
+                                    <li> <i class="fa fa-check text-success"></i> Vehículos que fueron atendidos en concesionarios oficiales.</li>
+                                    <li> <i class="fa fa-check text-success"></i> 150 puntos de inspección realizados por técnicos capacitados.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                </section>
+
                 <div class="row">
                     <div v-for="unidad in unidades_uct" class="col-sm-12 col-md-4" v-if="unidad.visible && unidad.uct">
                         <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                             <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                             <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
-                            <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                                <div class="item-usado-certificado">
+                                    <img src="/imagenes/logo-uct-new.png" class="w-100">
+                                </div>
                                 <img v-show="unidad.foto" :src="unidad.foto" alt="">
                                 <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
                                 <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
@@ -167,7 +155,8 @@
                         </div>
                     </div>  
                 </div>
-                <div class="alert alert-info" role="alert" v-if="!hayUct">Por el momento no contamos con Usados Certificados en stock.</div>  
+                <!-- <div class="alert alert-info" role="alert" v-if="!hayUct">Por el momento no contamos con Usados Certificados en stock.</div>   -->
+            
             </div>
 
             <div v-if="unidades_filtered == ''">
@@ -178,7 +167,9 @@
                     <div v-for="unidad in unidades" class="col-sm-12 col-md-4" v-if="unidad.visible && !unidad.uct">
                         <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                             <div class="pos-rel o-flw-hiden" style="max-height: 250px">
-                            <div class="arrow-ribbon" v-if="unidad.uct"><i class="fa fa-certificate"></i> CERTIFICADO</div>
+                            <div class="item-usado-certificado">
+                                    <img src="/imagenes/logo-uct-new.png" class="w-100">
+                                </div>
                             <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
                                 <img v-show="unidad.foto" :src="unidad.foto" alt="">
                                 <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
