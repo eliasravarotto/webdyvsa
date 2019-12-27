@@ -135,16 +135,18 @@ span.bg-red{
 				    		</div>
 				    		<div class="d-flex w-100 align-items-center">
 				    			<label class="mr-1">Valor Ahorrado</label> 
-				    			@if( $agrupado->modalidad == '70/30' )
-					        		@if( $agrupado->unidad == 'Etios' )
-					        			$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
-					        		@endif
-					        		@if( $agrupado->unidad == 'Hilux' )
-					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux - $agrupado->precio_venta , 2, ',', '.')}}
-					        		@endif
-					        	@else
-					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 2, ',', '.')}}
-					        	@endif
+				        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">
+				        			@if( $agrupado->modalidad == '70/30' )
+						        		@if( $agrupado->unidad == 'Etios' )
+						        			$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
+						        		@endif
+						        		@if( $agrupado->unidad == 'Hilux' )
+						        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux - $agrupado->precio_venta , 2, ',', '.')}}
+						        		@endif
+						        	@else
+						        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 2, ',', '.')}}
+						        	@endif
+				        		</span>
 				    		</div>
 			  			</td>
 			  		</tr>
