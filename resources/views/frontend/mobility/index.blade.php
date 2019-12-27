@@ -33,7 +33,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 
 @section('content')
 	<section>
-		<img src="/imagenes/home-min/mobility.jpg visible-md visible-lg" class="w-100">
+		<img src="/imagenes/home-min/mobility.jpg" class="w-100 visible-md visible-lg">
 	</section>
 
 	<section>
