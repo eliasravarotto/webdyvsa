@@ -123,17 +123,27 @@ span.bg-red{
 				    		<div class="d-flex w-100">
 				    			<label class="mr-1">Avance del plan en Cuota Pura</label>
 				    			@if( $agrupado->modalidad == '70/30' )
-					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 0, ',', '.')}}
+						        	@if( $agrupado->unidad == 'Etios' )
+						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 2, ',', '.')}}
+						        	@endif
+						        	@if( $agrupado->unidad == 'Hilux' )
+						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux , 2, ',', '.')}}
+						        	@endif
 					        	@else
-					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 0, ',', '.')}}
+					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 2, ',', '.')}}
 					        	@endif
 				    		</div>
 				    		<div class="d-flex w-100 align-items-center">
 				    			<label class="mr-1">Valor Ahorrado</label> 
 				    			@if( $agrupado->modalidad == '70/30' )
-					        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 0, ',', '.')}}</span>
+					        		@if( $agrupado->unidad == 'Etios' )
+					        			$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
+					        		@endif
+					        		@if( $agrupado->unidad == 'Hilux' )
+					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux - $agrupado->precio_venta , 2, ',', '.')}}
+					        		@endif
 					        	@else
-					        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 0, ',', '.')}}</span>
+					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 2, ',', '.')}}
 					        	@endif
 				    		</div>
 			  			</td>
