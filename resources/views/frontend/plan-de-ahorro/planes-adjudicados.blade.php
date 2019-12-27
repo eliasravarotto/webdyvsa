@@ -62,6 +62,7 @@ span.bg-red{
 				    </thead>
 				    <tbody>
 				    	@php $valor_30porciento_etios = 247887;  @endphp
+				    	@php $valor_30porciento_hilux = 503430;  @endphp
 				    	@foreach(\App\Helpers\Helper::getAdjudicados() as $agrupado)
 					      <tr>
 					        <td class="text-center" style="font-weight: bold;">{{$agrupado->grupo}}/{{$agrupado->orden}}</td>
@@ -73,7 +74,12 @@ span.bg-red{
 					        <td class="text-center" style="font-weight: bold;">$ {{number_format($agrupado->cuota_pura, 2, ',', '.')}}</td>
 					        <td class="text-center" style="font-weight: bold;">
 					        	@if( $agrupado->modalidad == '70/30' )
-					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 2, ',', '.')}}
+						        	@if( $agrupado->unidad == 'Etios' )
+						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 2, ',', '.')}}
+						        	@endif
+						        	@if( $agrupado->unidad == 'Hilux' )
+						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux , 2, ',', '.')}}
+						        	@endif
 					        	@else
 					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 2, ',', '.')}}
 					        	@endif
@@ -81,7 +87,12 @@ span.bg-red{
 					        <td class="text-center" style="font-weight: bold;">
 					        	<span class=" badge" style="background-color: #28a745; font-size: 17px">
 					        	@if( $agrupado->modalidad == '70/30' )
-					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
+					        		@if( $agrupado->unidad == 'Etios' )
+					        			$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
+					        		@endif
+					        		@if( $agrupado->unidad == 'Hilux' )
+					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux - $agrupado->precio_venta , 2, ',', '.')}}
+					        		@endif
 					        	@else
 					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 2, ',', '.')}}
 					        	@endif
