@@ -25,12 +25,12 @@
     					<div class="col-sm-6 col-md-3 py-1 px-1">
     					    <a class="thumbnail thumbnail-hover thumbnail-no-border thumbnail-no-bg" href="/modelos/{{$modelo->nombre}}" style="text-decoration: none; padding: 8px">
     					      <img src="{{$modelo->img_modelo}}" alt="...">
-                              <div class="d-flex">
-                                  <img class="img-responsive" src="{{$modelo->img_logo}}">
-                              </div>
-                              <div class="d-flex justify-content-center">
-                                <span class="btn btn-default text-center btn-round">Ver modelo</span>
-                              </div>
+                      <div class="d-flex justify-content-center">
+                          <img class="" src="{{$modelo->img_logo}}" style="height: 45px; max-width: 90%">
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <span class="btn btn-default text-center btn-round">Ver modelo</span>
+                      </div>
     					    </a>
     				  	</div>
     					@endforeach

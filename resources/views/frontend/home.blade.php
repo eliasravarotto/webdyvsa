@@ -24,6 +24,7 @@
         height: 210px !important;
       }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 @stop
 
 
@@ -39,33 +40,83 @@
     </div>
   </section>
 
-  <!---------------------------------------------------------------------
-    USADOS DESTACADOS
-  ----------------------------------------------------------------------->
-  <div class=" my-3">
-    <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
-    </section>
-    <div class="container">
+  <section>
+    <div class="container py-5">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="row usados-destacados box-shadow">
-            <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
-              <img class="img-fluid" src="{{asset('/imagenes/usados-destacados.png')}}" alt="Autos Usados destacados">
+        <div class="col-md-3 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="w-25 d-flex align-items-center">
+                  <i class="fas fa-car h3"></i>
+                </div>
+                <div class="w-75">
+                  <h6 class="card-title mb-0">
+                     USADOS
+                  </h6>
+                  <a href="#" class="card-link">Ver usados</a>    
+                </div>
+              </div>
             </div>
-            <div class="col-xs-12 col-md-7 text-center">
-              <p class="text-left fz17">
-              Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
-              </p>
-              <a href="/usados" class="btn-link-underline text-center ">VER USADOS</a>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex">
+                  <div class="w-25 d-flex align-items-center">
+                    <i class="stm-icon-car_sale h3"></i>
+                  </div>
+                  <div class="w-75">
+                    <h6 class="card-title mb-0">
+                       PLAN DE AHORRO
+                    </h6>
+                    <a href="#" class="card-link">Ver planes</a>    
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex">
+                  <div class="w-25 d-flex align-items-center">
+                    <i class="stm-icon-gear h3"></i>
+                  </div>
+                  <div class="w-75">
+                    <h6 class="card-title mb-0">
+                       POSVENTA
+                    </h6>
+                    <a href="#" class="card-link">Turnos y Servicios</a>    
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex">
+                  <div class="w-25 d-flex align-items-center">
+                    <i class="stm-icon-add_car h3"></i>
+                  </div>
+                  <div class="w-75">
+                    <h6 class="card-title mb-0">
+                       ACCESORIOS
+                    </h6>
+                    <a href="#" class="card-link">Ver accesorios</a>    
+                  </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!---------------------------------------------------------------------
-    MODELOS
+    <!---------------------------------------------------------------------
+    MODELOS DESTACADOS
   ----------------------------------------------------------------------->
   <section>
     <div class="container">
@@ -89,6 +140,32 @@
       <p class="text-center"><a class="btn-link-underline" href="/modelos">VER TODOS</a></p>
     </div>
   </section>
+
+  <!---------------------------------------------------------------------
+    USADOS SELECCIONADOS
+  ----------------------------------------------------------------------->
+  <div class="my-3">
+    <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
+    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row usados-destacados box-shadow">
+            <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
+              <img class="img-fluid" src="{{asset('/imagenes/usados-destacados.png')}}" alt="Autos Usados destacados">
+            </div>
+            <div class="col-xs-12 col-md-7 text-center">
+              <p class="text-left fz17">
+              Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
+              </p>
+              <a href="/usados" class="btn-link-underline text-center ">VER USADOS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!---------------------------------------------------------------------
     Posts Promos y Dtos

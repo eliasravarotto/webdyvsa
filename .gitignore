@@ -3,6 +3,7 @@
 /public/storage
 /public/imagenes/usados/*
 /public/imagenes/posts/*
+/public/imagenes/modelos/*
 /storage/*.key
 /vendor
 /.idea

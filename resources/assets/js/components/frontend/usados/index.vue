@@ -96,11 +96,11 @@
                         <h3>USADOS CERTIFICADOS</h3>
                     </div>
 
-                    <div class="card py-1 px-1">
+                    <div class="card py-2 px-2">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-2 text-center">
+                            <!-- <div class="col-xs-12 col-sm-12 col-md-2 text-center">
                                 <img src="/imagenes/logo-uct-h-new.png" class="img-responsive">
-                            </div>
+                            </div> -->
                             <div class="col-xs-12 col-sm-12 col-md-10">
                                 <h4 class="mt-0">¿Qué es un Usado Certificado TOYOTA?</h4>
                                 <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
