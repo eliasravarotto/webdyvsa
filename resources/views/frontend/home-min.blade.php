@@ -243,7 +243,7 @@
     PARALLAX
   ----------------------------------------------------------------------->
   <section class="visible-md visible-lg">
-    <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2019.png);">
+    <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2020.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
