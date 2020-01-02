@@ -162,7 +162,6 @@ class FrontController extends Controller
 
 
     //------------MODELOS------------------//
-
  	public function modelo($modelo, ModeloRepository $modeloRepo)
     {
         
@@ -199,8 +198,7 @@ class FrontController extends Controller
 
     public function getModelos(Request $request)
     {
-        $modelos = Modelo::all();
-        
+        $modelos = Modelo::orderBy('orden', 'ASC')->get();
         if ($request->ajax()) {
             return $modelos;
         } else {

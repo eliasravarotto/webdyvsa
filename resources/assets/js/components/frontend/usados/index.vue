@@ -46,11 +46,11 @@
                         <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:auto">
                             <div class="pos-rel o-flw-hiden" style="max-height: 250px">
                             <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>
-                            <div class="item-usado-certificado">
+                            <div v-if="unidad.uct == 1" class="item-usado-certificado">
                                 <img src="/imagenes/logo-uct-new.png" class="w-100">
                             </div>
                                 <img v-show="unidad.foto" :src="unidad.foto" alt="">
-                                <img v-show="!unidad.foto" src="/imagenes/default-img.png" alt="">
+                                <img v-show="!unidad.foto" src="/imagenes/default-img.png">
                                 <a :href="'/usados/'+unidad.slug" class="block2-overlay trans-0-4">
                                     <div class="block2-btn-addcart w-size1 trans-0-4 d-flex justify-content-center">
                                         <a :href="'/usados/'+unidad.slug" class="btn btn-celeste-pastel flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" tabindex="0">
@@ -167,7 +167,7 @@
                     <div v-for="unidad in unidades" class="col-sm-12 col-md-4" v-if="unidad.visible && !unidad.uct">
                         <div class="thumbnail thumbnail-no-bg thumbnail-no-border" style="height:455px">
                             <div class="pos-rel o-flw-hiden" style="max-height: 250px">
-                            <div class="item-usado-certificado">
+                            <div v-if="unidad.uct == 1" class="item-usado-certificado">
                                     <img src="/imagenes/logo-uct-new.png" class="w-100">
                                 </div>
                             <div class="top-cross-ribbon ribbon-custom" v-if="unidad.estado == 'RESERVADO'">RESERVADO</div>

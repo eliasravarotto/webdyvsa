@@ -200,7 +200,7 @@
 
   <div id="app">
     @include('frontend.includes.header-desk')
-    @include('frontend.includes.header-mobile')
+    @include('frontend.includes.navbar-mobile')
 
 
     <nav class="navbar navbar-expand-lg d-none d-lg-block">

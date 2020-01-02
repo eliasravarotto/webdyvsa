@@ -5,6 +5,7 @@
     5. OWL CAROUCEL's
     6. SCRIPT FACEBOOK FAN PAGE
     7. FABS BTNS
+    8. NAVBAR MOBILE FIXED TOP
 ***********************************/
 
 $(document).ready(function(){
@@ -128,6 +129,23 @@ $(document).ready(function(){
       $('#'+e).toggle()
   });
 
+  /*---------------------------------
+    8. NAVBAR MOBILE FIXED TOP
+  ----------------------------------*/
+  window.onscroll = function() {fixedNavbarMobile()};
+  var navbar = document.getElementById("navbar-fixed");
+  var sticky = navbar.offsetTop;
+  console.log(sticky);
+
+  function fixedNavbarMobile() {
+    if (window.pageYOffset > sticky) {
+      navbar.classList.add("navbar-fixed-top")
+      navbar.classList.add("fixed-top")
+    } else {
+      navbar.classList.remove("navbar-fixed-top");
+      navbar.classList.remove("fixed-top");
+    }
+  }
 
 
 });

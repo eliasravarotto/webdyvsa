@@ -1,7 +1,7 @@
 <header id="navbar-fixed" class="encabezado visible-xs visible-sm d-block d-lg-none d-xl-none">
   <div class="container">
     <a href="/" class="logo">
-      <img src="{{ asset('/imagenes/logos/logo-dyv.png') }}" alt="Toyota Derka y Vargas">
+      <img src="{{ asset('/imagenes/logos/logo-diciembre.png') }}" alt="logo derka y vargas">
     </a>
     <button type="button" id="sidebarCollapse" class="navbar-btn-mobile" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
         <span></span>
