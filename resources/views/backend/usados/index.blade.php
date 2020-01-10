@@ -31,11 +31,12 @@
             <table class="table table-sm table-hover">
                 <thead>
                   <tr>
+                    <th></th>
                     <th>Int.</th>
                     <th>Dominio</th>
                     <th>Marca</th>
                     <th>Modelo</th>
-                    <th>Km - Año - Color</th>
+                    <th>Año - Color</th>
                     <th>Precio</th>
                     <th>Disp.</th>
                     <th>Visible</th>
@@ -45,11 +46,12 @@
                 <tbody id="tbody-usados">
                     @foreach($usados as $usado)
                     <tr class="usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" id="usado-row-{{$usado->interno}}">
+                        <td><img src="{{ $usado->foto }}" style="height: 34px"></td>
                         <td id="usado-int">{{ $usado->interno }}</td>
                         <td id="usado-dom">{{ $usado->dominio }}</td>
                         <td>{{ $usado->marca }}</td>
                         <td>{{str_limit(strip_tags($usado->modelo), 12, '...')}}</td>
-                        <td>{{ $usado->km }} km - {{ $usado->anio }} - {{$usado->color}}</td>
+                        <td>{{ $usado->anio }} - {{$usado->color}}</td>
                         <td><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
                         <td>@if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif</td>
                         <td>
