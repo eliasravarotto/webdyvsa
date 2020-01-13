@@ -27,6 +27,10 @@
           <td>{{ $consulta->email }}</td>
         </tr>
         <tr>
+          <th>Sucursal</th>
+          <td>{{ $consulta->derivar_a }}</td>
+        </tr>
+        <tr>
           <th>Mensaje</th>
           <td>{{$consulta->mensaje}}</td>
         </tr>

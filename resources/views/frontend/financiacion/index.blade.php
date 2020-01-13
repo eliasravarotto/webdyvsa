@@ -178,6 +178,20 @@
 						</div>
 					</div>
 					<div class="row">
+						<div class=" col-md-12">
+							<label class="control-label">Sucursal</label>
+							<select class="form-control" name="sucursal">
+								<option value="Sáenz Peña">Sáenz Peña</option>
+								<option value="Resistencia" >Resistencia</option>
+								<option value="Charata" >Charata</option>
+								<option value="Villa Ángela" >Villa Ángela</option>
+							</select>
+						    <span class="text-danger">
+								{{  $errors->first('sucursal') }}
+							</span>
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-md-12">
 							<label class="control-label">Mensaje</label>
 					    <textarea name="mensaje" class="form-control" required></textarea>

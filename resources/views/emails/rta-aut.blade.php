@@ -10,7 +10,7 @@
 </head>
 <body>
 <div>
-	<h5>Gracias por comunicarte con nosotros.</h5>			
+	<p>Gracias por comunicarte con nosotros.</p>			
 	<p>Tu mensaje será revisado a la brevedad.</p>
 	<br>
 	<ul class="list-unstyled">

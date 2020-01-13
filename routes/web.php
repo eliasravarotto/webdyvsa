@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 	Route::resource('admin/modelos','ModelosController');
+	Route::resource('admin_slides','SlideController');
 	Route::resource('tpa_adjudicados','TpaAdjudicadosController');
 	Route::resource('tpa_agrupados','TpaAgrupadosController');
 	Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
@@ -42,6 +43,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/turnos-servicios/{id}','TurnoServicioController@show')->name('solicitud_show');
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
 	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
+	Route::get('admin/leads','MensajeEmailController@index2')->name('admin_leads');
 	Route::get('admin/mensajes-contacto/{from}/{id}/show','MensajeEmailController@show')->name('contacto_mensajes_show');
 	Route::resource('admin/posts','PostController');
 	Route::get('admin/usados/borrar_img_post/{id}','PostController@deleteImgGaleria')->name('borrar_img_post');
@@ -121,7 +123,6 @@ Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');
 Route::get('/posts/{slug}','PostController@showPost')->name('show_post');
 Route::get('nueva-rav4-hibrida','FrontController@nuevaRav4')->name('nueva_rav4');
 // Route::get('/toyota-hibrid-experience','FrontController@thexpe');
-// Route::post('/consultar/usado/{id?}','ConsultaUsadoController@store');
 Route::get('/responsabilidad-social-empresarial/programa-desarrollo-concesionarios-2018','FrontController@rseProgramaDesarrolloConcesionarios')->name('programa_desarrollo_concesionarios');
 Route::get('/responsabilidad-social-empresarial/programa-rse-derkayvargas-2018-2021','FrontController@rseProgramaDyv')->name('programa_rse_dyv');
 Route::get('/empresa','FrontController@empresa');

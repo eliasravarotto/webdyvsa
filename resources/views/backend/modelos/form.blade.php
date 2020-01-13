@@ -42,7 +42,7 @@
 <div class="form-group row">
   	<div class=" col-12">
  		<label class="control-label mb-1">Descripción del Modelo</label>
-  		<textarea class="form-control" name="descripcion"></textarea>
+  		<textarea class="form-control" name="descripcion">{{$modelo->descripcion}}</textarea>
   	</div>
 </div>
 

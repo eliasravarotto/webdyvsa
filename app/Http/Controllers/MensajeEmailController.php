@@ -13,6 +13,8 @@ use App\Http\Requests\ReCaptchataTestFormRequest;
 
 class MensajeEmailController extends Controller
 {
+    private $froms=['contacto', 'financiacion', 'tpa'];
+
     /**
      * Display a listing of the resource.
      *
@@ -27,6 +29,23 @@ class MensajeEmailController extends Controller
         }
 
         return view('backend.contacto.index', compact('mensajes', 'from'));
+    }
+
+    public function index2(Request $request)
+    {
+        //return $request;
+        
+        $froms = $this->froms;
+
+        if ( sizeof($request->filterBy)>0 ){
+            $mensajes = MensajeEmail::whereIn('from', $request->filterBy)->orderBy('created_at', 'DESC')->get();
+            $filterBy = collect($request->filterBy);
+        }else{
+            $mensajes = MensajeEmail::orderBy('created_at', 'DESC')->get();
+            $filterBy = collect([]);
+        }
+
+        return view('backend.contacto.index', compact('mensajes', 'froms', 'filterBy'));
     }
 
     /**
@@ -46,78 +65,72 @@ class MensajeEmailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ReCaptchataTestFormRequest $request)
+    // public function store(ReCaptchataTestFormRequest $request)
+    public function store(Request $request)
     {
+        //return $request;
         $this->validate($request, [
             'from' => 'required',
             'cliente' => 'required',
             'email' => 'required',
             'telefono' => 'required',
             'mensaje' => 'required',
-            'g-recaptcha-response' => 'required',
+            'sucursal' => 'required',
+            // 'g-recaptcha-response' => 'required',
         ]);
 
 
-            $mensaje = new MensajeEmail;
-            $mensaje->cliente = $request->cliente;
-            $mensaje->telefono = $request->telefono;
-            $mensaje->email = $request->email;
-            $mensaje->mensaje = $request->mensaje;
+        $mensaje = new MensajeEmail;
+        $mensaje->cliente = $request->cliente;
+        $mensaje->telefono = $request->telefono;
+        $mensaje->email = $request->email;
+        $mensaje->mensaje = $request->mensaje;
+        $mensaje->derivar_a = $request->sucursal;
            
-            switch ($request->from) {
-                case 'financiacion':
-                    $from = 'financiacion';
-                    $asunto ='Consulta - Financiación';
-                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
-                    $mensaje->from = $from;
-                    $mensaje->enviar_a = $enviar_a;
-                    $mensaje->save();
-                    $this->enviarRtaAutomatica($mensaje->email); 
-                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
-                    break;
-                case 'tpa':
-                    $from = 'tpa';
-                    $asunto ='Consulta desde Pagina Web TPA';
-                    $enviar_a = env('RECEPTOR_EMAILS_TPA');
-                    $mensaje->from = $from;
-                    $mensaje->enviar_a = $enviar_a;
-                    $mensaje->save();
-                    $this->enviarRtaAutomatica($mensaje->email); 
-                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
-                    break;
-                case 'usados':
-                    $from = 'usados';
-                    $asunto ='Consulta desde Pagina Web TPA';
-                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
-                    $mensaje->from = $from;
-                    $mensaje->enviar_a = $enviar_a;
-                    $mensaje->save();
-                    $this->enviarRtaAutomatica($mensaje->email); 
-                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
-                    break;
-                case 'financiacion_plan_nacional':
-                    $from = 'Financiacion Plan Nacional';
-                    $asunto ='Consulta por Financiación Nuevo Plan Nacional';
-                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
-                    $mensaje->from = $from;
-                    $mensaje->enviar_a = $enviar_a;
-                    $mensaje->save();
+        switch ($request->from) {
+            case 'financiacion':
+                $from = 'financiacion';
+                $asunto ='Consulta - Financiación';
+                $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                $mensaje->from = $from;
+                $mensaje->enviar_a = $enviar_a;
+                $mensaje->save();
+                $this->enviarRtaAutomatica($mensaje->email); 
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                break;
+            case 'tpa':
+                $from = 'tpa';
+                $asunto ='Consulta desde Pagina Web TPA';
+                $enviar_a = env('RECEPTOR_EMAILS_TPA');
+                $mensaje->from = $from;
+                $mensaje->enviar_a = $enviar_a;
+                $mensaje->save();
+                $this->enviarRtaAutomatica($mensaje->email); 
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                break;
+            case 'usados':
+                $from = 'usados';
+                $asunto ='Consulta desde Pagina Web TPA';
+                $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                $mensaje->from = $from;
+                $mensaje->enviar_a = $enviar_a;
+                $mensaje->save();
+                $this->enviarRtaAutomatica($mensaje->email); 
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                break;
+            default:
+                $from = 'contacto';
+                $asunto ='Consulta desde Pagina Web';
+                $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+                $mensaje->from = $from;
+                $mensaje->enviar_a = $enviar_a;
+                $mensaje->save();
+                $this->enviarRtaAutomatica($mensaje->email); 
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                break;
+        }
 
-                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
-                    break;
-                default:
-                    $from = 'contacto';
-                    $asunto ='Consulta desde Pagina Web';
-                    $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
-                    $mensaje->from = $from;
-                    $mensaje->enviar_a = $enviar_a;
-                    $mensaje->save();
-                    $this->enviarRtaAutomatica($mensaje->email); 
-                    event( new HaIngresadoUnaConsulta($mensaje, $asunto));
-                    break;
-            }
-
-            return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+        return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
     }
 
     public function storeVozDelCli(ReCaptchataTestFormRequest $request)
@@ -180,29 +193,6 @@ class MensajeEmailController extends Controller
         }
 
         return view('backend.contacto.show', compact('mensaje'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\MensajeEmail  $mensajeEmail
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(MensajeEmail $mensajeEmail)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\MensajeEmail  $mensajeEmail
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, MensajeEmail $mensajeEmail)
-    {
-        //
     }
 
     /**

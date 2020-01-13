@@ -20,7 +20,8 @@ class CreateMensajeEmailsTable extends Migration
             $table->string('email')->nullable();
             $table->string('from')->nullable();
             $table->longText('mensaje');
-            $table->string('enviar_a');
+            $table->string('enviar_a')->nullable();
+            $table->string('derivar_a')->nullable();
             $table->timestamps();
         });
     }
