@@ -42,8 +42,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/turnos-servicios','TurnoServicioController@index')->name('solicitudes_index');
 	Route::get('admin/turnos-servicios/{id}','TurnoServicioController@show')->name('solicitud_show');
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
-	Route::get('admin/mensajes-contacto/{from?}','MensajeEmailController@index')->name('contacto_mensajes_index');
-	Route::get('admin/leads','MensajeEmailController@index2')->name('admin_leads');
+	Route::get('admin/leads','MensajeEmailController@index')->name('admin_leads');
 	Route::get('admin/mensajes-contacto/{from}/{id}/show','MensajeEmailController@show')->name('contacto_mensajes_show');
 	Route::resource('admin/posts','PostController');
 	Route::get('admin/usados/borrar_img_post/{id}','PostController@deleteImgGaleria')->name('borrar_img_post');

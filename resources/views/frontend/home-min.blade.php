@@ -36,7 +36,7 @@
   <!---------------------------------------------------------------------
     USADOS DESTACADOS
   ----------------------------------------------------------------------->
-  <div class=" my-3">
+{{--   <div class=" my-3">
     <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
     </section>
     <div class="container">
@@ -56,7 +56,33 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
+
+  <section class=" my-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-xs-12 text-center"></div>
+        <div class="col-md-4 col-xs-12 text-center">
+          <div class="box-shadow px-2 py-2 mt-3">
+              <img src="{{asset('imagenes/logo-usados-h.png')}}" style="max-width: 80%" class="mb-2">
+              <p class="text-justify fz17 mb-2">
+                Explora la selección de vehículos destacados que tenemos para ofrecerte con el mejor precio y financiación.
+              </p>
+              <a href="/usados" class="btn-link-underline text-center ">VER</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 text-center">
+          <div class="box-shadow px-2 py-2 mt-3">
+            <img src="{{asset('imagenes/logo-uct-new.png')}}" style="max-width: 80%" class="mb-2">
+            <p class="text-justify fz17 mb-2">
+              Conocé nuestros usados certificados y sus beneficios. <a href="https://derkayvargas.com/usados#certificados-toyota">¿Qué es un Usado Certificado TOYOTA?</a>
+            </p>
+            <a href="https://derkayvargas.com/usados#certificados-toyota" class="btn-link-underline text-center ">VER</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!---------------------------------------------------------------------
     MODELOS

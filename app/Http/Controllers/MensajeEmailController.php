@@ -13,25 +13,14 @@ use App\Http\Requests\ReCaptchataTestFormRequest;
 
 class MensajeEmailController extends Controller
 {
-    private $froms=['contacto', 'financiacion', 'tpa'];
+    private $froms=['contacto', 'financiacion', 'tpa', 'la_voz_del_cliente', 'usados'];
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($from = null)
-    {
-        if ($from == null) {
-            $mensajes = MensajeEmail::all()->orderBy('created_at', 'DESC')->get();
-        } else{
-            $mensajes = MensajeEmail::where('from', '=', $from)->orderBy('created_at', 'DESC')->get();
-        }
-
-        return view('backend.contacto.index', compact('mensajes', 'from'));
-    }
-
-    public function index2(Request $request)
+    public function index(Request $request)
     {
         //return $request;
         

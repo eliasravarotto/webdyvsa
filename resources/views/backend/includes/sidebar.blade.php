@@ -3,14 +3,11 @@
     <li><a href="{{ route('admin') }}"><i class="fas fa-tachometer-alt"></i> Inicio</a></li>
     <li>
         <a href="#ul_leads" data-toggle="collapse">
-            <i class="fas fa-envelope"></i> Leads
+            <i class="fas fa-envelope"></i> Mensajes
         </a>
         <ul id="ul_leads" class="list-unstyled collapse">
-            <li><a href="{{route('contacto_mensajes_index', 'contacto')}}">Contacto</a></li>
-            <li><a href="{{route('contacto_mensajes_index', 'financiacion')}}">Financiacion</a></li>
-            <li><a href="{{route('contacto_mensajes_index', 'usados')}}">Usados</a></li>
+            <li><a href="{{route('admin_leads')}}">Leads</a></li>
             <li><a href="{{route('testdrive_index')}}">Test Drive</a></li>
-            <li><a href="{{route('contacto_mensajes_index', 'tpa')}}">Tpa</a></li>
         </ul>
     </li>
     <li>
