@@ -58,7 +58,7 @@
                 {{$mensaje->mensaje}}
               @endif
             </td>
-            <td><a href="{{route('contacto_mensajes_show', [$mensaje->from, $mensaje->id])}}" class="btn btn-default"><i class="fa fa-eye"></i></a></td>
+            <td><a href="{{route('contacto_mensajes_show', $mensaje->id)}}" class="btn btn-default"><i class="fa fa-eye"></i></a></td>
             @endforeach
           </tr>
         </tbody>

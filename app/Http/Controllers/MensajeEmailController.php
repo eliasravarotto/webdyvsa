@@ -164,23 +164,9 @@ class MensajeEmailController extends Controller
      * @param  \App\MensajeEmail  $mensajeEmail
      * @return \Illuminate\Http\Response
      */
-    public function show($from, $id)
+    public function show($id)
     {
-        switch ($from) {
-            case 'contacto':
-                $mensaje = MensajeEmail::find($id);
-                break;
-            case 'financiacion':
-                $mensaje = MensajeEmail::find($id);
-                break;
-            case 'tpa':
-                $mensaje = MensajeEmail::find($id);
-                break;
-            case 'la_voz_del_cliente':
-                $mensaje = MensajeEmail::find($id);
-                break;
-        }
-
+        $mensaje = MensajeEmail::find($id);
         return view('backend.contacto.show', compact('mensaje'));
     }
 
