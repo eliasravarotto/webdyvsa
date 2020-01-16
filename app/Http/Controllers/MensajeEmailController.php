@@ -23,30 +23,21 @@ class MensajeEmailController extends Controller
     public function index(Request $request)
     {
         //return $request;
-        
         $froms = $this->froms;
+        $filterFroms = collect($request->filterFroms);
+        $cliente = $request->cliente;
+        $desde = $request->desde;
+        $hasta = $request->hasta;
 
-        if ( sizeof($request->filterBy)>0 ){
-            $mensajes = MensajeEmail::whereIn('from', $request->filterBy)->orderBy('created_at', 'DESC')->get();
-            $filterBy = collect($request->filterBy);
-        }else{
-            $mensajes = MensajeEmail::orderBy('created_at', 'DESC')->get();
-            $filterBy = collect([]);
-        }
+        $mensajes = MensajeEmail::cliente($request->cliente)
+                    ->filterFroms($request->filterFroms)
+                    ->desde($request->desde)
+                    ->hasta($request->hasta)
+                    ->orderBy('created_at', 'DESC')
+                    ->get();
 
-        return view('backend.contacto.index', compact('mensajes', 'froms', 'filterBy'));
+        return view('backend.contacto.index', compact('mensajes', 'froms', 'filterFroms', 'cliente', 'desde', 'hasta'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
 
     /**
      * Store a newly created resource in storage.
@@ -155,7 +146,6 @@ class MensajeEmailController extends Controller
         $this->enviarRtaAutomatica($mensaje->email); 
 
         return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
-
     }
 
     /**

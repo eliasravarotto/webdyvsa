@@ -5,20 +5,32 @@
   <div class="card-body">
     <h4 class="card-title">LEADS</h4>
     {{-- <h6 class="card-subtitle mb-2 text-muted">Recibidos desde {{$from}}.</h6>     --}}
-    <form class="form-inline" action="{{route('admin_leads')}}" method="get">
-      {{ csrf_field() }}
-      <div class="form-group mb-2 w-50">
-        <select class="from-select form-control w-100"  multiple="multiple" name="filterBy[]">
-          @foreach( $froms as $from )
-              <option value="{{$from}}" @if($filterBy->contains($from)) selected @endif >{{$from}}</option>
-          @endforeach
-        </select>
+    <form class="" action="{{route('admin_leads')}}" method="get">
+      <div class="form-row mb-1">
+        <div class="col-md-3 ">
+          <input class="form-control w-100" type="date" name="desde" value="{{ $desde }}" placeholder="Desde">
+        </div>
+        <div class="col-md-3 ">
+          <input class="form-control w-100" type="date" name="hasta" value="{{ $hasta }}" placeholder="hasta">
+        </div>
+        <div class="col-md-6 ">
+          <input class="form-control w-100" type="text" name="cliente" value="{{ $cliente }}" placeholder="Cliente">
+        </div>
       </div>
-      <div class="form-group mb-2 w-25">
-        <button type="submit" class="btn btn-primary ml-1 w-100">Filtrar</button>
-      </div>
-      <div class="form-group mb-2 w-25">
-        <button type="submit" class="btn btn-info ml-1 w-100">Limpiar</button>
+      <div class="form-row mb-1">
+        <div class="col-md-6">
+          <select class="from-select form-control w-100"  multiple="multiple" name="filterFroms[]">
+            @foreach( $froms as $from )
+                <option value="{{$from}}" @if($filterFroms->contains($from)) selected @endif >{{$from}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+        </div>
+        <div class="col-md-3">
+          <a href="{{route('admin_leads')}}" class="btn btn-info w-100">Limpiar</a>
+        </div>
       </div>
     </form>  
     <table class="table table-sm table-hover table-responsive-xl">
@@ -71,7 +83,8 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('.from-select').select2({
-      placeholder: "Filtrar por"
+      placeholder: "Filtrar por",
+      width: '100%'
     });
   });
 </script>
