@@ -13,17 +13,17 @@
         <div class="col-md-3 ">
           <input class="form-control w-100" type="date" name="hasta" value="{{ $hasta }}" placeholder="hasta">
         </div>
-        <div class="col-md-6 ">
-          <input class="form-control w-100" type="text" name="cliente" value="{{ $cliente }}" placeholder="Cliente">
-        </div>
-      </div>
-      <div class="form-row mb-1">
         <div class="col-md-6">
           <select class="from-select form-control w-100"  multiple="multiple" name="filterFroms[]">
             @foreach( $froms as $from )
                 <option value="{{$from}}" @if($filterFroms->contains($from)) selected @endif >{{$from}}</option>
             @endforeach
           </select>
+        </div>
+      </div>
+      <div class="form-row mb-1">
+        <div class="col-md-6 ">
+          <input class="form-control w-100" type="text" name="cliente" value="{{ $cliente }}" placeholder="Cliente">
         </div>
         <div class="col-md-3">
           <button type="submit" class="btn btn-primary w-100">Filtrar</button>
@@ -33,7 +33,7 @@
         </div>
       </div>
     </form>  
-    <table class="table table-sm table-hover table-responsive-xl">
+    <table class="table table-sm table-hover table-responsive-xl mt-4">
         <thead>
           <tr>
             <th>Created</th>
@@ -47,7 +47,7 @@
         <tbody>
           @foreach($mensajes as $mensaje)
           <tr>
-            <td>{{ date('d-m-Y', strtotime($mensaje->created_at))}}</td>
+            <td><a href="{{route('contacto_mensajes_show', $mensaje->id)}}">{{ date('d-m-Y', strtotime($mensaje->created_at))}}</a></td>
             <td>{{ $mensaje->from }}</td>
             <td>
               @if(strlen($mensaje->cliente) > 25)
@@ -70,7 +70,6 @@
                 {{$mensaje->mensaje}}
               @endif
             </td>
-            <td><a href="{{route('contacto_mensajes_show', $mensaje->id)}}" class="btn btn-default"><i class="fa fa-eye"></i></a></td>
             @endforeach
           </tr>
         </tbody>
@@ -83,7 +82,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('.from-select').select2({
-      placeholder: "Filtrar por",
+      placeholder: "Recibido desde",
       width: '100%'
     });
   });
