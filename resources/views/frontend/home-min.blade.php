@@ -36,29 +36,7 @@
   <!---------------------------------------------------------------------
     USADOS DESTACADOS
   ----------------------------------------------------------------------->
-{{--   <div class=" my-3">
-    <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
-    </section>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="row usados-destacados box-shadow">
-            <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
-              <img class="img-responsive" src="{{asset('/imagenes/usados-destacados.png')}}" alt="Autos Usados destacados">
-            </div>
-            <div class="col-xs-12 col-md-7 text-center">
-              <p class="text-left fz17">
-              Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
-              </p>
-              <a href="/usados" class="btn-link-underline text-center ">VER USADOS</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> --}}
-
-  <section class=" my-3">
+  {{-- <section class=" my-3">
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-xs-12 text-center"></div>
@@ -80,6 +58,35 @@
             <a href="https://derkayvargas.com/usados#certificados-toyota" class="btn-link-underline text-center ">VER</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section> --}}
+
+  <!---------------------------------------------------------------------
+    USADOS DESTACADOS
+  ----------------------------------------------------------------------->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">COTIZADOR ONLINE <br> <small>Una nueva experiencia sin salir de tu casa</small></h2>
+      <div class="row py-5">
+        <div class="col-md-4 col-sm-12 text-center">
+          <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/cotizacion-express.svg') }}">
+          <h4 class="font-weight-bold">Cotización Express</h4>
+          <p class="text-muted">Simulá a tu medida la reserva de tu próximo auto y te contactaremos desde Derka y Vargas para confirmar la misma</p>
+        </div>
+        <div class="col-md-4 col-sm-12 text-center">
+          <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/asistente-etoyota.svg') }}">
+          <h4 class="font-weight-bold">Asistente de E-Toyota</h4>
+          <p class="text-muted">¿Necesitas ayuda? Escribile al Asistente para que te oriente en la experiencia</p>
+        </div>
+        <div class="col-md-4 col-sm-12 text-center">
+          <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/seguimiento-unidad.svg') }}">
+          <h4 class="font-weight-bold">Seguimiento de tu Unidad</h4>
+          <p class="text-muted">Una vez que confirmes la reserva de tu unidad, recibirás todas las notificaciones en forma electrónica hasta agendar la entrega de tu nuevo Toyota</p>
+        </div>
+      </div>
+      <div class="d-block text-center">
+        <a href="{{ route('cotizador_online_como_funciona') }}" class="btn btn-danger btn-round btn-lg ">¿Cómo funciona?</a>
       </div>
     </div>
   </section>
@@ -113,7 +120,7 @@
   <!---------------------------------------------------------------------
     Posts Promos y Dtos
   ----------------------------------------------------------------------->
-  <section class="py-1">
+  <section class="section">
     <div class="container">
       <div class="row">
           @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
