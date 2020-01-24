@@ -212,7 +212,10 @@ class FrontController extends Controller
 
     public function usadosIndex()
     {
-        $unidades = Usado::orderBy('orden', 'ASC')->get();
+        $unidades = Usado::where('visible', 1)
+                        ->orderBy('uct', 'DESC')
+                        ->orderBy('orden', 'ASC')
+                        ->get();
 
         return view('frontend.usados.index', compact('unidades'));
     }
@@ -233,7 +236,9 @@ class FrontController extends Controller
 
     public function ultimosUsados()
     {
-        $unidades = Usado::take(3)->get();
+        $unidades = Usado::where('visible', 1)
+                        ->take(3)
+                        ->get();
 
         return $unidades;
     }
@@ -241,7 +246,10 @@ class FrontController extends Controller
     public function usadosFilter(Request $request)
     {
 
-        return Usado::marca($request->filtro_marca)
+        return Usado::where('visible', 1)
+                    ->orderBy('uct', 'DESC')
+                    ->orderBy('orden', 'ASC')
+                    ->marca($request->filtro_marca)
                     ->color($request->filtro_color)
                     ->anio($request->filtro_anio)
                     ->get();
@@ -278,6 +286,11 @@ class FrontController extends Controller
     public function icons()
     {
         return view('frontend.icons');
+    }
+
+    public function cotizadorOnlineComoFunciona()
+    {
+        return view('frontend.e-toyota.como-funciona');
     }
 
 }

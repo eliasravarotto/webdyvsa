@@ -127,6 +127,7 @@ Route::get('/responsabilidad-social-empresarial/programa-rse-derkayvargas-2018-2
 Route::get('/empresa','FrontController@empresa');
 Route::get('/mobility-services-alquiler-de-autos-toyota','FrontController@mobilityServices')->name('mobility_services');
 Route::get('/posventa-accesorios','AccesorioController@indexFront')->name('accesorios');
+Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizadorOnlineComoFunciona')->name('cotizador_online_como_funciona');
 
 
 Route::get('/inicio', function(){
