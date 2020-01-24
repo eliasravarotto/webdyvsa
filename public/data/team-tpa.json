@@ -18,15 +18,6 @@
 		"orden": "1"
 	},
 	{
-		"nombre": "Leandro Canteros",
-		"telefono": "3624 069250",
-		"email": "",
-		"avatar": "leandro-canteros.jpg",
-		"sucursal": "Resistencia",
-		"perfil": "Asesor de Ventas",
-		"orden": "1"
-	},
-	{
 		"nombre": "Rodrigo Gonzalez",
 		"telefono": "3624 008893",
 		"email": "",
@@ -86,15 +77,6 @@
 		"email": "",
 		"avatar": "yasin-assefh.jpg",
 		"sucursal": "Charata",
-		"perfil": "Asesor de Ventas",
-		"orden": "1"
-	},
-	{
-		"nombre": "Dario Trachovsky",
-		"telefono": "3624 894923",
-		"email": "",
-		"avatar": "dario-trachovsky.jpg",
-		"sucursal": "Villa Angela",
 		"perfil": "Asesor de Ventas",
 		"orden": "1"
 	},
