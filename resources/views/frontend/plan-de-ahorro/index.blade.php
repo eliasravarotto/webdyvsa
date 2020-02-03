@@ -212,20 +212,6 @@
 			</div>
 			</div>
 		</section>
-		
-		<!-- PUBLICIDAD -->
-		<section class="py-1">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<img class="img-responsive box-shadow" src="{{asset('imagenes/tpa/cuota-mas-baja.jpeg')}}">
-					</div>
-					<div class="col-md-6">
-						<img class="img-responsive box-shadow visible-md visible-lg" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
-					</div>
-				</div>
-			</div>
-		</section>
 
     </article>
 @stop
