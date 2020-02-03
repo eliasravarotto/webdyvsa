@@ -21,7 +21,7 @@ class FrontController extends Controller
 {
     public function home()
     {
-        $productos = Modelo::all();
+        $productos = Modelo::where('activo', 1)->get();
 
         $slides_img = $this->imagesSlideHome();
 
@@ -32,7 +32,7 @@ class FrontController extends Controller
 
     public function homeMin()
     {
-        $productos = Modelo::all();
+        $productos = Modelo::where('activo', 1)->get();
 
         $slides_img = $this->imagesSlideHome();
 
@@ -198,7 +198,10 @@ class FrontController extends Controller
 
     public function getModelos(Request $request)
     {
-        $modelos = Modelo::orderBy('orden', 'ASC')->get();
+        $modelos = Modelo::where('activo', 1)
+                           ->orderBy('orden', 'ASC')
+                           ->get();
+
         if ($request->ajax()) {
             return $modelos;
         } else {
