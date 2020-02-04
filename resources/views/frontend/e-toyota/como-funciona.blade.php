@@ -39,7 +39,7 @@
 		</div>
 		<div class="col-md-6 col-sm-12">
 			<h2>Tené ya tu cotización express online</h2>
-			<p><b>Ahorrá tiempo y stress con nuestra experiencia E-Toyota Derka y Vergas</b></p>
+			<p><b>Ahorrá tiempo con nuestra experiencia E-Toyota Derka y Vergas</b></p>
 			<p class="text-muted">Obtené el mejor precio para tu próximo auto, completando todo desde tu casa, oficina o sino desde tu celular, sin tener que visitar nuestro Concesionario.</p>
 			<a href="https://dyv.e.toyota.com.ar/inventory" target="_blank" class="btn btn-lg btn-danger btn-round mt-3">COMENZÁ AHORA</a>
 		</div>
