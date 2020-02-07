@@ -152,7 +152,7 @@ TOYOTA RECALL
 
 				<div class="mt-3">
 					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-12-2019  <b>Hasta:</b> 31-12-2019</p>
+					<p style="font-size: 1.8rem"><b>Desde:</b> 01-02-2020  <b>Hasta:</b> 29-02-2020</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
