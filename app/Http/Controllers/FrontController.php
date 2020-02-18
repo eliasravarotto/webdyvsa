@@ -57,11 +57,6 @@ class FrontController extends Controller
         return view('frontend.plan-de-ahorro.planes-avanzados');
     }
 
-        public function planesAdjudicados()
-    {
-        return view('frontend.plan-de-ahorro.planes-adjudicados');
-    }
-
     public function financiacion()
     {
         return view('frontend.financiacion.index');

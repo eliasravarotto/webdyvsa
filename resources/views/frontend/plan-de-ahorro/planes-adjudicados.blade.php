@@ -46,7 +46,8 @@ span.bg-red{
 	<div class="container">
 		<div class="row py-4">
 			<div class="col-xs-12 d-flex">
-				<table id="tabla-agrupados" class="table table-hover py-1 visible-md visible-lg" style="margin:20px 0px; ">
+				<!-- TABLA PARA DESCKTOP -->
+				<table id="tabla-adjudicados" class="table table-hover py-1 visible-md visible-lg" style="margin:20px 0px; ">
 				    <thead>
 				      <tr style="background-color: #af8e8e">
 				        <th class="text-center" style="color: white; font-weight: bold;">G/O</th>
@@ -57,97 +58,61 @@ span.bg-red{
 				        <th class="text-center" style="color: white; font-weight: bold; background-color: white; border-bottom: none; width: 35px"></th>
 				        <th class="text-center" style="color: white; font-weight: bold;">Cuota Pura</th>
 				        <th class="text-center" style="color: white; font-weight: bold;">Valor Avance del Plan en Cuota Pura</th>
-				        <th class="text-center" style="color: white; font-weight: bold;">Valor Ahorrado</th>
+				        {{-- <th class="text-center" style="color: white; font-weight: bold;">Valor Ahorrado</th> --}}
 				      </tr>
 				    </thead>
 				    <tbody>
-				    	@php $valor_30porciento_etios = 247887;  @endphp
-				    	@php $valor_30porciento_hilux = 503430;  @endphp
-				    	@foreach(\App\Helpers\Helper::getAdjudicados() as $agrupado)
+				    	@foreach($adjudicados as $adjudicado)
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">{{$agrupado->grupo}}/{{$agrupado->orden}}</td>
-					        <td class="text-center" style="font-weight: bold;">{{$agrupado->unidad}}</td>
-					        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$agrupado->modalidad}}</td>
-					        <td class="text-center" style="font-weight: bold;">{{$agrupado->avance_cuotas}}</td>
-					        <td class="text-center" style="font-weight: bold;"><span class="badge" style="background-color: #f30827; font-size: 17px">$ {{number_format($agrupado->precio_venta, 2, ',', '.')}}</span></td>
+					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->grupo}}/{{$adjudicado->orden}}</td>
+					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->unidad}}</td>
+					        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$adjudicado->modalidad}}</td>
+					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->avance_cuotas}}</td>
+					        <td class="text-center" style="font-weight: bold;">
+					        	<span class="badge" style="background-color: #f30827; font-size: 17px">$ {{number_format($adjudicado->precio_venta, 2, ',', '.')}}</span>
+					        </td>
 					        <td class="text-center" style="font-weight: bold; border-top: none;"></td>
-					        <td class="text-center" style="font-weight: bold;">$ {{number_format($agrupado->cuota_pura, 2, ',', '.')}}</td>
+					        <td class="text-center" style="font-weight: bold;">$ {{number_format($adjudicado->cuota_pura, 2, ',', '.')}}</td>
 					        <td class="text-center" style="font-weight: bold;">
-					        	@if( $agrupado->modalidad == '70/30' )
-						        	@if( $agrupado->unidad == 'Etios' )
-						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 2, ',', '.')}}
-						        	@endif
-						        	@if( $agrupado->unidad == 'Hilux' )
-						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux , 2, ',', '.')}}
-						        	@endif
-					        	@else
-					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 2, ',', '.')}}
-					        	@endif
+					        	{{number_format($adjudicado->avance_en_cuota_pura, 2, ',', '.')}}
 					        </td>
-					        <td class="text-center" style="font-weight: bold;">
+					        {{-- <td class="text-center" style="font-weight: bold;">
 					        	<span class=" badge" style="background-color: #28a745; font-size: 17px">
-					        	@if( $agrupado->modalidad == '70/30' )
-					        		@if( $agrupado->unidad == 'Etios' )
-					        			$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
-					        		@endif
-					        		@if( $agrupado->unidad == 'Hilux' )
-					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux - $agrupado->precio_venta , 2, ',', '.')}}
-					        		@endif
-					        	@else
-					        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 2, ',', '.')}}
-					        	@endif
+					        	{{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}
 					        	</span>
-					        </td>
+					        </td> --}}
 					      </tr>
 				      	@endforeach
 				    </tbody>
 			  	</table>
 
+			  	<!-- TABLA PARA CELULARES -->
 			  	<table class="table table-hover py-1 visible-xs visible-sm">
-	  				@php $valor_30porciento_etios = 247887;  @endphp
-		    		@foreach(\App\Helpers\Helper::getAdjudicados() as $agrupado)
+	  				@foreach($adjudicados as $adjudicado)
 			  		<tr>
 			  			<td style="border-top: 5px solid #ddd;">
 				    		<div class="d-flex w-100 align-items-center">
-				    			<div class="w-25 fz-20 bold">{{$agrupado->unidad}}</div>
-				    			<div class="w-75 text-right"><label>Precio venta</label> <span class="badge fz-20 bg-red">${{number_format($agrupado->precio_venta, 0, ',', '.')}}</div></span>
+				    			<div class="w-25 fz-20 bold">{{$adjudicado->unidad}}</div>
+				    			<div class="w-75 text-right"><label>Precio venta bonificado</label> <span class="badge fz-20 bg-red">${{number_format($adjudicado->precio_venta, 0, ',', '.')}}</div></span>
 				    		</div>
 				    		<div class="d-flex w-100 justify-content-space-between my-1">
-				    			<div><label>G/O:</label> {{$agrupado->grupo}}/{{$agrupado->orden}}</div>
-				    			<div><label>Modalidad:</label> {{$agrupado->modalidad}}</div>
-				    			<div><label>Avance Cuotas:</label> {{$agrupado->avance_cuotas}}</div>
+				    			<div><label>G/O:</label> {{$adjudicado->grupo}}/{{$adjudicado->orden}}</div>
+				    			<div><label>Modalidad:</label> {{$adjudicado->modalidad}}</div>
+				    			<div><label>Avance Cuotas:</label> {{$adjudicado->avance_cuotas}}</div>
 				    		</div>
 				    		<div class="d-flex w-100">
-				    			<label class="mr-1">Cuota Pura </label> ${{number_format($agrupado->cuota_pura, 0, ',', '.')}}
+				    			<label class="mr-1">Cuota Pura </label> ${{number_format($adjudicado->cuota_pura, 0, ',', '.')}}
 				    		</div>
 				    		<div class="d-flex w-100">
 				    			<label class="mr-1">Avance del plan en Cuota Pura</label>
-				    			@if( $agrupado->modalidad == '70/30' )
-						        	@if( $agrupado->unidad == 'Etios' )
-						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios , 2, ',', '.')}}
-						        	@endif
-						        	@if( $agrupado->unidad == 'Hilux' )
-						        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux , 2, ',', '.')}}
-						        	@endif
-					        	@else
-					        	$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas , 2, ',', '.')}}
-					        	@endif
+				    			$ {{number_format($adjudicado->avance_en_cuota_pura, 2, ',', '.')}}
 				    		</div>
-				    		<div class="d-flex w-100 align-items-center">
+				    		{{-- <div class="d-flex w-100 align-items-center">
 				    			<label class="mr-1">Valor Ahorrado</label> 
 				        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">
-				        			@if( $agrupado->modalidad == '70/30' )
-						        		@if( $agrupado->unidad == 'Etios' )
-						        			$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_etios - $agrupado->precio_venta , 2, ',', '.')}}
-						        		@endif
-						        		@if( $agrupado->unidad == 'Hilux' )
-						        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas+$valor_30porciento_hilux - $agrupado->precio_venta , 2, ',', '.')}}
-						        		@endif
-						        	@else
-						        		$ {{number_format( $agrupado->cuota_pura*$agrupado->avance_cuotas - $agrupado->precio_venta , 2, ',', '.')}}
-						        	@endif
+				        		$ {{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}	
 				        		</span>
-				    		</div>
+				    		</div> --}}
 			  			</td>
 			  		</tr>
 		    		@endforeach
