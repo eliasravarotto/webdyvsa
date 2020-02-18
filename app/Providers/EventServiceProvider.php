@@ -22,9 +22,6 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SeHaSolicitadoTestDrive' => [
             'App\Listeners\EnviarEmailTestDriveSolicitado',
         ],
-        'App\Events\SeConsultoPorUsado' => [
-            'App\Listeners\EnviarEmailConsultaUsado',
-        ],
         'App\Events\HaIngresadoUnaConsulta' => [
             'App\Listeners\EnviarEmailConsulta',
         ],

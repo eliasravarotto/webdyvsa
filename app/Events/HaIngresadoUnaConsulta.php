@@ -22,10 +22,11 @@ class HaIngresadoUnaConsulta
      *
      * @return void
      */
-    public function __construct($consulta, $asunto)
+    public function __construct($consulta, $asunto, $cc)
     {
         $this->consulta = $consulta;
         $this->asunto = $asunto;
+        $this->cc = $cc;
     }
 
     /**

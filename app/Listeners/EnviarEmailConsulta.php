@@ -29,10 +29,11 @@ class EnviarEmailConsulta
     {
         $consulta = $event->consulta;
         $asunto = $event->asunto;
+        $cc = $event->cc;
 
-        Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta, $asunto){
+        Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta, $asunto, $cc){
             $message->subject($asunto);
-            $message->to($consulta->enviar_a)->cc('rukyguerra@derkayvargas.com.ar');
+            $message->to($consulta->enviar_a)->cc($cc);
         });
     }
 }

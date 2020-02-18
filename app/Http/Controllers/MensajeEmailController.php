@@ -56,7 +56,7 @@ class MensajeEmailController extends Controller
             'telefono' => 'required',
             'mensaje' => 'required',
             'sucursal' => 'required',
-            // 'g-recaptcha-response' => 'required',
+            'g-recaptcha-response' => 'required',
         ]);
 
 
@@ -75,8 +75,9 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $this->enviarRtaAutomatica($mensaje->email); 
-                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
+                $this->enviarRtaAutomatica($mensaje->email);
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             case 'tpa':
                 $from = 'tpa';
@@ -85,8 +86,9 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $this->enviarRtaAutomatica($mensaje->email); 
-                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
+                $this->enviarRtaAutomatica($mensaje->email);
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             case 'usados':
                 $from = 'usados';
@@ -96,7 +98,7 @@ class MensajeEmailController extends Controller
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
                 $this->enviarRtaAutomatica($mensaje->email); 
-                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             default:
                 $from = 'contacto';
@@ -105,8 +107,9 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
+                $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
                 $this->enviarRtaAutomatica($mensaje->email); 
-                event( new HaIngresadoUnaConsulta($mensaje, $asunto));
+                event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
         }
 
@@ -138,14 +141,18 @@ class MensajeEmailController extends Controller
         $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
         $mensaje->save();
         $asunto ='La voz del Cliente - Nuevo Mensaje';
-        Mail::send('emails.consulta', ['consulta' => $mensaje], function ($message) use ($mensaje, $asunto){
-            $message->subject($asunto);
-            $message->to($mensaje->enviar_a)
-                    ->cc(['rukyguerra@derkayvargas.com.ar','fabianaaranda@derkayvargas.com.ar']);
-        });
+        $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
+
+        event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
+
+        // Mail::send('emails.consulta', ['consulta' => $mensaje], function ($message) use ($mensaje, $asunto){
+        //     $message->subject($asunto);
+        //     $message->to($mensaje->enviar_a)
+        //             ->cc(['rukyguerra@derkayvargas.com.ar','fabianaaranda@derkayvargas.com.ar']);
+        // });
         $this->enviarRtaAutomatica($mensaje->email); 
 
-        return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+        return back()->with('success','Gracias por escribirnos, su mensaje ha sido enviado.');
     }
 
     /**
