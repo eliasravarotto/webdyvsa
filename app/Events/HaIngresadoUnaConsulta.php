@@ -16,6 +16,7 @@ class HaIngresadoUnaConsulta
 
     public $consulta;
     public $asunto;
+    public $cc;
 
     /**
      * Create a new event instance.

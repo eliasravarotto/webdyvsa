@@ -108,7 +108,7 @@ class MensajeEmailController extends Controller
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
                 $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
-                $this->enviarRtaAutomatica($mensaje->email); 
+                //$this->enviarRtaAutomatica($mensaje->email); 
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
         }

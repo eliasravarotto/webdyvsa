@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 
-class EnviarEmailConsulta
+class EnviarEmailConsulta implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -34,6 +34,11 @@ class EnviarEmailConsulta
         Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta, $asunto, $cc){
             $message->subject($asunto);
             $message->to($consulta->enviar_a)->cc($cc);
+        });
+
+        Mail::send('emails.rta-aut', [], function ($message) use ($consulta){
+            $message->subject('Recibimos tu mensaje');
+            $message->to($consulta->email);
         });
     }
 }
