@@ -75,7 +75,7 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
+                $cc = ['rukyguerra@derkayvargas.com.ar'];
                 $this->enviarRtaAutomatica($mensaje->email);
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
@@ -86,7 +86,7 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
+                $cc = ['rukyguerra@derkayvargas.com.ar'];
                 $this->enviarRtaAutomatica($mensaje->email);
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
@@ -97,6 +97,7 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
+                $cc = ['rukyguerra@derkayvargas.com.ar'];
                 $this->enviarRtaAutomatica($mensaje->email); 
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
@@ -107,8 +108,8 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
-                //$this->enviarRtaAutomatica($mensaje->email); 
+                $cc = ['rukyguerra@derkayvargas.com.ar'];
+                $this->enviarRtaAutomatica($mensaje->email); 
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
         }
@@ -141,7 +142,7 @@ class MensajeEmailController extends Controller
         $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
         $mensaje->save();
         $asunto ='La voz del Cliente - Nuevo Mensaje';
-        $cc = ['elias.ravarotto@gmail.com']; //$cc = ['rukyguerra@derkayvargas.com.ar'];
+        $cc = ['rukyguerra@derkayvargas.com.ar'];
 
         event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
 
