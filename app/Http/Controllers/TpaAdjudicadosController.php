@@ -55,23 +55,23 @@ class TpaAdjudicadosController extends Controller
             }
 
             #CALCULAR VALOR AHORRADO
-            // if( $adjudicado->modalidad == '70/30' ){
-            //     if( $adjudicado->unidad == 'Etios' ){
-            //         $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_etios - $adjudicado->precio_venta;
-            //     }
-            //     if( $adjudicado->unidad == 'Hilux' ){
-            //         $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_hilux - $adjudicado->precio_venta;
-            //     }
-            // }else{
-            //     $valor_ahorrado = 
-            //         $adjudicado->cuota_pura
-            //         *
-            //         $adjudicado->avance_cuotas 
-            //         - 
-            //         $adjudicado->precio_venta;
-            // }
+            if( $adjudicado->modalidad == '70/30' ){
+                if( $adjudicado->unidad == 'Etios' ){
+                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_etios - $adjudicado->precio_venta;
+                }
+                if( $adjudicado->unidad == 'Hilux' ){
+                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_hilux - $adjudicado->precio_venta;
+                }
+            }else{
+                $valor_ahorrado = 
+                    $adjudicado->cuota_pura
+                    *
+                    $adjudicado->avance_cuotas 
+                    - 
+                    $adjudicado->precio_venta;
+            }
 
-            // $adjudicado->valor_ahorrado = $valor_ahorrado;
+            $adjudicado->valor_ahorrado = $valor_ahorrado;
             $adjudicado->avance_en_cuota_pura = $avance_en_cuota_pura;
         }
         return view('backend.tpa.adjudicados.index', compact('adjudicados'));
@@ -215,18 +215,18 @@ class TpaAdjudicadosController extends Controller
             }
 
             #CALCULAR VALOR AHORRADO
-            // if( $adjudicado->modalidad == '70/30' ){
-            //     if( $adjudicado->unidad == 'Etios' ){
-            //         $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_etios - $adjudicado->precio_venta;
-            //     }
-            //     if( $adjudicado->unidad == 'Hilux' ){
-            //         $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_hilux - $adjudicado->precio_venta;
-            //     }
-            // }else{
-            //     $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas - $adjudicado->precio_venta;
-            // }
+            if( $adjudicado->modalidad == '70/30' ){
+                if( $adjudicado->unidad == 'Etios' ){
+                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_etios - $adjudicado->precio_venta;
+                }
+                if( $adjudicado->unidad == 'Hilux' ){
+                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_hilux - $adjudicado->precio_venta;
+                }
+            }else{
+                $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas - $adjudicado->precio_venta;
+            }
 
-            // $adjudicado->valor_ahorrado = $valor_ahorrado;
+            $adjudicado->valor_ahorrado = $valor_ahorrado;
             $adjudicado->avance_en_cuota_pura = $avance_en_cuota_pura;
         }
         return view('frontend.plan-de-ahorro.planes-adjudicados', compact('adjudicados'));

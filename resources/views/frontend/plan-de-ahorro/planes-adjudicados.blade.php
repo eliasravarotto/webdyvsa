@@ -58,7 +58,7 @@ span.bg-red{
 				        <th class="text-center" style="color: white; font-weight: bold; background-color: white; border-bottom: none; width: 35px"></th>
 				        <th class="text-center" style="color: white; font-weight: bold;">Cuota Pura</th>
 				        <th class="text-center" style="color: white; font-weight: bold;">Valor Avance del Plan en Cuota Pura</th>
-				        {{-- <th class="text-center" style="color: white; font-weight: bold;">Valor Ahorrado</th> --}}
+				        <th class="text-center" style="color: white; font-weight: bold;">Valor Ahorrado</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -76,11 +76,11 @@ span.bg-red{
 					        <td class="text-center" style="font-weight: bold;">
 					        	{{number_format($adjudicado->avance_en_cuota_pura, 2, ',', '.')}}
 					        </td>
-					        {{-- <td class="text-center" style="font-weight: bold;">
+					        <td class="text-center" style="font-weight: bold;">
 					        	<span class=" badge" style="background-color: #28a745; font-size: 17px">
 					        	{{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}
 					        	</span>
-					        </td> --}}
+					        </td>
 					      </tr>
 				      	@endforeach
 				    </tbody>
@@ -107,12 +107,12 @@ span.bg-red{
 				    			<label class="mr-1">Avance del plan en Cuota Pura</label>
 				    			$ {{number_format($adjudicado->avance_en_cuota_pura, 2, ',', '.')}}
 				    		</div>
-				    		{{-- <div class="d-flex w-100 align-items-center">
+				    		<div class="d-flex w-100 align-items-center">
 				    			<label class="mr-1">Valor Ahorrado</label> 
 				        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">
 				        		$ {{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}	
 				        		</span>
-				    		</div> --}}
+				    		</div>
 			  			</td>
 			  		</tr>
 		    		@endforeach
