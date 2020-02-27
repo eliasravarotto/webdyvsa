@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Derka y Vargas - {{$modelo->nombre}}</title>

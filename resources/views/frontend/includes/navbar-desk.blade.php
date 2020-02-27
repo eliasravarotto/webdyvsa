@@ -1,27 +1,49 @@
-<div>
-	<div class="navbar-wrapper d-none d-lg-block visible-lg visible-md">
-        <div class="navbar navbar-static-top" style="">
-            <div class="collapse navbar-collapse d-flex justify-content-center" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-ppal fromLeft d-flex justify-content-center" style="width: 100%;">
-                  <li class="{{Request::path() == '/' ? 'active' : ''}}"><a href="/">INICIO</a></li>
-                  <li class="{{Request::path() == 'modelos' ? 'active' : ''}}"><a href="/modelos">MODELOS</a></li>
-                  <li class="{{Request::path() == 'plan-de-ahorro' ? 'active' : ''}}"><a href="/plan-de-ahorro">PLAN DE AHORRO</a></li>
-                  <li class="{{Request::path() == 'financiacion' ? 'active' : ''}}"><a href="/financiacion">FINANCIACION</a></li>
-                  <li><a href="/usados">USADOS</a></li>
-                  <li class="dropdown dropdown-hover">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">POSVENTA <span class="caret"></span></a>
-                    <ul class="dropdown-menu dropdown-hover">
-                      <li><a href="/posventa">Servicios Posventa</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="/turno-servicios/create">Turnos ONLINE</a></li>
-                    </ul>
-                  </li>
-                  <li class="{{Request::path() == route('mobility_services') ? 'active' : ''}}"><a href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a></li>
-                  <li class=""><a href="{{route('rse')}}">RSE</a></li>
-                  <li class="{{Request::path() == 'contacto' ? 'active' : ''}}"><a href="/contacto">CONTACTO</a></li>
-                </ul>
+<nav class="navbar-ppal navbar navbar-expand-lg d-none d-lg-block">
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item {{Request::path() == 'inicio' ? 'active' : ''}}">
+            {{-- <a class="" href="/">INICIO</a> --}}
+            <a class="nav-link" href="/">INICIO</a>
+          </li>
+          <li class="nav-item {{Request::path() == 'modelos' ? 'active' : ''}}">
+            {{-- <a class="" href="{{route('modelos')}}">MODELOS</a> --}}
+            <a class="nav-link" href="{{route('modelos')}}">MODELOS</a>
+          </li>
+          <li class="nav-item {{Request::path() == 'plan-de-ahorro' ? 'active' : ''}}">
+            {{-- <a class="" href="/plan-de-ahorro">PLAN DE AHORRO</a> --}}
+            <a class="nav-link" href="/plan-de-ahorro">PLAN DE AHORRO</a>
+          </li>
+          <li class="nav-item">
+            {{-- <a class="" href="/usados">USADOS</a> --}}
+            <a class="nav-link" href="/usados">USADOS</a>
+          </li>
+          <li class="nav-item {{Request::path() == 'financiacion' ? 'active' : ''}}">
+            {{-- <a class="" href="/financiacion">FINANCIACION</a> --}}
+            <a class="nav-link" href="/financiacion">FINANCIACION</a>
+          </li>
+          <li class="nav-item dropdown dropdown-hover">
+            {{-- <a class=" dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> --}}
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              POSVENTA
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/posventa">Servicios y Accesorios</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/turno-servicios/create">Turnos Online</a>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-	</div>  
-</div>
+          </li>
+          <li class="nav-item {{Request::path() == route('mobility_services') ? 'active' : ''}}">
+            {{-- <a class="" href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a> --}}
+            <a class="nav-link" href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a>
+          </li>
+          <li class="nav-item">
+            {{-- <a class="" href="{{route('rse')}}">RSE</a> --}}
+            <a class="nav-link" href="{{route('rse')}}">RSE</a>
+          </li>
+          <li class="nav-item {{Request::path() == 'contacto' ? 'active' : ''}}">
+            {{-- <a class="" href="/contacto">CONTACTO</a> --}}
+            <a class="nav-link" href="/contacto">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
+    </nav>

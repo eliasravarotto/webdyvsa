@@ -81,49 +81,33 @@ table>tbody tr td {
 <template>
 	<div>
         <div class="container">
-            <ol class="breadcrumb">
-              <li><a href="/">Inicio</a></li>
-              <li><a href="/usados">Usados</a></li>
-              <li class="active">{{unidad.marca}} {{unidad.modelo}}</li>
-            </ol>
             <div id="main_area">
-                <!-- Slider -->
                 <div class="row">
-                    <div class="col-xs-12" id="slider">
-                        <!-- Top part of the slider -->
-                        <div class="row">
-                            <div class="col-sm-7" id="carousel-bounding-box">
-                                <div class="carousel slide" id="myCarousel">
-                                    <!-- Carousel items -->
-                                    <div class="carousel-inner">
-                                        <div v-for="(imagen, i) in imagenes" :class="{ 'active item flex': i==0, 'item flex': i!=0 }" :data-slide-number="i">
-                                            <img class="text-center" :src="imagen.url">
-                                        </div>
-                                    </div>
-                                    <!-- Carousel nav -->
-                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
-                                    </a>
-                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
-                                    </a>                                
+                    <div class="col-md-7 col-sm-12">
+                        <div class=" gallery-content d-flex justify-content-center align-items-center">
+                            <div class="owl-carousel">
+                                <div v-for="(imagen, i) in imagenes" class="item" :data-hash="'slide'+i">
+                                  <img :src="imagen.url">
                                 </div>
                             </div>
-                            <div class="col-sm-5">
-                                <div class="stm-single-car-side">
-                                    <!-- Pricio -->
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        <div>
+                            
+                            <a v-for="(imagen, i) in imagenes" :href="'#slide'+i">
+                                index - {{i}}
+                            </a>
+                        </div>
+                        
+                        <div class="stm-single-car-side">
                                     <div class="single-car-prices">
                                         <div class="single-regular-price text-center">
                                             <span class="labeled">Precio</span>
                                             <span class="h3">$ {{formatearPrecio(unidad.precio)}}</span>
                                         </div>
                                     </div>
-
-                                    <!--Datos-->
                                     <div class="single-car-data">
-                                        <!-- <div class="stm_cargurus_wrapper cg_style">
-                                            <span data-cg-vin="5UXFE43599L261101" data-cg-price="12390"><span data-cg-error="no information"></span></span>
-                                        </div> -->
                                         <table class="table">
                                             <tbody>
                                                 <tr>
@@ -140,7 +124,88 @@ table>tbody tr td {
                                                     <td class="t-label"> Año</td>
                                                     <td class="t-value h6">{{unidad.anio}}</td>
                                                 </tr>
-                                                <!--VIN NUMBER-->
+                                                <tr>
+                                                    <td class="t-label"> <i class="stm-service-icon-color_type"></i> Color</td>
+                                                    <td class="t-value t-vin h6">{{unidad.color}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"> <i class="stm-icon-road"></i> Km</td>
+                                                    <td class="t-value t-vin h6">{{unidad.km}} KM.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="stm-icon-engine_fill"></i> Transmisión</td>
+                                                    <td class="t-value t-vin h6">{{unidad.transmision}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="stm-icon-fuel"></i> Combustible</td>
+                                                    <td class="t-value t-vin h6">{{unidad.combustible}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="fa fa-certificate"></i> Certificado Toyota</td>
+                                                    <td class="t-value t-vin h6" v-if="unidad.uct">SI</td>
+                                                    <td class="t-value t-vin h6" v-else>NO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="t-label"><i class="fa fa-certificate"></i> Disponibilidad</td>
+                                                    <td v-if="unidad.estado == 'RESERVADO'" class="t-value t-vin h6" style="color: #ee1a2f;">{{unidad.estado}}</td>
+                                                    <td v-else   class="t-value t-vin h6">{{unidad.estado}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  class="btn btn-default d-block" target="_blank" style="font-size: 16px;">
+                                        <i style="font-size: 20px; font-weight: bold; color: #13820a" class="fa fa-whatsapp"></i>
+                                        CONSULTAR
+                                    </a>
+                                </div>
+                    </div>
+                </div>
+
+                <!-- Slider -->
+                <!-- <div class="row">
+                    <div class="col-xs-12" id="slider">
+                        <div class="row">
+                            <div class="col-sm-7" id="carousel-bounding-box">
+                                <div class="carousel slide" id="myCarousel">
+                                    <div class="carousel-inner">
+                                        <div v-for="(imagen, i) in imagenes" :class="{ 'active item flex': i==0, 'item flex': i!=0 }" :data-slide-number="i">
+                                            <img class="text-center" :src="imagen.url">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
+                                    </a>                                
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="stm-single-car-side">
+                                    <div class="single-car-prices">
+                                        <div class="single-regular-price text-center">
+                                            <span class="labeled">Precio</span>
+                                            <span class="h3">$ {{formatearPrecio(unidad.precio)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-car-data">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="t-label">Marca</td>
+                                                    <td class="t-value h6">{{unidad.marca}}</td>
+                                                </tr>
+                                                                                        
+                                                <tr>
+                                                    <td class="t-label">Modelo/Version</td>
+                                                    <td class="t-value h6">{{unidad.modelo}}</td>
+                                                </tr>
+                                                                                        
+                                                <tr>
+                                                    <td class="t-label"> Año</td>
+                                                    <td class="t-value h6">{{unidad.anio}}</td>
+                                                </tr>
                                                 <tr>
                                                     <td class="t-label"> <i class="stm-service-icon-color_type"></i> Color</td>
                                                     <td class="t-value t-vin h6">{{unidad.color}}</td>
@@ -177,19 +242,11 @@ table>tbody tr td {
                                     </a>
                                 </div>
                             </div>
-                            <!-- <div id="slide-content" style="display: none;">
-                                <div v-for="(imagen, i) in imagenes" :id="'slide-content-'+i">
-                                    <h2>Slider One</h2>
-                                    <p>Lorem Ipsum Dolor</p>
-                                    <p class="sub-text">October 24 2014 - <a href="#">Read more</a></p>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!--/Slider-->
-                <div class="row hidden-xs" id="slider-thumbs">
-                    <!-- Bottom switcher of slider -->
+                <!-- <div class="row hidden-xs" id="slider-thumbs">
                     <ul class="hide-bullets" style="margin: 15px 0px 15px 0px">
                         <li class="col-sm-2" v-for="(imagen, i) in imagenes">
                             <a class="thumbnail" :id="'carousel-selector-'+i" @click.prevent="activeImg(i)">
@@ -197,7 +254,7 @@ table>tbody tr td {
                             </a>
                         </li>
                     </ul>                 
-                </div>
+                </div> -->
             </div>
         </div>
 	</div>
@@ -233,6 +290,25 @@ table>tbody tr td {
                      var id = $('.item.active').data('slide-number');
                     $('#carousel-text').html($('#slide-content-'+id).html());
             });
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:0,
+                nav:true,
+                URLhashListener:true,
+                    autoplayHoverPause:true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:1
+                        },
+                        1000:{
+                            items:1
+                        }
+                    }
+                })
+
                     
         },
         methods:{
@@ -289,3 +365,27 @@ table>tbody tr td {
         }
     }
 </script>
+
+<style scoped>
+    .gallery-content {
+        background-color: #fff;
+        height: inherit;
+        left: 0;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        /*opacity: 0;*/
+        /*visibility: hidden;*/
+        min-height: 530px;
+        z-index: 5;
+        border: solid 1px black;
+    }
+
+     .gallery-content img{
+        width: auto;
+        max-height:450px;
+     }
+
+</style>

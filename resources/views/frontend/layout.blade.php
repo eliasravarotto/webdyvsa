@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
     <!--===============================================================================================-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/697ac82df1.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
     <link href="{{ mix('/css/app_.css') }}" rel="stylesheet" type="text/css" />
     <!--===============================================================================================-->
@@ -41,9 +41,9 @@
       text-decoration: none;
     }
 
-    .navbar-ppal>li>a {
+    /*.navbar-ppal>li>a {
       color: #373737;
-      font-weight: 700;
+      font-weight: 500;
     }
 
     .nav>li>a:focus,
@@ -58,7 +58,7 @@
       border-top: #ebebeb solid 1px;
       position: relative;
       background: rgb(255, 255, 255);
-    }
+    }*/
 
     .btn-oval {
       color: black !important;
@@ -201,45 +201,7 @@
   <div id="app">
     @include('frontend.includes.header-desk')
     @include('frontend.includes.navbar-mobile')
-
-
-    <nav class="navbar navbar-expand-lg d-none d-lg-block">
-      <div class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav navbar-ppal">
-          <li class="nav-item">
-            <a class="nav-link {{Request::path() == 'modelos' ? 'active' : ''}}" href="{{route('modelos')}}">MODELOS</a>
-          </li>
-          <li class="nav-item {{Request::path() == 'plan-de-ahorro' ? 'active' : ''}}">
-            <a class="nav-link" href="/plan-de-ahorro">PLAN DE AHORRO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/usados">USADOS</a>
-          </li>
-          <li class="nav-item {{Request::path() == 'financiacion' ? 'active' : ''}}">
-            <a class="nav-link" href="/financiacion">FINANCIACION</a>
-          </li>
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              POSVENTA
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Servicios y Accesorios</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Turnos Online</a>
-            </div>
-          </li>
-          <li class="nav-item {{Request::path() == route('mobility_services') ? 'active' : ''}}">
-            <a class="nav-link" href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('rse')}}">RSE</a>
-          </li>
-          <li class="nav-item {{Request::path() == 'contacto' ? 'active' : ''}}">
-            <a class="nav-link" href="/contacto">CONTACTO</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    @include('frontend.includes.navbar-desk')
 
     @yield('content')
 

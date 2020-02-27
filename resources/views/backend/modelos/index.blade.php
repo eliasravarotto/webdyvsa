@@ -9,8 +9,10 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Modelo</th>
                 <th>Marca</th>
+                <th>Modelo</th>
+                <th>Hibrido</th>
+                <th>Orden</th>
                 <th>Activo</th>
                 <th><a class="btn btn-primary" href="{{ route('modelos.create') }}">Nuevo</a></th>
               </tr>
@@ -19,9 +21,23 @@
               @foreach($modelos as $modelo)
               <tr>
                 <td>{{$modelo->id}}</td>
+                <td>{{$modelo->marca->nombre}}</td>
                 <td>{{$modelo->nombre}}</td>
-                <td>{{$modelo->marca_id}}</td>
-                <td>{{$modelo->activo}}</td>
+                <td>
+                  @if( $modelo->es_hibrido ) 
+                    <img src="{{asset('imagenes/logos/logohibrido.jpg')}}" style="height: 30px">
+                  @else
+                    -
+                  @endif
+                </td>
+                <td>{{$modelo->orden}}</td>
+                <td>
+                  @if( $modelo->activo ) 
+                    <i class="fa fa-check text-success"></i>
+                  @else
+                    <i class="fa fa-close text-danger"></i>
+                  @endif
+                </td>
                 <td>
                   {{-- <a href="{{ route('modelos.show', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}
                   <form action="{{ url('admin/modelos', ['id' => $modelo->id]) }}" method="post">

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Programa RSE Concesionarios</title>
@@ -29,7 +29,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<h2>Mensaje de Toyota Argentina en el Acto de Lanzamiento del Programa RSE Concesionarios</h2>
-			 <img class="img-responsive" src="{{asset('/imagenes/rse/imagen-firmas.png')}}">
+			 <img class="img-fluid" src="{{asset('/imagenes/rse/imagen-firmas.png')}}">
 			 <ul class="list-unstyled list-inline data-post">
 			 	<li class="text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> Junio 2018</li>
 			 	<li class="text-muted"><i class="fa fa-map-marker" aria-hidden="true"></i> Zárate, Buenos Aires</li>

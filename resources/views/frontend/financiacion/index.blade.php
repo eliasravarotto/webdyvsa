@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Financiación TCF</title>
@@ -94,21 +94,21 @@
 
 	<section class="mt-3">
 		<div class="container">
-		    <div class="panel panel-default">
-		      <div class="panel-heading">
-		        <h4 class="panel-title panel-title-financial">
-		          <a id="creditos_prend" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-		          	<h4>Créditos Prendarios</h4>
-		          </a>
-		        </h4>
-		      </div>
-		        <div class="panel-body">
+
+		    <div class="card my-2">
+		        <div class="card-body">
+			        <h4 class="panel-title-financial">
+			          <a id="creditos_prend" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+			          	<h4>Créditos Prendarios</h4>
+			          </a>
+			        </h4>
 		        	<p style="font-size: 17px;">Nuestros planes de financiación aplican hasta el 75% del valor de la unidad. El 25% restante se abona junto a la entrega de la unidad y la firma del crédito prendario. Tenemos planes a Tasa Fija en pesos y en plazos de hasta 60 meses. Puede consultarnos también por nuestros planes de Tasa Variable. </p>
 		        	<a class="btn btn-default" href="https://www.toyotacfa.com.ar/creditos-prendarios">MÁS DETALLES</a>
 		        </div>
-		      </div>
-		    <div class="panel panel-default">
-		      <div class="panel-heading">
+	      	</div>
+
+		    <div class="card my-2">
+		        <div class="card-body">
 		        <h4 class="panel-title panel-title-financial">
 		          <a id="leasing" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
 		          	<h4>
@@ -116,8 +116,6 @@
 		          	</h4>
 		          </a>
 		        </h4>
-		      </div>
-		        <div class="panel-body">
 		        	<p style="font-size: 17px;">El leasing es un arrendamiento financiero que le permite disponer del uso y goce del vehículo mediante el pago de un canon mensual. Incluye la opción de compra al finalizar el contrato, en el caso que el cliente desee quedarse con el vehículo.</p>
 	        		<div class="well">
 			        	<div class="row">
@@ -149,15 +147,16 @@
 	<!---------------------------------------------------------------------
     FORMULARIO DE CONTACTO
   	----------------------------------------------------------------------->
-	<section>
+	<section class="my-4 py-4">
 		<div class="container">
 			<div class="row remove-flex-on-mobile" style="display: flex; justify-content: center;align-items: center;">
 			{{-- <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
 			</div> --}}
 			<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 col-offset-md-3" id="form-contacto">
-				<h2 class="text-center h1-titulo-form">FORMULARIO DE CONTACTO<br>
-					<small>Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</small>
-				</h2>
+				<div class="main-title">
+		          <h2 class="text-dark-2">FORMULARIO DE CONTACTO</h2>
+		          <p class="text-dark-3">Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</p>
+		      </div>
 				<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 					{{ csrf_field() }}
 					<input type="hidden" name="from" value="financiacion">
@@ -197,7 +196,7 @@
 					    <textarea name="mensaje" class="form-control" required></textarea>
 						</div>
 					</div>
-					<div class="row pad-top-20">
+					<div class="row py-2">
 						<div class="col-md-12">
 							<div class="g-recaptcha" 
 						           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
@@ -211,7 +210,7 @@
 					</div>
 					<div class="row pad-top-20">
 						<div class="col-md-12 text-center">
-							<input type="submit" class="btn btn-success btn-block" name="ENVIAR">
+							<input type="submit" class="btn btn-lg btn-danger" name="ENVIAR">
 						</div>
 					</div>
 				</form>

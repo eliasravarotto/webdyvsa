@@ -220,7 +220,7 @@
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <!--===============================================================================================-->
   <!-- Google Recaptcha -->
-  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
   <!--===============================================================================================-->
   <!-- TOAST JS -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

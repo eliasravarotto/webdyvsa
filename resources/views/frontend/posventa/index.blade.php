@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Servicios de Posventa Toyota</title>
@@ -118,7 +118,7 @@ TOYOTA RECALL
 	  	----------------------------------------------------------------------->
 		<section>
 			<div class="banner-ppal-posventa visible-md visible-lg" style="width: 100%">
-				<img src="/imagenes/posventa/slide.jpg" class="img-responsive" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco">
+				<img src="/imagenes/posventa/slide.jpg" class="img-fluid" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco">
 			</div>
 		</section>
 
@@ -194,7 +194,7 @@ TOYOTA RECALL
 			<div class="container py-4">
 				<div class="row features">
 					<div class="col-md-6 imagen-container">
-						<img class="img-responsive" src="http://www.yacopinisa.com/wp-content/uploads/2015/05/panel-accesorios.jpg">
+						<img class="img-fluid" src="http://www.yacopinisa.com/wp-content/uploads/2015/05/panel-accesorios.jpg">
 					</div>
 					<div class="col-md-6 descripcion">
 						<h2>ACCESORIOS ORIGINALES</h2>
@@ -337,7 +337,7 @@ TOYOTA RECALL
 				</div>
 				<div class="row flex" style="flex-wrap: wrap;">
 					<div class="col-md-3 col-sm-12 visible-md visible-lg">
-						<img class="img-responsive" src="https://www.toyota.com.ar/storage/contents/4QUWQizPkX.jpg" alt="Garantía 5 años Toyota. Garantia Derka y Vargas Chaco">
+						<img class="img-fluid" src="https://www.toyota.com.ar/storage/contents/4QUWQizPkX.jpg" alt="Garantía 5 años Toyota. Garantia Derka y Vargas Chaco">
 					</div>
 					<div class="col-md-9 col-sm-12 flex align-items-center">
 						<p>Para asegurar que la experiencia de posesión de sus vehículos sea única, Toyota respalda sus productos con algo más que palabras. Como los primeros en confiar en nuestros productos somos nosotros mismos, le ofrecemos la mejor garantía posible. Por este motivo los vehículos Toyota 0 (cero) kilometro vendidos y entregados a partir del 1 de septiembre de 2018 comienzan a gozar de una garantía que lo ampara por 5 años o 150.000 Km. (lo que ocurra primero). Esto significa un mayor valor para su Toyota y una mayor tranquilidad para usted, siempre.</p>
@@ -356,13 +356,13 @@ TOYOTA RECALL
 				
 				
 				<div class="text-center visible-xs visible-sm">
-					<img class="img-responsive" style="display: inline-block;" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png">
+					<img class="img-fluid" style="display: inline-block;" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png">
 				</div>
 			</div>
 		</section>
 
 		<section class="pad-bot-50 pad-top-50">
-			<img src="/imagenes/posventa/mantenimiento-express.png" class="img-responsive" alt="mantenimiento express toyota Chaco">
+			<img src="/imagenes/posventa/mantenimiento-express.png" class="img-fluid" alt="mantenimiento express toyota Chaco">
 		</section>
 
 		<section class="pad-top-50 pad-bot-50">

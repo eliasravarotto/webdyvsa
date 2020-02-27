@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Derka y Vargas - Plan de Ahorro</title>
@@ -14,23 +14,7 @@
 
 @section('styles_sheets')
 <style type="text/css">
-	.preguntas-frecuentes ol li{
-		margin-bottom: 9px;
-	}
-	.preguntas-frecuentes ol{
-		margin-top: 10px;
-	}
-	.preguntas-frecuentes span{
-		font-weight: 400;
-	    line-height: 1;
-	    color: #777;
-	    font-size: 1.9rem;
-	}
-
-	.d-none{
-		display: none;
-	}
-
+	
 	@media only screen and (max-width : 468px) {
 		#planes-tpa .tarjeta .tarjeta-contenido{
 			flex-direction: column;
@@ -66,40 +50,32 @@
 @section('content')
 	<article>
 		<section>
-			<img class="visible-lg visible-md" src="/imagenes/tpa/plan-de-ahorro-auto.jpeg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
-			<img class="img-responsive visible-xs visible-sm" src="{{asset('imagenes/tpa/plan-cuota-2.jpg')}}">
+			<img class="visible-lg visible-md img-fluid" src="/imagenes/tpa/plan-de-ahorro-auto.jpeg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
 		</section>
 
 		<!-- PLANES LISTA DE PRECIOS -->
-		<section>
-			@include('frontend.plan-de-ahorro.includes.planes')
-		</section>
+		@include('frontend.plan-de-ahorro.includes.planes')
 
 		<!-- PLANES AVANZADOS Y ADJUDICADOS -->
-		<section>
-			@include('frontend.plan-de-ahorro.includes.oportunidades')
-		</section>
+		@include('frontend.plan-de-ahorro.includes.oportunidades')
 
 		<!-- TEAM SECTION -->
-		<section id="team-tpa" class="py-2">
+		<section id="team-tpa" class="py-4">
 		    <team-tpa></team-tpa>
 		</section>
 		
 		<!-- VIDEO QUE ES UN TPA -->
-		<section class="py-3">
+		<section class="py-4">
 			@include('frontend.plan-de-ahorro.includes.que-es-un-tpa')
 		</section>
 
 		<!-- FACEBOOK - FORMULARIO DE CONTACTO -->
-		<section class="py-3">
+		<section class="py-4">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-sm-12 col-xs-12 text-center">
-						<div class="fb-page" data-href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/">Toyota Plan de Ahorro - Derka y Vargas</a></blockquote></div>
-					</div>
-					<div class="col-md-6 col-sm-12 col-xs-12" id="form-contacto">
-						<h2 class="mt-0">CONSULTÁ POR UN PLAN DE AHORRO <br>
-						<small>Un asesor se pondrá en contacto con usted a la brevedad.</small></h2>
+					<div class="col-md-6 col-sm-12 col-xs-12 py-4" id="form-contacto">
+						<h3 class="mt-0">CONSULTÁ POR UN PLAN DE AHORRO <br>
+						<small class="text-muted">Un asesor se pondrá en contacto con usted a la brevedad.</small></h3>
 						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}
 							<input type="hidden" name="from" value="tpa">
@@ -139,8 +115,8 @@
 							    <textarea name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
 								</div>
 							</div>
-							<div class="row pad-top-20">
-								<div class="col-md-6">
+							<div class="row py-2">
+								<div class="col-md-12">
 									<div class="g-recaptcha" 
 								           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
 								    </div>
@@ -150,11 +126,17 @@
 									    </span>
 									@endif
 								</div>
-								<div class="col-md-6 text-right">
-									<input type="submit" class="btn btn-default" name="ENVIAR">
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-danger btn-lg"><i class="fas fa-paper-plane"></i> ENVIAR</button>
 								</div>
 							</div>
 						</form>
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12 text-center py-4">
+						<div class="fb-page" 
+						     data-href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" data-tabs="timeline" data-width="450" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Toyota-Plan-de-Ahorro-Derka-y-Vargas-619499485112483/">Toyota Plan de Ahorro - Derka y Vargas</a></blockquote></div>
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Derka y Vargas - Modelos</title>
@@ -17,13 +17,35 @@
         <section>
             @include('frontend.includes.test-drive')
         </section>
-        <section>
+        <section class="py-3">
       		<div class="container">
       			<div class="pad-top-bot-50" style="padding-left: 8%; padding-right: 8%;">
       				<div class="row">
       					@foreach($modelos as $modelo)
-      					<div class="col-sm-6 col-md-3 py-1 px-1">
-      					    <a class="thumbnail thumbnail-hover thumbnail-no-border thumbnail-no-bg" href="/modelos/{{$modelo->nombre}}" style="text-decoration: none; padding: 8px">
+      					<div class="col-sm-6 col-md-4 py-1 px-1">
+                  <div class="car-box item">
+                    <div class="car-thumbnail bg-cyan">
+                        <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="car-img">
+                            @if ($modelo->es_hibrido)
+                            <div class="tag">HÍBRIDO</div>
+                            @endif
+                            <div class="price-box">$850.00</div>
+                            <img class="d-block w-100 pt-4 pb-4" src="{{$modelo->img_modelo}}" alt="car">
+                        </a>
+                    </div>
+                    <div class="detail text-center">
+                        <img src="{{$modelo->img_logo}}" class="d-initial" style="max-height: 35px; width: auto;max-width: 100%">
+                        <div class="location">
+                            <a href="car-details.html" class="text-muted text-uppercase mt-1 ml-1">
+                                {{$modelo->slogan}}
+                            </a>
+                        </div>
+                        <div class="w-100 text-center">
+                          <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="text-info font-weight-600">VER MODELO</a>
+                        </div>
+                    </div>
+                  </div>
+      					    {{-- <a class="thumbnail thumbnail-hover thumbnail-no-border thumbnail-no-bg" href="/modelos/{{$modelo->nombre}}" style="text-decoration: none; padding: 8px">
                       @if( $modelo->es_hibrido )
       					      <div style="position: absolute; right: 28px">
                         <span>Híbrido</span>
@@ -37,35 +59,34 @@
                         <div class="d-flex justify-content-center pt-1">
                           <span class="btn btn-default text-center btn-round">Ver modelo</span>
                         </div>
-      					    </a>
-      				  	</div>
+      					    </a> --}}
+    				  	</div>
       					@endforeach
       				</div>
       			</div>
       		</div>
         </section>
-        <section class="py-5">
+
+        <!---------------------------------------------------------------------
+          MOBILITY
+        ----------------------------------------------------------------------->
+        <section class="py-5 bg-1">
           <div class="container">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-5 text-center">
-                <img class="img-fluid d-none d-md-block d-lg-block d-xl-block visible-md visible-lg" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
-                <img class="img-fluid w-100 d-block d-lg-none d-md-none d-xl-none mb-1 visible-xs visible-sm" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
+            <div class="row py-4">
+              <div class="col-md-6 col-sm-12 text-center">
+                <img class="img-fluid d-none d-md-block d-lg-block d-xl-block" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
+                <img class="img-fluid w-100 d-block d-lg-none d-md-none d-xl-none mb-1" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
               </div>
-              <div class="col-xs-12 col-sm-12 col-md-7">
-                <div class="d-flex w-100 flex-column">
-                  <h3 class="text-dark bold mb-0">ALQUILER DE VEHÍCULOS</h3>
-                  <div class="mt-1">
-                    <p class="text-dark text-justify">Entérate como podes alquilar un Toyota en cinco sencillos pasos.</p>
-                    <p class="text-dark text-justify">Toyota Mobility Services es el nuevo sistema de alquiler de autos, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes etc.</p>
-                  </div>
-                  <div class="mt-2">
-                    <a href="{{route('mobility_services')}}" class="btn btn-default btn-round mu-btn-md">Leer más</a>
-                  </div>
-                </div>
+              <div class="col-md-6 col-sm-12">
+                <h2>Alquiler de Vehículos</h2>
+                <p><b>Entérate como podes alquilar un Toyota en cinco sencillos pasos</b></p>
+                <p class="text-muted">Toyota Mobility Services es el nuevo sistema de alquiler de autos, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes, etc.</p>
+                <a href="https://www.derkayvargas.com/mobility-services-alquiler-de-autos-toyota#mobility-que-es-y-como-funciona" target="_blank" class="btn btn-lg btn-danger btn-round mt-3">¿Como funciona?</a>
               </div>
             </div>
           </div>
         </section>
+
 	</article>
 
 @stop

@@ -13,7 +13,8 @@
             </div>
         </section> -->
 
-        <section class="container pad-top-bot-20">
+        <section class="py-4">
+            <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <img :src="img_logo" style="max-width: 100%" >
@@ -21,151 +22,150 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center text-uppercase">
-                    <h3>{{ modelo.slogan }}</h3>
+                    <h5 class="text-dark">{{ modelo.slogan }}</h5>
                 </div>
             </div>
-            <div class="row" >
-                <div class="col-md-6 col-sm-12 text-center">
-                    <img class="img-responsive" v-bind:src="img_modelo" >
-                    <!-- <img class="img-responsive" src="https://www.zento.com.ar/images/etios/versiones_precios.jpg"> -->
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th style="font-size: 15px">VERSIONES</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>                         
-                          <tr v-for="version in versiones"> 
-                            <td style="font-size: 15px; width: 75%;">{{ version.nombre }}</td>
-                            <td style="font-size: 15px"> {{version.moneda}} $ {{ version.precio }}</td>
-                          </tr>
-                    </tbody>
-                    </table>
-                    <div class="alert alert-info" role="alert">El precio NO icluye Flete ni gastos de Inscripción.</div>
+            </div>
+        </section>
+
+        <section class="py-4 my-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h4 class="text-center">COLORES</h4>
+                        <div id="images_colors" class="text-center">
+                            <img v-for="(data, index) in model_color_images"
+                                 v-bind:class="'img-thumbnail thumbnail-no-border '"
+                                 v-bind:style="'padding: 0px; '+[index == 0 ? 'display: -webkit-inline-box;' : 'display: none;']" 
+                                 v-bind:id="'img_'+data.codigo" 
+                                 v-bind:src="data.url" 
+                            />
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <label style="font-size: 17px">{{ model_color_selected }}</label>
+                        </div>
+                        <ul class="list-inline list-colors text-center mar-top-15">
+                            <li v-for="data in model_color_images" 
+                                v-bind:id="data.codigo" 
+                                v-on:click="changeColor(data.codigo, data.color)"
+                                class="list-inline-item">
+                                <div class="circle" v-bind:style="{'background-color': '#'+data.codigo}"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>VERSION</th>
+                                <th class="text-right">PRECIO</th>
+                              </tr>
+                            </thead>
+                            <tbody>                         
+                              <tr v-for="version in versiones"> 
+                                <td class="w-50" style="font-size: 15px;">{{ version.nombre }}</td>
+                                <td class="w-50 text-right" style="font-size: 15px"> {{version.moneda}} $ {{ version.precio }}</td>
+                              </tr>
+                        </tbody>
+                        </table>
+                        <div class="alert alert-info" role="alert">El precio NO icluye Flete ni gastos de Inscripción.</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="container pad-top-bot-20">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
-                    <h3>{{ modelo.slogan }}</h3>
-                    <br>
-                    <p class="text-justify">{{ modelo.descripcion }}</p>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a v-bind:href="modelo.link_ficha_tecnica" class="btn btn-default" target="_blank">
-                                <i class="fa fa-download" aria-hidden="true"></i>
-                                 Ficha Técnica
-                            </a>
-                        </li>
-                        <!-- <li>
-                            <a v-bind:href="modelo.link_catalogo" class="btn btn-default" target="_blank" rel="noopener noreferrer">
-                                <i class="fa fa-download" aria-hidden="true"></i>
-                                 Catálogo
-                            </a>
-                        </li> -->
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <h3 class="text-center">COLORES</h3>
-                    <div id="images_colors" class="text-center">
-                        <img v-for="(data, index) in model_color_images"
-                             v-bind:class="'img-thumbnail thumbnail-no-border '"
-                             v-bind:style="'padding: 0px; '+[index == 0 ? 'display: -webkit-inline-box;' : 'display: none;']" 
-                             v-bind:id="'img_'+data.codigo" 
-                             v-bind:src="data.url" 
-                        />
-                    </div>
-                    <br>
-                    <div class="text-center">
-                        <label style="font-size: 17px">{{ model_color_selected }}</label>
-                    </div>
-
-                    <ul class="list-inline list-colors text-center mar-top-15">
-                        <li v-for="data in model_color_images" 
-                            v-bind:id="data.codigo" 
-                            v-on:click="changeColor(data.codigo, data.color)">
-                            <div class="circle" v-bind:style="{'background-color': '#'+data.codigo}"></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-<!--             <section style="width: 100%" v-if="tieneTestDrive">
-                <div class="row row-well flex justify-content-center align-items-center" style="flex-wrap: wrap;">                    <div class="flex pr-2">
-                        <h2>¿Querés probarlo?</h2>
-                    </div>
-                    <div class="flex pl-2">
-                        <a href="/test-drive/create" class="btn btn-toyota btn-lg" style="border-radius: 0px;">SOLICITAR TEST DRIVE</a>
-                    </div>
-                </div>
-            </section> -->
-            <div id="mu-call-to-action" style="width: 100%" v-if="tieneTestDrive">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mu-call-to-action-area">
-                                <div class="mu-call-to-action-left">
-                                    <h1>¿Querés probar un Toyota?</h1>
-                                    <p class="fs-17">Solicitá una pruba de manejo completando el formulario. Un asesor se comunicará con usted para confirmar la disponibilidad.</p>
-                                </div>
-                                <div>
-                                <a href="/test-drive/create" class="mu-white-btn">SOLICITAR TESTDRIVE <i class="fa fa-long-arrow-right"></i></a>
-                                </div>
+        <section class="advantages content-area d-flex align-items-center my-4 py-4 ">
+            <div class="container">
+                <div class="py-4">
+                   <div class="container">
+                      <div class="row">
+                         <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="advantages-box">
+                               <div class="icon"><i class="stm-icon-application"></i></div>
+                               <div class="detail">
+                                  <h5>Ficha Técnica</h5>
+                                  <p>Descargar ficha técnica.</p>
+                               </div>
                             </div>
-                        </div>
-                    </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="advantages-box">
+                               <div class="icon"><i class="stm-icon-steering_wheel"></i></div>
+                               <div class="detail">
+                                  <h5>Test Drive</h5>
+                                  <p>Solicitar test drive o prueba de manejo</p>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="advantages-box">
+                               <div class="icon"><i class="stm-icon-calculator"></i></div>
+                               <div class="detail">
+                                  <h5>Cotizador Online</h5>
+                                  <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam.</p> -->
+                                  <p>Realizá una cotizacion en el momento. </p>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="advantages-box">
+                               <div class="icon"><i class="stm-icon-gear"></i></div>
+                               <div class="detail">
+                                  <h5>Accesorios</h5>
+                                  <p>Equipá tu Toyota con accesorios originales</p>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
                 </div>
             </div>
-
        </section>
 
-        <div class="component title-wrapper title-wrapper--highlighted container">
-            <div class="title-wrapper__wrapper">
-                <h1 class="title">Características Destacadas</h1>
-            </div>
-        </div>
 
-        <section>
+        <section class="py-4 my-4">
             <div class="container">
+            <div class="main-title my-4">
+              <h1 class="text-dark-2">CARACTERÍSTICAS DESTACADAS</h1>
+              <p class="text-dark-3">Diseño, tecnología y seguridad</p>
+            </div>
+            <div class="">
                 <div v-for="(item, i) in features">
                     <div v-if="(i % 2 === 0) && (item.descripcion != null)" class="row features" style="padding: 3rem 0rem">
                         <div class="col-xs-12 col-md-6 imagen-container">
-                            <img :src="item.img" class="img-responsive">
+                            <img :src="item.img" class="img-fluid">
                         </div>
                         <div class="col-xs-12 col-md-6 descripcion">
-                            <h2>{{item.titulo}}</h2>
+                            <h2 class="mb-3">{{item.titulo}}</h2>
                             <p>{{item.descripcion}}</p>
                         </div>
                     </div>
                     <div v-if="(i % 2 != 0) && (item.descripcion != null)" class="row features" style="padding: 3rem 0rem">
-                        <div class="col-xs-12 col-md-6 col-md-push-6 imagen-container">
-                            <img :src="item.img" class="img-responsive">
+                        <div class="col-xs-12 col-md-6 order-md-2 imagen-container">
+                            <img :src="item.img" class="img-fluid">
                         </div>
-                        <div class="col-xs-12 col-md-6 col-md-pull-6 descripcion">
-                            <h2>{{item.titulo}}</h2>
+                        <div class="col-xs-12 col-md-6 order-md-1 descripcion">
+                            <h2 class="mb-3">{{item.titulo}}</h2>
                             <p>{{item.descripcion}}</p>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
         </section>
 
-        <!-- <section class="photo" :style="'background: url('+parallax.imagen+')'"></section> -->
-
-        <section class="" style="background-color: #f7f7f7;">
-            <div class="container pad-top-bot-50">
-                <div class="row">
-                    <div class="owl-carousel owl-theme">
-                        <div v-for="item in features" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img v-bind:src="item.img" alt="...">
-                            <div class="caption caption-default">
-                                <!-- <h4 class="text-center">{{ item.descripcion }}</h4> -->
-                                <p class="text-center">{{ item.titulo }}</p>
+        <section class="py-4">
+            <div class="container">
+                <div class="py-4">
+                    <div class="row">
+                        <div class="owl-carousel owl-theme">
+                            <div v-for="item in features" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                                <img v-bind:src="item.img" alt="...">
+                                <div class="my-2">
+                                    <!-- <h4 class="text-center">{{ item.descripcion }}</h4> -->
+                                    <p class="text-center">{{ item.titulo }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -319,7 +319,7 @@
 
 .owl-carousel .item p{
     color: black;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Autos Usados</title>
@@ -31,11 +31,6 @@
 
 	.thumbnail .caption {
 		color: white;
-	}
-
-	.btn-celeste-pastel {
-		background-color: #5a8cb5;
-		color: #fff;
 	}
 
 	.block2-overlay {
@@ -134,7 +129,7 @@
 
 @section('content')
 <section>
-	<div class="mu-call-to-action mu-call-to-action-dark bg-header-usados">
+	{{-- <div class="mu-call-to-action mu-call-to-action-dark bg-header-usados">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -147,16 +142,16 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 </section>
-	<div class="container-lg ">
+	<div class="container">
 		<section>
 			<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 		</section>
 
 		<section>
 			<div class="title-section">
-		        <h3>SU CONSULTA NO ES MOLESTIA</h3>
+		        <h3>CONSULTANOS</h3>
 		  	</div>
 			<div class="row mt-2">
 				<div class="col-sm-12 col-md-6">
@@ -238,7 +233,7 @@
 							<div class="col-md-6 text-right">
 								{{-- <button type="submit" class="btn btn-default btn-submit">ENVIAR</button> --}}
 								{{-- <button type="submit"  class="btn btn-default">ENVIAR</button> --}}
-								<input type="submit" class="btn btn-default" value="ENVIAR">
+								<input type="submit" class="btn btn-primary btn-round mu-btn-md btn-block" value="ENVIAR">
 							</div>
 						</div>
 						<div class="alert alert-info mt-3" role="alert"><p>Un asesor de ventas se pondrá en contacto con usted a la brevedad.</p></div>

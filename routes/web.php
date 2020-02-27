@@ -92,18 +92,18 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
-Route::get('/icons','FrontController@icons');
 Route::get('/','FrontController@homeMin');
+Route::get('/icons','FrontController@icons');
 Route::get('/financiacion','FrontController@financiacion');
 Route::get('/posventa','FrontController@posventa')->name('posventa');
-Route::get('/plan-de-ahorro','FrontController@planDeAhorro');
+Route::get('/plan-de-ahorro','FrontController@planDeAhorro')->name('landing_tpa');
 Route::get('/plan-de-ahorro/listado-planes-avanzados','FrontController@planesAvanzados')->name('planes_avanzados');
 Route::get('/plan-de-ahorro/listado-planes-adjudicados','TpaAdjudicadosController@indexAdjudicados')->name('planes_adjudicados');
 Route::get('/contacto','FrontController@contacto')->name('contacto');
 Route::get('/nosotros','FrontController@aboutUs');
 Route::get('/modelos/{modelo}','FrontController@modelo')->name('detalle_modelo');
 Route::get('/modelos','FrontController@getModelos')->name('modelos');
-Route::get('/usados','FrontController@usadosIndex');
+Route::get('/usados','FrontController@usadosIndex')->name('usados_index');
 Route::get('/usados/{slug}','FrontController@usadosShow');
 Route::get('/usados/get-last','FrontController@ultimosUsados');
 Route::post('/usados/filter','FrontController@usadosFilter');

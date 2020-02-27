@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Derka y Vargas - Tecnología Híbrida</title>
@@ -71,14 +71,14 @@
 		</div>
 		<div class="row my-3">
 			<div class="col-sm-12 col-md-8 col-md-offset-2">
-				<img class="img-responsive" src="{{asset('/imagenes/hibridos/motorCombustion.svg')}}">
+				<img class="img-fluid" src="{{asset('/imagenes/hibridos/motorCombustion.svg')}}">
 			</div>
 			<div class="col-sm-12 mt-3">
 				<h3 class="text-center">SISTEMA INTELIGENTE QUE COMBINA CON EFICIENCIA EL USO DE AMBOS MOTORES</h3>
 				<p class="text-justify">Durante la aceleración, el motor naftero da potencia a las ruedas. Y en caso de necesidad el motor eléctrico brindaría la potencia requerida. Cuando se frena o desacelera, el motor eléctrico funciona como un generador, convirtiendo la energía cinética del vehículo en energía eléctrica, que se usa para cargar las baterías. Todo esto hace que vos nunca debas preocuparte por el estado de la batería ni por cargarla; el sistema lo hará por vos.</p>
 			</div>
 			<div class="col-sm-12">
-				<img class="img-responsive" src="{{asset('/imagenes/hibridos/comoFunciona.svg')}}">
+				<img class="img-fluid" src="{{asset('/imagenes/hibridos/comoFunciona.svg')}}">
 			</div>
 		</div>
 	</article>
@@ -92,7 +92,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="imagenes/hibridos/consumo.png">
+						<img class="img-fluid" src="imagenes/hibridos/consumo.png">
 					</div>
 					<div class="col-text">
 						<p>MÁXIMA EFICIENCIA EN CONSUMO</p>
@@ -103,7 +103,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="imagenes/hibridos/silenciosa.png">
+						<img class="img-fluid" src="imagenes/hibridos/silenciosa.png">
 					</div>
 					<div class="col-text">
 						<p>EXPERIENCIA DE MANEJO ÚNICA Y SILENCIOSA</p>
@@ -116,7 +116,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="imagenes/hibridos/autorecargable.png">
+						<img class="img-fluid" src="imagenes/hibridos/autorecargable.png">
 					</div>
 					<div class="col-text">
 						<p>AUTO-RECARGABLE</p>
@@ -127,7 +127,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="imagenes/hibridos/eco.png">
+						<img class="img-fluid" src="imagenes/hibridos/eco.png">
 					</div>
 					<div class="col-text">
 						<p>ECO-FRIENDLY</p>
@@ -140,7 +140,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="imagenes/hibridos/potencia.png">
+						<img class="img-fluid" src="imagenes/hibridos/potencia.png">
 					</div>
 					<div class="col-text">
 						<p>DOBLE POTENCIA</p>
@@ -151,7 +151,7 @@
 			<div class="col-sm-12 col-md-6">
 				<div class="flex align-items-center">
 					<div class="col-img">
-						<img class="img-responsive" src="imagenes/hibridos/garantia.png">
+						<img class="img-fluid" src="imagenes/hibridos/garantia.png">
 					</div>
 					<div class="col-text">
 						<p>CONFIABLE</p>
@@ -175,7 +175,7 @@
 						<a href="{{route('test_drive_form')}}" class="mu-white-btn-sm">SOLICITAR TESTDRIVE <i class="fa fa-long-arrow-right"></i></a>
 					</div>
 					<div>
-						{{-- <img class="img-responsive" src="/imagenes/modelos/prius/colores/blanco_perla.jpg"> --}}
+						{{-- <img class="img-fluid" src="/imagenes/modelos/prius/colores/blanco_perla.jpg"> --}}
 					</div>
 				</div>
 			</div>

@@ -4,8 +4,8 @@
 	  </div>
 	<div class="row">
 		<div class="col-md-3 col-sm-3 col-xs-12 preguntas-frecuentes">
-	  		<span>Preguntas Frecuentes</span>
-			<ol>
+	  		<h4 class="my-2">Preguntas Frecuentes</h4>
+			<ol class="ml-3">
 				<li><a onclick="saltarA(event, 0)" href="#">¿Qué es un Plan de Ahorro?</a></li>
 				<li><a onclick="saltarA(event, 18)" href="#">¿Cuáles son las ventajas?</a></li>
 				<li><a onclick="saltarA(event, 70)" href="#">¿Cuáles son los requisitos?</a></li>

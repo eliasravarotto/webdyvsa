@@ -13,37 +13,109 @@
 @stop
 
 @section('styles_sheets')
-    <style type="text/css">
-      .usados-destacados {
-        margin: -170px 0px 0px 0px;
-        padding: 15px;
-        background-color: white;
-        border-radius: 5px;
-      }
-      .card .container-img {
-        height: 210px !important;
-      }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 @stop
-
 
 @section('content')
   <!---------------------------------------------------------------------
     SLIDER PRINCIPAL
   ----------------------------------------------------------------------->
   <section>
-    <div class="owl-carousel owl-carousel-ppal owl-theme py-2">
-      <div class="item">
-        <img class="img-fluid" src="/imagenes/home-min/corolla-hotsale.png">
+    {{-- <slide-ppal></slide-ppal> --}}
+  </section>
+
+  <section class="py-4">
+    <div class="latest-offers categories content-area-13 bg-grea-3 py-4">
+      <div class="container">
+          <div class="row row-2">
+            <div class="col-lg-4 col-md-12 col-pad">
+                  <div class="grid-box">
+                      <div class="grid-box_bg_box grid-box_long_bg cat-4-bg">
+                          <div class="grid-box-overlay">
+                              <div class="grid-box-content">
+                                  <h3 class="grid-box-title my-1">
+                                      <a href="{{route('usados_index')}}">USADOS</a>
+                                  </h3>
+                                  <h5 class="grid-box-subtitle my-1">Usados Certificados Toyota</h5>
+                                  <h5 class="grid-box-subtitle">Usados Seleccionados</h5>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-12">
+                  <div class="row">
+                      <div class="col-md-6 col-lg-12 col-pad">
+                          <div class="grid-box">
+                              <div class="grid-box_bg_box cat-1-bg">
+                                  <div class="grid-box-overlay">
+                                      <div class="grid-box-content">
+                                          <h3 class="grid-box-title">
+                                              <a href="{{route('landing_tpa')}}">TOYOTA PLAN DE AHORRO</a>
+                                          </h3>
+                                          <h5 class="grid-box-subtitle">Accede a un toyota 100% financiado</h5>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-12 col-pad">
+                        <div class="grid-box">
+                            <div class="grid-box_bg_box cat-5-bg">
+                                <div class="grid-box-overlay">
+                                    <div class="grid-box-content">
+                                        <h3 class="grid-box-title">
+                                            <a href="{{route('mobility_services')}}">MOBILITY SERVICES</a>
+                                        </h3>
+                                        <h4 class="grid-box-subtitle">Alquilá un Toyota</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-12">
+                  <div class="row">
+                      <div class="col-md-6 col-lg-12 col-pad">
+                          <div class="grid-box">
+                              <div class="grid-box_bg_box cat-2-bg">
+                                  <div class="grid-box-overlay">
+                                      <div class="grid-box-content">
+                                          <h3 class="grid-box-title">
+                                              <a href="{{route('accesorios')}}">ACCESORIOS</a>
+                                          </h3>
+                                          <h5 class="grid-box-subtitle">Equipá tu Toyota</h5>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-12 col-pad">
+                          <div class="grid-box">
+                              <div class="grid-box_bg_box cat-3-bg">
+                                  <div class="grid-box-overlay">
+                                      <div class="grid-box-content">
+                                          <h3 class="grid-box-title">
+                                              <a href="{{route('posventa')}}">SERVICIOS DE POSVENTA</a>
+                                          </h3>
+                                          <h5 class="grid-box-subtitle">Precios, turnos y más</h5>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
   </section>
 
-  <section>
+  {{-- <section>
     <div class="container py-5">
       <div class="row">
-        <div class="col-md-3 col-xs-12">
+        <div class="col-md-3 col-xs-12 mt-1">
           <div class="card">
             <div class="card-body">
               <div class="d-flex">
@@ -60,7 +132,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-xs-12">
+        <div class="col-md-3 col-xs-12 mt-1">
           <div class="card">
             <div class="card-body">
               <div class="d-flex">
@@ -77,7 +149,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-xs-12">
+        <div class="col-md-3 col-xs-12 mt-1">
           <div class="card">
             <div class="card-body">
               <div class="d-flex">
@@ -94,7 +166,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-xs-12">
+        <div class="col-md-3 col-xs-12 mt-1">
           <div class="card">
             <div class="card-body">
               <div class="d-flex">
@@ -113,112 +185,190 @@
         </div>
       </div>
     </div>
+  </section> --}}
+
+  <!---------------------------------------------------------------------
+    MODELOS DESTACADOS
+  ----------------------------------------------------------------------->
+  <section class="py-4">
+    <div class="container">
+      <div class="main-title">
+          <h1 class="text-dark-2">MODELOS DESTACADOS</h1>
+          <p class="text-dark-3">Explorá nuestra amplia gama de vehículos</p>
+      </div>
+      <div class="owl-carousel owl-carousel-modelos owl-theme py-2">
+            @foreach(\App\Helpers\Helper::getModelos() as $modelo)
+            <div class="car-box item pl-1 pr-1">
+              <div class="car-thumbnail bg-cyan">
+                  <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="car-img">
+                      @if ($modelo->es_hibrido)
+                      <div class="tag">HÍBRIDO</div>
+                      @endif
+                      <div class="price-box">$850.00</div>
+                      <img class="d-block w-100 pt-4 pb-4" src="{{$modelo->img_modelo}}" alt="car">
+                  </a>
+              </div>
+              <div class="detail text-center">
+                  <img src="{{$modelo->img_logo}}" class="d-initial" style="max-height: 35px; width: auto;">
+                  <div class="location">
+                      <a href="car-details.html" class="text-muted text-uppercase mt-1 ml-1">
+                          {{$modelo->slogan}}
+                      </a>
+                  </div>
+                  <div class="w-100 text-center">
+                    <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="text-info font-weight-600">VER MODELO</a>
+                  </div>
+              </div>
+            </div>
+            @endforeach
+      </div>
+      <div class="w-100 text-center mb-4">
+        <a href="{{route('modelos')}}" class="btn btn-lg btn-danger btn-round mt-3">VER TODOS</a>
+      </div>
+      {{-- <div class="row">
+        <div class="col-md-4">
+            <div class="car-box">
+              <div class="car-thumbnail">
+                  <a href="car-details.html" class="car-img">
+                      <div class="tag">HÍBRIDO</div>
+                      <div class="price-box">$850.00</div>
+                      <img class="d-block w-100" src="http://storage.googleapis.com/themevessel-products/cmart/img/car/car-3.jpg" alt="car">
+                  </a>
+              </div>
+              <div class="detail">
+                  <h1 class="title">
+                      <a href="car-grid-rightside.html">Toyota Prius</a>
+                  </h1>
+                  <div class="location">
+                      <a href="car-details.html">
+                          <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                      </a>
+                  </div>
+                  <ul class="facilities-list clearfix">
+                      <li>
+                          <i class="flaticon-way"></i> 4,000 km
+                      </li>
+                      <li>
+                          <i class="flaticon-manual-transmission"></i> Manual
+                      </li>
+                      <li>
+                          <i class="flaticon-calendar-1"></i> 2019
+                      </li>
+                      <li>
+                          <i class="flaticon-fuel"></i> Petrol
+                      </li>
+                      <li>
+                          <i class="flaticon-car"></i> Sport
+                      </li>
+                      <li>
+                          <i class="flaticon-gear"></i> Blue
+                      </li>
+                  </ul>
+              </div>
+            </div>
+        </div>    
+      </div> --}}
+    </div>
   </section>
 
     <!---------------------------------------------------------------------
-    MODELOS DESTACADOS
+    COTIZADOR ONLINE
   ----------------------------------------------------------------------->
-  <section>
+  <section class="section py-5 bg-1">
     <div class="container">
-      <div class="title-section my-3">
-        <h3>MODELOS DESTACADOS</h3>
+      <h2 class="text-center">COTIZADOR ONLINE <br> <small>Una nueva experiencia sin salir de tu casa</small></h2>
+      <div class="row py-5">
+        <div class="col-md-4 col-sm-12 text-center">
+          <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/cotizacion-express.svg') }}">
+          <h4 class="font-weight-bold">Cotización Express</h4>
+          <p class="text-muted">Simulá a tu medida la reserva de tu próximo auto y te contactaremos desde Derka y Vargas para confirmar la misma</p>
+        </div>
+        <div class="col-md-4 col-sm-12 text-center">
+          <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/asistente-etoyota.svg') }}">
+          <h4 class="font-weight-bold">Asistente de E-Toyota</h4>
+          <p class="text-muted">¿Necesitas ayuda? Escribile al Asistente para que te oriente en la experiencia</p>
+        </div>
+        <div class="col-md-4 col-sm-12 text-center">
+          <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/seguimiento-unidad.svg') }}">
+          <h4 class="font-weight-bold">Seguimiento de tu Unidad</h4>
+          <p class="text-muted">Una vez que confirmes la reserva de tu unidad, recibirás todas las notificaciones en forma electrónica hasta agendar la entrega de tu nuevo Toyota</p>
+        </div>
       </div>
-      <div class="owl-carousel owl-carousel-modelos owl-theme py-2">
-          @foreach(\App\Helpers\Helper::getModelos() as $modelo)
-          <a href="/modelos/{{$modelo->nombre}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-            <div class="d-flex justify-content-center">
-              <img class="img-fluid" style="width: 50%" src="{{$modelo->img_logo}}" alt="Logo {{$modelo->modelo}}">
-            </div>
-            <img src="{{$modelo->img_modelo}}" alt="Toyota {{$modelo->modelo}} 2019">
-            <p class="text-center text-dark text-uppercase" style="font-size: 17px">{{$modelo->slogan}}</p>
-            <div class="d-flex justify-content-center">
-              <span class="btn btn-default btn-round mu-btn-md">Ver modelo</span>
-            </div>
-          </a>
-          @endforeach
+      <div class="d-block text-center">
+        <a href="{{ route('cotizador_online_como_funciona') }}" class="btn btn-danger btn-round btn-lg ">¿Cómo funciona?</a>
       </div>
-      <p class="text-center"><a class="btn-link-underline" href="/modelos">VER TODOS</a></p>
     </div>
   </section>
 
   <!---------------------------------------------------------------------
-    USADOS SELECCIONADOS
+    MOBILITY
   ----------------------------------------------------------------------->
-  <div class="my-3">
-    <section class="container" style="background:url({{asset('imagenes/usados-seleccionados.png')}}) center;height: 350px;background-size: cover;">
-    </section>
+  <section class="py-5 ">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="row usados-destacados box-shadow">
-            <div class="col-xs-offset-1 col-md-offset-0 col-xs-10 col-md-5">
-              <img class="img-fluid" src="{{asset('/imagenes/usados-destacados.png')}}" alt="Autos Usados destacados">
-            </div>
-            <div class="col-xs-12 col-md-7 text-center">
-              <p class="text-left fz17">
-              Conocé la selección de vehículos destacados que tenemos para ofrecerte. Seguro encontrás el que estás buscando, al mejor precio y financiación.
-              </p>
-              <a href="/usados" class="btn-link-underline text-center ">VER USADOS</a>
-            </div>
-          </div>
+      <div class="row py-4">
+        <div class="col-md-6 col-sm-12 text-center">
+          <img class="img-fluid d-none d-md-block d-lg-block d-xl-block" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
+          <img class="img-fluid w-100 d-block d-lg-none d-md-none d-xl-none mb-1" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h2>Alquiler de Vehículos</h2>
+          <p><b>Entérate como podes alquilar un Toyota en cinco sencillos pasos</b></p>
+          <p class="text-muted">Toyota Mobility Services es el nuevo sistema de alquiler de autos, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes, etc.</p>
+          <a href="/mobility-services-alquiler-de-autos-toyota#mobility-que-es-y-como-funciona" target="_blank" class="btn btn-lg btn-danger btn-round mt-3">Conocé más</a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
 
   <!---------------------------------------------------------------------
-    Posts Promos y Dtos
+    NOVEDADES DERKA Y VARGAS
   ----------------------------------------------------------------------->
-  <section class="py-1">
+  <section class="py-5">
     <div class="container">
+      <div class="main-title">
+        <h1 class="text-dark-2">Novedades Derka y Vargas</h1>
+        <p class="text-dark-3">Conoce las ultimas novedades, noticias, beneficios y descuentos que tenemos para vos</p>
+      </div>
       <div class="row">
           @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
             <div class="col-md-4 col-sm-12 py-2">
-             {{--  <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm-magazine-vertical">
-                <img class="img-fluid" src="{{$post->imagen_portada}}" alt="{{$post->titulo}}">
-                <div class="stm-magazine-loop-data py-1">
-                  <h3 class="top-content">{{$post->titulo}}</h3> 
-                  <div class="middle-content">
-                    <div class="magazine-loop-date">
-                      <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
-                        {{date('d M Y', strtotime($post->created_at))}}
-                    </div>
-                  </div> 
-                  <div class="bottom-content">
-                    <p>{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
-                  </div>
-                </div>
-              </a>
-              <div class="w-100 text-center my-1" >
-                <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
-              </div>--}}
-              <div class="card d-flex flex-column justify-content-between">
+              <div class="card d-flex flex-column justify-content-between box-shadow-2">
                 <div class="container-img" style="background: url('{{$post->imagen_portada}}');"></div> 
-                  <div class="card-body d-flex flex-column justify-content-end">
-                    <div class="product-price">
-                        <a href="{{ route('show_post', $post->slug) }}">
-                          {{$post->titulo}}
-                        </a>
-                      </div> 
-                      <div class="product-description">
-                        <p class="card-text">{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
-                      </div> 
-                      <div class="product-buttons mb-2">
-                        <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
+                  <div class="card-body d-flex flex-column justify-content-end" style="height: 230px;">
+                    <h4 class="text-dark-2 mb-2 font-weight-600">
+                      {{$post->titulo}}
+                    </h4>
+                    <div class="card-meta mb-2 text-dark-3">
+                      <span><i class="far fa-calendar-alt"></i> {{ date('d-m-Y', strtotime($post->created_at)) }}</span>
+                    </div>
+                    <div class="overflow-hidden" style="position: relative;">
+                      <p class="card-text text-dark-3">{{str_limit(strip_tags($post->contenido), 210, '...')}}</p>
+                      <div class="gradient-buttom-35"></div>
+                    </div>
+                    <div class="mb-0">
+                      <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
                     </div>
                 </div>
               </div>
             </div>
           @endforeach
       </div>
+      <div class="row my-4">
+        <div class="col-sm-12 text-center">
+          <h5>
+          <a href="#" class="my-3">Ver todas</a>
+          </h5>
+        </div>
+      </div>
     </div>
   </section>
+
 
   <!---------------------------------------------------------------------
     TOYOTA HIBRID EXPERIENCE
   ----------------------------------------------------------------------->
-  <section class="py-3">
+  {{-- <section class="py-3">
     <div class="container container-hibrid-experience">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -239,94 +389,13 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!---------------------------------------------------------------------
-    NOVEDADES DERKA Y VARGAS
-  ----------------------------------------------------------------------->
-  <section class="py-3">
-    <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-8">
-        <div class="vc_column-inner ">
-          <div class="wpb_wrapper">
-            <div class="stm_widget_recent_news">
-              <div class="recent-top">
-                  <h4>NOVEDADES DERKA Y VARGAS</h4>
-              </div>
-              <div class="recentNewsAnimate">
-                @foreach(\App\Helpers\Helper::postRecientes(2) as $post)
-                    <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="stm_magazine_single_list">
-                      <div class="magazine-list-img">
-                        <img width="255" height="160" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}">
-                        {{-- <div class="fa-round"><i class="fa fa-share"></i></div> --}}
-                      </div>
-                      <div class="stm-magazine-loop-data">
-                        <h3 class="top-content">
-                          {{$post->titulo}}
-                        </h3>
-                        <div class="middle-content">
-                          <div class="magazine-category normal-font">
-                            {{$post->tema->tema}}       
-                          </div>
-                          <div class="magazine-loop-date">
-                              <i class="stm-service-icon-calendar_service" style="margin-right: 5px;"></i> 
-                              {{date('d M Y', strtotime($post->created_at))}}
-                          </div>
-                        </div>
-                        <div class="bottom-content">
-                          <p>{{str_limit(strip_tags($post->contenido), 150, '...')}}</p>
-                        </div>
-                      </div>
-                    </a>
-                @endforeach
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-4">
-        <div class="vc_column-inner ">
-          <div class="wpb_wrapper">
-            <div class="stm-most-popular-posts">
-              <h2>MÁS POPULARES</h2>
-              @foreach(\App\Helpers\Helper::postRecientes(6) as $post)
-              <a href="{{ route('show_post', $post->slug) }}" class="stm-magazine-news clearfix">
-                  <div class="image">
-                      <img width="190" height="132" src="{{$post->imagen_portada}}" class="attachment-stm-img-190-132 size-stm-img-190-132 wp-post-image" alt="{{$post->alt_img}}" title="{{$post->titulo}}">        
-                  </div>
-                  <div class="stm-post-content">
-                      <div class="title heading-font">
-                        {{str_limit(strip_tags($post->titulo), 50, '...')}}    
-                      </div>
-                      <div class="recomended-data">
-                          <div class="magazine-loop-views">
-                              <div class="magazine-category-tema normal-font">
-                                {{$post->tema->tema}}        
-                              </div>
-                          </div>
-                          <div class="comments-number normal-font">
-                            <i class="stm-service-icon-calendar_service"></i> 
-                            {{date('d M Y', strtotime($post->created_at))}}          
-                          </div>
-                      </div>
-                  </div>
-              </a>
-              @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
+  </section> --}}
 
   <!---------------------------------------------------------------------
     PARALLAX
   ----------------------------------------------------------------------->
   <section class="visible-md visible-lg">
-    <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2019.png);">
+    <div class="parallax bg3" style="background-image: url(/imagenes/home-min/dyv2020.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">

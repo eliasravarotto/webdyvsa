@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Responsabilidad Social Empresarial</title>
@@ -199,12 +199,8 @@
     font-weight: 400;
 }
 
-a{
-  color: black;
-}
-
 .carousel-caption p{
-  font-size: 1.7rem;
+  font-size: 1rem;
   text-align: justify;
 }
 
@@ -213,12 +209,55 @@ a{
   background-color: darkcyan;
   bottom: 25%
 }
+
+#mu-call-to-action{
+  background: url('imagenes/rse/bg-gestion-ambiental.jpg');
+}
 </style>
 
 
 @stop
 
 @section('content')
+
+<section>
+  <div id="mu-call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-call-to-action-area">
+          <div class="mu-call-to-action-left">
+            <h1><b>RESPONSABILIDAD SOCIAL EMPRESARIAL</b></h1>
+            <p class="fs-17">Construyamos juntos la mejor comunidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="my-3">
+  <div class="container">
+    <div class="text-center py-3">
+      <h1 class="text-center text-muted">Programa de Desarrollo de RSE</h1>
+      {{-- <h3 class="text-center text-muted">Concesionarios 2018</h3> --}}
+      <p class="fs-17 text-center text-muted mt-3">La RSE y el desarrollo sustentable para una empresa significan adoptar estrategias de negocio que cumplan con las necesidades de la organización y sus accionistas, al tiempo que gestionan sus impactos positivos y negativos en el ambiente y en la sociedad.
+        Las empresas que logren involucrarse en los asuntos y actividades relacionadas con su comunidad serán capaces de demostrar que son un contribuyente responsable con el futuro del desarrollo social.
+      </p>
+    </div>
+    <div class="text-center py-3">
+      <h3 class="text-muted mt-3">
+        El Programa se basa en tres pilares fundamentales
+      </h3>
+      <div class="row my-3">
+        <div class="col-sm-12 col-md-4 text-center">EDUCACIÓN</div>
+        <div class="col-sm-12 col-md-4 text-center">MEDIO AMBIENTE</div>
+        <div class="col-sm-12 col-md-4 text-center">SEGURIDAD</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="header-rse py-1">
   <div class="container" style="box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-radius: 7px; padding: 0px !important">
@@ -237,10 +276,8 @@ a{
 
 <section class="py-5">
     <div class="container" style="box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);">
-      <a class="news-meta-wrap" href="{{route('programa_rse_dyv')}}" style="text-decoration: none;">
         <h3 class="ttc text-center">Programa RSE Derka y Vargas</h3>
         <p class="text-center">2018/2021</p> 
-      </a>
         <div class="row py-3">
             <div class="owl-carousel owl-theme">
                 <a href="{{route('programa_rse_dyv')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
@@ -295,7 +332,7 @@ a{
     </div>
 </section>
 
-<!-- Arbol RSE -->
+<!-- Arbol RSE 
 <section>
   <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
     <div class="carousel-inner">
@@ -385,54 +422,8 @@ a{
       </div>
     </div>
   </div>
-
-  <div class="container">
-    {{-- <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <div id="carousel-example" class="carousel carousel-fade" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example" data-slide-to="1"></li>
-            <li data-target="#carousel-example" data-slide-to="2"></li>
-          </ol>
-
-          <div class="carousel-inner" role="listbox">
-            <div class="item active text-center">
-              <img src="{{asset('imagenes/rse/arbol1.png')}}" style="width: 70%; display: inline-block" alt="...">
-              <div class="carousel-caption p-absolute">
-                <p>Motivados con el Programa RSE Concesionarios 2018, e inspirados por los valores que sustentan a Toyota y a Derka y Vargas, diseñamos el presente Programa RSE DyV 2018-2021 apuntando al triple impacto que la RSE espera,</p>
-              </div>
-            </div>
-            <div class="item text-center">
-              <img src="{{asset('imagenes/rse/arbol2.png')}}" style="width: 70%; display: inline-block" alt="...">
-              <div class="carousel-caption p-absolute">
-                <p>nos enfocamos en el eje Educación para la Empleabilidad,</p>
-              </div>
-            </div>
-            <div class="item text-center">
-              <img src="{{asset('imagenes/rse/arbol3.png')}}" style="width: 70%; display: inline-block" alt="...">
-              <div class="carousel-caption p-absolute">
-                <h3>Lorem</h3>
-                <p>Impsum</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <a class="left carousel-control" href="#carousel-example" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#carousel-example" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div> --}}
-  </div>
-
 </section>
+-->
 
 @stop
 

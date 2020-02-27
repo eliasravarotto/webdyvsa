@@ -24,7 +24,7 @@ class ModelosController extends Controller
      */
     public function index()
     {
-        $modelos = Modelo::all();
+        $modelos = Modelo::with('marca')->get();
         return view('backend.modelos.index', compact('modelos'));
     }
 

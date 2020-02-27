@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Toyota Mobility Services es la nueva plataforma de servicios de movilidad</title>
@@ -40,7 +40,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 py-2 px-3">
-					<img src="{{ asset('imagenes/mobility/header.png') }}" class="img-responsive">
+					<img src="{{ asset('imagenes/mobility/header.png') }}" class="img-fluid">
 				</div>
 				<div class="col-md-8 py-2 px-3">
 					<h1 class="color-mobility">El Toyota que querés, por el tiempo que necesitás.</h1>
@@ -50,7 +50,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 		</div>				
 	</section>
 
-	<section class="py-3">
+	<section class="py-3" id="mobility-que-es-y-como-funciona">
 		<div class="container">
 			<div class="title-section title-section-mobility">
 	        	<h3>¿QUÉ ES Y CÓMO FUNCIONA?</h3>
@@ -159,14 +159,14 @@ El Toyota que querés, por el tiempo que necesitás.">
 	</section>
 
 	<section class="py-3">
-		<iframe width="100%" height="400px" src="https://www.youtube.com/embed/OycsNygL06A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="100%" height="400px" src="https://www.youtube.com/embed/zlU-fhhDFVA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</section>
 
 	<section class="py-5">
 		<div class="container">
 		<div class="row">
 			<div class="col-md-5 py-2">
-				<img src="{{asset('imagenes/mobility/toyota-mobility-services.jpg')}}" class="img-responsive">
+				<img src="{{asset('imagenes/mobility/toyota-mobility-services.jpg')}}" class="img-fluid">
 			</div>
 			<div class="col-md-7 text-center py-2">
 				<h1 class="color-mobility">Descarga la App en</h1>

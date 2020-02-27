@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Derka y Vargas - Usados - {{$unidad->marca}} {{$unidad->modelo}}</title>
@@ -44,6 +44,7 @@
                 <a href="/usados" class="mu-btn mu-white-btn">Ver más</a>
             </div>
 		</div>
+
 	</div>
 
 	<div class="container">
@@ -64,5 +65,30 @@
             </div>
         </div>
 	</div>
+           
 </article> 
+
+@stop
+
+@section('script')
+<script type="text/javascript">
+            $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    URLhashListener:true,
+        autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+</script>
 @stop

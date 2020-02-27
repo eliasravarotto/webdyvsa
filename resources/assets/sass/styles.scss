@@ -1876,7 +1876,7 @@ p{
 }
 .product-description {
     font-family: "Raleway", Sans-serif;
-    font-size: 14px;
+    /*font-size: 14px;*/
     font-weight: 300;
     text-transform: none;
     font-style: normal;
@@ -3669,6 +3669,11 @@ CARD COMPONENT
   background-size: cover;
   background-position: center !important;
 }
+.bg-header-etoyota{
+  background-image: url('/imagenes/e-toyota/image-header.jpg');
+  background-size: cover;
+  background-position: center !important;
+}
 .mu-call-to-action {
     background-position: top left;
     position: relative;
@@ -4093,4 +4098,18 @@ CARD COMPONENT
 
 .container-lg{
   padding: 0px 30px;
+}
+
+
+.overflow-hidden{
+  overflow: hidden !important;
+}
+
+
+.font-weight-bold {
+    font-weight: 700!important;
+}
+
+.section{
+  padding: 10rem 0;
 }

@@ -28,4 +28,9 @@ class Modelo extends Model
     {
         return $this->hasMany('App\Accesorio');
     }
+
+    public function marca()
+    {
+        return $this->belongsTo('App\Marca');
+    }
 }

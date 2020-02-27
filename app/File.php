@@ -19,4 +19,9 @@ class File extends Model
         $this->path = $foto->storeAs('public/fotos', $this->name.'.'.$this->extension);
         $this->public_path = Storage::url($this->path);
     }
+
+    public function notable()
+    {
+        return $this->morphTo();
+    }
 }
