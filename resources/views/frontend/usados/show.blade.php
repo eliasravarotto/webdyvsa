@@ -17,51 +17,56 @@
 @stop
 
 @section('content')
-	<div class="container mar-top-20">
-		<show-usado v-bind:data="{ unidad: {{$unidad}}, imagenes: {{$imagenes}} }"></show-usado>
-	</div>
 
-	<div class="container py-3">
+	<show-usado v-bind:data="{ unidad: {{$unidad}}, imagenes: {{$imagenes}} }"></show-usado>
+
+	<div class="container py-3 my-3">
         <div class="title-section my-3">
             <h3>MÁS USADOS <br> <small>Que te podrían interesar</small></h3>
         </div>
 		<div class="d-flex owl-carousel owl-carousel-usados owl-theme">
 			@foreach(\App\Helpers\Helper::getUsadosDeInteres( $unidad ) as $u)
-            <a href="/usados/{{$u->slug}}">
-			<div class="item thumbnail thumbnail-no-bg thumbnail-no-border mx-2">
-                <div class="pos-rel o-flw-hiden" style="max-height: 250px">
-                    @if( $u->foto )<img src="{{$u->foto}}" alt=""> @endif
-                    @if( !$u->foto )<img src="/imagenes/default-img.png" alt=""> @endif
-                </div>
-                <div class="caption caption-default">
-                    <h4 class="text-center pb-0 mb-0">{{$u->marca}} {{ $u->modelo }}</h4>
-                    <h3 class="text-center precio my-1">$ {{number_format($u->precio, 0, ',', '.')}}</h2>
-                </div>
-            </div>
+                @if( $u->foto ) @php $foto = $u->foto @endphp  @endif
+                @if( !$u->foto ) @php $foto = "/imagenes/default-img.png" @endphp   @endif
+                <a href="/usados/{{$u->slug}}">
+                  <div class="card d-flex flex-column justify-content-between box-shadow-2">
+                    <div class="container-img" style="background: url('{{$foto}}');"></div> 
+                      <div class="card-body d-flex flex-column justify-content-end" style="height: 130px;">
+                        <h5 class="text-dark-2 mb-2 font-weight-600">
+                          {{$u->marca}} {{$u->modelo}}
+                        </h5>
+                        <div class="card-meta mb-2 text-dark-3">
+                          $ {{number_format($u->precio, 0, ',', '.')}}
+                        </div>
+                    </div>
+                  </div>
             </a>
 			@endforeach
-            <div class="item thumbnail thumbnail-no-bg thumbnail-no-border mx-2 d-flex justify-content-center align-items-center" style="height: 200px">
+            <div class="item mx-2 d-flex justify-content-center align-items-center" style="height: 280px">
                 <a href="/usados" class="mu-btn mu-white-btn">Ver más</a>
             </div>
 		</div>
-
 	</div>
 
-	<div class="container">
+	<div class="container py-3 my-3">
         <div class="well">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-2 text-center">
-                    <img src="/imagenes/logo-uct.png" class="img-responsive" style="max-height: 125px; display: inline; margin-bottom: 10px;">
+            <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-2 text-center">
+                        <img src="/imagenes/logo-uct-h-new.png" class="img-fluid">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-10">
+                        <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
+                        <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
+                        <ul class="list-unstyled">
+                            <li> <i class="fa fa-check text-success"></i> Garantía de 1 año o 20.000 km.</li>
+                            <li> <i class="fa fa-check text-success"></i> Vehículos que fueron atendidos en concesionarios oficiales.</li>
+                            <li> <i class="fa fa-check text-success"></i> 150 puntos de inspección realizados por técnicos capacitados.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-10">
-                    <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
-                    <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
-                    <ul class="list-unstyled">
-                        <li> - Garantía de 1 año o 20.000 km.</li>
-                        <li> - Vehículos que fueron atendidos en concesionarios oficiales.</li>
-                        <li> - 150 puntos de inspección realizados por técnicos capacitados.</li>
-                    </ul>
-                </div>
+            </div>
             </div>
         </div>
 	</div>
@@ -72,23 +77,43 @@
 
 @section('script')
 <script type="text/javascript">
-            $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    URLhashListener:true,
+    $('.owl-carousel.owl-carousel-usados').owlCarousel({
+        loop:false,
+        margin:10,
+        nav:false,
+        URLhashListener:false,
         autoplayHoverPause:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
+        dots:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:4
+            }
+    }
+});
+    $('.owl-carousel.owl-carousel-gallery').owlCarousel({
+        loop:false,
+        nav:false,
+        URLhashListener:true,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
     }
 })
+
+
 </script>
 @stop

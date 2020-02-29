@@ -29,7 +29,7 @@
                             @if ($modelo->es_hibrido)
                             <div class="tag">HÍBRIDO</div>
                             @endif
-                            <div class="price-box">$850.00</div>
+                            {{-- <div class="price-box">$850.00</div> --}}
                             <img class="d-block w-100 pt-4 pb-4" src="{{$modelo->img_modelo}}" alt="car">
                         </a>
                     </div>

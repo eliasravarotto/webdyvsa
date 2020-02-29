@@ -53,7 +53,7 @@
                                           <h3 class="grid-box-title">
                                               <a href="{{route('landing_tpa')}}">TOYOTA PLAN DE AHORRO</a>
                                           </h3>
-                                          <h5 class="grid-box-subtitle">Accede a un toyota 100% financiado</h5>
+                                          <h5 class="grid-box-subtitle">Accede a un Toyota 100% financiado</h5>
                                       </div>
                                   </div>
                               </div>
@@ -112,81 +112,6 @@
     </div>
   </section>
 
-  {{-- <section>
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-md-3 col-xs-12 mt-1">
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex">
-                <div class="w-25 d-flex align-items-center">
-                  <i class="fas fa-car h3"></i>
-                </div>
-                <div class="w-75">
-                  <h6 class="card-title mb-0">
-                     USADOS
-                  </h6>
-                  <a href="#" class="card-link">Ver usados</a>    
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-xs-12 mt-1">
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex">
-                  <div class="w-25 d-flex align-items-center">
-                    <i class="stm-icon-car_sale h3"></i>
-                  </div>
-                  <div class="w-75">
-                    <h6 class="card-title mb-0">
-                       PLAN DE AHORRO
-                    </h6>
-                    <a href="#" class="card-link">Ver planes</a>    
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-xs-12 mt-1">
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex">
-                  <div class="w-25 d-flex align-items-center">
-                    <i class="stm-icon-gear h3"></i>
-                  </div>
-                  <div class="w-75">
-                    <h6 class="card-title mb-0">
-                       POSVENTA
-                    </h6>
-                    <a href="#" class="card-link">Turnos y Servicios</a>    
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-xs-12 mt-1">
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex">
-                  <div class="w-25 d-flex align-items-center">
-                    <i class="stm-icon-add_car h3"></i>
-                  </div>
-                  <div class="w-75">
-                    <h6 class="card-title mb-0">
-                       ACCESORIOS
-                    </h6>
-                    <a href="#" class="card-link">Ver accesorios</a>    
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> --}}
-
   <!---------------------------------------------------------------------
     MODELOS DESTACADOS
   ----------------------------------------------------------------------->
@@ -204,7 +129,7 @@
                       @if ($modelo->es_hibrido)
                       <div class="tag">HÍBRIDO</div>
                       @endif
-                      <div class="price-box">$850.00</div>
+                      {{-- <div class="price-box">$850.00</div> --}}
                       <img class="d-block w-100 pt-4 pb-4" src="{{$modelo->img_modelo}}" alt="car">
                   </a>
               </div>
@@ -357,7 +282,7 @@
       <div class="row my-4">
         <div class="col-sm-12 text-center">
           <h5>
-          <a href="#" class="my-3">Ver todas</a>
+          {{-- <a href="{{route('posts')}}" class="my-3">Ver más</a> --}}
           </h5>
         </div>
       </div>

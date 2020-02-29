@@ -185,4 +185,9 @@ class PostController extends Controller
 
         return view('frontend.posts.show', compact('post'));
     }
+
+    public function listPosts(Request $request)
+    {
+        return $request;
+    }
 }

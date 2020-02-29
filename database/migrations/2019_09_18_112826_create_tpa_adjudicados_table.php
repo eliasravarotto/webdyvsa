@@ -15,8 +15,8 @@ class CreateTpaAdjudicadosTable extends Migration
     {
         Schema::create('tpa_adjudicados', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('grupo');
-            $table->integer('orden');
+            $table->string('grupo');
+            $table->string('orden');
             $table->string('unidad');
             $table->string('modalidad');
             $table->integer('avance_cuotas');

@@ -164,6 +164,15 @@
                                 <li class="text-center"><i class="stm-service-icon-appointment_calendar"></i> {{unidad.anio}}</li>
                                 <li class="text-center"><i class="stm-service-icon-color_type"></i> {{unidad.color}}</li>
                             </ul>
+                            <div class="detail-bottom">
+                                <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  
+                                   class="btn btn-whatsapp" 
+                                   target="_blank"
+                                   style="border-radius: 5px !important">
+                                    <i class="fab fa-whatsapp"></i>
+                                    CONSULTAR
+                                </a>
+                            </div>
                         </div>
                     </div> 
                     </div>

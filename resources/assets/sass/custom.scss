@@ -679,58 +679,6 @@ body {
   margin-right: 10px;
 }
 
-.thumbnail-no-bg {
-  background-color: transparent !important;
-}
-
-.thumbnail-no-border {
-  border: none !important;
-  padding: 0px;
-}
-
-.thumbnail-red {
-
-  /*background-color: #ff;1826;*/
-  background-color: #715757;
-}
-
-.thumbnail-red > .caption-default {
-  color: white;
-}
-
-.thumbnail-red > .caption-default > a {
-  color: white;
-  font-size: 18px;
-}
-
-.thumbnail-financial .caption p {
-  font-size: 17px;
-}
-
-.thumbnail-no-bg {
-  background-color: transparent;
-  transition: transform .3s;
-}
-
-.thumbnail-hover:hover {
-  transform: scale(1.05);
-  -webkit-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.75);
-}
-
-.thumbnail-hover:hover > .caption {
-  background-color: $gris-toyota;
-  transition: all .4s;
-  -webkit-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.75);
-}
-
-.thumbnail-hover:hover > .caption > p {
-  color: white;
-}
-
 .navbar {
   margin-bottom: 0px;
 }
@@ -1753,6 +1701,11 @@ body {
     padding-bottom: 15px;
     border-bottom: solid 1px #e6e6e6;
     font-weight: 400;
+}
+
+.car-box .detail-bottom{
+  padding-top: 10px;
+  border-top: solid 1px #e6e6e6;
 }
 .car-box .facilities-list li {
     list-style: none;

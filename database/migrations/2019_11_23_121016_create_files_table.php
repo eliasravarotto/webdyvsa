@@ -19,6 +19,8 @@ class CreateFilesTable extends Migration
             $table->string('extension');
             $table->string('path');
             $table->string('public_path');
+            $table->integer('notable_id')->unsigned();
+            $table->string('notable_type');
             $table->timestamps();
         });
     }

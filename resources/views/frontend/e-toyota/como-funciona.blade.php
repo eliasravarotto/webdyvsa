@@ -52,7 +52,7 @@
 		<div class="container">
 		<div class="row py-3">
 		 	<div class="col-xs-12 col-md-6 text-center">
-	            <img src="{{asset('imagenes/e-toyota/paso1.png')}}" class="img-responsive" style="display:inline">
+	            <img src="{{asset('imagenes/e-toyota/paso1.png')}}" class="img-fluid" style="display:inline">
 	        </div>
 	        <div class="col-xs-12 col-md-6 descripcion">
 	            <h2 class="mb-3"><span class="text-muted">Paso 1</span> Elegí</h2>
@@ -66,7 +66,7 @@
 		<div class="container">
 		<div class="row py-3">
 		 	<div class="col-xs-12 col-md-6 col-md-push-6 text-center">
-	            <img src="{{asset('imagenes/e-toyota/paso2.png')}}" class="img-responsive" style="display:inline">
+	            <img src="{{asset('imagenes/e-toyota/paso2.png')}}" class="img-fluid" style="display:inline">
 	        </div>
 	        <div class="col-xs-12 col-md-6 col-md-pull-6 descripcion">
 	            <h2 class="mb-3"><span class="text-muted">Paso 2</span> Precios</h2>
@@ -81,7 +81,7 @@
 	    <div class="container">
 	    <div class="row py-3">
 		 	<div class="col-xs-12 col-md-6 text-center">
-	            <img src="{{asset('imagenes/e-toyota/paso3.png')}}" class="img-responsive" style="display:inline">
+	            <img src="{{asset('imagenes/e-toyota/paso3.png')}}" class="img-fluid" style="display:inline">
 	        </div>
 	        <div class="col-xs-12 col-md-6 descripcion">
 	            <h2 class="mb-3"><span class="text-muted">Paso 3</span> Cotizá la entrega de tu usado</h2>
@@ -95,7 +95,7 @@
 		<div class="container">
 		<div class="row py-3">
 		 	<div class="col-xs-12 col-md-6 col-md-push-6 text-center">
-	            <img src="{{asset('imagenes/e-toyota/paso4.png')}}" class="img-responsive" style="display:inline">
+	            <img src="{{asset('imagenes/e-toyota/paso4.png')}}" class="img-fluid" style="display:inline">
 	        </div>
 	        <div class="col-xs-12 col-md-6 col-md-pull-6 descripcion">
 	            <h2 class="mb-3"><span class="text-muted">Paso 4</span> Simulá tu financiación a crédito</h2>
@@ -109,7 +109,7 @@
 	    <div class="container">
 	    <div class="row py-3">
 		 	<div class="col-xs-12 col-md-6 text-center">
-	            <img src="{{asset('imagenes/e-toyota/paso5.png')}}" class="img-responsive" style="display:inline">
+	            <img src="{{asset('imagenes/e-toyota/paso5.png')}}" class="img-fluid" style="display:inline">
 	        </div>
 	        <div class="col-xs-12 col-md-6 descripcion">
 	            <h2 class="mb-3"><span class="text-muted">Paso 5</span> Revisión final</h2>
@@ -123,7 +123,7 @@
 		<div class="container">
 		<div class="row py-3">
 		 	<div class="col-xs-12 col-md-6 col-md-push-6 text-center text-center">
-	            <img src="{{asset('imagenes/e-toyota/paso6.png')}}" class="img-responsive" style="display:inline" style="display:inline">
+	            <img src="{{asset('imagenes/e-toyota/paso6.png')}}" class="img-fluid" style="display:inline" style="display:inline">
 	        </div>
 	        <div class="col-xs-12 col-md-6 col-md-pull-6 descripcion">
 	            <h2 class="mb-3"><span class="text-muted">Paso 6</span> Reserva y seguimiento de tu unidad</h2>
