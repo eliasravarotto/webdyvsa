@@ -51,6 +51,20 @@ form label{
   font-weight: 600;
 }
 
+@font-face {
+  font-family: ToyotaFont;
+  src: url('/fonts/toyotadisplay.woff');
+}
+
+body {
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #383737;
+}
+
 .yellow {
   background: #ffa000;
 }
@@ -98,23 +112,6 @@ form label{
 }
 .color-mto-express{
   color: $mantenimiento-express;
-}
-
-@font-face {
-  font-family: ToyotaFont;
-  src: url('/fonts/toyotadisplay.woff');
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  // font-family: 'Exo', sans-serif;
-}
-
-body {
-  background-color: #ffffff;
-  color: black
 }
 
 
@@ -463,7 +460,6 @@ body {
   width:auto;*/
   height: 40px;
   position: absolute;
-  font-family: georgia, serif;
   font-size: 16px;
   line-height: 40px;
   width: auto;
@@ -1126,9 +1122,6 @@ body {
   text-shadow: 1px 4px 1px #666;
 }
 
-.model-2 {
-  background: #b0bec5;
-}
 .model-2 .float-btn-group {
   float: left;
 }
@@ -1545,7 +1538,6 @@ body {
     order: 1;
 }
 .product-title {
-    font-family: "Raleway", Sans-serif;
     font-size: 13px;
     font-weight: 600;
         text-transform: uppercase;
@@ -1558,7 +1550,6 @@ body {
     /*color: #777777*/
 }
 .product-description {
-    font-family: "Raleway", Sans-serif;
     // font-size: 14px;
     font-weight: 300;
     text-transform: none;
@@ -2173,6 +2164,9 @@ Slider Principal + NavBar (Texto flotante)
 /*-------------------------------------------------------------------------------------------*/
 
 /*FOOTER-------------------------------------------------------------------------------------*/
+.footer h4{
+  font-weight: 400;
+}
 .footer-menu > li {
   font-size: 22px;
 }
@@ -2180,12 +2174,6 @@ Slider Principal + NavBar (Texto flotante)
 .footer-menu > li > a {
   color: white;
   font-weight: bold;
-}
-
-.h-dyv {
-  color: white;
-  font-weight: bold;
-  font-size: 55px;
 }
 
 .row-footer {
@@ -2243,9 +2231,10 @@ Slider Principal + NavBar (Texto flotante)
 }
 
 .title-footer{
-      color: #fafafa;
+    color: #fafafa;
     text-transform: uppercase;
     font-size: 20px;
+    font-weight: 400;
     border-left: 4px solid #b78c33;
     padding-left: 5px;
 }
@@ -4046,12 +4035,11 @@ CARD COMPONENT
 .grid-box-content h3 a {
     color: #fff;
     font-size: 20px;
-    font-weight: 600;
 }
 .grid-box-subtitle {
     white-space: nowrap;
     color: #fff;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
     letter-spacing: 1px;
     margin-bottom: 0;

@@ -18,8 +18,8 @@
 	<section class="footer">
 			<div class="row row-footer row-footer-border row-no-margin">
 				<div class="col-md-12 col-xs-12 col-sm-12 text-center">
-				<h1 class="h-dyv">Derka y Vargas</h1>
-				<h3 class="white">Concesionario Oficial Toyota en Chaco</h3>
+				<h1>Derka y Vargas</h1>
+				<h4 class="white">Concesionario Oficial Toyota en Chaco</h4>
 				</div>
 			</div>
 			<div class="row py-2 row-no-margin">
@@ -134,9 +134,9 @@
 					</ul> --}}
 					<h3 class="title-footer">SÍGUENOS EN</h3>
 					<ul class="list-unstyled list-inline">
-						<li><a href="https://www.facebook.com/derkayvargas/" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="https://www.instagram.com/derkayvargas/" target="_blank" class="btn btn-instagram"><i class="fa fa-instagram"></i></a></li>
-						<li><a href="https://twitter.com/derkayvargas?lang=es" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.facebook.com/derkayvargas/" target="_blank" class="btn btn-facebook"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.instagram.com/derkayvargas/" target="_blank" class="btn btn-instagram"><i class="fab fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="https://twitter.com/derkayvargas?lang=es" target="_blank" class="btn btn-twitter"><i class="fab fa-twitter"></i></a></li>
 					</ul>
 				</div>
 			</div>

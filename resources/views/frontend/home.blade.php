@@ -118,7 +118,7 @@
   <section class="py-4">
     <div class="container">
       <div class="main-title">
-          <h1 class="text-dark-2">MODELOS DESTACADOS</h1>
+          <h1 class="text-dark-2">Modelos Destacados</h1>
           <p class="text-dark-3">Explorá nuestra amplia gama de vehículos</p>
       </div>
       <div class="owl-carousel owl-carousel-modelos owl-theme py-2">
@@ -201,21 +201,24 @@
   ----------------------------------------------------------------------->
   <section class="section py-5 bg-1">
     <div class="container">
-      <h2 class="text-center">COTIZADOR ONLINE <br> <small>Una nueva experiencia sin salir de tu casa</small></h2>
+      <div class="main-title">
+        <h1 class="text-center">Cotizador Online</h1>
+        <p class="text-dark-3">Una nueva experiencia sin salir de tu casas</p>
+      </div>
       <div class="row py-5">
         <div class="col-md-4 col-sm-12 text-center">
           <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/cotizacion-express.svg') }}">
-          <h4 class="font-weight-bold">Cotización Express</h4>
+          <h4 class="my-3">Cotización Express</h4>
           <p class="text-muted">Simulá a tu medida la reserva de tu próximo auto y te contactaremos desde Derka y Vargas para confirmar la misma</p>
         </div>
         <div class="col-md-4 col-sm-12 text-center">
           <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/asistente-etoyota.svg') }}">
-          <h4 class="font-weight-bold">Asistente de E-Toyota</h4>
+          <h4 class="my-3">Asistente de E-Toyota</h4>
           <p class="text-muted">¿Necesitas ayuda? Escribile al Asistente para que te oriente en la experiencia</p>
         </div>
         <div class="col-md-4 col-sm-12 text-center">
           <img class="w-25 py-2" src="{{ asset('imagenes/e-toyota/seguimiento-unidad.svg') }}">
-          <h4 class="font-weight-bold">Seguimiento de tu Unidad</h4>
+          <h4 class="my-3">Seguimiento de tu Unidad</h4>
           <p class="text-muted">Una vez que confirmes la reserva de tu unidad, recibirás todas las notificaciones en forma electrónica hasta agendar la entrega de tu nuevo Toyota</p>
         </div>
       </div>
@@ -261,7 +264,7 @@
               <div class="card d-flex flex-column justify-content-between box-shadow-2">
                 <div class="container-img" style="background: url('{{$post->imagen_portada}}');"></div> 
                   <div class="card-body d-flex flex-column justify-content-end" style="height: 230px;">
-                    <h4 class="text-dark-2 mb-2 font-weight-600">
+                    <h4 class="text-dark-2 mb-2 font-weight-500">
                       {{$post->titulo}}
                     </h4>
                     <div class="card-meta mb-2 text-dark-3">
