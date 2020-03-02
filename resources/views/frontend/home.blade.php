@@ -47,7 +47,7 @@
                   <div class="row">
                       <div class="col-md-6 col-lg-12 col-pad">
                           <div class="grid-box">
-                              <div class="grid-box_bg_box cat-1-bg">
+                              <div class="grid-box_bg_box bg-grid-box-tpa">
                                   <div class="grid-box-overlay">
                                       <div class="grid-box-content">
                                           <h3 class="grid-box-title">
