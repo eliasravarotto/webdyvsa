@@ -23,7 +23,7 @@
 			<div class="col-md-12">
 				<div class="mu-call-to-action-area d-flex justify-content-space-around">
 					<div class="mu-call-to-action-left">
-						<h1> <b>PLANES AVANZADOS</b><br> <small style="color: #d8d8d8">Oportunidades</small></h1>
+						<h1 class="white"> Planes Avanzados<br> <small style="color: #d8d8d8">Oportunidades</small></h1>
 						{{-- <p class="fs-17">Solicitá una pruba de manejo completando el formulario. Un asesor se comunicará con usted para confirmar la disponibilidad.</p> --}}
 					</div>
 					<div style="margin-top: 15px">

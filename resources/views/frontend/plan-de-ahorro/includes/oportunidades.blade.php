@@ -1,7 +1,7 @@
-<section>
-<div class="container">
+<section class="my-4 py-4 bg-1">
+<div class="container py-4">
 	<div class="main-title">
-		<h2 class="text-dark">OPORTUNIDADES</h2>
+		<h2 class="text-dark">Oportunidades</h2>
 		<p class="text-dark-3">Conocé los planes avanzados y adjudicados</p>
 	</div>
 	<div class="row">

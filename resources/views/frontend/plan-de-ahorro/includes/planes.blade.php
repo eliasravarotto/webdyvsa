@@ -1,8 +1,9 @@
 <section class="my-4 py-4">
 	<div class="container" id="planes-tpa">
 		<div class="main-title">
-			<h2 class="text-dark">ACCEDÉ A TU TOYOTA DE LA FORMA MÁS CONVENIENTE</h2>
-			<p class="text-dark-3">¡TENEMOS UN PLAN PARA VOS!</p>
+			<h2 class="text-dark">Accedé a un Toyota de la forma más coveniente</h2>
+			{{-- <h2 class="text-dark">ACCEDÉ A TU TOYOTA DE LA FORMA MÁS CONVENIENTE</h2> --}}
+			<p class="text-dark-3">¡Tenemos un plan para vos!</p>
 		</div>
 		<div class="row">
 			<div class="col-md-6">

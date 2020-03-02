@@ -4,7 +4,7 @@
 			<div class="col-md-12">
 				<div class="mu-call-to-action-area">
 					<div class="mu-call-to-action-left">
-						<h3><b>¿QUERÉS PROBAR UN TOYOTA?</b></h3>
+						<h3 class="text-white">¿Querés probar un Toyota?</h3>
 						<p class="fs-17">Solicitá una pruba de manejo completando el formulario. Un asesor se comunicará con usted para confirmar la disponibilidad.</p>
 					</div>
 					<div class="mu-call-to-action-left">

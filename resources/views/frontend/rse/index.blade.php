@@ -14,168 +14,6 @@
 
 @section('styles_sheets')
   <style type="text/css">
-    .stm_widget_recent_news .stm_magazine_single_list .stm-magazine-loop-data {
-        width: 100%;
-        padding: 0; 
-    }
-    .stm_widget_recent_news .stm_magazine_single_list .magazine-list-img {
-      width: 100%;
-  }
-
-  .has-post-thumbnail .magazine-grid-img img{
-        max-width: 100%;
-        height: auto;
-        vertical-align: middle;
-        border: 0;
-  }
-
-.features-big-wrap {
-    display: block;
-    overflow: hidden;
-    position: relative;
-    float: left;
-    margin-bottom: 15px;
-}
-
-.features-big-wrap .stm-magazine-loop-data,
-.header-rse .stm-magazine-loop-data {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    position: absolute;
-    bottom: 0;
-    padding: 0;
-}
- .features-big-wrap .stm-magazine-loop-data .magazine-category {
-    display: inline-block;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 700;
-    background: #18ca3e;
-    padding: 4px 10px 3px;
-    margin: 0 0 0 30px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap,
- .header-rse .news-meta-wrap{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    background: rgba(42,64,69,.3);
-    padding: 15px 30px 18px;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-}
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap h3, 
- .header-rse .news-meta-wrap h3, 
- .header-rse .news-meta-wrap p {
-    display: block;
-    width: 100%;
-    clear: both;
-    font-size: 24px !important;
-    color: #fff;
-    letter-spacing: -1px;
-    margin-bottom: 15px;
-}
-
- .header-rse .news-meta-wrap p{
-  color: white;
- }
-
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap .left {
-    display: block;
-    width: 50%;
-    padding-left: 2px;
-}
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap .left .magazine-loop-Date {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: #fff;
-    float: left;
-    margin-right: 35px;
-}
-
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap .left .magazine-loop-Date div {
-    color: #fff;
-    font-size: 12px;
-}
-
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap .right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    width: 50%;
-    text-align: right;
-}
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap .right .magazine-loop-reviews {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    color: #fff;
-    margin-right: 35px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
- .features-big-wrap .stm-magazine-loop-data .news-meta-wrap .right .magazine-loop-views {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    color: #fff;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-
 .header-rse{
   position: relative;
 }
@@ -227,7 +65,7 @@
       <div class="col-md-12">
         <div class="mu-call-to-action-area">
           <div class="mu-call-to-action-left">
-            <h1><b>RESPONSABILIDAD SOCIAL EMPRESARIAL</b></h1>
+            <h1 class="white">Responsabilidad Social Empresarial</h1>
             <p class="fs-17">Construyamos juntos la mejor comunidad.</p>
           </div>
         </div>
@@ -240,7 +78,7 @@
 <section class="my-3">
   <div class="container">
     <div class="text-center py-3">
-      <h1 class="text-center text-muted">Programa de Desarrollo de RSE</h1>
+      <h3 class="text-center text-muted">Programa de Desarrollo de RSE</h3>
       {{-- <h3 class="text-center text-muted">Concesionarios 2018</h3> --}}
       <p class="fs-17 text-center text-muted mt-3">La RSE y el desarrollo sustentable para una empresa significan adoptar estrategias de negocio que cumplan con las necesidades de la organización y sus accionistas, al tiempo que gestionan sus impactos positivos y negativos en el ambiente y en la sociedad.
         Las empresas que logren involucrarse en los asuntos y actividades relacionadas con su comunidad serán capaces de demostrar que son un contribuyente responsable con el futuro del desarrollo social.

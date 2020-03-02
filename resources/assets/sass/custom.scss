@@ -817,22 +817,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 #team-tpa .section-title {
     text-align: center;
-    color: #007b5e;
+    color: #383737;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
 
-#team-tpa {
-    background: #eee !important;
-}
-
 #team-tpa .card  p {
     line-height: 2rem;
-    font-size: 14px;
 }
 
 #team-tpa .card {
-    border: none;
     background: #ffffff;
 }
  
@@ -854,19 +848,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     transform: rotateY(180deg);
 }
  
-.mainflip {
-    -webkit-transition: 1s;
-    -webkit-transform-style: preserve-3d;
-    -ms-transition: 1s;
-    -moz-transition: 1s;
-    -moz-transform: perspective(1000px);
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transition: 1s;
-    transform-style: preserve-3d;
-    position: relative;
-}
- 
+
 .frontside {
     position: relative;
     -webkit-transform: rotateY(0deg);
@@ -920,14 +902,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
  
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: $rojo-toyota !important;
-    font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: $rojo-toyota !important;
+    // font-weight: bold;
 }
  
 .frontside .card .card-body img {
     width: 160px;
     height: 160px;
     border-radius: 50%;
+}
+.frontside .card .card-text{
+
+font-size: 16px;
+    color: #535353;
+    font-weight: 500;
+    margin-bottom: 0;
 }
 /*-----./TEAM PLAN DE AHORRO---------------- */
 

@@ -1,13 +1,15 @@
 <template>
 	<div class="container">
-	    <h5 class="section-title h1">CONOCE AL STAFF</h5>
+	    <div class="main-title">
+			<h1>Conocé al Staff</h1>
+		</div>
 		<!-- Ventas -->
-	    <h3 class="section-title">Ventas</h3>
+	    <h3 class="text-muted text-center my-4">Ventas</h3>
 	    <div class="owl-carousel owl-carousel-team-tpa">
 	        <div v-for="item in teamVentas" class="item">
 	            <div class="">
 	            <!-- <div class="image-flip" ontouchstart="this.classList.toggle('hover');"> -->
-	                <div class="mainflip">
+	                <div class="mainflip box-shadow">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
 	                            <div class="card-body text-center">
@@ -20,25 +22,18 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                    <div class="backside">
-	                        <div class="card">
-	                            <div class="card-body text-center mt-4">
-	                            	<!-- <img class="img-responsive" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png">  -->
-	                            </div>
-	                        </div>
-	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	    </div>
 
 	    <!-- Administracion -->
-	    <h3 class="section-title">Administración</h3>
+	    <h3 class="text-muted text-center my-4">Administración</h3>
 	    <div class="owl-carousel owl-carousel-team-tpa">
 	        <div v-for="item in teamAdmin" class="item" v-if="item.perfil != 'Asesor de Ventas'">
 	            <div class="">
 	            <!-- <div class="image-flip" ontouchstart="this.classList.toggle('hover');"> -->
-	                <div class="mainflip">
+	                <div class="mainflip box-shadow">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
 	                            <div class="card-body text-center">
@@ -47,13 +42,6 @@
 	                                <p class="card-text">{{ item.perfil }}</p>
 	                                <!-- <p class="card-text">gabrielrussas@derkayvargas.com.ar</p> -->
 	                                <p class="card-text"><i class="fa fa-phone"></i> {{item.telefono}} <i class="fa fa-map-marker ml-1"></i> {{item.sucursal}}</p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="backside">
-	                        <div class="card">
-	                            <div class="card-body text-center mt-4">
-	                            	<!-- <img class="img-responsive" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png">  -->
 	                            </div>
 	                        </div>
 	                    </div>

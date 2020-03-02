@@ -32,7 +32,7 @@ span.bg-red{
 				<div class="col-md-12">
 					<div class="mu-call-to-action-area d-flex justify-content-space-around">
 						<div class="mu-call-to-action-left">
-							<h1> <b>PLANES ADJUDICADOS</b><br> <small style="color: #d8d8d8">Oportunidades</small></h1>
+							<h1 class="white"> Planes Adjudicados <br> <small style="color: #d8d8d8">Oportunidades</small></h1>
 						</div>
 						<div style="margin-top: 15px">
 							<a href="#" class="mu-btn mu-white-btn" onclick="masDetalles(event)">CONSULTAR <i class="fa fa-long-arrow-right"></i></a>
@@ -47,7 +47,7 @@ span.bg-red{
 		<div class="row py-4">
 			<div class="col-xs-12 d-flex">
 				<!-- TABLA PARA DESCKTOP -->
-				<table id="tabla-adjudicados" class="table table-hover py-1 visible-md visible-lg" style="margin:20px 0px; ">
+				<table id="tabla-adjudicados" class="table table-hover py-1 d-none d-sm-none d-md-block" style="margin:20px 0px; ">
 				    <thead>
 				      <tr style="background-color: #af8e8e">
 				        <th class="text-center" style="color: white; font-weight: bold;">G/O</th>
@@ -69,7 +69,7 @@ span.bg-red{
 					        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$adjudicado->modalidad}}</td>
 					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->avance_cuotas}}</td>
 					        <td class="text-center" style="font-weight: bold;">
-					        	<span class="badge" style="background-color: #f30827; font-size: 17px">$ {{number_format($adjudicado->precio_venta, 2, ',', '.')}}</span>
+					        	<span class="badge badge-success" style=" font-size: 17px;">$ {{number_format($adjudicado->precio_venta, 2, ',', '.')}}</span>
 					        </td>
 					        <td class="text-center" style="font-weight: bold; border-top: none;"></td>
 					        <td class="text-center" style="font-weight: bold;">$ {{number_format($adjudicado->cuota_pura, 2, ',', '.')}}</td>
@@ -77,7 +77,7 @@ span.bg-red{
 					        	{{number_format($adjudicado->avance_en_cuota_pura, 2, ',', '.')}}
 					        </td>
 					        <td class="text-center" style="font-weight: bold;">
-					        	<span class=" badge" style="background-color: #28a745; font-size: 17px">
+					        	<span class=" badge badge-secondary" style=" font-size: 17px">
 					        	{{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}
 					        	</span>
 					        </td>
@@ -87,7 +87,7 @@ span.bg-red{
 			  	</table>
 
 			  	<!-- TABLA PARA CELULARES -->
-			  	<table class="table table-hover py-1 visible-xs visible-sm">
+			  	<table class="table table-hover py-1 d-block d-sm-block d-md-none">
 	  				@foreach($adjudicados as $adjudicado)
 			  		<tr>
 			  			<td style="border-top: 5px solid #ddd;">

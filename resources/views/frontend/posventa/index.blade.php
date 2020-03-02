@@ -190,7 +190,7 @@ TOYOTA RECALL
 		<!---------------------------------------------------------------------
 	    ACCESORIOS 
 	  	----------------------------------------------------------------------->
-		<section>
+		<section class="py-4">
 			<div class="container py-4">
 				<div class="row features">
 					<div class="col-md-6 imagen-container">
@@ -208,68 +208,76 @@ TOYOTA RECALL
 		<!---------------------------------------------------------------------
 	    PROMOS Y DESCUENTOS
 	  	----------------------------------------------------------------------->
-		<section class="py-4">
+		<section class="py-4 my-4">
 			<div class="container">
-		      <div class="row">
-		          @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
-		            <div class="col-md-4 col-sm-12">
-		              <div class="card d-flex flex-column justify-content-between">
-                <div class="container-img" style="background: url('{{$post->imagen_portada}}');"></div> 
-                  <div class="card-body d-flex flex-column justify-content-end">
-                    <div class="product-price">
-                        <a href="{{ route('show_post', $post->slug) }}">
-                          {{$post->titulo}}
-                        </a>
-                      </div> 
-                      <div class="product-description">
-                        <p class="card-text">{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
-                      </div> 
-                      <div class="product-buttons mb-2">
-                        <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
-                    </div>
-                </div>
-              </div>
-		          	</div>
-		          @endforeach
-		      </div>
+				<div class="main-title">
+		          <h1 class="text-dark-2">Oportunidades</h1>
+		          {{-- <p class="text-dark-3">Explorá nuestra amplia gama de vehículos</p> --}}
+		      	</div>
+			      <div class="row">
+			          @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
+			            <div class="col-md-4 col-sm-12">
+			              <div class="card d-flex flex-column justify-content-between box-shadow-2">
+			                <div class="container-img" style="background: url('{{$post->imagen_portada}}');"></div> 
+			                  <div class="card-body d-flex flex-column justify-content-end" style="height: 230px;">
+			                    <h4 class="text-dark-2 mb-2 font-weight-500">
+			                      {{$post->titulo}}
+			                    </h4>
+			                    <div class="card-meta mb-2 text-dark-3">
+			                      <span><i class="far fa-calendar-alt"></i> {{ date('d-m-Y', strtotime($post->created_at)) }}</span>
+			                    </div>
+			                    <div class="overflow-hidden" style="position: relative;">
+			                      <p class="card-text text-dark-3">{{str_limit(strip_tags($post->contenido), 210, '...')}}</p>
+			                      <div class="gradient-buttom-35"></div>
+			                    </div>
+			                    <div class="mb-0">
+			                      <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
+			                    </div>
+			                </div>
+			              </div>
+			          	</div>
+			          @endforeach
+			      </div>
 		    </div>
 		</section>
 
 		<!---------------------------------------------------------------------
 	    SERVICIO AL CLIENTE
 	  	----------------------------------------------------------------------->
-		<section class="py-4" style="height: auto;">
+		<section class="py-4 my-4 bg-1" style="height: auto;">
 			<div class="container">
-				<h2 class="text-center bold">Servicio al Cliente</h2>
-				<h3 class="text-center gray-1">Elegir un TOYOTA es mucho más que elegir un vehículo</h3>
+				<div class="main-title">
+		          <h1 class="text-dark-2">Servicio al Cliente</h1>
+		          <p class="text-dark-3">Elegir un TOYOTA es mucho más que elegir un vehículo</p>
+		      </div>
 				<div class="features row" >
 					<div class="col-md-4 col-sm-12">
-						<h3 class="text-center bold"><i class="fa fa-users" aria-hidden="true"></i> Elegirnos</h3>
+						<h3 class="text-center "><i class="fa fa-users" ></i> Elegirnos</h3>
 						<p style="font-size: 18px; text-align: justify; line-height: 1.7;">
 							En Derka y Vargas le ofrecemos servicios fieles al compromiso y como garantía de calidad en todas nuestras sucursales de Chaco.
 						</p>
 					</div>	
 					<div class="col-md-4 col-sm-12">
-						<h3 class="text-center bold"><i class="fa fa-certificate" aria-hidden="true"></i> Técnicos Especializados</h3>
+						<h3 class="text-center "><i class="fa fa-certificate" ></i> Técnicos Especializados</h3>
 						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Técnicos Especializados. Profesionales constantemente capacitados bajo estándares internacionales.</p>
 					</div>	
 					<div class="col-md-4 col-sm-12">
-						<h3 class="text-center bold"><i class="fa fa-certificate" aria-hidden="true"></i> Repuestos & Accesorios</h3>
+						<h3 class="text-center "><i class="fa fa-certificate" ></i> Repuestos & Accesorios</h3>
 						<p style="font-size: 18px; text-align: justify; line-height: 1.7">Los repuestos originales son los que aseguran el correcto funcionamiento del vehículo. Contar con los mismos es condición necesaria para que la garantía siga vigente, logrando que su Toyota sea siempre un Toyota.</p>
 					</div>	
 				</div>
 				<div class="features row">
 					<div class="col-md-4 col-sm-6 col-xs-6">
-						<h3 class="text-center bold"><i class="fa fa-coffee" aria-hidden="true"></i> Living de Espera</h3>
+						<h3 class="text-center "><i class="fa fa-coffee" ></i> Living de Espera</h3>
 						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Toyota respalda todos sus vehículos con garantía de 3 años o 100.000 km (lo que ocurra primero) y es transferible a nuevos propietarios. Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquier de nuestras sucursales en Chaco donde gustosamente procesarán su solicitud.</p> --}}
 						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Comodidad total durante la espera.</p> --}}
 					</div>	
 					<div class="col-md-4 col-sm-6 col-xs-6">
-						<h3 class="text-center bold"><i class="material-icons">local_car_wash</i> Lavado Incluido</h3>
+						<h3 class="text-center "><i class="material-icons">local_car_wash</i> Lavado Incluido</h3>
 						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">Lavado incluido en el mantenimiento..</p> --}}
 					</div>	
 					<div class="col-md-4 col-sm-12">
-						<h3 class="text-center bold"><i class="fa fa-wrench" aria-hidden="true"></i> Herramientas Especiales</h3>
+						<h3 class="text-center "><i class="fa fa-wrench" ></i> Herramientas Especiales</h3>
 						{{-- <p style="font-size: 18px; text-align: justify; line-height: 1.7">
 							Bahía de trabajo especialmente acondicionada con herramental especial.
 						</p> --}}
@@ -283,45 +291,47 @@ TOYOTA RECALL
 	  	----------------------------------------------------------------------->
 		<section>
 			<div class="container mt-3" id="solicitar-turno-online">
-				<div class="well" style="padding: 15px 35px 15px 35px;">
-					<div class="row">
-					<div class="col-md-7" style="padding: 0px;">
-						<p style="font-size: 20px; font-weight: bold;">La calidad de siempre, más coveniente que nunca.</p>
-						<p style="text-align: justify;">Nadie conoce mejor tu Toyota como Toyota, por eso acercate a cualquiera de nuestras sucursales con servicio de Posventa para contar con el respaldo de un servicio técnico oficial. </p>	
-						<a href="/turno-servicios/create" class="btn btn-toyota my-1">SOLICITAR TURNO ONLINE</a>
-						<a href="#"  class="btn btn-toyota btn-whatsapp my-1" data-toggle="modal" data-target="#modal-turno-wapp">ENVIAR WHATSAPP</a>
-						<!-- Modal -->
-						<div class="modal fade" id="modal-turno-wapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						  <div class="modal-dialog" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">SELECCIONAR SUCURSAL</h4>
-						      </div>
-						      <div class="modal-body">
-						        <div class="list-group">
-					        		@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
-								  		<a href="https://wa.me/{{$sucursal->whatsapp_posventa}}?text=Hola,%20necesito%20un%20turno%20para%20mi%20Toyota" class="list-group-item" target="_blank" onclick="$('#modal-turno-wapp').modal('toggle')" style="font-size: 2.2rem">{{$sucursal->nombre}}</a>
-								  	@endforeach
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-7">
+								<h5>La calidad de siempre, más coveniente que nunca.</h5>
+								<p style="text-align: justify;">Nadie conoce mejor tu Toyota como Toyota, por eso acercate a cualquiera de nuestras sucursales con servicio de Posventa para contar con el respaldo de un servicio técnico oficial. </p>	
+								<a href="/turno-servicios/create" class="btn btn-toyota my-1">SOLICITAR TURNO ONLINE</a>
+								<a href="#"  class="btn btn-toyota btn-whatsapp my-1" data-toggle="modal" data-target="#modal-turno-wapp">ENVIAR WHATSAPP</a>
+								<!-- Modal -->
+								<div class="modal fade" id="modal-turno-wapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span >&times;</span></button>
+								        <h4 class="modal-title" id="myModalLabel">SELECCIONAR SUCURSAL</h4>
+								      </div>
+								      <div class="modal-body">
+								        <div class="list-group">
+							        		@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
+										  		<a href="https://wa.me/{{$sucursal->whatsapp_posventa}}?text=Hola,%20necesito%20un%20turno%20para%20mi%20Toyota" class="list-group-item" target="_blank" onclick="$('#modal-turno-wapp').modal('toggle')" style="font-size: 2.2rem">{{$sucursal->nombre}}</a>
+										  	@endforeach
+										</div>
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+								      </div>
+								    </div>
+								  </div>
 								</div>
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-					</div>
-					<div class="col-md-offset-1 col-md-4 via-whatsapp" style="padding: 0px;">
-						<div style="width: 100%; display: flex; justify-content: space-around; align-items: center;">
-							<div class="text-right">
-								<p style="font-size: 2.3rem; font-weight: bold;">Solicitá un turno vía Whatsapp</p>
 							</div>
-							<div>
-								<img src="{{asset('imagenes/icons/whatsapp-icon.png')}}" style="height: 75px;" alt="Turno por whatsapp Servicio de Posventa Chaco">								
+							<div class="col-md-4 via-whatsapp">
+								<div>
+									<div class="text-center">
+										<p style="font-size: 1.5rem;">Solicitá un turno vía Whatsapp</p>
+									</div>
+									<div class="text-center">
+										<img style="max-height: 150px; width: auto;" src="{{asset('imagenes/icons/whatsapp-icon.png')}}" alt="Turno por whatsapp Servicio de Posventa Chaco">								
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
 					</div>
 				</div>
 			</div>
@@ -369,7 +379,7 @@ TOYOTA RECALL
 			<div class="container">
 				<div class="row">
 					{{-- <div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
-						<h2 class="bold" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
+						<h2 class="" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
 						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>
 						<div style="font-size: 22px">
 							<ul class="list-unstyled list-locations">
@@ -385,7 +395,7 @@ TOYOTA RECALL
 						</div>
 					</div> --}}
 					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
-						<h2 class="bold" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
+						<h2 class="" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
 						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>
 						<div class="contact-details mt-3">
 		                    <div class="media">
