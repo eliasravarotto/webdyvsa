@@ -78,7 +78,7 @@ span.bg-red{
 					        </td>
 					        <td class="text-center" style="font-weight: bold;">
 					        	<span class=" badge badge-secondary" style=" font-size: 17px">
-					        	{{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}
+					        	$ {{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}
 					        	</span>
 					        </td>
 					      </tr>

@@ -43,7 +43,7 @@
                         <td class="text-center">{{ $adjudicado->avance_cuotas }}</td>
                         <td><b>$ {{ number_format($adjudicado->precio_venta, 2, ',', '.') }}</b></td>
                         <td><b>$ {{  number_format($adjudicado->cuota_pura, 2, ',', '.')}}</b></td>
-                        <td> {{ $adjudicado->created_at }}</td>
+                        <td> {{ $adjudicado->updated_at->diffForHumans() }}</td>
                         <td>
                             <form method="POST" action="{{ route('tpa_adjudicados.destroy', $adjudicado->id) }}">
                                 {{ csrf_field() }}
