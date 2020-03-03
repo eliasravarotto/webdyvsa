@@ -76,7 +76,6 @@ class MensajeEmailController extends Controller
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
                 $cc = ['rukyguerra@derkayvargas.com.ar'];
-                $this->enviarRtaAutomatica($mensaje->email);
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             case 'tpa':
@@ -87,7 +86,6 @@ class MensajeEmailController extends Controller
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
                 $cc = ['rukyguerra@derkayvargas.com.ar'];
-                $this->enviarRtaAutomatica($mensaje->email);
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             case 'usados':
@@ -98,7 +96,6 @@ class MensajeEmailController extends Controller
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
                 $cc = ['rukyguerra@derkayvargas.com.ar'];
-                $this->enviarRtaAutomatica($mensaje->email); 
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             default:
@@ -109,7 +106,6 @@ class MensajeEmailController extends Controller
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
                 $cc = ['rukyguerra@derkayvargas.com.ar'];
-                $this->enviarRtaAutomatica($mensaje->email); 
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
         }
@@ -146,13 +142,6 @@ class MensajeEmailController extends Controller
 
         event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
 
-        // Mail::send('emails.consulta', ['consulta' => $mensaje], function ($message) use ($mensaje, $asunto){
-        //     $message->subject($asunto);
-        //     $message->to($mensaje->enviar_a)
-        //             ->cc(['rukyguerra@derkayvargas.com.ar','fabianaaranda@derkayvargas.com.ar']);
-        // });
-        $this->enviarRtaAutomatica($mensaje->email); 
-
         return back()->with('success','Gracias por escribirnos, su mensaje ha sido enviado.');
     }
 
@@ -179,11 +168,4 @@ class MensajeEmailController extends Controller
         //
     }
 
-    public function enviarRtaAutomatica($email)
-    {
-        Mail::send('emails.rta-aut', [], function ($message) use ($email){
-            $message->subject('Recibimos tu mensaje');
-            $message->to($email);
-        });
-    }
 }
