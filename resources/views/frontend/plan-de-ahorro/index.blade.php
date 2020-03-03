@@ -74,7 +74,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-sm-12 col-xs-12 py-4" id="form-contacto">
-						<h3 class="mt-0">Consulta por un plan de ahorro <br>
+						<h3 class="mt-0">Consultá por un plan de ahorro <br>
 						<small class="text-muted">Un asesor se pondrá en contacto con usted a la brevedad.</small></h3>
 						<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
 							{{ csrf_field() }}

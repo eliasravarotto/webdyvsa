@@ -144,23 +144,21 @@
                     <div class="col-sm-12 col-md-6" v-for="unidad in unidades">
                     <div class="car-box">
                         <a :href="'/usados/'+unidad.slug">
-                        <div class="car-thumbnail" :style="unidad.foto ? ('background:url('+unidad.foto+')') : 'background:url(/imagenes/default-img.png)' ">
-                            <!-- <a :href="'/usados/'+unidad.slug" class="car-img"> -->
-                                <div class="item-usado-certificado" v-if="unidad.uct" >
-                                    <img src="/imagenes/logo-uct-new.png" class="w-100">
-                                </div>
-                                <div class="price-box">Ver</div>
-                                <!-- <div class="price-box">$ {{formatearPrecio(unidad.precio)}}</div> -->
-                                <!-- <img v-if="unidad.foto" class="d-block w-100" :src="unidad.foto" alt="car"> -->
-                                <!-- <img v-else class="d-block w-100" src="/imagenes/default-img.png" alt="car"> -->
-                            <!-- </a> -->
-                        </div>
-                    </a>
+                            <div class="car-thumbnail" :style="unidad.foto ? ('background:url('+unidad.foto+')') : 'background:url(/imagenes/default-img.png)' ">
+                                    <div class="item-usado-certificado" v-if="unidad.uct" >
+                                        <img src="/imagenes/logo-uct-new.png" class="w-100">
+                                    </div>
+                                    <div v-if="unidad.estado == 'RESERVADO'" class="text-right">
+                                        <img src="/imagenes/reservado.png">
+                                    </div>
+                                    <div class="price-box">Ver</div>
+                            </div>
+                        </a>
                         <div class="detail">
                             <h1 class="title"><a class="text-danger-2 d-flex justify-content-between" :href="'/usados/'+unidad.slug">{{unidad.marca}} <span>$ {{formatearPrecio(unidad.precio)}}</span></a></h1>
                             <div class="location"><a class="text-dark" style="font-size: 16px" href="car-details.html">{{unidad.modelo}}</a></div>
-                            <ul class="facilities-list clearfix mb-0">
-                                <li class="text-center"><i class=" stm-icon-road"></i> {{unidad.km}} km</li>
+                            <ul class="facilities-list clearfix mb-0 px-0">
+                                <li class="text-center"><i class=" stm-icon-road"></i> {{formatearPrecio(unidad.km)}} km</li>
                                 <li class="text-center"><i class="stm-service-icon-appointment_calendar"></i> {{unidad.anio}}</li>
                                 <li class="text-center"><i class="stm-service-icon-color_type"></i> {{unidad.color}}</li>
                             </ul>
