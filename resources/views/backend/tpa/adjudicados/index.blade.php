@@ -29,7 +29,7 @@
                     <th>Avance Cuotas</th>
                     <th>Precio Venta</th>
                     <th>Cuota Pura</th>
-                    <th>Created at</th>
+                    <th>Updated</th>
                     <th></th>
                   </tr>
                 </thead>

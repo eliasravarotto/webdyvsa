@@ -14,7 +14,7 @@ Vue.component('detalle-modelo', require('./components/frontend/modelos/detalle_m
 Vue.component('index-usados', require('./components/frontend/usados/index.vue'));
 Vue.component('show-usado', require('./components/frontend/usados/show.vue'));
 Vue.component('team-tpa', require('./components/frontend/tpa/team-tpa.vue'));
-Vue.component('slide-ppal', require('./components/frontend/slides/slide-ppal.vue'));
+Vue.component('slide', require('./components/frontend/slides/slide.vue'));
 
 const app = new Vue({
     el: '#app'

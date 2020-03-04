@@ -82,39 +82,47 @@
                       <div class="row">
                          <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="advantages-box">
+                            <a :href="modelo.link_ficha_tecnica" target="_blank">
                                <div class="icon"><i class="stm-icon-application"></i></div>
                                <div class="detail">
                                   <h5>Ficha Técnica</h5>
                                   <p>Descargar ficha técnica.</p>
                                </div>
+                            </a>
                             </div>
                          </div>
                          <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="advantages-box">
-                               <div class="icon"><i class="stm-icon-steering_wheel"></i></div>
-                               <div class="detail">
-                                  <h5>Test Drive</h5>
-                                  <p>Solicitar test drive o prueba de manejo</p>
-                               </div>
+                                <a href="/test-drive/create" target="_blank">
+                                   <div class="icon"><i class="stm-icon-steering_wheel"></i></div>
+                                   <div class="detail">
+                                      <h5>Test Drive</h5>
+                                      <p>Solicitar test drive o prueba de manejo</p>
+                                   </div>
+                                </a>
                             </div>
                          </div>
                          <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="advantages-box">
-                               <div class="icon"><i class="stm-icon-calculator"></i></div>
-                               <div class="detail">
-                                  <h5>Cotizador Online</h5>
-                                  <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam.</p> -->
-                                  <p>Realizá una cotizacion en el momento. </p>
-                               </div>
+                               <a href="https://dyv.e.toyota.com.ar/inventory" target="_blank">
+                                   <div class="icon"><i class="stm-icon-calculator"></i></div>
+                                   <div class="detail">
+                                      <h5>Cotizador Online</h5>
+                                      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam.</p> -->
+                                      <p>Realizá una cotizacion en el momento. </p>
+                                   </div>
+                                </a>
                             </div>
                          </div>
                          <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="advantages-box">
-                               <div class="icon"><i class="stm-icon-gear"></i></div>
-                               <div class="detail">
-                                  <h5>Accesorios</h5>
-                                  <p>Equipá tu Toyota con accesorios originales</p>
-                               </div>
+                                <a href="/posventa-accesorios">
+                                   <div class="icon"><i class="stm-icon-gear"></i></div>
+                                   <div class="detail">
+                                      <h5>Accesorios</h5>
+                                      <p>Equipá tu Toyota con accesorios originales</p>
+                                   </div>
+                                </a>
                             </div>
                          </div>
                       </div>
@@ -333,5 +341,13 @@ background: -ms-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #eded
 background: linear-gradient(to right, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
     height: 100px;
+}
+
+.advantages-box a{
+    color: #212529;
+}
+.advantages-box a:hover{
+    text-decoration: none;
+    color: #212529;
 }
 </style>

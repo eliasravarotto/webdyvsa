@@ -22,6 +22,7 @@ Vue.component('team-tpa', require('./components/frontend/tpa/team-tpa.vue'));
 
 
 
+
 const app = new Vue({
     el: '#app'
 });

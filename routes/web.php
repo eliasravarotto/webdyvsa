@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function(){
 	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 	Route::resource('admin/modelos','ModelosController');
 	Route::resource('admin_slides','SlideController');
+	Route::get('admin_slides_eliminar_item/{id}','SlideController@eliminarItem');
 	Route::resource('tpa_adjudicados','TpaAdjudicadosController');
 	Route::resource('tpa_agrupados','TpaAgrupadosController');
 	Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
@@ -130,7 +131,4 @@ Route::get('/mobility-services-alquiler-de-autos-toyota','FrontController@mobili
 Route::get('/posventa-accesorios','AccesorioController@indexFront')->name('accesorios');
 Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizadorOnlineComoFunciona')->name('cotizador_online_como_funciona');
 
-
-Route::get('/inicio', function(){
-	return view('frontend.home');
-});
+Route::get('/slide_get_data/{id}','SlideController@getDataSlide');

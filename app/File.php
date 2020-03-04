@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class File extends Model
 {
     protected $table = 'files';
+    protected $fillable = ['name', 'extension', 'path', 'public_path'];
 
     public function store( $fileRequest )
     {

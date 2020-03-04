@@ -21,8 +21,9 @@
     SLIDER PRINCIPAL
   ----------------------------------------------------------------------->
   <section>
-    {{-- <slide-ppal></slide-ppal> --}}
+    <slide :data="{slide_id: 18}"></slide>
   </section>
+  
 
   <section class="py-4">
     <div class="latest-offers categories content-area-13 bg-grea-3 py-4">

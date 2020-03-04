@@ -31,6 +31,9 @@
     <!-- Estilos TOAST -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <!--===============================================================================================-->
+    <!-- SKELETOM LOADING -->
+    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+    <!--===============================================================================================-->
     
   @yield('mark-up-facebook')
 

@@ -65,6 +65,12 @@
         </a>
     </li>
     <li>
+        <a href="/admin_slides">
+            <i class="far fa-images"></i>
+            Slides
+        </a>
+    </li>
+    <li>
         <a href="{{url('admin/notificacion-push')}}">
             <i class="far fa-bell"></i>
             Mensajes Push
