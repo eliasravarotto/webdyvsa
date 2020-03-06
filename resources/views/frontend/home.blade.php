@@ -21,7 +21,7 @@
     SLIDER PRINCIPAL
   ----------------------------------------------------------------------->
   <section>
-    <slide :data="{slide_id: 18}"></slide>
+    <slide :data="{slide_id: 1}"></slide>
   </section>
   
 
