@@ -156,64 +156,8 @@
 				<div class="main-title">
 		          <h2 class="text-dark-2">FORMULARIO DE CONTACTO</h2>
 		          <p class="text-dark-3">Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</p>
-		      </div>
-				<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
-					{{ csrf_field() }}
-					<input type="hidden" name="from" value="financiacion">
-					<div class="row">
-						<div class=" col-md-6">
-					    <label class="control-label">Nombre y Apellido</label>
-					    <input type="text" class="form-control cliente" name="cliente" required>
-				  	</div>
-				  	<div class=" col-md-6">
-					    <label class="control-label">Teléfono</label>
-					    <input type="text" class="form-control" name="telefono">
-				  	</div>
-					</div>
-					<div class="row">
-						<div class=" col-md-12">
-							<label class="control-label">Email</label>
-					    <input type="email" class="form-control" name="email">
-						</div>
-					</div>
-					<div class="row">
-						<div class=" col-md-12">
-							<label class="control-label">Sucursal</label>
-							<select class="form-control" name="sucursal">
-								<option value="Sáenz Peña">Sáenz Peña</option>
-								<option value="Resistencia" >Resistencia</option>
-								<option value="Charata" >Charata</option>
-								<option value="Villa Ángela" >Villa Ángela</option>
-							</select>
-						    <span class="text-danger">
-								{{  $errors->first('sucursal') }}
-							</span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<label class="control-label">Mensaje</label>
-					    <textarea name="mensaje" class="form-control" required></textarea>
-						</div>
-					</div>
-					<div class="row py-2">
-						<div class="col-md-12">
-							<div class="g-recaptcha" 
-						           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
-						    </div>
-							@if ($errors->has('g-recaptcha-response'))
-							    <span class="text-danger">
-							        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-							    </span>
-							@endif
-						</div>
-					</div>
-					<div class="row pad-top-20">
-						<div class="col-md-12 text-center">
-							<input type="submit" class="btn btn-lg btn-danger" name="ENVIAR">
-						</div>
-					</div>
-				</form>
+		     	</div>
+				@include('frontend.includes.contact-form', $data=['from' => 'financiacion'])
 			</div>
 			</div>
 		</div>

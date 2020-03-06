@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ImagenGaleriaUsado;
 use App\Usado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class UsadoController extends Controller
 {
@@ -64,9 +65,10 @@ class UsadoController extends Controller
 
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto');
-            $foto_name = $request->file('foto')->getClientOriginalName();
-            $foto->move(public_path().'/imagenes/usados/'.$usado->id.'/',$foto_name);
-            $usado->foto = '/imagenes/usados/'.$usado->id.'/'.$foto_name;
+            $extension = $request->file('foto')->extension();
+            $foto_name = md5(date('Y-m-d H:i:s:u'));
+            $foto->move(public_path().'/imagenes/usados/'.$usado->id.'/',$foto_name.'.'.$extension);
+            $usado->foto = '/imagenes/usados/'.$usado->id.'/'.$foto_name.'.'.$extension;
             $usado->update();
         } 
 
@@ -136,9 +138,10 @@ class UsadoController extends Controller
             }
 
             $foto = $request->file('foto');
-            $foto_name = $request->file('foto')->getClientOriginalName();
-            $foto->move(public_path().'/imagenes/usados/'.$usado->id.'/',$foto_name);
-            $usado->foto = '/imagenes/usados/'.$usado->id.'/'.$foto_name;
+            $foto_name = md5(date('Y-m-d H:i:s:u'));
+            $extension = $request->file('foto')->extension();
+            $foto->move(public_path().'/imagenes/usados/'.$usado->id.'/',$foto_name.'.'.$extension);
+            $usado->foto = '/imagenes/usados/'.$usado->id.'/'.$foto_name.'.'.$extension;
             $usado->update();
 
         }
@@ -195,6 +198,8 @@ class UsadoController extends Controller
                 } else{
                     $unlink = 'Error al eliminar la foto. No se encontró '.$usado->foto;
                 }
+
+                File::deleteDirectory(public_path('/imagenes/usados/'.$usado->id));
                 
             }
 

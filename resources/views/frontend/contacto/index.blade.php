@@ -20,7 +20,7 @@
 				<div class="col-md-12">
 					<div class="mu-call-to-action-area d-flex justify-content-space-around">
 						<div class="mu-call-to-action-left">
-							<h1><b>CONTACTO</b></h1>
+							<h1 class="text-white"><b>CONTACTO</b></h1>
 							<p class="visible-md visible-lg" style="color: #d8d8d8; font-size: 18px">Dejanos un email y estaremos en contacto con usted a la brevedad, o acercate a una de nuestras sucursales.</p>
 						</div>
 					</div>
@@ -40,7 +40,7 @@
 						  <strong><i class="fa fa-check-circle" aria-hidden="true"></i></strong> {{ session('status') }}
 						</div>
 					@endif
-					@include('frontend.contacto.form')
+					@include('frontend.includes.contact-form', $data=['from' => 'contacto'])
 			  		<div style="margin-top: 35px; min-height: 400px;" id="map">
 			  			<iframe class="iframe_map" id="map_suc_1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.7362498019697!2d-60.4403663807801!3d-26.78467607731101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94412d1c14ba7d7b%3A0x3f41780d9ada61c!2sDerka+y+Vargas!5e0!3m2!1ses-419!2sus!4v1550060476101" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			  			<iframe class="iframe_map" id="map_suc_2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.47966577166!2d-58.952102685279336!3d-27.423158221289846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450dbbf2426f97%3A0xf7ab8afd16b0dc53!2sDerka+y+Vargas!5e0!3m2!1ses-419!2sus!4v1550060536621" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

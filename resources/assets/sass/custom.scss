@@ -377,6 +377,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /*------------------------------------------
+  8. MARGIN Y PADDING
+------------------------------------------*/
+.mb-5{
+  margin-bottom: 5rem;
+}
+.mb-6{
+  margin-bottom: 6rem;
+}
+.content-area {
+    padding: 100px 0;
+}
+
+/*------------------------------------------
   9. ANCHOS
 ------------------------------------------*/
 .w-100 {
@@ -3549,6 +3562,45 @@ CARD COMPONENT
     margin-bottom: 5px;
 }
 
+/*------------------------------------------------
+ CONTACT FORM Formulario de contacto
+------------------------------------------------*/
+.btn-md {
+    cursor: pointer;
+    padding: 13px 30px 11px 30px;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+.button-theme {
+    background: #ff214f;
+}
+.button-theme {
+    color: #FFF !important;
+    outline: none;
+}
+/*--Contact info--*/
+.contact-info p {
+    margin: 10px 0 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #535353;
+}
+.contact-info strong {
+    font-weight: 500;
+    font-size: 16px;
+    color: #525252;
+}
+.contact-info i {
+    font-size: 24px;
+    color: #212529;
+}
+
+
+
 /*BOTONES------------------------------------------------*/
 .btn-link-underline{
     color: $dark;
@@ -3561,114 +3613,11 @@ CARD COMPONENT
     border-bottom: 3px solid $rojo-toyota;
 }
 
-.btn {
-  border-radius: 0px !important;
-}
-
-.btn-default {
-    color: $dark;
-    background-color: #fff;
-    border-color: #ccc;
-}
-
-.btn-default:hover {
-    color: $dark;
-    background-color: #e6e5e5;
-    border-color: #adadad;
-}
-
 .btn-round{
   border-radius: 50px !important;
   padding: 6px 20px;
 }
 
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
-
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
-}
-
-.btn-toyota {
-  color: #fff;
-  background-color: #e01e37;
-  border-color: #aa4a24;
-}
-
-.btn-toyota:hover {
-  color: #fff;
-  background-color: #000000;
-  border-color: #78341a;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: inherit;
-  transition: all .5s;
-}
-
-.btn-primary.btn-outline {
-  color: #428bca;
-}
-
-.btn-success.btn-outline {
-  color: #5cb85c;
-}
-
-.btn-info.btn-outline {
-  color: #5bc0de;
-}
-
-.btn-warning.btn-outline {
-  color: #f0ad4e;
-}
-
-.btn-danger.btn-outline {
-  color: #d9534f;
-}
-
-.btn-white.btn-outline {
-  color: #fafafa;
-  border: solid 2px white;
-}
-
-.btn-white.btn-outline:hover {
-  background-color: #ffffff;
-  color: black;
-}
-
-.btn-danger-1 {
-  background-color: $rojo-1;
-}
-
-.btn-primary.btn-outline:hover,
-.btn-success.btn-outline:hover,
-.btn-info.btn-outline:hover,
-.btn-warning.btn-outline:hover,
-.btn-danger.btn-outline:hover {
-  color: #fff;
-}
 
 .btn-outline-whatsapp {
   background-color: white;
@@ -3708,35 +3657,6 @@ CARD COMPONENT
   color: white;
 }
 
-.btn-black {
-  background-color: #000;
-  color: #FFF;
-}
-
-.btn-black:hover {
-    color: #fff;
-    background-color: #b3182c;
-    border-color: #941424;
-}
-
-.btn-rojo-pastel {
-  background-color: #ca3f3f;
-  color: #FFF;
-}
-
-.btn-rojo-pastel:hover {
-  color: #FFF;
-}
-
-.btn-celeste-pastel {
-  background-color: #5a8cb5;
-  color: #fff;
-}
-
-.btn-celeste-pastel:hover {
-  background-color: #5a8cb5;
-  color: #fafafa;
-}
 
 .mu-btn{
     border-radius: 25px;
@@ -4194,4 +4114,11 @@ CARD COMPONENT
   background-image: url('/imagenes/e-toyota/image-header.jpg');
   background-size: cover;
   background-position: center !important;
+}
+
+#google-map {
+    display: inline;
+    float: left;
+    width: 100%;
+    margin-bottom: -7px;
 }

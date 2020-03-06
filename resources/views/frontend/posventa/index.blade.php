@@ -13,20 +13,6 @@
 @stop
 
 <style type="text/css">
-p {
-	font-size: 18px;
-}
-.row-well {
-	background: #f4f4f4;
-	background: -moz-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(7%, #fefefe), color-stop(43%, #f6f6f6), color-stop(100%, #ededed));
-	background: -webkit-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-	background: -o-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-	background: -ms-linear-gradient(left, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-	background: linear-gradient(to right, #ffffff 0%, #fefefe 7%, #f6f6f6 43%, #ededed 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=1);
-	height: 100px;
-}
 
 .list-locations{
 	margin-top: 20px;
@@ -148,11 +134,11 @@ TOYOTA RECALL
 				<div class="title-section">
 					<h1>Elegí el mejor Servicio de Posventa</h1>
 				</div>
-				<p style="font-size: 1.7rem">Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas y dejá tu Toyota en las mejores manos.</p>
+				<p>Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas y dejá tu Toyota en las mejores manos.</p>
 
 				<div class="mt-3">
-					<p style="font-size: 2rem">PRECIOS VIGENTES</p>
-					<p style="font-size: 1.8rem"><b>Desde:</b> 01-02-2020  <b>Hasta:</b> 29-02-2020</p>
+					<p>PRECIOS VIGENTES</p>
+					<p><b>Desde:</b> 01-02-2020  <b>Hasta:</b> 29-02-2020</p>
 				</div>
 				<div class="table-responsive pad-bot-50">          
 					<table class="table table-striped tabla-servicios">
