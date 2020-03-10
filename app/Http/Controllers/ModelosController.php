@@ -50,13 +50,17 @@ class ModelosController extends Controller
     {
         $modelo_name = strtolower($request->nombre);
        
-        $logo_img = $request->file('img_logo');
-        $logo_name = $request->file('img_logo')->getClientOriginalName();
-        $logo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$logo_name);
+        if ($request->hasFile('img_logo')) {
+            $logo_img = $request->file('img_logo');
+            $logo_name = $request->file('img_logo')->getClientOriginalName();
+            $logo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$logo_name);
+        }
 
-        $modelo_img = $request->file('img_modelo');
-        $modelo_name_img = $request->file('img_modelo')->getClientOriginalName();
-        $modelo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$modelo_name_img);
+        if ($request->hasFile('img_logo')) {
+            $modelo_img = $request->file('img_modelo');
+            $modelo_name_img = $request->file('img_modelo')->getClientOriginalName();
+            $modelo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$modelo_name_img);
+        }
 
         $modelo = new Modelo;
         $modelo->nombre = $request->nombre;
@@ -83,7 +87,7 @@ class ModelosController extends Controller
      */
     public function show($id)
     {
-        return 'shoe';
+        return 'show';
     }
 
     /**

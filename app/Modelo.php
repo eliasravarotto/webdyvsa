@@ -2,15 +2,14 @@
 
 namespace App;
 
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 
 class Modelo extends Model
 {
-     /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
+    use HasSlug;
+
     protected $table = 'modelos';
 
 
@@ -32,5 +31,17 @@ class Modelo extends Model
     public function marca()
     {
         return $this->belongsTo('App\Marca');
+    }
+
+    public function servicios()
+    {
+        return $this->hasMany('App\servicio');
+    }
+
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom(['nombre'])
+            ->saveSlugsTo('slug');
     }
 }
