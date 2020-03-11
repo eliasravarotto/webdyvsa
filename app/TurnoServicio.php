@@ -12,10 +12,5 @@ class TurnoServicio extends Model
     public function sucursal()
     {
         return $this->belongsTo('App\Sucursal');
-    }
-
-    public function servicio()
-    {
-        return $this->belongsTo('App\TipoServicio');
-    }
+    }   
 }

@@ -8,7 +8,7 @@ use App\Modelo;
 use App\Post;
 use App\PushSubscriptions;
 use App\Repositories\ModeloRepository;
-use App\TipoServicio;
+use App\Servicio;
 use App\Usado;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -23,11 +23,9 @@ class FrontController extends Controller
     {
         $productos = Modelo::where('activo', 1)->get();
 
-        $slides_img = $this->imagesSlideHome();
-
         $push_cookie = \Request::cookie('quiere_suscribirse', 1, 3600*24);
 
-        return view('frontend.home', compact('productos', 'slides_img', 'push_cookie'));
+        return view('frontend.home', compact('productos', 'push_cookie'));
     }
 
     public function homeMin()
@@ -39,7 +37,7 @@ class FrontController extends Controller
 
     public function posventa()
     {
-        $servicios = TipoServicio::all();
+        $servicios = Servicio::all();
         return view('frontend.posventa.index', compact('servicios'));
     }
 
@@ -72,16 +70,6 @@ class FrontController extends Controller
     public function contacto()
     {
         return view('frontend.contacto.index');
-    }
-
-    private function imagesSlideHome()
-    {
-        $slides_img = [];
-        array_push($slides_img, '/imagenes/home/slide4.png');
-        array_push($slides_img, '/imagenes/home/slide1.png');
-        array_push($slides_img, '/imagenes/home/slide2.png');
-        array_push($slides_img, '/imagenes/home/slide3.png');
-        return $slides_img;
     }
 
     public function thexpe()

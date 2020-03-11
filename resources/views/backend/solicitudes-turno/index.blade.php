@@ -27,7 +27,7 @@
                 {{$solicitud->cliente}}
               @endif
             </td>
-            <td>{{$solicitud->sucursal}}</td>
+            <td>{{$solicitud->sucursal->localidad}}</td>
             <td>
               @if(strlen($solicitud->comentario) > 35)
                 {{ substr($solicitud->comentario, 0, 35) . '...'}}

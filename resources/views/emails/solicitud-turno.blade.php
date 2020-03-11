@@ -32,15 +32,15 @@
           </tr>
           <tr>
             <th>Sucursal</th>
-            <td>{{ $turno->sucursal }}</td>
+            <td>{{ $turno->sucursal->localidad }}</td>
           </tr>
           <tr>
             <th>Unidad</th>
-            <td>Modelo: {{ $turno->modelo }} - Dominio: {{ $turno->dominio }}</td>
+            <td>{{ $turno->modelo }} - Dominio: {{ $turno->dominio }}</td>
           </tr>
           <tr>
-            <th>Tipo de Servicio</th>
-            <td> {{ $turno->tipo_de_servicio }}</td>
+            <th>Servicio</th>
+            <td> {{ $turno->servicio }}</td>
           </tr>
           <tr>
             <th>Comentario</th>

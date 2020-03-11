@@ -37,13 +37,7 @@
     </li>
     @if(Auth::user()->hasRoles([1]))
     <li>
-        <a href="#ul_servicios" data-toggle="collapse">
-            <i class="fas fa-wrench"></i> Servicios
-        </a>
-        <ul id="ul_servicios" class="list-unstyled collapse">
-            <li><a href="{{url('admin/servicios')}}">ABM</a></li>
-            <li><a href="{{route('servicios_lista_precios')}}">Precios</a></li>
-        </ul>
+        <a href="{{route('admin_servicios.index')}}"> <i class="fas fa-wrench"></i> Servicios</a>
     </li>
     <li>
         <a href="{{url('/admin/turnos-servicios')}}"><i class="fa fa-ticket-alt"></i> Turnos</a>

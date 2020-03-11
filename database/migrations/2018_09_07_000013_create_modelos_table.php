@@ -18,6 +18,7 @@ class CreateModelosTable extends Migration
             $table->integer('marca_id')->unsigned()->default(1);
             $table->foreign('marca_id')->references('id')->on('marcas');
             $table->string('nombre');
+            $table->string('slug');
             $table->string('img_logo')->nullable();
             $table->string('img_modelo')->nullable();
             $table->string('slogan')->nullable();

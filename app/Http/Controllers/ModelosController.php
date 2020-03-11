@@ -385,4 +385,13 @@ class ModelosController extends Controller
         }
         return redirect('admin/modelos');
     }
+
+    public function publicarServicio(Request $request, $modelo_id)
+    {
+        // return $request;
+        $modelo = Modelo::findOrFail($modelo_id);
+        $modelo->publicar_servicio = $request->visible;
+        $modelo->update();
+        return;
+    }
 }

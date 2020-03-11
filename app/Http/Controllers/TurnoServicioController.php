@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Events\SeHaSolicitadoUnTurno;
+use App\Http\Requests\ReCaptchataTestFormRequest;
+use App\Modelo;
+use App\Servicio;
 use App\Sucursal;
-use App\TipoServicio;
 use App\TurnoServicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\ReCaptchataTestFormRequest;
 
 class TurnoServicioController extends Controller
 {
@@ -19,23 +20,7 @@ class TurnoServicioController extends Controller
      */
     public function index()
     {
-        $solicitudes = DB::select('SELECT
-                                turno_servicios.id,
-                                turno_servicios.cliente,
-                                turno_servicios.telefono,
-                                turno_servicios.email,
-                                turno_servicios.fecha,
-                                turno_servicios.modelo,
-                                turno_servicios.dominio,
-                                turno_servicios.comentario,
-                                turno_servicios.created_at,
-                                sucursales.nombre AS sucursal,
-                                tipo_servicios.nombre as tipo_de_servicio
-                                FROM
-                                turno_servicios
-                                INNER JOIN sucursales ON turno_servicios.sucursal_id = sucursales.id
-                                INNER JOIN tipo_servicios ON turno_servicios.servicio_id = tipo_servicios.id
-                                ORDER BY turno_servicios.created_at DESC');
+        $solicitudes = TurnoServicio::with('sucursal')->get();
         
         return view('backend.solicitudes-turno.index', compact('solicitudes'));
     }
@@ -45,11 +30,15 @@ class TurnoServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $sucursales = Sucursal::where('tiene_posventa', '=', 1)->get();
-        $servicios = TipoServicio::all();
-        return view('frontend.posventa.form-turno-servicio', compact('sucursales','servicios'));
+
+        $servicios = Servicio::groupBy('nombre')->get();
+
+        $modelos = Modelo::where('activo', 1)->orderBy('orden', 'ASC')->get();
+
+        return view('frontend.posventa.form-turno-servicio', compact('sucursales','servicios', 'modelos', 'request'));
     }
 
     /**
@@ -60,6 +49,7 @@ class TurnoServicioController extends Controller
      */
     public function store(ReCaptchataTestFormRequest $request)
     {
+        // return $request;
             $turno = new TurnoServicio;
             $turno->cliente = $request->cliente;
             $turno->telefono = $request->telefono;
@@ -67,7 +57,7 @@ class TurnoServicioController extends Controller
             $turno->fecha = $request->fecha;
             $turno->modelo = $request->modelo;
             $turno->dominio = $request->dominio;
-            $turno->servicio_id = $request->tipo_de_servicio;
+            $turno->servicio = $request->servicio;
             $turno->sucursal_id = $request->sucursal;
             $turno->comentario = $request->comentario;
 
@@ -88,7 +78,7 @@ class TurnoServicioController extends Controller
             $turno->enviar_a = serialize($receptopres);
             $turno->save();
 
-            //event( new SeHaSolicitadoUnTurno($turno));
+            event( new SeHaSolicitadoUnTurno($turno));
 
             if($request->is('api/*')){
                 return response()->json(['mensaje' => 'Turno solicitado.',

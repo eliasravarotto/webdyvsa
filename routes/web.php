@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 	Route::resource('admin/modelos','ModelosController');
+	Route::post('/admin/modelos/publicar_servicio/{modelo_id}','ModelosController@publicarServicio');
 	Route::resource('admin_slides','SlideController');
 	Route::get('admin_slides_eliminar_item/{id}','SlideController@eliminarItem');
 	Route::resource('tpa_adjudicados','TpaAdjudicadosController');
@@ -50,8 +51,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/modelo/borrar_caracterisica_modelo/{id}','ModelosController@borrarCaracteristica')->name('borrar_caracterisica_modelo');
 	Route::get('admin/usados/actualizar-visible/{id}','UsadoController@actualizarVisible');
 	Route::resource('admin/usados','UsadoController');
-	Route::resource('admin/servicios','TipoServicioController');
-	Route::get('admin/servicios-lista-de-precios','TipoServicioController@listaDePrecios')->name('servicios_lista_precios');
+	Route::resource('admin_servicios','ServicioController');
+	Route::get('admin_servicios/{servicio_id}/eliminar','ServicioController@eliminarServicio')->name('admin_servicios_eliminar');
 	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
 	Route::get('admin/notificacion-push','BackendController@createPushNotication')->name('create_push_notification');
 	Route::post('admin/notificacion-push','BackendController@sendPushNotication')->name('send_push_notification');

@@ -23,6 +23,7 @@ use App\Usado;
 	11. Plan de Ahorro - getAgrupados
 	12. Plan de Ahorro - getAdjudicados
 	13. Usados de Interés - getUsadosDeInteres
+	14. Servicios - getModelosWithServices
 */
 
 class Helper
@@ -174,4 +175,12 @@ class Helper
 	{
 		return Usado::where('orden', '<>', null)->orderBy('orden', 'DESC')->first()->orden;
 	}
+
+	public static function getModelosWithServices()
+	{
+		$modelos = Modelo::has('servicios', '>', 0)->get();
+
+		return $modelos;
+	}
+
 }

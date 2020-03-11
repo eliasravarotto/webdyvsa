@@ -35,7 +35,7 @@
           </tr>
           <tr>
             <th>Tipo de Servicio</th>
-            <td> {{ $solicitud->servicio->nombre }}</td>
+            <td> {{ $solicitud->servicio }}</td>
           </tr>
           <tr>
             <th>Comentario</th>

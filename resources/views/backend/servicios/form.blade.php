@@ -1,73 +1,34 @@
 <div class="row">
-	<div class="col-sm-4">
+	<div class="col-sm-12 col-md-3">
+		<label class="control-label mb-1">Modelo</label> 
+		<select name="modelo_id" class="form-control">
+			@foreach($modelos as $modelo)
+				<option value="{{$modelo->id}}" @if($servicio->modelo_id == $modelo->id) selected @endif>{{$modelo->nombre}}</option>
+			@endforeach
+		</select>
+	</div>
+	<div class="col-sm-12 col-md-3">
 		<label class="control-label mb-1">Nombre del Servicio</label> 
 		<input name="nombre" type="text" value="{{$servicio->nombre}}" class="form-control">
-	</div> 
-</div>
-<div class="row">
-	<div class="col-sm-2">
-		<label class="control-label">Etios</label>
-		<div class="input-group">
-	          <div class="input-group-prepend">
-			    <span class="input-group-text">$</span>
-			  </div>
-			<input name="etios" placeholder="Precio" type="text" value="{{$servicio->etios}}" class="form-control">
+	</div>
+	<div class="col-sm-12 col-md-3">
+		<label class="control-label mb-1">Precio</label> 
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text">$</span>
+			</div>
+			<input name="precio" type="text" value="{{$servicio->precio}}" class="form-control">
 		</div>
-	</div> 
-	<div class="col col-sm-2">
-		<label class="control-label mb-1">Corolla</label>
-		<div class="input-group">
-	        <div class="input-group-prepend">
-			    <span class="input-group-text">$</span>
-			  </div> 
-			<input name="corolla" placeholder="Precio" type="text" value="{{$servicio->corolla}}" class="form-control">
+	</div>
+	<div class="col-sm-12 col-md-3 d-flex">
+		<div class="input-group mb-3 d-flex justify-content-around align-items-end">
+			<button type="submit" name="add_another" value="add_another" class="btn btn-primary pull-right">Guardar y Continuar</button>
+			<button type="submit" class="btn btn-success pull-right" style="margin-right: 5px;">Guardar</button>
 		</div> 
 	</div> 
-	<div class="col col-sm-2">
-		<label class="control-label mb-1">Hilux</label>
-		<div class="input-group">
-	        <div class="input-group-prepend">
-			    <span class="input-group-text">$</span>
-			  </div> 
-			<input name="hilux" placeholder="Precio" type="text" value="{{$servicio->hilux}}" class="form-control">
-		</div> 
-	</div> 
-	<div class="col col-sm-2">
-		<label class="control-label mb-1">Hilux/Sw4 4x4</label> 
-		<div class="input-group">
-	        <div class="input-group-prepend">
-			    <span class="input-group-text">$</span>
-			  </div>
-			<input name="hilux_sw4_4x4" placeholder="Precio" type="text" value="{{$servicio->hilux_sw4_4x4}}" class="form-control">
-      	</div>
-	</div> 
-	<div class="col col-sm-2">
-		<label class="control-label mb-1">Yaris</label> 
-		<div class="input-group">
-	        <div class="input-group-prepend">
-			    <span class="input-group-text">$</span>
-			  </div>
-			<input name="yaris" placeholder="Precio" type="text" value="{{$servicio->yaris}}" class="form-control">
-      	</div>
-	</div>
-	<div class="col col-sm-2">
-		<label class="control-label mb-1">Prius</label> 
-		<div class="input-group">
-	        <div class="input-group-prepend">
-			    <span class="input-group-text">$</span>
-			  </div>
-			<input name="prius" placeholder="Precio" type="text" value="{{$servicio->prius}}" class="form-control">
-      	</div>
-	</div>
 </div>
-<div class="row">
-	<div class="col col-sm-2">
-		<label class="control-label mb-1">Innova</label> 
-		<div class="input-group">
-	        <div class="input-group-prepend">
-			    <span class="input-group-text">$</span>
-			  </div>
-			<input name="innova" placeholder="Precio" type="text" value="{{$servicio->innova}}" class="form-control">
-      	</div>
-	</div>   
+<div class="row my-3">
+	<div class="col-md-12">
+		<a href="{{route('admin_servicios.index')}}" class="btn btn-secondary pull-left">Cancelar</a>
+	</div>
 </div>

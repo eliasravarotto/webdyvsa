@@ -130,46 +130,37 @@ TOYOTA RECALL
 	    PRECIOS SERVICIOS
 	  	----------------------------------------------------------------------->
 		<section>
-			<div class="container ">
-				<div class="title-section">
-					<h1>Elegí el mejor Servicio de Posventa</h1>
-				</div>
-				<p>Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas y dejá tu Toyota en las mejores manos.</p>
-
-				<div class="mt-3">
-					<p>PRECIOS VIGENTES</p>
-					<p><b>Desde:</b> 01-02-2020  <b>Hasta:</b> 29-02-2020</p>
-				</div>
-				<div class="table-responsive pad-bot-50">          
-					<table class="table table-striped tabla-servicios">
-						<thead>
-						  <tr>
-						    <th style="text-align: center; font-size: 20px;"></th>
-						    <th style="text-align: center; font-size: 20px;">COROLLA</th>
-						    <th style="text-align: center; font-size: 20px;">ETIOS</th>
-						    {{-- <th style="text-align: center; font-size: 20px;">YARIS</th>
-						    <th style="text-align: center; font-size: 20px;">INNOVA</th>
-						    <th style="text-align: center; font-size: 20px;">PRIUS</th> --}}
-						    <th style="text-align: center; font-size: 20px;">HILUX 4x2</th>
-						    <th style="text-align: center; font-size: 20px;">Hilux/SW4 4x4</th>
-						  </tr>
-						</thead>
-						<tbody>
-							@foreach($servicios as $servicio)
-							<tr>
-								<td style="text-align: center;font-size: 20px;"><b>{{ $servicio->nombre }}</b></td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->corolla }}</td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->etios }}</td>
-								{{-- <td style="text-align: center;font-size: 20px;">$ {{ $servicio->yaris }}</td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->innova }}</td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->prius }}</td> --}}
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux }}</td>
-								<td style="text-align: center;font-size: 20px;">$ {{ $servicio->hilux_sw4_4x4 }}</td>
-							</tr>
-						  	@endforeach
-						</tbody>
-					</table>
-	  			</div>
+			<div class="container">
+			<div class="main-title text-center">
+				<h1>Precios Vigentes</h1>
+				<p>Para que tu vehículo tenga la mayor eficiencia, vení al Servicio de Posventa Derka y Vargas <span><br> y dejá tu Toyota en las mejores manos.</span></p>
+			</div>
+			<div class="owl-carousel owl-carousel-servicios owl-theme py-2">
+			@foreach(\App\Helpers\Helper::getModelosWithServices() as $modelo)
+					<div class="pricing-1 popular item mx-2">
+						<img class="img-fluid" src="{{$modelo->img_modelo}}">
+						<div class="title">{{$modelo->nombre}}</div>
+						<div class="content">
+							<table class="table table-striped">
+								 <tbody>
+									@foreach( $modelo->servicios as $s )
+									<tr>
+ 								      <td>{{$s->nombre}}</td>
+								      <td>$ {{$s->precio}}</td>
+								    </tr>
+									@endforeach
+								</tbody>
+							</table>
+						</div>
+						{{-- <div class="price-for-user">
+							<div class="price"><sup>$</sup><span class="dolar">35</span><small class="month">per month</small></div>
+						</div> --}}
+						<div class="button mt-3">
+							<a href="{{route('turno_servicio_create')}}?modelo={{$modelo->nombre}}" class="btn button-theme pricing-btn">Solicitar Turno</a>
+						</div>
+					</div>
+			@endforeach
+			</div>
 			</div>
 		</section>
 
