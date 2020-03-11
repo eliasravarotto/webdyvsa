@@ -35,7 +35,7 @@ class Modelo extends Model
 
     public function servicios()
     {
-        return $this->hasMany('App\servicio');
+        return $this->hasMany('App\Servicio');
     }
 
     public function getSlugOptions() : SlugOptions
