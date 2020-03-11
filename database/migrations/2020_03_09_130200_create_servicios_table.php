@@ -17,7 +17,7 @@ class CreateServiciosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->float('precio');
-            $table->int('modelo_id');
+            $table->integer('modelo_id');
             $table->timestamps();
         });
     }
