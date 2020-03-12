@@ -21,78 +21,12 @@
 	padding-bottom: 15px;
 }
 
-.titleContainer {
-    background-color: #0E436E;
-    color: #fff;
-    text-align: center;
-    padding: 0px;
-}
-
 #garantia p{
 	font-size: 16px;
 }
 
 #garantia ul li{
 	font-size: 16px;
-}
-
-.arrow_box{
-	border-bottom: 4px solid #51a8b1 !important;
-}
-.arrow_box:before {
-	border-color: rgba(194,225,245,0) !important;
-    border-top-color: #51a8b1 !important;
-}
-
-#modal-turno-wapp .modal-header{
-	background-color: #ed3237;
-	color: #fafafa;
-}
-#modal-turno-wapp .modal-header .close{
-	opacity: 0.8;
-}
-#modal-turno-wapp .modal-header .close span{
-	color: #fafafa;
-}
-
-.tabla-servicios th {
-	background-color: #ee3237;
-	color: #f1eeea;
-}
-
-/*--------------------------------------------------------------
-TOYOTA RECALL
---------------------------------------------------------------*/
-.toyota-recall p {
-	color: #f7f7f7;
-}
-
-.toyota-recall h1 {
-	color: white;
-}
-
-.toyota-recall a {
-	color: white;
-}
-
-.toyota-recall .row{
-	background:url({{asset('imagenes/posventa/recallbanner.jpg')}});
-	background-size: cover;
-	background-position: center;
-	padding: 10rem 3rem;
-}
-
-@media(max-width:992px){
-	.toyota-recall, .toyota-recall .row{
-		padding:0px !important;
-	}
-	.toyota-recall .col-xs-12{
-		padding: 3rem;
-	}
-}
-.py-6{
-	padding-bottom: 6rem;
-	padding-top: 6rem;
 }
 
 </style>
@@ -102,8 +36,8 @@ TOYOTA RECALL
 		<!---------------------------------------------------------------------
 	    BANNER
 	  	----------------------------------------------------------------------->
-		<section>
-			<div class="banner-ppal-posventa visible-md visible-lg" style="width: 100%">
+		<section class="mb-4">
+			<div class="banner-ppal-posventa d-none d-md-block" style="width: 100%">
 				<img src="/imagenes/posventa/slide.jpg" class="img-fluid" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco">
 			</div>
 		</section>
@@ -113,14 +47,14 @@ TOYOTA RECALL
 	  	----------------------------------------------------------------------->
 		<section>
 			<div class="container py-6 toyota-recall">
-				<div class="row">
-					<div class="col-md-7 col-xs-12 vcenter">
+				<div class="row d-flex justify-content-center align-items-center">
+					<div class="col-md-7 col-xs-12">
 	                    <p class="subtitle text-center">Recall</p>
 	                    <h1 class="text-center">Llamado a Revisión Técnica</h1>
 	                    <p class="text-center">Ahora podés averiguar si tu vehículo está alcanzado a una campaña<br> especial de servicio vigente, ingresando el número de Chasis o Patente.</p>
 	                </div>
-					<div class="col-md-4 col-xs-12 vcenter text-center">
-							<a href="https://www.toyota.com.ar/servicios-y-accesorios/recall" target="_blank" class="btn btn-outline btn-default">CONSULTAR</a>
+					<div class="col-md-4 col-xs-12 d-flex justify-content-center">
+							<a href="https://www.toyota.com.ar/servicios-y-accesorios/recall" target="_blank" class="btn btn-outline-light">CONSULTAR</a>
 	                </div>
 				</div>
 			</div>
@@ -129,7 +63,7 @@ TOYOTA RECALL
 		<!---------------------------------------------------------------------
 	    PRECIOS SERVICIOS
 	  	----------------------------------------------------------------------->
-		<section>
+		<section class="py-6">
 			<div class="container">
 			<div class="main-title text-center">
 				<h1>Precios Vigentes</h1>
@@ -141,12 +75,12 @@ TOYOTA RECALL
 						<img class="img-fluid" src="{{$modelo->img_modelo}}">
 						<div class="title">{{$modelo->nombre}}</div>
 						<div class="content">
-							<table class="table table-striped">
+							<table class="table table-striped table-pricing">
 								 <tbody>
 									@foreach( $modelo->servicios as $s )
 									<tr>
  								      <td>{{$s->nombre}}</td>
-								      <td>$ {{$s->precio}}</td>
+								      <td class="text-right font-weight-bold">$ <span class="price">{{number_format($s->precio, 0, ',', '.')}}</span></td>
 								    </tr>
 									@endforeach
 								</tbody>
@@ -221,7 +155,7 @@ TOYOTA RECALL
 		<!---------------------------------------------------------------------
 	    SERVICIO AL CLIENTE
 	  	----------------------------------------------------------------------->
-		<section class="py-4 my-4 bg-1" style="height: auto;">
+		<section class="py-6 my-4 bg-1" style="height: auto;">
 			<div class="container">
 				<div class="main-title">
 		          <h1 class="text-dark-2">Servicio al Cliente</h1>
@@ -261,38 +195,45 @@ TOYOTA RECALL
 					</div>	
 				</div>
 			</div>
-		</section>
-
-		<!---------------------------------------------------------------------
-	    SOLICITAR TURNO
-	  	----------------------------------------------------------------------->
-		<section>
-			<div class="container mt-3" id="solicitar-turno-online">
-				<div class="card">
+			<!---------------------------------------------------------------------
+		    SOLICITAR TURNO
+		  	----------------------------------------------------------------------->
+			<div class="container mt-4" id="solicitar-turno-online">
+				<div class="card" style="background-color: #e8e8e8">
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-7">
 								<h5>La calidad de siempre, más coveniente que nunca.</h5>
 								<p style="text-align: justify;">Nadie conoce mejor tu Toyota como Toyota, por eso acercate a cualquiera de nuestras sucursales con servicio de Posventa para contar con el respaldo de un servicio técnico oficial. </p>	
-								<a href="/turno-servicios/create" class="btn btn-toyota my-1">SOLICITAR TURNO ONLINE</a>
+								<a href="/turno-servicios/create" class="btn btn-dark my-1">SOLICITAR TURNO ONLINE</a>
 								<a href="#"  class="btn btn-toyota btn-whatsapp my-1" data-toggle="modal" data-target="#modal-turno-wapp">ENVIAR WHATSAPP</a>
 								<!-- Modal -->
 								<div class="modal fade" id="modal-turno-wapp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 								  <div class="modal-dialog" role="document">
 								    <div class="modal-content">
-								      <div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span >&times;</span></button>
-								        <h4 class="modal-title" id="myModalLabel">SELECCIONAR SUCURSAL</h4>
+								      <div class="modal-header d-flex justify-content-between">
+								      	<div>
+								      		<h3>Seleccionar Sucursal</h3>
+								      		<p>Seleccioná la sucursal donde querés realizar el servicio</p>
+								      	</div>
+								        <button  type="button" data-dismiss="modal" aria-label="Close">
+					                        <span></span>
+					                        <span></span>
+					                        <span></span>
+					                    </button>
 								      </div>
 								      <div class="modal-body">
-								        <div class="list-group">
+								      	<ul class="list-group list-group-flush">
 							        		@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
-										  		<a href="https://wa.me/{{$sucursal->whatsapp_posventa}}?text=Hola,%20necesito%20un%20turno%20para%20mi%20Toyota" class="list-group-item" target="_blank" onclick="$('#modal-turno-wapp').modal('toggle')" style="font-size: 2.2rem">{{$sucursal->nombre}}</a>
+										  		<li class="list-group-item">
+										  			<a class="btn" href="https://wa.me/{{$sucursal->whatsapp_posventa}}?text=Hola,%20necesito%20un%20turno%20para%20mi%20Toyota" class="list-group-item" target="_blank" onclick="$('#modal-turno-wapp').modal('toggle')">
+										  				<h2 class="text-dark-3">{{$sucursal->nombre}}</h2></a>
+										  			</li>
 										  	@endforeach
-										</div>
+										  </ul>
 								      </div>
 								      <div class="modal-footer">
-								        <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+								        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">CERRAR</button>
 								      </div>
 								    </div>
 								  </div>
@@ -314,14 +255,16 @@ TOYOTA RECALL
 			</div>
 		</section>
 
+
 		<!---------------------------------------------------------------------
 	    GARANTIA
 	  	----------------------------------------------------------------------->
-		<section id="garantia">
+		<section id="garantia" class="py-5">
 			<div class="container">
-				<div class="title-section">
-			  		<h1>GARANTÍA</h1>
-				</div>
+				<div class="main-title">
+		          <h1 class="text-dark-2">Garantía</h1>
+		          <p class="text-dark-3">Somos los primeros en confiar en nuestros productos, por eso ofrecemos la mejor garantía.</p>
+		      	</div>
 				<div class="row flex" style="flex-wrap: wrap;">
 					<div class="col-md-3 col-sm-12 visible-md visible-lg">
 						<img class="img-fluid" src="https://www.toyota.com.ar/storage/contents/4QUWQizPkX.jpg" alt="Garantía 5 años Toyota. Garantia Derka y Vargas Chaco">
@@ -331,46 +274,26 @@ TOYOTA RECALL
 					</div>
 				</div>
 				
-				<h3>ADEMÁS</h3>
+				<h4>Además</h4>
 				<ul>
 					<li><p>Todos los vehículos Toyota 0 (cero) kilometro vendidos y entregados antes del 1 de Septiembre de 2018, continúan gozando de la ya conocida Garantía que lo ampara por 3 años o 100.000 Km (lo que ocurra primero) y comienza con la fecha de entrega de su vehículo.</p></li>
 					<li><p>La garantía Toyota es transferible a los nuevos propietarios.</p></li>
 					<li><p>Para cualquier reparación cubierta por Garantía, debe dirigirse a cualquiera de nuestros concesionarios autorizados Toyota, los cuales gustosamente procesarán su solicitud.</p></li>
 				</ul>
 
-				<h3>NO COMERCIALIZAMOS GARANTÍA EXTENDIDA:</h3>
-				<p>Atento a las recientes consultas recibidas, nos vemos en la obligación de aclarar que Toyota Argentina S.A., (en adelante Toyota), no vende ni oferta, ya sea en forma directa o a través de la red de concesionarios oficiales, y por tanto no hace publicaciones en la web, ni remite mensajes de texto, ni contacta directamente a los usuarios, servicios de garantía extendida. Por todo ello, hacemos propicia la oportunidad para recordarles que contamos con una red de concesionarios oficiales en todo el país, donde encontraran profesionales capacitados para informar acerca de la Garantía Limitada por Vehículo Nuevo Toyota. Ingresa al buscador de concesionarios y conoce el más cercano a tu domicilio: http://www.toyota.com.ar/find-a-dealer/index.html. Ante cualquier duda sugerimos comunicarse con nuestro Centro de Atención al Cliente al: 0800-888-8696 (Lunes a Viernes de 9:00 a 13:00 hs. y de 14:00 a 17:00 hs.).</p>
-				
-				
-				<div class="text-center visible-xs visible-sm">
-					<img class="img-fluid" style="display: inline-block;" src="https://www.toyota.com.ar/usuarios/garantia/images/logoGarantia.png">
-				</div>
+				<h4>No comercializamos garantía extendida</h4>
+				<p>Atento a las recientes consultas recibidas, nos vemos en la obligación de aclarar que Toyota Argentina S.A., (en adelante Toyota), no vende ni oferta, ya sea en forma directa o a través de la red de concesionarios oficiales, y por tanto no hace publicaciones en la web, ni remite mensajes de texto, ni contacta directamente a los usuarios, servicios de garantía extendida. Por todo ello, hacemos propicia la oportunidad para recordarles que contamos con una red de concesionarios oficiales en todo el país, donde encontraran profesionales capacitados para informar acerca de la Garantía Limitada por Vehículo Nuevo Toyota. Ingresa al buscador de concesionarios y conoce el más cercano a tu domicilio: http://www.toyota.com.ar/find-a-dealer/index.html. </p>
+				<p>Ante cualquier duda sugerimos comunicarse con nuestro Centro de Atención al Cliente al: <span class="font-weight-bold">0800-888-8696</span> (Lunes a Viernes de 9:00 a 13:00 hs. y de 14:00 a 17:00 hs.).</p>
 			</div>
 		</section>
 
-		<section class="pad-bot-50 pad-top-50">
+		<section class="my-3">
 			<img src="/imagenes/posventa/mantenimiento-express.png" class="img-fluid" alt="mantenimiento express toyota Chaco">
 		</section>
 
-		<section class="pad-top-50 pad-bot-50">
+		<section class="py-4">
 			<div class="container">
 				<div class="row">
-					{{-- <div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
-						<h2 class="" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
-						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>
-						<div style="font-size: 22px">
-							<ul class="list-unstyled list-locations">
-								@foreach(\App\Helpers\Helper::getSucursalesPosventa() as $sucursal)
-									<li>
-										<a href="#" onclick="mostrarMapa(event, {{$sucursal->id}})"><img src="/imagenes/icons/map-marker.png" style="width: 22px; margin-bottom: 4px;">{{$sucursal->nombre}}</a>
-										<div style="font-size: 15px; padding-left: 22px;">{{ $sucursal->direccion }}</div>
-										<div style="font-size: 15px; padding-left: 22px;"><i class="fa fa-phone-square"></i> {{ $sucursal->telefono }}</div>
-										<div style="font-size: 15px; padding-left: 22px;"><i class="fa fa-whatsapp"></i> {{ $sucursal->whatsapp_posventa }}</div>
-									</li>
-								@endforeach
-							</ul>
-						</div>
-					</div> --}}
 					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
 						<h2 class="" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
 						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>

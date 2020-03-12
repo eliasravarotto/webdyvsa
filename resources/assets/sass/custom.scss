@@ -65,6 +65,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #383737;
 }
 
+a:hover{
+  text-underline: none !important;
+}
+
 .yellow {
   background: #ffa000;
 }
@@ -388,6 +392,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .mb-6{
   margin-bottom: 6rem;
+}
+.py-6{
+  padding-bottom: 6rem;
+  padding-top: 6rem;
 }
 .content-area {
     padding: 100px 0;
@@ -4002,13 +4010,13 @@ CARD COMPONENT
         height: auto !important;
         min-height: 100% !important;
         border-radius: 0 !important;
-        background-color: #ececec !important;
         border: none;
     }
 
     .modal-header {
         // border-bottom: 1px solid #9ea2a2 !important;
         border: none;
+        background-color:#f7f7f7;
     }
     .modal-header button{
       position: relative;
@@ -4147,6 +4155,9 @@ CARD COMPONENT
 .pricing-1 .content table{
   margin-bottom: 0px;
 }
+.pricing-1 .content .table-pricing td .price{
+  color: #ff214f; font-size: 19px;
+}
 .pricing-1 .price-for-user {
     padding: 25px 0;
     margin-bottom: 30px;
@@ -4156,4 +4167,36 @@ CARD COMPONENT
 }
 .pricing-1 {
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+TOYOTA RECALL
+--------------------------------------------------------------*/
+.toyota-recall p {
+  color: #f7f7f7;
+}
+
+.toyota-recall h1 {
+  color: white;
+}
+
+.toyota-recall a {
+  color: white;
+}
+
+.toyota-recall .row{
+  background:url('/imagenes/posventa/recallbanner.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 3rem;
+  border-radius: 5px;
+}
+
+@media(max-width:992px){
+  .toyota-recall, .toyota-recall .row{
+    padding:0px !important;
+  }
+  .toyota-recall .col-xs-12{
+    padding: 3rem;
+  }
 }
