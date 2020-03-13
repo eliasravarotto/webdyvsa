@@ -14,6 +14,9 @@
 
 @section('styles_sheets')
   <style type="text/css">
+    p{
+      line-height: 2;
+    }
 .header-rse{
   position: relative;
 }
@@ -33,24 +36,11 @@
 
 .owl-carousel .item p{
     color: black;
-    font-size: 1.5rem;
     font-weight: 400;
 }
 
-.carousel-caption p{
-  font-size: 1rem;
-  text-align: justify;
-}
 
-.p-absolute{
-  position: absolute;
-  background-color: darkcyan;
-  bottom: 25%
-}
 
-#mu-call-to-action{
-  background: url('imagenes/rse/bg-gestion-ambiental.jpg');
-}
 </style>
 
 
@@ -59,7 +49,7 @@
 @section('content')
 
 <section>
-  <div id="mu-call-to-action">
+  <div id="mu-call-to-action" class="mu-call-to-action-rse">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -77,97 +67,144 @@
 
 <section class="my-3">
   <div class="container">
-    <div class="text-center py-3">
-      <h3 class="text-center text-muted">Programa de Desarrollo de RSE</h3>
-      {{-- <h3 class="text-center text-muted">Concesionarios 2018</h3> --}}
-      <p class="fs-17 text-center text-muted mt-3">La RSE y el desarrollo sustentable para una empresa significan adoptar estrategias de negocio que cumplan con las necesidades de la organización y sus accionistas, al tiempo que gestionan sus impactos positivos y negativos en el ambiente y en la sociedad.
-        Las empresas que logren involucrarse en los asuntos y actividades relacionadas con su comunidad serán capaces de demostrar que son un contribuyente responsable con el futuro del desarrollo social.
-      </p>
-    </div>
-    <div class="text-center py-3">
-      <h3 class="text-muted mt-3">
-        El Programa se basa en tres pilares fundamentales
-      </h3>
-      <div class="row my-3">
-        <div class="col-sm-12 col-md-4 text-center">EDUCACIÓN</div>
-        <div class="col-sm-12 col-md-4 text-center">MEDIO AMBIENTE</div>
-        <div class="col-sm-12 col-md-4 text-center">SEGURIDAD</div>
+    <div class="row">
+      <div class="col-md-1 col-sm-12"></div>
+      <div class="col-md-10 col-sm-12">
+          <div class="row">
+            {{-- CONTENT --}}
+            <div class="col">
+                <!-- Programa RSE -->
+                <div>
+                  <div class="text-center py-4">
+                    <h3 class="text-left text-dark-3 mb-4">El Programa de Desarrollo de RSE se basa en tres pilares fundamentales: Ambiente, Seguridad vial y Educación para la empleabilidad</h3>
+                    <p class="fs-17 text-left text-muted">La RSE y el desarrollo sustentable para una empresa significan adoptar estrategias de negocio que cumplan con las necesidades de la organización y sus accionistas, al tiempo que gestionan sus impactos positivos y negativos en el ambiente y en la sociedad.
+                      Las empresas que logren involucrarse en los asuntos y actividades relacionadas con su comunidad serán capaces de demostrar que son un contribuyente responsable con el futuro del desarrollo social.
+                    </p>
+                  </div>
+                  <div class="text-center py-3">
+                    <a href="https://www.toyota.com.ar/acerca-de-toyota/ciudadania-corporativa" class="btn btn-dark btn-round" target="_blank">Leer más</a>
+                  </div>
+                </div>
+
+                <!-- RSE Concesionarios 2018 -->
+                <div class="mt-5">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <img class="img-fluid border-rad-7" src="{{asset('imagenes/rse/imagen-firmas.png')}}">
+                      <p class="text-muted mx-2 font-italic">Zárate, Buenos Aires - Junio 2018</p>
+                      <div>
+                        <p>El futuro de las empresas en los próximos años exige abordar el desafío de interrelacionar los objetivos de triple impacto: ambiental, social y económico.
+                            Los programas de responsabilidad social empresaria (RSE) se integran cada vez más al corazón del negocio. En este mundo globalizado ya no se juzga el éxito empresarial sólo con indicadores financieros; los valores intangibles como la reputación, la ética y la responsabilidad . . .</p>
+                            <a href="/responsabilidad-social-empresarial/programa-desarrollo-concesionarios-2018" class="btn btn-dark btn-round">Seguir leyendo</a>
+                      </div>
+                    </div>
+                  </div>              
+                </div>
+
+                <!-- Programa RSE Derka y Vargas -->
+                <div class="mt-6">
+                  <div class="row">
+                    <div class="col">
+                      <div class="main-title">
+                          <h1 class="text-dark-2">Programa RSE Derka y Vargas</h1>
+                          <p class="text-dark-3">2018/2021</p>
+                      </div>
+
+                      <div class="pb-4">
+                        <h4 class="text-dark-2">PALABRAS de EDUARDO FREDY VARGAS (Presidente Derka y Vargas S.A.)</h4>
+                        <p class="my-3">
+                          "Buenas noches y bienvenidos a todos lo presentes, autoridades, legisladores, funcionarios de gobierno y de Toyota Argentina, representantes de organizaciones de la sociedad civil, directivos y personal de nuestra empresa, familiares, amigos. Nos convoca hoy una fecha especial que nos relaciona con la comunidad desde otro lugar, como hacedores y protagonistas del cambio al . . ." <a href="{{route('programa_rse_dyv')}}"> Seguir leyendo</a>
+                        </p>
+                      </div>
+
+                      <div class="owl-carousel owl-theme">
+                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv1.jpg')}}" alt="...">
+                            <div >
+                                <p class="text-center">RECONOCIMIENTO A DyV COMO EMPRESA SOCIALMENTE RESPONSABLE</p>
+                            </div>
+                        </div>
+
+                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv2.jpg')}}" alt="...">
+                            <div >
+                                <p class="text-center">MUJERES PROMOTORAS DE LA CULTURA QOM ENTREGANDO OBSEQUIOS</p>
+                            </div>
+                        </div>
+
+                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv3.jpg')}}" alt="...">
+                            <div >
+                                <p class="text-center">ENTREGA CERTIFICADOS ALUMNOS PROY. EMPRENDIENDO VITROFUSION</p>
+                            </div>
+                        </div>
+
+                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv4.jpg')}}" alt="...">
+                            <div >
+                                <p class="text-center">VISTA GENERAL DEL EVENTO</p>
+                            </div>
+                        </div>
+
+                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv5.jpg')}}" alt="...">
+                            <div >
+                                <p class="text-center">ENTREGA DE MOTORES Y EQUIPAMIENTO A ESCUELAS</p>
+                            </div>
+                        </div>
+
+                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv6.jpg')}}" alt="...">
+                            <div >
+                                <p class="text-center">JOVEN PARTICIPANTE DEL PROGRAMA M.E.T.A.</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Boletines y Certificados -->
+                <div class="mt-6">
+                  <div class="main-title">
+                      <h1 class="text-dark-2">Boletines y Certificados</h1>
+                      <p class="text-dark-3">Derka y Vargas</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <!-- Trigger the Modal -->
+                      <div class="card">
+                        <img class="click-image-viewer" src="https://www.w3schools.com/howto/img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">
+                        <div class="card-body">
+                          
+                        </div>
+                      </div>
+                      {{-- <img class="click-image-viewer" src="https://www.toyota.com.ar/storage/contents/kjc1CWpbS0.jpg" alt="Snow" style="width:100%;max-width:300px"> --}}
+
+                      <!-- The Modal -->
+                      <div id="myModal" class="viewer modal-viwer">
+                        <!-- The Close Button -->
+                        <span class="close close-btn-viwer"><i class="fas fa-times"></i></span>
+
+                        <!-- Modal Content (The Image) -->
+                        <img class="viewer modal-content" id="img01">
+
+                        <!-- Modal Caption (Image Text) -->
+                        <div class="viewer caption"></div>
+                      </div>
+
+                    </div>        
+                  </div>
+                </div>
+
+            </div>
+          </div>
+          
       </div>
     </div>
+    
+
   </div>
-</section>
-
-<section class="header-rse py-1">
-  <div class="container" style="box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);border-radius: 7px; padding: 0px !important">
-    <div>
-    <img src="{{asset('imagenes/rse/portadarse.png')}}" style="width: 100%; border-top-right-radius: 7px; border-top-left-radius: 7px;">
-    <div class="stm-magazine-loop-data" style="position: relative;">
-      <a class="news-meta-wrap" href="{{route('programa_desarrollo_concesionarios')}}" style="text-decoration: none;">
-        <h3 class="ttc text-center">Programa de Desarrollo de RSE</h3>
-        <p class="text-center">Concesionarios 2018</p> 
-      </a>
-    </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="py-5">
-    <div class="container" style="box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);">
-        <h3 class="ttc text-center">Programa RSE Derka y Vargas</h3>
-        <p class="text-center">2018/2021</p> 
-        <div class="row py-3">
-            <div class="owl-carousel owl-theme">
-                <a href="{{route('programa_rse_dyv')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                    <img src="{{asset('imagenes/rse/rsedyv1.jpg')}}" alt="...">
-                    <div class="caption caption-default">
-                        <!-- <h4 class="text-center"></h4> -->
-                        <p class="text-center">RECONOCIMIENTO A DyV COMO EMPRESA SOCIALMENTE RESPONSABLE (Sec.Empleo)</p>
-                    </div>
-                </a>
-
-                <a href="{{route('programa_rse_dyv')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                    <img src="{{asset('imagenes/rse/rsedyv2.jpg')}}" alt="...">
-                    <div class="caption caption-default">
-                        <!-- <h4 class="text-center"></h4> -->
-                        <p class="text-center">MUJERES PROMOTORAS DE LA CULTURA QOM ENTREGANDO OBSEQUIOS</p>
-                    </div>
-                </a>
-
-                <a href="{{route('programa_rse_dyv')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                    <img src="{{asset('imagenes/rse/rsedyv3.jpg')}}" alt="...">
-                    <div class="caption caption-default">
-                        <!-- <h4 class="text-center"></h4> -->
-                        <p class="text-center">ENTREGA CERTIFICADOS ALUMNOS PROY. EMPRENDIENDO VITROFUSION</p>
-                    </div>
-                </a>
-
-                <a href="{{route('programa_rse_dyv')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                    <img src="{{asset('imagenes/rse/rsedyv4.jpg')}}" alt="...">
-                    <div class="caption caption-default">
-                        <!-- <h4 class="text-center"></h4> -->
-                        <p class="text-center">VISTA GENERAL DEL EVENTO</p>
-                    </div>
-                </a>
-
-                <a href="{{route('programa_rse_dyv')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                    <img src="{{asset('imagenes/rse/rsedyv5.jpg')}}" alt="...">
-                    <div class="caption caption-default">
-                        <!-- <h4 class="text-center"></h4> -->
-                        <p class="text-center">ENTREGA DE MOTORES Y EQUIPAMIENTO A ESCUELAS</p>
-                    </div>
-                </a>
-
-                <a href="{{route('programa_rse_dyv')}}" class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                    <img src="{{asset('imagenes/rse/rsedyv6.jpg')}}" alt="...">
-                    <div class="caption caption-default">
-                        <!-- <h4 class="text-center"></h4> -->
-                        <p class="text-center">JOVEN PARTICIPANTE DEL PROGRAMA M.E.T.A. (actual miembro de la planta de personal de la empresa)</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- Arbol RSE 
@@ -267,9 +304,25 @@
 
 @section('script')
   <script type="text/javascript">
-   
+    $('.click-image-viewer').click(function(){
+      var img = this;
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      modalImg.src = this.src;
+      $('.modal-viwer').show();
+
+    });
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close-btn-viwer")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        $('.modal-viwer').hide();
+      }
+
+
      $('.owl-carousel').owlCarousel({
-        stagePadding: 50,
+        stagePadding: 0,
         loop:false,
         margin:10,
         nav:false,
@@ -283,7 +336,7 @@
                 items:2
             },
             1000:{
-                items:4
+                items:3
             }
         }
     })

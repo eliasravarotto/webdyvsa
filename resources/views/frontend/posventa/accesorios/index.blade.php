@@ -243,10 +243,20 @@
 		</section>
 
 		<!-- Modal Viewer-->
-		<div id="myModal" class="viewer modal">
+		{{-- <div id="myModal" class="viewer modal">
 		  <span class="close-btn" onclick="$('#myModal').toggle()"><i class="fa fa-times"></i></span>
 		  <img class="modal-content" id="img01">
 		  <div id="caption"></div>
+		</div> --}}
+
+		<!-- The Modal -->
+		<div id="myModal" class="viewer modal-viwer">
+			<!-- The Close Button -->
+			<span class="close close-btn-viwer" onclick="$('#myModal').toggle()"><i class="fas fa-times"></i></span>
+			<!-- Modal Content (The Image) -->
+			<img class="viewer modal-content" id="img01">
+			<!-- Modal Caption (Image Text) -->
+			<div class="viewer caption"></div>
 		</div>
 
     </article>

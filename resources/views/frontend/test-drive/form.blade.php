@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('frontend.layout')
 
 @section('title_and_meta')
   <title>Derka y Vargas - Test Drive</title>
@@ -23,13 +23,13 @@
 
 	<article>
 		<section>
-		<div id="mu-call-to-action">
+		<div id="mu-call-to-action" class="mu-call-to-action-test-drive">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="mu-call-to-action-area">
 							<div class="mu-call-to-action-left">
-								<h1>SOLICITAR TEST DRIVE<br><small style="color: #e0dfdf">Prueba de Manejo</small></h1></h1>
+								<h1 class="text-white">Solicitar Test Drive<br><small style="color: #e0dfdf">Prueba de Manejo</small></h1></h1>
 							</div>
 						</div>
 					</div>
@@ -40,31 +40,32 @@
 		<section class="py-3">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+					<div class="col-md-3"></div>
+					<div class="col-md-6 col-sm-12 col-xs-12">
 						{{-- <h1 class="text-center h1-titulo-form">SOLICITAR TEST DRIVE<br><small>Prueba de Manejo</small></h1> --}}
-						<form class="form-horizontal" action="/test-drive" method="POST" role="form" autocomplete="off">
+						<form class="" action="/test-drive" method="POST" role="form" autocomplete="off">
 				  			{{ csrf_field() }}
 				  			<div class="form-group required">
-							    <label class="control-label col-lg-4">Nombre y Apellido</label>
-							    <div class="col-lg-8">
+							    <label class="control-label ">Nombre y Apellido</label>
+							    <div class="">
 							      <input type="text" class="form-control"  name="cliente"  value="{{ old('cliente') }}" required>
 							    </div>
 						  	</div>
 						  	<div class="form-group required">
-							    <label class="control-label col-lg-4">Teléfono</label>
-							    <div class="col-lg-8">
+							    <label class="control-label ">Teléfono</label>
+							    <div class="">
 							      <input type="text" class="form-control"  name="telefono"  value="{{ old('cliente') }}" required>
 							    </div>
 						  	</div>
 						  	<div class="form-group required">
-							    <label class="control-label col-lg-4">Fecha Estimada</label>
-							    <div class="col-lg-8">
+							    <label class="control-label ">Fecha Estimada</label>
+							    <div class="">
 							      <input type="date" class="form-control"  name="fecha_estimada"  value="{{ old('cliente') }}" required>
 							    </div>
 						  	</div>
 						  	<div class="form-group required">
-							    <label class="control-label col-lg-4">Sucursal</label>
-							    <div class="col-lg-8">
+							    <label class="control-label ">Sucursal</label>
+							    <div class="">
 							    	<select class="form-control" name="sucursal">
 							    		@foreach($sucursales as $sucursal)
 							    		<option value="{{$sucursal->id}}">{{$sucursal->nombre}}</option>
@@ -73,8 +74,8 @@
 							    </div>
 						  	</div>
 						  	<div class="form-group required">
-							    <label class="control-label col-lg-4">Modelo</label>
-							    <div class="col-lg-8">
+							    <label class="control-label ">Modelo</label>
+							    <div class="">
 							    	<select class="form-control" name="modelo">
 							    		<option value="HILUX">HILUX</option>
 							    		<option value="COROLLA">COROLLA</option>
@@ -97,8 +98,10 @@
 						  		</div>
 						  	</div>
 						  	<div class="form-group text-right">
-						  		<div class="col-lg-12">
-						  			<input type="submit" class="btn btn-default" name="ENVIAR">
+						  		<div class="col-lg-12 text-center">
+						  			<button type="submit" class="btn btn-danger btn-lg">
+						  				Enviar Solicitud
+						  			</button>
 						  		</div>
 						  	</div>
 				  		</form>

@@ -157,8 +157,6 @@ $(document).ready(function(){
       navbar.classList.remove("fixed-top");
     }
   }
-
-
 });
 
 /*---------------------------------

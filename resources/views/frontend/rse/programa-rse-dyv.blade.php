@@ -15,11 +15,19 @@
 @section('styles_sheets')
 <style type="text/css">
 	p{
-		font-size: 1.8rem;
+		line-height: 2;
 	}
-	.data-post li{
-	    font-size: 18px;
-	    margin: 15px 10px;
+	.breadcrumb{
+		background-color: transparent;
+		padding: 0.75rem 0rem;
+	}
+	.breadcrumb li a,
+	.breadcrumb-item + .breadcrumb-item::before
+    {
+		color: white;
+	}
+	.breadcrumb-item.active {
+	    color: #b9b9b9;
 	}
 
 /* Let's set and reset some common styles */
@@ -153,10 +161,34 @@ box-shadow: 3px 3px 12px 0px rgba(55,52,53,0.9);
 @stop
 
 @section('content')
+	<section>
+		  <div id="mu-call-to-action" class="mu-call-to-action-rse">
+			  <div class="container">
+			    <div class="row">
+			      <div class="col-md-12">
+			        <div class="mu-call-to-action-area">
+			          <div class="mu-call-to-action-left">
+			            <h1 class="white">Responsabilidad Social Empresarial</h1>
+			            <p>Construyamos juntos la mejor comunidad.</p>
+			            <nav aria-label="breadcrumb">
+						  <ol class="breadcrumb">
+						    <li class="breadcrumb-item"><a href="#">RSE</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Palabras de Eduardo Fredy Vargas - Presidente Derka y Vargas S.A.</li>
+						  </ol>
+						</nav>
+
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+	</section>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>PALABRAS de EDUARDO FREDY VARGAS (Presidente Derka y Vargas S.A.)</h2>
+				<h2 class="text-dark-3 mt-3 text-center">Palabras de Eduardo Fredy Vargas (Presidente Derka y Vargas S.A.)</h2>
 				<div class="mb-wrap mb-style-3">
 					<blockquote cite="http://www.gutenberg.org/ebooks/1260">
 						<p class="text-muted">Buenas noches y bienvenidos a todos lo presentes, autoridades, legisladores, funcionarios de gobierno y de Toyota Argentina, representantes de organizaciones de la sociedad civil, directivos y personal de nuestra empresa, familiares, amigos.
@@ -177,6 +209,11 @@ box-shadow: 3px 3px 12px 0px rgba(55,52,53,0.9);
 					</div>
 				</div>
 
+			</div>
+		</div>
+		<div class="row pb-4">
+			<div class="col">
+				<a href="{{route('rse')}}" class="btn btn-dark btn-round"><i class="fas fa-chevron-left"></i> Volver</a>
 			</div>
 		</div>
 	</div>

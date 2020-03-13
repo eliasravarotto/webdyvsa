@@ -102,44 +102,6 @@
 
 @section('script')
 <script type="text/javascript">
-	//---------------------------------------
-	//SCRIPT API GOOGLE MAPS
-	//----------------------------------------
-	//var sucursales = [];
-
-    // var map = new google.maps.Map(document.getElementById('map'), {
-    //   zoom: 8,
-    //   center: new google.maps.LatLng(-27.041598, -60.149756),
-    //   mapTypeId: google.maps.MapTypeId.ROADMAP
-    // });
-
-    // var infowindow = new google.maps.InfoWindow();
-
-    // var marker, i;
-
-    // for (i = 0; i < sucursales.length; i++) {  
-    //   marker = new google.maps.Marker({
-    //     position: new google.maps.LatLng(sucursales[i].map_lat, sucursales[i].map_lng),
-    //     map: map
-    //   });
-
-    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    //     return function() {
-    //       infowindow.setContent(locations[i][0]);
-    //       infowindow.open(map, marker);
-    //     }
-    //   })(marker, i));
-    // }
-
-    // function goto(e, lat, lng){
-    // 	e.preventDefault();
-    // 	console.log(lat+' - '+lng);
-    // 	var newPos = new google.maps.LatLng(lat,lng);
-    // 	map.setOptions({center:newPos,zoom:15});
-    // 	document.getElementById('map').scrollIntoView();
-    // }
-    //------------------------------------------
-
 
     $('.iframe_map').hide();
     $('#map_suc_1').show();

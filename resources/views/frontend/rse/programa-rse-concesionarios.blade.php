@@ -15,24 +15,58 @@
 @section('styles_sheets')
 <style type="text/css">
 	p{
-		font-size: 1.8rem;
+		line-height: 2;
 	}
-	.data-post li{
-	    font-size: 18px;
-	    margin: 15px 10px;
+	.breadcrumb{
+		background-color: transparent;
+		padding: 0.75rem 0rem;
+	}
+	.breadcrumb li a,
+	.breadcrumb-item + .breadcrumb-item::before
+    {
+		color: white;
+	}
+	.breadcrumb-item.active {
+	    color: #b9b9b9;
 	}
 </style>
 @stop
 
 @section('content')
+	<section>
+	  <div id="mu-call-to-action" class="mu-call-to-action-rse">
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-md-12">
+		        <div class="mu-call-to-action-area">
+		          <div class="mu-call-to-action-left">
+		            <h1 class="white">Responsabilidad Social Empresarial</h1>
+		            <p>Construyamos juntos la mejor comunidad.</p>
+		            <nav aria-label="breadcrumb">
+					  <ol class="breadcrumb">
+					    <li class="breadcrumb-item"><a href="#">RSE</a></li>
+					    <li class="breadcrumb-item active" aria-current="page">Programa de desarrollo RSE Concesionarios 2018</li>
+					  </ol>
+					</nav>
+
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</section>
+
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12">
-			<h2>Mensaje de Toyota Argentina en el Acto de Lanzamiento del Programa RSE Concesionarios</h2>
-			 <img class="img-fluid" src="{{asset('/imagenes/rse/imagen-firmas.png')}}">
-			 <ul class="list-unstyled list-inline data-post">
-			 	<li class="text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> Junio 2018</li>
-			 	<li class="text-muted"><i class="fa fa-map-marker" aria-hidden="true"></i> Zárate, Buenos Aires</li>
+		<div class="col-md-12">
+			<h2 class="my-3">Mensaje de Toyota Argentina en el Acto de Lanzamiento del Programa RSE Concesionarios</h2>
+		</div>
+		<div class="col-md-12">
+			 <img class="img-fluid border-rad-7" src="{{asset('/imagenes/rse/imagen-firmas.png')}}">
+			 <ul class="list-inline data-post">
+			 	<li class="list-inline-item text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> Junio 2018</li>
+			 	<li class="list-inline-item text-muted"><i class="fa fa-map-marker" aria-hidden="true"></i> Zárate, Buenos Aires</li>
 			 </ul>
 			 <p>
 				El futuro de las empresas en los próximos años exige abordar el desafío de interrelacionar los objetivos de triple impacto: ambiental, social y económico.
@@ -48,6 +82,9 @@
 			<p>Las empresas que muestren coherencia y responsabilidad en sus operaciones a lo largo de su cadena de valor podrán garantizar su éxito a largo plazo. El resultado es un círculo virtuoso que impulsa a la empresa a operar como un actor de verdadero impacto social y ambiental en un mundo cada vez más integrador.</p>
 
 			<p>Con el objetivo de poner en práctica estos conceptos, desarrollamos un programa que aborda estos temas desde ángulos teórico-prácticos con casos concretos locales, tendencias globales, y herramientas de medición y análisis de gestión. </p>
+		</div>
+		<div class="col">
+			<a href="{{route('rse')}}" class="btn btn-dark btn-round"><i class="fas fa-chevron-left"></i> Volver</a>
 		</div>
 	</div>
 	
