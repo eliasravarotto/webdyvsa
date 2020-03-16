@@ -89,4 +89,9 @@
     .ph-item{
         border:none;
     }
+    
+    .ph-item>* {
+          padding-right: 7px;
+    padding-left: 7px;
+    }
 </style>

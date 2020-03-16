@@ -24,6 +24,10 @@
     <slide :data="{slide_id: 1}"></slide>
   </section>
   
+  <section style="padding: 0px 7px; margin-top: -35px">
+    <a href="/posventa#toyota-recall"><img src="{{asset('imagenes/posventa/recall.png')}}" class="img-fluid d-none d-md-block d-lg-block" style="border-radius: 7px;"></a>
+    <a href="/posventa#toyota-recall"><img src="{{asset('imagenes/posventa/recall-sm.jpg')}}" class="img-fluid d-md-none d-lg-none" style="border-radius: 7px;"></a>
+  </section>
 
   <section class="py-4">
     <div class="latest-offers categories content-area-13 bg-grea-3 py-4">

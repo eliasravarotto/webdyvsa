@@ -36,17 +36,16 @@
 		<!---------------------------------------------------------------------
 	    BANNER
 	  	----------------------------------------------------------------------->
-		<section class="mb-4">
-			<div class="banner-ppal-posventa d-none d-md-block" style="width: 100%">
-				<img src="/imagenes/posventa/slide.jpg" class="img-fluid" alt="Servicios de posventa Toyota en Chaco, Resistencia, Charata, Villa Angela, Saenz Peña. Servicio Oficial de Toyota Derka y Vargas." title="Posventa Toyota en Chaco">
-			</div>
+		<section class="mt-1 mb-4" style="padding: 0px 7px;">
+		    <a href="https://www.toyota.com.ar/servicios-y-accesorios/recall" target="_blank"><img src="{{asset('imagenes/posventa/recall.png')}}" class="img-fluid d-none d-md-block d-lg-block" style="border-radius: 7px;"></a>
+		    <a href="https://www.toyota.com.ar/servicios-y-accesorios/recall" target="_blank"><img src="{{asset('imagenes/posventa/recall-sm.jpg')}}" class="img-fluid d-md-none d-lg-none" style="border-radius: 7px;"></a>
 		</section>
 
 		<!---------------------------------------------------------------------
 	    RECALL
 	  	----------------------------------------------------------------------->
 		<section>
-			<div class="container py-6 toyota-recall">
+			<div id="toyota-recall" class="container py-5 toyota-recall">
 				<div class="row d-flex justify-content-center align-items-center">
 					<div class="col-md-7 col-xs-12">
 	                    <p class="subtitle text-center">Recall</p>
