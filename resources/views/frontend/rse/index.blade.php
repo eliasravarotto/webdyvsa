@@ -101,102 +101,6 @@
                   </div>              
                 </div>
 
-                <!-- Programa RSE Derka y Vargas -->
-                <div class="mt-6">
-                  <div class="row">
-                    <div class="col">
-                      <div class="main-title">
-                          <h1 class="text-dark-2">Programa RSE Derka y Vargas</h1>
-                          <p class="text-dark-3">2018/2021</p>
-                      </div>
-
-                      <div class="pb-4">
-                        <h4 class="text-dark-2">PALABRAS de EDUARDO FREDY VARGAS (Presidente Derka y Vargas S.A.)</h4>
-                        <p class="my-3">
-                          "Buenas noches y bienvenidos a todos lo presentes, autoridades, legisladores, funcionarios de gobierno y de Toyota Argentina, representantes de organizaciones de la sociedad civil, directivos y personal de nuestra empresa, familiares, amigos. Nos convoca hoy una fecha especial que nos relaciona con la comunidad desde otro lugar, como hacedores y protagonistas del cambio al . . ." <a href="{{route('programa_rse_dyv')}}"> Seguir leyendo</a>
-                        </p>
-                      </div>
-
-                      <div class="owl-carousel owl-theme">
-                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv1.jpg')}}" alt="...">
-                            <div >
-                                <p class="text-center">RECONOCIMIENTO A DyV COMO EMPRESA SOCIALMENTE RESPONSABLE</p>
-                            </div>
-                        </div>
-
-                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv2.jpg')}}" alt="...">
-                            <div >
-                                <p class="text-center">MUJERES PROMOTORAS DE LA CULTURA QOM ENTREGANDO OBSEQUIOS</p>
-                            </div>
-                        </div>
-
-                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv3.jpg')}}" alt="...">
-                            <div >
-                                <p class="text-center">ENTREGA CERTIFICADOS ALUMNOS PROY. EMPRENDIENDO VITROFUSION</p>
-                            </div>
-                        </div>
-
-                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv4.jpg')}}" alt="...">
-                            <div >
-                                <p class="text-center">VISTA GENERAL DEL EVENTO</p>
-                            </div>
-                        </div>
-
-                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv5.jpg')}}" alt="...">
-                            <div >
-                                <p class="text-center">ENTREGA DE MOTORES Y EQUIPAMIENTO A ESCUELAS</p>
-                            </div>
-                        </div>
-
-                        <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
-                            <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv6.jpg')}}" alt="...">
-                            <div >
-                                <p class="text-center">JOVEN PARTICIPANTE DEL PROGRAMA M.E.T.A.</p>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Boletines y Certificados -->
-                <div class="mt-6">
-                  <div class="main-title">
-                      <h1 class="text-dark-2">Boletines y Certificados</h1>
-                      <p class="text-dark-3">Derka y Vargas</p>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-3">
-                      <!-- Trigger the Modal -->
-                      <div class="card">
-                        <img class="click-image-viewer" src="https://www.w3schools.com/howto/img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">
-                        <div class="card-body">
-                          
-                        </div>
-                      </div>
-                      {{-- <img class="click-image-viewer" src="https://www.toyota.com.ar/storage/contents/kjc1CWpbS0.jpg" alt="Snow" style="width:100%;max-width:300px"> --}}
-
-                      <!-- The Modal -->
-                      <div id="myModal" class="viewer modal-viwer">
-                        <!-- The Close Button -->
-                        <span class="close close-btn-viwer"><i class="fas fa-times"></i></span>
-
-                        <!-- Modal Content (The Image) -->
-                        <img class="viewer modal-content" id="img01">
-
-                        <!-- Modal Caption (Image Text) -->
-                        <div class="viewer caption"></div>
-                      </div>
-
-                    </div>        
-                  </div>
-                </div>
-
             </div>
           </div>
           
@@ -204,6 +108,124 @@
     </div>
     
 
+  </div>
+</section>
+
+<section class="my-3 bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-sm-12"></div>
+      <div class="col-md-10 col-sm-12">
+        <!-- Programa RSE Derka y Vargas -->
+        <div class="mt-6">
+          <div class="row">
+            <div class="col">
+              <div class="main-title">
+                  <h1 class="text-dark-2">Programa RSE Derka y Vargas</h1>
+                  <p class="text-dark-3">2018/2021</p>
+              </div>
+
+              <div class="pb-4">
+                <h4 class="text-dark-2">PALABRAS de EDUARDO FREDY VARGAS (Presidente Derka y Vargas S.A.)</h4>
+                <p class="my-3">
+                  "Buenas noches y bienvenidos a todos lo presentes, autoridades, legisladores, funcionarios de gobierno y de Toyota Argentina, representantes de organizaciones de la sociedad civil, directivos y personal de nuestra empresa, familiares, amigos. Nos convoca hoy una fecha especial que nos relaciona con la comunidad desde otro lugar, como hacedores y protagonistas del cambio al . . ." <a href="{{route('programa_rse_dyv')}}"> Seguir leyendo</a>
+                </p>
+              </div>
+
+              <div class="owl-carousel owl-theme">
+                <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                    <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv1.jpg')}}" alt="...">
+                    <div >
+                        <p class="text-center">RECONOCIMIENTO A DyV COMO EMPRESA SOCIALMENTE RESPONSABLE</p>
+                    </div>
+                </div>
+
+                <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                    <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv2.jpg')}}" alt="...">
+                    <div >
+                        <p class="text-center">MUJERES PROMOTORAS DE LA CULTURA QOM ENTREGANDO OBSEQUIOS</p>
+                    </div>
+                </div>
+
+                <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                    <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv3.jpg')}}" alt="...">
+                    <div >
+                        <p class="text-center">ENTREGA CERTIFICADOS ALUMNOS PROY. EMPRENDIENDO VITROFUSION</p>
+                    </div>
+                </div>
+
+                <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                    <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv4.jpg')}}" alt="...">
+                    <div >
+                        <p class="text-center">VISTA GENERAL DEL EVENTO</p>
+                    </div>
+                </div>
+
+                <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                    <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv5.jpg')}}" alt="...">
+                    <div >
+                        <p class="text-center">ENTREGA DE MOTORES Y EQUIPAMIENTO A ESCUELAS</p>
+                    </div>
+                </div>
+
+                <div class="item thumbnail thumbnail-no-bg thumbnail-no-border">
+                    <img class="border-rad-5" src="{{asset('imagenes/rse/rsedyv6.jpg')}}" alt="...">
+                    <div >
+                        <p class="text-center">JOVEN PARTICIPANTE DEL PROGRAMA M.E.T.A.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-3 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-sm-12"></div>
+      <div class="col-md-10 col-sm-12">
+        <!-- Boletines y Certificados -->
+        <div class="mt-6">
+          <div class="main-title">
+              <h1 class="text-dark-2">Boletines y Certificados</h1>
+              <p class="text-dark-3">Derka y Vargas</p>
+          </div>
+          <div class="row">
+            <!-- Trigger the Modal -->
+            <div class="col-md-3">
+              <div class="card align-items-center">
+                <img class="click-image-viewer cursor-pointer" src="{{asset('imagenes/rse/cert-iram.jpg')}}" alt="difusion ambiental" style="width:100%;max-width:400px">
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+            <!-- Trigger the Modal -->
+            <div class="col-md-3">
+              <div class="card align-items-center">
+                <img class="click-image-viewer cursor-pointer" src="{{asset('imagenes/rse/boletin-2_2020.jpg')}}" alt="difusion ambiental" style="width:100%;max-width:400px">
+                <div class="card-body">
+                </div>
+              </div>
+            </div>          
+            <!-- The Modal Viwer -->
+            <div id="myModal" class="viewer modal-viwer">
+              <!-- The Close Button -->
+              <span class="close close-btn-viwer"><i class="fas fa-times"></i></span>
+
+              <!-- Modal Content (The Image) -->
+              <img class="viewer modal-content" id="img01">
+
+              <!-- Modal Caption (Image Text) -->
+              <div class="viewer caption"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
