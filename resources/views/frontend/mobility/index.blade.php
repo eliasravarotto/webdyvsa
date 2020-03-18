@@ -80,7 +80,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
 	                            <div class="card-body text-center">
-	                                <img class="img-fluid" data-src="{{asset('imagenes/mobility/01.png')}}" alt="card image lazy">
+	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/01.png')}}" alt="card image lazy">
 	                                <p class="card-text text-justify mx-1"> 
 	                                	<b class="color-mobility">1</b>
 	                                	Descargá la app y completá el formulario con tus datos personales, licencia de conducir y tarjeta de crédito válida y vigente*.
@@ -96,7 +96,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
 	                            <div class="card-body text-center">
-	                                <img class="img-fluid" data-src="{{asset('imagenes/mobility/02.png')}}" alt="card image lazy">
+	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/02.png')}}" alt="card image lazy">
 	                                <p class="card-text text-justify mx-1"> 
 	                                	<b class="color-mobility">2</b>
 	                                	Ingresá por cuánto tiempo lo necesitás. Vas a poder reservar por hora o por día, según el uso que quieras darle.
@@ -112,7 +112,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
 	                            <div class="card-body text-center">
-	                                <img class="img-fluid" data-src="{{asset('imagenes/mobility/03.png')}}" alt="card image lazy">
+	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/03.png')}}" alt="card image lazy">
 	                                <p class="card-text text-justify mx-1"> 
 	                                	<b class="color-mobility">3</b>
 	                                	Filtrá por categoría de vehículos, elegí entre todos nuestros vehículos el que mejor se adapte a tus necesidades.
@@ -128,7 +128,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
 	                            <div class="card-body text-center">
-	                                <img class="img-fluid" data-src="{{asset('imagenes/mobility/04.png')}}" alt="card image lazy ">
+	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/04.png')}}" alt="card image lazy ">
 	                                <p class="card-text text-justify mx-1"> 
 	                                	<b class="color-mobility">4</b>
 	                                	Indicá dónde querés retirarlo y dónde lo vas a devolver. Puede ser en cualquiera de las estaciones Mobility. 
@@ -144,7 +144,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center">
 	                            <div class="card-body text-center">
-	                                <img class="img-fluid" data-src="{{asset('imagenes/mobility/05.png')}}" alt="card image lazy">
+	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/05.png')}}" alt="card image lazy">
 	                                <p class="card-text text-justify mx-1"> 
 	                                	<b class="color-mobility"><i class="fa fa-check" aria-hidden="true"></i></b>
 	                                	¡Y listo! Ya podés manejar tu Toyota. 

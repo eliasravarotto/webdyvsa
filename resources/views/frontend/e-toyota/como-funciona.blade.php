@@ -20,7 +20,7 @@
 				<div class="col-md-12">
 					<div class="mu-call-to-action-area d-flex justify-content-space-around">
 						<div class="mu-call-to-action-left">
-							<h1><b>E-Toyota Derka y Vargas</b></h1>
+							<h1 class="text-white"><b>E-Toyota Derka y Vargas</b></h1>
 							<p style="color: #d8d8d8; font-size: 20px">
 								Cotizador Online | ¿Cómo funciona?
 							</p>

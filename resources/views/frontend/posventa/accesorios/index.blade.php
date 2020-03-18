@@ -78,8 +78,8 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="mu-call-to-action-area">
-								<div class="mu-call-to-action-left d-flex">
-									<h1><b>Accesorios</b></h1> 
+								<div class="mu-call-to-action-left">
+									<h1 class="text-white"><b>Accesorios</b></h1>
 									<p style="color: rgb(216, 216, 216); font-size: 18px;">
 									{{-- Encontra todos los accesorios disponibles para tu Toyota. --}}
 									Equipá tu Toyota y dale la exclusividad que se merece
