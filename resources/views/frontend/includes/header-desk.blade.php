@@ -22,7 +22,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-3 text-left visible-md visible-lg">
+        <div class="col-md-3 text-right visible-md visible-lg">
           
           <a href="/" class="pull-right">
             <img src="{{ asset('/imagenes/logo-toyota.png') }}" style="height: 60px;" alt="logo-toyota">
