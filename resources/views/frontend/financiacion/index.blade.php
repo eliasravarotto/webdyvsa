@@ -64,7 +64,7 @@
       	<div class="container">
 		  	<div class="row">
 			    <div class="col-md-4">
-			      <div class="card-component calculator-bg" onclick="window.open('https://www.toyotacfa.com.ar/simulador-creditos', '_blank');">
+			      <div class="card-component calculator-bg" onclick="window.open('https://www.tcfautos.com.ar/#/cotizador/', '_blank');">
 			        <h3>Simulá tu préstamo</h3>
 			        <p class="fz17">
 			        Créditos prendarios, Leasing.	
