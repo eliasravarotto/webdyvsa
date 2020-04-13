@@ -282,12 +282,8 @@
 
 				<h4>No comercializamos garantía extendida</h4>
 				<p>Atento a las recientes consultas recibidas, nos vemos en la obligación de aclarar que Toyota Argentina S.A., (en adelante Toyota), no vende ni oferta, ya sea en forma directa o a través de la red de concesionarios oficiales, y por tanto no hace publicaciones en la web, ni remite mensajes de texto, ni contacta directamente a los usuarios, servicios de garantía extendida. Por todo ello, hacemos propicia la oportunidad para recordarles que contamos con una red de concesionarios oficiales en todo el país, donde encontraran profesionales capacitados para informar acerca de la Garantía Limitada por Vehículo Nuevo Toyota. Ingresa al buscador de concesionarios y conoce el más cercano a tu domicilio: http://www.toyota.com.ar/find-a-dealer/index.html. </p>
-				<p>Ante cualquier duda sugerimos comunicarse con nuestro Centro de Atención al Cliente al: <span class="font-weight-bold">0800-888-8696</span> (Lunes a Viernes de 9:00 a 13:00 hs. y de 14:00 a 17:00 hs.).</p>
+				<p>Ante cualquier duda sugerimos comunicarse con nuestro Centro de Atención al Cliente al: <span class="font-weight-bold">0800-888-8696</span> (Lunes a Viernes de 8:00 a 16:30 hs).</p>
 			</div>
-		</section>
-
-		<section class="my-3">
-			<img src="/imagenes/posventa/mantenimiento-express.png" class="img-fluid" alt="mantenimiento express toyota Chaco">
 		</section>
 
 		<section class="py-4">
@@ -295,7 +291,7 @@
 				<div class="row">
 					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
 						<h2 class="" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
-						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 12 & 15.30 a 19.30 - <b>Sábados</b> de 8 a 12.30</div>
+						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 16.30 - <b>Sábados</b> de 8 a 12.30</div>
 						<div class="contact-details mt-3">
 		                    <div class="media">
 		                        <div class="media-left">
