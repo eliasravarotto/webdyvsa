@@ -286,7 +286,7 @@
 			</div>
 		</section>
 
-		<section class="py-4">
+		<section class="py-4 my-4">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
