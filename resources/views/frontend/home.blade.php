@@ -23,11 +23,6 @@
   <section>
     <slide :data="{slide_id: 1}"></slide>
   </section>
-  
-  <section style="padding: 0px 7px; margin-top: 15px">
-    <a href="https://derkayvargas.com/posts/aviso-importante"><img src="{{asset('imagenes/home-min/aviso-importante-min.png')}}" class="img-fluid d-none d-md-block d-lg-block" style="border-radius: 7px;"></a>
-    <a href="https://derkayvargas.com/posts/aviso-importante"><img src="{{asset('imagenes/home-min/aviso_importante.jpg')}}" class="img-fluid d-md-none d-lg-none" style="border-radius: 7px;"></a>
-  </section>
 
   <section class="py-4 mt-4">
     <div class="container">
