@@ -137,10 +137,10 @@
 		    </thead>
 		    <tbody>
 		      <tr>
-		        <td class="text-center" style="font-weight: bold;">$ 26.504,64</td>
-		        <td class="text-center" style="font-weight: bold;">$ 29.913,31</td>
-		        <td class="text-center" style="font-weight: bold;">$ 28.007,87</td>
-		        <td class="text-center" style="font-weight: bold;">$ 31.066,02</td>
+		        <td class="text-center" style="font-weight: bold;">$ 27.303,21</td>
+		        <td class="text-center" style="font-weight: bold;">$ 30.814,58</td>
+		        <td class="text-center" style="font-weight: bold;">$ 28.832,90</td>
+		        <td class="text-center" style="font-weight: bold;">$ 32.002,02</td>
 		      </tr>
 		    </tbody>
 	  	</table>
@@ -150,7 +150,7 @@
 					<div class="row">
 						<p>Integración Mínima 24 Cuotas</p>	
 						<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-						<p>Vigencia 01 de Marzo 2020</p>
+						<p>Vigencia 01 de Mayo 2020</p>
 					</div>
 				</blockquote>
 	  		</div>
@@ -194,10 +194,10 @@
 		    </thead>
 		    <tbody>
 		      <tr>
-		        <td class="text-center" style="font-weight: bold;">$ 18.131,14</td>
-		        <td class="text-center" style="font-weight: bold;">$ 21.098,14</td>
-		        <td class="text-center" style="font-weight: bold;">$ 18.915,19</td>
-		        <td class="text-center" style="font-weight: bold;">$ 18.698,01</td>
+		        <td class="text-center" style="font-weight: bold;">$ 18.657,08</td>
+		        <td class="text-center" style="font-weight: bold;">$ 21.710,15</td>
+		        <td class="text-center" style="font-weight: bold;">$ 19.463,87</td>
+		        <td class="text-center" style="font-weight: bold;">$ 19.240,39</td>
 		      </tr>
 		    </tbody>
 	  	</table>
@@ -207,7 +207,7 @@
 					<div class="row">
 						<p>Integración Mínima 24 Cuotas</p>	
 						<p>Ver más info y legales en <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-						<p>Vigencia 01 de Marzo 2020</p>
+						<p>Vigencia 01 de Mayo 2020</p>
 					</div>
 				</blockquote>
 	  		</div>
@@ -251,10 +251,10 @@
 		    </thead>
 		    <tbody>
 		      <tr>
-		        <td class="text-center" style="font-weight: bold;">$ 12.078,00 </td>
-		        <td class="text-center" style="font-weight: bold;">$ 13.783,15</td>
-		        <td class="text-center" style="font-weight: bold;">$ 13.268,59</td>
-		        <td class="text-center" style="font-weight: bold;">$ 16.004,47</td>
+		        <td class="text-center" style="font-weight: bold;">$ 12.427,94 </td>
+		        <td class="text-center" style="font-weight: bold;">$ 14.182,49</td>
+		        <td class="text-center" style="font-weight: bold;">$ 13.634,91</td>
+		        <td class="text-center" style="font-weight: bold;">$ 16.468,17</td>
 		      </tr>
 		    </tbody>
 	  	</table>
@@ -264,7 +264,7 @@
 					<div class="row">
 						<p>Integración Mínima 24 Cuotas</p>	
 						<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-						<p>Vigencia 01 de Marzo 2020</p>
+						<p>Vigencia 01 de Mayo 2020</p>
 					</div>
 				</blockquote>
 	  		</div>
@@ -308,10 +308,10 @@
 		    </thead>
 		    <tbody>
 		      <tr>
-		        <td class="text-center" style="font-weight: bold;">$ 9.485,46 </td>
-		        <td class="text-center" style="font-weight: bold;">$ 10.824,60</td>
-		        <td class="text-center" style="font-weight: bold;">$ 10.554,64</td>
-		        <td class="text-center" style="font-weight: bold;">$ 12.569,11</td>
+		        <td class="text-center" style="font-weight: bold;">$ 9.770,29 </td>
+		        <td class="text-center" style="font-weight: bold;">$ 11.149,64</td>
+		        <td class="text-center" style="font-weight: bold;">$ 10.852,81</td>
+		        <td class="text-center" style="font-weight: bold;">$ 12.946,54</td>
 		      </tr>
 		    </tbody>
 	  	</table>
@@ -321,7 +321,7 @@
 					<div class="row">
 						<p>Integración Mínima 24 Cuotas</p>	
 						<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-						<p>Vigencia 01 de Marzo 2020</p>
+						<p>Vigencia 01 de Mayo 2020</p>
 					</div>
 				</blockquote>
 	  		</div>
@@ -365,10 +365,10 @@
 		    </thead>
 		    <tbody>
 		      <tr>
-		        <td class="text-center" style="font-weight: bold;">$ 6.803,14</td>
-		        <td class="text-center" style="font-weight: bold;">$ 9.207,61</td>
-		        <td class="text-center" style="font-weight: bold;">$ 8.838,50</td>
-		        <td class="text-center" style="font-weight: bold;">$ 8.971,42</td>
+		        <td class="text-center" style="font-weight: bold;">$ 8.024,31</td>
+		        <td class="text-center" style="font-weight: bold;">$ 9.439,88</td>
+		        <td class="text-center" style="font-weight: bold;">$ 9.059,70</td>
+		        <td class="text-center" style="font-weight: bold;">$ 9.240,82</td>
 		      </tr>
 		    </tbody>
 	  	</table>
@@ -377,7 +377,7 @@
 	  			<blockquote style="border-left: 5px solid #e81f39;">
 					<div class="row">
 						<p>Ver más info y legales en  <a href="https://www.toyota.com.ar/financiacion/plan-de-ahorro">toyota.com.ar/financiacion/plan-de-ahorro</a></p>
-						<p>Vigencia 01 de Marzo 2020</p>
+						<p>Vigencia 01 de Mayo 2020</p>
 					</div>
 				</blockquote>
 	  		</div>
