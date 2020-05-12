@@ -11,7 +11,7 @@ class TpaAdjudicadosController extends Controller
 
     //ETIOS X 4P 6M/T
     private $valor_cuota_pura_etios70_30 = 7244.16; // (precio - valor_30porciento_etios) / 84
-    private $valor_30porciento_etios = 260790;
+    private $valor_30porciento_etios = 252120;
 
     //HILUX 4X2 C/D DX 2,4 TDI 6 M/T
     private $valor_cuota_pura_hilux70_30 = 15046; // (precio - valor_30porciento_hilux) / 84

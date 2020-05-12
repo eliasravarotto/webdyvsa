@@ -70,7 +70,7 @@
 						</li>
 						<li>
 							<span>Sucursal Resistencia - <small> Ruta Nicolas Avellaneda Km. 11,9</small></span>
-							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 476 484 0/47</a>
+							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362)4 - 764640 / 764841 / 764842 / 764844 / 764847 / 764852</a>
 						</li>
 						<li>
 							<span>Sucursal Charata - <small> Ruta 89 Km. 74</small></span>
@@ -89,8 +89,9 @@
 							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 443 330 0</a>
 						</li>
 					</ul>
+					
 					<ul class="list-unstyled ml-1 ul-footer-sucursales visible-xs visible-sm">
-						<li>
+						{{-- <li>
 							<span>Casa Central Sáenz Peña</span>
 							<a href="#" class="telefono ml-1"><i class="fa fa-map-marker"></i> Belgrano Nº 872 (Calle 10 esq. 19)</a><br>
 							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0364) 44 - 20602 / 20549 / 20840</a>
@@ -99,6 +100,7 @@
 							<span>Sucursal Resistencia</span>
 							<a href="#" class="telefono ml-1"><i class="fa fa-map-marker"></i> Ruta Nicolas Avellaneda Km. 11,9</a><br>
 							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 476 484 0/47</a>
+							
 						</li>
 						<li>
 							<span>Sucursal Charata</span>
@@ -109,7 +111,7 @@
 							<span>Sucursal Villa Angela</span>
 							<a href="#" class="telefono ml-1"><i class="fa fa-map-marker"></i> Av. 25 de Mayo Nº 1101</a><br>
 							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (03735) 423 200</a>
-						</li>
+						</li> 
 						<li>
 							<span>Sucursal Resistencia Usados</span>
 							<a href="#" class="telefono ml-1"><i class="fa fa-map-marker"></i> AV. Sarmiento 1890</a><br>
@@ -120,6 +122,7 @@
 							<a href="#" class="telefono ml-1"><i class="fa fa-map-marker"></i> AV. Sarmiento 1890</a><br>
 							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 443 330 0</a>
 						</li>
+						--}}
 					</ul>
 				</div>
 				<div class="col-md-2 col-sm-12">
