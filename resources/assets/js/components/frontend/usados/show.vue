@@ -11,6 +11,9 @@
                 <div class="row">
                     <div class="col-md-7 col-sm-12">
                         <div class="gallery-content d-flex justify-content-center align-items-center">
+                            <div class="item-usado-certificado" v-if="unidad.uct" >
+                                <img src="/imagenes/logo-uct-new.png" class="w-100">
+                            </div>
                             <div class="owl-carousel owl-carousel-gallery">
                                 <div v-for="(imagen, i) in imagenes" class="item" :data-hash="'slide'+i">
                                   <div class="w-100">
@@ -68,14 +71,14 @@
                                             <td class="t-value t-vin h6">{{unidad.combustible}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="t-label"><i class="fa fa-certificate"></i> Certificado Toyota</td>
-                                            <td class="t-value t-vin h6" v-if="unidad.uct">SI</td>
-                                            <td class="t-value t-vin h6" v-else>NO</td>
-                                        </tr>
-                                        <tr>
                                             <td class="t-label">Disponibilidad</td>
                                             <td v-if="unidad.estado == 'RESERVADO'" class="t-value t-vin h6" style="color: #ee1a2f;">{{unidad.estado}}</td>
                                             <td v-else   class="t-value t-vin h6">{{unidad.estado}}</td>
+                                        </tr>
+                                        <tr v-if="unidad.uct">
+                                            <td class="t-label"><img src="/imagenes/logo-uct-new.png" class="" style="height: 45px;"></td>
+                                            <td class="t-value t-vin h6" v-if="unidad.uct">SI</td>
+                                            <td class="t-value t-vin h6" v-else>NO</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -278,6 +281,11 @@ table>tbody tr td {
     margin: 5px;
 }
 
-
+.item-usado-certificado {
+    margin: 5px 0px 0px 20px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
 
 </style>
