@@ -1,8 +1,8 @@
 @extends('frontend.layout')
 
 @section('title_and_meta')
-  <title>Plan de Ahorro - Planes avanzados</title>
-  <meta name="description" content="Plan de Ahorro Toyota Resistencia, Charata, Saenz Peña, Villa Angela, Toyota Cuotas Sin Interes, Plan sin interes Toyota, Plan de Ahorro Etios, Plan de Ahorro Hilux, Plan de Ahorro Yaris, Plan de Ahorro Corolla, Que es un plan de ahorro. Autos 100% financiados sin interes. Toyota 100% financiado. Planes avanzados listos para licitar">
+  <title>Plan de Ahorro - Planes Adjudicados</title>
+  <meta name="description" content="Plan de Ahorro Toyota. Planes adjudicados en Resistencia, Charata, Saenz Peña, Villa Angela, Toyota Cuotas Sin Interes, Plan sin interes Toyota, Plan de Ahorro Etios, Plan de Ahorro Hilux, Plan de Ahorro Yaris, Plan de Ahorro Corolla, Que es un plan de ahorro. Autos 100% financiados sin interes. Toyota 100% financiado. Planes avanzados listos para licitar">
 @stop
 
 @section('mark-up-facebook')
