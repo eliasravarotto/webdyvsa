@@ -48,7 +48,7 @@ class MensajeEmailController extends Controller
     // public function store(ReCaptchataTestFormRequest $request)
     public function store(Request $request)
     {
-        //return $request;
+
         $this->validate($request, [
             'from' => 'required',
             'cliente' => 'required',
@@ -111,6 +111,38 @@ class MensajeEmailController extends Controller
         }
 
         return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+    }
+
+    public function storeContactTpa(Request $request)
+    {
+        $this->validate($request, [
+            'from' => 'required',
+            'cliente' => 'required',
+            'telefono' => 'required',
+            'localidad' => 'required',
+            'g-recaptcha-response' => 'required',
+        ]);
+        
+        $from = 'tpa';
+        $enviar_a = env('RECEPTOR_EMAILS_TPA');
+
+        $mensaje = new MensajeEmail;
+        $mensaje->cliente = $request->cliente;
+        $mensaje->telefono = $request->telefono;
+        $mensaje->mensaje = 'Localidad: '.$request->localidad.'.  - Mensaje: '.$request->mensaje;
+        $mensaje->from = $from;
+        $mensaje->email = 'sistemas.derkayvargas@gmail.com';
+        $mensaje->enviar_a = $enviar_a;
+        $mensaje->derivar_a = 'TPA';
+        $mensaje->save();
+
+        $asunto ='Consulta desde Pagina Web TPA';
+        $cc = ['rukyguerra@derkayvargas.com'];
+        event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
+        
+        return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+       
+
     }
 
     public function storeVozDelCli(ReCaptchataTestFormRequest $request)

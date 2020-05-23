@@ -114,6 +114,7 @@ Route::post('/turno-servicios','TurnoServicioController@store');
 Route::get('/test-drive/create','SolicitudTestDriveController@create')->name('test_drive_form');
 Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
+Route::post('/contacto-tpa','MensajeEmailController@storeContactTpa')->name('contact_tpa');
 Route::post('/contacto-vdc','MensajeEmailController@storeVozDelCli');
 Route::get('/responsabilidad-social-empresarial','FrontController@rse')->name('rse');
 Route::get('/noticias','FrontController@rse')->name('noticias');

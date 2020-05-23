@@ -60,7 +60,7 @@
 					<div class="col-md-6 col-sm-12 col-xs-12 py-4" id="form-contacto">
 						<h3 class="mt-0">Consultá por un plan de ahorro <br>
 						<small class="text-muted">Un asesor se pondrá en contacto con usted a la brevedad.</small></h3>
-						@include('frontend.includes.contact-form', $data=['from' => 'tpa'])
+						@include('frontend.plan-de-ahorro.includes.contact-form', $data=['from' => 'tpa'])
 					</div>
 					<div class="col-md-6 col-sm-12 col-xs-12 text-center py-4">
 						<div class="fb-page" 
@@ -138,6 +138,12 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 	//---------------End-----------------------------------------------------------------//
+
+	$(document).ready(function() {
+	    if (window.location.href.indexOf("form-contacto") > -1) {
+	      $('#input-cliente').focus();
+	    }
+	  });
 
 	function toggleForm(){
 		$('#tabla-agrupados').toggle()

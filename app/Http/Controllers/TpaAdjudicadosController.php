@@ -57,7 +57,10 @@ class TpaAdjudicadosController extends Controller
             #CALCULAR VALOR AHORRADO
             if( $adjudicado->modalidad == '70/30' ){
                 if( $adjudicado->unidad == 'Etios' ){
-                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_etios - $adjudicado->precio_venta;
+                    $valor_ahorrado = $adjudicado->cuota_pura
+                                    *$adjudicado->avance_cuotas
+                                    +$this->valor_30porciento_etios 
+                                    - $adjudicado->precio_venta;
                 }
                 if( $adjudicado->unidad == 'Hilux' ){
                     $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_hilux - $adjudicado->precio_venta;
