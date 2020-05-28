@@ -14,6 +14,24 @@
 
 @section('styles_sheets')
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+   <style type="text/css">
+    .swal2-title {
+      font-size: 1em;
+    }
+    .swal2-content {
+      font-size: 0.8em;
+    }
+    .swal2-styled {
+      padding: .125em 0.5em;
+      font-size: 20px !important;
+    }
+    .swal2-actions {
+      margin: .7em auto 0;
+    }
+    .swal2-popup {
+      width: 22em;
+    }
+   </style>
 @stop
 
 @section('content')

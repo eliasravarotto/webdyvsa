@@ -33,7 +33,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 
 @section('content')
 	<section>
-		<img data-src="/imagenes/home-min/mobility.jpg" class="lazy w-100 visible-md visible-lg">
+		{{-- <img data-src="/imagenes/home-min/mobility.jpg" class="lazy w-100 visible-md visible-lg"> --}}
 	</section>
 
 	<section>

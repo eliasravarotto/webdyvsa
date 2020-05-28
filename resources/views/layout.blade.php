@@ -189,8 +189,6 @@
 </head>
 
 <body>
-  {{-- <img src="/imagenes/arg.png" class="escarapela visible-md visible-lg">
-  <img src="/imagenes/arg.png" class="escarapela-mb visible-xs visible-sm"> --}}
   
   @include('frontend.includes.flash-message')
   @include('frontend.includes.la-voz-del-cliente')
@@ -216,14 +214,8 @@
   <!-- Owl Carucel -->
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
   <!--===============================================================================================-->
-  <!-- Scroll Reveal -->
-  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-  <!--===============================================================================================-->
   <!-- Google Recaptcha -->
   <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-  <!--===============================================================================================-->
-  <!-- TOAST JS -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <!--===============================================================================================-->
   <script src="{{ asset('js/smoothproducts.min.js') }}"></script>
   <!--===============================================================================================-->
@@ -327,7 +319,7 @@
     });
   </script>
 
-  <!-- JS Cookie Consent -->
+  {{-- <!-- JS Cookie Consent -->
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
   <script>
     window.addEventListener("load", function(){
@@ -348,7 +340,7 @@
         "href": "https://www.cookiesandyou.com/about-cookies/"
       }
     })});
-  </script>
+  </script> --}}
 
   @yield('script')
 

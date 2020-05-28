@@ -122,50 +122,10 @@ span.bg-red{
 		
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12" id="form-contacto">
-							<h2>CONSULTÁ POR NUESTROS PLANES ADJUDICADOS <br>
-							<small>Un asesor se pondrá en contacto con usted a la brevedad.</small></h2>
-							<form id="form" class="form-horizontal" action="/contacto" method="POST" role="form" autocomplete="off">
-								{{ csrf_field() }}
-								<input type="hidden" name="from" value="tpa">
-								<div class="row">
-									<div class=" col-md-6">
-								    <label class="control-label">Nombre y Apellido</label>
-								    <input type="text" class="form-control cliente" name="cliente" required value="{{old('cliente')}}">
-							  	</div>
-							  	<div class=" col-md-6">
-								    <label class="control-label">Teléfono</label>
-								    <input type="text" class="form-control" name="telefono" required value="{{old('telefono')}}">
-							  	</div>
-								</div>
-								<div class="row">
-									<div class=" col-md-12">
-										<label class="control-label">Email</label>
-								    <input type="email" class="form-control" name="email" value="{{old('email')}}">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<label class="control-label">Mensaje</label>
-								    <textarea name="mensaje" class="form-control" required>{{old('mensaje')}}</textarea>
-									</div>
-								</div>
-								<div class="row pad-top-20">
-									<div class="col-md-6">
-										<div class="g-recaptcha" 
-									           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
-									    </div>
-										@if ($errors->has('g-recaptcha-response'))
-										    <span class="text-danger">
-										        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-										    </span>
-										@endif
-									</div>
-									<div class="col-md-6 text-right">
-										<input type="submit" class="btn btn-default btn-round" name="ENVIAR">
-									</div>
-								</div>
-							</form>
-						</div>
+				<h2>CONSULTÁ POR NUESTROS PLANES ADJUDICADOS <br>
+				<small>Un asesor se pondrá en contacto con usted a la brevedad.</small></h2>
+				@include('frontend.plan-de-ahorro.includes.contact-form', $data=['from' => 'tpa'])
+			</div>
 		</div>
 	</div>
 </section>
