@@ -70,6 +70,8 @@
             </div>
         </div>
 	</div>
+
+    @include('frontend.usados.contact-area-usados')
            
 </article> 
 

@@ -9,9 +9,20 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-<body>
 
+<body>
   <h4>Consulta desde el sitio web Derka y Vargas</h4>
+
+  @if ( 
+        (stripos($consulta->mensaje,'mail') !== false) ||
+        (stripos($consulta->mensaje,'email') !== false) ||
+        (stripos($consulta->mensaje,'correo') !== false)
+      )
+      <div class="alert alert-danger" role="alert">
+        Lead Web - <strong>Posible Mistery</strong>
+      </div>
+  @endif
+
   <table class="table table-striped" style="width: 80%">
       <tbody>
         <tr>

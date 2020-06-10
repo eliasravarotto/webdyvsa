@@ -14,8 +14,13 @@
                             <div class="item-usado-certificado" v-if="unidad.uct" >
                                 <img src="/imagenes/logo-uct-new.png" class="w-100">
                             </div>
+
                             <div class="owl-carousel owl-carousel-gallery">
-                                <div v-for="(imagen, i) in imagenes" class="item" :data-hash="'slide'+i">
+                                <!-- SI NO TIENE IMAGEN -->
+                                <div class="w-100" v-if="!unidad.foto">
+                                    <img src="/imagenes/default-img.png">
+                                </div>
+                                <div v-else v-for="(imagen, i) in imagenes" class="item" :data-hash="'slide'+i">
                                   <div class="w-100">
                                       <img :src="imagen.url">
                                   </div>
@@ -85,12 +90,19 @@
                             </div>
 
                             <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  
-                                   class="btn btn-whatsapp my-2" 
-                                   target="_blank"
-                                   style="border-radius: 5px !important">
-                                    <i class="fab fa-whatsapp"></i>
-                                    CONSULTAR
-                                </a>
+                               class="btn btn-whatsapp my-2" 
+                               target="_blank"
+                               style="border-radius: 5px !important">
+                                <i class="fab fa-whatsapp"></i>
+                                CONSULTAR
+                            </a>
+                            <a href="#" 
+                               class="btn button-theme my-2" 
+                               @click.prevent="goToForm()"
+                               style="border-radius: 5px !important">
+                                <i class="far fa-envelope"></i>
+                                ESCRIBIR MENSAJE
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -121,8 +133,13 @@
             this.imagenes = this.data.imagenes;
         },
         methods:{
-            openModalContacto(unidad)
+            goToForm()
             {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".contact-info").offset().top
+                }, 2000);
+
+                $('[name ="mensaje"]') .focus();
 
             },
             showImage(img){

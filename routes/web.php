@@ -27,6 +27,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/admin/modelos/publicar_servicio/{modelo_id}','ModelosController@publicarServicio');
 	Route::resource('admin_slides','SlideController');
 	Route::get('admin_slides_eliminar_item/{id}','SlideController@eliminarItem');
+	Route::get('tpa','TPAPlanController@panelTpa');
+	Route::get('tpa_planes_modalidades','TPAPlanController@getModalidades');
+	Route::get('tpa_planes_unidades','TPAPlanController@getUnidades');
+	Route::resource('tpa_planes','TPAPlanController');
 	Route::resource('tpa_adjudicados','TpaAdjudicadosController');
 	Route::resource('tpa_agrupados','TpaAgrupadosController');
 	Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
