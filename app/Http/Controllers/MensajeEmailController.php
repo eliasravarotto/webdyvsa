@@ -170,7 +170,7 @@ class MensajeEmailController extends Controller
         $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
         $mensaje->save();
         $asunto ='La voz del Cliente - Nuevo Mensaje';
-        $cc = ['rukyguerra@derkayvargas.com.ar'];
+        $cc = ['rukyguerra@derkayvargas.com.ar', 'fabianaaranda@derkayvargas.com.ar'];
 
         event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
 
