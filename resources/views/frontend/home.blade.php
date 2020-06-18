@@ -160,7 +160,7 @@
       <div class="owl-carousel owl-carousel-modelos owl-theme py-2">
             @foreach(\App\Helpers\Helper::getModelos() as $modelo)
             <div class="car-box item pl-1 pr-1">
-              <div class="car-thumbnail bg-cyan">
+              <div class="car-thumbnail bg-gris">
                   <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="car-img">
                       @if ($modelo->es_hibrido)
                       <div class="tag">HÍBRIDO</div>
