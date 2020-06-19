@@ -31,6 +31,10 @@
     .swal2-popup {
       width: 22em !important;
     }
+
+    .bg-gris{
+      background-color: #b0b0b0;
+    }
    </style>
 @stop
 
