@@ -56,6 +56,9 @@
     .grid-box-overlay{
       background-color: rgba(36,42,53,0) !important;
     }
+    .grid-box {
+      cursor: pointer;
+    }
    </style>
 @stop
 
@@ -90,7 +93,7 @@
       <div class="container">
           <div class="row row-2">
             <div class="col-lg-4 col-md-12 col-pad">
-                  <div class="grid-box">
+                  <div class="grid-box" onclick="window.location.href = '{{route('usados_index')}}';">
                       <div class="grid-box_bg_box grid-box_long_bg cat-4-bg">
                           <div class="grid-box-overlay">
                               <div class="grid-box-content">
@@ -103,11 +106,11 @@
                           </div>
                       </div>
                   </div>
-              </div>
+            </div>
               <div class="col-lg-4 col-md-12">
                   <div class="row">
                       <div class="col-md-6 col-lg-12 col-pad">
-                          <div class="grid-box">
+                          <div class="grid-box" onclick="window.location.href = '{{route('landing_tpa')}}';">
                               <div class="grid-box_bg_box bg-grid-box-tpa">
                                   <div class="grid-box-overlay">
                                       <div class="grid-box-content">
@@ -121,7 +124,7 @@
                           </div>
                       </div>
                       <div class="col-md-6 col-lg-12 col-pad">
-                        <div class="grid-box">
+                        <div class="grid-box" onclick="window.location.href = '{{route('mobility_services')}}';">
                             <div class="grid-box_bg_box cat-5-bg">
                                 <div class="grid-box-overlay">
                                     <div class="grid-box-content">
@@ -141,7 +144,7 @@
                       <div class="col-md-6 col-lg-12 col-pad">
                           <div class="grid-box">
                               <div class="grid-box_bg_box cat-2-bg">
-                                  <div class="grid-box-overlay">
+                                  <div class="grid-box-overlay" onclick="window.location.href = '{{route('accesorios')}}';">
                                       <div class="grid-box-content">
                                           <h3 class="grid-box-title">
                                               <a href="{{route('accesorios')}}">ACCESORIOS</a>
@@ -155,7 +158,7 @@
                       <div class="col-md-6 col-lg-12 col-pad">
                           <div class="grid-box">
                               <div class="grid-box_bg_box cat-3-bg">
-                                  <div class="grid-box-overlay">
+                                  <div class="grid-box-overlay" onclick="window.location.href = '{{route('posventa')}}';">
                                       <div class="grid-box-content">
                                           <h3 class="grid-box-title">
                                               <a href="{{route('posventa')}}">SERVICIOS DE POSVENTA</a>
