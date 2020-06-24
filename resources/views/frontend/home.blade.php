@@ -53,6 +53,9 @@
     .grid-box-content h3 a, .grid-box-subtitle {
       color: rgba(36,42,53,.0);
     }
+    .grid-box-overlay{
+      background-color: rgba(36,42,53,0) !important;
+    }
    </style>
 @stop
 
