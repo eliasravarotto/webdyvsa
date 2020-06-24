@@ -32,9 +32,6 @@ El Toyota que querés, por el tiempo que necesitás.">
 @stop
 
 @section('content')
-	<section>
-		{{-- <img data-src="/imagenes/home-min/mobility.jpg" class="lazy w-100 visible-md visible-lg"> --}}
-	</section>
 
 	<section>
 		<div class="container">
@@ -42,7 +39,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 				<div class="col-md-4 py-2 px-3">
 					<img src="{{ asset('imagenes/mobility/header.png') }}" class="img-fluid">
 				</div>
-				<div class="col-md-8 py-2 px-3">
+				<div class="col-md-8 py-3 px-4">
 					<h1 class="color-mobility">El Toyota que querés, por el tiempo que necesitás.</h1>
 					<p>Podés estar muy conforme con un Etios para uso diario, pero el fin de semana podrías necesitar una Hilux o puede que quieras ir con tus amigos a jugar al fútbol, y entonces darías todo por tener una Innova y sus 8 asientos. Nuestro objetivo es adaptarnos a tu estilo de vida, por esa razón creamos Toyota Mobility Services.</p>
 				</div>
@@ -79,7 +76,7 @@ El Toyota que querés, por el tiempo que necesitás.">
 	                <div class="mainflip">
 	                    <div class="frontside">
 	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
-	                            <div class="card-body text-center">
+	                            <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
 	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/01.png')}}" alt="card image lazy">
 	                                <p class="card-text text-justify mx-1"> 
 	                                	<b class="color-mobility">1</b>

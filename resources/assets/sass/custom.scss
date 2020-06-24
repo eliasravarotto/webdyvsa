@@ -3019,12 +3019,11 @@ CARD COMPONENT
     background: #fff;
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-    padding: 14px 80px 18px 36px;
     cursor: pointer;
 }
 
 .card-component:hover{
-     transform: scale(1.05);
+  transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
@@ -3032,19 +3031,10 @@ CARD COMPONENT
   font-weight: 600;
 }
 
-.card-component img{
-  position: absolute;
-  top: 20px;
-  right: 15px;
-  max-height: 120px;
-}
-
-
-@media(max-width: 990px){
-  .card-component{
-    margin: 20px;
+  .card-component img{
+    max-width: 150px;
   }
-}
+
 
 .bg-opacity-68{
   background: rgba(0,0,0,.68);
@@ -3464,6 +3454,7 @@ CARD COMPONENT
     position: relative;
     text-align: center;
     margin: 0 0 15px 0;
+    cursor: pointer;
 }
 
 .bg-grid-box-tpa {
@@ -3498,7 +3489,6 @@ CARD COMPONENT
     right: 0;
     top: 0;
     transition: background-color .15s linear;
-    background-color: rgba(36, 42, 53, 0.5);
 }
 .grid-box-content {
     position: absolute;
@@ -3512,12 +3502,12 @@ CARD COMPONENT
     text-align: left;
 }
 .grid-box-content h3 a {
-    color: #fff;
+    color: rgba(36,42,53,.0);
     font-size: 20px;
 }
 .grid-box-subtitle {
     white-space: nowrap;
-    color: #fff;
+    color: rgba(36,42,53,.0);
     font-weight: 500;
     font-size: 15px;
     letter-spacing: 1px;

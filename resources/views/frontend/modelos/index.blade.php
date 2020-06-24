@@ -24,7 +24,7 @@
       					@foreach($modelos as $modelo)
       					<div class="col-sm-6 col-md-4 py-1 px-1">
                   <div class="car-box item">
-                    <div class="car-thumbnail bg-cyan">
+                    <div class="car-thumbnail bg-gris">
                         <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="car-img">
                             @if ($modelo->es_hibrido)
                             <div class="tag">HÍBRIDO</div>
@@ -74,10 +74,9 @@
           <div class="container">
             <div class="row py-4">
               <div class="col-md-6 col-sm-12 text-center">
-                <img class="img-fluid d-none d-md-block d-lg-block d-xl-block" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
-                <img class="img-fluid w-100 d-block d-lg-none d-md-none d-xl-none mb-1" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
+                <img class="img-fluid" src="{{asset('imagenes/home-min/bg-block-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
               </div>
-              <div class="col-md-6 col-sm-12">
+              <div class="col-md-6 col-sm-12 pt-3 px-4">
                 <h2>Alquiler de Vehículos</h2>
                 <p><b>Entérate como podes alquilar un Toyota en cinco sencillos pasos</b></p>
                 <p class="text-muted">Toyota Mobility Services es el nuevo sistema de alquiler de autos, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes, etc.</p>
