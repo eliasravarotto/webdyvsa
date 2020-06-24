@@ -35,6 +35,21 @@
     .bg-gris{
       background-color: #b0b0b0;
     }
+    .bg-grid-box-tpa {
+        background-image: url('/imagenes/home-min/bg-block-tpa.jpg') !important;
+    }
+    .cat-2-bg {
+        background-image: url('/imagenes/home-min/bg-block-accesorios.jpg') !important;
+    }
+    .cat-3-bg {
+        background-image: url('/imagenes/home-min/bg-block-posventa.jpg') !important;
+    }
+    .cat-4-bg {
+        background-image: url('/imagenes/home-min/bg-block-usados.jpg') !important;
+    }
+    .cat-5-bg {
+        background-image: url('/imagenes/home-min/bg-block-mobility.jpg') !important;
+    }
    </style>
 @stop
 

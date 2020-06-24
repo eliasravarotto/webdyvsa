@@ -55,7 +55,7 @@
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <!--===============================================================================================-->
     <script src="{{ asset('bootadmin/js/bootadmin.min.js') }}"></script>
-   
+    
     @yield('page-script')
 
 </body>

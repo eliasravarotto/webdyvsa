@@ -71,4 +71,11 @@ window.openFile = function(event) {
 window.select2 = require('select2');
 $.fn.select2.defaults.set( "theme", "bootstrap" );
 
+// Animacion cargando
+window.loader = `<div id="loader">
+                        <div class="loadme-mask">
+                            <div class="loadme-circular"></div>
+                        </div>
+                    </div>`;
+
 

@@ -1995,6 +1995,9 @@ font-size: 16px;
 .bg-cyan{
   background-color: $cyan;
 }
+.bg-gris{
+  background-color:#b0b0b0;
+}
 
 /*--------------PANEL------------------------*/
 .panel-title-financial > a > h4 {
@@ -3462,23 +3465,21 @@ CARD COMPONENT
     text-align: center;
     margin: 0 0 15px 0;
 }
-.cat-1-bg {
-    background-image: url('https://uc878540f0de5c0912769356daba.previews.dropboxusercontent.com/p/thumb/AAuQIQlrKqZKtSiaPuVuYkq2RdfYJbMS-lrhLrZ_2AouUjB7tbVLdXyh-SZGoXp7JikdIRuDryT8F-JumCQKv_5ekCZuYM02J1Pz8ELRObyIwJBS-edOgcdWSOSwvkHCnME7DgY5BSTLcjtH5hRq9iJNgwvPcrwBl307h9maWkHmxTrjWH9ViEPHHIQt85m2t5OY4Wia7fcnGoiLbY8_N4whC2ydidRafRjWhIplXA-BYCkewpMPOlnRSBeklLoxXGYphRsF4kWFB1a1irihh51pO_oybLNXt-nRXWmSqw_XsVR4wLQ-ZwyfZFFm64Xb6xvoKJOrc2o1bpSu_C1Ts2zrAwFovmicT_bipKgjTbOAAA/p.jpeg?fv_content=true&size_mode=5');
-}
+
 .bg-grid-box-tpa {
-    background-image: url('/imagenes/tpa/plan-de-ahorro-auto.jpeg');
+    background-image: url('/imagenes/mone-min/bg-block-tpa.jpg');
 }
 .cat-2-bg {
-    background-image: url('/imagenes/posventa/accesorios.jpg');
+    background-image: url('/imagenes/mone-min/bg-block-accesorios.jpg');
 }
 .cat-3-bg {
-    background-image: url('https://www.distoyota.com/sites/default/files/2019-05/400x292.jpg');
+    background-image: url('/imagenes/hone-min/bg-block-posventa.jpg');
 }
 .cat-4-bg {
-    background-image: url('/imagenes/header-usados.jpg');
+    background-image: url('/imagenes/hone-min/bg-block-usados.jpg');
 }
 .cat-5-bg {
-    background-image: url('/imagenes/mobility/header.png');
+    background-image: url('/imagenes/hone-min/bg-block-mobility.jpg');
 }
 .grid-box_bg_box {
     transition: all 0.35s;
