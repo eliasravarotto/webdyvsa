@@ -50,6 +50,9 @@
     .cat-5-bg {
         background-image: url('/imagenes/home-min/bg-block-mobility.jpg') !important;
     }
+    .grid-box-content h3 a, .grid-box-subtitle {
+      color: rgba(36,42,53,.0);
+    }
    </style>
 @stop
 
