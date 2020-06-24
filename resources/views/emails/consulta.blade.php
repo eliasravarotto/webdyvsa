@@ -210,7 +210,7 @@
                                             </tr>
                                             <tr>
                                                 <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Mensaje </td>
-                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> loliasu ñoaiudlasioudln ausoidasdasuhd asoiu h </td>
+                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$consulta->mensaje}} </td>
                                             </tr>
                                         </table>
                                     </td>
