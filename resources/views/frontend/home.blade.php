@@ -414,12 +414,12 @@
         <div class="col-xs-12 col-sm-12 col-md-6 my-3 text-center">
           {{-- {{collect(\App\Helpers\Helper::getRecentPostInstagram())}} --}}
           @php $count = 0 @endphp
-          @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
+          {{-- @foreach(\App\Helpers\Helper::getRecentPostInstagram()->data as $post)
             @if ($count == 9) @break @endif
             @php $count++ @endphp
             <a class="group" href="{{$post->link}}"target="_blank"><img src="{{ $post->images->thumbnail->url }}" alt="{{$post->caption->text}}"></a>
           @endforeach
-         
+          --}}
         </div>
       </div>
     </div>
