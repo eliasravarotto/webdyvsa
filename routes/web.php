@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/admin/modelos/publicar_servicio/{modelo_id}','ModelosController@publicarServicio');
 	Route::resource('admin_slides','SlideController');
 	Route::get('admin_slides_eliminar_item/{id}','SlideController@eliminarItem');
-	Route::get('tpa','TPAPlanController@panelTpa');
+	Route::get('tpa','TPAPlanController@panelTpa')->name('panel_tpa');
 	Route::get('tpa_planes_modalidades','TPAPlanController@getModalidades');
 	Route::get('tpa_planes_unidades','TPAPlanController@getUnidades');
 	Route::resource('tpa_planes','TPAPlanController');

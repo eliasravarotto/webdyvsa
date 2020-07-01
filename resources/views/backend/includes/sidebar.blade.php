@@ -11,13 +11,10 @@
         </ul>
     </li>
     <li>
-        <a href="#ul_tpa" data-toggle="collapse">
-            <i class="fa fa-car"></i> TPA
+        <a href="{{route('panel_tpa')}}">
+            <i class="fa fa-car"></i>
+            TPA
         </a>
-        <ul id="ul_tpa" class="list-unstyled collapse">
-            <li><a href="{{route('tpa_adjudicados.index')}}">Adjudicados</a></li>
-            <li><a href="{{route('tpa_agrupados.index')}}">Avanzados/Agrupados</a></li>
-        </ul>
     </li>
     <li>
         <a href="/admin/usados">
