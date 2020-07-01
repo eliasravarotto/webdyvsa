@@ -17,6 +17,16 @@ class TpaAgrupadosController extends Controller
     {
         $agrupados = TpaAgrupado::with('planTpa')->get();
 
+        foreach ($agrupados as $a) {
+            if ($a->planTpa()->first()->modalidad == TpaAdjudicado::MODALIDAD_70_30) {
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas+($a->planTpa()->first()->precio_lista*0.3);
+            }else{
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas;
+            }         
+
+            $a->valor_ahorrado = $a->avance_en_cuotaspura - $a->precio_venta;   
+        }
+
         return $agrupados;
     }
 
@@ -27,9 +37,7 @@ class TpaAgrupadosController extends Controller
      */
     public function create()
     {
-        $agrupado = new TpaAgrupado;
 
-        return view('backend.tpa.agrupados.create', compact('agrupado'));
     }
 
     /**
@@ -72,8 +80,7 @@ class TpaAgrupadosController extends Controller
      */
     public function edit($id)
     {
-        $agrupado = TpaAgrupado::find($id);
-        return view('backend.tpa.agrupados.edit', compact('agrupado'));
+
     }
 
     /**

@@ -10,7 +10,8 @@ class TPAPlan extends Model
 
     protected $fillable = ['unidad', 'modalidad', 'precio_lista', 'cuota_pura', 'integracion', 'activo'];
 
-
+    const MODALIDAD_70_30 = '70/30';
+    const MODALIDAD_100 = '100%';
 
     public function adjudicados()
     {

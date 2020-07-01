@@ -10,15 +10,6 @@ class TpaAdjudicadosController extends Controller
 {
 
 
-    //ETIOS X 4P 6M/T
-    private $valor_cuota_pura_etios70_30 = 7461; // (precio - valor_30porciento_etios) / 84
-    private $valor_30porciento_etios = 268620;
-
-    //HILUX 4X2 C/D DX 2,4 TDI 6 M/T
-    private $valor_cuota_pura_hilux70_30 = 15046; // (precio - valor_30porciento_hilux) / 84
-    private $valor_30porciento_hilux = 541680;
-
-
     /**
      * Display a listing of the resource.
      *
@@ -29,62 +20,19 @@ class TpaAdjudicadosController extends Controller
 
         $adjudicados = TpaAdjudicado::with('planTpa')->get();
 
-        return $adjudicados;
-
-
-        //----------------------------------
-
-        foreach ($adjudicados as $adjudicado) {
-
-            $valor_ahorrado = 0;
-            $avance_en_cuota_pura = 0;
-
-            #CALCULAR VALOR AVANCE DEL PLAN EN CUOTAS PURA
-            if( $adjudicado->modalidad == '70/30' ){
-                if( $adjudicado->unidad == 'Etios' ){
-                    $avance_en_cuota_pura = 
-                            $adjudicado->cuota_pura
-                            *
-                            $adjudicado->avance_cuotas
-                            +
-                            $this->valor_30porciento_etios;
-                }
-                if( $adjudicado->unidad == 'Hilux' ){
-                    $avance_en_cuota_pura = 
-                            $adjudicado->cuota_pura
-                            *
-                            $adjudicado->avance_cuotas
-                            +
-                            $this->valor_30porciento_hilux;
-                }
+        foreach ($adjudicados as $a) {
+            if ($a->planTpa()->first()->modalidad == TpaAdjudicado::MODALIDAD_70_30) {
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas+($a->planTpa()->first()->precio_lista*0.3);
             }else{
-               $avance_en_cuota_pura = $adjudicado->cuota_pura*$adjudicado->avance_cuotas;
-            }
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas;
+            }         
 
-            #CALCULAR VALOR AHORRADO
-            if( $adjudicado->modalidad == '70/30' ){
-                if( $adjudicado->unidad == 'Etios' ){
-                    $valor_ahorrado = $adjudicado->cuota_pura
-                                    *$adjudicado->avance_cuotas
-                                    +$this->valor_30porciento_etios 
-                                    - $adjudicado->precio_venta;
-                }
-                if( $adjudicado->unidad == 'Hilux' ){
-                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_hilux - $adjudicado->precio_venta;
-                }
-            }else{
-                $valor_ahorrado = 
-                    $adjudicado->cuota_pura
-                    *
-                    $adjudicado->avance_cuotas 
-                    - 
-                    $adjudicado->precio_venta;
-            }
-
-            $adjudicado->valor_ahorrado = $valor_ahorrado;
-            $adjudicado->avance_en_cuota_pura = $avance_en_cuota_pura;
+            $a->valor_ahorrado = $a->avance_en_cuotaspura - $a->precio_venta;   
         }
-        return view('backend.tpa.adjudicados.index', compact('adjudicados'));
+        
+
+        return $adjudicados;
+ 
     }
 
     /**
@@ -94,9 +42,7 @@ class TpaAdjudicadosController extends Controller
      */
     public function create()
     {
-        $adjudicado = new TpaAdjudicado;
-
-        return view('backend.tpa.adjudicados.create', compact('adjudicado'));
+        
     }
 
     
@@ -109,8 +55,7 @@ class TpaAdjudicadosController extends Controller
      */
     public function edit($id)
     {
-        $adjudicado = TpaAdjudicado::find($id);
-        return view('backend.tpa.adjudicados.edit', compact('adjudicado'));
+
     }
 
     
@@ -118,48 +63,17 @@ class TpaAdjudicadosController extends Controller
     {
         $adjudicados = TpaAdjudicado::all();
 
-        foreach ($adjudicados as $adjudicado) {
-
-            $valor_ahorrado = 0;
-            $avance_en_cuota_pura = 0;
-
-            #CALCULAR VALOR AVANCE DEL PLAN EN CUOTAS PURA
-            if( $adjudicado->modalidad == '70/30' ){
-                if( $adjudicado->unidad == 'Etios' ){
-                    $avance_en_cuota_pura = 
-                            $adjudicado->cuota_pura
-                            *
-                            $adjudicado->avance_cuotas
-                            +
-                            $this->valor_30porciento_etios;
-                }
-                if( $adjudicado->unidad == 'Hilux' ){
-                    $avance_en_cuota_pura = 
-                            $adjudicado->cuota_pura
-                            *
-                            $adjudicado->avance_cuotas
-                            +
-                            $this->valor_30porciento_hilux;
-                }
-            }else{ //100%
-               $avance_en_cuota_pura = $adjudicado->cuota_pura*$adjudicado->avance_cuotas;
-            }
-
-            #CALCULAR VALOR AHORRADO
-            if( $adjudicado->modalidad == '70/30' ){
-                if( $adjudicado->unidad == 'Etios' ){
-                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_etios - $adjudicado->precio_venta;
-                }
-                if( $adjudicado->unidad == 'Hilux' ){
-                    $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas+$this->valor_30porciento_hilux - $adjudicado->precio_venta;
-                }
+        foreach ($adjudicados as $a) {
+            if ($a->planTpa()->first()->modalidad == TpaAdjudicado::MODALIDAD_70_30) {
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas+($a->planTpa()->first()->precio_lista*0.3);
             }else{
-                $valor_ahorrado = $adjudicado->cuota_pura*$adjudicado->avance_cuotas - $adjudicado->precio_venta;
-            }
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas;
+            }         
 
-            $adjudicado->valor_ahorrado = $valor_ahorrado;
-            $adjudicado->avance_en_cuota_pura = $avance_en_cuota_pura;
+            $a->valor_ahorrado = $a->avance_en_cuotaspura - $a->precio_venta;   
         }
+        
+
         return view('frontend.plan-de-ahorro.planes-adjudicados', compact('adjudicados'));
     }
 

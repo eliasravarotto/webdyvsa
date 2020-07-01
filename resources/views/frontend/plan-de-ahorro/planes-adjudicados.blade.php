@@ -64,17 +64,17 @@ span.bg-red{
 				    <tbody>
 				    	@foreach($adjudicados as $adjudicado)
 					      <tr>
-					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->grupo}}/{{$adjudicado->orden}}</td>
-					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->unidad}}</td>
-					        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$adjudicado->modalidad}}</td>
+					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->grupo_orden}}</td>
+					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->planTpa()->first()->unidad}}</td>
+					        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$adjudicado->planTpa()->first()->modalidad}}</td>
 					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->avance_cuotas}}</td>
 					        <td class="text-center" style="font-weight: bold;">
 					        	<span class="badge badge-success" style=" font-size: 17px;">$ {{number_format($adjudicado->precio_venta, 2, ',', '.')}}</span>
 					        </td>
 					        <td class="text-center" style="font-weight: bold; border-top: none;"></td>
-					        <td class="text-center" style="font-weight: bold;">$ {{number_format($adjudicado->cuota_pura, 2, ',', '.')}}</td>
+					        <td class="text-center" style="font-weight: bold;">$ {{number_format($adjudicado->planTpa()->first()->cuota_pura, 2, ',', '.')}}</td>
 					        <td class="text-center" style="font-weight: bold;">
-					        	{{number_format($adjudicado->avance_en_cuota_pura, 2, ',', '.')}}
+					        	{{number_format($adjudicado->avance_en_cuotaspura, 2, ',', '.')}}
 					        </td>
 					        <td class="text-center" style="font-weight: bold;">
 					        	<span class=" badge badge-secondary" style=" font-size: 17px">
@@ -92,20 +92,20 @@ span.bg-red{
 			  		<tr>
 			  			<td style="border-top: 5px solid #ddd;">
 				    		<div class="d-flex w-100 align-items-center">
-				    			<div class="w-25 fz-20 bold">{{$adjudicado->unidad}}</div>
+				    			<div class="w-25 fz-20 bold">{{$adjudicado->planTpa()->first()->unidad}}</div>
 				    			<div class="w-75 text-right"><label>Precio venta bonificado</label> <span class="badge fz-20 bg-red">${{number_format($adjudicado->precio_venta, 0, ',', '.')}}</div></span>
 				    		</div>
 				    		<div class="d-flex w-100 justify-content-space-between my-1">
-				    			<div><label>G/O:</label> {{$adjudicado->grupo}}/{{$adjudicado->orden}}</div>
-				    			<div><label>Modalidad:</label> {{$adjudicado->modalidad}}</div>
+				    			<div><label>G/O:</label> {{$adjudicado->grupo_orden}}</div>
+				    			<div><label>Modalidad:</label> {{$adjudicado->planTpa()->first()->modalidad}}</div>
 				    			<div><label>Avance Cuotas:</label> {{$adjudicado->avance_cuotas}}</div>
 				    		</div>
 				    		<div class="d-flex w-100">
-				    			<label class="mr-1">Cuota Pura </label> ${{number_format($adjudicado->cuota_pura, 0, ',', '.')}}
+				    			<label class="mr-1">Cuota Pura </label> ${{number_format($adjudicado->planTpa()->first()->cuota_pura, 0, ',', '.')}}
 				    		</div>
 				    		<div class="d-flex w-100">
 				    			<label class="mr-1">Avance del plan en Cuota Pura</label>
-				    			$ {{number_format($adjudicado->avance_en_cuota_pura, 2, ',', '.')}}
+				    			$ {{number_format($adjudicado->avance_en_cuotaspura, 2, ',', '.')}}
 				    		</div>
 				    		<div class="d-flex w-100 align-items-center">
 				    			<label class="mr-1">Valor Ahorrado</label> 

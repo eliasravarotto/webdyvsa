@@ -551,11 +551,11 @@
     }
     function printPlanAdjudicado(adjudicado){
 
-        if (adjudicado.plan_tpa.modalidad == '70/30'){ // PLAN 70/3
-            adjudicado.avance_en_cuotaspura = adjudicado.plan_tpa.cuota_pura*adjudicado.avance_cuotas+(84*adjudicado.plan_tpa.cuota_pura);
-        }else{ // PLAN 100%
-            adjudicado.avance_en_cuotaspura = adjudicado.plan_tpa.cuota_pura*adjudicado.avance_cuotas;
-        }
+        // if (adjudicado.plan_tpa.modalidad == '70/30'){ // PLAN 70/3
+        //     adjudicado.avance_en_cuotaspura = adjudicado.plan_tpa.cuota_pura*adjudicado.avance_cuotas+(adjudicado.plan_tpa.precio_lista*0.3);
+        // }else{ // PLAN 100%
+        //     adjudicado.avance_en_cuotaspura = adjudicado.plan_tpa.cuota_pura*adjudicado.avance_cuotas;
+        // }
         
         adjudicado.valor_ahorrado = adjudicado.avance_en_cuotaspura - adjudicado.precio_venta;
         adjudicado.precio_venta = new Intl.NumberFormat("de-DE").format(adjudicado.precio_venta)
@@ -754,11 +754,11 @@
     }
     function printPlanesAvanzado(avanzado){
 
-        if (avanzado.plan_tpa.modalidad == '70/30'){ // PLAN 70/3
-            avanzado.avance_en_cuotaspura = avanzado.plan_tpa.cuota_pura*avanzado.avance_cuotas+(84*avanzado.plan_tpa.cuota_pura);
-        }else{ // PLAN 100%
-            avanzado.avance_en_cuotaspura = avanzado.plan_tpa.cuota_pura*avanzado.avance_cuotas;
-        }
+        // if (avanzado.plan_tpa.modalidad == '70/30'){ // PLAN 70/3
+        //     avanzado.avance_en_cuotaspura = avanzado.plan_tpa.cuota_pura*avanzado.avance_cuotas+(avanzado.plan_tpa.precio_lista*0.3);
+        // }else{ // PLAN 100%
+        //     avanzado.avance_en_cuotaspura = avanzado.plan_tpa.cuota_pura*avanzado.avance_cuotas;
+        // }
         
         avanzado.valor_ahorrado = avanzado.avance_en_cuotaspura - avanzado.precio_venta;
         avanzado.precio_venta = new Intl.NumberFormat("de-DE").format(avanzado.precio_venta)
