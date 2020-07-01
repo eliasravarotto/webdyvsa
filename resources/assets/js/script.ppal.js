@@ -7,7 +7,6 @@
     7. FABS BTNS
     8. NAVBAR MOBILE FIXED TOP
 ***********************************/
-
 $(document).ready(function(){
   /*---------------------------------
     1. Slider Principal

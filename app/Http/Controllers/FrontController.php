@@ -19,14 +19,6 @@ use Illuminate\Support\Facades\Storage;
 
 class FrontController extends Controller
 {
-    public function home()
-    {
-        $productos = Modelo::where('activo', 1)->get();
-
-        $push_cookie = \Request::cookie('quiere_suscribirse', 1, 3600*24);
-
-        return view('frontend.home', compact('productos', 'push_cookie'));
-    }
 
     public function homeMin()
     {

@@ -83,7 +83,7 @@ class Helper
 
 	public static function getModelos()
 	{
-		return Modelo::all();
+		return Modelo::where('activo', 1)->get();
 	}
 
 	public static function postRecientes($limit)

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\TpaAgrupado;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TpaAgrupadosController extends Controller
 {
@@ -14,9 +15,9 @@ class TpaAgrupadosController extends Controller
      */
     public function index()
     {
-        $agrupados = TpaAgrupado::all();
+        $agrupados = TpaAgrupado::with('planTpa')->get();
 
-        return view('backend.tpa.agrupados.index', compact('agrupados'));
+        return $agrupados;
     }
 
     /**
@@ -39,19 +40,15 @@ class TpaAgrupadosController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'grupo' => 'required|int',
-            'orden' => 'required|int',
-            'unidad' => 'required|string',
-            'modalidad' => 'required|string',
-            'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|numeric',
-            'cuota_pura' => 'required|numeric'
-        ]);
+        $validator = $this->validarRequest( $request );
+        
+        if ($validator->passes()) {
+            $agrupado = TpaAgrupado::create($request->all());
+            return response()->json($agrupado);
+        }
 
-        TpaAgrupado::create($request->all());
+        return response()->json(['error'=>$validator->errors()->all()]);
 
-        return redirect()->route('tpa_agrupados.index')->with('success','Guardado correctamente.');
 
     }
 
@@ -63,7 +60,8 @@ class TpaAgrupadosController extends Controller
      */
     public function show($id)
     {
-        //
+        $avanzado = TpaAgrupado::findOrFail($id);
+        return $avanzado;
     }
 
     /**
@@ -87,27 +85,17 @@ class TpaAgrupadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'grupo' => 'required|int',
-            'orden' => 'required|int',
-            'unidad' => 'required|string',
-            'modalidad' => 'required|string',
-            'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|numeric',
-            'cuota_pura' => 'required|numeric'
-        ]);
+        $agrupado = TpaAgrupado::findOrFail($id);
 
-        $agrupado = TpaAgrupado::find($id);
-        $agrupado->grupo = $request->grupo;
-        $agrupado->orden = $request->orden;
-        $agrupado->unidad = $request->unidad;
-        $agrupado->modalidad = $request->modalidad;
-        $agrupado->avance_cuotas = $request->avance_cuotas;
-        $agrupado->precio_venta = $request->precio_venta;
-        $agrupado->cuota_pura = $request->cuota_pura;
-        $agrupado->update();
-        
-        return redirect()->route('tpa_agrupados.index')->with('success','Actualizado correctamente.');
+        $validator = $this->validarRequest( $request );
+
+        if ($validator->passes()) {
+            $agrupado = TpaAgrupado::findOrFail($id);
+            $agrupado->update($request->all());
+            return response()->json($agrupado);
+        }
+
+        return response()->json(['error'=>$validator->errors()->all()]);
     }
 
     /**
@@ -120,6 +108,17 @@ class TpaAgrupadosController extends Controller
     {
         $agrupado = TpaAgrupado::find($id);
         $agrupado->delete();
-         return redirect()->route('tpa_agrupados.index')->with('success','Eliminado correctamente.');
+
+        return response()->json(['success'=>'Eliminado correctamente.']);
+    }
+
+    private function validarRequest( $request )
+    {
+       return Validator::make($request->all(), [
+            'grupo_orden' => 'required|string',
+            'plan_id' => 'required|int',
+            'avance_cuotas' => 'required|int',
+            'precio_venta' => 'required|int',
+        ]);
     }
 }

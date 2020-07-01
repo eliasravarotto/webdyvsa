@@ -138,3 +138,15 @@ Route::get('/posventa-accesorios','AccesorioController@indexFront')->name('acces
 Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizadorOnlineComoFunciona')->name('cotizador_online_como_funciona');
 
 Route::get('/slide_get_data/{id}','SlideController@getDataSlide');
+
+Route::get('/email', function(){
+
+	$consulta = App\MensajeEmail::find(258);
+
+	// Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta){
+ //        $message->subject('Probando Leads');
+ //        $message->to('elias.ravarotto@gmail.com')->cc('eliasravarotto@derkayvargas.com.ar');
+ //    });
+
+	return view('emails.consulta', compact('consulta'));
+});

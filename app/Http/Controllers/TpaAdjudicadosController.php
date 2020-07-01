@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TpaAdjudicado;
+use Illuminate\Support\Facades\Validator;
 
 class TpaAdjudicadosController extends Controller
 {
@@ -25,7 +26,13 @@ class TpaAdjudicadosController extends Controller
      */
     public function index()
     {
-        $adjudicados = TpaAdjudicado::all();
+
+        $adjudicados = TpaAdjudicado::with('planTpa')->get();
+
+        return $adjudicados;
+
+
+        //----------------------------------
 
         foreach ($adjudicados as $adjudicado) {
 
@@ -92,41 +99,7 @@ class TpaAdjudicadosController extends Controller
         return view('backend.tpa.adjudicados.create', compact('adjudicado'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-
-        $this->validate($request, [
-            'grupo' => 'required|string',
-            'orden' => 'required|string',
-            'unidad' => 'required|string',
-            'modalidad' => 'required|string',
-            'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|numeric',
-            'cuota_pura' => 'required|numeric'
-        ]);
-
-        TpaAdjudicado::create($request->all());
-
-        return redirect()->route('tpa_adjudicados.index')->with('success','Guardado correctamente.');
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -140,52 +113,7 @@ class TpaAdjudicadosController extends Controller
         return view('backend.tpa.adjudicados.edit', compact('adjudicado'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $this->validate($request, [
-            'grupo' => 'required|string',
-            'orden' => 'required|string',
-            'unidad' => 'required|string',
-            'modalidad' => 'required|string',
-            'avance_cuotas' => 'required|int',
-            'precio_venta' => 'required|numeric',
-            'cuota_pura' => 'required|numeric'
-        ]);
-
-        $adjudicado = TpaAdjudicado::find($id);
-        $adjudicado->grupo = $request->grupo;
-        $adjudicado->orden = $request->orden;
-        $adjudicado->unidad = $request->unidad;
-        $adjudicado->modalidad = $request->modalidad;
-        $adjudicado->avance_cuotas = $request->avance_cuotas;
-        $adjudicado->precio_venta = $request->precio_venta;
-        $adjudicado->cuota_pura = $request->cuota_pura;
-        $adjudicado->update();
-
-         return redirect()->route('tpa_adjudicados.index')->with('success','Actualizado correctamente.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $adjudicado = TpaAdjudicado::find($id);
-        $adjudicado->delete();
-         return redirect()->route('tpa_adjudicados.index')->with('success','Eliminado correctamente.');
-    }
-
-
+    
     public function indexAdjudicados()
     {
         $adjudicados = TpaAdjudicado::all();
@@ -213,7 +141,7 @@ class TpaAdjudicadosController extends Controller
                             +
                             $this->valor_30porciento_hilux;
                 }
-            }else{
+            }else{ //100%
                $avance_en_cuota_pura = $adjudicado->cuota_pura*$adjudicado->avance_cuotas;
             }
 
@@ -233,5 +161,90 @@ class TpaAdjudicadosController extends Controller
             $adjudicado->avance_en_cuota_pura = $avance_en_cuota_pura;
         }
         return view('frontend.plan-de-ahorro.planes-adjudicados', compact('adjudicados'));
+    }
+
+
+    //NUEVA IMPLEMETACION
+
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        $validator = $this->validarRequest( $request );
+
+        if ($validator->passes()) {
+            $adjudicado = TpaAdjudicado::create($request->all());
+            return response()->json($adjudicado);
+        }
+
+        return response()->json(['error'=>$validator->errors()->all()]);
+
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $validator = $this->validarRequest( $request );
+
+        if ($validator->passes()) {
+            $adjudicado = TpaAdjudicado::findOrFail($id);
+            $adjudicado->update($request->all());
+            return response()->json($adjudicado);
+        }
+
+        return response()->json(['error'=>$validator->errors()->all()]);
+      
+    }
+
+    /**
+     * Get the specified resource.
+     *
+     * @param  int  $id
+     */
+    public function show($id)
+    {
+        $adjudicado = TpaAdjudicado::findOrFail($id);
+        return $adjudicado;
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $adjudicado = TpaAdjudicado::find($id);
+        $adjudicado->delete();
+
+        return response()->json(['success'=>'Eliminado correctamente.']);
+    }
+
+
+
+
+    private function validarRequest( $request )
+    {
+       return Validator::make($request->all(), [
+            'grupo_orden' => 'required|string',
+            'plan_id' => 'required|int',
+            'avance_cuotas' => 'required|int',
+            'precio_venta' => 'required|int',
+        ]);
     }
 }
