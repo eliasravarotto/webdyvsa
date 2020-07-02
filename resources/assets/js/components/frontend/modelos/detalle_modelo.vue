@@ -32,7 +32,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <h4 class="text-center">COLORES</h4>
                         <div id="images_colors" class="text-center">
                             <img v-for="(data, index) in model_color_images"
                                  v-bind:class="'img-thumbnail thumbnail-no-border '"
@@ -55,7 +54,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <table class="table table-striped">
+                        <table class="table table-hover tabla-precios">
                             <thead>
                               <tr>
                                 <th>VERSION</th>
@@ -64,12 +63,12 @@
                             </thead>
                             <tbody>                         
                               <tr v-for="version in versiones"> 
-                                <td class="w-50" style="font-size: 15px;">{{ version.nombre }}</td>
-                                <td class="w-50 text-right" style="font-size: 15px"> {{version.moneda}} $ {{ version.precio }}</td>
+                                <td class="w-50 text-muted version" style="font-size: 15px;">{{ version.nombre }}</td>
+                                <td class="w-50 text-right precio" style="font-size: 15px"> {{version.moneda}} $ {{ version.precio }}</td>
                               </tr>
                         </tbody>
                         </table>
-                        <div class="alert alert-info" role="alert">El precio NO icluye Flete ni gastos de Inscripción.</div>
+                        <div class="alert alert-info text-center" role="alert"><i class="fas fa-info-circle"></i> El precio <b>NO</b> icluye Flete ni gastos de Inscripción.</div>
                     </div>
                 </div>
             </div>
@@ -163,7 +162,7 @@
             </div>
         </section>
 
-        <section class="py-4">
+        <section class="py-5" style="background-color: #e6e6e6">
             <div class="container">
                 <div class="py-4">
                     <div class="row">
@@ -287,7 +286,9 @@
                         stagePadding: 50,
                         loop:false,
                         margin:10,
-                        nav:false,
+                        nav:true,
+                        navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+                        dots:false,
                         autoPlay: 3000, //Set AutoPlay to 3 seconds
                         items : 3,
                         responsive:{
@@ -320,14 +321,14 @@
         computed: {}
     }
 </script>
-<style type="text/css">
+<style type="text/css" scoped>
 .owl-theme .owl-dots .owl-dot span {
     width: 40px;
 }
 
 .owl-carousel .item p{
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 
@@ -350,4 +351,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     text-decoration: none;
     color: #212529;
 }
+
+.tabla-precios thead{
+    background-color: #ea1b2f;
+    color: #ffffff;
+}
+.tabla-precios tbody{
+    font-weight: 500;
+}
+
+.tabla-precios tbody .precio, .tabla-precios tbody .version{
+    font-weight: 600;
+}
+
+.alert.alert-info{
+    padding: 1.25rem;
+    border-color: #dbdbdb;
+    background-color: #dbdbdb;
+    border-radius: 0rem; 
+    color: #373435;
+}
+
+.img-thumbnail {
+    border: none;
+}
+
 </style>

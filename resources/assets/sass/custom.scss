@@ -24,6 +24,7 @@
   23. GRID BOX con OVERLAY
   24. MODAL FULL WIDTH
   25. UTILIDADES
+  26. OWL CARRUCEL
 
 *********************************************/
 
@@ -258,7 +259,7 @@ a:hover{
 .prefooter{
   padding: 20px 0; 
   background-color: #f5f5f5; 
-  margin-top: 25px;
+  // margin-top: 25px;
 }
 
 .logos-content > div > img {
@@ -3627,8 +3628,7 @@ CARD COMPONENT
 }
 
 .advantages {
-    // background: rgba(0, 0, 0, 0.04) url('http://v.bootstrapmb.com/2019/5/lgt114832/img/car-1.jpg') top left repeat;
-    background: rgba(0, 0, 0, 0.04) url('https://www.toyota.com.ar/storage/contents/LMr09Nfnhc.jpg') center repeat;
+    background: rgba(0, 0, 0, 0.04) url('/imagenes/e-toyota/image-header.jpg') center repeat;
     background-size: cover;
     width: 100%;
     opacity: 1;
@@ -3749,4 +3749,26 @@ TOYOTA RECALL
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+/********************************************
+  26. OWL CARRUCEL
+*********************************************/
+.owl-theme .owl-nav button:focus {
+    outline: none;
+}
+.owl-theme .owl-nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px !important;
+}
+.owl-theme .owl-nav .owl-prev,
+.owl-theme .owl-nav .owl-next{
+  height: 50px;
+    width: 40px;
+    background-color: #bfbebe !important;
+    cursor: pointer;
+    border-radius: 0px;
 }
