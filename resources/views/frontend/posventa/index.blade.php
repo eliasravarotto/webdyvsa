@@ -36,11 +36,11 @@
 		<!---------------------------------------------------------------------
 	    BANNER
 	  	----------------------------------------------------------------------->
-		<section class="mt-1 mb-4" style="padding: 0px 7px;">
+{{-- 		<section class="mt-1 mb-4" style="padding: 0px 7px;">
 		    <a href="https://www.toyota.com.ar/servicios-y-accesorios/recall" target="_blank"><img src="{{asset('imagenes/posventa/recall.png')}}" class="img-fluid d-none d-md-block d-lg-block" style="border-radius: 7px;"></a>
 		    <a href="https://www.toyota.com.ar/servicios-y-accesorios/recall" target="_blank"><img src="{{asset('imagenes/posventa/recall-sm.jpg')}}" class="img-fluid d-md-none d-lg-none" style="border-radius: 7px;"></a>
-		</section>
-	    <a href="#"><img src="{{asset('imagenes/posventa/slide.jpg')}}" class="img-fluid" style="border-radius: 7px;"></a>
+		</section> --}}
+	    <a href="#"><img src="{{asset('imagenes/posventa/slide-1.jpg')}}" class="img-fluid" style="border-radius: 7px;"></a>
 
 
 		<!---------------------------------------------------------------------
