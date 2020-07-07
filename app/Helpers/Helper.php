@@ -137,16 +137,6 @@ class Helper
 		return $temas;
 	}
 
-	public static function getAgrupados()
-	{
-		return TpaAgrupado::all();
-	}
-
-	public static function getAdjudicados()
-	{
-		return TpaAdjudicado::all();
-	}
-
 	public static function getUsadosDeInteres( Usado $usado_in_view )
 	{
 		$mod = explode(' ', $usado_in_view->modelo);

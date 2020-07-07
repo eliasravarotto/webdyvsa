@@ -426,9 +426,35 @@ a:hover{
 .w-50 {
   width: 50%
 }
-
+.w-45 {
+  width: 45%
+}
+.w-40 {
+  width: 40%
+}
+.w-35 {
+  width: 35%
+}
+.w-30 {
+  width: 30%
+}
 .w-25 {
   width: 25%
+}
+.w-20 {
+  width: 20%
+}
+.w-15 {
+  width: 15%
+}
+.w-10 {
+  width: 10%
+}
+.w-5 {
+  width: 5%
+}
+.w-0 {
+  width: 0%
 }
 
 /*---------------------------------------
@@ -3060,8 +3086,11 @@ CARD COMPONENT
   background-size: cover;
 }
 
+.bg-header-tpa-avanzados.mu-call-to-action-dark:before{
+  opacity: 0.3!important;
+}
 .bg-header-tpa-avanzados{
-  background-image: url('/imagenes/tpa/plan-de-ahorro-header.jpeg');
+  background-image: url('/imagenes/tpa/plan-de-ahorro-adjudicados.jpg');
   background-size: cover;
   background-position: center !important;
 }

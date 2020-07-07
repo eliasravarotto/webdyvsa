@@ -495,6 +495,8 @@
                     showAlert('success')
                     $('#exampleModalCenter').modal('hide')
                     getPlanes()
+                    getAdjudicados()
+                    getAvanzados()
                 }else{
                     showError('#exampleModalCenter .list-errors-form-plan',res.data.error)
                 }

@@ -21,6 +21,29 @@
 span.bg-red{
 	background-color: #f30827;
 }
+#tabla-adjudicados thead tr{
+	background-color: #ea1b2f;
+}
+#tabla-adjudicados tbody td{
+	padding: 0.75rem 0.2rem;
+}
+.ul-adjudicados .header{
+	padding: 15px 0px;
+	font-weight: bold;
+}
+.ul-adjudicados .details{
+	color: #6c757d!important;
+	margin-left: 5px
+}
+.ul-adjudicados li{
+	background-color: #dbdbdb;
+}
+.ul-adjudicados li .badge{
+	font-size: 15px;
+	line-height: initial;
+}
+
+
 </style>
 @stop
 
@@ -44,86 +67,105 @@ span.bg-red{
 	</div>
 
 	<div class="container">
-		<div class="row py-4">
-			<div class="col-xs-12 d-flex">
-				<!-- TABLA PARA DESCKTOP -->
-				<table id="tabla-adjudicados" class="table table-hover py-1 d-none d-sm-none d-md-block" style="margin:20px 0px; ">
-				    <thead>
-				      <tr style="background-color: #af8e8e">
-				        <th class="text-center" style="color: white; font-weight: bold;">G/O</th>
-				        <th class="text-center" style="color: white; font-weight: bold;">Unidad</th>
-				        <th class="text-center visible-md visible-lg" style="color: white; font-weight: bold;">Modalidad</th>
-				        <th class="text-center" style="color: white; font-weight: bold;">Avance Cuotas</th>
-				        <th class="text-center" style="color: white; font-weight: bold;">Precio Venta Bonificado</th>
-				        <th class="text-center" style="color: white; font-weight: bold; background-color: white; border-bottom: none; width: 35px"></th>
-				        <th class="text-center" style="color: white; font-weight: bold;">Cuota Pura</th>
-				        <th class="text-center" style="color: white; font-weight: bold;">Valor Avance del Plan en Cuota Pura</th>
-				        <th class="text-center" style="color: white; font-weight: bold;">Valor Ahorrado</th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				    	@foreach($adjudicados as $adjudicado)
-					      <tr>
-					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->grupo_orden}}</td>
-					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->planTpa()->first()->unidad}}</td>
-					        <td class="text-center visible-md visible-lg" style="font-weight: bold;">{{$adjudicado->planTpa()->first()->modalidad}}</td>
-					        <td class="text-center" style="font-weight: bold;">{{$adjudicado->avance_cuotas}}</td>
-					        <td class="text-center" style="font-weight: bold;">
-					        	<span class="badge badge-success" style=" font-size: 17px;">$ {{number_format($adjudicado->precio_venta, 2, ',', '.')}}</span>
-					        </td>
-					        <td class="text-center" style="font-weight: bold; border-top: none;"></td>
-					        <td class="text-center" style="font-weight: bold;">$ {{number_format($adjudicado->planTpa()->first()->cuota_pura, 2, ',', '.')}}</td>
-					        <td class="text-center" style="font-weight: bold;">
-					        	{{number_format($adjudicado->avance_en_cuotaspura, 2, ',', '.')}}
-					        </td>
-					        <td class="text-center" style="font-weight: bold;">
-					        	<span class=" badge badge-secondary" style=" font-size: 17px">
-					        	$ {{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}
-					        	</span>
-					        </td>
-					      </tr>
-				      	@endforeach
-				    </tbody>
-			  	</table>
+		<div id="lista-adjudicados" class="pb-2">
+			@if(sizeof($adjudicados)>0)
+				<div class="row py-4">
+					<div class="col-xs-12 d-flex">
+						<!-- TABLA PARA DESCKTOP -->
+						<table id="tabla-adjudicados" class="table table-hover py-1 d-none d-sm-none d-md-block" style="margin:20px 0px; ">
+						    <thead>
+						      <tr>
+						        <th class="text-center w-10" style="color: white; font-weight: bold;">G/O</th>
+						        <th class="text-center w-20" style="color: white; font-weight: bold;">Unidad</th>
+						        <th class="text-center w-10" style="color: white; font-weight: bold;">Modalidad</th>
+						        <th class="text-center w-10" style="color: white; font-weight: bold;">Avance Cuotas</th>
+						        <th class="text-center w-10" style="color: white; font-weight: bold;">Precio Venta Bonificado</th>
+						        <th class="text-center" style="color: white; font-weight: bold; background-color: white; border-bottom: none; width: 15px"></th>
+						        <th class="text-center w-10" style="color: white; font-weight: bold;">Cuota Pura</th>
+						        <th class="text-center w-10" style="color: white; font-weight: bold;">Avance del Plan en Cuota Pura</th>
+						        <th class="text-center w-10" style="color: white; font-weight: bold;">Valor Ahorrado</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    	@foreach($adjudicados as $adjudicado)
+							      <tr>
+							        <td class="text-center text-muted" style="font-weight: bold;">{{$adjudicado->grupo_orden}}</td>
+							        <td class="text-center text-muted" style="font-weight: bold;">{{$adjudicado->planTpa()->first()->unidad}}</td>
+							        <td class="text-center text-muted" style="font-weight: bold;">{{$adjudicado->planTpa()->first()->modalidad}}</td>
+							        <td class="text-center text-muted" style="font-weight: bold;">{{$adjudicado->avance_cuotas}}</td>
+							        <td class="text-center text-muted" style="font-weight: bold;">
+							        	<span class="badge badge-success" style=" font-size: 17px;">$ {{number_format($adjudicado->precio_venta, 2, ',', '.')}}</span>
+							        </td>
+							        <td class="text-center" style="font-weight: bold; border-top: none;"></td>
+							        <td class="text-center" style="font-weight: bold;">$ {{number_format($adjudicado->planTpa()->first()->cuota_pura, 2, ',', '.')}}</td>
+							        <td class="text-center" style="font-weight: bold;">
+							        	$ {{number_format($adjudicado->avance_en_cuotaspura, 2, ',', '.')}}
+							        </td>
+							        <td class="text-center" style="font-weight: bold;">
+							        	<span class=" badge badge-secondary" style=" font-size: 17px">
+							        	$ {{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}
+							        	</span>
+							        </td>
+							      </tr>
+						      	@endforeach
+						    </tbody>
+					  	</table>
 
-			  	<!-- TABLA PARA CELULARES -->
-			  	<table class="table table-hover py-1 d-block d-sm-block d-md-none">
-	  				@foreach($adjudicados as $adjudicado)
-			  		<tr>
-			  			<td style="border-top: 5px solid #ddd;">
-				    		<div class="d-flex w-100 align-items-center">
-				    			<div class="w-25 fz-20 bold">{{$adjudicado->planTpa()->first()->unidad}}</div>
-				    			<div class="w-75 text-right"><label>Precio venta bonificado</label> <span class="badge fz-20 bg-red">${{number_format($adjudicado->precio_venta, 0, ',', '.')}}</div></span>
-				    		</div>
-				    		<div class="d-flex w-100 justify-content-space-between my-1">
-				    			<div><label>G/O:</label> {{$adjudicado->grupo_orden}}</div>
-				    			<div><label>Modalidad:</label> {{$adjudicado->planTpa()->first()->modalidad}}</div>
-				    			<div><label>Avance Cuotas:</label> {{$adjudicado->avance_cuotas}}</div>
-				    		</div>
-				    		<div class="d-flex w-100">
-				    			<label class="mr-1">Cuota Pura </label> ${{number_format($adjudicado->planTpa()->first()->cuota_pura, 0, ',', '.')}}
-				    		</div>
-				    		<div class="d-flex w-100">
-				    			<label class="mr-1">Avance del plan en Cuota Pura</label>
-				    			$ {{number_format($adjudicado->avance_en_cuotaspura, 2, ',', '.')}}
-				    		</div>
-				    		<div class="d-flex w-100 align-items-center">
-				    			<label class="mr-1">Valor Ahorrado</label> 
-				        		<span class="label label-success" style="font-size: 17px; background-color: #28a745">
-				        		$ {{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}	
-				        		</span>
-				    		</div>
-			  			</td>
-			  		</tr>
+					</div>
+				</div>
+			  	
+			  	<ul class="ul-adjudicados list-group list-group-flush d-block d-sm-block d-md-none py-4">
+					@foreach($adjudicados as $adjudicado)
+					  <li class="list-group-item">
+					  	<div class="header d-flex mx-0">
+						  	<div class="d-flex flex-column w-100">
+							  	<div class="d-flex justify-content-space-between w-100">
+							  		<div>{{ $adjudicado->planTpa()->first()->unidad }}</div>
+							  		<span class="badge badge-success">$ {{number_format($adjudicado->precio_venta, 2, ',', '.') }}</span>
+							  	</div>
+							  	<div class="d-flex w-100">
+							  		<div class="font-weight-normal text-muted">Modalidad: </div>
+							  		<div class="font-weight-normal ml-1 text-muted">{{ $adjudicado->planTpa()->first()->modalidad }}</div>
+							  	</div>
+						  	</div>
+					  	</div>
+					  	<div class="details d-flex">
+					  		<div>Grupo/Orden: </div>
+					  		<div class="font-weight-bold ml-2">{{ $adjudicado->grupo_orden }}</div>
+					  	</div>
+					  	<div class="details d-flex">
+					  		<div>Avance cuotas: </div>
+					  		<div class="font-weight-bold ml-2">{{ $adjudicado->avance_cuotas }}</div>
+					  	</div>
+					  	<div class="details d-flex">
+					  		<div>Cuota Pura: </div>
+					  		<div class="font-weight-bold ml-2">$ {{number_format($adjudicado->planTpa()->first()->cuota_pura, 2, ',', '.')}}</div>
+					  	</div>
+					  	<div class="details d-flex">
+					  		<div>Avance del Plan en Cuota Pura: </div>
+					  		<div class="font-weight-bold ml-2">$ {{number_format($adjudicado->avance_en_cuotaspura, 2, ',', '.')}}</div>
+					  	</div>
+					  	<div class="details d-flex">
+					  		<div class="text-dark">Valor Ahorrado: </div>
+					  		<div class="font-weight-bold ml-2 text-dark">$ {{number_format($adjudicado->valor_ahorrado, 2, ',', '.')}}</div>
+					  	</div>
+					  </li>
 		    		@endforeach
-			  	</table>
-			</div>
+				</ul>
+		  	@endif
+
+			@if(sizeof($adjudicados)==0)
+			  	<div role="alert" class="my-5 alert alert-info text-center"><i data-v-773d8506="" class="fas fa-info-circle" aria-hidden="true"></i> Por el momento no contamos con planes adjudicados para la venta.</div>
+		  	@endif
+			
 		</div>
-		
+	
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12" id="form-contacto">
-				<h2>CONSULTÁ POR NUESTROS PLANES ADJUDICADOS <br>
-				<small>Un asesor se pondrá en contacto con usted a la brevedad.</small></h2>
+				<div class="main-title">
+					<h2 class="text-dark-2">CONSULTA POR NUESTROS PLANES ADJUDICADOS </h2>
+					<p class="text-dark-3">Un asesor se pondrá en contacto con usted a la brevedad.</p>
+				</div>
 				@include('frontend.plan-de-ahorro.includes.contact-form', $data=['from' => 'tpa'])
 			</div>
 		</div>

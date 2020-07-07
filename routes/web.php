@@ -103,7 +103,7 @@ Route::get('/icons','FrontController@icons');
 Route::get('/financiacion','FrontController@financiacion');
 Route::get('/posventa','FrontController@posventa')->name('posventa');
 Route::get('/plan-de-ahorro','FrontController@planDeAhorro')->name('landing_tpa');
-Route::get('/plan-de-ahorro/listado-planes-avanzados','FrontController@planesAvanzados')->name('planes_avanzados');
+Route::get('/plan-de-ahorro/listado-planes-avanzados','TpaAgrupadosController@indexAvanzados')->name('planes_avanzados');
 Route::get('/plan-de-ahorro/listado-planes-adjudicados','TpaAdjudicadosController@indexAdjudicados')->name('planes_adjudicados');
 Route::get('/contacto','FrontController@contacto')->name('contacto');
 Route::get('/nosotros','FrontController@aboutUs');

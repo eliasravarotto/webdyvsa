@@ -128,4 +128,22 @@ class TpaAgrupadosController extends Controller
             'precio_venta' => 'required|int',
         ]);
     }
+
+    public function indexAvanzados()
+    {
+        $agrupados = TpaAgrupado::all();
+
+        foreach ($agrupados as $a) {
+            if ($a->planTpa()->first()->modalidad == TpaAgrupado::MODALIDAD_70_30) {
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas+($a->planTpa()->first()->precio_lista*0.3);
+            }else{
+                $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas;
+            }         
+
+            $a->valor_ahorrado = $a->avance_en_cuotaspura - $a->precio_venta;   
+        }
+        
+
+        return view('frontend.plan-de-ahorro.planes-avanzados' ,compact('agrupados'));
+    }
 }
