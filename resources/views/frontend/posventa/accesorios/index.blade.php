@@ -166,7 +166,7 @@
 												</p>
 											</div> --}}
 											<div class="product-buttons ">
-											  	<a href="https://wa.me/{{env('WHATSAPP_GONZALOGALEANO')}}?text=Hola%20me%20interesa%20el%20accesorio%20{{ str_replace(' ', '%20', $accesorio->nombre) }}" 
+											  	<a href="https://wa.me/5493624013577?text=Hola%20me%20interesa%20el%20accesorio%20{{ str_replace(' ', '%20', $accesorio->nombre) }}" 
 											  	   class="btn btn-toyota btn-whatsapp my-1 btn-round" 
 											  	   target="_blank" 
 											  	   style="font-size: 17px">
