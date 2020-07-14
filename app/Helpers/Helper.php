@@ -86,6 +86,11 @@ class Helper
 		return Modelo::where('activo', 1)->get();
 	}
 
+	public static function getModelosDestacados()
+	{
+		return Modelo::whereIn('id', [44, 42, 43, 28, 30, 29])->get();
+	}
+
 	public static function postRecientes($limit)
 	{
 		$posts = Post::where('tema_id', '!=', 5)->take($limit)->orderBy('created_at', 'DESC')->get();

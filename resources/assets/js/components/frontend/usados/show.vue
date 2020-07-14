@@ -1,8 +1,8 @@
 <template>
 	<div>
-        <div class="header py-3 d-flex align-items-center" style="height: 80px; background:url('/imagenes/banner.jpg'); background-size: cover;">
+        <div class="header py-3 d-flex align-items-center" style="height: 80px; background:url('/imagenes/e-toyota/image-header.jpg'); background-size: cover; background-position: center;">
             <div class="container">
-                <h5 style="color: white">{{unidad.marca}} {{unidad.modelo}}</h5>
+                <h3 style="color: white">{{unidad.marca}} {{unidad.modelo}}</h3>
             </div>
         </div>
         <div class="container">
@@ -223,7 +223,6 @@
     margin-top:20px;
 }
 
-/*CABECERA*/
 .single-car-prices {
     /*background-color: #3c98ff;*/
     /*background-color: #016a87;*/
@@ -303,6 +302,15 @@ table>tbody tr td {
     z-index: 100;
     top: 0;
     left: 0;
+}
+
+@media (max-width: 780px) {
+    .header{
+        height: auto !important;
+        padding: 1.5rem 0px !important;
+        text-align: center;
+    }
+ 
 }
 
 </style>

@@ -41,7 +41,7 @@ $(document).ready(function(){
     5. OWL CAROUCEL's
   --------------------------------*/
   $('.owl-carousel.owl-carousel-modelos').owlCarousel({
-      stagePadding: 0,
+      stagePadding: 60,
       loop:true,
       margin:0,
       nav:false,

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ImagenGaleriaUsado;
 use App\Usado;
+use App\Color;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -33,7 +34,8 @@ class UsadoController extends Controller
     public function create()
     {
         $usado = new Usado;
-        return view('backend.usados.create', compact('usado'));
+        $colores = Color::select('id', 'color as text')->get();
+        return view('backend.usados.create', compact('usado', 'colores'));
     }
 
     /**
@@ -44,6 +46,7 @@ class UsadoController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validarRequest($request);
 
         $usado = new Usado;
         $usado->dominio = $request->dominio;
@@ -53,7 +56,7 @@ class UsadoController extends Controller
         $usado->interno = $request->interno;
         $usado->km = $request->km;
         $usado->precio = $request->precio;
-        $usado->color = $request->color;
+        $usado->color = Color::find($request->color)->color;
         $usado->combustible = $request->combustible;
         $usado->transmision = $request->transmision;
         $usado->descripcion = $request->descripcion;
@@ -62,6 +65,7 @@ class UsadoController extends Controller
         $usado->orden = $request->orden;
         $usado->estado = $request->estado;
         $usado->save();
+        return $usado;
 
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto');
@@ -97,7 +101,8 @@ class UsadoController extends Controller
     public function edit(Usado $usado)
     {
         $imagenes_galeria = ImagenGaleriaUsado::where('usado_id', '=', $usado->id)->get();
-        return view('backend.usados.edit', compact('usado', 'imagenes_galeria'));
+        $colores = Color::select('id', 'color as text')->get();
+        return view('backend.usados.edit', compact('usado', 'imagenes_galeria', 'colores'));
     }
 
     /**
@@ -109,7 +114,8 @@ class UsadoController extends Controller
      */
     public function update(Request $request, Usado $usado)
     {
-        //return $request->estado;
+        $this->validarRequest($request);
+
         $usado = Usado::find( $usado->id); 
         $usado->dominio = $request->dominio;
         $usado->marca = $request->marca;
@@ -227,5 +233,12 @@ class UsadoController extends Controller
         $usado->visible = $request->visible;
         $usado->update();
         return $usado;
+    }
+
+    private function validarRequest( $request )
+    {
+       return $this->validate($request, [
+            'anio' => 'required|integer|min:2012|max:2020',
+        ]);
     }
 }

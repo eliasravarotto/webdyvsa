@@ -186,7 +186,7 @@
           <p class="text-dark-3">Explorá nuestra amplia gama de vehículos</p>
       </div>
       <div class="owl-carousel owl-carousel-modelos owl-theme py-2">
-            @foreach(\App\Helpers\Helper::getModelos() as $modelo)
+            @foreach(\App\Helpers\Helper::getModelosDestacados() as $modelo)
             <div class="car-box item pl-1 pr-1">
               <div class="car-thumbnail bg-gris">
                   <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="car-img">
@@ -214,49 +214,6 @@
       <div class="w-100 text-center mb-4">
         <a href="{{route('modelos')}}" class="btn btn-lg btn-danger btn-round mt-3">VER TODOS</a>
       </div>
-      {{-- <div class="row">
-        <div class="col-md-4">
-            <div class="car-box">
-              <div class="car-thumbnail">
-                  <a href="car-details.html" class="car-img">
-                      <div class="tag">HÍBRIDO</div>
-                      <div class="price-box">$850.00</div>
-                      <img class="d-block w-100" src="http://storage.googleapis.com/themevessel-products/cmart/img/car/car-3.jpg" alt="car">
-                  </a>
-              </div>
-              <div class="detail">
-                  <h1 class="title">
-                      <a href="car-grid-rightside.html">Toyota Prius</a>
-                  </h1>
-                  <div class="location">
-                      <a href="car-details.html">
-                          <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
-                      </a>
-                  </div>
-                  <ul class="facilities-list clearfix">
-                      <li>
-                          <i class="flaticon-way"></i> 4,000 km
-                      </li>
-                      <li>
-                          <i class="flaticon-manual-transmission"></i> Manual
-                      </li>
-                      <li>
-                          <i class="flaticon-calendar-1"></i> 2019
-                      </li>
-                      <li>
-                          <i class="flaticon-fuel"></i> Petrol
-                      </li>
-                      <li>
-                          <i class="flaticon-car"></i> Sport
-                      </li>
-                      <li>
-                          <i class="flaticon-gear"></i> Blue
-                      </li>
-                  </ul>
-              </div>
-            </div>
-        </div>    
-      </div> --}}
     </div>
   </section>
 
@@ -291,27 +248,6 @@
       </div>
     </div>
   </section>
-
-  <!---------------------------------------------------------------------
-    MOBILITY
-  ----------------------------------------------------------------------->
-  <section class="py-5 ">
-    <div class="container">
-      <div class="row py-4">
-        <div class="col-md-6 col-sm-12 text-center">
-          <img class="img-fluid d-none d-md-block d-lg-block d-xl-block" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
-          <img class="img-fluid w-100 d-block d-lg-none d-md-none d-xl-none mb-1" src="{{asset('imagenes/mobility/alquiler-toyota-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <h2>Alquiler de Vehículos</h2>
-          <p><b>Entérate como podes alquilar un Toyota en cinco sencillos pasos</b></p>
-          <p class="text-muted">Toyota Mobility Services es el nuevo sistema de alquiler de autos, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes, etc.</p>
-          <a href="/mobility-services-alquiler-de-autos-toyota#mobility-que-es-y-como-funciona" target="_blank" class="btn btn-lg btn-danger btn-round mt-3">Conocé más</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
   <!---------------------------------------------------------------------
     NOVEDADES DERKA Y VARGAS
@@ -355,33 +291,6 @@
       </div>
     </div>
   </section>
-
-
-  <!---------------------------------------------------------------------
-    TOYOTA HIBRID EXPERIENCE
-  ----------------------------------------------------------------------->
-  {{-- <section class="py-3">
-    <div class="container container-hibrid-experience">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <div class="title-section mt-3">
-            <h3>Toyota Experiencia Híbrida <br>  <small>Derribando mitos</small></h3>
-          </div>
-          <a href="/tecnologia-hibrida">
-            <div 
-               style="background: url(/imagenes/home-min/tecnohibrida.jpg)   no-repeat 30%;
-                  height: 40vh;
-                  background-size: cover;
-                  ">
-            </div>
-            <div class="titleContainer">
-              <h4 class="containerCenter"> ¿QUÉ ES LA TECNOLOGÍA HÍBRIDA?</h4>
-            </div>
-          </a>  
-        </div>
-      </div>
-    </div>
-  </section> --}}
 
   <!---------------------------------------------------------------------
     PARALLAX

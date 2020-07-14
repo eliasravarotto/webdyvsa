@@ -5,25 +5,27 @@
 				<div class="col-md-3">
 					<div class="form-group requerido">
 						<label class="control-label mb-1">Marca</label>
-						<input name="marca" type="text" class="form-control" value="{{ $usado->marca }}">
+						<input name="marca" type="text" class="form-control" value="{{ $usado->marca or old('marca') }}">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group requerido">
 						<label class="control-label mb-1">Modelo</label>
-						<input name="modelo" type="text" class="form-control" value="{{ $usado->modelo }}" placeholder="Modelo Version">
+						<input name="modelo" type="text" class="form-control" value="{{ $usado->modelo or old('modelo') }}" placeholder="Modelo Version">
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="form-group requerido">
 						<label class="control-label mb-1">Año</label>
-						<input name="anio" type="number" size="4" maxlength="4" class="form-control" value="{{ $usado->anio }}">
+						<input name="anio" type="number" size="4" maxlength="4" class="form-control" value="{{ $usado->anio or old('anio') }}">
+						<div class="text-danger">{{ $errors->first('anio') }}</div>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group requerido">
 						<label class="control-label mb-1">Color</label>
-						<input name="color" type="text" class="form-control" value="{{ $usado->color }}">
+						{{-- <input name="color" type="text" class="form-control" value="{{ $usado->color }}"> --}}
+						<select class="select2-color form-control @if ($errors->first('color')) is-invalid @endif" name="color"></select>
 					</div>
 				</div>
 			</div>
@@ -31,25 +33,26 @@
 				<div class="col-md-3">
 					<div class="form-group">
 						<label class="control-label mb-1">Km</label>
-						<input name="km" type="text" class="form-control" value="{{ $usado->km }}" placeholder="ej: 20.000">
+						<input name="km" type="text" class="form-control" value="{{ $usado->km or old('km') }}" placeholder="ej: 20.000">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label class="control-label mb-1">Dominio</label>
-						<input name="dominio" type="text" class="form-control" value="{{ $usado->dominio }}">
+						<input name="dominio" type="text" class="form-control" value="{{ $usado->dominio or old('dominio') }}">
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="form-group">
 						<label class="control-label mb-1">Int.</label>
-						<input name="interno" type="text" class="form-control" value="{{ $usado->interno }}">
+						<input name="interno" type="text" class="form-control" value="{{ $usado->interno or old('interno') }}">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label class="control-label mb-1">Precio</label>
-						<input name="precio" type="number" class="form-control" value="{{ $usado->precio }}" placeholder="ej: 380000">
+						<input name="precio" type="number" class="form-control" value="{{ $usado->precio or old('precio') }}" onkeyup="verificarPrecio()">
+						<div id="error-precio" class="text-danger"></div>
 					</div>
 				</div>
 			</div>
@@ -59,8 +62,8 @@
 						<label class="control-label mb-1">Combustible</label>
 						<select class="form-control" name="combustible">
 							<option @if($usado->combustible == null) selected @endif></option>
-							<option value="NAFTA" @if($usado->combustible == 'NAFTA') selected @endif>NAFTA</option>
-							<option value="DIESEL" @if($usado->combustible == 'DIESEL') selected @endif>DIESEL</option>
+							<option value="NAFTA" @if($usado->combustible == 'NAFTA' || old('combustible')== 'NAFTA') selected @endif>NAFTA</option>
+							<option value="DIESEL" @if($usado->combustible == 'DIESEL' || old('combustible')== 'DIESEL') selected @endif>DIESEL</option>
 						</select>
 					</div>
 				</div>
@@ -69,8 +72,8 @@
 						<label class="control-label mb-1">Transmisión</label>
 						<select class="form-control" name="transmision">
 							<option @if($usado->transmision == null) selected @endif></option>
-							<option @if($usado->transmision == 'MANUAL') selected @endif value="MANUAL">MANUAL</option>
-							<option @if($usado->transmision == 'AUTOMÁTICA') selected @endif value="AUTOMÁTICA">AUTOMÁTICA</option>
+							<option @if($usado->transmision == 'MANUAL' || old('transmision')== 'MANUAL') selected @endif value="MANUAL">MANUAL</option>
+							<option @if($usado->transmision == 'AUTOMÁTICA' || old('transmision')== 'AUTOMÁTICA') selected @endif value="AUTOMÁTICA">AUTOMÁTICA</option>
 						</select>
 					</div>
 				</div>
@@ -237,5 +240,35 @@
 	        $('#images_new').append(field);
 	        index++;
 	    }
+
+	    function verificarPrecio()
+	    {
+	    	var precio = $('[name ="precio"]').val();
+	    	if (precio <= 300000){
+		    	$("#error-precio").html('El precio no puede ser menor a 300.000')
+		    	$('[name ="precio"]').addClass('is-invalid');
+	    	}else if (precio >= 3000000){
+		    	$("#error-precio").html('El precio no puede ser mayor a 3.000.000')
+		    	$('[name ="precio"]').addClass('is-invalid');
+	    	} else{
+	    		$("#error-precio").html('');
+	    		$('[name ="precio"]').removeClass('is-invalid');
+	    	}
+
+	    }
+
+
+	/***SELECT2***/
+    var data = {!! $colores !!}
+    $('.select2-color').select2({
+    	allowClear: true,
+    	placeholder: 'Color',
+    	data: data,
+    }); //Init
+ 	$('.select2-color').val({{ $modelo->color or old('color') }});//Seleccionar valor por default
+    $('.select2-color').select2().trigger('change');//Seleccionar valor por default
+    @if ($errors->first('color'))//Add class error
+	$(".select2-color + span").addClass("is-invalid"); 
+    @endif
 	</script>
 @stop
