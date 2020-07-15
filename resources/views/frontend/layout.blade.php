@@ -84,7 +84,7 @@
   <!--===============================================================================================-->
   <!-- Google Analytics -->
   @if (env('IS_PROD'))
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2&onload=onloadCallback&render=explicit"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
