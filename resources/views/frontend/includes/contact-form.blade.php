@@ -52,6 +52,7 @@
                     <div class="g-recaptcha" 
                            data-sitekey="6Lc4SpEUAAAAADOhUWo2ezTYsnpuirFQ69n_-8M8">
                     </div>
+                    6Lc4SpEUAAAAADOhUWo2ezTYsnpuirFQ69n_-8M8
                     @if ($errors->has('g-recaptcha-response'))
                         <span class="text-danger">
                             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
