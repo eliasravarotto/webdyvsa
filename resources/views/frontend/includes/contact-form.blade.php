@@ -46,8 +46,11 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="g-recaptcha" 
+                    {{-- <div class="g-recaptcha" 
                            data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                    </div> --}}
+                    <div class="g-recaptcha" 
+                           data-sitekey="6Lc4SpEUAAAAADOhUWo2ezTYsnpuirFQ69n_-8M8">
                     </div>
                     @if ($errors->has('g-recaptcha-response'))
                         <span class="text-danger">
