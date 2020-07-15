@@ -46,8 +46,11 @@
 	<div class="form-group row py-3">
 		<div class="col-md-7">
 			<div class="g-recaptcha" 
-		           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+		           data-sitekey="6Lc4SpEUAAAAADOhUWo2ezTYsnpuirFQ69n_-8M8">
 		    </div>
+		    {{-- <div class="g-recaptcha" 
+		           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+		    </div> --}}
 			@if ($errors->has('g-recaptcha-response'))
 			    <span class="text-danger">
 			        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
