@@ -1,5 +1,6 @@
 <form id="form" class="form-horizontal" action="/contacto" method="POST" role="form">
 	{{ csrf_field() }}
+	{{env('GOOGLE_RECAPTCHA_KEY')}}
 	<input type="hidden" name="from" value="contacto">
 	<div class="form-group row">
 		<div class=" col-md-6">

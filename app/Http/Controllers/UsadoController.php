@@ -34,7 +34,7 @@ class UsadoController extends Controller
     public function create()
     {
         $usado = new Usado;
-        $colores = Color::select('id', 'color as text')->get();
+        $colores = Color::select('color as id', 'color as text')->get();
         return view('backend.usados.create', compact('usado', 'colores'));
     }
 
