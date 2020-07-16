@@ -34,7 +34,7 @@ class UsadoController extends Controller
     public function create()
     {
         $usado = new Usado;
-        $colores = Color::select('color as id', 'color as text')->get();
+        $colores = Color::select('color as text')->get();
         return view('backend.usados.create', compact('usado', 'colores'));
     }
 
@@ -101,7 +101,7 @@ class UsadoController extends Controller
     public function edit(Usado $usado)
     {
         $imagenes_galeria = ImagenGaleriaUsado::where('usado_id', '=', $usado->id)->get();
-        $colores = Color::select('id', 'color as text')->get();
+        $colores = Color::select('color as text')->get();
         return view('backend.usados.edit', compact('usado', 'imagenes_galeria', 'colores'));
     }
 
@@ -114,6 +114,7 @@ class UsadoController extends Controller
      */
     public function update(Request $request, Usado $usado)
     {
+        return $request;
         $this->validarRequest($request);
 
         $usado = Usado::find( $usado->id); 
