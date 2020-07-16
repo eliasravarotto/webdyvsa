@@ -129,6 +129,7 @@
                                         <i class="fab fa-whatsapp"></i>
                                         CONSULTAR
                                     </a>
+                                    <span>{{getPageViews(unidad.slug)}}</span>
                                 </div>
                             </div>
                         </div> 
@@ -338,6 +339,23 @@
                   }
                 });
                 return c > 0 ? true : false;
+            },
+            getPageViews(page){
+                // axios
+                //     .get('https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A189199190&start-date=30daysAgo&end-date=yesterday&metrics=ga%3Apageviews&dimensions=ga%3ApagePath&filters=ga%3ApagePath%3D%3D%2Fmodelos&access_token=ya29.a0AfH6SMCS-4bd4_TrbTyCnXVgsnnolkPBbffrWB8A0LdPm_EnN21uMFE2EFJrw1TYSTGHXVtaNiJEKPwKg08yocTAZ2q-DnZiWVbxbZC76nRTnFILlYmVnNHAIkahVRHk_u3DgMlHAu2itbjzF3lwJ8QdmI7BeyeStNI')
+                //     .get('https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A189199190&start-date=30daysAgo&end-date=yesterday&metrics=ga%3Apageviews&dimensions=ga%3ApagePath&filters=ga%3ApagePath%3D%3D%2Fmodelos&access_token=ya29.a0AfH6SMCS-4bd4_TrbTyCnXVgsnnolkPBbffrWB8A0LdPm_EnN21uMFE2EFJrw1TYSTGHXVtaNiJEKPwKg08yocTAZ2q-DnZiWVbxbZC76nRTnFILlYmVnNHAIkahVRHk_u3DgMlHAu2itbjzF3lwJ8QdmI7BeyeStNI')
+                //     .then(res=>{
+                //         console.log(res.row)
+                //     });
+                axios
+                    .get('https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A189199190&start-date=30daysAgo&end-date=yesterday&metrics=ga%3Apageviews&dimensions=ga%3ApagePath&filters=ga%3ApagePath%3D%3D%2Fmodelos&access_token=ya29.a0AfH6SMCS-4bd4_TrbTyCnXVgsnnolkPBbffrWB8A0LdPm_EnN21uMFE2EFJrw1TYSTGHXVtaNiJEKPwKg08yocTAZ2q-DnZiWVbxbZC76nRTnFILlYmVnNHAIkahVRHk_u3DgMlHAu2itbjzF3lwJ8QdmI7BeyeStNI',
+                        {
+                            headers: {'Access-Control-Allow-Origin': '*'},
+                            crossdomain: true
+                    })
+                    .then(res=>{
+                        console.log(res.row)
+                    });
             }
         }
     }
