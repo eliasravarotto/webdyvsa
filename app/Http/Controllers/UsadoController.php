@@ -114,7 +114,6 @@ class UsadoController extends Controller
      */
     public function update(Request $request, Usado $usado)
     {
-        return $request;
         $this->validarRequest($request);
 
         $usado = Usado::find( $usado->id); 
