@@ -258,17 +258,17 @@
 	    }
 
 
-	/***SELECT2***/
-    var data = {!! $colores !!}
-    $('.select2-color').select2({
-    	allowClear: true,
-    	placeholder: 'Color',
-    	data: data,
-    }); //Init
- 	$('.select2-color').val({{ $modelo->color or old('color') }});//Seleccionar valor por default
-    $('.select2-color').select2().trigger('change');//Seleccionar valor por default
-    @if ($errors->first('color'))//Add class error
-	$(".select2-color + span").addClass("is-invalid"); 
-    @endif
+		/***SELECT2***/
+	    var data = {!! $colores !!}
+	    $('.select2-color').select2({
+	    	allowClear: true,
+	    	placeholder: 'Color',
+	    	data: data,
+	    }); //Init
+	 	$('.select2-color').val('{{ $usado->color or old('color') }}');//Seleccionar valor por default
+	    $('.select2-color').select2().trigger('change');//Seleccionar valor por default
+	    @if ($errors->first('color'))//Add class error
+			$(".select2-color + span").addClass("is-invalid"); 
+   		@endif
 	</script>
 @stop
