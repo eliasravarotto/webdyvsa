@@ -225,6 +225,17 @@ class FrontController extends Controller
                     ->get();
     }
 
+    public function usadosGetPageViews(Request $request, $slug)
+    {
+        $ch = curl_init("https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A189199190&start-date=30daysAgo&end-date=yesterday&metrics=ga%3Apageviews&dimensions=ga%3ApagePath&filters=ga%3ApagePath%3D%3D%2Fmodelos&access_token=ya29.a0AfH6SMCS-4bd4_TrbTyCnXVgsnnolkPBbffrWB8A0LdPm_EnN21uMFE2EFJrw1TYSTGHXVtaNiJEKPwKg08yocTAZ2q-DnZiWVbxbZC76nRTnFILlYmVnNHAIkahVRHk_u3DgMlHAu2itbjzF3lwJ8QdmI7BeyeStNI");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        $data = curl_exec($ch);
+        curl_close($ch);
+
+        return $data;
+    }
+
 
     public function arrayPaginator($array, $request, $cantidad_registros = 20)
     {

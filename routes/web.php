@@ -112,6 +112,7 @@ Route::get('/modelos','FrontController@getModelos')->name('modelos');
 Route::get('/usados','FrontController@usadosIndex')->name('usados_index');
 Route::get('/usados/{slug}','FrontController@usadosShow');
 Route::get('/usados/get-last','FrontController@ultimosUsados');
+Route::get('/usados/get_page_views/{slug}','FrontController@usadosGetPageViews');
 Route::post('/usados/filter','FrontController@usadosFilter');
 Route::get('/turno-servicios/create','TurnoServicioController@create')->name('turno_servicio_create');
 Route::post('/turno-servicios','TurnoServicioController@store');

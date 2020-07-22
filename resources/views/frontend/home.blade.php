@@ -70,24 +70,9 @@
     <slide :data="{slide_id: 1}"></slide>
   </section>
 
-  <section class="py-4 mt-4">
-    <div class="container">
-      <div class="row"> 
-        <div class="col-md-12 col-sm-12 text-center">
-          <div class="card box-shadow">
-            <div class="card-body">
-              <h3>Tu Opinión Nos Importa, y Mucho.</h3>
-              <p class="text-muted">Ayúdanos a ofrecerte una atención de calidad.</p>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrRGEAPX8QUOoYfbai0B0liXx9koQpY0-xklRkD3Yt0IZqTQ/viewform?fbclid=IwAR3YVlyIOwMmzgsmaf34Hl8DfYjkXbgz-0bFpCjyQTYzyMlQZoEbR3KhA6s" class="btn btn-lg btn-danger btn-round mt-3"><i class="far fa-comment-dots"></i> Dejanos tu opinión</a>
-            </div>
-          </div>
-      </div>
-        {{-- <div class="col-md-4 col-sm-12 text-right">
-        </div> --}}
-      </div>
-    </div>
-  </section>
-
+  <!---------------------------------------------------------------------
+    GRID VARIOS
+  ----------------------------------------------------------------------->
   <section class="py-4">
     <div class="latest-offers categories content-area-13 bg-grea-3 py-4">
       <div class="container">

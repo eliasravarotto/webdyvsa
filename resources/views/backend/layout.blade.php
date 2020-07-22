@@ -36,7 +36,7 @@
             @include('backend.includes.sidebar')
         </div>
 
-        <div class="content p-4">
+        <div class="content p-md-4  p-sm-4 ">
             @include('backend.includes.flashmessage')
             @yield('content')
         </div>

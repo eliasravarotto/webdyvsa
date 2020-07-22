@@ -9,35 +9,48 @@
         color: black;
         text-decoration: none;
     }
+    .td-marca-mod-ver p{
+        font-size: 13px;
+    }
+    @media (max-width: 576px) {
+        #app_index {
+            margin-right: -20px;
+        }
+    }
 </style>
-    <div class="row">
-      <div class="col-md-12 d-flex justify-content-end" style="margin-bottom: 10px;">
-        <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
-      </div>
-    </div>
     <div class="card" id="app_index">
+        <div class="card-header">
+            USADOS
+        </div>
         <div class="card-body">
-            <div class="form-inline">
-              <div class="form-group mr-2 mb-2">
+            <div class="row">
+              <div class="col-md-12 d-flex justify-content-end my-1" style="margin-bottom: 10px;">
+                <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-3 col-sm-12 mb-2">
                 <input type="number" id="nro-int" class="form-control" placeholder="Interno" onkeyup="filtrar(event)">
               </div>
-              <div class="form-group mr-2 mb-2">
+              <div class="form-group col-md-3 col-sm-12 mb-2">
                 <input type="text" id="nro-dom" class="form-control" placeholder="Dominio" onkeyup="filtrar(event)">
               </div>
-              <button type="submit" class="btn btn-default mb-2" onclick="limpiar()">Limpiar</button>
+              <div class="col-md-2 col-sm-12">
+              <button type="submit" class="btn btn-dark mb-2 w-100" onclick="limpiar()">Limpiar</button>
+              </div>
             </div>
 
+            <!-- WEB -->
             <div class="d-none d-md-block d-lg-block d-xl-block">
             <table class="table table-sm table-hover">
-                <thead>
+                <thead style="background-color: #d13748; color: white;">
                   <tr>
                     <th></th>
                     <th>Int.</th>
                     <th>Dominio</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Año - Color</th>
-                    <th>Precio</th>
+                    <th>Detalles</th>
+                    <th></th>
+                    <th></th>
                     <th>Disp.</th>
                     <th>Visible</th>
                     <th></th>
@@ -49,18 +62,28 @@
                         <td><img src="{{ $usado->foto }}" style="max-height: 34px; max-width: 45px;"></td>
                         <td id="usado-int">{{ $usado->interno }}</td>
                         <td id="usado-dom">{{ $usado->dominio }}</td>
-                        <td>{{ $usado->marca }}</td>
-                        <td>{{str_limit(strip_tags($usado->modelo), 12, '...')}}</td>
-                        <td>{{ $usado->anio }} - {{$usado->color}}</td>
-                        <td><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
-                        <td>@if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif</td>
-                        <td>
+                        <td class="td-marca-mod-ver">
+                            {{ $usado->marca }} - <span class="text-dark"> <b>{{ $usado->modelo }}</b> </span>
+                            <p class="text-muted mb-0">
+                                <span class="mr-2"><b>Año:</b> {{$usado->anio}}</span>
+                                <span class="mr-2"><b>KM:</b> {{  number_format((int)$usado->km, 0, ',', '.')}}</span>
+                                <span><b>Color:</b> {{$usado->color}}</span>
+                            </p>
+                        </td>
+                        <td class="text-right">
+                            @if($usado->uct)
+                                <img src="{{asset('imagenes/icons/uct-circle.png')}}" width="30px">
+                            @endif
+                        </td>
+                        <td class="text-right"><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
+                        <td class="mx-3">@if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif</td>
+                        <td class="text-center">
                             <div class="custom-control custom-checkbox">
                               <input type="checkbox" class="custom-control-input" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">
                               <label class="custom-control-label" for="{{$usado->id}}"></label>
                             </div>
                         </td>
-                        <td>
+                        <td class="text-right">
                             <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
@@ -73,7 +96,9 @@
                 </tbody>
     		</table>
             </div>
-            <div class="d-block d-md-none d-lg-none d-xl-none">
+
+            <!-- MOBILE -->
+            <div class="d-block d-md-none d-lg-none d-xl-none border-top mt-3">
                 <ul class="list-group list-group-flush">
                     @foreach($usados as $usado)
                     <li class="list-group-item usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" 
@@ -86,10 +111,15 @@
                             @endif --}}
                             <div class="w-100">
                                 <div class="d-flex w-100">
-                                    <h6 class="card-title" style="width: 65%">{{$usado->marca}}</h6>
+                                    <h6 class="card-title" style="width: 65%"> 
+                                        @if($usado->uct)
+                                            <img src="{{asset('imagenes/icons/uct-circle.png')}}" width="19px">
+                                        @endif
+                                        {{$usado->marca}}
+                                    </h6>
                                     <h6 class="card-title text-right" style="width: 35%">
                                         <a href="{{ route('usados.edit', $usado->id) }}" class="precio">
-                                            $ {{  number_format($usado->precio, 0, ',', '.')}}
+                                            $ {{  number_format($usado->precio, 0, ',', '.')}} @if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif
                                         </a>
                                     </h6>
                                 </div>

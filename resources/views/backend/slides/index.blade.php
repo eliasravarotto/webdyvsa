@@ -6,7 +6,7 @@
         font-size: 15px;
     }
 </style>
-<div class="card" id="app_index">
+<div class="card border-primary" id="app_index">
     <div class="card-header">
         <strong class="card-title">Slides</strong>
     </div>

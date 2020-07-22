@@ -29,9 +29,9 @@
 		}
 	</style>
 
-<div class="card">
+<div class="card border-dark">
     <div class="card-header">
-        <strong class="card-title">Post</strong>
+        <strong class="card-title">Editar Slide</strong>
     </div>
     <div class="card-body">
 		<form action="{{ route('admin_slides.update', $slide->id) }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
@@ -40,7 +40,7 @@
             @include('backend.slides.form')
             <div class="row form-group" style="margin-top: 50px;">
 				<div class="col-9">
-					<a href="/admin" class="btn btn-secondary">
+					<a href="{{ route('admin_slides.index')}}" class="btn btn-secondary">
 					  Cancelar
 					</a>
 					<button type="submit" class="btn btn-success">

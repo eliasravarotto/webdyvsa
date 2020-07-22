@@ -9,6 +9,9 @@
 	</div>
 </div>
 
+<div id="slides">
+</div>
+
 @if($slide->id)
 <div class="">
 	@foreach($slide->items as $item)
@@ -44,8 +47,7 @@
 </div>
 @endif
 
-<div id="slides">
-</div>
+
 {{-- 	<div class="card px-2 py-2" id="slide-0">
 		<div class="row">
 			<div class="col-md-1 col-sm-6 text-right ">
@@ -119,7 +121,7 @@
 		</div>
 	</div>` 
 		;
-		$('#slides').append(card);
+		$('#slides').prepend(card);
 	}
 
 	function removeItem(e, i){

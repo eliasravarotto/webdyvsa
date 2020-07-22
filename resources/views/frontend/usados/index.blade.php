@@ -3,6 +3,9 @@
 @section('title_and_meta')
   <title>Autos Usados</title>
   <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota Chaco, financiacion usados, autos usados en cuotas, autos usados en Villa Angela, autos usados en Saenz peña, autos usados en Charata, autos usados en Resistencia, autos usados en Chaco">
+	<meta name = "google-signin-client_id" content = "712801085814-84lg5iv69v9l3h5gp6aonggk9qfeqmb2.apps.googleusercontent.com">
+  <meta name = "google-signin-scope" content = "https://www.googleapis.com/auth/analytics.readonly" >
+
 @stop
 
 @section('mark-up-facebook')
@@ -128,40 +131,57 @@
 @stop
 
 @section('content')
-<section>
-	{{-- <div class="mu-call-to-action mu-call-to-action-dark bg-header-usados">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="mu-call-to-action-area">
-						<div class="mu-call-to-action-left">
-							<h1><b>USADOS SELECCIONADOS</b></h1>
-							<p class="visible-md visible-lg" style="color: #f8f8f8; font-size: 20px">Encontrá el vehículo que estás buscando.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --}}
-</section>
 		<section>
 			<div class="container">
 				<index-usados v-bind:data="{ unidades: {{ $unidades }} }"></index-usados>
 			</div>
+    
 		</section>
 
 		@include('frontend.usados.contact-area-usados')
 @stop
 
 @section('script')
-    <!-- Google FCM -->
-    {{-- <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
-    <script src="{{ asset('js/sw-push-msg.js') }}"></script> --}}
-    <!-- end -->
+    <script src="https://apis.google.com/js/client:platform.js" ></script> 
     <script type="text/javascript">
     	$('#contacto-form').on('shown.bs.collapse', function (e) {
-        $('#cli').focus();
-    })
+        	$('#cli').focus();
+    	})
+
+
+		// Reemplace con su ID de vista.
+	  	var VIEW_ID = '189199190';
+
+		// Consulta la API e imprime los resultados en la página.
+		function queryReports () {
+			gapi.client.request ({
+			  path: '/v4/reports:batchGet',
+			  root: 'https://analyticsreporting.googleapis.com/',
+			  method: 'POST',
+			  body: {
+			    reportRequests: [
+			      {
+			        viewId: VIEW_ID,
+			        dateRanges: [
+			          {
+			            startDate: '7daysAgo',
+			            endDate: 'today'
+			          }
+			        ],
+			        metrics: [
+			          {
+			            expression: 'ga:pageviews',
+			          }
+			        ],
+			      }
+			    ]
+			  }
+			}).then(displayResults, console.error.bind (console));
+		}
+
+		function displayResults(response) {
+			var formattedJson = JSON.stringify (response.result, null, 2);
+			document.getElementById ('query-output'). value = formattedJson;
+		}
     </script>
 @stop

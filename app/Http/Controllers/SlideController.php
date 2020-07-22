@@ -84,7 +84,10 @@ class SlideController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $slide = Slide::find($id)->with('items')->first();
+        // return $id;
+        $slide = Slide::find($id);
+        $slide->items = $slide->items()->get();
+
         return view('backend.slides.edit', compact('slide'));
     }
 
@@ -128,7 +131,15 @@ class SlideController extends Controller
      */
     public function destroy(Request $request, $slide_id)
     {
-        return $slide_id;
+        $slide = Slide::find($slide_id);
+        $items = $slide->items()->get();
+        foreach ($items as $item)
+            $this->deleteItem($item->id);
+        
+        $slide->delete();
+
+        return back()->with('success', 'Slider eliminado correctamente.');
+
     }
 
 
@@ -147,5 +158,16 @@ class SlideController extends Controller
         $item->delete();
         return back()->with('success', 'Item eliminado correctamente.');
 
+    }
+
+    private function deleteItem($item_id)
+    {
+        $item = SlideItem::findOrFail($item_id);
+        $image = $item->image()->first();
+        Storage::delete($image->path);
+        $image->delete();
+        $item->delete();
+
+        return;
     }
 }
