@@ -8,8 +8,7 @@
 @section('mark-up-facebook')
   <meta property="og:type" content="article" />
   <meta property="og:url"   content="{{url()->current()}}" />
-  {{-- <meta property="og:image" content="{{Request::root().$post->imagen_portada}}" /> --}}
-  <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+  <meta property="og:image" content="{{Request::root().$post->imagen_portada}}" />
 @stop
 
 @section('content')
