@@ -6,10 +6,12 @@
 @stop
 
 @section('mark-up-facebook')
-    <meta property="og:url" content="https://www.derkayvargas.com/usados/{{$unidad->slug}}" />
     <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:title" content="{{$unidad->marca}} {{$unidad->modelo}}" />
-    <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
+    <meta property="og:description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota Chaco, financiacion usados {{$unidad->marca}} {{$unidad->modelo}}" />
+    <meta property="og:image" content="{{Request::root().$unidad->foto}}" />
+
 @stop
 
 @section('styles_sheets')
@@ -20,7 +22,22 @@
 
 	<show-usado v-bind:data="{ unidad: {{$unidad}}, imagenes: {{$imagenes}} }"></show-usado>
 
-	<div class="container py-3 my-3">
+    <div class="container">
+	<!-- LARAVEL SHARE -->
+      <div class="share-links">
+        <div class="title">
+          <p class="mb-1">Compartir en:</p>
+        </div>
+        {!!
+          Share::page(\Request::fullUrl())
+              ->facebook()
+              ->whatsapp()
+              ->twitter()
+          !!}
+      </div>
+    </div>
+
+    <div class="container py-3 my-3">
         <div class="title-section my-3">
             <h3>MÁS USADOS <br> <small>Que te podrían interesar</small></h3>
         </div>
@@ -51,22 +68,22 @@
 	<div class="container py-3 my-3">
         <div class="well">
             <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-2 text-center">
-                        <img src="/imagenes/logo-uct-h-new.png" class="img-fluid">
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-10">
-                        <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
-                        <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
-                        <ul class="list-unstyled">
-                            <li> <i class="fa fa-check text-success"></i> Garantía de 1 año o 20.000 km.</li>
-                            <li> <i class="fa fa-check text-success"></i> Vehículos que fueron atendidos en concesionarios oficiales.</li>
-                            <li> <i class="fa fa-check text-success"></i> 150 puntos de inspección realizados por técnicos capacitados.</li>
-                        </ul>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-2 text-center">
+                            <img src="/imagenes/logo-uct-h-new.png" class="img-fluid">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-10">
+                            <h4>¿Qué es un Usado Certificado TOYOTA?</h4>
+                            <p>Un <b>Usado Certificado Toyota</b> es un vehículo que puede adquirir un cliente cuyos beneficios son los siguientes:</p>
+                            <ul class="list-unstyled">
+                                <li> <i class="fa fa-check text-success"></i> Garantía de 1 año o 20.000 km.</li>
+                                <li> <i class="fa fa-check text-success"></i> Vehículos que fueron atendidos en concesionarios oficiales.</li>
+                                <li> <i class="fa fa-check text-success"></i> 150 puntos de inspección realizados por técnicos capacitados.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
 	</div>

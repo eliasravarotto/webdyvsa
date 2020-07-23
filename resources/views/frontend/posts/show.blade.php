@@ -48,6 +48,7 @@
           </ul>
           <div>{!!$post->contenido!!}</div>
 
+          <!-- LARAVEL SHARE -->
           <div class="share-links">
             <div class="title">
               <p class="mb-1">Compartir en:</p>
@@ -59,6 +60,7 @@
                   ->twitter()
               !!}
           </div>
+          
         </div>
       </div>
     </div>
