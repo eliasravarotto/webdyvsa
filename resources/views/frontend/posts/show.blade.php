@@ -2,12 +2,14 @@
 
 @section('title_and_meta')
   <title>{{$post->titulo}}</title>
-  <meta name="description" content="Derka y Vargas Responsabilidad Social Empresarial, Noticias Toyota Chaco, Eventos Toyota Chaco">
+  <meta name="description" content="Derka y Vargas Resistencia Chaco. Accede a un Toyota 0km. Encontra el auto usado que estas buscando con la mejor financiación.">
 @stop
 
 @section('mark-up-facebook')
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="{{Request::root().$post->imagen_portada}}" />
+  <meta property="og:url"   content="{{url()->current()}}" />
+  {{-- <meta property="og:image" content="{{Request::root().$post->imagen_portada}}" /> --}}
+  <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
 @stop
 
 @section('content')
