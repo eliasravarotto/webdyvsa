@@ -7,7 +7,7 @@
 
 @section('mark-up-facebook')
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="{{url()->current().'/'.$post->imagen_portada}}" />
+  <meta property="og:image" content="{{url()->current().$post->imagen_portada}}" />
 @stop
 
 @section('content')
