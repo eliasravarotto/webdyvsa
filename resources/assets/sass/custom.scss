@@ -25,6 +25,7 @@
   24. MODAL FULL WIDTH
   25. UTILIDADES
   26. OWL CARRUCEL
+  27. SOCIAL SHARE LINKS
 
 *********************************************/
 
@@ -3800,4 +3801,56 @@ TOYOTA RECALL
     background-color: #bfbebe !important;
     cursor: pointer;
     border-radius: 0px;
+}
+
+/********************************************
+  27. SOCIAL SHARE LINKS
+*********************************************/
+.share-links p{
+  font-weight: 600;
+  margin-top: 60px;
+}
+.share-links .title{
+  margin: 0px 0px 15px 0px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+#social-links ul{
+  list-style: none;
+  // display:flex;
+}
+#social-links ul li {
+    margin-top: 0;
+    margin-bottom: 3px;
+    margin-right: 7px;
+    display: inline-block;
+}
+#social-links ul li a {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+
+
+    text-align: center;
+    transition: .15s all ease;
+
+    padding: .385em .769em;
+
+}
+
+// facebook
+#social-links ul > :first-child a {
+  color: #fff!important;
+  background-color: #3b5998;
+}
+
+// Whatsapp
+#social-links ul > :nth-child(2) a {
+  color: #fff!important;
+  background-color:#58c042;
+}
+// Twitter
+#social-links ul > :nth-child(3) a {
+  color: #fff!important;
+  background-color:#53a0d8;
 }

@@ -52,16 +52,28 @@
   </div>
 
   <!--===============================================================================================-->
-  <!-- Facebook -->
+  <!-- Facebook JS-->
+  <!--===============================================================================================-->
   <div id="fb-root"></div>
+  
   <!--===============================================================================================-->
   <!-- Main -->
+  <!--===============================================================================================-->
   <script src="{{ mix('js/app_.js') }}"></script>
+  
   <!--===============================================================================================-->
   <!-- Owl Carucel -->
+  <!--===============================================================================================-->
   <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
+  <!--===============================================================================================-->
+  <!-- Laravel Share -->
+  <!--===============================================================================================-->
+  <script src="{{ asset('js/share.js') }}"></script>
+  
   <!--===============================================================================================-->
   <!-- Google Recaptcha -->
+  <!--===============================================================================================-->
   <script type="text/javascript">
     function downloadJSAtOnload() {
       var element = document.createElement("script");
@@ -77,12 +89,9 @@
       window.onload = downloadJSAtOnload;
   </script>
   
-  <!-- Laxy Load Imgs -->
-  <script>
-    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
-  </script>
   <!--===============================================================================================-->
   <!-- Google Analytics -->
+  <!--===============================================================================================-->
   @if (env('IS_PROD'))
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132697927-2"></script>
     <script>
@@ -93,7 +102,10 @@
     </script>
   @endif
   <!--===============================================================================================-->
-  <!-- Script -->
+ 
+  <!--===============================================================================================-->
+  <!-- Script Varios-->
+  <!--===============================================================================================-->
   <script type="text/javascript">
 
     $(document).ready(function(){
@@ -175,7 +187,12 @@
         }
       
     });
+
+    //Laxy Load Imgages
+    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
+  
   </script>
+
   @yield('script')
 
 </body>

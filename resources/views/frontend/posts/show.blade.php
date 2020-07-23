@@ -7,7 +7,7 @@
 
 @section('mark-up-facebook')
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="{{$post->imagen_portada}}" />
+  <meta property="og:image" content="{{url()->current().'/'.$post->imagen_portada}}" />
 @stop
 
 @section('content')
@@ -46,12 +46,18 @@
             </li>
           </ul>
           <div>{!!$post->contenido!!}</div>
-          {!!
-            Share::page(\Request::fullUrl())
-                ->facebook()
-                ->twitter()
-                ->whatsapp()
-            !!}
+
+          <div class="share-links">
+            <div class="title">
+              <p class="mb-1">Compartir en:</p>
+            </div>
+            {!!
+              Share::page(\Request::fullUrl(), $post->titulo)
+                  ->facebook()
+                  ->whatsapp()
+                  ->twitter()
+              !!}
+          </div>
         </div>
       </div>
     </div>
