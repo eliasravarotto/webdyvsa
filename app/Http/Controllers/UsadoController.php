@@ -57,7 +57,6 @@ class UsadoController extends Controller
         $usado->km = $request->km;
         $usado->precio = $request->precio;
         $usado->color = Color::where('color', $request->color)->first()->color;
-        return $usado;
         $usado->combustible = $request->combustible;
         $usado->transmision = $request->transmision;
         $usado->descripcion = $request->descripcion;
