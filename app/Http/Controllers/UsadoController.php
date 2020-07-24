@@ -65,7 +65,6 @@ class UsadoController extends Controller
         $usado->orden = $request->orden;
         $usado->estado = $request->estado;
         $usado->save();
-        return $usado;
 
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto');
