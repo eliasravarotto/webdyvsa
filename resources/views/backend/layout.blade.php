@@ -23,6 +23,15 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" integrity="sha256-nbyata2PJRjImhByQzik2ot6gSHSU4Cqdz5bNYL2zcU=" crossorigin="anonymous" />
+    
+    <style type="text/css">
+        .w-5{ width: 5%  }
+        .w-10{ width: 10%  }
+        .w-15{ width: 15%  }
+        .w-20{ width: 20%  }
+        .w-40{ width: 40%  }
+    </style>
+
     @yield('stylesheet')
 </head>
 

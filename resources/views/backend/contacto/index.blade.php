@@ -1,9 +1,11 @@
 @extends('backend.layout')
 
 @section('content')
-<div class="card">
+<div class="card border-info">
+  <div class="card-header">
+    LEADS
+  </div>
   <div class="card-body">
-    <h4 class="card-title">LEADS</h4>
     {{-- <h6 class="card-subtitle mb-2 text-muted">Recibidos desde {{$from}}.</h6>     --}}
     <form class="" action="{{route('admin_leads')}}" method="get">
       <div class="form-row mb-1">
@@ -29,17 +31,16 @@
           <button type="submit" class="btn btn-primary w-100">Filtrar</button>
         </div>
         <div class="col-md-3">
-          <a href="{{route('admin_leads')}}" class="btn btn-info w-100">Limpiar</a>
+          <a href="{{route('admin_leads')}}" class="btn btn-dark w-100">Limpiar</a>
         </div>
       </div>
     </form>  
     <table class="table table-sm table-hover table-responsive-xl mt-4">
-        <thead>
+        <thead style="background-color: #d13748; color: white;">
           <tr>
-            <th>Created</th>
+            <th class="w-10">Creado</th>
             <th>From</th>
-            <th>Cliente</th>
-            <th>Email</th>
+            <th class="w-40">Cliente</th>
             <th>Mensaje</th>
             <th></th>
           </tr>
@@ -50,22 +51,15 @@
             <td><a href="{{route('contacto_mensajes_show', $mensaje->id)}}">{{ date('d-m-Y', strtotime($mensaje->created_at))}}</a></td>
             <td>{{ $mensaje->from }}</td>
             <td>
-              @if(strlen($mensaje->cliente) > 25)
-                {{ substr($mensaje->cliente, 0, 25) . '...'}}
-              @else
-                {{$mensaje->cliente}}
-              @endif
+                <b> {{ $mensaje->cliente}}</b>
+                <p class="text-muted">
+                  <span><b>Email:</b> {{$mensaje->email}}</span>
+                  <span><b>Teléfono:</b> {{$mensaje->telefono}}</span>
+                </p>
             </td>
             <td>
-               @if(strlen($mensaje->email) > 25)
-                {{ substr($mensaje->email, 0, 25) . '...'}}
-              @else
-                {{$mensaje->email}}
-              @endif
-            </td>
-            <td>
-              @if(strlen($mensaje->mensaje) > 35)
-                {{ substr($mensaje->mensaje, 0, 35) . '...'}}
+              @if(strlen($mensaje->mensaje) > 70)
+                {{ substr($mensaje->mensaje, 0, 70) . '...'}}
               @else
                 {{$mensaje->mensaje}}
               @endif
