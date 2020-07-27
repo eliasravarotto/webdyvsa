@@ -20,7 +20,7 @@
                                 <div class="w-100" v-if="!unidad.foto">
                                     <img src="/imagenes/default-img.png">
                                 </div>
-                                <div v-else v-for="(imagen, i) in imagenes" class="item" :data-hash="'slide'+i">
+                                <div v-else v-for="(imagen, i) in imagenes" class="item">
                                   <div class="w-100">
                                       <img :src="imagen.url">
                                   </div>
@@ -28,10 +28,10 @@
                             </div>
                         </div>
                         <div class="w-100 d-flex flex-wrap indicators">
-                            <a v-for="(imagen, i) in imagenes" 
-                               :href="'#slide'+i" 
-                               :style="'background:url('+imagen.url+') no-repeat;background-size: contain;background-position: center;'">
-                            </a>
+                            <div v-for="(imagen, i) in imagenes" 
+                               @click.prevent="goToSpecificSlide(i)"
+                               :style="'background:url('+imagen.url+') no-repeat;background-size: contain;background-position: center; width: 90px; height: 90px; margin-right: 5px; cursor: pointer;'">
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-5 col-sm-12">
@@ -92,14 +92,14 @@
                             <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  
                                class="btn btn-whatsapp my-2" 
                                target="_blank"
-                               style="border-radius: 5px !important">
+                               style="border-radius: 0px !important">
                                 <i class="fab fa-whatsapp"></i>
                                 CONSULTAR
                             </a>
                             <a href="#" 
                                class="btn button-theme my-2" 
                                @click.prevent="goToForm()"
-                               style="border-radius: 5px !important">
+                               style="border-radius: 0px !important">
                                 <i class="far fa-envelope"></i>
                                 ESCRIBIR MENSAJE
                             </a>
@@ -142,9 +142,10 @@
                 $('[name ="mensaje"]') .focus();
 
             },
-            showImage(img){
-               
-                
+            goToSpecificSlide(ix){
+                console.log(ix)
+                $('.owl-carousel-gallery').trigger('to.owl.carousel', ix);
+
             },
             otrosUsados(){
                 self = this;
@@ -224,9 +225,7 @@
 }
 
 .single-car-prices {
-    /*background-color: #3c98ff;*/
-    /*background-color: #016a87;*/
-    background-color: #644093;
+    background-color: #dbdbdb;
 }
 .single-regular-price {
     padding: 22px 0 13px;
@@ -236,7 +235,7 @@
     margin-right: 7px;
     font-size: 12px;
     font-weight: 400;
-    color: #fff;
+    color: #373435;
     vertical-align: middle;
     text-transform: uppercase;
 }   
@@ -244,16 +243,14 @@
     position: relative;
     top: -1px;
     left: 1px;
-    color: #fff;
+    color: #373435;
     vertical-align: middle;
 }
 
 /*Cuerpo*/
 .single-car-data {
     padding: 12px 26px 13px 23px;
-    border: #016a87 1px solid;
-    /*margin-bottom: 26px;*/
-    /*background-color: #f0f2f5;*/
+    border: #dbdbdb 1px solid;
 }
 .stm_cargurus_wrapper {
     border-top: 1px solid #d5d9e0;

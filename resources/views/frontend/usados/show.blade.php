@@ -14,16 +14,12 @@
 
 @stop
 
-@section('styles_sheets')
-
-@stop
-
 @section('content')
 
 	<show-usado v-bind:data="{ unidad: {{$unidad}}, imagenes: {{$imagenes}} }"></show-usado>
 
-    <div class="container">
 	<!-- LARAVEL SHARE -->
+    <div class="container">
       <div class="share-links">
         <div class="title">
           <p class="mb-1">Compartir en:</p>
@@ -96,42 +92,7 @@
 
 @section('script')
 <script type="text/javascript">
-    $('.owl-carousel.owl-carousel-usados').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:false,
-        URLhashListener:false,
-        autoplayHoverPause:true,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:4
-            }
-    }
-});
-    $('.owl-carousel.owl-carousel-gallery').owlCarousel({
-        loop:false,
-        nav:false,
-        URLhashListener:true,
-        autoplayHoverPause:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-    }
-})
+
 
 
 </script>

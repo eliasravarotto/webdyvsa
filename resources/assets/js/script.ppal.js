@@ -65,31 +65,6 @@ $(document).ready(function(){
       }
   })
 
-   $('.owl-carousel.owl-carousel-usados').owlCarousel({
-      stagePadding: 0,
-      loop:false,
-      margin:0,
-      nav:false,
-      autoplay: true,
-      autoPlaySpeed: 5000,
-      autoPlayTimeout: 5000,
-      autoplayHoverPause: true,
-      pagination: false,
-      dots: false,
-      items : 3,
-      responsive:{
-          0:{
-              items:1
-          },
-          600:{
-              items:3
-          },
-          792:{
-              items:4
-          }
-      }
-  })
-
   $('.owl-carousel.owl-carousel-servicios').owlCarousel({
       loop:false,
       margin:0,
@@ -112,6 +87,44 @@ $(document).ready(function(){
           }
       }
   })
+
+  $('.owl-carousel.owl-carousel-usados').owlCarousel({
+    loop:false,
+    margin:10,
+    nav:false,
+    URLhashListener:false,
+    autoplayHoverPause:true,
+    dots:false,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:2
+      },
+      1000:{
+        items:4
+      }
+    }
+  });
+
+  $('.owl-carousel.owl-carousel-gallery').owlCarousel({
+    loop:false,
+    nav:false,
+    URLhashListener:false,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
 
 
 
