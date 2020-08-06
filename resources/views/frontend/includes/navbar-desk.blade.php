@@ -33,8 +33,7 @@
             </div>
           </li>
           <li class="nav-item {{Request::path() == route('mobility_services') ? 'active' : ''}}">
-            {{-- <a class="" href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a> --}}
-            <a class="nav-link" href="{{route('mobility_services')}}"> <img src="{{asset('imagenes/mobility/logo-sm.png')}}"> MOBILITY</a>
+            <a class="nav-link" href="{{route('mobility_services')}}"> <img style="vertical-align: initial; width: 65px" src="{{asset('imagenes/kinto/logo-kinto.png')}}"></a>
           </li>
           <li class="nav-item">
             {{-- <a class="" href="{{route('rse')}}">RSE</a> --}}

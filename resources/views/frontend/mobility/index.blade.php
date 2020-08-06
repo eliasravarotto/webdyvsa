@@ -2,7 +2,7 @@
 
 @section('title_and_meta')
   <title>Toyota Mobility Services es la nueva plataforma de servicios de movilidad</title>
-  <meta name="description" content="Presentamos Toyota Mobility Services es la nueva plataforma de servicios de movilidad.
+  <meta name="description" content="Toyota Mobility Services ahora es KINTO, la nueva plataforma de servicios de movilidad.
 El Toyota que querés, por el tiempo que necesitás.">
 @stop
 
@@ -15,178 +15,144 @@ El Toyota que querés, por el tiempo que necesitás.">
 
 @section('styles_sheets')
 <style type="text/css">
-	.color-mobility{
-		color: #65b7eb;
+	.title1{
+	    font-size: 50px;
+	    font-size: 2.5rem;
+	    font-weight: 200;
+	    font-stretch: normal;
+	    font-style: normal;
+	    line-height: 1.1;
+	    letter-spacing: -.7px;
+	    color: #00708d;
+	    margin-bottom: 2.5rem;
 	}
-	.title-section-mobility:before{
-		background-color: #65b7eb;
+	.title2{
+	    font-size: 30px;
+	    font-size: 1.8rem;
+	    font-weight: 600;
+	    line-height: 1.33;
+	    margin-bottom: 2rem;
 	}
-
-	.owl-carousel .owl-item img {
-    	display: inline;
-    }
-    .pasos-reserva span{
-    	color: #9f8358;
-    }
+	.portada-kinto{
+		background: url({{asset('imagenes/kinto/hero-slide-01.jpg')}});
+		height: 80vh;
+		background-position: center;
+		background-size: cover;
+	}
+	.portada-kinto p{
+		color: #002732;
+		font-size: 1.2rem;
+	}
+	.modelos-kinto .col-4{
+		text-align: center;
+	}
+	.modelos-kinto .col-4 h4{
+		margin-top: 30px;
+	}
+	.btn-cotizar:hover {
+	    color: #002732;
+	    background-color: #e3e9eb;
+	    border-color: #e3e9eb;
+	    text-decoration: none;
+	}
+	.btn-cotizar{
+		color: #002732;
+    	background-color: transparent;
+    	border-color: #002732;
+    	box-sizing: border-box;
+	    display: inline-block;
+	    font-size: 1.2rem;
+	    font-weight: 600;
+	    text-align: center;
+	    padding: .50rem 1.5rem;
+	    border-radius: 100px;
+	    border: 2px solid;
+	}
 </style>
 @stop
 
 @section('content')
-
-	<section>
+	
+	<section class="py-5 portada-kinto">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-4 py-2 px-3">
-					<img src="{{ asset('imagenes/mobility/header.png') }}" class="img-fluid">
-				</div>
-				<div class="col-md-8 py-3 px-4">
-					<h1 class="color-mobility">El Toyota que querés, por el tiempo que necesitás.</h1>
-					<p>Podés estar muy conforme con un Etios para uso diario, pero el fin de semana podrías necesitar una Hilux o puede que quieras ir con tus amigos a jugar al fútbol, y entonces darías todo por tener una Innova y sus 8 asientos. Nuestro objetivo es adaptarnos a tu estilo de vida, por esa razón creamos Toyota Mobility Services.</p>
-				</div>
+			<div>
+				<h1 class="title1 text-center">Toyota Mobility Services ahora es KINTO</h1>
+				<p class="text-center">Un servicio de movilidad que hace la diferencia en tu día a día</p>
 			</div>
-		</div>				
-	</section>
-
-	<section class="py-3" id="mobility-que-es-y-como-funciona">
-		<div class="container">
-			<div class="title-section title-section-mobility">
-	        	<h3>¿QUÉ ES Y CÓMO FUNCIONA?</h3>
-	      	</div>
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<p><b>Toyota Mobility Services</b> es el nuevo sistema de alquiler de autos lanzado por TOYOTA, 
-					el cual posibilita el acceso a cualquier vehículo de la marca sin la necesidad de que lo compres, es decir, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes etc. </p>
-					<p>En <b>Derka y Vargas</b> nos sumamos a este servicio, el cual se encuentra disponible mediante una app tanto para Android como para iOS. Vas a poder elegir cualquier modelo de la marca Toyota y retirarlo desde cualquiera de las <b>Estaciones Mobility</b>.</p>
-				</div>
-			</div>
-			{{-- <div class="row">
-				<div class="col-xs-12 col-md-12">
-					<p>El servicio estará disponible mediante una app tanto para Android como para iOS, vas a poder elegir cualquier modelo de la marca Toyota y retirarlo desde cualquiera de las “Estaciones Mobility”.</p>
-				</div>
-			</div> --}}
 		</div>
 	</section>
 
-	<section class="py-3">
-		<div class="container pasos-reserva">
-			<h3 class="text-center">RESERVÁ UN TOYOTA <br><small>EN 4 SENCILLOS PASOS</small>  </h3>
-			<div class="owl-carousel owl-carousel-pasos-mobility">
-
-		        <div class="item">
-	                <div class="mainflip">
-	                    <div class="frontside">
-	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
-	                            <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
-	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/01.png')}}" alt="card image lazy">
-	                                <p class="card-text text-justify mx-1"> 
-	                                	<b class="color-mobility">1</b>
-	                                	Descargá la app y completá el formulario con tus datos personales, licencia de conducir y tarjeta de crédito válida y vigente*.
-	                                </p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-		        </div>
-
-		        <div class="item">
-	                <div class="mainflip">
-	                    <div class="frontside">
-	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
-	                            <div class="card-body text-center">
-	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/02.png')}}" alt="card image lazy">
-	                                <p class="card-text text-justify mx-1"> 
-	                                	<b class="color-mobility">2</b>
-	                                	Ingresá por cuánto tiempo lo necesitás. Vas a poder reservar por hora o por día, según el uso que quieras darle.
-	                                </p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-		        </div>
-
-		        <div class="item">
-	                <div class="mainflip">
-	                    <div class="frontside">
-	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
-	                            <div class="card-body text-center">
-	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/03.png')}}" alt="card image lazy">
-	                                <p class="card-text text-justify mx-1"> 
-	                                	<b class="color-mobility">3</b>
-	                                	Filtrá por categoría de vehículos, elegí entre todos nuestros vehículos el que mejor se adapte a tus necesidades.
-	                                </p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-		        </div>
-
-		        <div class="item">
-	                <div class="mainflip">
-	                    <div class="frontside">
-	                        <div class="card d-flex justify-content-center align-items-center flex-d-col">
-	                            <div class="card-body text-center">
-	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/04.png')}}" alt="card image lazy ">
-	                                <p class="card-text text-justify mx-1"> 
-	                                	<b class="color-mobility">4</b>
-	                                	Indicá dónde querés retirarlo y dónde lo vas a devolver. Puede ser en cualquiera de las estaciones Mobility. 
-	                                </p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-		        </div>
-
-		        <div class="item">
-	                <div class="mainflip">
-	                    <div class="frontside">
-	                        <div class="card d-flex justify-content-center">
-	                            <div class="card-body text-center">
-	                                <img class="img-fluid image lazy" data-src="{{asset('imagenes/mobility/05.png')}}" alt="card image lazy">
-	                                <p class="card-text text-justify mx-1"> 
-	                                	<b class="color-mobility"><i class="fa fa-check" aria-hidden="true"></i></b>
-	                                	¡Y listo! Ya podés manejar tu Toyota. 
-	                                </p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-		        </div>
-		    </div>
+	<div class="container mt-6">
+		<h1 class="title1 text-center">El Toyota que quieras por el tiempo que quieras, cuando quieras</h1>
+		
+		<div class="row mt-6 modelos-kinto text-center">
+			<div class="col-md-4 col-sm-12 mt-2">
+				<img src="https://www.kintomobility.com.ar/storage/images/ETIOS%20XLS%20HB%20-%20LAT%20Negro.png">
+				<h4>Etios Hatchback</h4>
+				<p>Necesitas otro auto por unos días?</p>
+			</div>
+			<div class="col-md-4 col-sm-12 mt-2">
+				<img src="https://www.kintomobility.com.ar/storage/images/YARIS%20XLS%20&%20XLS%20PACK%20HB%20-%20LAT%20070.png">
+				<h4>Yaris</h4>
+				<p>Un paseo de fin de semana?</p>
+			</div>
+			<div class="col-md-4 col-sm-12 mt-2">
+				<img src="https://www.kintomobility.com.ar/storage/images/2019_Corolla_2020_Hv_Cvt_Side_Super_White_040-LA-20.png">
+				<h4>Corolla</h4>
+				<p>Una reunión de trabajo muy importante?</p>
+			</div>
 		</div>
-	</section>
 
-	<section class="py-3">
-		<iframe width="100%" height="400px" src="https://www.youtube.com/embed/zlU-fhhDFVA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</section>
+		<div class="d-flex justify-content-center mt-5">
+			<a class="btn-cotizar text-center" href="https://www.kintomobility.com.ar/modelos" target="_blank">Ver Todos <i class="fas fa-arrow-right"></i></a>
+		</div>
+	</div>
 
-	<section class="py-5">
-		<div class="container">
+	<div class="container my-6">
 		<div class="row">
-			<div class="col-md-5 py-2">
-				<img data-src="{{asset('imagenes/mobility/toyota-mobility-services.jpg')}}" class="img-fluid lazy">
+			<div class="col-md-4 col-sm-12">
+				<div class="card px-5 py-5" style="background-color: #e3e9eb">
+					<img src="https://www.kintomobility.com.ar/img/home/illus-app.svg">
+					<h4 class="title2 text-center my-3">KINTO App</h4>
+					<p class="text-center">Para iniciar tu reserva descargá la APP, registrate y no olvides tener tu carnet de conductor cerca.</p>
+					<div class="d-flex flex-column">
+						<a target="_blank" href="https://play.google.com/store/apps/details?id=com.goodtravelsoftware.sharecar.toyotaargentina&hl=es" class="px-4 my-4"><img class="w-100" src="{{asset('imagenes/kinto/google-play.svg')}}"></a>
+						<a target="_blank" href="https://apps.apple.com/ar/app/toyota-mobility-services/id1436690858" class="px-4 my-4"><img class="w-100" src="{{asset('imagenes/kinto/app-store.svg')}}"></a>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-7 text-center py-2">
-				<h1 class="color-mobility">Descarga la App en</h1>
-				<ul class="d-flex list-unstyled align-items-center justify-content-center py-2 flex-wrap" >
-					<li class="mx-2 mb-2">
-						<a href="https://play.google.com/store/apps/details?id=com.goodtravelsoftware.sharecar.toyotaargentina">
-							<img class="lazy" data-src="{{asset('imagenes/mobility/play-store.png')}}">
-						</a>
-					</li>
-					<li class="mx-2 mb-2">
-						<a href="https://apps.apple.com/ar/app/toyota-mobility-services/id1436690858"><img class="lazy" data-src="{{asset('imagenes/mobility/app-store.png')}}"></a>
-					</li>
-				</ul>
+			<div class="col-md-8 col-sm-12">
+				<div class="row mt-4 d-flex justify-content-center align-items-center">
+					<div class="col-md-5 col-sm-12 order-sm-1">
+						<img src="{{asset('imagenes/kinto/cotizador-online.svg')}}">
+					</div>
+					<div class="col-md-7 col-sm-12">
+						<h1 class="title2 ml-2">Cotizador Online</h1>
+						<p class="ml-2 mb-5" style="font-size: 21px">Contanos que estás buscando para ofrecerte la mejor opción a tu Plan.</p>
+						<a class="ml-2" href="https://www.kintomobility.com.ar/cotizador" target="_blank">Ir al Cotizador <i class="fas fa-arrow-right"></i> </a>
+					</div>
+				</div>
+				<hr class="my-5">
+				<div class="row mt-4 d-flex justify-content-center align-items-center">
+					<div class="col-md-5 col-sm-12">
+						<img src="{{asset('imagenes/kinto/experiencias.svg')}}">
+					</div>
+					<div class="col-md-7 col-sm-12">
+						<h1 class="title2 ml-2">Experiencia KINTO</h1>
+						<p class="ml-2 mb-5" style="font-size: 21px">Pensamos en vos, por eso armamos experiencias para que las hagas propias y seas pate de la comunidad KINTO.</p>
+						<a class="ml-2" href="https://www.kintomobility.com.ar/experiencias" target="_blank">Descubrir Experiencias <i class="fas fa-arrow-right"></i> </a>
+					</div>
+				</div>
 			</div>
 		</div>
-		</div>
-	</section>
+	</div>
 
-	<section class="pt-3 pb-4">
+
+	<section class="mb-5 pb-4">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<a href="https://www.toyotamobility.com.ar/" target="_blank" class="mu-btn mu-mobility-btn">LEER MÁS</a>
+					<a href="https://www.kintomobility.com.ar/" target="_blank" class="btn-cotizar text-center">Conocer más <i class="fas fa-arrow-right"></i> </a>
 				</div>
 			</div>
 		</div>

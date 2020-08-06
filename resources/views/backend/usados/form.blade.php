@@ -166,6 +166,18 @@
       		@endforeach
 		</div>
 	</div>
+
+	<div class="row">
+	<div class="col-md-12">
+		<label>Adjuntar Archivos</label>
+		<div class="content" id="content_dropzone">
+			<div class="dropzone" id="dropzone-files">
+                <div class="dz-message" data-dz-message><span><i class="fas fa-upload"></i> Clic o arrastrar los archivos aquí para subir.</span></div>
+          	</div>
+		</div>
+	</div>
+
+</div>
 @else
 	<br>
 	<div id="images">
@@ -191,6 +203,7 @@
 
 @section('page-script')
 	<script type="text/javascript">
+
 		var index = 0;
 		function addField(){
 	        var field = `
@@ -270,5 +283,22 @@
 	    @if ($errors->first('color'))//Add class error
 			$(".select2-color + span").addClass("is-invalid"); 
    		@endif
+
+
+   		if (document.getElementById('dropzone-files')) {
+            var myDropzone = new Dropzone("#dropzone-files",{ 
+                maxFilesize: 3,  // 3 mb
+                acceptedFiles: ".jpeg,.jpg,.png,.pdf",
+                init: function() {
+                    this.on("success", function(file, response) {
+                        additem(response);
+                    });
+                }
+            });
+
+            myDropzone.on("sending", function(file, xhr, formData) {
+               formData.append("_token", CSRF_TOKEN);
+            }); 
+        }
 	</script>
 @stop

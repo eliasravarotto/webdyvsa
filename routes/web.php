@@ -2,27 +2,13 @@
 
 use App\PushSubscriptions;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-
 Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/admin', 'BackendController@inicio')->name('admin');
-
-	// Route::resource('admin/modelos','ModelosController',['as' => 'prefix']);
 	Route::resource('admin/modelos','ModelosController');
 	Route::post('/admin/modelos/publicar_servicio/{modelo_id}','ModelosController@publicarServicio');
 	Route::resource('admin_slides','SlideController');
@@ -130,11 +116,10 @@ Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');
 Route::get('/posts','PostController@listPosts')->name('posts');
 Route::get('/posts/{slug}','PostController@showPost')->name('show_post');
 Route::get('nueva-rav4-hibrida','FrontController@nuevaRav4')->name('nueva_rav4');
-// Route::get('/toyota-hibrid-experience','FrontController@thexpe');
 Route::get('/responsabilidad-social-empresarial/programa-desarrollo-concesionarios-2018','FrontController@rseProgramaDesarrolloConcesionarios')->name('programa_desarrollo_concesionarios');
 Route::get('/responsabilidad-social-empresarial/programa-rse-derkayvargas-2018-2021','FrontController@rseProgramaDyv')->name('programa_rse_dyv');
 Route::get('/empresa','FrontController@empresa');
-Route::get('/mobility-services-alquiler-de-autos-toyota','FrontController@mobilityServices')->name('mobility_services');
+Route::get('/kinto-alquiler-de-autos-toyota','FrontController@mobilityServices')->name('mobility_services');
 Route::get('/posventa-accesorios','AccesorioController@indexFront')->name('accesorios');
 Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizadorOnlineComoFunciona')->name('cotizador_online_como_funciona');
 

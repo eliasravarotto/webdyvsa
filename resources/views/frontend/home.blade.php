@@ -48,7 +48,7 @@
         background-image: url('/imagenes/home-min/bg-block-usados.jpg') !important;
     }
     .cat-5-bg {
-        background-image: url('/imagenes/home-min/bg-block-mobility.jpg') !important;
+        background-image: url('/imagenes/home-min/kinto-grid.png') !important;
     }
     .grid-box-content h3 a, .grid-box-subtitle {
       color: rgba(36,42,53,.0);

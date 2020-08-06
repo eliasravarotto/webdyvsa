@@ -24,6 +24,8 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" integrity="sha256-nbyata2PJRjImhByQzik2ot6gSHSU4Cqdz5bNYL2zcU=" crossorigin="anonymous" />
     
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.min.css" />
     <style type="text/css">
         .w-5{ width: 5%  }
         .w-10{ width: 10%  }
@@ -64,6 +66,8 @@
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <!--===============================================================================================-->
     <script src="{{ asset('bootadmin/js/bootadmin.min.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
     
     @yield('page-script')
 
