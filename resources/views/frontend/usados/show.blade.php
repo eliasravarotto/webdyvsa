@@ -16,7 +16,7 @@
 
 @section('content')
 
-	<show-usado v-bind:data="{ unidad: {{$unidad}}, imagenes: {{$imagenes}} }"></show-usado>
+	<show-usado v-bind:data="{ unidad: {{$unidad}} }"></show-usado>
 
 	<!-- LARAVEL SHARE -->
     <div class="container">

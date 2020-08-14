@@ -77,5 +77,3 @@ window.loader = `<div id="loader">
                             <div class="loadme-circular"></div>
                         </div>
                     </div>`;
-
-

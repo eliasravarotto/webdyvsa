@@ -13,11 +13,7 @@ class File extends Model
     public function store( $fileRequest )
     {
     	$foto = $fileRequest;
-    	$originalName = $foto->getClientOriginalName();
-        $extension = $foto->extension();
-        $this->name = md5(date('Y-m-d H:i:s:u').$originalName);
-        $this->extension = $extension;
-        $this->path = $foto->storeAs('public/fotos', $this->name.'.'.$this->extension);
+        $this->path = $foto->store('public/fotos');
         $this->public_path = Storage::url($this->path);
     }
 

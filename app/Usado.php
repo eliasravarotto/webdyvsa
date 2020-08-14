@@ -49,9 +49,9 @@ class Usado extends Model
         return $query;
     }
 
-    public function imagenes()
+    public function photos()
     {
-        return $this->hasMany('App\ImagenGaleriaUsado');
+        return $this->morphMany('App\File', 'notable');
     }
 
 }

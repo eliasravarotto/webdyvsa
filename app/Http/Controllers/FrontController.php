@@ -178,7 +178,7 @@ class FrontController extends Controller
     }
 
 
-    //SECCION UNIDADES USADAS--------------//
+    //***SECCION USADOS***//
 
     public function usadosIndex()
     {
@@ -187,30 +187,23 @@ class FrontController extends Controller
                         ->orderBy('orden', 'ASC')
                         ->get();
 
+        foreach ($unidades as $u) {
+            if ($u->foto!=null)
+                $u->foto = Storage::url($u->foto);
+        }
+
         return view('frontend.usados.index', compact('unidades'));
     }
 
     public function usadosShow($slug)
     {
-        $unidad = Usado::where('slug', '=', $slug)->firstOrFail();;
-        $imagenes = $unidad->imagenes()->get();
+        $unidad = Usado::where('slug', '=', $slug)
+                        ->with('photos')
+                        ->firstOrFail();
 
-        //Agrego la foto de la unidad al array de imagenes de la galeria.
-        $img = ['id' => null, 'url' => $unidad->foto];
-        $imagenes = $imagenes->toArray();
-        array_push($imagenes, $img);
-        $imagenes = collect($imagenes);
+        $unidad->foto = Storage::url($unidad->foto);
 
-        return view('frontend.usados.show', compact('unidad', 'imagenes'));
-    }
-
-    public function ultimosUsados()
-    {
-        $unidades = Usado::where('visible', 1)
-                        ->take(3)
-                        ->get();
-
-        return $unidades;
+        return view('frontend.usados.show', compact('unidad'));
     }
 
     public function usadosFilter(Request $request)
@@ -224,18 +217,6 @@ class FrontController extends Controller
                     ->anio($request->filtro_anio)
                     ->get();
     }
-
-    public function usadosGetPageViews(Request $request, $slug)
-    {
-        $ch = curl_init("https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A189199190&start-date=30daysAgo&end-date=yesterday&metrics=ga%3Apageviews&dimensions=ga%3ApagePath&filters=ga%3ApagePath%3D%3D%2Fmodelos&access_token=ya29.a0AfH6SMCS-4bd4_TrbTyCnXVgsnnolkPBbffrWB8A0LdPm_EnN21uMFE2EFJrw1TYSTGHXVtaNiJEKPwKg08yocTAZ2q-DnZiWVbxbZC76nRTnFILlYmVnNHAIkahVRHk_u3DgMlHAu2itbjzF3lwJ8QdmI7BeyeStNI");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        $data = curl_exec($ch);
-        curl_close($ch);
-
-        return $data;
-    }
-
 
     public function arrayPaginator($array, $request, $cantidad_registros = 20)
     {

@@ -43,7 +43,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('admin/usados','UsadoController');
 	Route::resource('admin_servicios','ServicioController');
 	Route::get('admin_servicios/{servicio_id}/eliminar','ServicioController@eliminarServicio')->name('admin_servicios_eliminar');
-	Route::get('admin/usados/borrar-img-galeria/{id}','UsadoController@deleteImgGaleria')->name('borrar_img_usado');
+	Route::post('admin/usados/{usado}/photo','UsadoController@addPhoto')->name('usados_add_photos');
+	Route::delete('admin/usados/{usado}/photo','UsadoController@deletePhoto')->name('usados_delete_photo');
 	Route::get('admin/notificacion-push','BackendController@createPushNotication')->name('create_push_notification');
 	Route::post('admin/notificacion-push','BackendController@sendPushNotication')->name('send_push_notification');
 	Route::resource('admin_accesorios','AccesorioController');
@@ -97,7 +98,6 @@ Route::get('/modelos/{modelo}','FrontController@modelo')->name('detalle_modelo')
 Route::get('/modelos','FrontController@getModelos')->name('modelos');
 Route::get('/usados','FrontController@usadosIndex')->name('usados_index');
 Route::get('/usados/{slug}','FrontController@usadosShow');
-Route::get('/usados/get-last','FrontController@ultimosUsados');
 Route::get('/usados/get_page_views/{slug}','FrontController@usadosGetPageViews');
 Route::post('/usados/filter','FrontController@usadosFilter');
 Route::get('/turno-servicios/create','TurnoServicioController@create')->name('turno_servicio_create');

@@ -59,7 +59,7 @@
                 <tbody id="tbody-usados">
                     @foreach($usados as $usado)
                     <tr class="usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" id="usado-row-{{$usado->interno}}">
-                        <td><img src="{{ $usado->foto }}" style="max-height: 34px; max-width: 45px;"></td>
+                        <td><img src="{{ Storage::url($usado->foto) }}" style="max-height: 34px; max-width: 45px;"></td>
                         <td id="usado-int">{{ $usado->interno }}</td>
                         <td id="usado-dom">{{ $usado->dominio }}</td>
                         <td class="td-marca-mod-ver">

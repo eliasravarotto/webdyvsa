@@ -6,7 +6,6 @@
             </div>
         </div>
         <div class="container">
-
             <div id="main_area">
                 <div class="row">
                     <div class="col-md-7 col-sm-12">
@@ -16,21 +15,25 @@
                             </div>
 
                             <div class="owl-carousel owl-carousel-gallery">
-                                <!-- SI NO TIENE IMAGEN -->
+                                <!-- Imagen portada. -->
                                 <div class="w-100" v-if="!unidad.foto">
                                     <img src="/imagenes/default-img.png">
                                 </div>
+                                <!-- Imagenes de la galeria -->
                                 <div v-else v-for="(imagen, i) in imagenes" class="item">
                                   <div class="w-100">
-                                      <img :src="imagen.url">
+                                      <img :src="imagen.public_path">
                                   </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Miniaturas -->
                         <div class="w-100 d-flex flex-wrap indicators">
                             <div v-for="(imagen, i) in imagenes" 
                                @click.prevent="goToSpecificSlide(i)"
-                               :style="'background:url('+imagen.url+') no-repeat;background-size: contain;background-position: center; width: 90px; height: 90px; margin-right: 5px; cursor: pointer;'">
+                               :style="'background:url('+imagen.public_path+') no-repeat;background-size: contain;background-position: center; width: 90px; height: 90px; margin-right: 5px; cursor: pointer;'">
+                            </div>
+                            <div class="w-100" v-if="unidad.foto">
                             </div>
                         </div>
                     </div>
@@ -125,12 +128,14 @@
                     telefono:'',
                     mensaje:'',
                 },
-                otrasUnidades: ['asas'],
             }
         },
         mounted() {
             this.unidad = this.data.unidad;
-            this.imagenes = this.data.imagenes;
+            var portada = {};
+            portada.public_path = this.unidad.foto;
+            this.imagenes = this.unidad.photos;
+            this.imagenes.unshift(portada);
         },
         methods:{
             goToForm()
@@ -146,15 +151,6 @@
                 console.log(ix)
                 $('.owl-carousel-gallery').trigger('to.owl.carousel', ix);
 
-            },
-            otrosUsados(){
-                self = this;
-                // axios
-                //     .get('/usados/get-last')
-                //     .then(function (response) {
-                //         console.log(response.data);
-                //         self.otrasUnidades = response.data;
-                //     })
             },
             enviarConsulta()
             {

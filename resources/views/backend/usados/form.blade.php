@@ -118,7 +118,7 @@
 			<div id="div_file">
 			 	{{-- <img id='output'> --}}
 			 	@if($usado->foto != null)
-			 		<img id='foto' style="width: 155px; margin-bottom: 10px;" src="{{$usado->foto}}" alt="">
+			 		<img id='foto' style="width: 155px; margin-bottom: 10px;" src="{{Storage::url($usado->foto)}}" alt="">
 			 	@else
 			 		<img id='foto' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
 			    @endif
@@ -140,64 +140,24 @@
 		</div>
 	</div>
 
-<div class="card">
-	<div class="card-body">
-@if($usado->id)
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<h4><i class="fa fa-picture-o"></i> Galeria de Imagenes</h4>
-			</div>
-			<div class="col-md-6 text-right">
-				<a href="#" onclick="addNewField(event)" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></a>
-			</div>
-		</div>
-		<div id="images_new" class="my-3"></div>
-		<div class="row my-3">
-			@foreach($imagenes_galeria as $imagen)
-			<div class="col-md-3 col-sm-12 my-1">
-				<div class="thumbnail" style="position: relative;">
-                      	<a href="{{ route('borrar_img_usado', $imagen->id) }}" style="position: absolute;" onclick="return confirm('Desea eliminar la imagen?');" class="btn btn-danger delete-user">
-                      		<i class="fa fa-trash"></i>
-                      	</a>
-	      			<img src="{{$imagen->url}}" alt="..." style="width: 190px;">
-	      		</div>
-			</div>
-      		@endforeach
-		</div>
+	@if($usado->id)
+	<div class="content" id="content_dropzone">
+		<div class="dropzone needsclick dz-clickable dz-started" 
+			  action="{{route('usados_add_photos', $usado->id)}}" 
+			  id="dropzone-usados-fotos"
+			  >
+            <div class="dz-message text-center mb-3" data-dz-message>
+            	<span><i class="fas fa-upload"></i> Clic o arrastrar los archivos aquí para subir.</span>
+            </div>
+        </div>
 	</div>
+	@endif
 
-	<div class="row">
-	<div class="col-md-12">
-		<label>Adjuntar Archivos</label>
-		<div class="content" id="content_dropzone">
-			<div class="dropzone" id="dropzone-files">
-                <div class="dz-message" data-dz-message><span><i class="fas fa-upload"></i> Clic o arrastrar los archivos aquí para subir.</span></div>
-          	</div>
+	<div class="row my-3">
+		<div class="col-md-12">
+			<p class="text-danger">(*) Campos obligatorios</p>
 		</div>
 	</div>
-
-</div>
-@else
-	<br>
-	<div id="images">
-		<div class="row">
-			<div class="col-md-6">
-				<h4><i class="fa fa-picture-o" aria-hidden="true"></i> Galeria de Imagenes</h4>
-			</div>
-			<div class="col-md-6 text-right">
-				<a style="color: white" onclick="addField()" class="btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i></a>
-			</div>
-		</div>
-	</div>
-@endif
-	</div>
-</div>
-<div class="row my-1">
-	<div class="col-md-12">
-		<p class="text-danger">(*) Campos obligatorios</p>
-	</div>
-</div>
 
 </div>
 
@@ -235,7 +195,6 @@
 
 	    function addNewField(e){
 	    	e.preventDefault();
-	    	console.log('new');
 	    	var field = `
 	              	<div class="input-group my-2" id="field_${index}">
 					  <div class="custom-file">
@@ -284,21 +243,58 @@
 			$(".select2-color + span").addClass("is-invalid"); 
    		@endif
 
-
-   		if (document.getElementById('dropzone-files')) {
-            var myDropzone = new Dropzone("#dropzone-files",{ 
-                maxFilesize: 3,  // 3 mb
-                acceptedFiles: ".jpeg,.jpg,.png,.pdf",
-                init: function() {
-                    this.on("success", function(file, response) {
-                        additem(response);
+   		Dropzone.autoDiscover = false;
+   		if (document.getElementById('dropzone-usados-fotos')) {
+   			var dropzoneCursoFiles = new Dropzone("#dropzone-usados-fotos",{
+   				url: "{{route('usados_add_photos', $usado->id)}}",
+   				acceptedFiles: ".jpeg, .jpg, .png,.webp",
+   				addRemoveLinks: true,
+   				thumbnailWidth: 50,
+  				thumbnailHeight: 50,
+  				previewTemplate: `
+  					<div class="dz-preview dz-file-preview">
+					  <div class="dz-details">
+					    <img data-dz-thumbnail style="width: 110px;"/>
+					  </div>
+					  <div class="dz-progress progress mt-1">
+					  	<span class="dz-upload progress-bar" data-dz-uploadprogress></span>
+					  </div>
+					  <div class="dz-error-message"><span data-dz-errormessage></span></div>
+					</div>
+  				`,
+   				init: function() {
+   					this.on("success", function(file, response) {
+                        console.log(response);
+                        notifier.show('Hecho!', 'La imagen se cargó correctamente.', '', '/imagenes/icons/success.png', 3500);
                     });
-                }
-            });
+                    //display photos
+                    var mocks = {!! $usado->photos !!};
+				    for (var i = 0; i < mocks.length; i++) {
+				        var mock = {
+		                    id: mocks[i].id ,
+		                    path: mocks[i].public_path,
+		                    type: 'image/jpeg',
+		                    accepted: true,
+		                };
+				        this.files.push(mock);
+				        this.emit('addedfile', mock);
+				        this.emit("thumbnail", mock, mock.path);
+				        this.emit('complete', mock);
+				    }
+   				},
+   				sending: function(file, xhr, formData) {
+				    formData.append("_token", "{{ csrf_token() }}");
+				},
+				removedfile: function(file) {
+					axios
+						.delete("{{route('usados_add_photos', $usado->id)}}", { data: file})
+						.then(res=>{
+							file.previewElement.remove();
+                        	notifier.show('Hecho!', 'La imagen se eliminó correctamente.', '', '/imagenes/icons/success.png', 3500);
+						})
+				},
 
-            myDropzone.on("sending", function(file, xhr, formData) {
-               formData.append("_token", CSRF_TOKEN);
-            }); 
+   			});
         }
 	</script>
 @stop
