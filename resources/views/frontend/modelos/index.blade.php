@@ -12,6 +12,30 @@
     <meta property="og:image" content="{{asset('imagenes/icons/logo_dyv_loading.png')}}" />
 @stop
 
+@section('styles_sheets')
+<style type="text/css">
+    .btn-cotizar:hover {
+      color: #002732;
+      background-color: #e3e9eb;
+      border-color: #e3e9eb;
+      text-decoration: none;
+  }
+  .btn-cotizar{
+    color: #002732;
+      background-color: transparent;
+      border-color: #002732;
+      box-sizing: border-box;
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      padding: .50rem 1.5rem;
+      border-radius: 100px;
+      border: 2px solid;
+  }
+</style>
+@stop
+
 @section('content')
 	<article>
         <section>
@@ -73,14 +97,14 @@
         <section class="py-5 bg-1">
           <div class="container">
             <div class="row py-4">
-              <div class="col-md-6 col-sm-12 text-center">
-                <img class="img-fluid" src="{{asset('imagenes/home-min/bg-block-mobility.jpg')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
+              <div class="col-md-5 col-sm-12 text-right">
+                <img class="img-fluid" src="{{asset('imagenes/kinto/kinto-grid.png')}}" style="border-radius: 5px;" alt="alquiler de autos toyota resistencia chaco">
               </div>
-              <div class="col-md-6 col-sm-12 pt-3 px-4">
+              <div class="col-md-7 col-sm-12 pt-3 px-4">
                 <h2>Alquiler de Vehículos</h2>
-                <p><b>Entérate como podes alquilar un Toyota en cinco sencillos pasos</b></p>
-                <p class="text-muted">Toyota Mobility Services es el nuevo sistema de alquiler de autos, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes, etc.</p>
-                <a href="https://www.derkayvargas.com/mobility-services-alquiler-de-autos-toyota#mobility-que-es-y-como-funciona" target="_blank" class="btn btn-lg btn-danger btn-round mt-3">¿Como funciona?</a>
+                <p><b>Entérate como podes alquilar un Toyota en unos sencillos pasos</b></p>
+                <p class="text-muted">Toyota Mobility Services ahora es KINTO SHARE, el nuevo sistema de alquiler de autos, podes alquilar un vehículo por una hora, un día, un fin de semana, un mes, etc.</p>
+                <a href="{{route('mobility_services')}}" class="btn-cotizar text-center mt-3">Ver más</a>
               </div>
             </div>
           </div>
