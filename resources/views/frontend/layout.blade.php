@@ -49,6 +49,45 @@
     @yield('content')
 
     @include('frontend.includes.footer')
+
+    <div class="modal modal-push-subscription" tabindex="-1" id="modalPush">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex flex-column">
+              <h5 class="modal-title">Suscríbete a nuestra Web </h5>
+              <p class="text-muted">Recibirás las últimas novedades.</p>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body ml-4">
+            <input id="subscription-options" type="checkbox" name="tpa" value="tpa">
+            <label for="tpa">Plan de Ahorro</label><br>
+
+            <input id="subscription-options" type="checkbox" name="servicios-y-accesorios" value="servicios-y-accesorios">
+            <label for="servicios-y-accesorios"> Servicios y Accesorios</label><br>
+
+            <input id="subscription-options" type="checkbox" name="0km" value="0km">
+            <label for="0km">Ventas 0km</label><br>
+
+            <input id="subscription-options" type="checkbox" name="usados" value="usados">
+            <label for="usados">Usados</label><br>
+
+            <input id="subscription-options" type="checkbox" name="noticias-y-novedades" value="noticias-y-novedades">
+            <label for="usados">Noticias y Novedades</label><br>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Más tarde</button>
+            <button type="button" class="btn button-theme my-2" style="border-radius: 0px;" id="push-subscription-button">
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!--===============================================================================================-->

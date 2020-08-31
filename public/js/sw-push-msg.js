@@ -4,8 +4,9 @@ firebase.initializeApp({
   messagingSenderId: "712801085814"
 })
 
-//const pushBtn   = document.getElementById('push-button'),
+const pushBtn   = document.getElementById('push-subscription-button')
 const ptoken   = document.getElementById('token')
+
 const messaging = firebase.messaging()
 
 let userToken    = null,
@@ -14,6 +15,8 @@ let userToken    = null,
 messaging.onMessage(payload => {
   console.log(payload)
 })
+
+// $("#modalPush").modal('show');
 
 // UPADTE SUBSCRIPTION BUTTON - 2
 //function updateBtn() {
@@ -36,6 +39,14 @@ messaging.onMessage(payload => {
 // UPDATE SUBSCRIPTION ON SERVER
 function updateSubscriptionOnServer(token) {
 
+  $("#modalPush").modal('hide');
+
+  //cargar en el array los temas a los que se desea suscribir
+  var options = [];
+  $("input:checkbox[id=subscription-options]:checked").each(function(){
+      options.push($(this).val());
+  });
+
   if (isSubscribed) {
       //unsubscribe
       $.ajax({
@@ -56,6 +67,7 @@ function updateSubscriptionOnServer(token) {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
          type:'GET',
+         data: { options },
          url:'/push-subscription/'+token,
          success:function(data){
             console.log(data);
@@ -95,7 +107,6 @@ function unsubscribeUser() {
 // INIT PUSH - 1
 function initializePush() {
 
-
   userToken = localStorage.getItem('pushToken')
 
   isSubscribed = userToken !== null
@@ -106,31 +117,17 @@ function initializePush() {
   //ptoken.innerHTML=userToken;
 
   if (!existe) {
-    if (!isSubscribed) {
-
-      swal.fire({
-          title: 'Suscríbete a Nuestra Web',
-          text: "Al suscribirte recibiras las últimas novedades.",
-          // type: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonText: 'Más tarde',
-          confirmButtonText: 'ACEPTAR'
-        }).then((result) => {
-          if (result.value) {
-            if (isSubscribed) return unsubscribeUser()
-            return subscribeUser()
-          } 
-        })
-    }
+    if (!isSubscribed)
+      $("#modalPush").modal('show');
   }
 
   // CHANGE SUBSCRIPTION ON CLICK
-  //pushBtn.addEventListener('click', () => {
-  //  pushBtn.disabled = true
-  //  if (isSubscribed) return unsubscribeUser()
-  //  return subscribeUser()
-  //})
+  pushBtn.addEventListener('click', () => {
+    if (isSubscribed) 
+      return unsubscribeUser()
+    
+    return subscribeUser()
+  })
 }
 
 // REGISTER SW - 0

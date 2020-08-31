@@ -60,15 +60,6 @@ class FrontController extends Controller
         return view('frontend.contacto.index');
     }
 
-    public function thexpe()
-    {
-        return view('frontend.thexp');
-    }
-
-    public function tecnoHibrid()
-    {
-        return view('frontend.tecnohibrida');
-    }
 
     public function empresa()
     {
@@ -107,9 +98,16 @@ class FrontController extends Controller
             return;
         } 
 
+        $temas = "";
+
+        foreach ($request->options as $tema)
+            $temas.=" ".$tema;
+
         $subs = new PushSubscriptions;
 
         $subs->token = $token;
+        
+        $subs->temas = $temas;
 
         $subs->save();
 

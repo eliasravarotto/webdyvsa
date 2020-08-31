@@ -16,6 +16,7 @@ class CreatePushSubscriptionsTable extends Migration
         Schema::create('push_subscriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('token');
+            $table->string('temas');
         });
     }
 

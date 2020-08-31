@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\File;
-use App\ImagenGaleriaUsado;
 use App\MensajeEmail;
 use App\Modelo;
 use App\PushSubscriptions;
