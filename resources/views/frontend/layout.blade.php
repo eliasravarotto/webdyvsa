@@ -63,19 +63,19 @@
             </button>
           </div>
           <div class="modal-body ml-4">
-            <input id="subscription-options" type="checkbox" name="tpa" value="tpa">
+            <input id="subscription-options" type="checkbox" name="tpa" value="tpa" checked>
             <label for="tpa">Plan de Ahorro</label><br>
 
-            <input id="subscription-options" type="checkbox" name="servicios-y-accesorios" value="servicios-y-accesorios">
+            <input id="subscription-options" type="checkbox" name="servicios-y-accesorios" value="servicios-y-accesorios" checked>
             <label for="servicios-y-accesorios"> Servicios y Accesorios</label><br>
 
-            <input id="subscription-options" type="checkbox" name="0km" value="0km">
+            <input id="subscription-options" type="checkbox" name="0km" value="0km" checked>
             <label for="0km">Ventas 0km</label><br>
 
-            <input id="subscription-options" type="checkbox" name="usados" value="usados">
+            <input id="subscription-options" type="checkbox" name="usados" value="usados" checked>
             <label for="usados">Usados</label><br>
 
-            <input id="subscription-options" type="checkbox" name="noticias-y-novedades" value="noticias-y-novedades">
+            <input id="subscription-options" type="checkbox" name="noticias-y-novedades" value="noticias-y-novedades" checked>
             <label for="usados">Noticias y Novedades</label><br>
           </div>
           <div class="modal-footer">
