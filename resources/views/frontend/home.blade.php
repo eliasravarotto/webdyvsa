@@ -247,8 +247,8 @@
           @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
             <div class="col-md-4 col-sm-12 py-2">
               <div class="card d-flex flex-column justify-content-between box-shadow-2">
-                <div class="container-img" style="background: url('{{$post->imagen_portada}}');"></div> 
-                  <div class="card-body d-flex flex-column justify-content-end" style="height: 230px;">
+                <div class="container-img" style="background: url({{$post->image['public_path']}})"></div> 
+                  <div class="card-body d-flex flex-column justify-content-end" style="height: 240px;">
                     <h4 class="text-dark-2 mb-2 font-weight-500">
                       {{$post->titulo}}
                     </h4>

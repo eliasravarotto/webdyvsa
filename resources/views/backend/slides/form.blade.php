@@ -96,7 +96,7 @@
 			</div>
 			<div class="col-md-1 col-sm-12 px-1">
 				<div class="requerido">
-					<input name="orden[]" type="number" class="form-control" placeholder="Orden" value="">
+					<input name="orden[]" type="number" class="form-control" placeholder="Orden" value="" required>
 				</div>
 			</div>
 			<div class="col-md-2 col-sm-12 px-1">
@@ -107,13 +107,13 @@
 			</div>
 			<div class="col-md-4 col-sm-12 px-1">
 				<div class="requerido">
-					<input name="url[]" type="text" class="form-control" value="" placeholder="Ir a">
+					<input name="url[]" type="text" class="form-control" value="" placeholder="Ir a" required>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-12 px-1">
 				<div class="mt-1">
 				  <div class="custom-file">
-				    <input type="file" class="" id="image" name="image[]">
+				    <input type="file" class="" id="image" name="image[]" required>
 				  </div>
 				</div>
 			</div>

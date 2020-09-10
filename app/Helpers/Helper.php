@@ -1,13 +1,14 @@
 <?php
 namespace App\Helpers;
 
-use App\Modelo;
 use App\Post;
+use App\Usado;
+use App\Modelo;
 use App\PostTema;
 use App\Sucursal;
-use App\TpaAdjudicado;
 use App\TpaAgrupado;
-use App\Usado;
+use App\TpaAdjudicado;
+use Illuminate\Support\Collection;
 
 /*
 	1. Sucursales - getSucursales
@@ -118,13 +119,14 @@ class Helper
 
 	public static function getPostsWidgetRigth( $postInView = null, $cant )
 	{
+
 		if ($postInView != null) {
 			$posts = Post::where('tema_id', $postInView->tema_id)
 						 ->where('id', '!=', $postInView->id)
 						 ->orderBy('orden', 'DESC')
-						 ->with(['tema']);
+						 ->with(['tema', 'image']);
 			if ( $posts->count() < $cant ) {
-				$all = collect(Post::where('tema_id', '!=', $postInView->tema_id)->with(['tema'])->get());
+				$all = collect(Post::where('tema_id', '!=', $postInView->tema_id)->with(['tema', 'image'])->get());
 				$posts = collect($posts->get());
 				$posts = $posts->concat($all);
 				$posts = $posts->unique();

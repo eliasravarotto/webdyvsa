@@ -35,7 +35,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-8">
       <div class="blog-1 blog-big">
-        <img class="w-100" src="{{$post->imagen_portada}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
+        @if($post->image != null)
+          <img class="w-100" src="{{$post->image->public_path}}" alt="{{$post->alt_img}}" title="{{$post->titulo}}" style="display: inline-block;">
+        @endif
         <div class="detail">
           <h3>{{$post->titulo}}</h3>
           <ul class="list-unstyled list-inline data-post">

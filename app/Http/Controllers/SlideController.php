@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\File;
 use App\Slide;
 use App\SlideItem;
+use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class SlideController extends Controller
 {
+    use ImageHandler;
+
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +52,14 @@ class SlideController extends Controller
         $i=0;
         foreach ($files as $foto) {
             $file = new File;
-            $file->store($foto);
+
+            if ($request->size[$i] == 'SM')
+                $file->path = $this->storeAndRezise($foto, 'public/fotos', 800, 100)->imagePath;
+            
+            if ($request->size[$i] == 'MD')
+                $file->path = $this->storeAndRezise($foto, 'public/fotos', 1200, 100)->imagePath;
+                
+            $file->public_path = Storage::url($file->path);
 
             $slideItem = new SlideItem;
             $slideItem->slide_id = $slide->id;
@@ -65,16 +75,6 @@ class SlideController extends Controller
         return view('backend.slides.index', compact('slides'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Slide  $slide
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Slide $slide)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

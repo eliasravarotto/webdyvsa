@@ -6,12 +6,16 @@ use App\File;
 use App\Color;
 use App\Usado;
 use App\ImagenGaleriaUsado;
+use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-// use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class UsadoController extends Controller
 {
+
+    use ImageHandler;
+
     /**
      * Display a listing of the resource.
      *
@@ -70,7 +74,7 @@ class UsadoController extends Controller
 
         if ($request->hasFile('foto')) {
 
-            $usado->foto = $request->file('foto')->store('public/fotos');
+            $usado->foto = $this->storeAndReziseImage($request, 'public/fotos', 'foto')->imagePath;
 
             $usado->update();
         } 
@@ -127,13 +131,13 @@ class UsadoController extends Controller
                 Storage::delete($usado->foto);   
             }
 
-            $usado->foto = $request->file('foto')->store('public/fotos');
+            $usado->foto = $this->storeAndReziseImage($request, 'public/fotos', 'foto')->imagePath;
 
             $usado->update();
 
         }
 
-        return back()->with('success', 'Los datos fueron actulizados correctamente.');
+        return redirect('admin/usados')->with('success', 'Los datos fueron actulizados correctamente.');
     }
 
     /**
@@ -169,7 +173,7 @@ class UsadoController extends Controller
     private function validarRequest( $request )
     {
        return $this->validate($request, [
-            'anio' => 'required|integer|min:2012|max:2020',
+            'anio' => 'required|integer|min:2010|max:' . date('Y'),
         ]);
     }
 
@@ -179,7 +183,10 @@ class UsadoController extends Controller
 
         if ($request->hasFile('file')) {
             $photo = new File;
-            $photo->store($request->file);
+
+            $photo->path = $this->storeAndReziseImage($request, 'public/fotos', 'file')->imagePath;
+
+            $photo->public_path = Storage::url($photo->path);
 
             $usado->photos()->save($photo);
             
@@ -197,6 +204,6 @@ class UsadoController extends Controller
         $file->delete();
 
         return;
-
     }
+
 }

@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\ImagenGaleriaPost;
+use App\File;
 use App\Post;
 use App\PostTema;
+use App\ImagenGaleriaPost;
+use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
+    use ImageHandler;
+
     /**
      * Display a listing of the resource.
      *
@@ -62,24 +67,21 @@ class PostController extends Controller
         $post->save();
 
         if ($request->hasFile('imagen_portada')) {
-            $foto = $request->file('imagen_portada');
-            $foto_name = $request->file('imagen_portada')->getClientOriginalName();
-            $foto->move(public_path().'/imagenes/posts/'.$post->id.'/',$foto_name);
-            $post->imagen_portada = '/imagenes/posts/'.$post->id.'/'.$foto_name;
+
+            $file = new File;
+
+            $file->path = $this->storeAndRezise($request->file('imagen_portada'), 'public/fotos')->imagePath;
+
+            $file->public_path = Storage::url($file->path);
+
+            $file->save();
+            
+            $post->image()->save($file);
+
             $post->update();
         } 
 
         return redirect('/admin/posts')->with('success', 'Datos guardados correctamente.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
     }
 
     /**
@@ -123,33 +125,26 @@ class PostController extends Controller
         $post->alt_img = $request->alt_img;
 
         if ($request->hasFile('imagen_portada')) {
-            if ($post->imagen_portada != null) {
-                if(file_exists(public_path().$post->imagen_portada)){
-                    unlink(public_path().$post->imagen_portada);    
-                }
+            if ($post->image != null) {
+                
+                Storage::delete($post->image->path);     
+                
+                $post->image->delete();
             }
 
-            $foto = $request->file('imagen_portada');
-            $foto_name = $request->file('imagen_portada')->getClientOriginalName();
-            $foto->move(public_path().'/imagenes/posts/'.$post->id.'/',$foto_name);
-            $post->imagen_portada = '/imagenes/posts/'.$post->id.'/'.$foto_name;
-            $post->update();
-        }
 
-        $total = count($request->img_galeria);
-        if ($total>0) {
-            for( $i=0 ; $i < $total ; $i++ ) { 
-                $file = $request->file('img_galeria')[$i];
-                $originalname = $request->file('img_galeria')[$i]->getClientOriginalName();
-                $filename = md5(date('Y-m-d H:i:s:u').$originalname);
-                $file->move(public_path().'/imagenes/posts/'.$post->id.'/',$filename);
-                $imagen = new ImagenGaleriaPost;
-                $imagen->post_id = $post->id;
-                $imagen->url = '/imagenes/posts/'.$post->id.'/'.$filename;
-                $imagen->save();
-            }
-        }
+            $file = new File;
 
+            $file->path = $this->storeAndRezise($request->file('imagen_portada'), 'public/fotos')->imagePath;
+
+            $file->public_path = Storage::url($file->path);
+
+            $file->save();
+            
+            $post->image()->save($file);
+            
+        }
+        
         $post->update();
 
         return redirect('/admin/posts')->with('success', 'Datos guardados correctamente.');
@@ -163,7 +158,15 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
+
+        if ($post->image != null) {
+                
+            Storage::delete($post->image->path);     
+            
+            $post->image->delete();
+        }
+
         if ($post->delete()) {
             return back()->with('success', 'El post fué eliminado correctamente!');
         } else{
@@ -171,13 +174,6 @@ class PostController extends Controller
         }
     }
 
-    public function deleteImgGaleria($id)
-    {
-        $img = ImagenGaleriaPost::find($id);
-        unlink(public_path().$img->url);
-        $img->delete();
-        return back()->with('success', 'La imagen fué eliminada correctamente!');
-    }
 
     public function showPost($slug)
     {

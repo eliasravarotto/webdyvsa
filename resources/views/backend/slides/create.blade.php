@@ -34,7 +34,7 @@
         <strong class="card-title">Nuevo Slide</strong>
     </div>
     <div class="card-body">
-    	<form action="{{ route('admin_slides.store') }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
+    	<form action="{{ route('admin_slides.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data" files="true">
 			{{ csrf_field() }}
 			@include('backend.slides.form')
 			<div class="row form-group my-3">

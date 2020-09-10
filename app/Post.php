@@ -30,11 +30,8 @@ class Post extends Model
         return $this->belongsTo('App\PostTema');
     }
 
-    /**
-     * Get the comments for the blog post.
-     */
-    public function imagenes()
+    public function image()
     {
-        return $this->hasMany('App\ImagenGaleriaPost');
+        return $this->morphOne('App\File', 'notable');
     }
 }

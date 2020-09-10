@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Accesorio;
 use App\File;
 use App\Modelo;
+use App\Accesorio;
+use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class AccesorioController extends Controller
 {
+    use ImageHandler;
+
     /**
      * Display a listing of the resource.
      *
@@ -60,8 +63,15 @@ class AccesorioController extends Controller
         $filesIds = [];
         foreach ($files as $foto) {
             $file = new File;
-            $file->store($foto);
+
+            // $file->store($foto);
+
+            $file->path = $this->storeAndRezise($foto, 'public/fotos')->imagePath;
+
+            $file->public_path = Storage::url($file->path);
+
             $file->save();
+
             array_push($filesIds, $file->id);
         }
 
@@ -70,16 +80,6 @@ class AccesorioController extends Controller
         return redirect('admin_accesorios')->with('success', 'Accesorio creado correctamente.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Accesorio  $accesorio
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Accesorio $accesorio)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -116,7 +116,11 @@ class AccesorioController extends Controller
         if ($request->imagenes) {
             foreach ($request->imagenes as $foto) {
                 $file = new File;
-                $file->store($foto);
+
+                $file->path = $this->storeAndRezise($foto, 'public/fotos')->imagePath;
+
+                $file->public_path = Storage::url($file->path);
+
                 $file->save();
                 array_push($fotos, $file->id);
             }

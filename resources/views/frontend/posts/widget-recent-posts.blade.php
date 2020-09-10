@@ -3,7 +3,7 @@
     @foreach(\App\Helpers\Helper::getPostsWidgetRigth( $postInView,  5 ) as $post)
         <div class="media mb-2">
             <a class="pr-3" href="{{ route('show_post', $post->slug) }}">
-                <img class="media-object" src="{{ $post->imagen_portada }}" alt="img no aviable">
+                <img class="media-object" src="{{$post->image['public_path']}}" alt="img no aviable">
             </a>
             <div class="media-body align-self-center">
                 <h5 class="mt-0">

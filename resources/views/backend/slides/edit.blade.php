@@ -34,7 +34,7 @@
         <strong class="card-title">Editar Slide</strong>
     </div>
     <div class="card-body">
-		<form action="{{ route('admin_slides.update', $slide->id) }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
+		<form action="{{ route('admin_slides.update', $slide->id) }}" method="POST" autocomplete="off" enctype="multipart/form-data" files="true">
 			{{ csrf_field() }}
     		<input name="_method" type="hidden" value="PUT">
             @include('backend.slides.form')
