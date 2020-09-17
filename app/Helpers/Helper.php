@@ -99,14 +99,14 @@ class Helper
 			$posts = Post::whereHas('categories', function ($query) use ($categories) {
                 return $query->whereIn('name', '=', $categories);
             })
-            ->orderBy('orden', 'DESC')
+            ->orderBy('created_at', 'DESC')
 			->get();
 		}else{
 			$posts = Post::whereHas('categories', function ($query) use ($categories) {
                 return $query->whereIn('name', $categories);
             })
 			->take($limit)
-			->orderBy('orden', 'DESC')
+			->orderBy('created_at', 'DESC')
 			->get();
 		}
 
