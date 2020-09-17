@@ -4,6 +4,7 @@ namespace App\Helpers;
 use App\Post;
 use App\Usado;
 use App\Modelo;
+use App\Category;
 use App\PostTema;
 use App\Sucursal;
 use App\TpaAgrupado;
@@ -92,56 +93,39 @@ class Helper
 		return Modelo::whereIn('id', [44, 42, 43, 28, 30, 29])->get();
 	}
 
-	public static function postRecientes($limit)
-	{
-		$posts = Post::where('tema_id', '!=', 5)->take($limit)->orderBy('created_at', 'DESC')->get();
-
-		return $posts;
-	}
-
-	public static function postPopulares($limit)
-	{
-		$posts = Post::where('tema_id', '!=', 5)->take($limit)->orderBy('orden', 'DESC')->get();
-
-		return $posts;
-	}
-
-	public static function getPostsPromosDtos($limit = null)
+	public static function getPostsByCategories($categories, $limit = null)
 	{
 		if ($limit == null) {
-			$posts = Post::where('tema_id', 5)->orderBy('orden', 'DESC')->get();
+			$posts = Post::whereHas('categories', function ($query) use ($categories) {
+                return $query->whereIn('name', '=', $categories);
+            })
+            ->orderBy('orden', 'DESC')
+			->get();
 		}else{
-			$posts = Post::where('tema_id', 5)->take($limit)->orderBy('orden', 'DESC')->get();
+			$posts = Post::whereHas('categories', function ($query) use ($categories) {
+                return $query->whereIn('name', $categories);
+            })
+			->take($limit)
+			->orderBy('orden', 'DESC')
+			->get();
 		}
 
 		return $posts;
 	}
 
-	public static function getPostsWidgetRigth( $postInView = null, $cant )
+	public static function getPostsWidgetRigth( $cant )
 	{
 
-		if ($postInView != null) {
-			$posts = Post::where('tema_id', $postInView->tema_id)
-						 ->where('id', '!=', $postInView->id)
-						 ->orderBy('orden', 'DESC')
-						 ->with(['tema', 'image']);
-			if ( $posts->count() < $cant ) {
-				$all = collect(Post::where('tema_id', '!=', $postInView->tema_id)->with(['tema', 'image'])->get());
-				$posts = collect($posts->get());
-				$posts = $posts->concat($all);
-				$posts = $posts->unique();
-			}else{
-				$posts = $posts->get();
-			}
+		$posts = Post::inRandomOrder()->limit($cant)->get();
 
-			return $posts->sortByDesc('created_at')->take($cant);
-		}
+		return $posts;
+	
 	}
 
-	public static function getPostsTemas()
+	public static function getCategories()
 	{
-		$temas = PostTema::all();
-		return $temas;
+		$categories = Category::all();
+		return $categories;
 	}
 
 	public static function getUsadosDeInteres( Usado $usado_in_view )

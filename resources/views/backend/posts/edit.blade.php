@@ -30,10 +30,20 @@
 	</style>
 
 <div class="card">
-    <div class="card-header">
-        <strong class="card-title">Post</strong>
+    <div class="card-header d-flex justify-content-between">
+        <strong>Post</strong>
+        <span>{{$post->created_at}}</span>
     </div>
     <div class="card-body">
+		<div class="row mb-3">
+			<div class="col-12 text-right">
+		    	<form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+		            {{ csrf_field() }}
+		            {{ method_field('DELETE') }}
+		          	<button onclick="return confirm('Desea eliminar el post')" type="submit" class="btn"><i class="far fa-trash-alt"></i> Eliminar</button>
+		        </form>
+			</div>
+		</div>
 		<form action="{{ route('posts.update', $post->id) }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
 			{{ csrf_field() }}
     		<input name="_method" type="hidden" value="PUT">

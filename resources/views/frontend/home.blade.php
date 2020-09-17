@@ -59,6 +59,9 @@
     .grid-box {
       cursor: pointer;
     }
+    a:hover{
+      text-decoration: none;
+    }
    </style>
 @stop
 
@@ -244,26 +247,21 @@
         <p class="text-dark-3">Conoce las ultimas novedades, noticias, beneficios y descuentos que tenemos para vos</p>
       </div>
       <div class="row">
-          @foreach(\App\Helpers\Helper::getPostsPromosDtos(null) as $post)
+          @foreach(\App\Helpers\Helper::getPostsByCategories(['novedades', 'rse'], 6) as $post)
             <div class="col-md-4 col-sm-12 py-2">
-              <div class="card d-flex flex-column justify-content-between box-shadow-2">
-                <div class="container-img" style="background: url({{$post->image['public_path']}})"></div> 
-                  <div class="card-body d-flex flex-column justify-content-end" style="height: 240px;">
-                    <h4 class="text-dark-2 mb-2 font-weight-500">
-                      {{$post->titulo}}
-                    </h4>
-                    <div class="card-meta mb-2 text-dark-3">
-                      <span><i class="far fa-calendar-alt"></i> {{ date('d-m-Y', strtotime($post->created_at)) }}</span>
-                    </div>
-                    <div class="overflow-hidden" style="position: relative;">
-                      <p class="card-text text-dark-3">{{str_limit(strip_tags($post->contenido), 210, '...')}}</p>
-                      <div class="gradient-buttom-35"></div>
-                    </div>
-                    <div class="mb-0">
-                      <a href="{{ route('show_post', $post->slug) }}" title="{{$post->titulo}}" class="text-center btn-link-underline my-2">Leer más</a>
-                    </div>
+              <a href="{{ route('show_post', $post->slug) }}">
+                <div class="card d-flex flex-column justify-content-between box-shadow-2">
+                  <div class="container-img" style="background: url({{$post->image['public_path']}})"></div> 
+                    <div class="card-body d-flex flex-column justify-content-end" style="height: 240px;">
+                      <div class="card-meta mb-2 text-dark-3 text-right">
+                        <span>{{ date('d M Y', strtotime($post->created_at)) }}</span>
+                      </div>
+                      <h4 class="text-dark-2 mb-2 font-weight-500">
+                        {{$post->titulo}}
+                      </h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           @endforeach
       </div>

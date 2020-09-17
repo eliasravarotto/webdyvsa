@@ -69,11 +69,7 @@ class FrontController extends Controller
 
     public function rse(Request $request)
     {
-        $posts = DB::select('SELECT * FROM posts INNER JOIN posts_temas ON posts_temas.id = posts.tema_id WHERE posts.tema_id = 1 ORDER BY posts.id DESC');
-
-        $posts = $this->arrayPaginator($posts, $request);
-
-        return view('frontend.rse.index', compact('posts'));
+        return view('frontend.rse.index');
     }
 
     public function rseProgramaDesarrolloConcesionarios(Request $request)

@@ -1,6 +1,6 @@
 <div class="widget recent-posts">
-    <h3 class="sidebar-title">Posts Recientes</h3>
-    @foreach(\App\Helpers\Helper::getPostsWidgetRigth( $postInView,  5 ) as $post)
+    {{-- <h3 class="sidebar-title">Entradas Recientes</h3> --}}
+    @foreach(\App\Helpers\Helper::getPostsWidgetRigth(5) as $post)
         <div class="media mb-2">
             <a class="pr-3" href="{{ route('show_post', $post->slug) }}">
                 <img class="media-object" src="{{$post->image['public_path']}}" alt="img no aviable">
@@ -10,7 +10,7 @@
                     <a href="{{ route('show_post', $post->slug) }}" title="{{ $post->titulo }}">{{ $post->titulo }}</a>
                 </h5>
                 <div class="listing-post-meta">
-                    {{$post->tema->tema}} | <a href="#"><i class="fa fa-calendar"></i> {{ $post->created_at->format('M d, Y') }}</a>
+                    <i class="fa fa-calendar"></i> {{ $post->created_at->format('M d, Y') }}
                 </div>
             </div>
         </div>

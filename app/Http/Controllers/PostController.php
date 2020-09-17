@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\File;
 use App\Post;
+use App\Category;
 use App\PostTema;
 use App\ImagenGaleriaPost;
 use App\Traits\ImageHandler;
@@ -19,9 +20,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::orderBy('created_at', 'DESC')->get();
+
+        $posts = Post::containCategory($request->category)
+                        ->orderBy('created_at', 'DESC')
+                        ->get();
 
         return view('backend.posts.index', compact('posts'));
     }
@@ -34,8 +38,8 @@ class PostController extends Controller
     public function create()
     {
         $post = new Post;
-        $temas = PostTema::all();
-        return view('backend.posts.create', compact('post', 'temas'));
+        $categories = Category::all();
+        return view('backend.posts.create', compact('post', 'categories'));
     }
 
     /**
@@ -49,22 +53,12 @@ class PostController extends Controller
 
         $this->validate($request, [
             'titulo' => 'required',
-            'tema_id' => 'required',
-            'imagen_portada' => 'image',
+            'categories' => 'required',
+            'imagen_portada' => 'image|required',
             'contenido' => 'required',
-            'alt_img' => 'required'
         ]);
 
-        $post = new Post;
-
-
-        $post->titulo=$request->titulo;
-        $post->tema_id=$request->tema_id;
-        $post->contenido = $request->contenido;
-        $post->orden = $request->orden;
-        $post->alt_img = $request->alt_img;
-        $post->generateSlug();
-        $post->save();
+        $post = Post::create($request->all());
 
         if ($request->hasFile('imagen_portada')) {
 
@@ -93,8 +87,8 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $temas = PostTema::all();
-        return view('backend.posts.edit', compact('temas', 'post'));
+        $categories = Category::all();
+        return view('backend.posts.edit', compact('categories', 'post'));
     }
 
     /**
@@ -107,23 +101,18 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
 
-        //return $request;
-
         $this->validate($request, [
             'titulo' => 'required',
-            'tema_id' => 'required',
-            'imagen_portada' => 'image',
+            'categories' => 'required',
             'contenido' => 'required',
-            'alt_img' => 'required'
         ]);
 
-        $post = Post::find($id);
-        $post->titulo=$request->titulo;
-        $post->tema_id=$request->tema_id;
-        $post->contenido = $request->contenido;
-        $post->orden = $request->orden;
-        $post->alt_img = $request->alt_img;
+        $post = Post::findOrFail($id);
 
+        $post->update($request->all());
+
+        $post->categories()->sync($request->categories);
+        
         if ($request->hasFile('imagen_portada')) {
             if ($post->image != null) {
                 
@@ -131,7 +120,6 @@ class PostController extends Controller
                 
                 $post->image->delete();
             }
-
 
             $file = new File;
 
@@ -168,9 +156,9 @@ class PostController extends Controller
         }
 
         if ($post->delete()) {
-            return back()->with('success', 'El post fué eliminado correctamente!');
+            return redirect()->route('posts.index')->with('success', 'El post fué eliminado correctamente!');
         } else{
-            return back()->with('error', 'No se pudo eliminar el post!');
+            return redirect()->route('posts.index')->with('error', 'No se pudo eliminar el post!');
         }
     }
 

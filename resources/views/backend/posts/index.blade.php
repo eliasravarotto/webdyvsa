@@ -8,7 +8,7 @@
 </style>
 <div class="card" id="app_index">
     <div class="card-header">
-        <strong class="card-title">Posts y Publicaciones</strong>
+        <strong class="card-title">Posts</strong>
     </div>
     <div class="card-body">
         <div class="row">
@@ -17,25 +17,21 @@
           </div>
         </div>
         <table class="table table-sm table-hover table-posts">
-            <thead>
-              <tr class="d-flex">
-                <th class="col-6">Título</th>
-                <th class="col-2">Tema</th>
-                <th class="col-3">Contenido</th>
-                <th class="col-1"></th>
-              </tr>
-            </thead>
             <tbody>
                 @foreach($posts as $post)
                 <tr class="d-flex">
-                    <td class="col-6">{{ $post->titulo }}</td>
-                    <td class="col-2">{{ $post->tema->tema }}</td>
-                    <td class="col-3">{{str_limit(strip_tags($post->contenido), 30, '...')}}</td>
-                    <td class="col-1">
+                    <td class="col-6">
+                        <a href="{{ route('posts.edit', $post->id) }}" class="text-dark" title="Ver"><b>{{ $post->titulo }}</b></a> <br>
+                        <span class="text-muted">{{ $post->created_at->format('d M Y') }}</span><br>
+                        @foreach($post->categories as $category)
+                        <a href="{{ route('posts.index') }}?category={{$category->id}}"><span class="badge badge-light">{{ $category->name }}</span></a>
+                        @endforeach
+                    </td>
+                    <td class="col-5">{{str_limit(strip_tags($post->contenido), 120, '...')}}</td>
+                    <td class="col-1 text-right">
                         <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                              <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-outline-info btn-sm"><i class="far fa-edit"></i></a>
                               <button onclick="return confirm('Desea eliminar el post')" type="submit" class="btn btn-outline-danger delete-user btn-sm"><i class="fa fa-trash"></i></button>
                         </form>
                     </td>
