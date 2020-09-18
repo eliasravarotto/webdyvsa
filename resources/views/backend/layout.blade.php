@@ -40,9 +40,8 @@
 </head>
 
 <body class="bg-light">
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
-        @include('backend.includes.navbar')
-    </nav>
+
+    @include('backend.includes.navbar')
 
     <div class="d-flex">
         <div class="sidebar sidebar-dark bg-dark">

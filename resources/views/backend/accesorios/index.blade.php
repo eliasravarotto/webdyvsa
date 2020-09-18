@@ -1,8 +1,18 @@
 @extends('backend.layout')
 
 @section('content')
-<div class="card">
+<div class="card border-info">
+	<div class="card-header bg-default font-weight-bold">
+        ACCESORIOS
+  	</div>
   <div class="card-body">
+
+  	<div class="row mb-3">
+  		<div class="col-12 text-right">
+	      <a class="btn btn-default text-center" href="{{ route('admin_accesorios.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
+  		</div>
+  	</div>
+
     <form action="/admin_accesorios" method="get">
         <div class="row">
         	<div class="col-md-10 pr-0 col-sm-12 col-xs-12">
@@ -13,22 +23,22 @@
         	</div>
         	<div class="col-md-2 pl-0 col-sm-12 col-xs-12">
 		        <div class="form-group has-search mb-3 d-flex justify-content-end">
-		            <button type="submit" class="btn btn-primary mr-1">Buscar</button>
-		            <a href="/admin_accesorios" class="btn btn-dark"><i class="fa fa-trash"></i>  Limpiar</a>
+		            <button type="submit" class="btn btn-default mr-1">Buscar</button>
+		            <a href="/admin_accesorios" class="btn btn-default"><i class="fa fa-trash"></i>  Limpiar</a>
 		        </div>
         	</div>
         </div>
     </form>
     <table class="table table-sm table-hover">
 	    <thead>
-		    <tr>
+		    <tr class="bg-danger text-light">
 		      <th></th>
 		      <th>Nombre</th>
 		      <th>Precio</th>
 		      <th>Modelo</th>
 		      <th>Actualizado</th>
 		      <th>Activo</th>
-		      <th class="text-right"><a class="btn btn-success text-center" href="{{ route('admin_accesorios.create') }}"><i class="fas fa-plus"></i> Nuevo</a></th>
+		      <th></th>
 		    </tr>
 	    </thead>
 	    <tbody>
@@ -48,10 +58,10 @@
   			  </td>
 		      <td class="text-right">
 		        <form action="{{ url('admin_accesorios', ['id' => $accesorio->id]) }}" method="post">
-	            <a href="{{ route('admin_accesorios.edit', $accesorio->id) }}" class="btn btn-sm btn-info"><i class="fas fa-pencil-alt"></i></a>
+	            <a href="{{ route('admin_accesorios.edit', $accesorio->id) }}" class="btn btn-sm btn-light"><i class="fas fa-pencil-alt"></i></a>
 		            {!! method_field('delete') !!}
 		            {!! csrf_field() !!}
-		            <button type="submit" onclick="return confirm('Desea eliminar el accesorio seleccionado?')" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+		            <button type="submit" onclick="return confirm('Desea eliminar el accesorio seleccionado?')" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button>
 		        </form>
 		      </td>
 		      @endforeach

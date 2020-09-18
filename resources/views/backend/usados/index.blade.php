@@ -18,14 +18,14 @@
         }
     }
 </style>
-    <div class="card" id="app_index">
-        <div class="card-header">
+    <div class="card border-info" id="app_index">
+        <div class="card-header bg-default font-weight-bold">
             USADOS
         </div>
         <div class="card-body">
             <div class="row">
               <div class="col-md-12 d-flex justify-content-end my-1" style="margin-bottom: 10px;">
-                <a class="btn btn-primary" href="{{ route('usados.create') }}">Nuevo</a>
+                <a class="btn btn-default" href="{{ route('usados.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
               </div>
             </div>
             <div class="form-row">
@@ -36,15 +36,15 @@
                 <input type="text" id="nro-dom" class="form-control" placeholder="Dominio" onkeyup="filtrar(event)">
               </div>
               <div class="col-md-2 col-sm-12">
-              <button type="submit" class="btn btn-dark mb-2 w-100" onclick="limpiar()">Limpiar</button>
+              <button type="submit" class="btn btn-default mb-2 w-100" onclick="limpiar()">Limpiar</button>
               </div>
             </div>
 
             <!-- WEB -->
             <div class="d-none d-md-block d-lg-block d-xl-block">
-            <table class="table table-sm table-hover">
-                <thead style="background-color: #d13748; color: white;">
-                  <tr>
+            <table class="table table-sm">
+                <thead style="background-color: rgba(0, 0, 0, 0.075);">
+                  <tr class="bg-danger text-light">
                     <th></th>
                     <th>Int.</th>
                     <th>Dominio</th>
@@ -87,7 +87,7 @@
                             <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                  <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-outline-info"><i class="far fa-edit"></i></a>
+                                  <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-light"><i class="far fa-edit"></i></a>
                                   <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-outline-danger delete-user"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
@@ -110,6 +110,7 @@
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aR-2FHpyTZDEm14lQRd2wF2e6r8XgcKq-dluqRzuRztKplOw&s" style="width: 60px"> 
                             @endif --}}
                             <div class="w-100">
+                            <a href="{{ route('usados.edit', $usado->id) }}" class="precio">
                                 <div class="d-flex w-100">
                                     <h6 class="card-title" style="width: 65%"> 
                                         @if($usado->uct)
@@ -118,17 +119,16 @@
                                         {{$usado->marca}}
                                     </h6>
                                     <h6 class="card-title text-right" style="width: 35%">
-                                        <a href="{{ route('usados.edit', $usado->id) }}" class="precio">
                                             $ {{  number_format($usado->precio, 0, ',', '.')}} @if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif
-                                        </a>
                                     </h6>
                                 </div>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    {{$usado->modelo}}
+                                <h6 class="card-subtitle mb-2">
+                                    <b>{{$usado->modelo}}</b>
                                 </h6>
                                 <h6 class="card-subtitle mt-1 text-muted">
                                     {{$usado->dominio}} - {{$usado->anio}} - {{$usado->km}} km.
                                 </h6>
+                            </a>
                             </div>
                         </div>
                     </li>

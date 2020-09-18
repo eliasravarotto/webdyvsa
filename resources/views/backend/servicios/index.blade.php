@@ -1,16 +1,24 @@
 @extends('backend.layout')
 
 @section('content')
-<div class="card">
+<div class="card border-info">
+  <div class="card-header bg-default font-weight-bold">
+        SERVICIOS
+  </div>
   <div class="card-body">
-    <h4 class="card-title">SERVICIOS</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Modelos y Servicios</h6>
+
+    <div class="row">
+      <div class="col-12 text-right">
+        <a class="btn btn-default text-center" href="{{ route('admin_servicios.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
+      </div>
+    </div>
+
     <table class="table table-sm table-hover mt-3">
     <thead>
     <tr>
       <th>Modelo</th>
       <th>Publicado</th>
-      <th><a class="btn btn-primary text-center" href="{{ route('admin_servicios.create') }}">Nuevo</a></th>
+      <th></th>
     </tr>
     </thead>
     <tbody>

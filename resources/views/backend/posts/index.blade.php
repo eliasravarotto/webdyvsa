@@ -6,14 +6,14 @@
         font-size: 15px;
     }
 </style>
-<div class="card" id="app_index">
-    <div class="card-header">
-        <strong class="card-title">Posts</strong>
+<div class="card border-info" id="app_index">
+    <div class="card-header bg-default font-weight-bold">
+        POSTS
     </div>
     <div class="card-body">
         <div class="row">
           <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
-            <a class="btn btn-primary" href="{{ route('posts.create') }}">Nuevo</a>
+            <a class="btn btn-default" href="{{ route('posts.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
           </div>
         </div>
         <table class="table table-sm table-hover table-posts">

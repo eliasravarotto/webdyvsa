@@ -71,3 +71,25 @@
     border: 2px dashed rgb(0, 135, 247);
     padding: 20px 30px
 }
+
+.btn-default {
+    vertical-align: middle;
+    color: rgb(107, 109, 112);
+    border: 1px solid rgb(217, 219, 221);
+    border-color: rgb(10, 10, 11);
+    transition: border .15s linear;
+}
+
+.btn-default:hover{
+    color: #363636;
+    background-color: rgba(80, 80, 80, 0.05);
+}
+
+.btn:focus{
+    box-shadow: 0 0 0 0rem rgba(13, 71, 161, 0.25);
+}
+
+
+.bg-default{
+    background-color: rgba(0, 0, 0, 0.075) !important
+}

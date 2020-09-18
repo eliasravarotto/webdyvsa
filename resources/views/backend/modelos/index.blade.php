@@ -1,10 +1,16 @@
 @extends('backend.layout')
 
 @section('content')
-<div class="card">
+<div class="card border-info">
+    <div class="card-header bg-default font-weight-bold">
+        MODELOS
+    </div>
     <div class="card-body">
-      <h4 class="card-title">MODELOS</h4>
-      <h6 class="card-subtitle mb-2 text-muted">Listado de modelos</h6>
+        <div class="row mb-3">
+          <div class="col-12 text-right">
+            <a class="btn btn-default" href="{{ route('modelos.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
+          </div>
+        </div>
         <table class="table table-sm table-hover">
             <thead>
               <tr>
@@ -14,7 +20,7 @@
                 <th>Hibrido</th>
                 <th>Orden</th>
                 <th>Activo</th>
-                <th><a class="btn btn-primary" href="{{ route('modelos.create') }}">Nuevo</a></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -41,10 +47,10 @@
                 <td>
                   {{-- <a href="{{ route('modelos.show', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}
                   <form action="{{ url('admin/modelos', ['id' => $modelo->id]) }}" method="post">
-                      <a href="{{ route('modelos.edit', $modelo->id) }}" class="btn btn-outline-info"><i class="far fa-edit"></i></a>
+                      <a href="{{ route('modelos.edit', $modelo->id) }}" class="btn btn-sm btn-outline-info"><i class="far fa-edit"></i></a>
                       {!! method_field('delete') !!}
                       {!! csrf_field() !!}
-                      <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                      <button type="submit" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
                   </form>
                 </td>
                 @endforeach

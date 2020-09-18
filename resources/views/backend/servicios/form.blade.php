@@ -22,8 +22,8 @@
 	</div>
 	<div class="col-sm-12 col-md-3 d-flex">
 		<div class="input-group mb-3 d-flex justify-content-around align-items-end">
-			<button type="submit" name="add_another" value="add_another" class="btn btn-primary pull-right">Guardar y Continuar</button>
-			<button type="submit" class="btn btn-success pull-right" style="margin-right: 5px;">Guardar</button>
+			<button type="submit" name="add_another" value="add_another" class="btn btn-default pull-right">Guardar y Continuar</button>
+			<button type="submit" class="btn btn-default pull-right" style="margin-right: 5px;">Guardar</button>
 		</div> 
 	</div> 
 </div>

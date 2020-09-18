@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="col-md-6 col-sm-12">
-		<a class="btn btn-info" href="#" onclick="addItem(event)">ADD Item</a>
+		<a class="btn btn-default" href="#" onclick="addItem(event)">ADD Item</a>
 	</div>
 </div>
 

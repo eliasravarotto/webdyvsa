@@ -1,10 +1,10 @@
 @extends('backend.layout')
 
 @section('content')
-<div class="card" id="app">
-    <div class="card-header">
-        <strong class="card-title">Servicios {{$servicio->modelo->nombre}}</strong>
-    </div>
+<div class="card border-info" id="app">
+    <div class="card-header bg-default font-weight-bold">
+        SERVICIOS
+  	</div>
     <div class="card-body">
     	<form id="form" action="{{ route('admin_servicios.update', $modelo->id) }}" method="POST" autocomplete="off">
     		{{ csrf_field() }}
@@ -38,14 +38,14 @@
 			<div class="row my-2">
 				<div class="col-md-12">
 					<div class="input-group mb-3">
-						<button name="update" type="submit" class="btn btn-primary">Actualizar</button>
+						<button name="update" type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</div>
 			</div>
 		</form>
 
-		<div class="dropdown-divider my-4"></div>
-		<h5 class="mb-4">Agregar Servicios</h5>
+		<div class="dropdown-divider mt-4"></div>
+		<h5 class="mb-4 bg-default py-2 px-2"><b>Agregar Servicios</b></h5>
     	<form id="form" action="{{ route('admin_servicios.store') }}" method="POST" autocomplete="off">
 			{{ csrf_field() }}
 			@include('backend.servicios.form')

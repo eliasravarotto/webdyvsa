@@ -67,28 +67,29 @@
     {{-- Lista de precios --}}
     <div class="row mb-3" id="lista_precios_planes">
         <div class="col-sm-12">
-        <div class="card border-primary">
-          <h5 class="card-header">Lista de Precios TPA</h5>
-          <div class="card-body">
-            <table class="table table-sm table-hover">
-                <thead>
-                  <tr>
-                    <th>Unidad</th>
-                    <th>Modalidad</th>
-                    <th>Precio Lista</th>
-                    <th>Cuota Pura</th>
-                    <th>Integracion</th>
-                    <th class="w-5">Activo</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="tbody-planes">
-                </tbody>
-            </table>
-            
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="newPlan()">Nuevo</a>
+        <div class="card border-dark">
+            <div class="card-header bg-default font-weight-bold">
+                LISTA DE PRECIOS
+            </div>
+            <div class="card-body">
+                <table class="table table-sm table-hover">
+                    <thead>
+                      <tr>
+                        <th>Unidad</th>
+                        <th>Modalidad</th>
+                        <th>Precio Lista</th>
+                        <th>Cuota Pura</th>
+                        <th>Integracion</th>
+                        <th class="w-5">Activo</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-planes">
+                    </tbody>
+                </table>
 
-          </div>
+                <a href="#" class="btn btn-default" data-toggle="modal" data-target="#exampleModalCenter" onclick="newPlan()"><i class="fas fa-plus"></i> Nuevo</a>
+            </div>
         </div>
         </div>
     </div>    
@@ -96,8 +97,10 @@
     {{-- Adjudicados --}}
     <div class="row mb-3" id="lista_adjudicados">
         <div class="col-sm-12">
-        <div class="card border-dark">
-          <h5 class="card-header">Planes Adjudicados</h5>
+        <div class="card border-info">
+          <div class="card-header bg-default font-weight-bold">
+                PLANES ADJUDICADOS
+            </div>
           <div class="card-body">
             <table class="table table-sm table-hover">
                 <thead>
@@ -115,7 +118,7 @@
                 </tbody>
             </table>
             
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalNewAdjudicado" onclick="newPlanAdjudicado()">Agregar</a>
+            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modalNewAdjudicado" onclick="newPlanAdjudicado()"><i class="fas fa-plus"></i> Agregar</a>
 
           </div>
         </div>
@@ -125,8 +128,10 @@
     {{-- Avanzados --}}
     <div class="row mb-3" id="lista_avanzados">
         <div class="col-sm-12">
-        <div class="card border-dark">
-          <h5 class="card-header">Planes Avanzados</h5>
+        <div class="card border-info">
+          <div class="card-header bg-default font-weight-bold">
+                PLANES AVANZADOS
+            </div>
           <div class="card-body">
             <table class="table table-sm table-hover">
                 <thead>
@@ -144,7 +149,7 @@
                 </tbody>
             </table>
 
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalNewAvanzado" onclick="newPlanAavanzado()">Agregar</a>
+            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modalNewAvanzado" onclick="newPlanAavanzado()"><i class="fas fa-plus"></i> Agregar</a>
 
           </div>
         </div>
@@ -154,7 +159,7 @@
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-default">
                     <h5 class="modal-title" id="formularioPlanTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -200,8 +205,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="btn-editar" onclick="updatePlan()">Save changes</button>
-                    <button type="button" class="btn btn-primary" id="btn-crear" onclick="storePlan()">Save</button>
+                    <button type="button" class="btn btn-primary" id="btn-editar" onclick="updatePlan()"><i class="fas fa-save"></i> Save changes</button>
+                    <button type="button" class="btn btn-primary" id="btn-crear" onclick="storePlan()"><i class="fas fa-save"></i> Save</button>
                 </div>
             </div>
         </div>
@@ -210,7 +215,7 @@
     <div class="modal fade" id="modalNewAdjudicado" tabindex="-1" role="dialog" aria-labelledby="modalNewAdjudicadoTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-default">
                     <h5 class="modal-title" id="formularioPlanAdjudicadoTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -250,8 +255,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="btn-editar" onclick="updatePlanAdjudicado()">Save changes</button>
-                    <button type="button" class="btn btn-primary" id="btn-crear" onclick="storePlanAdjudicado()">Save</button>
+                    <button type="button" class="btn btn-primary" id="btn-editar" onclick="updatePlanAdjudicado()"><i class="fas fa-save"></i> Save changes</button>
+                    <button type="button" class="btn btn-primary" id="btn-crear" onclick="storePlanAdjudicado()"><i class="fas fa-save"></i> Save</button>
                 </div>
             </div>
         </div>
@@ -260,7 +265,7 @@
     <div class="modal fade" id="modalNewAvanzado" tabindex="-1" role="dialog" aria-labelledby="modalNewAvanzadoTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-default">
                     <h5 class="modal-title" id="formularioPlanAvanzadoTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -300,8 +305,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="btn-editar" onclick="updatePlanAvanzado()">Save changes</button>
-                    <button type="button" class="btn btn-primary" id="btn-crear" onclick="storePlanAvanzado()">Save</button>
+                    <button type="button" class="btn btn-primary" id="btn-editar" onclick="updatePlanAvanzado()"><i class="fas fa-save"></i> Save changes</button>
+                    <button type="button" class="btn btn-primary" id="btn-crear" onclick="storePlanAvanzado()"><i class="fas fa-save"></i> Save</button>
                 </div>
             </div>
         </div>
@@ -377,7 +382,7 @@
                 <td> ${plan.integracion} </td>
                 <td> ${ (plan.activo==1) ? '<i class="fas fa-check-circle text-success"></i>' : '<i class="fas fa-minus-circle text-dark"></i>'} </td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#exampleModalCenter" onclick="getPlan(${plan.id})"><i class="far fa-edit"></i></a>
+                    <a class="btn btn-light btn-sm" href="#" data-toggle="modal" data-target="#exampleModalCenter" onclick="getPlan(${plan.id})"><i class="far fa-edit"></i></a>
                     <a class="btn btn-danger btn-sm" href="#" onclick="deletePlan(${plan.id})"><i class="far fa-trash-alt"></i></a>
                 </td>
             </tr>`;
@@ -574,7 +579,7 @@
                     <td><span class="font-weight-bold">$ ${adjudicado.precio_venta}</span> <br><span class="text-muted">Valor ahorrado:</span> <span class="text-success">$ ${adjudicado.valor_ahorrado}</span></td>
                     <td> ${ (adjudicado.activo==1) ? '<i class="fas fa-check-circle text-success"></i>' : '<i class="fas fa-minus-circle text-dark"></i>'} </td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#modalNewAdjudicado" onclick="getAdjudicado(${adjudicado.id})"><i class="far fa-edit"></i></a>
+                        <a class="btn btn-light btn-sm" href="#" data-toggle="modal" data-target="#modalNewAdjudicado" onclick="getAdjudicado(${adjudicado.id})"><i class="far fa-edit"></i></a>
                         <a class="btn btn-danger btn-sm" href="#" onclick="deleteAdjudicado(event, ${adjudicado.id})"><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>`;
@@ -777,7 +782,7 @@
                     <td><span class="font-weight-bold">$ ${avanzado.precio_venta}</span> <br><span class="text-muted">Valor ahorrado:</span> <span class="text-success">$ ${avanzado.valor_ahorrado}</span></td>
                     <td> ${ (avanzado.activo==1) ? '<i class="fas fa-check-circle text-success"></i>' : '<i class="fas fa-minus-circle text-dark"></i>'} </td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#modalNewAvanzado" onclick="getavanzado(${avanzado.id})"><i class="far fa-edit"></i></a>
+                        <a class="btn btn-light btn-sm" href="#" data-toggle="modal" data-target="#modalNewAvanzado" onclick="getavanzado(${avanzado.id})"><i class="far fa-edit"></i></a>
                         <a class="btn btn-danger btn-sm" href="#" onclick="deleteAvanzado(event, ${avanzado.id})"><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>`;

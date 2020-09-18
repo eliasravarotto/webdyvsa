@@ -28,9 +28,9 @@
 			opacity: 0;
 		}
 	</style>
-<div class="card">
-    <div class="card-header">
-        <strong class="card-title">Nueva Unidad</strong>
+<div class="card border-info">
+    <div class="card-header bg-default font-weight-bold">
+        USADOS
     </div>
     <div class="card-body">
     	<form action="{{ route('usados.store') }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">

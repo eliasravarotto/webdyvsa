@@ -2,20 +2,20 @@
 
 @section('content')
 <div class="card border-info">
-  <div class="card-header">
+  <div class="card-header bg-default font-weight-bold">
     LEADS
   </div>
   <div class="card-body">
     {{-- <h6 class="card-subtitle mb-2 text-muted">Recibidos desde {{$from}}.</h6>     --}}
     <form class="" action="{{route('admin_leads')}}" method="get">
-      <div class="form-row mb-1">
-        <div class="col-md-3 ">
+      <div class="form-row">
+        <div class="col-md-3 mb-1">
           <input class="form-control w-100" type="date" name="desde" value="{{ $desde }}" placeholder="Desde">
         </div>
-        <div class="col-md-3 ">
+        <div class="col-md-3 mb-1">
           <input class="form-control w-100" type="date" name="hasta" value="{{ $hasta }}" placeholder="hasta">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 mb-1">
           <select class="from-select form-control w-100"  multiple="multiple" name="filterFroms[]">
             @foreach( $froms as $from )
                 <option value="{{$from}}" @if($filterFroms->contains($from)) selected @endif >{{$from}}</option>
@@ -24,14 +24,14 @@
         </div>
       </div>
       <div class="form-row mb-1">
-        <div class="col-md-6 ">
+        <div class="col-md-6 mb-1">
           <input class="form-control w-100" type="text" name="cliente" value="{{ $cliente }}" placeholder="Cliente">
         </div>
-        <div class="col-md-3">
-          <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+        <div class="col-md-3 mb-1">
+          <button type="submit" class="btn btn-default w-100"><i class="fas fa-filter"></i> Filtrar</button>
         </div>
-        <div class="col-md-3">
-          <a href="{{route('admin_leads')}}" class="btn btn-dark w-100">Limpiar</a>
+        <div class="col-md-3 mb-1">
+          <a href="{{route('admin_leads')}}" class="btn btn-default w-100">Limpiar</a>
         </div>
       </div>
     </form>  

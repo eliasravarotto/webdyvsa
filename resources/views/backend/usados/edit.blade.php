@@ -28,9 +28,9 @@
 			opacity: 0;
 		}
 	</style>
-<div class="card">
-    <div class="card-header">
-        <h4 class=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</h4>
+<div class="card border-info">
+    <div class="card-header bg-default font-weight-bold">
+        USADOS
     </div>
     <div class="card-body">
     	<form action="{{ route('usados.update', $usado->id) }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">

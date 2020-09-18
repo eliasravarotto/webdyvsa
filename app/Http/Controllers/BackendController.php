@@ -18,12 +18,7 @@ class BackendController extends Controller
 {
     public function inicio()
     {
-        $cant_consultas = MensajeEmail::all()->count();
-        $cant_de_turnos = TurnoServicio::all()->count();
-        $cant_usados = Usado::all()->count();
-        $cant_usuarios = User::all()->count();
-        $cant_modelos = Modelo::all()->count();
-        return view('backend.inicio', compact('cant_consultas', 'cant_de_turnos', 'cant_usados', 'cant_usuarios', 'cant_modelos'));
+        return view('backend.inicio');
     }
 
     public function createPushNotication()
@@ -34,7 +29,15 @@ class BackendController extends Controller
     public function sendPushNotication(Request $request)
     {
 
-    	$tokens = PushSubscriptions::all()->pluck('token')->toArray();
+    	// $tokens = PushSubscriptions::where()->pluck('token')->toArray();
+
+    	$subscriptions = PushSubscriptions::query();
+
+		foreach($request->temas as $tema){
+		    $subscriptions->orWhere('temas', 'LIKE', '%'.$tema.'%');
+		}
+
+		$tokens = $subscriptions->distinct()->pluck('token')->toArray();
 
 		$data = array(
 					   	"data" => 
@@ -47,7 +50,7 @@ class BackendController extends Controller
 						    	],
 		  				"registration_ids" => $tokens
 		  			);
-			  //return $data;
+
 		$data_string = json_encode($data); 
 
 	   $ch = curl_init();

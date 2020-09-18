@@ -29,9 +29,9 @@
 		}
 	</style>
 
-<div class="card border-dark">
-    <div class="card-header">
-        <strong class="card-title">Editar Slide</strong>
+<div class="card border-info">
+    <div class="card-header bg-default font-weight-bold">
+        SLIDES
     </div>
     <div class="card-body">
 		<form action="{{ route('admin_slides.update', $slide->id) }}" method="POST" autocomplete="off" enctype="multipart/form-data" files="true">

@@ -6,19 +6,19 @@
         font-size: 15px;
     }
 </style>
-<div class="card border-primary" id="app_index">
-    <div class="card-header">
-        <strong class="card-title">Slides</strong>
+<div class="card border-info" id="app_index">
+    <div class="card-header bg-default font-weight-bold">
+        SLIDES
     </div>
     <div class="card-body">
         <div class="row">
           <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
-            <a class="btn btn-primary" href="{{ route('admin_slides.create') }}">Nuevo</a>
+            <a class="btn btn-default" href="{{ route('admin_slides.create') }}"> <i class="fas fa-plus"></i>Nuevo</a>
           </div>
         </div>
         <table class="table table-sm table-hover">
             <thead>
-              <tr class="d-flex">
+              <tr class="d-flex bg-danger text-light">
                 <th class="col">#Id</th>
                 <th class="col">Nombre</th>
                 <th class="col">Items</th>

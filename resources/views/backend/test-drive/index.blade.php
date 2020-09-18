@@ -3,9 +3,10 @@
 @section('content')
 
 <div class="card">
+  <div class="card-header bg-default font-weight-bold">
+    SOLICITUDES TEST DRIVE
+  </div>
   <div class="card-body">
-    <h4 class="card-title">EMAILS</h4>
-    <h5 class="card-subtitle mb-2 text-muted">Solicitudes de Test Drive</h5>
         <table class="table table-sm table-hover">
             <thead>
               <tr>

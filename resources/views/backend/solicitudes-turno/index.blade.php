@@ -1,13 +1,14 @@
   @extends('backend.layout')
 
 @section('content')
-<div class="card">
+<div class="card border-info">
+  <div class="card-header bg-default font-weight-bold">
+        SOLICITUDES DE TURNOS
+  </div>
   <div class="card-body">
-    <h4 class="card-title">TURNOS</h4>
-    <h5 class="card-subtitle mb-2 text-muted">Listado de solicitudes.</h5>
     <table class="table table-sm table-hover">
         <thead>
-          <tr>
+          <tr class="bg-danger text-light">
             <th>Created_at</th>
             <th>F. Turno</th>
             <th>Cliente</th>
