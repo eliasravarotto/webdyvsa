@@ -3249,6 +3249,22 @@ CARD COMPONENT
   color: white;
 }
 
+.btn-default{
+  background-color:#dbdbdb;
+}
+
+.btn-outline-black{
+  color: #191919;
+  background-color: transparent;
+  border-color: #191919;
+  transition: all .3s ease-in-out;
+}
+
+.btn-outline-black:hover {
+    color: #f7f7f7;
+    background-color: #191919;
+    border-color: #191919;
+}
 
 .mu-btn{
     border-radius: 25px;

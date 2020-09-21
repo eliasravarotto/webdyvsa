@@ -1,7 +1,8 @@
 <template>
 	<div class="container">
 	    <div class="main-title">
-			<h1>Conocé al Staff</h1>
+			<h1>Conoce al Staff</h1>
+			<p class="text-dark-3">Estamos aquí para asesorarte</p>
 		</div>
 		<!-- Ventas -->
 	    <h3 class="text-muted text-center my-4">Ventas</h3>

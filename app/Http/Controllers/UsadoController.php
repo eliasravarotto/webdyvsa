@@ -134,10 +134,9 @@ class UsadoController extends Controller
             $usado->foto = $this->storeAndReziseImage($request, 'public/fotos', 'foto')->imagePath;
 
             $usado->update();
-
         }
 
-        return redirect('admin/usados')->with('success', 'Los datos fueron actulizados correctamente.');
+        return  ->with('success', 'Los datos fueron actulizados correctamente.');
     }
 
     /**

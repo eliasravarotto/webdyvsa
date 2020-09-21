@@ -24,10 +24,10 @@
 	.owl-carousel .owl-item img {
     	display: inline-block;
  	}
- 	.modal-body {
-	    position: relative;
-	    padding: 5px;
-	}
+
+ 	.table-detal-plan thead tr th{
+ 		min-width: 140px;
+ 	}
 </style>
 @stop
 
