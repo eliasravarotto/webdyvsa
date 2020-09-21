@@ -136,7 +136,7 @@ class UsadoController extends Controller
             $usado->update();
         }
 
-        return  ->with('success', 'Los datos fueron actulizados correctamente.');
+        return  redirect('admin/usados')->with('success', 'Los datos fueron actulizados correctamente.');
     }
 
     /**
