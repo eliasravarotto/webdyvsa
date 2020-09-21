@@ -86,7 +86,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         $categories = Category::all();
         return view('backend.posts.edit', compact('categories', 'post'));
     }
@@ -165,7 +165,7 @@ class PostController extends Controller
 
     public function showPost($slug)
     {
-        $post = Post::where('slug', '=', $slug)->first();
+        $post = Post::where('slug', '=', $slug)->firstOrFail();
 
         return view('frontend.posts.show', compact('post'));
     }
