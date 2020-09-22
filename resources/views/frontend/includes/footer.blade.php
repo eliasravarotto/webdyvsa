@@ -28,36 +28,36 @@
 					<h3 class="title-footer">EMAILS</h3>
 					<ul class="list-unstyled ml-1 ul-footer-emails">
 						<li>
-							<span>Ventas</span>
-							<a href="#">ventas@derkayvargas.com.ar  </a>
+							<p class="mb-0">Ventas</p>
+							<span>ventas@derkayvargas.com.ar  </span>
 						</li>
 						<li>
-							<span>Plan de Ahorro</span>
-							<a href="#">plandeahorro@derkayvargas.com.ar  </a>
+							<p class="mb-0">Plan de Ahorro</p>
+							<span>plandeahorro@derkayvargas.com.ar  </span>
 						</li>
 						<li>
-							<span>Administración</span>
-							<a href="#">administracion@derkayvargas.com.ar   </a>
+							<p class="mb-0">Administración</p>
+							<span>administracion@derkayvargas.com.ar   </span>
 						</li>
 						<li>
-							<span>Gestoría</span>
-							<a href="#">gestoria@derkayvargas.com.ar  </a>
+							<p class="mb-0">Gestoría</p>
+							<span>gestoria@derkayvargas.com.ar  </span>
 						</li>
 						<li>
-							<span>Posventa Charata</span>
-							<a href="#">posventa-charata@derkayvargas.com.ar  </a>
+							<p class="mb-0">Posventa Charata</p>
+							<span>posventa-charata@derkayvargas.com.ar  </span>
 						</li>
 						<li>
-							<span>Posventa Sáenz Peña</span>
-							<a href="#">posventa-sp@derkayvargas.com.ar  </a>
+							<p class="mb-0">Posventa Sáenz Peña</p>
+							<span>posventa-sp@derkayvargas.com.ar  </span>
 						</li>
 						<li>
-							<span>Posventa Resistencia</span>
-							<a href="#">posventa-resistencia@derkayvargas.com.ar   </a>
+							<p class="mb-0">Posventa Resistencia</p>
+							<span>posventa-resistencia@derkayvargas.com.ar   </span>
 						</li>
 						<li>
-							<span>Responsabilidad Social Empresaria</span>
-							<a href="#">rse@derkayvargas.com.ar  </a>
+							<p class="mb-0">Responsabilidad Social Empresaria</p>
+							<span>rse@derkayvargas.com.ar  </span>
 						</li>
 					</ul>
 				</div>
@@ -65,28 +65,28 @@
 					<h3 class="title-footer">SUCURSALES</h3>
 					<ul class="list-unstyled ml-1 ul-footer-sucursales visible-md visible-lg">
 						<li>
-							<span>Casa Central Sáenz Peña - <small> Belgrano Nº 872 (Calle 10 esq. 19)</small></span>
-							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0364) 44 - 20602 / 20549 / 20840</a>
+							<p class="mb-0">Casa Central Sáenz Peña - <small> Belgrano Nº 872 (Calle 10 esq. 19)</small></p>
+							<span class="telefono ml-1"><i class="fa fa-phone"></i> (0364) 44 - 20602 / 20549 / 20840</span>
 						</li>
 						<li>
-							<span>Sucursal Resistencia - <small> Ruta Nicolas Avellaneda Km. 11,9</small></span>
-							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362)4 - 764640 / 764841 / 764842 / 764844 / 764847 / 764852</a>
+							<p class="mb-0">Sucursal Resistencia - <small> Ruta Nicolas Avellaneda Km. 11,9</small></p>
+							<span class="telefono ml-1"><i class="fa fa-phone"></i> (0362)4 - 764640 / 764841 / 764842 / 764844 / 764847 / 764852</span>
 						</li>
 						<li>
-							<span>Sucursal Charata - <small> Ruta 89 Km. 74</small></span>
-							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i>  03735 15 620 255</a>
+							<p class="mb-0">Sucursal Charata - <small> Ruta 89 Km. 74</small></p>
+							<span class="telefono ml-1"><i class="fa fa-phone"></i>  03735 15 620 255</span>
 							</li>
 						<li>
-							<span>Sucursal Villa Angela - <small> Av. 25 de Mayo Nº 1101</small></span>
-							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (03735) 423 200</a>
+							<p class="mb-0">Sucursal Villa Angela - <small> Av. 25 de Mayo Nº 1101</small></p>
+							<span class="telefono ml-1"><i class="fa fa-phone"></i> (03735) 423 200</span>
 						</li>
 						<li>
-							<span>Sucursal Resistencia Usados - <small> AV. Sarmiento 1890</small></span>
-							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 443 330 0</a>
+							<p class="mb-0">Sucursal Resistencia Usados - <small> AV. Sarmiento 1890</small></p>
+							<span class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 443 330 0</span>
 						</li>
 						<li>
-							<span>Plan de Ahorro Resistencia - <small> AV. Sarmiento 1890</small></span>
-							<a href="#" class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 443 330 0</a>
+							<p class="mb-0">Plan de Ahorro Resistencia - <small> AV. Sarmiento 1890</small></p>
+							<span class="telefono ml-1"><i class="fa fa-phone"></i> (0362) 443 330 0</span>
 						</li>
 					</ul>
 					
