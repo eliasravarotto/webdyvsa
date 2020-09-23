@@ -139,7 +139,7 @@
 			                      <span><i class="far fa-calendar-alt"></i> {{ date('d-m-Y', strtotime($post->created_at)) }}</span>
 			                    </div>
 			                    <div class="overflow-hidden" style="position: relative;">
-			                      <p class="card-text text-dark-3">{{str_limit(strip_tags($post->contenido), 110, '...')}}</p>
+			                      <p class="card-text text-dark-3">{{str_limit(strip_tags($post->contenido), 70, '...')}}</p>
 			                      <div class="gradient-buttom-35"></div>
 			                    </div>
 			                    <div class="mb-0">
