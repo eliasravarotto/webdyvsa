@@ -106,7 +106,7 @@
 			<div class="container py-4">
 				<div class="row features">
 					<div class="col-md-6 imagen-container">
-						<img class="img-fluid" src="http://www.yacopinisa.com/wp-content/uploads/2015/05/panel-accesorios.jpg">
+						<img class="img-fluid" src="{{asset('imagenes/posventa/accesorios.jpg')}}">
 					</div>
 					<div class="col-md-6 descripcion">
 						<h2>ACCESORIOS ORIGINALES</h2>
