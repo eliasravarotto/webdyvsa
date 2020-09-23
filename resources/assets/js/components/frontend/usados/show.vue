@@ -11,27 +11,31 @@
                     <div class="col-md-7 col-sm-12">
                         <div class="gallery-content d-flex justify-content-center align-items-center">
                             <div class="item-usado-certificado" v-if="unidad.uct" >
-                                <img src="/imagenes/logo-uct-new.png" class="w-100">
+                                <img v-lazy="'/imagenes/logo-uct-new.png'" class="w-100">
                             </div>
 
                             <div class="owl-carousel owl-carousel-gallery">
                                 <!-- Imagen portada. -->
                                 <div class="w-100" v-if="!unidad.foto">
-                                    <img src="/imagenes/default-img.png">
+                                    <img v-lazy="'/imagenes/default-img.png'">
                                 </div>
                                 <!-- Imagenes de la galeria -->
-                                <div v-else v-for="(imagen, i) in imagenes" class="item">
-                                  <div class="w-100">
-                                      <img :src="imagen.public_path">
+                                <div v-else v-for="(imagen, i) in media" class="item">
+                                  <div class="w-100 image-container">
+                                      <img v-lazy="imagen.src">
+                                      <div class="btn-galery" @click="openGallery(i)">
+                                        <i class="fas fa-expand text-white"></i>
+                                    </div>
                                   </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Miniaturas -->
+                               <!-- @click.prevent="goToSpecificSlide(i)" -->
                         <div class="w-100 d-flex flex-wrap indicators">
-                            <div v-for="(imagen, i) in imagenes" 
-                               @click.prevent="goToSpecificSlide(i)"
-                               :style="'background:url('+imagen.public_path+') no-repeat;background-size: contain;background-position: center; width: 90px; height: 90px; margin-right: 5px; cursor: pointer;'">
+                            <div v-for="(imagen, i) in media" 
+                                @click="openGallery(i)"
+                               :style="'background:url('+imagen.src+') no-repeat;background-size: contain;background-position: center; width: 90px; height: 90px; margin-right: 5px; cursor: pointer;'">
                             </div>
                             <div class="w-100" v-if="unidad.foto">
                             </div>
@@ -112,16 +116,35 @@
             </div>
 
         </div>
+
+        <LightBox
+            ref="lightbox"
+            :media="media"
+            :show-caption="true"
+            :show-light-box="false"
+            v-if="viewGaleria"
+            @onClosed="closeLightBox()"
+        />
+
 	</div>
 </template>
 
 <script>
+    import LightBox from 'vue-image-lightbox'
+    import VueLazyLoad from 'vue-lazyload'
+    Vue.use(VueLazyLoad)
     export default {
     	props: ['data'],
+        components: {
+            VueLazyLoad,
+            LightBox,
+        },
         data(){
             return {
-            	unidad: '',
+            	unidad: {},
                 imagenes:'',
+                media: [],
+                viewGaleria: false,
                 form:{
                     nombre:'',
                     email: '',
@@ -134,8 +157,15 @@
             this.unidad = this.data.unidad;
             var portada = {};
             portada.public_path = this.unidad.foto;
-            this.imagenes = this.unidad.photos;
-            this.imagenes.unshift(portada);
+            this.unidad.photos.unshift(portada);
+
+            this.unidad.photos.forEach(img => {
+                var m = {};
+                m.thumb = img.public_path;
+                m.src = img.public_path;
+                this.media.push(m);
+            });
+
         },
         methods:{
             goToForm()
@@ -148,7 +178,6 @@
 
             },
             goToSpecificSlide(ix){
-                console.log(ix)
                 $('.owl-carousel-gallery').trigger('to.owl.carousel', ix);
 
             },
@@ -178,12 +207,25 @@
                 $('#myCarousel').carousel(id);
             },
             formatearPrecio(num){
-                num = num.toString().replace(/\./g,'');
-                if(!isNaN(num)){
-                    num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
-                    num = num.split('').reverse().join('').replace(/^[\.]/,'');
-                    return num;
+                if (num) {
+                    num = num.toString().replace(/\./g,'');
+                    if(!isNaN(num)){
+                        num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
+                        num = num.split('').reverse().join('').replace(/^[\.]/,'');
+                        return num;
+                    }
                 }
+            },
+            openGallery(index) {
+                this.viewGaleria = true;
+                self = this;
+                setTimeout(function(){
+                    self.$refs.lightbox.showImage(index);
+                    },
+                100);
+            },
+            closeLightBox(){
+                this.viewGaleria = true;
             }
         }
     }
@@ -304,6 +346,24 @@ table>tbody tr td {
         text-align: center;
     }
  
+}
+
+.image-container{
+    position: relative;
+}
+.image-container .btn-galery{
+    position: absolute; bottom: 15px;
+    left: 15px;
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.image-container .btn-galery i{
+    font-size: 22px;
 }
 
 </style>

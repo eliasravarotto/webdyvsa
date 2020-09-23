@@ -6,6 +6,7 @@
 
 require('./bootstrap_backend');
 require('./script.ppal.js');
+require('vue-image-lightbox/dist/vue-image-lightbox.min.css')
 
 window.swal = require('sweetalert2');
 window.Vue = require('vue');
