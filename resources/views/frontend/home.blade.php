@@ -259,6 +259,8 @@
                       <h4 class="text-dark-2 mb-2 font-weight-500">
                         {{$post->titulo}}
                       </h4>
+                      <p class="card-text text-dark-3">{{str_limit(strip_tags($post->contenido), 210, '...')}}</p>
+
                   </div>
                 </div>
               </a>
