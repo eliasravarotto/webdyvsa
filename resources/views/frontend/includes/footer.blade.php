@@ -70,7 +70,7 @@
 						</li>
 						<li>
 							<p class="mb-0">Sucursal Resistencia - <small> Ruta Nicolas Avellaneda Km. 11,9</small></p>
-							<span class="telefono ml-1"><i class="fa fa-phone"></i> (0362)4 - 764640 / 764841 / 764842 / 764844 / 764847 / 764852</span>
+							<span class="telefono ml-1"><i class="fa fa-phone"></i> (0362)4 - 764840 / 764841 / 764842 / 764844 / 764847 / 764852</span>
 						</li>
 						<li>
 							<p class="mb-0">Sucursal Charata - <small> Ruta 89 Km. 74</small></p>
