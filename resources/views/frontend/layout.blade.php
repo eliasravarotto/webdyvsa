@@ -38,7 +38,7 @@
     height: 50px !important;
     width: 50px !important;
 }
-.fb_dialog_content iframe svg{
+.fb_dialog_content iframe svg, .svg svg{
   height: 50px !important;
   width: 50px !important;
 }
