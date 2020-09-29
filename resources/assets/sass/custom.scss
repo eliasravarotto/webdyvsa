@@ -27,6 +27,7 @@
   26. OWL CARRUCEL
   27. SOCIAL SHARE LINKS
   28. MODAL PUSH-SUBSCRIPTION
+  28. DIALOG FACEBOOK CHAT
 
 *********************************************/
 
@@ -69,7 +70,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 a:hover{
-  text-underline: none !important;
+  text-decoration: none !important;
 }
 
 a.btn:hover, a.mu-btn:hover{
@@ -987,14 +988,14 @@ font-size: 16px;
 @media only screen and (max-width:480px) {
   .btn-group-vertical {
     // top: calc(92% - 100px);
-    top: 87vh;
+    // top: 87vh;
   }
 
 }
 @media only screen and (min-width:481px) {
   .btn-group-vertical {
     // top: calc(93% - 100px);
-    top: 90vh;
+    // top: 90vh;
   }
 }
 /* Class model- 0 to 6 (model-0, model-1) */
@@ -3832,4 +3833,17 @@ TOYOTA RECALL
 }
 .modal-push-subscription .modal-footer {
   border: none !important;
+}
+
+
+/********************************************
+28. DIALOG FACEBOOK CHACT
+*********************************************/
+.fb_dialog_content iframe{
+    height: 50px !important;
+    width: 50px !important;
+}
+.fb_dialog_content iframe svg{
+  height: 50px !important;
+  width: 50px !important;
 }

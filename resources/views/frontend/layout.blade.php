@@ -33,17 +33,6 @@
 
   @yield('styles_sheets')
 
-  <style type="text/css">
-    .fb_dialog_content iframe{
-    height: 50px !important;
-    width: 50px !important;
-}
-.fb_dialog_content iframe svg, .svg svg{
-  height: 50px !important;
-  width: 50px !important;
-}
-  </style>
-
 </head>
 
 <body>

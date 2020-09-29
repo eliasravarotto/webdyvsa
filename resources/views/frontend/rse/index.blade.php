@@ -183,6 +183,43 @@
   </div>
 </section>
 
+
+<section class="my-3 py-5">
+    <div class="container">
+      <div class="main-title">
+        <h1 class="text-dark-2">Entradas Recientes</h1>
+      </div>
+      <div class="row">
+          @foreach(\App\Helpers\Helper::getPostsByCategories(['rse'], 3) as $post)
+            <div class="col-md-4 col-sm-12 py-2">
+              <a href="{{ route('show_post', $post->slug) }}">
+                <div class="card d-flex flex-column justify-content-between box-shadow-2">
+                  <div class="container-img" style="background: url({{$post->image['public_path']}})"></div> 
+                    <div class="card-body d-flex flex-column justify-content-end" style="height: 240px;">
+                      <div class="card-meta mb-2 text-dark-3 text-right">
+                        <span>{{ date('d M Y', strtotime($post->created_at)) }}</span>
+                      </div>
+                      <h4 class="text-dark-2 mb-2 font-weight-500">
+                        {{$post->titulo}}
+                      </h4>
+                      <p class="card-text text-dark-3">{{str_limit(strip_tags($post->contenido), 80, '...')}}</p>
+
+                  </div>
+                </div>
+              </a>
+            </div>
+          @endforeach
+      </div>
+      <div class="row my-4">
+        <div class="col-sm-12 text-center">
+          <h5>
+          <a href="#" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <section class="my-3 pb-4">
   <div class="container">
     <div class="row">

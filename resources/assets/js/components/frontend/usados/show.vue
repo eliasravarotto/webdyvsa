@@ -3,6 +3,7 @@
         <div class="header py-3 d-flex align-items-center" style="height: 80px; background:url('/imagenes/e-toyota/image-header.jpg'); background-size: cover; background-position: center;">
             <div class="container">
                 <h3 style="color: white">{{unidad.marca}} {{unidad.modelo}}</h3>
+                <a href="#" @click="openGallery(0)">Abrir</a>
             </div>
         </div>
         <div class="container">
@@ -122,9 +123,9 @@
             :media="media"
             :show-caption="true"
             :show-light-box="false"
-            v-if="viewGaleria"
-            @onClosed="closeLightBox()"
-        />
+            v-on:onClosed="closeLightBox()"
+            v-on:onOpened="openLightBox()"
+        ></LightBox>
 
 	</div>
 </template>
@@ -166,6 +167,11 @@
                 this.media.push(m);
             });
 
+            var self = this;
+            $(window).on('popstate', function(){
+                self.viewGaleria = false;
+                self.$refs.lightbox.closeLightBox();
+            })
         },
         methods:{
             goToForm()
@@ -178,7 +184,7 @@
 
             },
             goToSpecificSlide(ix){
-                $('.owl-carousel-gallery').trigger('to.owl.carousel', ix);
+                // $('.owl-carousel-gallery').trigger('to.owl.carousel', ix);
 
             },
             enviarConsulta()
@@ -192,7 +198,6 @@
                     modelo: this.unidad.modelo,
                   })
                   .then(function (response) {
-                    console.log(response);
                     this.form.nombre = '';
                     this.form.telefono = '';
                     this.form.email = '';
@@ -200,7 +205,7 @@
 
                   })
                   .catch(function (error) {
-                    console.log(error);
+                    alert(error);
                   });
             },
             activeImg(id){
@@ -217,7 +222,6 @@
                 }
             },
             openGallery(index) {
-                this.viewGaleria = true;
                 self = this;
                 setTimeout(function(){
                     self.$refs.lightbox.showImage(index);
@@ -225,6 +229,14 @@
                 100);
             },
             closeLightBox(){
+                if (this.viewGaleria) {
+                    history.go(-1);
+                    this.viewGaleria = false;
+                }
+
+            },
+            openLightBox(){
+                history.pushState('', 'Galery', '/usados/'+this.unidad.slug+'#show-galery');
                 this.viewGaleria = true;
             }
         }
@@ -365,5 +377,6 @@ table>tbody tr td {
 .image-container .btn-galery i{
     font-size: 22px;
 }
+
 
 </style>

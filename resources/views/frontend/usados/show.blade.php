@@ -14,6 +14,14 @@
 
 @stop
 
+@section('styles_sheets')
+<style type="text/css">
+  .vue-lb-info{
+    display: none !important;
+}
+</style>
+@stop
+
 @section('content')
 
 	<show-usado v-bind:data="{ unidad: {{$unidad}} }"></show-usado>

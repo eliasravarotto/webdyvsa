@@ -7,6 +7,7 @@ use App\Post;
 use App\Category;
 use App\PostTema;
 use App\ImagenGaleriaPost;
+use App\Traits\ApiResponser;
 use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
     use ImageHandler;
+    use ApiResponser;
 
     /**
      * Display a listing of the resource.
@@ -170,8 +172,15 @@ class PostController extends Controller
         return view('frontend.posts.show', compact('post'));
     }
 
-    public function listPosts(Request $request)
+    public function showIndexPost(Request $request)
     {
-        return $request;
+        return view('frontend.posts.index');
+    }
+
+    public function getPosts(Request $request)
+    {
+        $posts = Post::containCategory($request->categoria)
+                        ->get();
+        return $this->showAll($posts);
     }
 }

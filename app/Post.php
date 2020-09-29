@@ -41,11 +41,11 @@ class Post extends Model
         return $this->morphOne('App\File', 'notable');
     }
 
-    public function scopeContainCategory($query, $category_id)
+    public function scopeContainCategory($query, $category_slug)
     {
-        if (!is_null($category_id)) {
-            return $query->whereHas('categories', function ($query) use ($category_id) {
-                return $query->where('id', '=', $category_id);
+        if (!is_null($category_slug)) {
+            return $query->whereHas('categories', function ($query) use ($category_slug) {
+                return $query->where('slug', '=', $category_slug);
             });
         }
 

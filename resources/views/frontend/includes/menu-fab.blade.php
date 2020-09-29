@@ -1,9 +1,11 @@
-<div class="btn-group-vertical" role="group" style="
-    /*padding: 10px 8px;*/
-    position: fixed;
-    z-index: 999;
-    right: 2px;
-">
+<div class="btn-group-vertical" role="group" 
+     style="
+      padding: 10px 8px;
+      position: fixed;
+      z-index: 999;
+      right: 16px;
+      bottom: 70px;">
+  
   <section class="model-2">
     <div class="float-btn-group">
       <button class="btn-float btn-triger bg-rojo-toyota"><i class="icon-bars"></i></button>
@@ -21,6 +23,7 @@
         </div>
       </div>
   </section>
+  
 </div>
 
 
