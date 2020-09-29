@@ -18,10 +18,12 @@
 
       <!-- Your Chat Plugin code -->
       <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="127409800604499"
-  logged_in_greeting="Hola! en qué podemos ayudarte?"
-  logged_out_greeting="Hola! en qué podemos ayudarte?">
+	        attribution=setup_tool
+	        page_id="127409800604499"
+	        greeting_dialog_display="fade" 
+	        greeting_dialog_delay="10"
+	  		logged_in_greeting="Hola! en qué podemos ayudarte?"
+	  		logged_out_greeting="Hola! en qué podemos ayudarte?">
       </div>
 
 <footer>
