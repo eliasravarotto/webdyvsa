@@ -2,12 +2,12 @@
     <div>
     	<div class="owl-carousel owl-carousel-ppal owl-theme">
           <a :href="item.url" class="item d-md-none d-lg-none" v-for="item in itemsSm">
-            <img  class="img-fluid" :src="item.image.public_path">
+            <img  class="img-fluid" v-lazy="item.image.public_path">
           </a>
         </div>
         <div class="owl-carousel owl-carousel-ppal owl-theme">
           <a :href="item.url" class="item d-none d-md-block d-lg-block" v-for="item in itemsMd">
-            <img  class="img-fluid" :src="item.image.public_path">
+            <img  class="img-fluid" v-lazy="item.image.public_path">
           </a>
         </div>
 
@@ -26,7 +26,12 @@
 </template>
 
 <script>
+  import VueLazyLoad from 'vue-lazyload'
+  Vue.use(VueLazyLoad)
 	export default {
+      components: {
+          VueLazyLoad,
+      },
     	props: ['data'],
         data(){
         	return {
