@@ -197,7 +197,12 @@
 </template>
 
 <script>
+    import VueLazyLoad from 'vue-lazyload'
+    Vue.use(VueLazyLoad)
     export default {
+        components: {
+            VueLazyLoad,
+        },
     	props: ['data'],
         data(){
             return {

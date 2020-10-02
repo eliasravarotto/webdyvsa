@@ -47,7 +47,7 @@
 	<div class="form-group row py-3">
 		<div class="col-md-7">
 			<div class="g-recaptcha" 
-		           data-sitekey="6Lc4SpEUAAAAADOhUWo2ezTYsnpuirFQ69n_-8M8">
+		         data-sitekey="6Lc4SpEUAAAAADOhUWo2ezTYsnpuirFQ69n_-8M8">
 		    </div>
 		    {{-- <div class="g-recaptcha" 
 		           data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">

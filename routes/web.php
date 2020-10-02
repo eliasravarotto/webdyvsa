@@ -106,9 +106,6 @@ Route::post('/test-drive','SolicitudTestDriveController@store');
 Route::post('/contacto','MensajeEmailController@store');
 Route::post('/contacto-tpa','MensajeEmailController@storeContactTpa')->name('contact_tpa');
 Route::post('/contacto-vdc','MensajeEmailController@storeVozDelCli');
-Route::get('/noticias','FrontController@rse')->name('noticias');
-Route::get('/eventos','FrontController@rse')->name('eventos');
-Route::get('/tecnologia-hibrida','FrontController@tecnoHibrid');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');
 Route::get('/entradas','PostController@showIndexPost')->name('posts');
@@ -117,7 +114,6 @@ Route::get('nueva-rav4-hibrida','FrontController@nuevaRav4')->name('nueva_rav4')
 Route::get('/responsabilidad-social-empresarial','FrontController@rse')->name('rse');
 Route::get('/responsabilidad-social-empresarial/programa-desarrollo-concesionarios-2018','FrontController@rseProgramaDesarrolloConcesionarios')->name('programa_desarrollo_concesionarios');
 Route::get('/responsabilidad-social-empresarial/programa-rse-derkayvargas-2018-2021','FrontController@rseProgramaDyv')->name('programa_rse_dyv');
-Route::get('/empresa','FrontController@empresa');
 Route::get('/kinto-alquiler-de-autos-toyota','FrontController@mobilityServices')->name('mobility_services');
 Route::get('/posventa-accesorios','AccesorioController@indexFront')->name('accesorios');
 Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizadorOnlineComoFunciona')->name('cotizador_online_como_funciona');

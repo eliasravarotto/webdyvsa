@@ -130,7 +130,7 @@ class PostController extends Controller
             $file->public_path = Storage::url($file->path);
 
             $file->save();
-            
+
             $post->image()->save($file);
             
         }
@@ -180,7 +180,16 @@ class PostController extends Controller
     public function getPosts(Request $request)
     {
         $posts = Post::containCategory($request->categoria)
+                        ->with('image')
+                        ->with('categories')
                         ->get();
+
+        foreach ($posts as $p) {
+            $p->contenido = strip_tags($p->contenido);
+            $json = html_entity_decode($p->contenido);
+            $p->contenido = $json;
+        }
+
         return $this->showAll($posts);
     }
 }

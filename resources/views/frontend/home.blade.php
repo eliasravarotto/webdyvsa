@@ -181,7 +181,6 @@
                       @if ($modelo->es_hibrido)
                       <div class="tag">HÍBRIDO</div>
                       @endif
-                      {{-- <div class="price-box">$850.00</div> --}}
                       <img class="d-block w-100 pt-4 pb-4" src="{{$modelo->img_modelo}}" alt="car">
                   </a>
               </div>
@@ -267,11 +266,9 @@
             </div>
           @endforeach
       </div>
-      <div class="row my-4">
+      <div class="row my-5">
         <div class="col-sm-12 text-center">
-          <h5>
-          {{-- <a href="{{route('posts')}}" class="my-3">Ver más</a> --}}
-          </h5>
+          <a href="{{route('posts')}}?categoria=rse" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
         </div>
       </div>
     </div>

@@ -1,8 +1,28 @@
 <template>
-	
+	<ul class="list-group list-group-flush">
+      <li class="list-group-item" v-for="post in posts">
+          <div class="row d-flex align-items-center">
+              <div class="col-xs-12 col-md-3">
+                  <img v-if="post.image != null" v-lazy="post.image.public_path" class="img-fluid">
+                  <img v-else v-lazy="'/imagenes/default.png'" class="img-fluid">
+              </div>
+              <div class="col-xs-12 col-md-9">
+                    <span v-for="c in post.categories" style="font-size: 14px">{{c.name}}</span>
+                  <h4>{{post.titulo}}</h4>
+                  <p>{{post.contenido.substr(0, 250) + '...'}}</p>
+                  <p><a :href="'/entradas/'+post.slug" class="btn btn-outline-black btn-round">Leer más <i class="fas fa-arrow-right"></i></a></p>
+              </div>
+          </div>
+      </li>
+    </ul>
 </template>
 <script>
+    import VueLazyLoad from 'vue-lazyload'
+    Vue.use(VueLazyLoad)
     export default {
+      components: {
+            VueLazyLoad,
+        },
         data(){
             return {
                 posts: []
@@ -24,7 +44,8 @@
 				axios
 				.get('/api/entradas?'+query)
 				.then(res => {
-					console.log(res);
+					console.log(res.data);
+                    this.posts = res.data.data;
 				})
         	},
         	getParamsUrl(url){

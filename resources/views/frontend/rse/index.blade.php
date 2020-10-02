@@ -213,7 +213,7 @@
       <div class="row my-4">
         <div class="col-sm-12 text-center">
           <h5>
-          <a href="#" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
+          <a href="{{route('posts')}}?categoria=rse" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
           </h5>
         </div>
       </div>

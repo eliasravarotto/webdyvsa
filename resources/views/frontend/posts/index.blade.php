@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title_and_meta')
-  <title>Derka y Vargas - Entradas Recientes</title>
+  <title>Derka y Vargas - Entradas</title>
   <meta name="description" content="Derka y Vargas Resistencia Chaco. Accede a un Toyota 0km. Encontra el auto usado que estas buscando con la mejor financiación.">
 @stop
 
@@ -17,9 +17,11 @@
 @section('content')
 
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-10">
+
       	<post-index></post-index>
+
     </div>
   </div>
 

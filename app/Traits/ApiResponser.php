@@ -36,11 +36,11 @@ trait ApiResponser
 			}
 		}
 		
-		$data = [];
+		// $data = [];
 
-		foreach ($collection as $item) {
-			array_push($data, $item);
-		}
+		// foreach ($collection as $item) {
+		// 	array_push($data, $item);
+		// }
 
 		return $data;
 

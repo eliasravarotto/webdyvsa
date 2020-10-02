@@ -2,14 +2,14 @@
 
 @section('title_and_meta')
   <title>Derka y Vargas - Usados - {{$unidad->marca}} {{$unidad->modelo}}</title>
-  <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota Chaco, financiacion usados {{$unidad->marca}} {{$unidad->modelo}}">
+  <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota en Chaco, accede a un usado con la mejor financiación.">
 @stop
 
 @section('mark-up-facebook')
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:title" content="{{$unidad->marca}} {{$unidad->modelo}}" />
-    <meta property="og:description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota Chaco, financiacion usados {{$unidad->marca}} {{$unidad->modelo}}" />
+    <meta property="og:description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota en Chaco, accede a un usado con la mejor financiación." />
     <meta property="og:image" content="{{Request::root().$unidad->foto}}" />
 
 @stop
