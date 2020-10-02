@@ -182,6 +182,7 @@ class PostController extends Controller
         $posts = Post::containCategory($request->categoria)
                         ->with('image')
                         ->with('categories')
+                        ->orderBy('created_at', 'DESC')
                         ->get();
 
         foreach ($posts as $p) {
