@@ -268,7 +268,7 @@
       </div>
       <div class="row my-5">
         <div class="col-sm-12 text-center">
-          <a href="{{route('posts')}}?categoria=rse" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
+          <a href="{{route('posts')}}?categoria=novedades" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
         </div>
       </div>
     </div>
