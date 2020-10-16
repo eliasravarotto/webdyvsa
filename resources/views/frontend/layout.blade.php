@@ -28,6 +28,49 @@
     
   @yield('mark-up-facebook')
 
+
+  <style type="text/css">
+    .validate-input {
+    position: relative;
+}
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 17px;
+}
+  input.input100 {
+    height: 52px;
+    padding: 0 20px 0 58px;
+}
+.input100 {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: #43383e;
+    line-height: 1.2;
+    padding: 0 5px;
+}
+  .label-input100 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 52px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999999;
+}
+  </style>
+
+
   @yield('styles_sheets')
 
 </head>
@@ -224,9 +267,6 @@
       
     });
 
-    //Laxy Load Imgages
-    document.addEventListener("DOMContentLoaded",function(){var e;if("IntersectionObserver"in window){e=document.querySelectorAll(".lazy");var n=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var t=e.target;t.src=t.dataset.src,t.classList.remove("lazy"),n.unobserve(t)}})});e.forEach(function(e){n.observe(e)})}else{var t;function r(){t&&clearTimeout(t),t=setTimeout(function(){var n=window.pageYOffset;e.forEach(function(e){e.offsetTop<window.innerHeight+n&&(e.src=e.dataset.src,e.classList.remove("lazy"))}),0==e.length&&(document.removeEventListener("scroll",r),window.removeEventListener("resize",r),window.removeEventListener("orientationChange",r))},20)}e=document.querySelectorAll(".lazy"),document.addEventListener("scroll",r),window.addEventListener("resize",r),window.addEventListener("orientationChange",r)}});
-  
   </script>
 
   @yield('script')

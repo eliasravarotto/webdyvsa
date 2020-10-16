@@ -70,7 +70,7 @@
 
 <body style="margin: 0 !important; padding: 0 !important; background-color: #eeeeee;" bgcolor="#eeeeee">
     <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Open Sans, Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-        For what reason would it be advisable for me to think about business content? That might be little bit risky to have crew member like them.
+        Hola!, tenes un nuevo lead.
     </div>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
@@ -100,29 +100,13 @@
                                 <tr>
                                     <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;"> 
                                         <img width="125" height="120" style="display: block; border: 0px; margin-bottom: 15px" src="https://img.icons8.com/cotton/250/000000/new-message.png"/>
-                                        <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;">  Hola, tenés un nuevo mensaje! </h2>
+                                        <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;">  Hola, tenés un nuevo lead! </h2>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 10px;">
                                         <p style="font-size: 16px; font-weight: 400; line-height: 24px; color: #777777;">
-                                          El mensaje ha ingresado por la página web desde la sección 
-                                          @switch($consulta->from)
-                                                @case('tpa')
-                                                    <b>Toyota Plan de Ahorro.</b>
-                                                    @break
-                                                @case('contacto')
-                                                    <b>Contacto.</b>
-                                                    @break
-
-                                                 @case('la_voz_del_cliente')
-                                                    <b>La voz del Cliente.</b>
-                                                    @break
-
-                                                @case('usados')
-                                                    <b>Usados.</b>
-                                                    @break
-                                            @endswitch
+                                          El lead ha ingresado por la página web desde el formulario de Solicitud de Presupuesto 
                                         </p>
                                     </td>
                                 </tr>
@@ -134,52 +118,16 @@
                                                 <td width="75%" align="right" bgcolor="#eeeeee" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px;"></td>
                                             </tr>
                                             <tr>
-                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px; font-weight: bold; color: #191919"> Fecha y Hora </td>
-                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px; color: #191919"> {{$consulta->created_at}} </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;  font-weight: bold; color: #191919"> Nombre </td>
-                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$consulta->cliente}} </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Email </td>
-                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$consulta->email}} </td>
+                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;  font-weight: bold; color: #191919">Ap. y Nombre </td>
+                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$request->cliente}} </td>
                                             </tr>
                                             <tr>
                                                 <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Teléfono </td>
-                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$consulta->telefono}} </td>
+                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$request->telefono}} </td>
                                             </tr>
                                             <tr>
-                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Para </td>
-                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$consulta->enviar_a}} </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Mensaje </td>
-                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$consulta->mensaje}} </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" style=" padding: 35px; background-color: #ff7361;" bgcolor="#1b9ba3">
-                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
-                                <tr>
-                                    <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
-                                        <h2 style="font-size: 24px; font-weight: 800; line-height: 30px; color: #ffffff; margin: 0;">Derivar Contacto</h2>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center" style="padding: 25px 0 15px 0;">
-                                        <table border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" style="border-radius: 5px;" bgcolor="#66b3b7"> 
-                                                    <a href="http://crmdyv.online/recepcion/create?cliente={{$consulta->cliente}}&email={{$consulta->email}}&telefono={{$consulta->telefono}}&mensaje={{$consulta->mensaje}}" target="_blank" style="font-size: 18px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 5px; background-color: #F44336; padding: 15px 30px; border: 1px solid #F44336; display: block;">
-                                                        Ir al CRM
-                                                    </a> 
-                                                </td>
+                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Formulario </td>
+                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> <a href="https://derkayvargas.com/contact-us"></a> https://derkayvargas.com/contact-us </td>
                                             </tr>
                                         </table>
                                     </td>

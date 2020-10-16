@@ -1,6 +1,7 @@
 <?php
 
 use App\PushSubscriptions;
+use Illuminate\Http\Request;
 
 Auth::routes();
 
@@ -120,14 +121,23 @@ Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizador
 
 Route::get('/slide_get_data/{id}','SlideController@getDataSlide');
 
-Route::get('/email', function(){
 
-	$consulta = App\MensajeEmail::find(258);
 
-	// Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta){
- //        $message->subject('Probando Leads');
- //        $message->to('elias.ravarotto@gmail.com')->cc('eliasravarotto@derkayvargas.com.ar');
- //    });
-
-	return view('emails.consulta', compact('consulta'));
+// Enviar Lead a Marcelo
+Route::get('/contact-us', function(){
+	return view('frontend.contacto.instagram-contact');
 });
+
+Route::post('/send-instagram-contact', function(Request $request){
+
+	Mail::send('emails.lead-social-media', ['request' => $request], function ($message){
+        $message->subject('Datos para Presupuesto');
+        $message->to('marceloaguirre@derkayvargas.com.ar')
+        		->cc('eliasravarotto@derkayvargas.com.ar');
+    });
+
+    return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+
+})->name('send_instagram_contact');
+
+
