@@ -62,6 +62,18 @@
     a:hover{
       text-decoration: none;
     }
+
+    .owl-carousel.owl-carousel-ppal {
+        padding-top: 3px;
+    }
+    .b-rad-5{
+        border-radius: 5px;
+    }
+    .owl-desktop .owl-stage-outer,
+    .owl-desktop .owl-stage,
+    .owl-desktop .owl-item{
+      height: 300px !important;
+    }
    </style>
 @stop
 
