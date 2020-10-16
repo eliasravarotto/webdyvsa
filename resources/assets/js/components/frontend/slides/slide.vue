@@ -17,7 +17,7 @@
         <div class="lds-ellipsis lds-ellipsis-loading-form"><div></div><div></div><div></div><div></div></div>
       </div>
 
-      <div class="owl-carousel owl-carousel-ppal owl-theme">
+      <div class="owl-carousel owl-carousel-ppal owl-theme owl-desktop">
         <a :href="item.url" class="item d-none d-md-block d-lg-block" v-for="item in itemsMd">
           <img  class="img-fluid" v-lazy="item.image.public_path">
         </a>
@@ -92,7 +92,13 @@
     .b-rad-5{
         border-radius: 5px;
     }
-   
+    .owl-desktop .owl-stage-outer,
+    .owl-desktop .owl-stage,
+    .owl-desktop .owl-item{
+      height: 300px !important;
+    }
+
+
     /**********************
         LOADING
     **********************/
