@@ -25,9 +25,6 @@
     <!--===============================================================================================-->
     <link href="{{ asset('/css/stm-icons.css') }}" rel="stylesheet" type="text/css" />
     <!--===============================================================================================-->
-    <!-- SKELETOM LOADING -->
-    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
-    <!--===============================================================================================-->
     
   @yield('mark-up-facebook')
 

@@ -1,28 +1,29 @@
 <template>
-    <div>
-    	<div class="owl-carousel owl-carousel-ppal owl-theme">
+  <div>
+    <div style="height: 420px; position: relative;" class="d-md-none d-lg-none">
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center" style="position: absolute;">
+        <div class="lds-ellipsis lds-ellipsis-loading-form"><div></div><div></div><div></div><div></div></div>
+      </div>
+
+        <div class="owl-carousel owl-carousel-ppal owl-theme">
           <a :href="item.url" class="item d-md-none d-lg-none" v-for="item in itemsSm">
             <img  class="img-fluid" v-lazy="item.image.public_path">
           </a>
         </div>
-        <div class="owl-carousel owl-carousel-ppal owl-theme">
-          <a :href="item.url" class="item d-none d-md-block d-lg-block" v-for="item in itemsMd">
-            <img  class="img-fluid" v-lazy="item.image.public_path">
-          </a>
-        </div>
-
-        <div class="ph-item px-0 py-1 d-none d-md-block d-lg-block" v-if="items == null">
-            <div class="ph-col-12">
-                <div class="ph-picture b-rad-5" style="height: 300px !important"></div>
-            </div>
-        </div>
-
-        <div class="ph-item px-0 py-1 d-md-none d-lg-none" v-if="items == null">
-            <div class="ph-col-12">
-                <div class="ph-picture b-rad-5" style="height: 280px !important"></div>
-            </div>
-        </div>
     </div>
+
+    <div style="height: 300px; position: relative;" class="d-none d-md-block d-lg-block">
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center" style="position: absolute;">
+        <div class="lds-ellipsis lds-ellipsis-loading-form"><div></div><div></div><div></div><div></div></div>
+      </div>
+
+      <div class="owl-carousel owl-carousel-ppal owl-theme">
+        <a :href="item.url" class="item d-none d-md-block d-lg-block" v-for="item in itemsMd">
+          <img  class="img-fluid" v-lazy="item.image.public_path">
+        </a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -59,16 +60,16 @@
                         if (item.size == 'MD')
                             vm.itemsMd.push(item);
                     });
-                    console.log(vm.itemsMd);
                     Vue.nextTick(function(){
                      vm.installOwlCarousel();
                     }.bind(vm));
+                    console.log(vm.itemsSm);
                 })
             },
             installOwlCarousel: function(){
                 $('.owl-carousel.owl-carousel-ppal').owlCarousel({
                       stagePadding: 0,
-                      loop:true,
+                      loop:false,
                       margin:7,
                       nav:false,
                       autoplay: true,
@@ -91,12 +92,65 @@
     .b-rad-5{
         border-radius: 5px;
     }
-    .ph-item{
-        border:none;
-    }
-    
-    .ph-item>* {
-          padding-right: 7px;
-    padding-left: 7px;
-    }
+   
+    /**********************
+        LOADING
+    **********************/
+        .lds-ellipsis {
+          display: flex;
+          align-items: center;
+          position: relative;
+          width: 80px;
+          height: 55px;
+        }
+        .lds-ellipsis div {
+          position: absolute;
+          /*top: 33px;*/
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background: #fdd;
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsis div:nth-child(1) {
+          left: 8px;
+          animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(2) {
+          left: 8px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(3) {
+          left: 32px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(4) {
+          left: 56px;
+          animation: lds-ellipsis3 0.6s infinite;
+        }
+        @keyframes lds-ellipsis1 {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        @keyframes lds-ellipsis3 {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0);
+          }
+        }
+        @keyframes lds-ellipsis2 {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(24px, 0);
+          }
+        }
+    /*** end LOADING ***/
 </style>
