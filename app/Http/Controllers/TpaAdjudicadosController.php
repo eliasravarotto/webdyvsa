@@ -35,29 +35,6 @@ class TpaAdjudicadosController extends Controller
  
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-    }
-
-    
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-
-    }
-
     
     public function indexAdjudicados()
     {
@@ -66,11 +43,12 @@ class TpaAdjudicadosController extends Controller
         foreach ($adjudicados as $a) {
             if ($a->planTpa()->first()->modalidad == TpaAdjudicado::MODALIDAD_70_30) {
                 $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas+($a->planTpa()->first()->precio_lista*0.3);
+                $a->valor_ahorrado = $a->avance_en_cuotaspura - $a->precio_venta + $a->planTpa()->first()->precio_lista*0.3;   
             }else{
                 $a->avance_en_cuotaspura = $a->planTpa()->first()->cuota_pura*$a->avance_cuotas;
+                $a->valor_ahorrado = $a->avance_en_cuotaspura - $a->precio_venta;   
             }         
 
-            $a->valor_ahorrado = $a->avance_en_cuotaspura - $a->precio_venta;   
         }
         
 
