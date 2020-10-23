@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div style="height: 420px; position: relative;" class="d-md-none d-lg-none">
-      <div class="w-100 h-100 d-flex justify-content-center align-items-center" style="position: absolute;">
-        <div class="lds-ellipsis lds-ellipsis-loading-form"><div></div><div></div><div></div><div></div></div>
-      </div>
-
+    <div class="d-md-none d-lg-none">
         <div class="owl-carousel owl-carousel-ppal owl-theme">
           <a :href="item.url" class="item d-md-none d-lg-none" v-for="item in itemsSm">
             <img  class="img-fluid" v-lazy="item.image.public_path">
@@ -12,11 +8,7 @@
         </div>
     </div>
 
-    <div style="height: 300px; position: relative;" class="d-none d-md-block d-lg-block">
-      <div class="w-100 h-100 d-flex justify-content-center align-items-center" style="position: absolute;">
-        <div class="lds-ellipsis lds-ellipsis-loading-form"><div></div><div></div><div></div><div></div></div>
-      </div>
-
+    <div class="d-none d-md-block d-lg-block">
       <div class="owl-carousel owl-carousel-ppal owl-theme owl-desktop">
         <a :href="item.url" class="item d-none d-md-block d-lg-block" v-for="item in itemsMd">
           <img  class="img-fluid" v-lazy="item.image.public_path">
@@ -67,6 +59,8 @@
                 })
             },
             installOwlCarousel: function(){
+                $(".loading-slider-sm").remove();
+                $(".loading-slider-md").remove();
                 $('.owl-carousel.owl-carousel-ppal').owlCarousel({
                       stagePadding: 0,
                       loop:false,
@@ -91,11 +85,6 @@
     }
     .b-rad-5{
         border-radius: 5px;
-    }
-    .owl-desktop .owl-stage-outer,
-    .owl-desktop .owl-stage,
-    .owl-desktop .owl-item{
-      height: 300px !important;
     }
 
 
