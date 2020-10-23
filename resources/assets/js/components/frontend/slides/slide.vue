@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="d-md-none d-lg-none">
+    <!-- <div class="d-md-none d-lg-none">
         <div class="owl-carousel owl-carousel-ppal owl-theme">
           <a :href="item.url" class="item d-md-none d-lg-none" v-for="item in itemsSm">
             <img  class="img-fluid" v-lazy="item.image.public_path">
@@ -14,7 +14,56 @@
           <img  class="img-fluid" v-lazy="item.image.public_path">
         </a>
       </div>
+    </div> -->
+
+    <div id="carouselSm" class="carousel slide d-none d-md-block d-lg-block" data-ride="carousel">
+      
+      <ol class="carousel-indicators">
+        <li v-for="(item, ix) in itemsMd" data-target="#carouselSm" :data-slide-to="ix" :class="[ix == 0 ? 'active' : '']"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div :class="[ix == 0 ? 'active' : '', 'carousel-item']" v-for="(item,ix) in itemsMd">
+          <img class="img-fluid w-100" v-lazy="item.image.public_path" alt="First slide">
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselSm" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#carouselSm" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
     </div>
+
+    <div id="carouselMd" class="carousel slide d-md-none d-lg-none" data-ride="carousel">
+      
+      <ol class="carousel-indicators">
+        <li v-for="(item, ix) in itemsMd" data-target="#carouselMd" :data-slide-to="ix" :class="[ix == 0 ? 'active' : '']"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div :class="[ix == 0 ? 'active' : '', 'carousel-item']" v-for="(item,ix) in itemsSm">
+          <img class="img-fluid w-100" v-lazy="item.image.public_path" alt="First slide">
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselMd" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#carouselMd" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+
   </div>
 </template>
 
@@ -52,6 +101,8 @@
                         if (item.size == 'MD')
                             vm.itemsMd.push(item);
                     });
+                    $('#carouselSm').carousel()
+                    $('#carouselMd').carousel()
                     Vue.nextTick(function(){
                      vm.installOwlCarousel();
                     }.bind(vm));
