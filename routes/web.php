@@ -122,12 +122,12 @@ Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizador
 Route::get('/slide_get_data/{id}','SlideController@getDataSlide');
 
 
-
+/*******************************************
 // Enviar Lead a Marcelo
+******************************************/
 Route::get('/contact-us', function(){
 	return view('frontend.contacto.instagram-contact');
 });
-
 Route::post('/send-instagram-contact', function(Request $request){
 
 	Mail::send('emails.lead-social-media', ['request' => $request], function ($message){
@@ -139,5 +139,27 @@ Route::post('/send-instagram-contact', function(Request $request){
     return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
 
 })->name('send_instagram_contact');
+
+
+/*******************************************
+// Enviar Lead a Marcelo ALienado y Balanceo
+*******************************************/
+Route::get('/sorteo-semanal-alineado-y-balanceo', function(){
+	return view('frontend.contacto.sorteo-alineado-balanceo');
+});
+
+Route::post('/sorteo-semanal-alineado-y-balanceo', function(Request $request){
+
+	Mail::send('emails.lead-sorteo-alineadoybalanceo', ['request' => $request], function ($message){
+        $message->subject('Sorteo Alineado y Balanceo');
+        $message->to('marceloaguirre@derkayvargas.com.ar')
+        		->cc('eliasravarotto@derkayvargas.com.ar');
+    });
+
+    return back()->with('success','Sus datos han sido enviado, ya estas participando. Suerte!');
+
+})->name('send_alineadoybalanceo_contact');
+
+
 
 

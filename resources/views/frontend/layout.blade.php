@@ -68,6 +68,21 @@
         font-size: 18px;
         color: #999999;
     }
+
+
+    .swal2-title {
+      font-size: 30px !important;
+      font-weight: 500 !important;
+      color: #373435 !important;
+    }
+    .swal2-popup {
+      padding: 1rem !important;
+      border-radius: 0px !important;
+      max-width: 500px !important;
+    }
+    .swal2-icon.swal2-success .swal2-success-ring {
+      border: .25em solid #e6e6e6
+    }
   </style>
 
 
@@ -249,9 +264,9 @@
           swal.fire({
             position: 'top-end',
             type: 'success',
-            title: 'Su mensaje se envió correctamente.',
+            title: '{{session('success')}}',
             showConfirmButton: false,
-            timer: 3500
+            timer: 4800
           })
         }
         {{ session('error') ? 'var session_error = true' : 'var session_error = false;'}};
@@ -261,7 +276,7 @@
             type: 'error',
             title: 'Lo sentimos, algo salió mal. Porfavor intente más tarde.',
             showConfirmButton: false,
-            timer: 3500
+            timer: 4800
           })
         }
       
