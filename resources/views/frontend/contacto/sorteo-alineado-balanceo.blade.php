@@ -30,6 +30,9 @@
 							<label class="label-input100" for="cliente">
 								<i class="fas fa-user"></i>
 							</label>
+							<span class="text-danger">
+								{{  $errors->first('cliente') }}
+							</span>
 						</div>
 				  	</div>
 				</div>
@@ -55,6 +58,21 @@
 							</label>
 							<span class="text-danger">
 								{{  $errors->first('telefono') }}
+							</span>
+					  	</div>
+				  	</div>
+			  	</div>
+			  	<div class="form-group row">
+				  	<div class="col-md-12">
+						<div class="validate-input">
+							<select class="form-control input100" name="sucursal" required>
+								<option hidden selected>Seleccione una sucursal</option>
+								<option value="Sáenz Peña">Sáenz Peña</option>
+								<option value="Resistencia">Resistencia</option>
+								<option value="Charata">Charata</option>
+							</select>
+							<span class="text-danger">
+								{{  $errors->first('sucursal') }}
 							</span>
 					  	</div>
 				  	</div>

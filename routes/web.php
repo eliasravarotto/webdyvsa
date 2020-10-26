@@ -149,6 +149,13 @@ Route::get('/sorteo-semanal-alineado-y-balanceo', function(){
 });
 
 Route::post('/sorteo-semanal-alineado-y-balanceo', function(Request $request){
+	
+	$validatedData = $request->validate([
+        'sucursal' => "in:Sáenz Peña,Resistencia,Charata",
+        'dni' => 'digits_between:5,15',
+        'telefono' => 'digits_between:6,18',
+        'cliente' => 'min:7'
+    ]);
 
 	Mail::send('emails.lead-sorteo-alineadoybalanceo', ['request' => $request], function ($message){
         $message->subject('Sorteo Alineado y Balanceo');

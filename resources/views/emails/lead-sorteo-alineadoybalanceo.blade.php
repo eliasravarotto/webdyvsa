@@ -130,6 +130,10 @@
                                                 <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$request->telefono}} </td>
                                             </tr>
                                             <tr>
+                                                <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Sucursal </td>
+                                                <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> {{$request->sucursal}} </td>
+                                            </tr>
+                                            <tr>
                                                 <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; font-weight: bold; color: #191919"> Formulario </td>
                                                 <td width="75%" align="right" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px; color: #191919"> <a href="https://derkayvargas.com/sorteo-semanal-alineado-y-balanceo"></a> https://derkayvargas.com/sorteo-semanal-alineado-y-balanceo </td>
                                             </tr>
