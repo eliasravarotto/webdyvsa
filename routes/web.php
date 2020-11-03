@@ -132,8 +132,7 @@ Route::post('/send-instagram-contact', function(Request $request){
 
 	Mail::send('emails.lead-social-media', ['request' => $request], function ($message){
         $message->subject('Datos para Presupuesto');
-        $message->to('marceloaguirre@derkayvargas.com.ar')
-        		->cc('eliasravarotto@derkayvargas.com.ar');
+        $message->to('marceloaguirre@derkayvargas.com.ar');
     });
 
     return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
@@ -159,8 +158,7 @@ Route::post('/sorteo-semanal-alineado-y-balanceo', function(Request $request){
 
 	Mail::send('emails.lead-sorteo-alineadoybalanceo', ['request' => $request], function ($message){
         $message->subject('Sorteo Alineado y Balanceo');
-        $message->to('marceloaguirre@derkayvargas.com.ar')
-        		->cc('eliasravarotto@derkayvargas.com.ar');
+        $message->to('marceloaguirre@derkayvargas.com.ar');
     });
 
     return back()->with('success','Sus datos han sido enviado, ya estas participando. Suerte!');
