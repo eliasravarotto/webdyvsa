@@ -44,4 +44,9 @@ class Modelo extends Model
             ->generateSlugsFrom(['nombre'])
             ->saveSlugsTo('slug');
     }
+
+    public function colores()
+    {
+        return $this->hasMany('App\ImagenColorModelo');
+    }
 }

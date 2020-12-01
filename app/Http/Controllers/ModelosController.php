@@ -181,21 +181,55 @@ class ModelosController extends Controller
 
     public function updateColores(Request $request, $id)
     {
+        //return $request;
+
         $modelo = Modelo::find($id);
         $modelo_name = strtolower($modelo->nombre);
-        $total = count($request->img_colores);
-        if ($total>0) {
-            for( $i=0 ; $i < $total ; $i++ ) {
-                $file = $request->file('img_colores')[$i];
-                $filename = $request->file('img_colores')[$i]->getClientOriginalName();
-                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/colores/',$filename);
-                $imagen_color = new ImagenColorModelo;
-                $imagen_color->modelo_id = $modelo->id;
-                $imagen_color->color = $request->color[$i];
-                $imagen_color->codigo = $request->codigo[$i];
-                $imagen_color->url = '/imagenes/modelos/'.$modelo_name.'/colores/'.$filename;
-                $imagen_color->save();
+       
+        //Editar Colores
+        for( $i=0 ; $i < sizeof($request->old_color_id) ; $i++ ) {
+            $color = ImagenColorModelo::findOrFail($request->old_color_id[$i]);
+            $color->color = $request->old_color[$i];
+            $color->codigo = $request->old_codigo[$i];
+
+            if ( isset($request->old_img_colores) ){
+                if ( array_key_exists($i, $request->old_img_colores) ){
+
+                    if (file_exists(public_path() . $color->url))
+                        unlink(public_path() . $color->url);
+                   
+                    $file = $request->file('old_img_colores')[$i];
+                    $filename = $request->file('old_img_colores')[$i]->getClientOriginalName();
+                    $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/colores/',$filename);
+                    $color->url = '/imagenes/modelos/'.$modelo_name.'/colores/'.$filename;
+                }
             }
+
+            $color->update();
+        }
+        
+        //Crear nuevos colores
+        for( $i=0 ; $i < sizeof($request->img_colores) ; $i++ ) {
+            $file = $request->file('img_colores')[$i];
+            $filename = $request->file('img_colores')[$i]->getClientOriginalName();
+            $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/colores/',$filename);
+            $imagen_color = new ImagenColorModelo;
+            $imagen_color->modelo_id = $modelo->id;
+            $imagen_color->color = $request->color[$i];
+            $imagen_color->codigo = $request->codigo[$i];
+            $imagen_color->url = '/imagenes/modelos/'.$modelo_name.'/colores/'.$filename;
+            $imagen_color->save();
+        }
+
+        //Eliminar
+        for( $i=0 ; $i < sizeof($request->delete_color_ids) ; $i++ ) {
+            $color = ImagenColorModelo::findOrFail($request->delete_color_ids[$i]);
+            
+            if (file_exists(public_path() . $color->url))
+                    unlink(public_path() . $color->url);
+
+            $color->delete();
+
         }
 
         return redirect('admin/modelos');
