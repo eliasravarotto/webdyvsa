@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\CaracteristicaModelo;
-use App\ImagenColorModelo;
-use App\ImagenGaleriaModelo;
-use App\ImagenSliderModelo;
 use App\Modelo;
-use App\ParallaxModelo;
-use App\PortadaModelo;
-use App\TipoVehiculo;
 use App\Version;
+use App\TipoVehiculo;
+use App\PortadaModelo;
+use App\ParallaxModelo;
+use App\ImagenColorModelo;
+use App\ImagenSliderModelo;
+use App\ImagenGaleriaModelo;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use App\CaracteristicaModelo;
 use Illuminate\Support\Facades\File;
 
 
 class ModelosController extends Controller
 {
+
+    use ApiResponser;
+
     /**
      * Display a listing of the resource.
      *
@@ -427,5 +431,12 @@ class ModelosController extends Controller
         $modelo->publicar_servicio = $request->visible;
         $modelo->update();
         return;
+    }
+
+    public function getDestacados()
+    {
+        $modelos = Modelo::all();
+
+        return $this->showAll($modelos);
     }
 }
