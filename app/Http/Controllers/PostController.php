@@ -10,6 +10,7 @@ use App\ImagenGaleriaPost;
 use App\Traits\ApiResponser;
 use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -179,11 +180,30 @@ class PostController extends Controller
 
     public function getPosts(Request $request)
     {
-        $posts = Post::containCategory($request->categoria)
-                        ->with('image')
+        
+        $posts = Post::with('image')
                         ->with('categories')
                         ->orderBy('created_at', 'DESC')
                         ->get();
+
+        $postsFiltered = new Collection();
+
+        if (isset($request->categorias)) {
+
+            $categories = explode(",", $request->categorias);
+
+
+            foreach ($posts as $post) {
+                
+                $postCategories = $post->categories()->get()->pluck('slug')->toArray();
+                
+                if (sizeof(array_intersect($postCategories, $categories)) > 0)
+                    $postsFiltered->push($post);
+               
+            }
+
+            $posts = $postsFiltered;
+        }
 
         foreach ($posts as $p) {
             $p->contenido = strip_tags($p->contenido);
