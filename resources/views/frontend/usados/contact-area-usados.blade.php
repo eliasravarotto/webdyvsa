@@ -24,7 +24,7 @@
 		        </div>
 		    </div>
 		</div>
-		<div class="row py-1 d-flex justify-content-center">
+		<div class="row py-1 d-flex justify-content-center" id="contacto-usados">
 			<div class="col-md-8">
 				@include('frontend.includes.contact-form', $data=['from' => 'usados'])
 			</div>

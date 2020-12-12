@@ -75,6 +75,8 @@ class PostController extends Controller
             
             $post->image()->save($file);
 
+            $post->imagen_portada = $post->image()->first()->public_path;
+            
             $post->update();
         } 
 
@@ -133,6 +135,8 @@ class PostController extends Controller
             $file->save();
 
             $post->image()->save($file);
+
+            $post->imagen_portada = $post->image()->first()->public_path;
             
         }
         
