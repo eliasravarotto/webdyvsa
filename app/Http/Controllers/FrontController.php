@@ -217,12 +217,9 @@ class FrontController extends Controller
     public function usadosContactFormPost(Request $request)
     {
         $this->validate($request, [
-            'from' => 'required',
             'cliente' => 'required',
-            'email' => 'required',
             'telefono' => 'required',
             'vehicle_id' => 'required',
-            'sucursal' => 'required',
             'g-recaptcha-response' => 'required',
         ]);
 
@@ -231,18 +228,15 @@ class FrontController extends Controller
         $mensaje = new MensajeEmail;
         $mensaje->cliente = $request->cliente;
         $mensaje->telefono = $request->telefono;
-        $mensaje->email = $request->email;
-        $mensaje->mensaje = $unidad->marca . ' ' . $unidad->modelo . ' ' . $unidad->color . ' ' . $unidad->anio;
+        $mensaje->email = 'notiene@notiene.com';
+        $mensaje->mensaje = 'Me interesa la unidad ' . $unidad->marca . ' ' . $unidad->modelo . ' ' . $unidad->color . ' ' . $unidad->anio;
         $mensaje->derivar_a = $request->sucursal;
 
-        $from = 'usados';
-        $asunto ='Consulta desde Pagina Web TPA';
-        $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
-        $mensaje->from = $from;
-        $mensaje->enviar_a = $enviar_a;
+        $mensaje->from = 'usados';
+        $mensaje->enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
         $mensaje->save();
         $cc = ['rukyguerra@derkayvargas.com.ar'];
-        event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
+        event( new HaIngresadoUnaConsulta($mensaje, 'Consulta desde Pagina Web', $cc));
 
         return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
         

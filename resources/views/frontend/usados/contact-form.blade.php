@@ -94,11 +94,11 @@
 							                        </span>
 							                    </div>
 							                </div>
-							                <div class="col-md-12">
+							               {{--  <div class="col-md-12">
 							                    <div class="form-group number">
 							                        <input type="email" name="email" value="{{old('email')}}" class="form-control" placeholder="Correo electrónico">
 							                    </div>
-							                </div>
+							                </div> --}}
 							                <div class=" col-md-12">
 							                    <select class="form-control" name="sucursal">
 							                    	<option>--Selecciona una sucursal--</option>
