@@ -117,7 +117,7 @@
 									                    <div class="vehicle-item">
 													      	<div class="vehicle-content select-vehicle" data-vid="{{ $unidad->id }}">
 														      		<div class="vehicle-image">
-														      			<img src="{{$unidad->foto}}" class="w-100">
+														      			<img src="{{ str_replace("public", "storage", $unidad->foto) }}" class="w-100">
 														      		</div>
 														      		<div class="vehicle-footer">
 														      			<span class="title"> {{$unidad->modelo}}</span>
