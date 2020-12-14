@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title_and_meta')
-  <title>Formulario de Contacto | Derka y Vargas S.A.</title>
+  <title>Solicitud de Presupuesto | Derka y Vargas S.A.</title>
   <meta name="description" content="Derka y Vargas Usados Seleccionados, Usados Certificados Toyota en Chaco, accede a un usado con la mejor financiación.">
 @stop
 
@@ -66,7 +66,7 @@
 			<section class="content-area">
 				<div class="container">
 					<div class="main-title text-center">
-						<h1>Contacto</h1>
+						<h1>Presupuesto</h1>
 						<p>Dejanos tus datos y encontrá las mejores opciones en Chaco de unidades usadas en todas las marcas.</p>
 					</div>
 					<div class="row py-1 d-flex justify-content-center" id="contacto-usados">
