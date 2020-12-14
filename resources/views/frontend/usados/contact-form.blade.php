@@ -112,6 +112,7 @@
 							                    </span>
 							                </div>
 							                <div class="col-md-12">
+							                	<p class="text-muted my-3">Seleccione un vehículo</p>
 							                    <div class="slide-vehicles pt-3">
 								                    @foreach($unidades as $unidad)
 									                    <div class="vehicle-item">
