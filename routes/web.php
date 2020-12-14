@@ -98,6 +98,8 @@ Route::get('/modelos/{modelo}','FrontController@modelo')->name('detalle_modelo')
 Route::get('/modelos','FrontController@getModelos')->name('modelos');
 Route::get('/usados','FrontController@usadosIndex')->name('usados_index');
 Route::get('/usados/{slug}','FrontController@usadosShow');
+Route::get('/formulario-de-contacto-vehiculos-usados','FrontController@usadosContactForm');
+Route::post('/formulario-de-contacto-vehiculos-usados','FrontController@usadosContactFormPost');
 Route::get('/usados/get_page_views/{slug}','FrontController@usadosGetPageViews');
 Route::post('/usados/filter','FrontController@usadosFilter');
 Route::get('/turno-servicios/create','TurnoServicioController@create')->name('turno_servicio_create');

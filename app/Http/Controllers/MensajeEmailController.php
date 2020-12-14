@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\HaIngresadoUnaConsulta;
-use App\MensajeEmail;
-use Illuminate\Http\Request;
 use Validator;
-use Illuminate\Support\Facades\Mail;
+use App\MensajeEmail;
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Events\HaIngresadoUnaConsulta;
 use App\Http\Requests\ReCaptchataTestFormRequest;
 
 

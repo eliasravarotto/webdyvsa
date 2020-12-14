@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Consulta;
-use App\ImagenGaleriaUsado;
-use App\Modelo;
 use App\Post;
-use App\PushSubscriptions;
-use App\Repositories\ModeloRepository;
-use App\Servicio;
 use App\Usado;
+use App\Modelo;
+use App\Consulta;
+use App\Servicio;
+use App\MensajeEmail;
+use App\PushSubscriptions;
+use App\ImagenGaleriaUsado;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Input;
+use App\Events\HaIngresadoUnaConsulta;
+use App\Repositories\ModeloRepository;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class FrontController extends Controller
 {
@@ -200,9 +202,54 @@ class FrontController extends Controller
         return view('frontend.usados.show', compact('unidad'));
     }
 
-    public function usadosFilter(Request $request)
+    public function usadosContactForm(Request $request)
     {
 
+            $unidades = Usado::where('visible', 1)
+                                ->orderBy('uct', 'DESC')
+                                ->orderBy('orden', 'ASC')
+                                ->get();
+
+            return view('frontend.usados.contact-form', compact('unidades'));
+
+    }
+
+    public function usadosContactFormPost(Request $request)
+    {
+        $this->validate($request, [
+            'from' => 'required',
+            'cliente' => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            'vehicle_id' => 'required',
+            'sucursal' => 'required',
+            'g-recaptcha-response' => 'required',
+        ]);
+
+        $unidad = Usado::findOrFail($request->vehicle_id);
+
+        $mensaje = new MensajeEmail;
+        $mensaje->cliente = $request->cliente;
+        $mensaje->telefono = $request->telefono;
+        $mensaje->email = $request->email;
+        $mensaje->mensaje = $unidad->marca . ' ' . $unidad->modelo . ' ' . $unidad->color . ' ' . $unidad->anio;
+        $mensaje->derivar_a = $request->sucursal;
+
+        $from = 'usados';
+        $asunto ='Consulta desde Pagina Web TPA';
+        $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+        $mensaje->from = $from;
+        $mensaje->enviar_a = $enviar_a;
+        $mensaje->save();
+        $cc = ['rukyguerra@derkayvargas.com.ar'];
+        event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
+
+        return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+        
+    }
+
+    public function usadosFilter(Request $request)
+    {
         return Usado::where('visible', 1)
                     ->orderBy('uct', 'DESC')
                     ->orderBy('orden', 'ASC')
