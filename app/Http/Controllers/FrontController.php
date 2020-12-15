@@ -233,10 +233,10 @@ class FrontController extends Controller
         $mensaje->derivar_a = $request->sucursal;
 
         $mensaje->from = 'usados';
-        $mensaje->enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
+        $mensaje->enviar_a = 'marceloaguirre@derkayvargas.com';
         $mensaje->save();
-        $cc = ['rukyguerra@derkayvargas.com.ar'];
-        event( new HaIngresadoUnaConsulta($mensaje, 'Consulta desde Pagina Web', $cc));
+        $cc = ['eliasravarotto@derkayvargas.com.ar'];
+        event( new HaIngresadoUnaConsulta($mensaje, 'Solicitud de Presupuesto de Usados', $cc));
 
         return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
         
