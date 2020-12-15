@@ -84,17 +84,6 @@ class ModelosController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return 'show';
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -436,6 +425,22 @@ class ModelosController extends Controller
     public function getDestacados()
     {
         $modelos = Modelo::all();
+
+        return $this->showAll($modelos);
+    }
+
+    public function getModelos(Request $request)
+    {
+
+        $modelos = Modelo::where('activo', 1)->get();
+
+        foreach ($request->query() as $query => $value) {
+            $attribute = $query;
+
+            if (isset($attribute, $value)) {
+                $modelos = $modelos->where($attribute, $value);
+            }
+        }
 
         return $this->showAll($modelos);
     }

@@ -25,3 +25,4 @@ Route::middleware('cliente')->get('/sucursales/{sucursales_de?}','ApiController@
 
 Route::get('/entradas','PostController@getPosts')->name('posts');
 Route::get('/modelos-destacados','ModelosController@getDestacados');
+Route::get('/modelos','ModelosController@getModelos');
