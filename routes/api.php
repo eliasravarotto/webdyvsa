@@ -24,5 +24,6 @@ Route::middleware('cliente')->post('/turno-servicio','TurnoServicioController@st
 Route::middleware('cliente')->get('/sucursales/{sucursales_de?}','ApiController@getSucursales');
 
 Route::get('/entradas','PostController@getPosts')->name('posts');
+Route::get('/entradas/{slug}','PostController@getPost')->name('single_post');
 Route::get('/modelos-destacados','ModelosController@getDestacados');
 Route::get('/modelos','ModelosController@getModelos');

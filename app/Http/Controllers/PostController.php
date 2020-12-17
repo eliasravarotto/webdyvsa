@@ -217,4 +217,12 @@ class PostController extends Controller
 
         return $this->showAll($posts);
     }
+
+    public function getPost(Request $request, $slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+
+        return $this->showOne($post, 201);
+
+    }
 }
