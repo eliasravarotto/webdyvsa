@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title_and_meta')
-  <title>Derka y Vargas - Presupuesto Convencional</title>
+  <title>Derka y Vargas - Contacto</title>
   <meta name="description" content="Derka y Vargas Concesionario Oficial Toyota">
 @stop
 
@@ -21,7 +21,7 @@
     </div>
 	<div class="row justify-content-center my-5">
 		<div class="col-12 col-md-6 d-flex">
-			<form id="myForm" class="w-100" action="{{route('presupuesto_convencional')}}" method="POST" role="form" autocomplete="off">
+			<form id="myForm" class="w-100" action="{{route('send_instagram_contact')}}" method="POST" role="form" autocomplete="off">
 				{{ csrf_field() }}
 				<div class="form-group row">
 					<div class=" col-md-12">

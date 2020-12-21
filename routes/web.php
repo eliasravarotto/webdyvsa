@@ -130,6 +130,9 @@ Route::get('/slide_get_data/{id}','SlideController@getDataSlide');
 Route::get('/contact-us', function(){
 	return view('frontend.contacto.instagram-contact');
 });
+Route::get('/presupuesto-convencional', function(){
+	return view('frontend.contacto.presupuesto-convencional');
+});
 Route::post('/send-instagram-contact', function(Request $request){
 
 	Mail::send('emails.lead-social-media', ['request' => $request], function ($message){
@@ -140,6 +143,16 @@ Route::post('/send-instagram-contact', function(Request $request){
     return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
 
 })->name('send_instagram_contact');
+Route::post('/presupuesto-convencional', function(Request $request){
+
+	Mail::send('emails.lead-social-media', ['request' => $request], function ($message){
+        $message->subject('Convencional | Datos para Presupuesto ');
+        $message->to('marceloaguirre@derkayvargas.com.ar');
+    });
+
+    return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
+
+})->name('presupuesto_convencional');
 
 
 /*******************************************
