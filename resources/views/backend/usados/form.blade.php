@@ -219,8 +219,8 @@
 	    	if (precio <= 300000){
 		    	$("#error-precio").html('El precio no puede ser menor a 300.000')
 		    	$('[name ="precio"]').addClass('is-invalid');
-	    	}else if (precio >= 3000000){
-		    	$("#error-precio").html('El precio no puede ser mayor a 3.000.000')
+	    	}else if (precio >= 5000000){
+		    	$("#error-precio").html('El precio no puede ser mayor a 5.000.000')
 		    	$('[name ="precio"]').addClass('is-invalid');
 	    	} else{
 	    		$("#error-precio").html('');

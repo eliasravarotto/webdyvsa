@@ -422,13 +422,6 @@ class ModelosController extends Controller
         return;
     }
 
-    public function getDestacados()
-    {
-        $modelos = Modelo::all();
-
-        return $this->showAll($modelos);
-    }
-
     public function getModelos(Request $request)
     {
 

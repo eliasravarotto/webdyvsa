@@ -26,6 +26,7 @@ class CreateModelosTable extends Migration
             $table->string('link_ficha_tecnica')->nullable();
             $table->string('link_catalogo')->nullable();
             $table->boolean('activo')->default(1);
+            $table->boolean('destacado')->default(0);
             $table->integer('orden')->default(1);
             $table->timestamps();
             $table->softDeletes();
