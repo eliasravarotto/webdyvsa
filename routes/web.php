@@ -133,6 +133,7 @@ Route::get('/contact-us', function(){
 Route::get('/presupuesto-convencional', function(){
 	return view('frontend.contacto.presupuesto-convencional');
 });
+
 Route::post('/send-instagram-contact', function(Request $request){
 
 	Mail::send('emails.lead-social-media', ['request' => $request], function ($message){
@@ -143,9 +144,10 @@ Route::post('/send-instagram-contact', function(Request $request){
     return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
 
 })->name('send_instagram_contact');
+
 Route::post('/presupuesto-convencional', function(Request $request){
 
-	Mail::send('emails.lead-social-media', ['request' => $request], function ($message){
+	Mail::send('emails.solicitud-presupuesto-convencional', ['request' => $request], function ($message){
         $message->subject('Convencional | Datos para Presupuesto ');
         $message->to('marceloaguirre@derkayvargas.com.ar');
     });
