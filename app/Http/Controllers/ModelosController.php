@@ -13,6 +13,7 @@ use App\ImagenGaleriaModelo;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use App\CaracteristicaModelo;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
 
@@ -425,7 +426,7 @@ class ModelosController extends Controller
     public function getModelos(Request $request)
     {
 
-        $modelos = Modelo::where('activo', 1)->get();
+        $modelos = Modelo::all();
 
         foreach ($request->query() as $query => $value) {
             $attribute = $query;
@@ -435,6 +436,12 @@ class ModelosController extends Controller
             }
         }
 
-        return $this->showAll($modelos);
+        $data = new Collection;
+
+        foreach ($modelos as $item)
+            $data->push($item);
+       
+
+        return $this->showAll($data);
     }
 }
