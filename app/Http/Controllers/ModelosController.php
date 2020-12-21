@@ -426,7 +426,7 @@ class ModelosController extends Controller
     public function getModelos(Request $request)
     {
 
-        $modelos = Modelo::all();
+        $modelos = Modelo::with('versiones')->get();
 
         foreach ($request->query() as $query => $value) {
             $attribute = $query;

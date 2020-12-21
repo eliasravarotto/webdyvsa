@@ -12,6 +12,10 @@ class Modelo extends Model
 
     protected $table = 'modelos';
 
+    public function versiones()
+    {
+        return $this->hasMany('App\Version');
+    }
 
     public function caracteristicas()
     {
