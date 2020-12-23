@@ -444,4 +444,15 @@ class ModelosController extends Controller
 
         return $this->showAll($data);
     }
+
+    public function getModelo(Request $request, $slug)
+    {
+        $modelo = Modelo::with('versiones')
+                        ->with('caracteristicas')
+                        ->with('colores')
+                        ->where('slug', $slug)
+                        ->first();       
+
+        return $this->showOne($modelo);
+    }
 }
