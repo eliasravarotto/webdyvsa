@@ -47,7 +47,7 @@ trait ApiResponser
 		// 	array_push($data, $item);
 		// }
 
-		return $data;
+		return $collection;
 
 	}
 
