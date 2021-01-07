@@ -7,6 +7,7 @@ use App\Color;
 use App\Usado;
 use App\ImagenGaleriaUsado;
 use App\Traits\ImageHandler;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -15,6 +16,7 @@ class UsadoController extends Controller
 {
 
     use ImageHandler;
+    use ApiResponser;
 
     /**
      * Display a listing of the resource.
@@ -207,6 +209,21 @@ class UsadoController extends Controller
         $file->delete();
 
         return;
+    }
+
+
+    // APIRest
+
+    public function getUsados(Request $request)
+    {
+
+        $usados = Usado::all();
+
+        $usados = $this->filterData($usados);
+
+        return $this->showAll($usados);
+
+
     }
 
 }
