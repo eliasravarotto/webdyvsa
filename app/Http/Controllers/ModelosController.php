@@ -451,7 +451,7 @@ class ModelosController extends Controller
                         ->with('caracteristicas')
                         ->with('colores')
                         ->where('slug', $slug)
-                        ->first();       
+                        ->firstOrFail();       
 
         return $this->showOne($modelo);
     }
