@@ -26,8 +26,6 @@ trait ApiResponser
 
 	protected function showAll(Collection $collection, $code = 200)
 	{
-		//$collection = $this->filterData($collection);
-		//$collection = $this->paginate($collection);
 		return $this->successResponse(['data' => $collection], $code);
 	}
 
@@ -41,13 +39,13 @@ trait ApiResponser
 			}
 		}
 		
-		// $data = [];
+		$data = [];
 
-		// foreach ($collection as $item) {
-		// 	array_push($data, $item);
-		// }
+		foreach ($collection as $item) {
+			array_push($data, $item);
+		}
 
-		return $collection;
+		return $data;
 
 	}
 
