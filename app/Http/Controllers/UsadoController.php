@@ -219,7 +219,7 @@ class UsadoController extends Controller
 
         $usados = Usado::all();
 
-        $usados = $this->filterData($usados);
+        $usados = collect($this->filterData($usados));
 
         return $this->showAll($usados);
 
