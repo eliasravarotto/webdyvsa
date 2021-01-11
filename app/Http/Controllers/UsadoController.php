@@ -226,4 +226,19 @@ class UsadoController extends Controller
 
     }
 
+    public function getUsado(Request $request, $slug)
+    {
+
+
+        $unidad = Usado::where('slug', '=', $slug)
+                        ->with('photos')
+                        ->firstOrFail();
+
+        $unidad->foto = Storage::url($unidad->foto);
+
+        return $this->showOne($unidad);
+
+
+    }
+
 }
