@@ -28,6 +28,7 @@ Route::get('/entradas/{slug}','PostController@getPost')->name('single_post');
 Route::get('/modelos','ModelosController@getModelos');
 Route::get('/modelos/{slug}','ModelosController@getModelo');
 Route::get('/usados','UsadoController@getUsados');
+Route::get('/usados/{slug}','UsadoController@getUsado');
 Route::post('/message','MessageController@store');
 Route::post('/turno-servicio','TurnoServicioController@store');
 Route::post('/solicitar-test-drive','SolicitudTestDriveController@store');
