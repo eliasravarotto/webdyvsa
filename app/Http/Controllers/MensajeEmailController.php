@@ -167,7 +167,7 @@ class MensajeEmailController extends Controller
         $mensaje->cliente = $request->vdc_cliente;
         $mensaje->telefono = $request->vdc_telefono;
         $mensaje->email = $request->vdc_email;
-        $mensaje->sucursal = $request->vdc_sucursal;
+        $mensaje->derivar_a = $request->vdc_sucursal;
         $mensaje->mensaje = $request->vdc_mensaje;
         $mensaje->from = $request->vdc_from;
         $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
