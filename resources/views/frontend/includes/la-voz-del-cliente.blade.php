@@ -51,6 +51,20 @@
                 </div>
             </div>
             <div class="row">
+                <div class=" col-md-12">
+                    <label class="control-label">Sucursal</label>
+                    <select id="form-voc-sucursal" type="text" class="form-control" name="vdc_sucursal" value="{{old('vdc_sucursal')}}" required>
+                        <option value="Sáenz Peña">Sáenz Peña</option>
+                        <option value="Resistencia" >Resistencia</option>
+                        <option value="Charata" >Charata</option>
+                        <option value="Villa Ángela" >Villa Ángela</option>
+                    </select>
+                    <span class="text-danger">
+                        {{  $errors->first('vdc_cliente') }}
+                    </span>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
                     <label class="control-label">Mensaje</label>
                     <textarea id="form-voc-mensaje" name="vdc_mensaje" class="form-control" required>{{old('vdc_mensaje')}}</textarea>

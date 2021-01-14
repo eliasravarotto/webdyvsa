@@ -90,7 +90,7 @@ class MensajeEmailController extends Controller
                 break;
             case 'usados':
                 $from = 'usados';
-                $asunto ='Consulta desde Pagina Web TPA';
+                $asunto ='Consulta desde Pagina Web';
                 $enviar_a = env('RECEPTOR_EMAILS_CONTACTO');
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
@@ -152,12 +152,14 @@ class MensajeEmailController extends Controller
             'vdc_cliente' => 'required',
             'vdc_email' => 'required',
             'vdc_telefono' => 'required',
+            'vdc_sucursal' => 'required',
             'vdc_mensaje' => 'required',
             'g-recaptcha-response' => 'required',
         ], [
             'vdc_cliente.required' => 'El campo nombre y apellido es obligatorio',
             'vdc_email.required' => 'El campo email es obligatorio',
             'vdc_telefono.required' => 'El campo teléfono es obligatorio',
+            'vdc_sucursal.required' => 'El campo sucursal es obligatorio',
             'vdc_mensaje.required' => 'El campo mensaje es obligatorio',
         ]);
 
@@ -165,6 +167,7 @@ class MensajeEmailController extends Controller
         $mensaje->cliente = $request->vdc_cliente;
         $mensaje->telefono = $request->vdc_telefono;
         $mensaje->email = $request->vdc_email;
+        $mensaje->sucursal = $request->vdc_sucursal;
         $mensaje->mensaje = $request->vdc_mensaje;
         $mensaje->from = $request->vdc_from;
         $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
