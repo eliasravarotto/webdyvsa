@@ -1,6 +1,6 @@
 [
-        { "modelo": "Etios'",
-          "version": "X 5P'",
+        { "modelo": "Etios",
+          "version": "X 5P",
           "modalidad": "100%",
           "image": "/imagenes/modelos/etios/img-modelo.png",
           "slug": "etios-x-5p-100",
@@ -16,7 +16,7 @@
           			},
           			{ "cuota": "Cuotas 25 a 84", 
           			  "valor": "17.398,64"
-          			},
+          			}
         		  		  ]
         },
         { "modelo": "Etios", 
@@ -36,7 +36,7 @@
           			},
           			{ "cuota": "Cuotas 25 a 84", 
           			  "valor": "17.398,64"
-          			},
+          			}
         		  		  ]
         },
         { "modelo": "Hilux", 
@@ -56,7 +56,7 @@
           			},
           			{ "cuota": "Cuotas 25 a 84", 
           			  "valor": "17.398,64"
-          			},
+          			}
         		  		  ]
         },
         { "modelo": "Hilux", 
@@ -66,17 +66,17 @@
           "slug": "hilux-4x4-dx-100",
           "cuotas": [
           			{ "cuota": "Cuota 1",
-          			  "valor": "13.130,13",
+          			  "valor": "13.130,13"
           			},
           			{ "cuota": "Cuotas 2 a 5",
-          			  "valor": "14.983,82",
+          			  "valor": "14.983,82"
           			},
           			{ "cuota": "Cuotas 6 a 24",
-          			  "valor": "15.111,55",
+          			  "valor": "15.111,55"
           			},
           			{ "cuota": "Cuotas 25 a 84",
-          			  "valor": "17.398,64",
-          			},
+          			  "valor": "17.398,64"
+          			}
         		  		  ]
         }
 ]
