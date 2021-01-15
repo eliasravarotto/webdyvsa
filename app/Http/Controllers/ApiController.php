@@ -107,4 +107,23 @@ class ApiController extends Controller
 
         return $this->showAll(collect($strJsonFileContents));
     }
+
+    public function sucursalesVentas(Request $request)
+    {
+        $strJsonFileContents = json_decode(file_get_contents("data/sucursales-ventas.json"));
+
+        $collection = new Collection;
+
+        foreach ($strJsonFileContents as $properties) {
+            $item = null;
+            $item = (object) $item;
+            foreach ($properties as $key => $value) {
+                $item->$key = $value;
+            }
+
+            $collection->push($item);
+        }
+
+        return $this->showAll(collect($strJsonFileContents));
+    }
 }

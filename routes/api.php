@@ -36,3 +36,5 @@ Route::get('/team-tpa','ApiController@getTeamTpa');
 Route::get('/plan-de-ahorro/oportunidades/avanzados','TpaAgrupadosController@index');
 Route::get('/plan-de-ahorro/oportunidades/adjudicados','TpaAdjudicadosController@index');
 Route::get('/sucursales-usados','ApiController@sucursalesUsados');
+Route::get('/sucursales-ventas','ApiController@sucursalesVentas');
+Route::get('/sucursales-posventa','ApiController@sucursalesPosventa');
