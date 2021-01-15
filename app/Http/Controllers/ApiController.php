@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Modelo;
 use App\Post;
-use App\TipoServicio;
+use App\Modelo;
 use App\Sucursal;
+use App\TipoServicio;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class ApiController extends Controller
 {
+
+    use ApiResponser;
+
     public function getNovedades( Request $request )
     {
     	if ($request->categoria == null) {
@@ -62,5 +67,44 @@ class ApiController extends Controller
         }
         
         return response()->json(['sucursales' => $sucursales ], 200);
+    }
+
+    public function getTeamTpa(Request $request)
+    {
+
+        $strJsonFileContents = json_decode(file_get_contents("data/team-tpa.json"));
+
+        $collection = new Collection;
+
+        foreach ($strJsonFileContents as $properties) {
+            $item = null;
+            $item = (object) $item;
+            foreach ($properties as $key => $value) {
+                $item->$key = $value;
+            }
+
+            $collection->push($item);
+        }
+
+        return $this->showAll(collect($strJsonFileContents));
+    }
+
+    public function sucursalesUsados(Request $request)
+    {
+        $strJsonFileContents = json_decode(file_get_contents("data/sucursales-usados.json"));
+
+        $collection = new Collection;
+
+        foreach ($strJsonFileContents as $properties) {
+            $item = null;
+            $item = (object) $item;
+            foreach ($properties as $key => $value) {
+                $item->$key = $value;
+            }
+
+            $collection->push($item);
+        }
+
+        return $this->showAll(collect($strJsonFileContents));
     }
 }

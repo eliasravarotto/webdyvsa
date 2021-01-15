@@ -35,3 +35,4 @@ Route::post('/solicitar-test-drive','SolicitudTestDriveController@store');
 Route::get('/team-tpa','ApiController@getTeamTpa');
 Route::get('/plan-de-ahorro/oportunidades/avanzados','TpaAgrupadosController@index');
 Route::get('/plan-de-ahorro/oportunidades/adjudicados','TpaAdjudicadosController@index');
+Route::get('/sucursales-usados','ApiController@sucursalesUsados');

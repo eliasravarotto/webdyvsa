@@ -1,0 +1,22 @@
+[
+	{
+		"sucursal": "Sáenz Peña",
+		"direccion": "Belgrano Nº 872 (Calle 10 esq. 19)",
+		"telefonos": [ "(0364) 44 - 20602" ]
+	},
+	{
+		"sucursal": "Resistencia ",
+		"direccion": "Av. Sarmiento 1890",
+		"telefonos": [ "362 443 3300" ]
+	},
+	{
+		"sucursal": "Charata",
+		"direccion": "Ruta 89 Km. 74",
+		"telefonos": [ "3735 15 620 255" ]
+	},
+	{
+		"sucursal": "Villa Angela",
+		"direccion": "Av. 25 de Mayo Nº 1101",
+		"telefonos": [ "3735 423 200" ]
+	}
+]
