@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TPAPlan;
 use Illuminate\Http\Request;
-use App\Traits\ApiReLsponser;
+use App\Traits\ApiResponser;
 use Illuminate\Support\Facades\Validator;
 
 class TPAPlanController extends Controller
