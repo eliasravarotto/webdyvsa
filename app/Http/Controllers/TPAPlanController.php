@@ -114,8 +114,6 @@ class TPAPlanController extends Controller
 
         $collection = new Collection;
 
-        return dd(json_decode(file_get_contents("data/planes-vigentes.json")));
-
         foreach ($strJsonFileContents as $properties) {
             $item = null;
             $item = (object) $item;
