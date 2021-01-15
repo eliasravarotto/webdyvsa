@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\TPAPlan;
 use Illuminate\Http\Request;
+use App\Traits\ApiReLsponser;
 use Illuminate\Support\Facades\Validator;
 
 class TPAPlanController extends Controller
 {
+
+    use ApiResponser;
 
 	private $unidadesTpa = ['Etios X 4P', 'Etios X 5P', 'Corolla XLI', 'Hilux 4x2 DX'];
 	private $modalidadesTPA = ['100%', '70/30'];
