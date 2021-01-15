@@ -31,13 +31,6 @@ class EnviarEmailConsulta
         $asunto = $event->asunto;
         $cc = $event->cc;
 
-        if ( (stripos($consulta->mensaje,'mail') !== false) ||
-             (stripos($consulta->mensaje,'email') !== false) ||
-             (stripos($consulta->mensaje,'correo') !== false)
-        ){
-            $asunto = 'Lead Web - Posible mistery';
-        }
-
         Mail::send('emails.consulta', ['consulta' => $consulta], function ($message) use ($consulta, $asunto, $cc){
             $message->subject($asunto);
             $message->to($consulta->enviar_a)->cc($cc);
