@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\TPAPlan;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponser;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
+
 
 class TPAPlanController extends Controller
 {
@@ -111,6 +113,8 @@ class TPAPlanController extends Controller
         $strJsonFileContents = json_decode(file_get_contents("data/planes-vigentes.json"));
 
         $collection = new Collection;
+
+        return dd(json_decode(file_get_contents("data/planes-vigentes.json")));
 
         foreach ($strJsonFileContents as $properties) {
             $item = null;
