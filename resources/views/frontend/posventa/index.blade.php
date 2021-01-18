@@ -293,7 +293,7 @@
 				<div class="row">
 					<div class="col-md-6" style="min-height: 300px; padding: 0px 20px 0px 50px;">
 						<h2 class="" style="margin-top: 0px;">SUCURSALES <small>Con Servicio de Posventa</small></h2>
-						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> de 8 a 16.30 - <b>Sábados</b> de 8 a 12.30</div>
+						<div style="margin-left: 5px; font-size: 16px;"><i class="fa fa-clock-o"></i> <b>Lunes a Viernes</b> 8 a 12:00 y 15:30 a 19:30 | <b>Sábados</b> de 8 a 12.30</div>
 						<div class="contact-details mt-3">
 		                    <div class="media">
 		                        <div class="media-left">
