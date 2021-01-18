@@ -193,6 +193,11 @@
   .modal-footer {
       border-top: 0px solid #9ea2a2 !important;
   }
+
+  	.dias{
+		font-weight: 300 !important ;
+		font-size: ´13px;
+	}
 </style>
 @stop
 

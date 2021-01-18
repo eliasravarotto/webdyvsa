@@ -14,9 +14,11 @@
 		        	<i class="fas fa-phone"></i>
 		            <p>Teléfono</p><strong>+549 362 443 3300</strong>
 		        </div>
-		        <div class="col-md-3 col-sm-6 mb-5 text-center">
-		        	<i class="fab fa-whatsapp"></i>
-		            <p>Whatsapp</p><strong><a href="https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20un%20vehículo%20Usado" target="_blank" style="color: black;">+549 364 4178456</a></strong>
+		        <div class="col-md-3 col-sm-6 mb-5 text-center horarios">
+		        	<i class="far fa-clock"></i>
+		            <p>Horarios</p>
+		            <p class="dias">Lunes a Viernes</p> <span>8:00 a 12:30hs | 15:30 a 19.30hs</span>
+		            <p class="dias">Sabados</p> <span>8:00 a 12:30hs</span>
 		        </div>
 		        <div class="col-md-3 col-sm-6 mb-5 text-center">
 		        	<i class="fas fa-envelope"></i>
