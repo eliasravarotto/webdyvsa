@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Servicio;
 use App\Modelo;
+use App\Servicio;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
 class ServicioController extends Controller
 {
+
+    use ApiResponser;
 
     /**
      * Display a listing of the resource.
@@ -57,17 +60,6 @@ class ServicioController extends Controller
         {
             return redirect()->route( 'admin_servicios.index' );
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
     }
 
 
@@ -120,12 +112,6 @@ class ServicioController extends Controller
         return $servicio_id;
     }
 
-    public function listaDePrecios(Request $request)
-    {
-        $servicios = Servicio::all();
-        return view('backend.servicios.precios', compact('servicios'));
-    }
-
     private function validarRequest( $request )
     {
        return $this->validate($request, [
@@ -143,7 +129,14 @@ class ServicioController extends Controller
         $servicio->delete();
 
         return back()->with('success', 'Eliminado');
+    }
 
+
+    public function listaDePrecios(Request $request)    {
+       
+        $modelos = Modelo::has('servicios', '>', 0)->get();
+
+        return $this->showAll($modelos);
     }
 
 }
