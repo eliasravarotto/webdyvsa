@@ -134,7 +134,7 @@ class ServicioController extends Controller
 
     public function listaDePrecios(Request $request)    {
        
-        $modelos = Modelo::has('servicios', '>', 0)->get();
+        $modelos = Modelo::has('servicios', '>', 0)->with('servicios')->get();
 
         return $this->showAll($modelos);
     }
