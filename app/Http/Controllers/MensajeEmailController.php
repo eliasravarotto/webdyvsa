@@ -75,7 +75,7 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['rukyguerra@derkayvargas.com.ar'];
+                $cc = ['maurovargas@derkayvargas.com.ar'];
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             case 'tpa':
@@ -85,7 +85,7 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['rukyguerra@derkayvargas.com.ar'];
+                $cc = ['maurovargas@derkayvargas.com.ar'];
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             case 'usados':
@@ -95,7 +95,7 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['rukyguerra@derkayvargas.com.ar'];
+                $cc = ['maurovargas@derkayvargas.com.ar'];
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
             default:
@@ -105,7 +105,7 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['rukyguerra@derkayvargas.com.ar'];
+                $cc = ['maurovargas@derkayvargas.com.ar'];
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
         }
@@ -137,7 +137,7 @@ class MensajeEmailController extends Controller
         $mensaje->save();
 
         $asunto ='Consulta desde Pagina Web TPA';
-        $cc = ['rukyguerra@derkayvargas.com'];
+        $cc = ['maurovargas@derkayvargas.com'];
         event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
         
         return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
@@ -173,7 +173,7 @@ class MensajeEmailController extends Controller
         $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
         $mensaje->save();
         $asunto ='La voz del Cliente - Nuevo Mensaje';
-        $cc = ['rukyguerra@derkayvargas.com.ar', 'fabianaaranda@derkayvargas.com.ar'];
+        $cc = ['maurovargas@derkayvargas.com.ar', 'fabianaaranda@derkayvargas.com.ar'];
 
         event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
 
