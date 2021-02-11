@@ -97,13 +97,6 @@
                                 </table>
                             </div>
 
-                            <a :href="'https://wa.me/5493644178456?text=Hola%20estoy%20interesado/a%20en%20el%20vehículo%20'+unidad.marca+' - '+unidad.modelo"  
-                               class="btn btn-whatsapp my-2" 
-                               target="_blank"
-                               style="border-radius: 0px !important">
-                                <i class="fab fa-whatsapp"></i>
-                                CONSULTAR
-                            </a>
                             <a href="#" 
                                class="btn button-theme my-2" 
                                @click.prevent="goToForm()"
