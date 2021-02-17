@@ -34,7 +34,7 @@
 @section('content')
 	<article>
 		<section>
-			<img class="img-fluid" src="/imagenes/tpa/plan-de-ahorro-portada.jpg" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
+			<img class="img-fluid" src="https://derkayvargas.com/storage/fotos/B76txHCSvwvx2kS7zRVZFFTCOIgBrhSLICyf73uX.png" alt="Nuevo plan de ahorro toyota. Accede a on 0KM en Derka y Vargas Chaco" style="width: 100%">
 		</section>
 
 		<!-- PLANES LISTA DE PRECIOS -->
