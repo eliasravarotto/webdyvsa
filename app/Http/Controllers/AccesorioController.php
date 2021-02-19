@@ -186,7 +186,7 @@ class AccesorioController extends Controller
 
     public function getAccesorios(Request $request)
     {
-        $accesorios = Accesorio::all();
+        $accesorios = Accesorio::with('fotos')->get();
 
         $accesorios = collect($this->filterData($accesorios));
 
