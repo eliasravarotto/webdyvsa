@@ -6,6 +6,7 @@ use App\File;
 use App\Modelo;
 use App\Accesorio;
 use App\Traits\ImageHandler;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -13,6 +14,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class AccesorioController extends Controller
 {
     use ImageHandler;
+    use ApiResponser;
 
     /**
      * Display a listing of the resource.
@@ -180,5 +182,14 @@ class AccesorioController extends Controller
         $modelos = Modelo::orderBy('orden', 'asc')->get();
         $modelo = Modelo::find($modelo_id);
         return view('frontend.posventa.accesorios.index', compact('accesorios', 'modelos', 'modelo_id', 'modelo'));
+    }
+
+    public function getAccesorios(Request $request)
+    {
+        $accesorios = Accesorio::all();
+
+        $accesorios = collect($this->filterData($accesorios));
+
+        return $this->showAll($accesorios);
     }
 }
