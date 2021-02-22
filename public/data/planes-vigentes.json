@@ -2,7 +2,7 @@
         { "modelo": "Etios",
           "version": "X 5P",
           "modalidad": "100%",
-          "image": "/imagenes/modelos/etios/img-modelo.png",
+          "image": "/imagenes/tpa/etios100.png",
           "slug": "etios-x-5p-100",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
@@ -22,7 +22,7 @@
         { "modelo": "Etios", 
           "version": "X 5P", 
           "modalidad": "70/30", 
-          "image": "/imagenes/modelos/etios/img-modelo.png",
+          "image": "/imagenes/tpa/etios7030.png",
           "slug": "etios-x-5p-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
@@ -39,10 +39,30 @@
           			}
         		  		  ]
         },
+        { "modelo": "Yaris", 
+          "version": "XS 5P", 
+          "modalidad": "100%",
+          "image": "/imagenes/tpa/yaris100.png", 
+          "slug": "yaris-xs-hatchback",
+          "cuotas": [
+                { "cuota": "Cuota 1",
+                  "valor": "13.130,13"
+                },
+                { "cuota": "Cuotas 2 a 5",
+                  "valor": "14.983,82"
+                },
+                { "cuota": "Cuotas 6 a 24",
+                  "valor": "15.111,55"
+                },
+                { "cuota": "Cuotas 25 a 84",
+                  "valor": "17.398,64"
+                }
+                    ]
+        }
         { "modelo": "Hilux", 
           "version": "CD 4x2 DX", 
           "modalidad": "70/30", 
-          "image": "/imagenes/modelos/hilux/0bPxJVqdR2.png",
+          "image": "/imagenes/tpa/hilux7030.png",
           "slug": "hilux-4x2-dx-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
@@ -62,7 +82,7 @@
         { "modelo": "Hilux", 
           "version": "CD 4x4 DX", 
           "modalidad": "100%",
-          "image": "/imagenes/modelos/hilux/0bPxJVqdR2.png", 
+          "image": "/imagenes/tpa/hilux100.png", 
           "slug": "hilux-4x4-dx-100",
           "cuotas": [
           			{ "cuota": "Cuota 1",
