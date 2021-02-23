@@ -41,3 +41,4 @@ Route::get('/sucursales-ventas','ApiController@sucursalesVentas');
 Route::get('/sucursales-posventa','ApiController@sucursalesPosventa');
 Route::get('/posventa/lista-de-precios','ServicioController@listaDePrecios');
 Route::get('/accesorios','AccesorioController@getAccesorios');
+Route::post('/push-subscription/{token}','FrontController@subscribeClient');
