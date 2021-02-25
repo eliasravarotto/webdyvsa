@@ -194,7 +194,7 @@ class ModelosController extends Controller
                     Storage::delete($imagenColor->url);
 
                     $file = $request->file('old_img_colores')[$i];
-                    $file_path = $this->storeAndRezise($file, 'public/fotos')->imagePath;
+                    $file_path = Storage::put('public/fotos', $file);
                     $imagenColor->url = $file_path;
                     $imagenColor->public_path = Storage::url($file_path);
                 }
@@ -207,7 +207,7 @@ class ModelosController extends Controller
         for( $i=0 ; $i < sizeof($request->img_colores) ; $i++ ) {
 
             $file = $request->file('img_colores')[$i];
-            $file_path = $this->storeAndRezise($file, 'public/fotos')->imagePath;
+            $file_path = Storage::put('public/fotos', $file);
 
             $imagen_color = new ImagenColorModelo;
             $imagen_color->modelo_id = $modelo->id;
