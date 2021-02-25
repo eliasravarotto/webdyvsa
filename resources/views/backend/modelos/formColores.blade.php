@@ -23,7 +23,7 @@
             <div class="form-group row" id="row-old-images{{$color->id}}">
               <input type="hidden" name="old_color_id[]" value="{{$color->id}}">
               <div class="col-2">
-                <img src="{{$color->url}}" class="img-fluid">
+                <img src="{{$color->public_path}}" class="img-fluid">
               </div>
               <div class="col-3">
                 <div class="row">
