@@ -11,16 +11,19 @@ use App\ImagenColorModelo;
 use App\ImagenSliderModelo;
 use App\ImagenGaleriaModelo;
 use App\Traits\ApiResponser;
+use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 use App\CaracteristicaModelo;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 
 class ModelosController extends Controller
 {
 
     use ApiResponser;
+    use ImageHandler;
 
     /**
      * Display a listing of the resource.
@@ -175,58 +178,54 @@ class ModelosController extends Controller
 
     public function updateColores(Request $request, $id)
     {
-        //return $request;
 
         $modelo = Modelo::find($id);
         $modelo_name = strtolower($modelo->nombre);
        
         //Editar Colores
         for( $i=0 ; $i < sizeof($request->old_color_id) ; $i++ ) {
-            $color = ImagenColorModelo::findOrFail($request->old_color_id[$i]);
-            $color->color = $request->old_color[$i];
-            $color->codigo = $request->old_codigo[$i];
+            $imagenColor = ImagenColorModelo::findOrFail($request->old_color_id[$i]);
+            $imagenColor->color = $request->old_color[$i];
+            $imagenColor->codigo = $request->old_codigo[$i];
 
             if ( isset($request->old_img_colores) ){
                 if ( array_key_exists($i, $request->old_img_colores) ){
 
-                    if (file_exists(public_path() . $color->url))
-                        unlink(public_path() . $color->url);
-                   
+                    Storage::delete($imagenColor->url);
+
                     $file = $request->file('old_img_colores')[$i];
-                    $filename = $request->file('old_img_colores')[$i]->getClientOriginalName();
-                    $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/colores/',$filename);
-                    $color->url = '/imagenes/modelos/'.$modelo_name.'/colores/'.$filename;
+                    $file_path = $this->storeAndRezise($file, 'public/fotos')->imagePath;
+                    $imagenColor->url = $file_path;
+                    $imagenColor->public_path = Storage::url($file_path);
                 }
             }
 
-            $color->update();
+            $imagenColor->update();
         }
         
         //Crear nuevos colores
         for( $i=0 ; $i < sizeof($request->img_colores) ; $i++ ) {
+
             $file = $request->file('img_colores')[$i];
-            $filename = $request->file('img_colores')[$i]->getClientOriginalName();
-            $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/colores/',$filename);
+            $file_path = $this->storeAndRezise($file, 'public/fotos')->imagePath;
+
             $imagen_color = new ImagenColorModelo;
             $imagen_color->modelo_id = $modelo->id;
             $imagen_color->color = $request->color[$i];
             $imagen_color->codigo = $request->codigo[$i];
-            $imagen_color->url = '/imagenes/modelos/'.$modelo_name.'/colores/'.$filename;
+            $imagen_color->url = $file_path;
+            $imagen_color->public_path = Storage::url($file_path);
             $imagen_color->save();
         }
 
         //Eliminar
         for( $i=0 ; $i < sizeof($request->delete_color_ids) ; $i++ ) {
-            $color = ImagenColorModelo::findOrFail($request->delete_color_ids[$i]);
-            
-            if (file_exists(public_path() . $color->url))
-                    unlink(public_path() . $color->url);
-
-            $color->delete();
-
+            $imagenColor = ImagenColorModelo::findOrFail($request->delete_color_ids[$i]);
+            Storage::delete($imagenColor->url);
+            $imagenColor->delete();
         }
 
-        return redirect('admin/modelos');
+        return back()->with('success', 'Actualizado.');
     }
 
     //------------------------------------------------------------
