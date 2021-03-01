@@ -6,16 +6,16 @@
           "slug": "etios-x-5p-100",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
-          			  "valor": "13.130,13"
+          			  "valor": "14.683,33"
           			},
           			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "14.983,82"
+          			  "valor": "16.756,30"
           			},
           			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "15.111,55"
+          			  "valor": "16.899,14"
           			},
           			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "17.398,64"
+          			  "valor": "19.456,78"
           			}
         		  		  ]
         },
@@ -26,16 +26,16 @@
           "slug": "etios-x-5p-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
-          			  "valor": "13.130,13"
+          			  "valor": "12.059,38"
           			},
           			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "14.983,82"
+          			  "valor": "14.186,78"
           			},
           			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "15.111,55"
+          			  "valor": "12.615,54"
           			},
           			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "17.398,64"
+          			  "valor": "13.887,62"
           			}
         		  		  ]
         },
@@ -46,16 +46,16 @@
           "slug": "yaris-xs-hatchback",
           "cuotas": [
                 { "cuota": "Cuota 1",
-                  "valor": "13.130,13"
+                  "valor": "18.932,55"
                 },
                 { "cuota": "Cuotas 2 a 5",
-                  "valor": "14.983,82"
+                  "valor": "21.605,41"
                 },
                 { "cuota": "Cuotas 6 a 24",
-                  "valor": "15.111,55"
+                  "valor": "21.789,58"
                 },
                 { "cuota": "Cuotas 25 a 84",
-                  "valor": "17.398,64"
+                  "valor": "25.087,38"
                 }
                     ]
         },
@@ -66,16 +66,16 @@
           "slug": "hilux-4x2-dx-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
-          			  "valor": "13.130,13"
+          			  "valor": "29.088,15"
           			},
           			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "14.983,82"
+          			  "valor": "33.848,16"
           			},
           			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "15.111,55"
+          			  "valor": "30.346,01"
           			},
           			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "17.398,64"
+          			  "valor": "29.997,58"
           			}
         		  		  ]
         },
@@ -86,16 +86,16 @@
           "slug": "hilux-4x4-dx-100",
           "cuotas": [
           			{ "cuota": "Cuota 1",
-          			  "valor": "13.130,13"
+          			  "valor": "41.927,51"
           			},
           			{ "cuota": "Cuotas 2 a 5",
-          			  "valor": "14.983,82"
+          			  "valor": "47.319,66"
           			},
           			{ "cuota": "Cuotas 6 a 24",
-          			  "valor": "15.111,55"
+          			  "valor": "47.691,36"
           			},
           			{ "cuota": "Cuotas 25 a 84",
-          			  "valor": "17.398,64"
+          			  "valor": "49.143,13"
           			}
         		  		  ]
         }
