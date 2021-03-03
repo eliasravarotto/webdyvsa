@@ -64,7 +64,7 @@ class TurnoServicioController extends Controller
                 'dominio' => 'required|string',
                 'servicio' => 'required|string',
                 'fecha' => 'required|string',
-                // 'g_recaptcha_response' => 'required|recaptcha',
+                'g-recaptcha-response' => 'required|captcha',
                 'sucursal' => 'in:Sáenz Peña,Resistencia,Charata',
                 'from' => 'in:web-site, app',
             ];
