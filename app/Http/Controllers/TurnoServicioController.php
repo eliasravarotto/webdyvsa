@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\SeHaSolicitadoUnTurno;
-use App\Http\Requests\ReCaptchataTestFormRequest;
 use App\Modelo;
 use App\Servicio;
 use App\Sucursal;
 use App\TurnoServicio;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Mail\TurnoServicioReceived;
+use Illuminate\Support\Facades\Mail;
+use App\Events\SeHaSolicitadoUnTurno;
+use App\Http\Requests\ReCaptchataTestFormRequest;
 
 class TurnoServicioController extends Controller
 {
+
+    use ApiResponser;
+
     /**
      * Display a listing of the resource.
      *
@@ -49,40 +55,41 @@ class TurnoServicioController extends Controller
      */
     public function store(ReCaptchataTestFormRequest $request)
     {
-        // return $request;
-            $turno = new TurnoServicio;
-            $turno->cliente = $request->cliente;
-            $turno->telefono = $request->telefono;
-            $turno->email = $request->email;
-            $turno->fecha = $request->fecha;
-            $turno->modelo = $request->modelo;
-            $turno->dominio = $request->dominio;
-            $turno->servicio = $request->servicio;
-            $turno->sucursal_id = $request->sucursal;
-            $turno->comentario = $request->comentario;
 
-            $receptopres = [];
+             $rules = [
+                'cliente' => 'required|string', 
+                'telefono' =>'required|int', 
+                'email' => 'required|email', 
+                'modelo' => 'required|string',
+                'dominio' => 'required|string',
+                'servicio' => 'required|string',
+                'fecha' => 'required|string',
+                // 'g_recaptcha_response' => 'required|recaptcha',
+                'sucursal' => 'in:Sáenz Peña,Resistencia,Charata',
+                'from' => 'in:web-site, app',
+            ];
 
-            switch ($turno->sucursal_id) {
-                case 1:
-                    array_push($receptopres, "fabianaaranda@derkayvargas.com.ar");
+            $this->validate($request, $rules);
+
+            $turno = TurnoServicio::create($request->all());
+
+            switch ($turno->sucursal) {
+                case 'Sáenz Peña':
+                    Mail::to('eliasravarotto@derkayvargas.com.ar')->cc(['elias.ravarotto@gmail.com', 'elias_rvt@hotmail.com'])->send(new TurnoServicioReceived($turno));
+                    //"fabianaaranda@derkayvargas.com.ar";
                     break;
-                case 2:
-                    array_push($receptopres, "franciscozago@derkayvargas.com.ar", "marcoruiz@derkayvargas.com.ar", "federicow@derkayvargas.com.ar");
+                case 'Resistencia':
+                    Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
+                    //"franciscozago@derkayvargas.com.ar" "marcoruiz@derkayvargas.com.ar" "federicow@derkayvargas.com.ar";
                     break;
-                case 3:
-                    array_push($receptopres, "fabianaaranda@derkayvargas.com.ar");
+                case 'Charata':
+                    Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
+                    //"fabianaaranda@derkayvargas.com.ar"
                     break;
             }
-            
-            $turno->enviar_a = serialize($receptopres);
-            $turno->save();
-
-            event( new SeHaSolicitadoUnTurno($turno));
 
             if($request->is('api/*')){
-                return response()->json(['mensaje' => 'Turno solicitado.',
-                                         'status' => 200 ], 200);
+                return $this->showOne($turno, 200);
             }else{
                 return back()->with('success','Su turno fue solicitado, estaremos en contacto con usted a la brevedad para su confirmación');
             }
@@ -98,29 +105,6 @@ class TurnoServicioController extends Controller
     {
         $solicitud = TurnoServicio::find($id);
         return view('backend.solicitudes-turno.show', compact('solicitud'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

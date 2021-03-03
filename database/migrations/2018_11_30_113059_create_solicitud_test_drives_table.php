@@ -17,12 +17,12 @@ class CreateSolicitudTestDrivesTable extends Migration
             $table->increments('id');
             $table->string('cliente');
             $table->string('telefono');
+            $table->string('email');
             $table->string('modelo');
             $table->date('fecha_estimada');
             $table->boolean('solicitud_atendida');
+            $table->string('sucursal');
             $table->string('enviar_a');
-            $table->integer('sucursal_id')->unsigned();
-            $table->foreign('sucursal_id')->references('id')->on('sucursales');
             $table->timestamps();
         });
     }

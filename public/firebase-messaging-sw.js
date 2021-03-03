@@ -9,7 +9,7 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
-//Manejador de mensajes cuando la pp está en 2do plano.
+//Manejador de mensajes cuando la app está en 2do plano.
 messaging.setBackgroundMessageHandler(function(payload) {
 
   // Customize notification here

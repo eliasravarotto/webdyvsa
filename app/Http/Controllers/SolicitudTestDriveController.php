@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\SolicitudTestDrive;
 use App\Sucursal;
+use App\SolicitudTestDrive;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use App\Mail\TestDriveReceived;
+use Illuminate\Support\Facades\Mail;
 use App\Events\SeHaSolicitadoTestDrive;
 
 class SolicitudTestDriveController extends Controller
 {
+
+    use ApiResponser;
+
     /**
      * Display a listing of the resource.
      *
@@ -39,43 +45,45 @@ class SolicitudTestDriveController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $test_drive = new SolicitudTestDrive;
-            $test_drive->cliente = $request->cliente;
-            $test_drive->telefono = $request->telefono;
-            $test_drive->fecha_estimada = $request->fecha_estimada;
-            $test_drive->modelo = $request->modelo;
-            $test_drive->sucursal_id = $request->sucursal;
+        //return $request;
+        $rules = [
+            'cliente' => 'required',
+            'telefono' => 'required',
+            'email' => 'required',
+            'fecha_estimada' => 'required',
+            'modelo' => 'required',
+            // 'g_recaptcha_response' => 'required|recaptcha',
+            'sucursal' => 'in:Sáenz Peña,Resistencia,Charata,Villa Ángela',
+            'from' => 'in:app,web-site',
+        ];
 
-            switch ($request->sucursal) {
-                case 1:
-                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //SAENZ PEÑA
-                    break;
-                case 2:
-                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //RESISTENCIA
-                    break;
-                case 3:
-                   $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //CHARATA
-                    break;
-                case 4:
-                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //VILLA ANGELA
-                    break;
-                case 5:
-                    $email = env('RECEPTOR_EMAILS_TESTDRIVE'); // RESISTENCIA TPA
-                    break;
-            }
+        $this->validate($request, $rules);
 
-            $test_drive->enviar_a = $email;
-            $test_drive->save();
+        $test_drive = SolicitudTestDrive::create($request->all());
 
-
-            event( new SeHaSolicitadoTestDrive($test_drive));
-
-            return back()->with('success', 'Su solicitud fué enviada correctamente, estaremos en contacto con usted a la brevedad.');
+        switch ($request->sucursal) {
+            case 'Sáenz Peña':
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //SAENZ PEÑA
+                Mail::to($email)->send(new TestDriveReceived($test_drive));
+                break;
+            case 'Resistencia':
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //RESISTENCIA
+                Mail::to($email)->send(new TestDriveReceived($test_drive));
+                break;
+            case 'Charata':
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //CHARATA
+                Mail::to($email)->send(new TestDriveReceived($test_drive));
+                break;
+            case 'Villa Ángela':
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //VILLA ANGELA
+                Mail::to($email)->send(new TestDriveReceived($test_drive));
+                break;
         }
-        catch (\Exception $e) {
-            return back()->with('error', 'Lo sentimos ha ocurrido un error por favor intente más tarde');
-        }
+
+        $test_drive->enviar_a = $email;
+        $test_drive->save();
+
+        return $this->showOne($test_drive);
     }
 
     /**

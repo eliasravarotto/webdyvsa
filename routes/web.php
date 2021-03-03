@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth'], function(){
 							    		 "click_action" => "https://www.derkayvargas.com/usados"
 							    		]
 							    	],
-			  				"registration_ids" => $tokens
+			  				"to" => "eZcdyav7LjKGE_Uz22O4wU:APA91bExAOy4hGvPJzt9B_EeY3qX0Vrv6VMw8hTEs1WG5rxnoo5-ku1C5jfaWSPR2PpihbD2SCHtrCEmHMHxJuQorJN5HEGwe7d9Ifk_e2W7VtChJMzCqBfaGCnxHCHwAIRBC7CUwtyh"
 			  			);
 			  
 			$data_string = json_encode($data); 
@@ -80,7 +80,7 @@ Route::group(['middleware' => 'auth'], function(){
 		   $result = curl_exec($ch);
 		   curl_close($ch);
 
-		   return back()->with('success', 'Notificación enviada! '.$result);
+		   return back()->with('success', $result);
 	});
 
 });

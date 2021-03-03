@@ -21,13 +21,11 @@ class CreateTurnoServiciosTable extends Migration
             $table->date('fecha');
             $table->string('modelo');
             $table->string('dominio');
+            $table->string('from');
             $table->string('comentario')->nullable();
             $table->string('enviar_a');
             $table->string('servicio');
-
-            $table->integer('sucursal_id')->unsigned();
-            $table->foreign('sucursal_id')->references('id')->on('sucursales');
-
+            $table->string('sucursal');
             $table->timestamps();
         });
     }

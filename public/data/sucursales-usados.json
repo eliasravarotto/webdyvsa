@@ -2,21 +2,25 @@
 	{
 		"sucursal": "Sáenz Peña",
 		"direccion": "Belgrano Nº 872 (Calle 10 esq. 19)",
-		"telefonos": [ "(0364) 44 - 20602" ]
+		"telefonos": [ "(0364) 44 - 20602" ],
+		"horarios": "Lunes a Viernes: 8:00 a 12.30 hs. - 15:30 a 19:30 hs. | Sábados: 8:00 a 12:30 hs."
 	},
 	{
 		"sucursal": "Resistencia ",
 		"direccion": "Av. Sarmiento 1890",
-		"telefonos": [ "362 443 3300" ]
+		"telefonos": [ "362 443 3300" ],
+		"horarios": "Lunes a Viernes: 8:00 a 12.30 hs. - 15:30 a 19:30 hs. | Sábados: 8:00 a 12:30 hs."
 	},
 	{
 		"sucursal": "Charata",
 		"direccion": "Ruta 89 Km. 74",
-		"telefonos": [ "3735 15 620 255" ]
+		"telefonos": [ "3735 15 620 255" ],
+		"horarios": "Lunes a Viernes: 8:00 a 12.30 hs. - 15:30 a 19:30 hs. | Sábados: 8:00 a 12:30 hs."
 	},
 	{
 		"sucursal": "Villa Angela",
 		"direccion": "Av. 25 de Mayo Nº 1101",
-		"telefonos": [ "3735 423 200" ]
+		"telefonos": [ "3735 423 200" ],
+		"horarios": "Lunes a Viernes: 8:00 a 12.30 hs. - 15:30 a 19:30 hs. | Sábados: 8:00 a 12:30 hs."
 	}
 ]

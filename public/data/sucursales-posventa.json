@@ -5,7 +5,7 @@
 		"telefonos": [ "(0364) 44 - 20602" ],
 		"image": "/sucursal-toyota-saenzpena.jpg",
 		"whatsapp": "543644161066",
-		"horario": "Lunes a Viernes de 8 a 12:00 y 15:30 a 19:30 - Sábados de 8 a 12.30"
+		"horario": "Lunes a Viernes de 8 a 12:00 y 15:30 a 19:30 | Sábados de 8 a 12.30"
 	},
 	{
 		"sucursal": "Resistencia ",
@@ -13,7 +13,7 @@
 		"telefonos": [ "362 443 3300" ],
 		"image": "/sucursal-toyota-resistencia.jpg",
 		"whatsapp": "543625270614",
-		"horario": "Lunes a Viernes de 8 a 12:00 y 15:30 a 19:30 - Sábados de 8 a 12.30"
+		"horario": "Lunes a Viernes de 8 a 12:00 y 15:30 a 19:30 | Sábados de 8 a 12.30"
 	},
 	{
 		"sucursal": "Charata",
@@ -21,6 +21,6 @@
 		"telefonos": [ "3735 15 620 255" ],
 		"image": "/sucursal-toyota-charata.jpg",
 		"whatsapp": "543735620255",
-		"horario": "Lunes a Viernes de 8 a 12:00 y 15:30 a 19:30 - Sábados de 8 a 12.30"
+		"horario": "Lunes a Viernes de 8 a 12:00 y 15:30 a 19:30 | Sábados de 8 a 12.30"
 	}
 ]

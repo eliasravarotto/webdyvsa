@@ -9,8 +9,6 @@ class TurnoServicio extends Model
     //
     protected $table = 'turno_servicios';
 
-    public function sucursal()
-    {
-        return $this->belongsTo('App\Sucursal');
-    }   
+    protected $fillable = ['cliente', 'telefono', 'email', 'fecha', 'modelo', 'dominio', 'servicio', 'sucursal', 'comentario', 'from'];
+ 
 }
