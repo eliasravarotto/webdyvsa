@@ -114,11 +114,12 @@
                                                 @case('contacto')
                                                     <b>Contacto.</b>
                                                     @break
-
+                                                 @case('financiacion')
+                                                    <b>Financiación.</b>
+                                                    @break
                                                  @case('la_voz_del_cliente')
                                                     <b>La voz del Cliente.</b>
                                                     @break
-
                                                 @case('usados')
                                                     <b>Usados.</b>
                                                     @break
