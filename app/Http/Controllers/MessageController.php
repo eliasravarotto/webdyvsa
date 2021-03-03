@@ -52,24 +52,26 @@ class MessageController extends Controller
         $message = Message::create($request->all());
 
         if ($request->from == 'contacto' ){
-            Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new MessageReceived($message));
+            Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new MessageReceived($message));
         }
 
         if ($request->from == 'financiacion' ){
-            Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new MessageReceived($message));
+            Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new MessageReceived($message));
         }
 
         if ($request->from == 'tpa' ){
             $message->message .= ' - Localidad: ' . $request->localidad;
-            Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new MessageReceived($message));
+            Mail::to('santiagogaliano@derkayvargas.com.ar')->send(new MessageReceived($message));
         }
 
         if ($request->from == 'la_voz_del_cliente' ){
-            Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new MessageReceived($message));
+            Mail::to('matiasromero@derkayvargas.com.ar')
+                ->cc(['fabianaaranda@derkayvargas.com.ar'])
+                ->send(new MessageReceived($message));
         }
 
         if ($request->from == 'usados' ){
-            Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new MessageReceived($message));
+            Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new MessageReceived($message));
         }
 
         return $this->showOne($message);

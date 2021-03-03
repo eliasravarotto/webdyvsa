@@ -75,15 +75,17 @@ class TurnoServicioController extends Controller
 
             switch ($turno->sucursal) {
                 case 'Sáenz Peña':
-                    Mail::to('eliasravarotto@derkayvargas.com.ar')->cc(['elias.ravarotto@gmail.com', 'elias_rvt@hotmail.com'])->send(new TurnoServicioReceived($turno));
+                    Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
                     //"fabianaaranda@derkayvargas.com.ar";
                     break;
                 case 'Resistencia':
-                    Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
+                    Mail::to('franciscozago@derkayvargas.com.ar')
+                        ->cc(['marcoruiz@derkayvargas.com.ar', 'federicow@derkayvargas.com.ar'])
+                        ->send(new TurnoServicioReceived($turno));
                     //"franciscozago@derkayvargas.com.ar" "marcoruiz@derkayvargas.com.ar" "federicow@derkayvargas.com.ar";
                     break;
                 case 'Charata':
-                    Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
+                    Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
                     //"fabianaaranda@derkayvargas.com.ar"
                     break;
             }
