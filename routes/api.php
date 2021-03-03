@@ -23,6 +23,8 @@ Route::middleware('cliente')->get('/tipos-de-servicios','ApiController@getTiposS
 // Route::middleware('cliente')->post('/turno-servicio','TurnoServicioController@store');
 Route::middleware('cliente')->get('/sucursales/{sucursales_de?}','ApiController@getSucursales');
 
+Route::get('/slide_get_data/{id}','SlideController@getDataSlide');
+Route::get('/slide/{id}','SlideController@getDataSlide');
 Route::get('/entradas','PostController@getPosts')->name('posts');
 Route::get('/entradas/{slug}','PostController@getPost')->name('single_post');
 Route::get('/modelos','ModelosController@getModelos');
