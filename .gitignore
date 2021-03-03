@@ -4,6 +4,7 @@
 /public/imagenes/usados/*
 /public/imagenes/posts/*
 /public/imagenes/modelos/*
+/public/uploads/*
 /storage/*.key
 /vendor
 /.idea
