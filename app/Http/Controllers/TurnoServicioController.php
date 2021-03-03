@@ -53,7 +53,7 @@ class TurnoServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ReCaptchataTestFormRequest $request)
+    public function store(Request $request)
     {
 
              $rules = [

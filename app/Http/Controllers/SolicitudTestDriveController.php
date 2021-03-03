@@ -63,23 +63,19 @@ class SolicitudTestDriveController extends Controller
 
         switch ($request->sucursal) {
             case 'Sáenz Peña':
-                // $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //SAENZ PEÑA
-                $email  = 'eliasravarotto@derkayvargas.com.ar';
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //SAENZ PEÑA
                 Mail::to($email)->send(new TestDriveReceived($test_drive));
                 break;
             case 'Resistencia':
-                // $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //RESISTENCIA
-                $email = 'eliasravarotto@derkayvargas.com.ar';
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //RESISTENCIA
                 Mail::to($email)->send(new TestDriveReceived($test_drive));
                 break;
             case 'Charata':
-                // $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //CHARATA
-                $email = 'eliasravarotto@derkayvargas.com.ar';
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //CHARATA
                 Mail::to($email)->send(new TestDriveReceived($test_drive));
                 break;
             case 'Villa Ángela':
-                // $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //VILLA ANGELA
-                $email = 'eliasravarotto@derkayvargas.com.ar';
+                $email = env('RECEPTOR_EMAILS_TESTDRIVE'); //VILLA ANGELA
                 Mail::to($email)->send(new TestDriveReceived($test_drive));
                 break;
         }
