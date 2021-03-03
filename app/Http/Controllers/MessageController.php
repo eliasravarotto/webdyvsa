@@ -69,7 +69,6 @@ class MessageController extends Controller
         }
 
         if ($request->from == 'usados' ){
-            return $message;
             Mail::to('eliasravarotto@derkayvargas.com.ar')->send(new MessageReceived($message));
         }
 
