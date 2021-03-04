@@ -1,31 +1,31 @@
 [
 	{
 		"sucursal": "Sáenz Peña",
-		"image": "https://www.derkayvargas.com/sucursal-toyota-saenzpena.jpg",
+		"image": "/sucursal-toyota-saenzpena.jpg",
 		"direccion": "Belgrano Nº 872 (Calle 10 esq. 19)",
 		"telefonos": [ "364 44 20602", "364 44 20549", "364 44 20840"]
 	},
 	{
 		"sucursal": "Resistencia ",
-		"image": "https://www.derkayvargas.com/sucursal-toyota-resistencia.jpg",
+		"image": "/sucursal-toyota-resistencia.jpg",
 		"direccion": "Ruta Nicolas Avellaneda Km. 11,9",
 		"telefonos": [ "03624 764840", "03624 764841 ", "03624 764842", "03624 764844", "03624 764847", "03624 764852" ]
 	},
 	{
 		"sucursal": "Resistencia ",
-		"image": "https://www.derkayvargas.com/sucursal-toyota-resistencia-av-sarmiento.jpg",
+		"image": "/sucursal-toyota-resistencia-av-sarmiento.jpg",
 		"direccion": "Av. Sarmiento 1890",
 		"telefonos": ["362 44 33300"]
 	},
 	{
 		"sucursal": "Charata",
-		"image": "https://www.derkayvargas.com/sucursal-toyota-charata.jpg",
+		"image": "/sucursal-toyota-charata.jpg",
 		"direccion": "Ruta 89 Km. 74",
 		"telefonos": [ "3735 15 620 255" ]
 	},
 	{
 		"sucursal": "Villa Angela",
-		"image": "https://www.derkayvargas.com/sucursal-toyota-villaangela.jpg",
+		"image": "/sucursal-toyota-villaangela.jpg",
 		"direccion": "Av. 25 de Mayo Nº 1101",
 		"telefonos": [ "3735 423 200" ]
 	}
