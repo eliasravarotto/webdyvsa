@@ -39,9 +39,9 @@
 		    @endif
 		    <p id="texto">Click o Arrastrar para cambiar imagen</p>
 		    @if($post->id)
-		    <input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada" required>
-		    @else
 		    <input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada">
+		    @else
+		    <input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada" required>
 	 		@endif
 	 		<span class="text-danger">{{ $errors->first('imagen_portada') }}</span>
 		 </div>
