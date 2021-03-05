@@ -30,7 +30,9 @@ class PostController extends Controller
                         ->orderBy('created_at', 'DESC')
                         ->get();
 
-        return view('backend.posts.index', compact('posts'));
+        $categories = Category::orderBy('name')->get();
+
+        return view('backend.posts.index', compact('posts', 'categories'));
     }
 
     /**
@@ -62,6 +64,8 @@ class PostController extends Controller
         ]);
 
         $post = Post::create($request->all());
+
+        $post->categories()->sync($request->categories);
 
         if ($request->hasFile('imagen_portada')) {
 
@@ -169,18 +173,6 @@ class PostController extends Controller
         }
     }
 
-
-    public function showPost($slug)
-    {
-        $post = Post::where('slug', '=', $slug)->firstOrFail();
-
-        return view('frontend.posts.show', compact('post'));
-    }
-
-    public function showIndexPost(Request $request)
-    {
-        return view('frontend.posts.index');
-    }
 
     public function getPosts(Request $request)
     {

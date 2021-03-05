@@ -44,7 +44,7 @@
 		        </form>
 			</div>
 		</div>
-		<form action="{{ route('posts.update', $post->id) }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
+		<form action="{{ route('posts.update', $post->id) }}" method="POST" autocomplete="off" enctype="multipart/form-data" files="true">
 			{{ csrf_field() }}
     		<input name="_method" type="hidden" value="PUT">
             @include('backend.posts.form')

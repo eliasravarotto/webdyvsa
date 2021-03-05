@@ -7,7 +7,7 @@
         <span class="float-right">Creado: {{ date('d-m-Y H:m', strtotime($solicitud->created_at))}}</span>
     </div>
     <div class="card-body">
-    	<table class="table table-striped">
+    	<table class="table table-sm">
         <tbody>
           <tr>
             <th>Apellido y Nombre</th>
@@ -27,7 +27,7 @@
           </tr>
           <tr>
             <th>Sucursal</th>
-            <td>{{ $solicitud->sucursal->nombre }}</td>
+            <td>{{ $solicitud->sucursal }}</td>
           </tr>
           <tr>
             <th>Unidad</th>

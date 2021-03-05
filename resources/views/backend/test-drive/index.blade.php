@@ -26,7 +26,7 @@
                 <td>{{$solicitud->cliente}}</td>
                 <td>{{$solicitud->telefono}}</td>
                 <td>{{$solicitud->modelo}}</td>
-                <td>{{$solicitud->sucursal->localidad}}</td>
+                <td>{{$solicitud->sucursal}}</td>
                 <td>{{$solicitud->enviar_a}}</td>
                 <td>{{ date('d-m-Y H:m', strtotime($solicitud->created_at))}}</td>
                 @endforeach

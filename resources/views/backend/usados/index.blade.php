@@ -1,6 +1,6 @@
 @extends('backend.layout')
 
-@section('content')
+@section('stylesheet')
 <style type="text/css">
     .precio{
         color: black;
@@ -18,6 +18,11 @@
         }
     }
 </style>
+@stop
+
+
+@section('content')
+
     <div class="card border-info" id="app_index">
         <div class="card-header bg-default font-weight-bold">
             USADOS

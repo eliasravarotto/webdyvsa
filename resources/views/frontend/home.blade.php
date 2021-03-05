@@ -160,12 +160,12 @@
       <div class="container">
           <div class="row row-2">
             <div class="col-lg-4 col-md-12 col-pad">
-                  <div class="grid-box" onclick="window.location.href = '{{route('usados_index')}}';">
+                  <div class="grid-box" onclick="#">
                       <div class="grid-box_bg_box grid-box_long_bg cat-4-bg">
                           <div class="grid-box-overlay">
                               <div class="grid-box-content">
                                   <h3 class="grid-box-title my-1">
-                                      <a href="{{route('usados_index')}}">USADOS</a>
+                                      <a href="#">USADOS</a>
                                   </h3>
                                   <h5 class="grid-box-subtitle my-1">Usados Certificados Toyota</h5>
                                   <h5 class="grid-box-subtitle">Usados Seleccionados</h5>
@@ -177,12 +177,12 @@
               <div class="col-lg-4 col-md-12">
                   <div class="row">
                       <div class="col-md-6 col-lg-12 col-pad">
-                          <div class="grid-box" onclick="window.location.href = '{{route('landing_tpa')}}';">
+                          <div class="grid-box" >
                               <div class="grid-box_bg_box bg-grid-box-tpa">
                                   <div class="grid-box-overlay">
                                       <div class="grid-box-content">
                                           <h3 class="grid-box-title">
-                                              <a href="{{route('landing_tpa')}}">TOYOTA PLAN DE AHORRO</a>
+                                              <a href="#">TOYOTA PLAN DE AHORRO</a>
                                           </h3>
                                           <h5 class="grid-box-subtitle">Accede a un Toyota 100% financiado</h5>
                                       </div>
@@ -191,12 +191,12 @@
                           </div>
                       </div>
                       <div class="col-md-6 col-lg-12 col-pad">
-                        <div class="grid-box" onclick="window.location.href = '{{route('mobility_services')}}';">
+                        <div class="grid-box">
                             <div class="grid-box_bg_box cat-5-bg">
                                 <div class="grid-box-overlay">
                                     <div class="grid-box-content">
                                         <h3 class="grid-box-title">
-                                            <a href="{{route('mobility_services')}}">MOBILITY SERVICES</a>
+                                            <a href="#">MOBILITY SERVICES</a>
                                         </h3>
                                         <h4 class="grid-box-subtitle">Alquilá un Toyota</h4>
                                     </div>
@@ -211,10 +211,10 @@
                       <div class="col-md-6 col-lg-12 col-pad">
                           <div class="grid-box">
                               <div class="grid-box_bg_box cat-2-bg">
-                                  <div class="grid-box-overlay" onclick="window.location.href = '{{route('accesorios')}}';">
+                                  <div class="grid-box-overlay">
                                       <div class="grid-box-content">
                                           <h3 class="grid-box-title">
-                                              <a href="{{route('accesorios')}}">ACCESORIOS</a>
+                                              <a href="#">ACCESORIOS</a>
                                           </h3>
                                           <h5 class="grid-box-subtitle">Equipá tu Toyota</h5>
                                       </div>
@@ -225,10 +225,10 @@
                       <div class="col-md-6 col-lg-12 col-pad">
                           <div class="grid-box">
                               <div class="grid-box_bg_box cat-3-bg">
-                                  <div class="grid-box-overlay" onclick="window.location.href = '{{route('posventa')}}';">
+                                  <div class="grid-box-overlay">
                                       <div class="grid-box-content">
                                           <h3 class="grid-box-title">
-                                              <a href="{{route('posventa')}}">SERVICIOS DE POSVENTA</a>
+                                              <a href="#">SERVICIOS DE POSVENTA</a>
                                           </h3>
                                           <h5 class="grid-box-subtitle">Precios, turnos y más</h5>
                                       </div>
@@ -256,7 +256,7 @@
             @foreach(\App\Helpers\Helper::getModelosDestacados() as $modelo)
             <div class="car-box item pl-1 pr-1">
               <div class="car-thumbnail bg-gris">
-                  <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="car-img">
+                  <a href="#" class="car-img">
                       @if ($modelo->es_hibrido)
                       <div class="tag">HÍBRIDO</div>
                       @endif
@@ -271,14 +271,14 @@
                       </a>
                   </div>
                   <div class="w-100 text-center">
-                    <a href="{{route('detalle_modelo', $modelo->nombre)}}" class="text-info font-weight-600">VER MODELO</a>
+                    <a href="#" class="text-info font-weight-600">VER MODELO</a>
                   </div>
               </div>
             </div>
             @endforeach
       </div>
       <div class="w-100 text-center mb-4">
-        <a href="{{route('modelos')}}" class="btn btn-lg btn-danger btn-round mt-3">VER TODOS</a>
+        <a href="#" class="btn btn-lg btn-danger btn-round mt-3">VER TODOS</a>
       </div>
     </div>
   </section>
@@ -327,7 +327,7 @@
       <div class="row">
           @foreach(\App\Helpers\Helper::getPostsByCategories(['novedades', 'rse'], 6) as $post)
             <div class="col-md-4 col-sm-12 py-2">
-              <a href="{{ route('show_post', $post->slug) }}">
+              <a href="#">
                 <div class="card d-flex flex-column justify-content-between box-shadow-2">
                   <div class="container-img" style="background: url({{$post->image['public_path']}})"></div> 
                     <div class="card-body d-flex flex-column justify-content-end" style="height: 240px;">
@@ -347,7 +347,7 @@
       </div>
       <div class="row my-5">
         <div class="col-sm-12 text-center">
-          <a href="{{route('posts')}}?categoria=novedades" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
+          <a href="#" class="btn btn-outline-black btn-round text-center-sm">Ver todas</a>
         </div>
       </div>
     </div>

@@ -6,11 +6,9 @@
             <a class="nav-link" href="/">INICIO</a>
           </li>
           <li class="nav-item {{Request::path() == 'modelos' ? 'active' : ''}}">
-            {{-- <a class="" href="{{route('modelos')}}">MODELOS</a> --}}
-            <a class="nav-link" href="{{route('modelos')}}">MODELOS</a>
+            <a class="nav-link" href="#">MODELOS</a>
           </li>
           <li class="nav-item {{Request::path() == 'plan-de-ahorro' ? 'active' : ''}}">
-            {{-- <a class="" href="/plan-de-ahorro">PLAN DE AHORRO</a> --}}
             <a class="nav-link" href="/plan-de-ahorro">PLAN DE AHORRO</a>
           </li>
           <li class="nav-item">
@@ -32,15 +30,13 @@
               <a class="dropdown-item" href="/turno-servicios/create">Turnos Online</a>
             </div>
           </li>
-          <li class="nav-item {{Request::path() == route('mobility_services') ? 'active' : ''}}">
-            <a class="nav-link" href="{{route('mobility_services')}}"> <img style="vertical-align: initial; width: 65px" src="{{asset('imagenes/kinto/logo-kinto.png')}}"></a>
+          <li class="">
+            <a class="nav-link" href="#"> <img style="vertical-align: initial; width: 65px" src="{{asset('imagenes/kinto/logo-kinto.png')}}"></a>
           </li>
           <li class="nav-item">
-            {{-- <a class="" href="{{route('rse')}}">RSE</a> --}}
-            <a class="nav-link" href="{{route('rse')}}">RSE</a>
+            <a class="nav-link" href="#">RSE</a>
           </li>
           <li class="nav-item {{Request::path() == 'contacto' ? 'active' : ''}}">
-            {{-- <a class="" href="/contacto">CONTACTO</a> --}}
             <a class="nav-link" href="/contacto">CONTACTO</a>
           </li>
         </ul>

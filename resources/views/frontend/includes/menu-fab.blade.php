@@ -10,15 +10,15 @@
     <div class="float-btn-group">
       <button class="btn-float btn-triger bg-rojo-toyota"><i class="icon-bars"></i></button>
         <div class="btn-list">
-          <a class="btn-float bg-opacity-68" data-label="testdrive" href="{{route('test_drive_form')}}"><i class="stm-icon-steering_wheel"></i></a>
-          <a class="btn-float bg-opacity-68" data-label="pedirturno" href="{{route('turno_servicio_create')}}"><i class="material-icons">build</i></a>
+          <a class="btn-float bg-opacity-68" data-label="testdrive" href=""><i class="stm-icon-steering_wheel"></i></a>
+          <a class="btn-float bg-opacity-68" data-label="pedirturno" href="#"><i class="material-icons">build</i></a>
           <a class="btn-float bg-whatsapp2" data-label="dejarcomentario" href="#" data-toggle="modal" data-target="#modal-lvdc"><i class="stm-icon-chat">   </i></a>
         </div>
     </div>
     <div class="float-btn-group2">
         <div class="btn-list">
-          <a class="bg-rojo-toyota" id="testdrive" href="{{route('test_drive_form')}}" style="right: 50px; top: -152px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9; display: none;">Hacer TESTDRIVE</a>
-          <a class="bg-rojo-toyota" id="pedirturno" href="{{route('turno_servicio_create')}}" style="right: 50px; top: -100px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9; display: none;">Pedir TURNO</a>
+          <a class="bg-rojo-toyota" id="testdrive" href="#" style="right: 50px; top: -152px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9; display: none;">Hacer TESTDRIVE</a>
+          <a class="bg-rojo-toyota" id="pedirturno" href="#" style="right: 50px; top: -100px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9; display: none;">Pedir TURNO</a>
           <a class="bg-rojo-toyota" id="dejarcomentario" href="#" data-toggle="modal" data-target="#modal-lvdc" style="right: 50px; top: -44px; width: max-content; padding: 3px 5px; background-color: black; border-radius: 7px; color: white; opacity: 0.9; display: none; ">Dejar un COMENTARIO</a>
         </div>
       </div>

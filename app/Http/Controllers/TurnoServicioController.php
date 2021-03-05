@@ -26,26 +26,11 @@ class TurnoServicioController extends Controller
      */
     public function index()
     {
-        $solicitudes = TurnoServicio::with('sucursal')->get();
+        $solicitudes = TurnoServicio::all();
         
         return view('backend.solicitudes-turno.index', compact('solicitudes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
-        $sucursales = Sucursal::where('tiene_posventa', '=', 1)->get();
-
-        $servicios = Servicio::groupBy('nombre')->get();
-
-        $modelos = Modelo::where('activo', 1)->orderBy('orden', 'ASC')->get();
-
-        return view('frontend.posventa.form-turno-servicio', compact('sucursales','servicios', 'modelos', 'request'));
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -56,7 +41,7 @@ class TurnoServicioController extends Controller
     public function store(Request $request)
     {
 
-             $rules = [
+            $rules = [
                 'cliente' => 'required|string', 
                 'telefono' =>'required|int', 
                 'email' => 'required|email', 
@@ -95,18 +80,6 @@ class TurnoServicioController extends Controller
             }else{
                 return back()->with('success','Su turno fue solicitado, estaremos en contacto con usted a la brevedad para su confirmación');
             }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $solicitud = TurnoServicio::find($id);
-        return view('backend.solicitudes-turno.show', compact('solicitud'));
     }
 
     /**

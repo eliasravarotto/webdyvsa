@@ -4,7 +4,7 @@
 			<div class="col-md-12">
 				<div class="form-group requerido">
 					<label class="control-label mb-1">Título</label>
-					<input name="titulo" type="text" class="form-control" value="{{ $post->titulo or old('titulo') }}">
+					<input name="titulo" type="text" class="form-control" value="{{ $post->titulo or old('titulo') }}" required>
 					<span class="text-danger">{{ $errors->first('titulo') }}</span>
 				</div>
 			</div>
@@ -14,7 +14,7 @@
 				<div class="form-group requerido">
 					<label class="control-label mb-1">Categorías</label>
 					<span class="text-danger">{{ $errors->first('categories') }}</span>
-					<select class="from-select form-control w-100"  multiple="multiple" name="categories[]">
+					<select class="from-select form-control w-100"  multiple="multiple" name="categories[]" required>
 			            @foreach( $categories as $c )
 			                <option value="{{$c->id}}" @if($post->categories()->get()->contains($c)) selected @endif>{{$c->name}}</option>
 			            @endforeach
@@ -38,7 +38,7 @@
 		 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
 		    @endif
 		    <p id="texto">Click o Arrastrar para cambiar imagen</p>
-		    <input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title=" ">
+		    <input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada" required>
 	 		<span class="text-danger">{{ $errors->first('imagen_portada') }}</span>
 		 </div>
 	</div>

@@ -105,79 +105,12 @@ class MensajeEmailController extends Controller
                 $mensaje->from = $from;
                 $mensaje->enviar_a = $enviar_a;
                 $mensaje->save();
-                $cc = ['maurovargas@derkayvargas.com.ar'];
+                $cc = ['eliasravarotto@gmail.com'];
                 event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
                 break;
         }
 
         return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
-    }
-
-    public function storeContactTpa(Request $request)
-    {
-        $this->validate($request, [
-            'from' => 'required',
-            'cliente' => 'required',
-            'telefono' => 'required',
-            'localidad' => 'required',
-            'g-recaptcha-response' => 'required',
-        ]);
-        
-        $from = 'tpa';
-        $enviar_a = env('RECEPTOR_EMAILS_TPA');
-
-        $mensaje = new MensajeEmail;
-        $mensaje->cliente = $request->cliente;
-        $mensaje->telefono = $request->telefono;
-        $mensaje->mensaje = 'Localidad: '.$request->localidad.'.  - Mensaje: '.$request->mensaje;
-        $mensaje->from = $from;
-        $mensaje->email = 'sistemas.derkayvargas@gmail.com';
-        $mensaje->enviar_a = $enviar_a;
-        $mensaje->derivar_a = 'TPA';
-        $mensaje->save();
-
-        $asunto ='Consulta desde Pagina Web TPA';
-        $cc = ['maurovargas@derkayvargas.com'];
-        event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
-        
-        return back()->with('success','Su mensaje ha sido enviado, estaremos en contacto con usted a la brevedad!');
-       
-
-    }
-
-    public function storeVozDelCli(ReCaptchataTestFormRequest $request)
-    {
-        $this->validate($request, [
-            'vdc_from' => 'required',
-            'vdc_cliente' => 'required',
-            'vdc_email' => 'required',
-            'vdc_telefono' => 'required',
-            'vdc_sucursal' => 'required',
-            'vdc_mensaje' => 'required',
-            'g-recaptcha-response' => 'required',
-        ], [
-            'vdc_cliente.required' => 'El campo nombre y apellido es obligatorio',
-            'vdc_email.required' => 'El campo email es obligatorio',
-            'vdc_telefono.required' => 'El campo teléfono es obligatorio',
-            'vdc_sucursal.required' => 'El campo sucursal es obligatorio',
-            'vdc_mensaje.required' => 'El campo mensaje es obligatorio',
-        ]);
-
-        $mensaje = new MensajeEmail;
-        $mensaje->cliente = $request->vdc_cliente;
-        $mensaje->telefono = $request->vdc_telefono;
-        $mensaje->email = $request->vdc_email;
-        $mensaje->derivar_a = $request->vdc_sucursal;
-        $mensaje->mensaje = $request->vdc_mensaje;
-        $mensaje->from = $request->vdc_from;
-        $mensaje->enviar_a = env('RECEPTOR_EMAILS_VOZ_DEL_CLIENTE');
-        $mensaje->save();
-        $asunto ='La voz del Cliente - Nuevo Mensaje';
-        $cc = ['maurovargas@derkayvargas.com.ar', 'fabianaaranda@derkayvargas.com.ar'];
-
-        event( new HaIngresadoUnaConsulta($mensaje, $asunto, $cc));
-
-        return back()->with('success','Gracias por escribirnos, su mensaje ha sido enviado.');
     }
 
     /**

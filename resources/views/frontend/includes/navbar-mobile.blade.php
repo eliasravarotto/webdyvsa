@@ -16,8 +16,8 @@
         <li class="{{Request::path() == 'financiacion' ? 'active' : ''}}"><a href="/financiacion">Financiación</a></li>
         <li class="{{Request::path() == 'usados' ? 'active' : ''}}"><a href="/usados">Usados</a></li>
         <li class="{{Request::path() == 'posventa' ? 'active' : ''}}"><a href="/posventa">Posventa</a></li>
-        <li class="{{Request::path() == route('mobility_services') ? 'active' : ''}}"><a href="{{route('mobility_services')}}">Mobility</a></li>
-        <li class="{{Request::path() == 'responsabilidad-social-empresarial' ? 'active' : ''}}"><a href="{{route('rse')}}">RESPONSABILIDAD SOCIAL EMPRESARIAL</a></li>
+        <li class="{{Request::path() == '' ? 'active' : ''}}"><a href="">Mobility</a></li>
+        <li class="{{Request::path() == 'responsabilidad-social-empresarial' ? 'active' : ''}}"><a href="#">RESPONSABILIDAD SOCIAL EMPRESARIAL</a></li>
         <li class="{{Request::path() == 'contacto' ? 'active' : ''}}"><a href="/contacto">Contacto</a></li>
       </ul>
     </nav>
