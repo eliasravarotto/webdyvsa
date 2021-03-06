@@ -107,6 +107,18 @@ class FrontController extends Controller
         
     }
 
+    public function usadosContactForm(Request $request)
+    {
+
+            $unidades = Usado::where('visible', 1)
+                                ->orderBy('uct', 'DESC')
+                                ->orderBy('orden', 'ASC')
+                                ->get();
+
+            return view('frontend.usados.contact-form', compact('unidades'));
+
+    }
+
     public function arrayPaginator($array, $request, $cantidad_registros = 20)
     {
         $page = Input::get('page', 1);
