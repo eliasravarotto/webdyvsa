@@ -99,7 +99,6 @@ class ModelosController extends Controller
 
         $modelo = Modelo::findOrfail($id);
 
-        $modelo->update($request->all());
 
         if ($request->img_logo ) {
             if ($modelo->img_logo)
@@ -115,6 +114,7 @@ class ModelosController extends Controller
             $modelo->img_modelo = $this->storeFile($request->file('img_modelo'), 'public/modelos');
         }      
 
+        $modelo->update($request->all());
 
         \Session::flash('flash_message','Modelo actualizado correctamente'); //<--FLASH MESSAGE
 
