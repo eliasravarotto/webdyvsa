@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
@@ -43,6 +44,24 @@ trait ImageHandler
             'name' => $name,
             'imagePath' => $imagePath,
         ];
+    }
+
+    /**
+     * Almacena un archivo en el storage y retorna el public path.
+     *
+     * param  use Illuminate\Http\UploadedFile $file, String $storagePath 
+     * return String $publicPath of File
+     */
+    private function storeFile(UploadedFile $file, $storagePath = null){
+
+        if ($storagePath == null)
+            $file_path = Storage::put('public/fotos', $file);
+
+        if ($storagePath != null)
+            $file_path = Storage::put($storagePath, $file);
+
+        // Retorna el public path deñ archivo
+        return Storage::url($file_path);
     }
 
 }

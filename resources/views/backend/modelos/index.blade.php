@@ -14,35 +14,43 @@
         <table class="table table-sm table-hover">
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Hibrido</th>
-                <th>Orden</th>
-                <th>Activo</th>
+                <th>#ID</th>
+                <th>Detalles</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               @foreach($modelos as $modelo)
               <tr>
-                <td>{{$modelo->id}}</td>
-                <td>{{$modelo->marca->nombre}}</td>
-                <td>{{$modelo->nombre}}</td>
+                <td><a class="btn-link" href="/admin/modelos/{{ $modelo->id }}/edit">#{{$modelo->id}}</a></td>
                 <td>
-                  @if( $modelo->es_hibrido ) 
-                    <img src="{{asset('imagenes/logos/logohibrido.jpg')}}" style="height: 30px">
-                  @else
-                    -
-                  @endif
-                </td>
-                <td>{{$modelo->orden}}</td>
-                <td>
-                  @if( $modelo->activo ) 
-                    <i class="fa fa-check text-success"></i>
-                  @else
-                    <i class="fa fa-close text-danger"></i>
-                  @endif
+                  <div class="d-flex">
+                    <div>
+                      @if($modelo->img_modelo)
+                        <img src="{{$modelo->img_modelo}}" width="150">
+                      @else
+                        <img src="/imagenes/default.png" width="150">
+                      @endif
+                    </div>
+                    <div>
+                      <p class="text-muted mb-0"> <small style="font-size: 13px">{{ $modelo->marca->nombre }}</small></p>
+                      <p class="mb-2 font-weight-bold text-uppercase">{{ $modelo->nombre }}</p>
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                           @if( $modelo->activo ) 
+                            <span class="badge badge-success"><i class="fa fa-check"></i> Activo</span>
+                            @else
+                            <span class="badge badge-danger"><i class="fas fa-minus-circle"></i> NO activo</span>
+                            @endif
+                        </li>
+                        <li class="list-inline-item">
+                          @if( $modelo->es_hibrido ) 
+                            <img src="{{asset('imagenes/logos/logohibrido.jpg')}}" style="height: 25px">
+                          @endif
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </td>
                 <td>
                   {{-- <a href="{{ route('modelos.show', $modelo->id) }}" class="btn btn-outline-info"><i class="fa fa-eye" aria-hidden="true"></i></a> --}}

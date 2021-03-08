@@ -92,18 +92,10 @@
 
 <body>
   
-  @include('frontend.includes.la-voz-del-cliente')
-  @include('frontend.includes.menu-fab')
-  {{-- @include('frontend.includes.chat-whatsapp') --}}
-
   <div id="app">
     @include('frontend.includes.header-desk')
-    @include('frontend.includes.navbar-mobile')
-    @include('frontend.includes.navbar-desk')
 
     @yield('content')
-
-    @include('frontend.includes.footer')
 
     <div class="modal modal-push-subscription" tabindex="-1" id="modalPush">
       <div class="modal-dialog">

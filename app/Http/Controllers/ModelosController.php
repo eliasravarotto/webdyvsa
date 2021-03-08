@@ -56,35 +56,21 @@ class ModelosController extends Controller
      */
     public function store(Request $request)
     {
-        $modelo_name = strtolower($request->nombre);
-       
-        if ($request->hasFile('img_logo')) {
-            $logo_img = $request->file('img_logo');
-            $logo_name = $request->file('img_logo')->getClientOriginalName();
-            $logo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$logo_name);
-        }
+        $modelo = Modelo::create($request->all());
 
         if ($request->hasFile('img_logo')) {
-            $modelo_img = $request->file('img_modelo');
-            $modelo_name_img = $request->file('img_modelo')->getClientOriginalName();
-            $modelo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$modelo_name_img);
+            $modelo->img_logo = $this->storeFile($request->file('img_logo'), 'public/modelos');
         }
 
-        $modelo = new Modelo;
-        $modelo->nombre = $request->nombre;
-        $modelo->tipo_vehiculo_id = $request->tipo_vehiculo_id;
-        $modelo->slogan = $request->slogan;
-        $modelo->descripcion = $request->descripcion;
-        $modelo->link_ficha_tecnica = $request->ficha_tecnica;
-        $modelo->link_catalogo = $request->catalogo;
-        $modelo->img_logo = '/imagenes/modelos/'.$modelo_name.'/'.$logo_name;
-        $modelo->img_modelo = '/imagenes/modelos/'.$modelo_name.'/'.$modelo_name_img;
+        if ($request->hasFile('img_modelo')) {
+            $modelo->img_modelo = $this->storeFile($request->file('img_modelo'), 'public/modelos');
+        }
 
-        $modelo->save();
+        $modelo->update();
 
         \Session::flash('flash_message','Modelo guardado correctamente.'); //<--FLASH MESSAGE
 
-        return redirect('admin/modelos');
+        return redirect('admin/modelos/' . $modelo->id . '/edit');
     }
 
     /**
@@ -111,32 +97,20 @@ class ModelosController extends Controller
     public function update(Request $request, $id)
     {
 
-         //return $request;
-        $modelo = Modelo::find($id);
-        $modelo_name = strtolower($request->nombre);
+        $modelo = Modelo::findOrfail($id);
 
-        if ($request->img_modelo ) {
-            unlink(public_path().$modelo->img_modelo);
-            $modelo_img = $request->file('img_modelo');
-            $modelo_name_img = $request->file('img_modelo')->getClientOriginalName();
-            $modelo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$modelo_name_img);
-            $modelo->img_modelo = '/imagenes/modelos/'.$modelo_name.'/'.$modelo_name_img;
-        }
+        $modelo->update($request->all());
+
         if ($request->img_logo ) {
             unlink(public_path().$modelo->img_logo);
-            $logo_img = $request->file('img_logo');
-            $logo_name = $request->file('img_logo')->getClientOriginalName();
-            $logo_img->move(public_path().'/imagenes/modelos/'.$modelo_name.'/',$logo_name);
-            $modelo->img_logo = '/imagenes/modelos/'.$modelo_name.'/'.$logo_name;
+            $modelo->img_logo = $this->storeFile($request->file('img_logo'), 'public/modelos');
         } 
+        
+        if ($request->img_modelo ) {
+            unlink(public_path().$modelo->img_modelo);
+            $modelo->img_modelo = $this->storeFile($request->file('img_modelo'), 'public/modelos');
+         }
 
-        $modelo->nombre = $request->nombre;
-        $modelo->slogan = $request->slogan;
-        $modelo->tipo_vehiculo_id = $request->tipo_vehiculo_id;
-        $modelo->descripcion = $request->descripcion;
-        $modelo->link_ficha_tecnica = $request->ficha_tecnica;
-        $modelo->link_catalogo = $request->catalogo;
-        $modelo->update();
 
         \Session::flash('flash_message','Modelo actualizado correctamente'); //<--FLASH MESSAGE
 
@@ -153,10 +127,10 @@ class ModelosController extends Controller
     {
         $modelo = Modelo::find($id);
         if (file_exists(public_path().$modelo->img_modelo)) {
-            unlink(public_path().$modelo->img_modelo);
+            unlink($modelo->img_modelo);
         }
         if (file_exists(public_path().$modelo->img_logo)) {
-            unlink(public_path().$modelo->img_logo);
+            unlink($modelo->img_logo);
         }
 
         $modelo->delete();
@@ -194,7 +168,7 @@ class ModelosController extends Controller
                     Storage::delete($imagenColor->url);
 
                     $file = $request->file('old_img_colores')[$i];
-                    $file_path = Storage::put('public/fotos', $file);
+                    $file_path = Storage::put('public/modelos', $file);
                     $imagenColor->url = $file_path;
                     $imagenColor->public_path = Storage::url($file_path);
                 }
@@ -207,7 +181,7 @@ class ModelosController extends Controller
         for( $i=0 ; $i < sizeof($request->img_colores) ; $i++ ) {
 
             $file = $request->file('img_colores')[$i];
-            $file_path = Storage::put('public/fotos', $file);
+            $file_path = Storage::put('public/modelos', $file);
 
             $imagen_color = new ImagenColorModelo;
             $imagen_color->modelo_id = $modelo->id;
@@ -313,18 +287,7 @@ class ModelosController extends Controller
 
     public function updateParallax(Request $request, $id)
     {
-        $modelo = Modelo::find($id);
-        $modelo_name = strtolower($modelo->nombre);
-        $parallax = new ParallaxModelo;
-        $parallax->modelo_id = $modelo->id;
-        $parallax->texto = $request->texto;
-        $file = $request->file('img');
-        $filename = $request->file('img')->getClientOriginalName();
-        $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/parallax/',$filename);
-        $parallax->imagen = '/imagenes/modelos/'.$modelo_name.'/parallax/'.$filename;
-        $parallax->save();
-
-        return redirect('admin/modelos');
+        return;
     }
 
     //------------------------------------------------------------
@@ -454,4 +417,5 @@ class ModelosController extends Controller
 
         return $this->showOne($modelo);
     }
+
 }

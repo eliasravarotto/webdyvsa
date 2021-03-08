@@ -78,7 +78,7 @@
 							            <div class="row">
 							                <div class="col-md-12 text-left">
 							                    <div class="form-group name">
-							                        <input type="text" name="cliente" class="form-control" placeholder="Nombre y Apellido" value="{{old('cliente')}}">
+							                        <input type="text" name="cliente" class="form-control" placeholder="Nombre y Apellido" value="{{old('cliente')}}" required>
 							                        <span class="text-danger">
 							                            {{  $errors->first('cliente') }}
 							                        </span>                    
@@ -86,7 +86,7 @@
 							                </div>
 							                <div class="col-md-12">
 							                    <div class="form-group email">
-							                        <input type="number" name="telefono" class="form-control" placeholder="Teléfono o celular" value="{{old('telefono')}}">
+							                        <input type="number" name="telefono" class="form-control" placeholder="Teléfono o celular" value="{{old('telefono')}}" required>
 							                        <span class="text-danger">
 							                            {{  $errors->first('telefono') }}
 							                        </span>
@@ -98,7 +98,7 @@
 							                    </div>
 							                </div> --}}
 							                <div class=" col-md-12">
-							                    <select class="form-control" name="sucursal">
+							                    <select class="form-control" name="sucursal" required>
 							                    	<option>--Selecciona una sucursal--</option>
 							                        <option value="Sáenz Peña">Sáenz Peña</option>
 							                        <option value="Resistencia" >Resistencia</option>
@@ -129,7 +129,7 @@
 												  		</div>
 								                    @endforeach
 							                    </div>
-							                    <input type="hidden" name="vehicle_id" id="vehicle_id">
+							                    <input type="hidden" name="vehicle_id" id="vehicle_id" required>
 							                </div>
 							                <div class="col-md-12 py-3">
 							                    <div class="g-recaptcha" 
