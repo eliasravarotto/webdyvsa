@@ -88,14 +88,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 Route::get('/','FrontController@homeMin');
 Route::get('/icons','FrontController@icons');
-Route::get('/contacto','FrontController@contacto')->name('contacto');
-Route::post('/contacto','MensajeEmailController@store');
 Route::post('/usados/filter','FrontController@usadosFilter');
 Route::get('/push-subscription/{token}','FrontController@subscribeClient');
 Route::delete('/push-subscription/{token}','FrontController@unsubscribeClient');
-Route::get('/cotiza-tu-vehiculo-online-como-funciona','FrontController@cotizadorOnlineComoFunciona')->name('cotizador_online_como_funciona');
 
-Route::get('/slide_get_data/{id}','SlideController@getDataSlide');
 
 
 /*******************************************

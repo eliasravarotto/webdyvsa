@@ -24,17 +24,9 @@ class FrontController extends Controller
 
     public function homeMin()
     {
-        $push_cookie = \Request::cookie('quiere_suscribirse', 1, 3600*24);
-
-        return view('frontend.home', compact('push_cookie'));
+        return redirect()->away('https://derkayvargas.com/');
     }
 
-
-
-    public function contacto()
-    {
-        return view('frontend.contacto.index');
-    }
 
 
     public function checkIfTokenExist(Request $request, $token)
