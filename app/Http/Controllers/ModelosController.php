@@ -102,18 +102,18 @@ class ModelosController extends Controller
         $modelo->update($request->all());
 
         if ($request->img_logo ) {
-            if ($modelo->img_logo) {
+            if ($modelo->img_logo)
                 unlink(public_path().$modelo->img_logo);
     
             $modelo->img_logo = $this->storeFile($request->file('img_logo'), 'public/modelos');
         } 
         
         if ($request->img_modelo ) {
-            if ($modelo->img_modelo) {
+            if ($modelo->img_modelo)
                 unlink(public_path().$modelo->img_modelo);
     
             $modelo->img_modelo = $this->storeFile($request->file('img_modelo'), 'public/modelos');
-         }
+        }      
 
 
         \Session::flash('flash_message','Modelo actualizado correctamente'); //<--FLASH MESSAGE
