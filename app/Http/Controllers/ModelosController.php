@@ -32,7 +32,7 @@ class ModelosController extends Controller
      */
     public function index()
     {
-        $modelos = Modelo::with('marca')->get();
+        $modelos = Modelo::with('marca')->orderBy('nombre')->get();
         return view('backend.modelos.index', compact('modelos'));
     }
 
