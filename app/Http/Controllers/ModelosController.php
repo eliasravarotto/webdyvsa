@@ -244,18 +244,15 @@ class ModelosController extends Controller
     public function updateCaracteristicas(Request $request, $id)
     {
         $modelo = Modelo::find($id);
-        $modelo_name = strtolower($modelo->nombre);
         $total = count($request->img);
+        
         if ($total>0) {
             for( $i=0 ; $i < $total ; $i++ ) {
-                $file = $request->file('img')[$i];
-                $filename = $request->file('img')[$i]->getClientOriginalName();
-                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/caracteristicas/',$filename);
                 $caracteristica = new CaracteristicaModelo;
                 $caracteristica->modelo_id = $modelo->id;
                 $caracteristica->titulo = $request->titulo[$i];
                 $caracteristica->descripcion = $request->desc[$i];
-                $caracteristica->img = '/imagenes/modelos/'.$modelo_name.'/caracteristicas/'.$filename;
+                $caracteristica->img = $this->storeFile($request->file('img')[$i], 'public/modelos');
                 $caracteristica->save();
             }
         }
@@ -276,19 +273,6 @@ class ModelosController extends Controller
             return back()->with('error', 'No se ha podido eliminar el item');
     }
 
-    //------------------------------------------------------------
-    // PARALLAX / BANNER MODELO
-    // -----------------------------------------------------------
-    public function editParallax($id)
-    {
-        $modelo = Modelo::find($id);
-        return view('backend.modelos.formParallax', compact('modelo'));
-    }
-
-    public function updateParallax(Request $request, $id)
-    {
-        return;
-    }
 
     //------------------------------------------------------------
     // PORTADA MODELO
