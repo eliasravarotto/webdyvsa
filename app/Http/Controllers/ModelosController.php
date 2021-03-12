@@ -218,20 +218,16 @@ class ModelosController extends Controller
     public function updateGaleria(Request $request, $id)
     {
         $modelo = Modelo::find($id);
-        $modelo_name = strtolower($modelo->nombre);
         $total = count($request->img_galeria);
         if ($total>0) {
             for( $i=0 ; $i < $total ; $i++ ) {
-                $file = $request->file('img_galeria')[$i];
-                $filename = $request->file('img_galeria')[$i]->getClientOriginalName();
-                $file->move(public_path().'/imagenes/modelos/'.$modelo_name.'/galeria/',$filename);
                 $imagen = new ImagenGaleriaModelo;
                 $imagen->modelo_id = $modelo->id;
-                $imagen->url = '/imagenes/modelos/'.$modelo_name.'/galeria/'.$filename;
+                $imagen->url = $this->storeFile($request->file('img_galeria')[$i], 'public/modelos');
                 $imagen->save();
             }
         }
-        
+       
         return redirect('admin/modelos');
     }
 
