@@ -50,25 +50,27 @@ class SlideController extends Controller
        
         $files = $request->file('image');
         $i=0;
-        foreach ($files as $foto) {
-            $file = new File;
+        if ($files != null) {
+            foreach ($files as $foto) {
+                $file = new File;
 
-            if ($request->size[$i] == 'SM')
-                $file->path = $this->storeAndRezise($foto, 'public/fotos', 800, 100)->imagePath;
-            
-            if ($request->size[$i] == 'MD')
-                $file->path = $this->storeAndRezise($foto, 'public/fotos', 1200, 100)->imagePath;
+                if ($request->size[$i] == 'SM')
+                    $file->path = $this->storeAndRezise($foto, 'public/fotos', 800, 100)->imagePath;
                 
-            $file->public_path = Storage::url($file->path);
+                if ($request->size[$i] == 'MD')
+                    $file->path = $this->storeAndRezise($foto, 'public/fotos', 1200, 100)->imagePath;
+                    
+                $file->public_path = Storage::url($file->path);
 
-            $slideItem = new SlideItem;
-            $slideItem->slide_id = $slide->id;
-            $slideItem->orden = $request->orden[$i];
-            $slideItem->url = $request->url[$i];
-            $slideItem->size = $request->size[$i];
-            $slideItem->save();
-            $slideItem->image()->create($file->toArray());
-            $i = $i + 1;
+                $slideItem = new SlideItem;
+                $slideItem->slide_id = $slide->id;
+                $slideItem->orden = $request->orden[$i];
+                $slideItem->url = $request->url[$i];
+                $slideItem->size = $request->size[$i];
+                $slideItem->save();
+                $slideItem->image()->create($file->toArray());
+                $i = $i + 1;
+            }
         }
         
         $slides = Slide::all();
@@ -84,9 +86,8 @@ class SlideController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        // return $id;
         $slide = Slide::find($id);
-        $slide->items = $slide->items()->get();
+        $slide->items = $slide->items()->orderBy('orden')->get();
 
         return view('backend.slides.edit', compact('slide'));
     }
