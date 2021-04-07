@@ -20,11 +20,18 @@ class CreateUsadosTable extends Migration
             $table->string('marca');
             $table->string('modelo');
             $table->string('anio');
-            $table->string('km')->nullable();;
+            $table->string('km')->nullable();
+            $table->string('combustible')->nullable();
+            $table->string('transmision')->nullable();
             $table->string('color');
-            $table->integer('precio')->nullable();;
-            $table->string('descripcion')->nullable();
+            $table->integer('precio')->nullable();
+            $table->boolean('uct')->default(0);
+            $table->integer('orden')->nullable();
+            $table->string('estado')->nullable();
             $table->string('foto')->nullable();
+            $table->string('descripcion')->nullable();
+            $table->string('slug')->unique();
+            $table->boolean('visible')->nullable();
             $table->timestamps();
         });
     }

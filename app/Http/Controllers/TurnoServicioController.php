@@ -26,7 +26,7 @@ class TurnoServicioController extends Controller
      */
     public function index()
     {
-        $solicitudes = TurnoServicio::all();
+        $solicitudes = TurnoServicio::orderBy('created_at', 'DESC')->get();
         
         return view('backend.solicitudes-turno.index', compact('solicitudes'));
     }
@@ -41,6 +41,23 @@ class TurnoServicioController extends Controller
     public function store(Request $request)
     {
 
+        $rules = ['from' => 'in:web-site,app'];
+
+        if ($request->from == 'app') {
+            $rules = [
+                'cliente' => 'required|string', 
+                'telefono' =>'required|int', 
+                'email' => 'required|email', 
+                'modelo' => 'required|string',
+                'dominio' => 'required|string',
+                'servicio' => 'required|string',
+                'fecha' => 'required|string',
+                'sucursal' => 'in:Sáenz Peña,Resistencia,Charata',
+                'from' => 'in:web-site,app',
+            ];
+        }
+
+        if ($request->from == 'web-site') {
             $rules = [
                 'cliente' => 'required|string', 
                 'telefono' =>'required|int', 
@@ -51,35 +68,44 @@ class TurnoServicioController extends Controller
                 'fecha' => 'required|string',
                 'g-recaptcha-response' => 'required|captcha',
                 'sucursal' => 'in:Sáenz Peña,Resistencia,Charata',
-                'from' => 'in:web-site, app',
+                'from' => 'in:web-site,app',
             ];
+        }
 
-            $this->validate($request, $rules);
+        $this->validate($request, $rules);
 
-            $turno = TurnoServicio::create($request->all());
+        $turno = TurnoServicio::create($request->all());
 
-            switch ($turno->sucursal) {
-                case 'Sáenz Peña':
-                    Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
-                    //"fabianaaranda@derkayvargas.com.ar";
-                    break;
-                case 'Resistencia':
-                    Mail::to('franciscozago@derkayvargas.com.ar')
-                        ->cc(['marcoruiz@derkayvargas.com.ar', 'federicow@derkayvargas.com.ar'])
-                        ->send(new TurnoServicioReceived($turno));
-                    //"franciscozago@derkayvargas.com.ar" "marcoruiz@derkayvargas.com.ar" "federicow@derkayvargas.com.ar";
-                    break;
-                case 'Charata':
-                    Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
-                    //"fabianaaranda@derkayvargas.com.ar"
-                    break;
-            }
+        return $this->showOne($turno, 200);
 
-            if($request->is('api/*')){
-                return $this->showOne($turno, 200);
-            }else{
-                return back()->with('success','Su turno fue solicitado, estaremos en contacto con usted a la brevedad para su confirmación');
-            }
+        switch ($turno->sucursal) {
+            case 'Sáenz Peña':
+                Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
+                //"fabianaaranda@derkayvargas.com.ar";
+                break;
+            case 'Resistencia':
+                Mail::to('franciscozago@derkayvargas.com.ar')
+                    ->cc(['marcoruiz@derkayvargas.com.ar', 'federicow@derkayvargas.com.ar'])
+                    ->send(new TurnoServicioReceived($turno));
+                //"franciscozago@derkayvargas.com.ar" "marcoruiz@derkayvargas.com.ar" "federicow@derkayvargas.com.ar";
+                break;
+            case 'Charata':
+                Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
+                //"fabianaaranda@derkayvargas.com.ar"
+                break;
+        }
+
+
+        return $this->showOne($turno, 200);
+
+    }
+
+    public function show($id)
+    {
+        $solicitud = TurnoServicio::findOrFail($id);
+
+        
+        return view('backend.solicitudes-turno.show', compact('solicitud'));
     }
 
     /**

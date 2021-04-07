@@ -36,6 +36,11 @@ class Modelo extends Model
         return $this->hasOne('App\PortadaModelo');
     }
 
+    public function gallery()
+    {
+        return $this->hasOne('App\ModeloGallery');
+    }
+
     public function accesorios()
     {
         return $this->hasMany('App\Accesorio');

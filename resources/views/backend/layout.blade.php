@@ -15,7 +15,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="{{ asset('bootadmin/css/bootadmin.min.css') }}">
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="{{ asset('bootadmin/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!--===============================================================================================-->
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" >
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}" >
@@ -34,6 +34,10 @@
         .w-15{ width: 15%  }
         .w-20{ width: 20%  }
         .w-40{ width: 40%  }
+        .w-60{ width: 60%  }
+        .w-70{ width: 70%  }
+        .w-80{ width: 80%  }
+        .w-90{ width: 90%  }
     </style>
 
     @yield('stylesheet')

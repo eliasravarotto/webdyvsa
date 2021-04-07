@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\File;
 use App\Modelo;
 use App\Version;
 use App\TipoVehiculo;
+use App\ModeloGallery;
 use App\PortadaModelo;
 use App\ParallaxModelo;
 use App\ImagenColorModelo;
 use App\ImagenSliderModelo;
-use App\ImagenGaleriaModelo;
 use App\Traits\ApiResponser;
 use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 use App\CaracteristicaModelo;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -57,6 +57,8 @@ class ModelosController extends Controller
     public function store(Request $request)
     {
         $modelo = Modelo::create($request->all());
+
+        $modelo->gallery()->save(new ModeloGallery());
 
         if ($request->hasFile('img_logo')) {
             $modelo->img_logo = $this->storeFile($request->file('img_logo'), 'public/modelos');
@@ -206,30 +208,7 @@ class ModelosController extends Controller
         return back()->with('success', 'Actualizado.');
     }
 
-    //------------------------------------------------------------
-    // GALERIA MODELO
-    // -----------------------------------------------------------
-    public function editGaleria($id)
-    {
-        $modelo = Modelo::find($id);
-        return view('backend.modelos.formGaleria', compact('modelo'));
-    }
 
-    public function updateGaleria(Request $request, $id)
-    {
-        $modelo = Modelo::find($id);
-        $total = count($request->img_galeria);
-        if ($total>0) {
-            for( $i=0 ; $i < $total ; $i++ ) {
-                $imagen = new ImagenGaleriaModelo;
-                $imagen->modelo_id = $modelo->id;
-                $imagen->url = $this->storeFile($request->file('img_galeria')[$i], 'public/modelos');
-                $imagen->save();
-            }
-        }
-       
-        return redirect('admin/modelos');
-    }
 
     //------------------------------------------------------------
     // CARACTERISTICAS MODELO
@@ -275,89 +254,45 @@ class ModelosController extends Controller
 
 
     //------------------------------------------------------------
-    // PORTADA MODELO
+    // VERSIONES MODELO
     // -----------------------------------------------------------
-    public function editPortada($id)
+
+    public function editVersiones(Modelo $modelo)
     {
-        $modelo = Modelo::find($id);
-        
-        //return view('backend.modelos.formSlider', compact('modelo'));
-        return view('backend.modelos.formPortada', compact('modelo'));
+
+        $modelo->versiones = $modelo->versiones()->get();
+
+        return view('backend.modelos.formVersiones', compact('modelo'));
     }
 
-    public function updatePortada(Request $request, $id)
+    public function updateVersiones(Modelo $modelo, Request $request)
     {
-        $modelo = Modelo::find($id);
-        
-        $modelo_name = strtolower($modelo->nombre);
 
-        if ($request->create == 1) {
+        $sizeVersiones = count($request->versiones);
+        $sizePrecios = count($request->precios);
+        $sizeMonedas = count($request->monedas);
 
-            $portada = new PortadaModelo;
-            
-            if ($request->hasFile('foto_desk')) {
-                $portada->imagen_desktop = $request->file('foto_desk')->store('modelo-portada', ['disk' => 'public_uploads']); 
+        if (($sizeVersiones == $sizePrecios) AND ($sizePrecios == $sizeMonedas)) {
+            $modelo->versiones()->delete();
+
+
+            if ($sizeVersiones>0) {
+                for( $i=0 ; $i < $sizeVersiones ; $i++ ){
+                    $version = new Version;
+                    $version->nombre = $request->versiones[$i];
+                    $version->precio = $request->precios[$i];
+                    $version->moneda = $request->monedas[$i];
+                    $version->modelo_id = $modelo->id;
+                    $version->save();
+                }
             }
 
-            if ($request->hasFile('foto_mobile')) {
-                $portada->imagen_mobile = $request->file('foto_mobile')->store('modelo-portada', ['disk' => 'public_uploads']);
-            }
-            if ($request->hasFile('foto_logo')) {
-                $portada->logo = $request->file('foto_logo')->store('modelo-portada', ['disk' => 'public_uploads']); 
-            }
-
-            $portada->html = $request->html;
-
-            $portada->modelo_id = $id;
-
-            $portada->save();
-
-        } else{
-
-            $portada = $modelo->portada()->first();
-
-            if ($request->hasFile('foto_desk')) {
-                $portada->imagen_desktop = $request->file('foto_desk')->store('public/portada-modelos'); 
-            }
-
-            if ($request->hasFile('foto_mobile')) {
-                $portada->imagen_mobile = $request->file('foto_mobile')->store('public/portada-modelos');
-            }
-            if ($request->hasFile('foto_logo')) {
-                $portada->logo = $request->file('foto_logo')->store('public/portada-modelos'); 
-            }
-
-            $portada->html = $request->html;
-
-            $portada->modelo_id = $id;
-
-            $portada->update();
+            return back()->with('success', 'Versiones actualizadas');
         }
 
-        return back()->with('success', 'Portada Actualizada!');
-    }
+        return back()->with('error', 'Hay errores en el formulario');
 
-    public function editVersiones($id)
-    {
-        $modelo = Modelo::find($id);
-        $versiones = Version::where('modelo_id','=', $id)->get();
-        return view('backend.modelos.formVersiones', compact('modelo','versiones'));
-    }
 
-    public function updateVersiones($id, Request $request)
-    {
-        $modelo = Modelo::find($id);
-        $total = count($request->versiones);
-        if ($total>0) {
-            for( $i=0 ; $i < $total ; $i++ ){
-                $version = new Version;
-                $version->nombre = $request->versiones[$i];
-                $version->precio = $request->precios[$i];
-                $version->modelo_id = $modelo->id;
-                $version->save();
-            }
-        }
-        return redirect('admin/modelos');
     }
 
     public function publicarServicio(Request $request, $modelo_id)
@@ -369,6 +304,10 @@ class ModelosController extends Controller
         return;
     }
 
+
+    //------------------------------------------------------------
+    // API
+    // -----------------------------------------------------------
     public function getModelos(Request $request)
     {
 
@@ -400,6 +339,16 @@ class ModelosController extends Controller
                         ->firstOrFail();       
 
         return $this->showOne($modelo);
+    }
+
+
+    public function crear()
+    {
+        $modelos = Modelo::all();
+
+        foreach ($modelos as $modelo) {
+            $modelo->gallery()->save(new ModeloGallery());
+        }
     }
 
 }

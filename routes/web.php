@@ -20,18 +20,23 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('tpa_planes','TPAPlanController');
 	Route::resource('tpa_adjudicados','TpaAdjudicadosController');
 	Route::resource('tpa_agrupados','TpaAgrupadosController');
+
+	Route::resource('modelo-gallery', 'ModeloGalleryController', [
+	    'names' => [
+	        'edit' => 'modelo-gallery.edit',
+	        'update' => 'modelo-gallery.update',
+	        'destroy' => 'modelo-gallery.delete',
+	    ],
+	    'only' => ['edit', 'update']
+	]);
+
 	Route::get('admin/modelos/{id}/edit/colores','ModelosController@editColores');
 	Route::put('admin/modelos/{id}/edit/colores','ModelosController@updateColores');
-	Route::get('admin/modelos/{id}/edit/galeria','ModelosController@editGaleria');
-	Route::put('admin/modelos/{id}/edit/galeria','ModelosController@updateGaleria');
+	Route::delete('admin/modelos/{id}/edit/galeria','ModelosController@deletePhotoGallery')->name('gallery_modelo_add_photo');
 	Route::get('admin/modelos/{id}/edit/caracteristicas','ModelosController@editCaracteristicas');
 	Route::put('admin/modelos/{id}/edit/caracteristicas','ModelosController@updateCaracteristicas');
-	Route::get('admin/modelos/{id}/edit/parallax','ModelosController@editParallax');
-	Route::put('admin/modelos/{id}/edit/parallax','ModelosController@updateParallax');
-	Route::get('admin/modelos/{id}/edit/portada','ModelosController@editPortada');
-	Route::put('admin/modelos/{id}/edit/portada','ModelosController@updatePortada');
-	Route::get('admin/modelos/{id}/edit/versiones','ModelosController@editVersiones');
-	Route::put('admin/modelos/{id}/edit/versiones','ModelosController@updateVersiones');
+	Route::get('admin/modelos/{modelo}/edit/versiones','ModelosController@editVersiones');
+	Route::put('admin/modelos/{modelo}/edit/versiones','ModelosController@updateVersiones');
 	Route::get('admin/turnos-servicios','TurnoServicioController@index')->name('solicitudes_index');
 	Route::get('admin/turnos-servicios/{id}','TurnoServicioController@show')->name('solicitud_show');
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
@@ -49,6 +54,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/notificacion-push','BackendController@createPushNotication')->name('create_push_notification');
 	Route::post('admin/notificacion-push','BackendController@sendPushNotication')->name('send_push_notification');
 	Route::resource('admin_accesorios','AccesorioController');
+	Route::delete('admin/file/{id}','FileController@destroy')->name('admin_file.delete');
+	Route::get('mgc','ModelosController@crear');
 
 	Route::get('/push', function(){
 

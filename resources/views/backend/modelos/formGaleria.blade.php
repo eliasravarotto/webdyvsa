@@ -1,93 +1,81 @@
 @extends('backend.layout')
 
 @section('content')
-<style type="text/css">
-	.col-buttons-inline{
-		display: flex;
-		justify-content: 
-		flex-start; 
-		align-self: flex-end;
-	}
-	.col-buttons-inline > button{
-		height: 59%;
-		margin-right: 10px;
-	}
-</style>
 <div class="card" id="form">
-    <div class="card-header">
-        <strong class="card-title">Galeria de Imagenes {{ $modelo->nombre }}</strong>
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-12 text-right">
-          <a style="color: white" v-on:click="addField()" class="btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i></a>
+  <div class="card-header">
+    <strong class="card-title">Galeria de Imagenes {{ $modelo->nombre }}</strong>
+  </div>
+  <div class="card-body">
+    <div class="content" id="content_dropzone">
+      <div class="dropzone needsclick dz-clickable dz-started" id="dropzone-gallery-modelos">
+        <div class="dz-message text-center mb-3" data-dz-message>
+          <span><i class="fas fa-upload"></i> Clic o arrastrar los archivos aquí para subir.</span>
         </div>
       </div>
-      <br>
-    	<form action="/admin/modelos/{{ $modelo->id }}/edit/galeria" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
-			   {{ csrf_field() }}
-          <div id="images">
-            <div class="form-group row" id="field_0">
-              <div class="col-12">
-                <div class="input-group">
-                  <input name="img_galeria[]" type="file" class="form-control" style="height: 39px;">
-                    <div class="input-group-btn"><a href="#" class="btn btn-danger" onclick="removeField(0)"><i class="fa fa-trash" aria-hidden="true"></i></a></div>
-                  </div>
-              </div>
-            </div>
-          </div>
-    		
-          <input name="_method" type="hidden" value="PUT">
-          <div class="row form-group">
-              <div class="col-12">
-                  <a class="btn btn-dark" href="/admin/modelos" style="color: white">
-                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                    <span id="payment-button-amount">Cancelar</span>
-                  </a>
-                  <button type="submit" class="btn btn-info">
-                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                    <span id="payment-button-amount">Guardar</span>
-                  </button>
-              </div>
-          </div>
-      	</form>
     </div>
+  </div>
 </div>
 @stop
 
-@section('script')
-    <script type="text/javascript">
-        function removeField(id){
-            $('#field_'+id).remove();
-                this.index--;
-                console.log(id);
+@section('page-script')
+<script type="text/javascript">
+  
+  Dropzone.autoDiscover = false;
+  if (document.getElementById('dropzone-gallery-modelos')) {
+    var dropzoneCursoFiles = new Dropzone("#dropzone-gallery-modelos",{
+      url: "{{route('modelo-gallery.update', $modelo->id)}}",
+      method: "POST",
+      acceptedFiles: ".jpeg, .jpg, .png,.webp",
+      addRemoveLinks: true,
+      thumbnailWidth: 50,
+      thumbnailHeight: 50,
+      previewTemplate: `
+        <div class="dz-preview dz-file-preview">
+        <div class="dz-details">
+          <img data-dz-thumbnail style="width: 110px;"/>
+        </div>
+        <div class="dz-progress progress mt-1">
+          <span class="dz-upload progress-bar" data-dz-uploadprogress></span>
+        </div>
+        <div class="dz-error-message"><span data-dz-errormessage></span></div>
+      </div>
+      `,
+      init: function() {
+        this.on("success", function(file, response) {
+          console.log(response)
+            notifier.show('Hecho!', 'La imagen se cargó correctamente.', '', '/imagenes/icons/success.png', 3500);
+        });
+        //display photos
+        var mocks = {!! $modelo->gallery->photos !!};
+        console.log(mocks);
+        for (var i = 0; i < mocks.length; i++) {
+            var mock = {  
+                    id: mocks[i].id ,
+                    path: mocks[i].public_path,
+                    type: 'image/jpeg',
+                    accepted: true,
+            };
+            this.files.push(mock);
+            this.emit('addedfile', mock);
+            this.emit("thumbnail", mock, mock.path);
+            this.emit('complete', mock);
         }
-        new Vue({
-          el: '#form',
-          data: {
-            message: 'Hello Vue!',
-            index: 1
-          },
-          mounted(){ },
-          methods:{
-            addField(){
-                var field = `
-                      <div class="form-group row" id="field_${this.index}">
-                        <div class="col-12">
-                          <div class="input-group">
-                            <input name="img_galeria[]" type="file" class="form-control" style="height: 39px;">
-                              <div class="input-group-btn">
-                                <a href="#" class="btn btn-danger" onclick="removeField(${this.index})"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                      `
-                ;
-                $('#images').append(field);
-                this.index++;
-            }            
-          }
-        })
-    </script>
+      },
+      sending: function(file, xhr, formData) {
+        formData.append("_token", "{{ csrf_token() }}");
+        formData.append("_method", "put");
+      },
+      removedfile: function(file) {
+        axios
+          .delete("/admin/file/"+file.id)
+          .then(res=>{
+            console.log(res)
+            file.previewElement.remove();
+            notifier.show('Hecho!', 'La imagen se eliminó correctamente.', '', '/imagenes/icons/success.png', 3500);
+          })
+      },
+    });
+  }
+
+</script>
 @stop

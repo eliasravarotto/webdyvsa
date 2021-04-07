@@ -13,96 +13,107 @@
 		margin-right: 10px;
 	}
 </style>
-<div class="card" id="form">
+<div class="card" id="formVersiones">
     <div class="card-header">
         <strong class="card-title">Agregar Versiones {{ $modelo->nombre }}</strong>
     </div>
     <div class="card-body">
-      <div class="row">
-        <div class="col-12 text-right">
-          <a style="color: white" v-on:click="addField()" class="btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <br>
-    	<form action="/admin/modelos/{{ $modelo->id }}/edit/versiones" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
-			   {{ csrf_field() }}
+    	<form action="/admin/modelos/{{ $modelo->id }}/edit/versiones" method="POST" autocomplete="off">
+          <input name="_method" type="hidden" value="PUT">
+			    {{ csrf_field() }}
           <div id="versiones">
-            <div class="form-group row" id="field_0">
-              <div class="col-6">
-                <div class="input-group">
-                  <input name="versiones[]" placeholder="Nombre versión" type="text" class="form-control" style="height: 39px;">
+            @php $ix = 0 @endphp
+            @foreach($modelo->versiones as $version)
+              @php $ix++ @endphp
+              <div class="form-group row" id="row_{{$ix}}">
+                <div class="col-5">
+                  <div class="input-group">
+                    <input name="versiones[]" value="{{$version->nombre}}" placeholder="Versión" type="text" class="form-control form-control-sm" required>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="input-group">
+                    <input name="precios[]" value="{{$version->precio}}" placeholder="Precio" type="text" class="form-control form-control-sm" required>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="input-group">
+                    <select class="form-control form-control-sm" name="monedas[]" required>
+                      <option value="ARS" @if($version->moneda == 'ARS') selected @endif>ARS</option>
+                      <option value="USD" @if($version->moneda == 'USD') selected @endif>USD</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="input-group">
+                    <a href="#" class="btn btn-danger btn-sm" onclick="removeField({{$ix}})"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                  </div>
                 </div>
               </div>
-              <div class="col-4">
-                <div class="input-group">
-                  <input name="precios[]" placeholder="Precio" type="text" class="form-control" style="height: 39px;">
-                </div>
-              </div>
-              <div class="col-2">
-                <div class="input-group">
-                  <a href="#" class="btn btn-danger" onclick="removeField(0)"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                </div>
-              </div>
+            @endforeach
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 text-right">
+              <a href="#" onclick="addField(event)" class="btn btn-link ">
+                <i class="fa fa-plus" aria-hidden="true"></i> Agregar
+              </a>
             </div>
           </div>
     		
-          <input name="_method" type="hidden" value="PUT">
-          <div class="row form-group">
+          <div class="row form-group mt-5">
               <div class="col-9">
                   <a class="btn btn-dark" href="/admin/modelos" style="color: white">
-                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                    <span id="payment-button-amount">Cancelar</span>
+                    Cancelar
                   </a>
                   <button type="submit" class="btn btn-info">
-                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                    <span id="payment-button-amount">Guardar</span>
+                    <i class="fas fa-save"></i> Guardar
                   </button>
               </div>
           </div>
-      	</form>
+    	</form>
     </div>
 </div>
 @stop
 
-@section('script')
-    <script type="text/javascript">
-        function removeField(id){
-            $('#field_'+id).remove();
-                this.index--;
-                console.log(id);
-        }
-        new Vue({
-          el: '#form',
-          data: {
-            message: 'Hello Vue!',
-            index: 1,
-          },
-          mounted(){ },
-          methods:{
-            addField(){
-                var field = `
-                    <div class="form-group row" id="field_${this.index}">
-                      <div class="col-6">
-                        <div class="input-group">
-                          <input name="versiones[]" placeholder="Nombre versión" type="text" class="form-control" style="height: 39px;">
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="input-group">
-                          <input name="precios[]" placeholder="Precio" type="text" class="form-control" style="height: 39px;">
-                        </div>
-                      </div>
-                      <div class="col-2">
-                        <div class="input-group">
-                          <a href="#" class="btn btn-danger" onclick="removeField(${this.index})"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                        </div>
-                      </div>
-                    </div>`
-                ;
-                $('#versiones').append(field);
-                this.index++;
-            }            
-          }
-        })
-    </script>
+@section('page-script')
+<script type="text/javascript">
+  var ix = '{{ $ix }}';
+  function removeField(id){
+      $('#row_'+id).remove();
+  }
+  function addField(e){
+    e.preventDefault();
+    ix++;
+
+    var row = `<div class="form-group row" id="row_${ix}">
+                <div class="col-5">
+                  <div class="input-group">
+                    <input name="versiones[]" placeholder="Versión" type="text" class="form-control form-control-sm" required>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="input-group">
+                    <input name="precios[]" placeholder="Precio" type="text" class="form-control form-control-sm" required>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="input-group">
+                    <select class="form-control form-control-sm" name="monedas[]" required>
+                      <option value="ARS">ARS</option>
+                      <option value="USD">USD</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="input-group">
+                    <a href="#" class="btn btn-danger btn-sm" onclick="removeField(${ix})"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>`;
+
+    $("#versiones").append(row);
+
+  }
+</script>
 @stop

@@ -6,7 +6,7 @@
 /public/imagenes/modelos/*
 /public/uploads/*
 /storage/*.key
-/storage/app/public
+/storage/app/*
 /vendor
 /.idea
 /.vagrant

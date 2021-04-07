@@ -19,7 +19,7 @@
     <div class="col col-md-8">
       <div class="card" id="form">
           <div class="card-header">
-              <strong class="card-title">Editar {{ $modelo->nombre }}</strong>
+               Editar {{ $modelo->nombre }} 
           </div>
           <div class="card-body">
             <form action="{{ route('modelos.update', $modelo->id) }}" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
@@ -41,75 +41,71 @@
       </div>
     </div>
     <div class="col col-md-4">
-      <div class="card border border-primary my-1">
-          <div class="card-header">
-            <strong class="card-title">Versiones {{ $modelo->nombre }} 
-              <small>
-                <span class="float-right mt-1">
-                  <a href="/admin/modelos/{{ $modelo->id }}/edit/versiones">
+      <div class="card border border-primary mb-3">
+          <div class="card-header d-flex align-items-center">
+            <span class="w-10 d-block">
+              <i class="fas fa-list-alt"></i> 
+            </span>
+              <a class="w-90 d-flex justify-content-between align-items-center btn btn-link px-0 py-0" href="/admin/modelos/{{ $modelo->id }}/edit/versiones">
+                <span class="d-block">Versiones y Precios </span>
+                <span class="d-block">
                     <i class="far fa-edit"  style="font-size: 25px;"></i>
-                  </a>
                 </span>
-              </small>
-            </strong>
+              </a>
           </div>
       </div>
 
-      <div class="card border border-primary mt-1">
-          <div class="card-header">
-              <strong class="card-title">Características {{ $modelo->nombre }} 
-                <small>
-                  <span class="float-right mt-1">
-                    <a href="/admin/modelos/{{$modelo->id}}/edit/caracteristicas">
-                      <i class="far fa-edit"  style="font-size: 25px;"></i>
-                    </a>
-                  </span>
-                </small>
-              </strong>
-            </div>
+      <div class="card border border-primary mb-3">
+        <div class="card-header d-flex align-items-center">
+          <span class="w-10 d-block">
+           <i class="fa fa-palette"></i>
+          </span>
+          <a class="w-90 d-flex justify-content-between align-items-center btn btn-link px-0 py-0" href="/admin/modelos/{{$modelo->id}}/edit/colores">
+            <span class="d-block">Colores</span>
+            <span class="d-block">
+              <i class="far fa-edit"  style="font-size: 25px;"></i>
+            </span>
+          </a>
+           
+        </div>
       </div>
 
-        <div class="card border border-primary mt-1">
-            <div class="card-header">
-              <strong class="card-title">Colores {{ $modelo->nombre }} 
-                <small>
-                  <span class="float-right mt-1">
-                    <a href="/admin/modelos/{{$modelo->id}}/edit/colores">
-                      <i class="far fa-edit"  style="font-size: 25px;"></i>
-                    </a>
-                  </span>
-                </small>
-              </strong>
-            </div>
+      <div class="card border border-primary mb-3">
+        <div class="card-header d-flex align-items-center">
+          <span class="w-10 d-block">
+            <i class="fas fa-images"></i>
+          </span>
+          <a class="w-90 d-flex justify-content-between align-items-center btn btn-link px-0 py-0" href="{{ route('modelo-gallery.edit', $modelo->id) }}">
+            <span class="d-block">Galeria  </span>
+            <span class="d-block"><i class="far fa-edit"  style="font-size: 25px;"></i></span>
+          </a>
+           
         </div>
+      </div>
 
-        <div class="card border border-primary mt-1">
-            <div class="card-header">
-              <strong class="card-title">Galeria {{ $modelo->nombre }} 
-                <small>
-                  <span class="float-right mt-1">
-                    <a href="/admin/modelos/{{$modelo->id}}/edit/galeria">
-                      <i class="far fa-edit"  style="font-size: 25px;"></i>
-                    </a>
-                  </span>
-                </small>
-              </strong>
-            </div>
+      <div class="card border border-primary mb-3">
+        <div class="card-header d-flex align-items-center">
+          <span class="w-10 d-block">
+            <i class="fas fa-th-list"></i>
+          </span>
+          <a class="w-90 d-flex justify-content-between align-items-center btn btn-link px-0 py-0" href="/admin/modelos/{{$modelo->id}}/edit/caracteristicas">
+            <span class="d-block">Características </span>
+            <span class="d-block"><i class="far fa-edit"  style="font-size: 25px;"></i></span>
+          </a>
         </div>
+      </div>
 
-        <div class="card border border-primary mt-1">
-            <div class="card-header">
-              <strong class="card-title">Portada {{ $modelo->nombre }} 
-                <small>
-                  <span class="float-right mt-1">
-                    <a href="/admin/modelos/{{$modelo->id}}/edit/portada">
-                      <i class="far fa-edit"  style="font-size: 25px;"></i>
-                    </a>
-                  </span>
-                </small>
-              </strong>
-            </div>
+      <div class="card border border-primary mb-3">
+        <div class="card-header d-flex align-items-center">
+          <span class="w-10 d-block">
+            <i class="fas fa-external-link-alt"></i>
+          </span>
+          <a class="w-90 d-flex justify-content-between align-items-center btn btn-link px-0 py-0" href="https://derkayvargas.com/modelos/{{$modelo->slug}}" target="_blank">
+            <span class="d-block">Vista Web </span>
+          </a>
         </div>
+      </div>
+
     </div>
   </div>
 </div>
