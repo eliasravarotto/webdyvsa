@@ -38,7 +38,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/modelos/{modelo}/edit/versiones','ModelosController@editVersiones');
 	Route::put('admin/modelos/{modelo}/edit/versiones','ModelosController@updateVersiones');
 	Route::get('admin/turnos-servicios','TurnoServicioController@index')->name('solicitudes_index');
-	Route::get('admin/turnos-servicios/{id}','TurnoServicioController@show')->name('solicitud_show');
+	Route::get('admin/turnos-servicios/{solicitud}','TurnoServicioController@show')->name('solicitud_show');
+	Route::get('admin/turnos-servicios/{solicitud}/atender','TurnoServicioController@atender')->name('turno_servicio_atender');
+
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
 	Route::get('admin/leads','MensajeEmailController@index')->name('admin_leads');
 	Route::get('admin/mensajes-contacto/{id}/show','MensajeEmailController@show')->name('contacto_mensajes_show');

@@ -38,6 +38,9 @@
         .w-70{ width: 70%  }
         .w-80{ width: 80%  }
         .w-90{ width: 90%  }
+        .list-group-item-md {
+            padding: .6rem 1.25rem;
+        }
     </style>
 
     @yield('stylesheet')

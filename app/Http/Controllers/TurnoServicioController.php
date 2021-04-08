@@ -76,8 +76,6 @@ class TurnoServicioController extends Controller
 
         $turno = TurnoServicio::create($request->all());
 
-        return $this->showOne($turno, 200);
-
         switch ($turno->sucursal) {
             case 'Sáenz Peña':
                 Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new TurnoServicioReceived($turno));
@@ -100,13 +98,12 @@ class TurnoServicioController extends Controller
 
     }
 
-    public function show($id)
+    public function show(TurnoServicio $solicitud)
     {
-        $solicitud = TurnoServicio::findOrFail($id);
-
-        
         return view('backend.solicitudes-turno.show', compact('solicitud'));
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -117,5 +114,15 @@ class TurnoServicioController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+
+    public function atender(Request $request, TurnoServicio $solicitud)
+    {
+        $solicitud->atendido = !$solicitud->atendido;
+
+        $solicitud->update();
+
+        return back()->with('success', 'Solicitud actualizada.');
     }
 }

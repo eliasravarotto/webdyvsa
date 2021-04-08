@@ -26,6 +26,7 @@ class CreateTurnoServiciosTable extends Migration
             $table->string('enviar_a');
             $table->string('servicio');
             $table->string('sucursal');
+            $table->boolean('atendido')->default(0);
             $table->timestamps();
         });
     }
