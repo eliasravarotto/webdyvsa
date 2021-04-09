@@ -118,5 +118,25 @@
                   "valor": "31.662,61"
                 }
                     ]
+        },
+        { "modelo": "Corolla Cross", 
+          "version": "XEI CVT", 
+          "modalidad": "100%",
+          "image": "/imagenes/tpa/corolla-cross100.png", 
+          "slug": "corolla-cross-xei-cvt-100",
+          "cuotas": [
+                { "cuota": "Cuota 1",
+                  "valor": "38.057,12"
+                },
+                { "cuota": "Cuotas 2 a 5",
+                  "valor": "42.951,52"
+                },
+                { "cuota": "Cuotas 6 a 24",
+                  "valor": "43.288,90"
+                },
+                { "cuota": "Cuotas 25 a 84",
+                  "valor": "44.606,66"
+                }
+                    ]
         }
 ]
