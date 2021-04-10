@@ -217,7 +217,7 @@ class UsadoController extends Controller
     public function getUsados(Request $request)
     {
 
-        $usados = Usado::all();
+        $usados = Usado::orderBy('orden', 'ASC')->get();
 
         $usados = collect($this->filterData($usados));
 
