@@ -1,22 +1,32 @@
 <template>
 	<div>
 		<div class="card border-info">
-			<div class="card-header bg-default font-weight-bold">
-			    CATEGORÍAS
-			</div>
 			<div class="card-body">
-				<div>
+				<div class="card-panel mb-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-header bg-warning"><i class="fas fa-tag"></i></div>
+                                <div class="d-block">
+                                        <h5 class="card-title mb-0">CATEGORIAS</h5>
+                                    <small class="text-muted">{{ categories.length }} categorias en total</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			<div>
 					<div class="input-group mb-3">
 					  <input v-model="newCategory.name" type="text" class="form-control" placeholder="Ingrese categoría" aria-label="Ingrese categoría" aria-describedby="button-add-new-category" required>
 					  <div class="input-group-append">
-					    <button class="btn btn-outline-secondary" type="button" @click="addCategory()" id="button-add-new-category">Agregar</button>
+					    <button class="btn btn-outline-success" type="button" @click="addCategory()" id="button-add-new-category">Agregar</button>
 					  </div>
 					</div>
 				</div>
 			    <ul class="list-group list-group-flush">
 			        <li v-for="(c, ix) in categories" class="list-group-item">
 			        	<a data-toggle="collapse" :href="'#collapseCategory'+c.id" @click="edit(c)" class="d-flex justify-content-between">
-				        	<span class="d-block">{{ c.name }}</span>
+				        	<span class="d-block text-dark">{{ c.name }}</span>
 				        	<span class="d-block"><i class="fas fa-edit"></i></span>
 			        	</a>
 			        	<div class="collapse pl-2 py-2" :id="'collapseCategory'+c.id">

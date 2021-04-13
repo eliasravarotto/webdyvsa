@@ -20,6 +20,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
 mix.sass('resources/assets/sass/sm-core-css.scss', 'public/css');
 mix.sass('resources/assets/sass/sm-mint.scss', 'public/css');
 mix.sass('resources/assets/sass/stm-icons.scss', 'public/css');
+mix.sass('resources/assets/sass/bootadmin.scss', 'public/css');
+mix.sass('resources/assets/sass/argon/argon.scss', 'public/css/argon.min.css');
 
 if (mix.inProduction()) {
     mix.version();

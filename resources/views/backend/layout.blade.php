@@ -13,7 +13,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="{{ asset('css/app_backend.css') }}">
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="{{ asset('bootadmin/css/bootadmin.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootadmin.css') }}">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!--===============================================================================================-->
@@ -27,17 +27,11 @@
     <link rel="stylesheet" href="{{asset('css/notifier.css')}}" />
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.min.css" />
+    <!-- Argon CSS -->
+    <link type="text/css" href="{{ asset('css/argon.min.css') }}" rel="stylesheet">
 
     <style type="text/css">
-        .w-5{ width: 5%  }
-        .w-10{ width: 10%  }
-        .w-15{ width: 15%  }
-        .w-20{ width: 20%  }
-        .w-40{ width: 40%  }
-        .w-60{ width: 60%  }
-        .w-70{ width: 70%  }
-        .w-80{ width: 80%  }
-        .w-90{ width: 90%  }
+        
         .list-group-item-md {
             padding: .6rem 1.25rem;
         }
@@ -50,12 +44,12 @@
 
     @include('backend.includes.navbar')
 
-    <div class="d-flex" id="app">
+    <div class="d-flex justify-content-center" id="app">
         <div class="sidebar sidebar-dark bg-dark">
             @include('backend.includes.sidebar')
         </div>
 
-        <div class="content p-md-4  p-sm-4 ">
+        <div class="content w-md-100 p-3 p-md-4">
             @include('backend.includes.flashmessage')
             @yield('content')
         </div>

@@ -1,44 +1,34 @@
 @extends('backend.layout')
 
 @section('content')
-{{-- ESTILOS INPUT FOTO --}}
-		<style>
-		#div_file{
-			cursor: pointer;
-			padding:5px;
-			display: flex;
-		    flex-direction: column;
-		    justify-content: center;
-		    align-items: center;
-		}
-		#div_file p{
-			text-align: center;
-			cursor: pointer;
-		}
-		#div_file input{
-			border:1px solid black;
-			cursor: pointer;
-			position:absolute;
-			top:0px;
-			left:0px;
-			right:0px;
-			bottom:0px;
-			width:100%;
-			height:100%;
-			opacity: 0;
-		}
-	</style>
 
 <div class="card">
-    <div class="card-header">
-        <strong class="card-title">Post</strong>
-    </div>
     <div class="card-body">
     	<form action="{{ route('posts.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data" files="true">
 			{{ csrf_field() }}
+	    	<div class="card-panel mb-5">
+				<div class="row">
+					<div class="col-12 col-md-8">
+						<div class="d-flex align-items-center">
+							<div class="icon-header bg-warning"><i class="fas fa-users"></i></div>
+							<div class="d-block">
+									<h5 class="card-title mb-0">POST</h5>
+								<small class="text-muted">Crear entrada</small>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-4 d-flex justify-content-end">
+						<button type="submit" class="btn btn-success">
+						  Guardar
+						</button>
+					</div>
+				</div>
+			</div>
+
 			@include('backend.posts.form')
+
 			<div class="row form-group my-3">
-				<div class="col-12">
+				<div class="col-12 text-right">
 					<a href="/admin/posts" class="btn btn-secondary">
 					  Cancelar
 					</a>

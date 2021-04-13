@@ -9,6 +9,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
 
+	Route::resource('usuarios','UserController');
 	Route::get('/admin', 'BackendController@inicio')->name('admin');
 	Route::resource('admin/modelos','ModelosController');
 	Route::post('/admin/modelos/publicar_servicio/{modelo_id}','ModelosController@publicarServicio');
@@ -40,6 +41,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('admin/turnos-servicios','TurnoServicioController@index')->name('solicitudes_index');
 	Route::get('admin/turnos-servicios/{solicitud}','TurnoServicioController@show')->name('solicitud_show');
 	Route::get('admin/turnos-servicios/{solicitud}/atender','TurnoServicioController@atender')->name('turno_servicio_atender');
+	Route::put('admin/turnos-servicios/{solicitud}','TurnoServicioController@update')->name('turno_servicio_update');
 
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
 	Route::get('admin/leads','MensajeEmailController@index')->name('admin_leads');

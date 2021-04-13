@@ -1,9 +1,11 @@
 {
-    "/js/app.js": "/js/app.js?id=b30b3dd5e77dbb77ad00",
-    "/js/app_backend.js": "/js/app_backend.js?id=9ece7bd653a3855c3cc6",
-    "/css/app_backend.css": "/css/app_backend.css?id=21fb2cde74869f2dfaf2",
-    "/css/app.css": "/css/app.css?id=a6ee8af7f9e08a6583b6",
+    "/js/app.js": "/js/app.js?id=3fc52ea0aae63a9ffe6f",
+    "/js/app_backend.js": "/js/app_backend.js?id=4f0da2ee0e0b3ca842ad",
+    "/css/app_backend.css": "/css/app_backend.css?id=0bdf716126573bf98b67",
+    "/css/app.css": "/css/app.css?id=75363ba8f496817ac7dd",
     "/css/sm-core-css.css": "/css/sm-core-css.css?id=54068cf9d109b7842360",
     "/css/sm-mint.css": "/css/sm-mint.css?id=48cab0613c0ea857c9d6",
-    "/css/stm-icons.css": "/css/stm-icons.css?id=e81194760541e196f8b0"
+    "/css/stm-icons.css": "/css/stm-icons.css?id=e81194760541e196f8b0",
+    "/css/bootadmin.css": "/css/bootadmin.css?id=525f1be8286f0d41abdc",
+    "/css/argon.min.css": "/css/argon.min.css?id=1090617bf2b23252e85a"
 }

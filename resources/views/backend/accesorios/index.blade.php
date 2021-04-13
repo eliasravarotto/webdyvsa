@@ -2,36 +2,44 @@
 
 @section('content')
 <div class="card border-info">
-	<div class="card-header bg-default font-weight-bold">
-        ACCESORIOS
-  	</div>
   <div class="card-body">
+  	<div class="card-panel mb-4">
+    	<div class="row">
+    		<div class="col-12 col-md-4">
+    			<div class="d-flex align-items-center">
+    				<div class="icon-header bg-warning"><i class="fas fa-dolly"></i></div>
+    				<div class="d-block">
+  						<h5 class="card-title mb-0">ACCESORIOS</h5>
+    					<small class="text-muted">{{ $totalAccesorios }} usuarios en total.</small>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-12 col-md-8 text-right">
+    			<a href="{{ route('admin_accesorios.create') }}" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Nuevo</a>
+    		</div>
+    	</div>
+	</div>
 
-  	<div class="row mb-3">
-  		<div class="col-12 text-right">
-	      <a class="btn btn-default text-center" href="{{ route('admin_accesorios.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
-  		</div>
-  	</div>
-
-    <form action="/admin_accesorios" method="get">
-        <div class="row">
-        	<div class="col-md-10 pr-0 col-sm-12 col-xs-12">
-		        <div class="form-group has-search mb-3">
+	<form class="mb-2" autocomplete="off" method="GET">
+		<div class="form-row">
+		    <div class="col-12 col-md-9">
+		      <div class="form-group has-search d-flex align-items-center">
 		          <i class="fa fa-search form-control-feedback"></i>
 		          <input type="text" name="texto_a_buscar" value="" class="form-control w-100" placeholder="Buscar por nombre o modelo" id="search">
 		        </div>
-        	</div>
-        	<div class="col-md-2 pl-0 col-sm-12 col-xs-12">
-		        <div class="form-group has-search mb-3 d-flex justify-content-end">
-		            <button type="submit" class="btn btn-default mr-1">Buscar</button>
-		            <a href="/admin_accesorios" class="btn btn-default"><i class="fa fa-trash"></i>  Limpiar</a>
+		    </div>
+		    <div class="col-12 col-md-3">
+		        <div class="form-group">
+		            <button type="submit" class="btn btn-default mr-1"><i class="fas fa-search"></i> Buscar</button>
+		            <a href="/admin_accesorios" class="btn btn-secondary"><i class="fa fa-trash"></i>  Limpiar</a>
 		        </div>
         	</div>
-        </div>
-    </form>
+	    </div>
+  	</form>
+
     <table class="table table-sm table-hover">
-	    <thead>
-		    <tr class="bg-danger text-light">
+	    <thead class="thead-light"> 
+		    <tr>
 		      <th></th>
 		      <th>Nombre</th>
 		      <th>Precio</th>
@@ -58,10 +66,10 @@
   			  </td>
 		      <td class="text-right">
 		        <form action="{{ url('admin_accesorios', ['id' => $accesorio->id]) }}" method="post">
-	            <a href="{{ route('admin_accesorios.edit', $accesorio->id) }}" class="btn btn-sm btn-light"><i class="fas fa-pencil-alt"></i></a>
+	            <a href="{{ route('admin_accesorios.edit', $accesorio->id) }}" class="btn btn-sm btn-link"><i class="fas fa-pencil-alt"></i></a>
 		            {!! method_field('delete') !!}
 		            {!! csrf_field() !!}
-		            <button type="submit" onclick="return confirm('Desea eliminar el accesorio seleccionado?')" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button>
+		            <button type="submit" onclick="return confirm('Desea eliminar el accesorio seleccionado?')" class="btn btn-sm btn-link text-danger"><i class="fa fa-trash"></i></button>
 		        </form>
 		      </td>
 		      @endforeach

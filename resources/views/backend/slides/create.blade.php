@@ -1,43 +1,35 @@
 @extends('backend.layout')
 
 @section('content')
-{{-- ESTILOS INPUT FOTO --}}
-		<style>
-		#div_file{
-			cursor: pointer;
-			padding:5px;
-			display: flex;
-		    flex-direction: column;
-		    justify-content: center;
-		    align-items: center;
-		}
-		#div_file p{
-			text-align: center;
-			cursor: pointer;
-		}
-		#div_file input{
-			border:1px solid black;
-			cursor: pointer;
-			position:absolute;
-			top:0px;
-			left:0px;
-			right:0px;
-			bottom:0px;
-			width:100%;
-			height:100%;
-			opacity: 0;
-		}
-	</style>
 
 <div class="card border-info">
-    <div class="card-header bg-default font-weight-bold">
-        SLIDES
-    </div>
     <div class="card-body">
     	<form action="{{ route('admin_slides.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data" files="true">
-			{{ csrf_field() }}
+    		{{ csrf_field() }}
+
+	    	<div class="card-panel">
+	            <div class="row">
+	                <div class="col-12 col-md-4">
+	                    <div class="d-flex align-items-center">
+	                        <div class="icon-header bg-warning"><i class="fas fa-image"></i></div>
+	                        <div class="d-block">
+	                            <h5 class="card-title mb-0">SLIDERS</h5>
+	                            <small class="text-muted">Crear nuevo slider</small>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-12 col-md-8 text-right">
+	                    <button type="submit" class="btn btn-success">
+						  Guardar
+						</button>
+	                </div>
+	            </div>
+	        </div>
+
+		
 			@include('backend.slides.form')
-			<div class="row form-group my-3">
+
+			<div class="row form-group mt-5">
 				<div class="col-12">
 					<a href="{{ route('admin_slides.index')}}" class="btn btn-secondary">
 					  Cancelar

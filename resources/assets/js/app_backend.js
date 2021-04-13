@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap_backend');
-//require('./script.ppal.js');
+
 
 window.Vue = require('vue');
 
@@ -21,5 +21,3 @@ window.Vue = require('vue');
 const app = new Vue({
     el: '#app'
 });
-
-window.swal = require('sweetalert2');

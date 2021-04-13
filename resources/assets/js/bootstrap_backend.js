@@ -62,9 +62,9 @@ window.openFile = function(event) {
       var dataURL = reader.result;
       var output = document.getElementById(event.target.name)
       output.src = dataURL;
+      $("#div_file .image .content").hide();
+      $("#div_file img").removeClass("d-none");
     };
-      console.log(input);
-      console.log(input.files[0]);
     reader.readAsDataURL(input.files[0]);
 };
 

@@ -7,35 +7,43 @@
     }
 </style>
 <div class="card border-info" id="app_index">
-    <div class="card-header bg-default font-weight-bold">
-        SLIDES
-    </div>
     <div class="card-body">
-        <div class="row">
-          <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
-            <a class="btn btn-default" href="{{ route('admin_slides.create') }}"> <i class="fas fa-plus"></i>Nuevo</a>
-          </div>
+        <div class="card-panel">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-header bg-warning"><i class="fas fa-image"></i></div>
+                        <div class="d-block">
+                            <h5 class="card-title mb-0">SLIDERS</h5>
+                            <small class="text-muted">{{ $slides->count() }} sliders en total.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 text-right">
+                    <a href="{{ route('admin_slides.create') }}" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Nuevo</a>
+                </div>
+            </div>
         </div>
         <table class="table table-sm table-hover">
-            <thead>
-              <tr class="d-flex bg-danger text-light">
-                <th class="col">#Id</th>
-                <th class="col">Nombre</th>
-                <th class="col">Items</th>
-                <th class="col">Created_at</th>
-                <th class="col">Updated_at</th>
-                <th class="col"></th>
+            <thead class="thead-light">
+              <tr class="">
+                <th>#Id</th>
+                <th>Nombre</th>
+                <th>Items</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
                 @foreach($slides as $slide)
-                <tr class="d-flex">
-                    <td class="col">{{ $slide->id }}</td>
-                    <td class="col">{{ $slide->nombre }}</td>
-                    <td class="col">{{ sizeof($slide->items) }}</td>
-                    <td class="col">{{ $slide->created_at->format('Y-m-d') }}</td>
-                    <td class="col">{{ $slide->updated_at->format('Y-m-d') }}</td>
-                    <td class="col">
+                <tr>
+                    <td>{{ $slide->id }}</td>
+                    <td>{{ $slide->nombre }}</td>
+                    <td>{{ sizeof($slide->items) }}</td>
+                    <td>{{ $slide->created_at->format('Y-m-d') }}</td>
+                    <td>{{ $slide->updated_at->format('Y-m-d') }}</td>
+                    <td class="text-right">
                         <form method="POST" action="{{ route('admin_slides.destroy', $slide->id) }}">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}

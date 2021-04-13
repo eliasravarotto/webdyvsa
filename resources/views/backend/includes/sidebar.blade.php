@@ -51,13 +51,13 @@
     </li>
     <li>
         <a href="{{route('posts.index')}}">
-            <i class="far fa-file-alt"></i>
+            <i class="far fa-newspaper"></i>
             Entradas
         </a>
     </li>
     <li>
         <a href="/admin_slides">
-            <i class="far fa-images"></i>
+            <i class="fas fa-image"></i>
             Slides
         </a>
     </li>
@@ -68,7 +68,7 @@
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="{{ route('usuarios.index') }}">
             <i class="far fa-user"></i>
             Usuarios
         </a>

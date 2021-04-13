@@ -19,12 +19,11 @@
 	    var html = `<div class="d-flex flex-column align-items-center" id="element-img-${index}">
 						<div class="div-add-img ml-2">
 							<div class="_3jk d-flex justify-content-center align-items-center">
-								<i class="fa fa-plus"></i>
 								<input type="file" id="input_${index}" class="_5f0v" name="imagenes[]" onchange="showImage(event, ${index})">
 								<img id="img_${index}" src="">
 							</div>
 						</div>
-						<a href="#" onclick="deleteElement(${index})">Borrar Foto</a>
+						<a href="#" onclick="deleteElement(${index})" class="mt-2"><i class="fas fa-times"></i> Quitar</a>
 					</div>`;
         
         $('#galeria').append(html); //Agregar el input

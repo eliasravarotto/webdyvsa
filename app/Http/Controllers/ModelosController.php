@@ -56,6 +56,18 @@ class ModelosController extends Controller
      */
     public function store(Request $request)
     {
+
+        $rules = [
+            'nombre' => 'required',
+            'tipo_vehiculo_id' => 'required|integer',
+            'slogan' => 'required',
+            'descripcion' => 'required',
+            'link_ficha_tecnica' => 'required',
+            'link_catalogo' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
         $modelo = Modelo::create($request->all());
 
         $modelo->gallery()->save(new ModeloGallery());

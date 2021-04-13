@@ -23,6 +23,7 @@ class AccesorioController extends Controller
      */
     public function index(Request $request)
     {
+        $totalAccesorios = Accesorio::all()->count();
         if ($request->texto_a_buscar == '') {
             $accesorios = Accesorio::paginate(10);
         }else{
@@ -34,7 +35,7 @@ class AccesorioController extends Controller
 
             $accesorios = Accesorio::whereIn('id', $accesorios_ids)->paginate(10);
         }
-        return view('backend.accesorios.index', compact('accesorios'));
+        return view('backend.accesorios.index', compact('accesorios', 'totalAccesorios'));
     }
 
     /**

@@ -144,9 +144,12 @@ body {
 
 @media (max-width: 768px) {
     .sidebar {
-        margin-left: -230px;
+        margin-left: -215px;
     }
     .sidebar.toggled {
-        margin-left: 0;
+        margin-left: 180px;
+    }
+    .content{
+        width: auto;
     }
 }

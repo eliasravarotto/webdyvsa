@@ -5,11 +5,13 @@
 		</div>
 	</div>
 	<div class="col-md-6 col-sm-12">
-		<a class="btn btn-default" href="#" onclick="addItem(event)">ADD Item</a>
+		<a class="btn btn-secondary" href="#" onclick="addItem(event)"><i class="fas fa-plus"></i> ADD Item</a>
 	</div>
 </div>
 
-<div id="slides">
+<div>
+	<ul id="slides" class="list-group list-group-flush">
+	</ul>
 </div>
 
 @if($slide->id)
@@ -100,38 +102,36 @@
 	function addItem(e){
 		e.preventDefault();
 		ix++;
-		var card = `<div class="card px-2 py-2 mt-2" id="slide-${ix}">
-		<div class="card-body py-1">
-		<div class="row">
-			<div class="col-md-1 col-sm-16 text-right ">
-				<a href="#" class="btn btn-danger" onclick="removeItem(event, ${ix})"><i class="fa fa-trash"></i></a>
-			</div>
-			<div class="col-md-1 col-sm-12 px-1">
-				<div class="requerido">
-					<input name="orden[]" type="number" class="form-control" placeholder="Orden" value="" required>
+		var card = `<li class="list-group-item" id="slide-${ix}">
+				<div class="row">
+					<div class="col-md-1 col-sm-16 text-right ">
+						<a href="#" class="btn btn-danger btn-sm" onclick="removeItem(event, ${ix})"><i class="fa fa-trash"></i></a>
+					</div>
+					<div class="col-md-1 col-sm-12 px-1">
+						<div class="requerido">
+							<input name="orden[]" type="number" class="form-control form-control-sm" placeholder="Orden" value="" required>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-12 px-1">
+						<select class="form-control form-control-sm" name="size[]">
+							<option value="SM">SM (Mobile)</option>
+							<option value="MD">MD (Web)</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-12 px-1">
+						<div class="requerido">
+							<input name="url[]" type="text" class="form-control form-control-sm" value="" placeholder="Ir a" required>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-12 px-1">
+						<div class="mt-1">
+						  <div class="custom-file">
+						    <input type="file" class="" id="image" name="image[]" required>
+						  </div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-2 col-sm-12 px-1">
-				<select class="form-control" name="size[]">
-					<option value="SM">SM (Mobile)</option>
-					<option value="MD">MD (Web)</option>
-				</select>
-			</div>
-			<div class="col-md-4 col-sm-12 px-1">
-				<div class="requerido">
-					<input name="url[]" type="text" class="form-control" value="" placeholder="Ir a" required>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-12 px-1">
-				<div class="mt-1">
-				  <div class="custom-file">
-				    <input type="file" class="" id="image" name="image[]" required>
-				  </div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>` 
+		</li>` 
 		;
 		$('#slides').prepend(card);
 	}

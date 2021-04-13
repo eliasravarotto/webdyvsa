@@ -24,15 +24,26 @@
 @section('content')
 
     <div class="card border-info" id="app_index">
-        <div class="card-header bg-default font-weight-bold">
-            USADOS
-        </div>
         <div class="card-body">
-            <div class="row">
-              <div class="col-md-12 d-flex justify-content-end my-1" style="margin-bottom: 10px;">
-                <a class="btn btn-default" href="{{ route('usados.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
-              </div>
+
+            <div class="card-panel mb-4">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-header bg-warning"><i class="far fa-newspaper"></i></div>
+                            <div class="d-block">
+                                    <h5 class="card-title mb-0">USADOS</h5>
+                                <small class="text-muted">{{ $usados->count() }} vehículos en total</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <a href="{{ route('usados.create') }}" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Nuevo</a>
+                    </div>
+                </div>
             </div>
+
+
             <div class="form-row">
               <div class="form-group col-md-3 col-sm-12 mb-2">
                 <input type="number" id="nro-int" class="form-control" placeholder="Interno" onkeyup="filtrar(event)">
@@ -41,30 +52,37 @@
                 <input type="text" id="nro-dom" class="form-control" placeholder="Dominio" onkeyup="filtrar(event)">
               </div>
               <div class="col-md-2 col-sm-12">
-              <button type="submit" class="btn btn-default mb-2 w-100" onclick="limpiar()">Limpiar</button>
+              <button type="submit" class="btn btn-secondary mb-2 w-100" onclick="limpiar()">Limpiar</button>
               </div>
             </div>
 
             <!-- WEB -->
             <div class="d-none d-md-block d-lg-block d-xl-block">
             <table class="table table-sm">
-                <thead style="background-color: rgba(0, 0, 0, 0.075);">
-                  <tr class="bg-danger text-light">
+                <thead class="thead-light">
+                  <tr>
                     <th></th>
                     <th>Int.</th>
                     <th>Dominio</th>
                     <th>Detalles</th>
                     <th></th>
                     <th></th>
-                    <th>Disp.</th>
                     <th>Visible</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody id="tbody-usados">
                     @foreach($usados as $usado)
-                    <tr class="usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" id="usado-row-{{$usado->interno}}">
-                        <td><img src="{{ Storage::url($usado->foto) }}" style="max-height: 34px; max-width: 45px;"></td>
+                    <tr class="usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}} @if($usado->estado == 'RESERVADO') table-danger @endif" id="usado-row-{{$usado->interno}}">
+                        <td>
+                            <div style="height: 34px; width: 45px;">
+                                @if($usado->foto)
+                                    <img src="{{ Storage::url($usado->foto) }}" class="obj-fit-cover">
+                                @else
+                                    <img src="/imagenes/default.png" class="obj-fit-cover">
+                                @endif
+                            </div>
+                        </td>
                         <td id="usado-int">{{ $usado->interno }}</td>
                         <td id="usado-dom">{{ $usado->dominio }}</td>
                         <td class="td-marca-mod-ver">
@@ -81,7 +99,6 @@
                             @endif
                         </td>
                         <td class="text-right"><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
-                        <td class="mx-3">@if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif</td>
                         <td class="text-center">
                             <div class="custom-control custom-checkbox">
                               <input type="checkbox" class="custom-control-input" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">
@@ -92,8 +109,8 @@
                             <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                  <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-light"><i class="far fa-edit"></i></a>
-                                  <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-outline-danger delete-user"><i class="fa fa-trash"></i></button>
+                                  <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-secondary btn-sm"><i class="far fa-edit"></i></a>
+                                  <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
@@ -142,27 +159,7 @@
             </div>
     	</div>
     </div>
-{{--     <ul class="list-group list-group-flush d-md-none" id="ul-usados">
-        @foreach($usados as $usado)
-            <li class="list-group-item usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" id="usado-row-{{$usado->interno}}">
-                <div class="row">
-                    <div class="col " id="usado-int">{{$usado->interno}}</div>
-                    <div class="col " id="usado-dom">{{$usado->dominio}}</div>
-                    <div class="col "><b>$ {{ $usado->precio }}</b></div>
-                    <div class="col ">
-                        <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                              <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-outline-info"><i class="fa fa-pencil-square-o d-none d-sm-none d-lg-block" aria-hidden="true"></i></a>
-                              <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-outline-danger delete-user d-none d-sm-none d-lg-block" ><i class="fa fa-trash"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <span id="usado-int">{{$usado->interno}}</span> 
-                <span id="usado-dom">{{$usado->dominio}}</span> 
-            </li>
-        @endforeach
-    </ul> --}}
+
 @stop
 
 @section('page-script')

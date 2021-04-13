@@ -116,19 +116,22 @@
 		</div>
 		<div class="col-sm-12 col-md-4">
 			<div id="div_file">
-			 	{{-- <img id='output'> --}}
 			 	@if($usado->foto != null)
-			 		<img id='foto' style="width: 155px; margin-bottom: 10px;" src="{{Storage::url($usado->foto)}}" alt="">
+				 	<div class="image">
+				    	<input type="file" name="foto" accept='image/*' onchange='openFile(event)' title=" ">
+					</div>
+			 		<img id="foto" src="{{Storage::url($usado->foto)}}">
 			 	@else
-			 		<img id='foto' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
+				 	<div class="image">
+						<div class="content">
+				          	<div class="icon-upload text-center"><i class="fas fa-cloud-upload-alt"></i></div>
+							<div class="text text-center">Click o Arrastrar para cambiar imagen</div>
+						</div>
+				    	<input type="file" name="foto" accept='image/*' onchange='openFile(event)' title=" ">
+					</div>
+			 		<img id="foto" src alt="" class="d-none">
 			    @endif
-			    <p id="texto">Click o Arrastrar para cambiar imagen</p>
-			    <input type='file' name="foto" accept='image/*' onchange='openFile(event)' title=" ">
 			 </div>
-			{{-- <div class="form-group">
-				<label class="control-label mb-1">Foto</label>
-				<input type="file" name="foto">
-			</div> --}}
 		</div>
 	</div>
 	<div class="row">

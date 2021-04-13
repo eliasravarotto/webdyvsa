@@ -31,18 +31,22 @@
 	</div>
 	<div class="col-sm-12 col-md-3">
 		<div id="div_file">
-		 	{{-- <img id='output'> --}}
 		 	@if($post->image != null)
-		 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="{{$post->image->public_path}}" alt="">
+		 		{{-- <img id='output' style="width: 155px; margin-bottom: 10px;" src="{{$post->image->public_path}}" alt=""> --}}
+		 		<div class="image">
+			    	<input type="file" name="foto" accept='image/*' onchange='openFile(event)' title=" ">
+				</div>
+		 		<img id="foto" src="{{$post->image->public_path}}" alt="Avatar Image">
 		 	@else
 		 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
 		    @endif
-		    <p id="texto">Click o Arrastrar para cambiar imagen</p>
+
 		    @if($post->id)
-		    <input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada">
+		    	<input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada">
 		    @else
-		    <input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada" required>
+		    	<input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada" required>
 	 		@endif
+	 		
 	 		<span class="text-danger">{{ $errors->first('imagen_portada') }}</span>
 		 </div>
 	</div>

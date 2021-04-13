@@ -24,9 +24,19 @@ class TurnoServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $solicitudes = TurnoServicio::orderBy('created_at', 'DESC')->get();
+
+        //$solicitudes = TurnoServicio::orderBy('created_at', 'DESC')->get();
+
+        $solicitudes = TurnoServicio::cliente($request->cliente)
+                    ->from($request->from)
+                    ->email($request->email)
+                    ->telefono($request->telefono)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(20);
+
+                    // return $solicitudes;
         
         return view('backend.solicitudes-turno.index', compact('solicitudes'));
     }
@@ -98,6 +108,23 @@ class TurnoServicioController extends Controller
 
     }
 
+
+    public function update(Request $request, TurnoServicio $solicitud)
+    {
+        $rules = [
+                'atendido' => 'required|boolean', 
+        ];
+
+        $this->validate($request, $rules);
+
+        $solicitud->atendido = $request->atendido;
+
+        $solicitud->update();
+
+        return back()->with('success', 'Solicitud actualizada.');
+
+    }
+
     public function show(TurnoServicio $solicitud)
     {
         return view('backend.solicitudes-turno.show', compact('solicitud'));
@@ -119,6 +146,7 @@ class TurnoServicioController extends Controller
 
     public function atender(Request $request, TurnoServicio $solicitud)
     {
+
         $solicitud->atendido = !$solicitud->atendido;
 
         $solicitud->update();

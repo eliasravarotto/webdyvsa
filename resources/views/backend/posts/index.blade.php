@@ -5,37 +5,60 @@
     <div class="row">
         <div class="col col-md-8">
             <div class="card border-info" id="app_index">
-                <div class="card-header bg-default font-weight-bold">
-                    POSTS
-                </div>
                 <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-12" style="display: flex;justify-content: flex-end; margin-bottom: 10px;">
-                        <a class="btn btn-default" href="{{ route('posts.create') }}"><i class="fas fa-plus"></i> Nuevo</a>
-                      </div>
+                    <div class="card-panel mb-4">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon-header bg-warning"><i class="far fa-newspaper"></i></div>
+                                    <div class="d-block">
+                                            <h5 class="card-title mb-0">ENTRADAS</h5>
+                                        <small class="text-muted">{{ $posts->count() }} posts en total</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8 text-right">
+                                <a href="{{ route('posts.create') }}" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Nuevo</a>
+                            </div>
+                        </div>
                     </div>
-                    <table class="table table-sm table-hover table-posts">
-                        <tbody>
-                            @foreach($posts as $post)
-                            <tr class="">
-                                <td class="">
-                                    <span class="text-muted">{{ $post->created_at->format('d M Y') }}</span><br>
-                                    <a href="{{ route('posts.edit', $post->id) }}" class="text-dark" title="Ver"><b>{{ $post->titulo }}</b></a> <br>
-                                    @foreach($post->categories as $category)
-                                    <a href="{{ route('posts.index') }}?category={{$category->id}}"><span class="badge badge-light">{{ $category->name }}</span></a>
-                                    @endforeach
-                                </td>
-                                <td class="text-right">
-                                    <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                          <button onclick="return confirm('Desea eliminar el post')" type="submit" class="btn btn-outline-danger delete-user btn-sm"><i class="fa fa-trash"></i></button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="list-group list-group-flush ul-posts">
+                                @forelse($posts as $post)
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-3 col-md-2">
+                                                @if($post->image)
+                                                    <img class="img-post" src="{{$post->image->public_path}}" class="img-fluid">
+                                                @else
+                                                    <img class="img-post" src="/imagenes/default.png" class="img-fluid">
+                                                @endif
+                                            </div>
+                                            <div class="col-9 col-md-8">
+                                                <p class="mb-1">{{ $post->titulo }}</p>
+                                                <small><b>{{ $post->created_at->format('d M Y') }}</b> | </small>
+                                                @foreach($post->categories as $category)
+                                                    <span class="badge badge-default">{{ $category->name }}</span>
+                                                @endforeach
+                                            </div>
+                                            <div class="col-12 col-md-2 d-flex  justify-content-end">
+                                                <div>
+                                                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm"> <i class="fas fa-pencil"></i> </a>
+                                                </div>
+                                                <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                      <button onclick="return confirm('Desea eliminar el post')" type="submit" class="btn text-danger btn-sm ml-2"><i class="fa fa-trash"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>  
         </div>
