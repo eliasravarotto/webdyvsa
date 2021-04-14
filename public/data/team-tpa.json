@@ -124,5 +124,14 @@
 		"sucursal": "Sáenz Peña",
 		"perfil": "Responsable Plan de Ahorro",
 		"orden": "1"
+	},
+	{
+		"nombre": "Elisa Insaurralde",
+		"telefono": "3735 46-5259",
+		"email": "",
+		"avatar": "elisa-insaurralde.jpg",
+		"sucursal": "Villa Angela",
+		"perfil": "Asesora de Ventas",
+		"orden": "1"
 	}
 ]

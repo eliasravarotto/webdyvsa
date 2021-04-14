@@ -20,8 +20,8 @@
 			        			<div class="d-flex align-items-center">
 			        				<div class="icon-header bg-warning"><i class="fas fa-users"></i></div>
 			        				<div class="d-block">
-		          						<h5 class="card-title mb-0">EDITAR USUARIO</h5>
-			        					<small class="text-muted">#{{ $user->id }} {{ $user->name }}</small>
+		          						<h5 class="card-title mb-0">USUARIO</h5>
+			        					<small class="text-muted">Crear nuevo</small>
 			        				</div>
 			        			</div>
 			        		</div>
