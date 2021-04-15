@@ -9,92 +9,102 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="{{asset('imagenes/logos/dyv_64x64_icono.ico')}}">
 
-    <link href="{{ asset('css/app_backend.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- Argon CSS -->
+    <link type="text/css" href="{{ asset('css/argon.min.css') }}" rel="stylesheet">
     
     @yield('stylesheet')
 
-    <style>
-            html, body {
-                height: 100%;
-            }
-            body {
-                background: url(/imagenes/dyv_charata.jpg) no-repeat center bottom;
-                background-size: cover;
-                /*height: 100vh;*/
-            }
-            .container-form{
-                display: flex;
-                height: 78vh;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-end;
-            }
-            ul li a {
-                font-size: 17px;
-                color: rgb(255, 255, 255);
-                font-weight: bold;  
-            }
-            
-            ul li a:hover {
-                color: #443020;
-            }
-            
-            .form-row button { 
-                font-size: 17px;  
-                font-weight: bold;
-            }
-            input {
-                font-weight: bold;
-            }   
+    <style type="text/css">
+        body{
+            height: 100vh;
+            background: url(/imagenes/dyv_charata.jpg);
+            background-size: cover;
+            bac
+        }
+        .container-wrapper{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-position: right;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="https://facebook.com/EnsarDEMIRKOL" target="_blank">TOYOTA</a>
-          </li>
-        </ul>
-    </div>
-    <div class="container container-form">
-        <div class="row">
-            <form class="form-login" method="POST" action="{{ route('login') }}">
-                {{ csrf_field() }}
-                <div class="text-center" style="color: #fff;">
-                    <h1>LOGIN</h1>
-                </div>
-                <div class="text-center" style="margin-bottom: 5em; color: #fff;">
-                    <p>WEB DERKA Y VARGAS S. A.</p>
-                </div>
-                <div class="form-row justify-content-center">
-                    <div class="col-10">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                        @if ($errors->has('login'))
-                            <span class="error">
-                                <strong>{{ $errors->first('login') }}</strong>
-                            </span>
-                        @endif
+    <div class="container container-wrapper">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card bg-secondary shadow border-0">
+                    <div class="card-header bg-white pb-5">
+
+                        <div class="text-center">
+                            <div class="text-center">
+                                <h1>LOGIN</h1>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-danger mb-0">WEB DERKA Y VARGAS S.A.</p>
+                            </div>
+
+                        </div>
+                      </div>
+                    <div class="card-body px-lg-5 py-lg-5">
+                        <form class="form-login" method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
+                            <div class="form-row justify-content-center mb-4">
+                                <div class="col-11" >
+                                    @if ($errors->has('email'))
+                                        <small class="text-danger">
+                                            <b>{{ $errors->first('email') }}</b>
+                                        </small>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-center">
+                                <div class="col-11">
+                                    <div class="form-group mb-2">
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                            </div>
+                                            <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-11">
+                                    <div class="form-group mb-3">
+                                        <div class="input-group input-group-alternative">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                          </div>
+                                          <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-center mb-3">
+                                <div class="col-11">
+                                    <div class="text-muted font-italic"><small>¿Olvido su contraseña? <span class="text-success font-weight-700">Recuperar</span></small></div>
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-center">
+                                <div class="col-11  mt-2">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-danger btn-block">ENTRAR <i class="fas fa-sign-in-alt"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
-                    <div class="col-10 my-1">
-                        <input id="password" type="password" class="form-control" name="password" required>
-                         @if ($errors->has('password'))
-                            <span class="error">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
-                    </div>
                 </div>
-                <div class="form-row justify-content-center">
-                    <div class="col-10  my-1">
-                        <button type="submit" class="btn btn-info btn-block" style="background-color: #36281d; color: #fff;">ENTRAR</button>
-                    </div>
-                </div>
-            </form>
-        @if ($errors->has('password') OR $errors->has('email'))
-        @endif   
+            </div>
+            @if ($errors->has('password') OR $errors->has('email'))
+            @endif   
         </div>
     </div>
 
