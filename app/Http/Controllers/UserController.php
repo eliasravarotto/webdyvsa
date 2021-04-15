@@ -92,7 +92,7 @@ class UserController extends Controller
     {
         $roles = Role::all();
 
-        $user = User::with('roles')->firstOrFail();
+        $user = User::where('id', $id)->with('roles')->firstOrFail();
 
         return view('backend.users.edit', compact('user', 'roles'));
     }
