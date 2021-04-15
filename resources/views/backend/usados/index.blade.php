@@ -12,11 +12,6 @@
     .td-marca-mod-ver p{
         font-size: 13px;
     }
-    @media (max-width: 576px) {
-        #app_index {
-            margin-right: -20px;
-        }
-    }
 </style>
 @stop
 
@@ -30,7 +25,7 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="d-flex align-items-center">
-                            <div class="icon-header bg-warning"><i class="far fa-newspaper"></i></div>
+                            <div class="icon-header bg-warning"><i class="fa fa-car"></i></div>
                             <div class="d-block">
                                     <h5 class="card-title mb-0">USADOS</h5>
                                 <small class="text-muted">{{ $usados->count() }} vehículos en total</small>
@@ -58,98 +53,96 @@
 
             <!-- WEB -->
             <div class="d-none d-md-block d-lg-block d-xl-block">
-            <table class="table table-sm">
-                <thead class="thead-light">
-                  <tr>
-                    <th></th>
-                    <th>Int.</th>
-                    <th>Dominio</th>
-                    <th>Detalles</th>
-                    <th></th>
-                    <th></th>
-                    <th>Visible</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="tbody-usados">
-                    @foreach($usados as $usado)
-                    <tr class="usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}} @if($usado->estado == 'RESERVADO') table-danger @endif" id="usado-row-{{$usado->interno}}">
-                        <td>
-                            <div style="height: 34px; width: 45px;">
-                                @if($usado->foto)
-                                    <img src="{{ Storage::url($usado->foto) }}" class="obj-fit-cover">
-                                @else
-                                    <img src="/imagenes/default.png" class="obj-fit-cover">
+                <table class="table table-sm">
+                    <thead class="thead-light">
+                      <tr>
+                        <th></th>
+                        <th>Int. | Dominio</th>
+                        {{-- <th>Dominio</th> --}}
+                        <th>Detalles</th>
+                        <th></th>
+                        <th></th>
+                        <th>Visible</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-usados">
+                        @foreach($usados as $usado)
+                        <tr class="usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}} @if($usado->estado == 'RESERVADO') table-danger @endif" id="usado-row-{{$usado->interno}}">
+                            <td>
+                                <div style="height: 34px; width: 45px;">
+                                    @if($usado->foto)
+                                        <img src="{{ Storage::url($usado->foto) }}" class="obj-fit-cover">
+                                    @else
+                                        <img src="/imagenes/default.png" class="obj-fit-cover">
+                                    @endif
+                                </div>
+                            </td>
+                            <td>{{ $usado->interno }} | {{ $usado->dominio }}</td>
+                            <td id="usado-int" class="d-none">{{ $usado->interno }}</td>
+                            <td id="usado-dom" class="d-none">{{ $usado->dominio }}</td>
+                            <td class="td-marca-mod-ver">
+                                {{ $usado->marca }} - <span class="text-dark"> <b>{{ $usado->modelo }}</b> </span>
+                                <p class="text-muted mb-0">
+                                    <span class="mr-2"><b>Año:</b> {{$usado->anio}}</span>
+                                    <span class="mr-2"><b>KM:</b> {{  number_format((int)$usado->km, 0, ',', '.')}}</span>
+                                    <span><b>Color:</b> {{$usado->color}}</span>
+                                </p>
+                            </td>
+                            <td class="text-right">
+                                @if($usado->uct)
+                                    <img src="{{asset('imagenes/icons/uct-circle.png')}}" width="30px">
                                 @endif
-                            </div>
-                        </td>
-                        <td id="usado-int">{{ $usado->interno }}</td>
-                        <td id="usado-dom">{{ $usado->dominio }}</td>
-                        <td class="td-marca-mod-ver">
-                            {{ $usado->marca }} - <span class="text-dark"> <b>{{ $usado->modelo }}</b> </span>
-                            <p class="text-muted mb-0">
-                                <span class="mr-2"><b>Año:</b> {{$usado->anio}}</span>
-                                <span class="mr-2"><b>KM:</b> {{  number_format((int)$usado->km, 0, ',', '.')}}</span>
-                                <span><b>Color:</b> {{$usado->color}}</span>
-                            </p>
-                        </td>
-                        <td class="text-right">
-                            @if($usado->uct)
-                                <img src="{{asset('imagenes/icons/uct-circle.png')}}" width="30px">
-                            @endif
-                        </td>
-                        <td class="text-right"><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
-                        <td class="text-center">
-                            <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">
-                              <label class="custom-control-label" for="{{$usado->id}}"></label>
-                            </div>
-                        </td>
-                        <td class="text-right">
-                            <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                  <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-secondary btn-sm"><i class="far fa-edit"></i></a>
-                                  <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-    		</table>
+                            </td>
+                            <td class="text-right"><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
+                            <td class="text-center">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" class="custom-control-input" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">
+                                  <label class="custom-control-label" for="{{$usado->id}}"></label>
+                                </div>
+                            </td>
+                            <td class="text-right">
+                                <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                      <a href="{{ route('usados.edit', $usado->id) }}" class="btn btn-secondary btn-sm_"><i class="far fa-edit"></i></a>
+                                      <button onclick="return confirm('Desea eliminar la unidad')" type="submit" class="btn btn-danger btn-sm_"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+        		</table>
             </div>
 
             <!-- MOBILE -->
             <div class="d-block d-md-none d-lg-none d-xl-none border-top mt-3">
                 <ul class="list-group list-group-flush">
                     @foreach($usados as $usado)
-                    <li class="list-group-item usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}}" 
+                    <li class="list-group-item usado-row usado-row-{{$usado->interno}} usado-row-{{$usado->dominio}} @if($usado->estado == 'RESERVADO') list-group-item-danger @endif" 
                         id="usado-row-{{$usado->interno}}">
                         <div class="d-flex w-100">
-                            {{-- @if($usado->foto != null)
-                            <img src="{{ Storage::url($usado->foto) }}" style="width: 60px">
-                            @else
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aR-2FHpyTZDEm14lQRd2wF2e6r8XgcKq-dluqRzuRztKplOw&s" style="width: 60px"> 
-                            @endif --}}
                             <div class="w-100">
                             <a href="{{ route('usados.edit', $usado->id) }}" class="precio">
-                                <div class="d-flex w-100">
-                                    <h6 class="card-title" style="width: 65%"> 
-                                        @if($usado->uct)
-                                            <img src="{{asset('imagenes/icons/uct-circle.png')}}" width="19px">
-                                        @endif
-                                        {{$usado->marca}}
-                                    </h6>
-                                    <h6 class="card-title text-right" style="width: 35%">
-                                            $ {{  number_format($usado->precio, 0, ',', '.')}} @if($usado->estado == "DISPONIBLE") <i class="fa fa-check text-success" aria-hidden="true"></i>@else <i class="fa fa-minus-circle text-danger" aria-hidden="true"></i> @endif
-                                    </h6>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <p class="mb-0"> 
+                                            @if($usado->uct)
+                                                <img src="{{asset('imagenes/icons/uct-circle.png')}}" width="19px">
+                                            @endif
+                                            {{$usado->marca}}
+                                        </p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="mb-0 font-weight-bold">$ {{  number_format($usado->precio, 0, ',', '.')}}</p>
+                                    </div>
                                 </div>
-                                <h6 class="card-subtitle mb-2">
-                                    <b>{{$usado->modelo}}</b>
-                                </h6>
-                                <h6 class="card-subtitle mt-1 text-muted">
-                                    {{$usado->dominio}} - {{$usado->anio}} - {{$usado->km}} km.
-                                </h6>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="mb-0">{{$usado->modelo}}</p>
+                                        <p class="mb-0"><spam class="font-weight-bold">{{$usado->dominio}}</spam> | {{$usado->anio}} | {{$usado->km}} km.</p>
+                                    </div>
+                                </div>
                             </a>
                             </div>
                         </div>

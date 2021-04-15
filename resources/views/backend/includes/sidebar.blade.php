@@ -37,7 +37,7 @@
         <a href="{{route('admin_servicios.index')}}"> <i class="fas fa-wrench"></i> Servicios</a>
     </li>
     <li>
-        <a href="{{url('/admin/turnos-servicios')}}"><i class="fa fa-ticket-alt"></i> Turnos</a>
+        <a href="{{route('solicitudes_panel_ppal')}}"><i class="fa fa-ticket-alt"></i> Turnos</a>
     </li>
     @endif
     @if(Auth::user()->hasRoles([1,2]))

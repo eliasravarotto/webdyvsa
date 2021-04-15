@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="manifest" href="{{asset('manifest.json')}}">
     
     <!--===============================================================================================-->
     <link rel="stylesheet" href="{{ asset('css/app_backend.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" href="{{ asset('css/bootadmin.css') }}">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!--===============================================================================================-->
@@ -30,13 +28,6 @@
     <!-- Argon CSS -->
     <link type="text/css" href="{{ asset('css/argon.min.css') }}" rel="stylesheet">
 
-    <style type="text/css">
-        
-        .list-group-item-md {
-            padding: .6rem 1.25rem;
-        }
-    </style>
-
     @yield('stylesheet')
 </head>
 
@@ -44,7 +35,7 @@
 
     @include('backend.includes.navbar')
 
-    <div class="d-flex justify-content-center" id="app">
+    <div id="app" class="d-flex justify-content-center position-relative">
         <div class="sidebar sidebar-dark bg-dark">
             @include('backend.includes.sidebar')
         </div>
@@ -55,9 +46,6 @@
         </div>
     </div>
 
-    <!---------------------------
-    // SECCION SCRIPT.
-    ---------------------------->
     <!--===============================================================================================-->
     <script src="{{ asset('js/app_backend.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
@@ -68,9 +56,12 @@
     <!--===============================================================================================-->
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <!--===============================================================================================-->
-    <script src="{{ asset('bootadmin/js/bootadmin.min.js') }}"></script>
-    <!--===============================================================================================-->
     <script src="{{ asset('js/notifier.js') }}"></script>
+    <!-- Google FCM -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
+    <script src="{{ asset('js/sw-push-msg.js') }}"></script>
+    <!-- end -->
 
     
     @yield('page-script')

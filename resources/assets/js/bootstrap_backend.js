@@ -19,7 +19,6 @@ try {
  */
 
 window.axios = require('axios');
-
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -77,3 +76,10 @@ window.loader = `<div id="loader">
                             <div class="loadme-circular"></div>
                         </div>
                     </div>`;
+
+$(document).ready(function () {
+    $('.sidebar-toggle').on('click', function (e) {
+        e.preventDefault();
+        $('.sidebar').toggleClass('toggled');
+    });
+});

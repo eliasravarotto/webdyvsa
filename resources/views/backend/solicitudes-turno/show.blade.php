@@ -2,25 +2,37 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">
-        <strong class="card-title">Solicitud de Turno</strong> 
-    </div>
     <div class="card-body">
-      <form class="form-inline justify-content-end" action="{{ route('turno_servicio_update', $solicitud->id) }}" method="POST">
+      <form class="" action="{{ route('turno_servicio_update', $solicitud->id) }}" method="POST">
+        <div class="card-panel">
+          <div class="row">
+              <div class="col-12 col-md-8">
+                  <div class="d-flex align-items-center">
+                      <div class="icon-header bg-warning"><i class="fa fa-ticket-alt"></i></div>
+                      <div class="d-block">
+                          <h5 class="card-title mb-0">SOLICITUD DE TURNO</h5>
+                          <small class="text-muted">#{{ $solicitud->id }} - {{ $solicitud->cliente }}</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-4 d-flex justify-content-end">
+                <div class="form-group mb-2 mr-2">
+                  <select class="form-control" name="atendido">
+                    <option value="1" @if($solicitud->atendido) selected @endif>Atendido</option>
+                    <option value="0" @if(!$solicitud->atendido) selected @endif>Pendiente</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Guardar</button>
+              </div>
+          </div>
+        </div>
         {{ csrf_field() }}
         <input name="_method" type="hidden" value="PUT">
-        <div class="form-group mb-2 mr-2">
-          <select class="form-control" name="atendido">
-            <option value="1" @if($solicitud->atendido) selected @endif>Atendido</option>
-            <option value="0" @if(!$solicitud->atendido) selected @endif>Pendiente</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Guardar</button>
       </form>
       <form>
         <div class="form-row">
           <div class="form-group col-md-2">
-            <label for="cliente">Fecha</label>
+            <label for="cliente">Creado</label>
             <input type="text" class="form-control form-control" id="cliente" value="{{ date('d-m-Y H:m', strtotime($solicitud->created_at))}}" readonly>
           </div>
           <div class="form-group col-md-1">
@@ -78,7 +90,7 @@
 
 <div class="row mt-4">
 	<div class="col">
-		<a href="{{route('solicitudes_index')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Atras</a>
+		<a href="{{route('solicitudes_panel_ppal')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Ir al panel</a>
 	</div>
 </div>
 

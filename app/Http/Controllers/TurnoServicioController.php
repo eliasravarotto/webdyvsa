@@ -8,6 +8,7 @@ use App\Sucursal;
 use App\TurnoServicio;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Mail\TurnoServicioReceived;
 use Illuminate\Support\Facades\Mail;
@@ -36,10 +37,25 @@ class TurnoServicioController extends Controller
                     ->orderBy('created_at', 'DESC')
                     ->paginate(20);
 
-                    // return $solicitudes;
+                    // return $solicitudes->total();
         
         return view('backend.solicitudes-turno.index', compact('solicitudes'));
     }
+
+    public function panelPrincipal(Request $request)
+    {
+
+        $total = TurnoServicio::all()->count();
+
+        $atendidas = TurnoServicio::where('atendido', 1)->count();
+
+        $pendientes = TurnoServicio::where('atendido', 0)->count();
+
+        $solicitudes = TurnoServicio::whereDate('created_at', Carbon::today())->paginate(20);
+
+        return view('backend.solicitudes-turno.panel-ppal', compact('solicitudes', 'total', 'atendidas', 'pendientes'));
+    }
+    
 
 
     /**

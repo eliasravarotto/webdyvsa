@@ -30,7 +30,7 @@ $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #8898aa !default;   // Line footer color
+$gray-600: #565656 !default;   // Line footer color
 $gray-700: #525f7f !default;   // Line p color
 $gray-800: #32325d !default;   // Line heading color
 $gray-900: #212529 !default;
@@ -323,9 +323,9 @@ $component-active-color:        $white !default;
 $component-active-bg:           theme-color("primary") !default;
 $component-active-border-color: theme-color("primary") !default;
 
-$component-hover-color:        $gray-300 !default;
-$component-hover-bg:           $gray-300 !default;
-$component-hover-border-color: $gray-300 !default;
+$component-hover-color:        $gray-400 !default;
+$component-hover-bg:           $gray-400 !default;
+$component-hover-border-color: $gray-400 !default;
 
 
 
@@ -540,7 +540,7 @@ $input-muted-bg:                        #F7FAFE !default;
 $input-focus-muted-bg:                  lighten($input-muted-bg, 1%) !default;
 
 $input-color:                           $gray-600 !default;
-$input-border-color:                    $gray-300 !default;
+$input-border-color:                    $gray-400 !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      0 3px 2px rgba($gray-200, .05) !default;
 
@@ -904,11 +904,11 @@ $badge-circle-size:                 2rem !default;
 $pagination-color:                  $gray-600 !default;
 $pagination-bg:                     $white  !default;
 $pagination-border-width:           $border-width !default;
-$pagination-border-color:           $gray-300 !default;
+$pagination-border-color:           $gray-400 !default;
 
 $pagination-hover-color:            $gray-600 !default;
-$pagination-hover-bg:               $gray-300 !default;
-$pagination-hover-border-color:     $gray-300 !default;
+$pagination-hover-bg:               $gray-400 !default;
+$pagination-hover-border-color:     $gray-400 !default;
 
 $pagination-active-color:           $component-active-color !default;
 $pagination-active-bg:              $component-active-bg !default;
@@ -917,7 +917,7 @@ $pagination-active-box-shadow:      $btn-hover-box-shadow !default;
 
 $pagination-disabled-color:         $gray-600 !default;
 $pagination-disabled-bg:            $white !default;
-$pagination-disabled-border-color:  $gray-300 !default;
+$pagination-disabled-border-color:  $gray-400 !default;
 
 
 
@@ -1006,7 +1006,7 @@ $datepicker-cell-border-radius: 50% !default;
 $datepicker-cell-width: 36px !default;
 $datepicker-cell-height: 36px !default;
 
-$datepicker-disabled-cell-color: $gray-300 !default;
+$datepicker-disabled-cell-color: $gray-400 !default;
 $datepicker-disabled-old-new-color: $gray-500 !default;
 
 $datepicker-header-cell-border-radius: $border-radius !default;

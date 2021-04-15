@@ -1,11 +1,10 @@
 {
-    "/js/app.js": "/js/app.js?id=3fc52ea0aae63a9ffe6f",
-    "/js/app_backend.js": "/js/app_backend.js?id=4f0da2ee0e0b3ca842ad",
-    "/css/app_backend.css": "/css/app_backend.css?id=0bdf716126573bf98b67",
-    "/css/app.css": "/css/app.css?id=75363ba8f496817ac7dd",
+    "/js/app.js": "/js/app.js?id=12af1b4daa4267c96d09",
+    "/js/app_backend.js": "/js/app_backend.js?id=d843c7c6a1bbbd1f9284",
+    "/css/app_backend.css": "/css/app_backend.css?id=633cfe865753a453f193",
+    "/css/app.css": "/css/app.css?id=1e56c4b3df9b3eb18055",
     "/css/sm-core-css.css": "/css/sm-core-css.css?id=54068cf9d109b7842360",
     "/css/sm-mint.css": "/css/sm-mint.css?id=48cab0613c0ea857c9d6",
     "/css/stm-icons.css": "/css/stm-icons.css?id=e81194760541e196f8b0",
-    "/css/bootadmin.css": "/css/bootadmin.css?id=525f1be8286f0d41abdc",
-    "/css/argon.min.css": "/css/argon.min.css?id=1090617bf2b23252e85a"
+    "/css/argon.min.css": "/css/argon.min.css?id=3b2ddf41c0913dc3cbc3"
 }
