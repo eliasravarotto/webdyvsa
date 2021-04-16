@@ -146,7 +146,7 @@ class SlideController extends Controller
 
     public function getDataSlide(Request $request, $id)
     {
-        $slide = Slide::find($id)->with('items')->first();
+        $slide = Slide::where('id', $id)->with('items')->firstOrFail();
         return $slide;
     }
 

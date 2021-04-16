@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('imagen_portada')->nullable();
             $table->text('contenido');
             $table->integer('orden')->nullable();
+            $table->date('vencimiento')->nullable();
 
             $table->timestamps();
         });
