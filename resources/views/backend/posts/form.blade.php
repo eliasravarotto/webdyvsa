@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-7">
 				<div class="form-group requerido">
 					<label class="control-label mb-1">Categorías</label>
 					<span class="text-danger">{{ $errors->first('categories') }}</span>
@@ -25,6 +25,12 @@
 				<div class="form-group">
 					<label class="control-label mb-1">Orden</label>
 					<input class="form-control" type="number" name="orden" value="{{ $post->orden or old('orden') }}">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label class="control-label mb-1">Vencimiento</label>
+					<input class="form-control" type="date" name="vencimiento" value="{{ $post->vencimiento or old('vencimiento') }}">
 				</div>
 			</div>
 		</div>
