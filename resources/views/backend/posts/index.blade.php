@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col col-md-8">
+        <div class="col-12 col-lg-8">
             <div class="card border-info" id="app_index">
                 <div class="card-body">
                     <div class="card-panel mb-4">
@@ -62,7 +62,7 @@
                 </div>
             </div>  
         </div>
-        <div class="col col-md-4">
+        <div class="col-12 col-lg-4">
             <category-component />
         </div>
     </div>

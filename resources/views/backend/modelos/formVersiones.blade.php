@@ -14,10 +14,27 @@
 	}
 </style>
 <div class="card" id="formVersiones">
-    <div class="card-header">
-        <strong class="card-title">Agregar Versiones {{ $modelo->nombre }}</strong>
-    </div>
     <div class="card-body">
+
+      <div class="card-panel mb-5">
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <div class="d-flex align-items-center">
+              <div class="icon-header bg-warning"><i class="fas fa-th-list"></i></div>
+              <div class="d-block">
+                <h5 class="card-title mb-0">VERSIONES Y PRECIOS</h5>
+                <small class="text-muted">{{ $modelo->marca->nombre }} {{ $modelo->nombre }}</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 text-right">
+            <a href="#" onclick="addField(event)" class="btn btn-link ">
+              <i class="fa fa-plus" aria-hidden="true"></i> Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+
     	<form action="/admin/modelos/{{ $modelo->id }}/edit/versiones" method="POST" autocomplete="off">
           <input name="_method" type="hidden" value="PUT">
 			    {{ csrf_field() }}
@@ -53,20 +70,20 @@
             @endforeach
           </div>
 
-          <div class="row mt-4">
+          <div class="row">
             <div class="col-12 text-right">
-              <a href="#" onclick="addField(event)" class="btn btn-link ">
+              <a href="#" onclick="addField(event)" class="btn btn-link my-3">
                 <i class="fa fa-plus" aria-hidden="true"></i> Agregar
               </a>
             </div>
           </div>
-    		
+
           <div class="row form-group mt-5">
-              <div class="col-9">
-                  <a class="btn btn-dark" href="/admin/modelos" style="color: white">
+              <div class="col-12 text-right">
+                  <a class="btn btn-dark" href="/admin/modelos">
                     Cancelar
                   </a>
-                  <button type="submit" class="btn btn-info">
+                  <button type="submit" class="btn btn-success">
                     <i class="fas fa-save"></i> Guardar
                   </button>
               </div>

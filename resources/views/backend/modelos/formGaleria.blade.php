@@ -2,10 +2,22 @@
 
 @section('content')
 <div class="card" id="form">
-  <div class="card-header">
-    <strong class="card-title">Galeria de Imagenes {{ $modelo->nombre }}</strong>
-  </div>
   <div class="card-body">
+
+    <div class="card-panel mb-5">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <div class="d-flex align-items-center">
+            <div class="icon-header bg-warning"><i class="fas fa-th-list"></i></div>
+            <div class="d-block">
+              <h5 class="card-title mb-0">GALERIA</h5>
+              <small class="text-muted">{{ $modelo->marca->nombre }} {{ $modelo->nombre }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="content" id="content_dropzone">
       <div class="dropzone needsclick dz-clickable dz-started" id="dropzone-gallery-modelos">
         <div class="dz-message text-center mb-3" data-dz-message>

@@ -2,16 +2,24 @@
 
 @section('content')
 <div class="card" id="form">
-    <div class="card-header">
-        <strong class="card-title">Editar Colores {{ $modelo->nombre }}</strong>
-    </div>
     <div class="card-body">
-      <div class="row">
-        <div class="col-12 text-right">
-          <a href="#" onclick="addRowColor()" class="btn btn-link "><i class="fa fa-plus"></i> Agregar</a>
+
+      <div class="card-panel mb-5">
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <div class="d-flex align-items-center">
+              <div class="icon-header bg-warning"><i class="fas fa-th-list"></i></div>
+              <div class="d-block">
+                <h5 class="card-title mb-0">COLORES</h5>
+                <small class="text-muted">{{ $modelo->marca->nombre }} {{ $modelo->nombre }}</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 text-right">
+            <a href="#" onclick="addRowColor()" class="btn btn-link "><i class="fa fa-plus"></i> Agregar</a>
+          </div>
         </div>
       </div>
-      <br>
     	<form action="/admin/modelos/{{ $modelo->id }}/edit/colores" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
 		    {{ csrf_field() }}
         <input name="_method" type="hidden" value="PUT">
@@ -60,12 +68,12 @@
 
         </div>
          
-        <div class="row form-group">
-            <div class="col-9">
-                <a class="btn btn-dark" href="/admin/modelos" style="color: white">
+        <div class="row form-group ">
+            <div class="col-12 text-right">
+                <a class="btn btn-dark" href="/admin/modelos">
                   Cancelar
                 </a>
-                <button type="submit" class="btn btn-info">
+                <button type="submit" class="btn btn-success">
                   <i class="fas fa-save"></i> Guardar
                 </button>
             </div>

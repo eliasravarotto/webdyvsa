@@ -4,10 +4,26 @@
 <div class="row">
   <div class="col-12 col-md-8">
     <div class="card">
-      <div class="card-header">
-          <strong class="card-title">{{ $modelo->nombre }} - Nuevo Item </strong>
-      </div>
       <div class="card-body">
+        <div class="card-panel mb-5">
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="d-flex align-items-center">
+                  <div class="icon-header bg-warning"><i class="fas fa-th-list"></i></div>
+                  <div class="d-block">
+                    <h5 class="card-title mb-0">CARACTERISTICAS</h5>
+                    <small class="text-muted">{{ $modelo->marca->nombre }} {{ $modelo->nombre }}</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 text-right">
+                <a href="#" onclick="addField(event)" class="btn btn-link">
+                  <i class="fa fa-plus"></i>
+                  Agregar
+                </a>
+              </div>
+            </div>
+        </div>
         <form action="/admin/modelos/{{ $modelo->id }}/edit/caracteristicas" method="POST" novalidate="novalidate" autocomplete="off" enctype="multipart/form-data" files="true">
           {{ csrf_field() }}
           <input name="_method" type="hidden" value="PUT">
@@ -42,24 +58,13 @@
               </div>
             </div>
           </div>
-
-          <div class="row">
-            <div class="form-group">
-              <div class="col-12 text-right">
-                <a href="#" onclick="addField(event)" class="btn btn-link">
-                  <i class="fa fa-plus"></i>
-                  Agregar
-                </a>
-              </div>
-            </div>
-          </div>
          
-          <div class="row">
+          <div class="row mt-4">
               <div class="col-9">
-                  <a class="btn btn-dark" href="/admin/modelos" style="color: white">
+                  <a class="btn btn-dark" href="/admin/modelos">
                    Cancelar
                   </a>
-                  <button type="submit" class="btn btn-info">
+                  <button type="submit" class="btn btn-success">
                     Guardar
                   </button>
               </div>
