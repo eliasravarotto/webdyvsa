@@ -1,9 +1,26 @@
 @extends('backend.layout')
 
-@section('content')
+    @section('stylesheet')
+    <style type="text/css">
+        
+        .icon-sq{
+            width: 32px;
+            height: 32px;
+            margin-right: 0.5rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border-radius: 5px;
+            color: white;
+        }
 
-<style type="text/css">
-#loader{
+        #loader{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,17 +80,36 @@
             transform: rotate(360deg);
   }
 }
-</style>
+
+
+    </style>
+    @stop
+
+@section('content')
+
     {{-- Lista de precios --}}
     <div class="row mb-3" id="lista_precios_planes">
         <div class="col-sm-12">
         <div class="card border-dark">
-            <div class="card-header bg-default font-weight-bold">
-                LISTA DE PRECIOS
-            </div>
             <div class="card-body">
+                <div class="card-panel">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-header bg-warning"><i class="fas fa-users"></i></div>
+                                <div class="d-block">
+                                    <h5 class="card-title mb-0">LISTA DE PRECIOS</h5>
+                                    <small class="text-muted">Unidades</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 text-right">
+                            <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter" onclick="newPlan()"><i class="fas fa-plus"></i> Nuevo</a>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-sm table-hover">
-                    <thead>
+                    <thead class="thead-light">
                       <tr>
                         <th>Unidad</th>
                         <th>Modalidad</th>
@@ -88,7 +124,7 @@
                     </tbody>
                 </table>
 
-                <a href="#" class="btn btn-default" data-toggle="modal" data-target="#exampleModalCenter" onclick="newPlan()"><i class="fas fa-plus"></i> Nuevo</a>
+                
             </div>
         </div>
         </div>
@@ -98,12 +134,25 @@
     <div class="row mb-3" id="lista_adjudicados">
         <div class="col-sm-12">
         <div class="card border-info">
-          <div class="card-header bg-default font-weight-bold">
-                PLANES ADJUDICADOS
-            </div>
           <div class="card-body">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-header bg-warning"><i class="fas fa-users"></i></div>
+                            <div class="d-block">
+                                <h5 class="card-title mb-0">PLANES ADJUDICADOS</h5>
+                                <small class="text-muted">Disponibles</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modalNewAdjudicado" onclick="newPlanAdjudicado()"><i class="fas fa-plus"></i> Agregar</a>
+                    </div>
+                </div>
+            </div>
             <table class="table table-sm table-hover">
-                <thead>
+                <thead class="thead-light">
                   <tr>
                     <th>G/O.</th>
                     <th>Unidad</th>
@@ -118,8 +167,6 @@
                 </tbody>
             </table>
             
-            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modalNewAdjudicado" onclick="newPlanAdjudicado()"><i class="fas fa-plus"></i> Agregar</a>
-
           </div>
         </div>
         </div>
@@ -129,12 +176,25 @@
     <div class="row mb-3" id="lista_avanzados">
         <div class="col-sm-12">
         <div class="card border-info">
-          <div class="card-header bg-default font-weight-bold">
-                PLANES AVANZADOS
-            </div>
           <div class="card-body">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-header bg-warning"><i class="fas fa-users"></i></div>
+                            <div class="d-block">
+                                <h5 class="card-title mb-0">PLANES AVANZADOS</h5>
+                                <small class="text-muted">Disponibles</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#modalNewAvanzado" onclick="newPlanAavanzado()"><i class="fas fa-plus"></i> Agregar</a>
+                    </div>
+                </div>
+            </div>
             <table class="table table-sm table-hover">
-                <thead>
+                <thead class="thead-light">
                   <tr>
                     <th>G/O.</th>
                     <th>Unidad</th>
@@ -149,7 +209,6 @@
                 </tbody>
             </table>
 
-            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#modalNewAvanzado" onclick="newPlanAavanzado()"><i class="fas fa-plus"></i> Agregar</a>
 
           </div>
         </div>
@@ -159,7 +218,8 @@
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-default">
+                <div class="modal-header ">
+                    <div class="icon-sq bg-warning"><i class="fas fa-pencil-alt"></i></div>
                     <h5 class="modal-title" id="formularioPlanTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -215,7 +275,8 @@
     <div class="modal fade" id="modalNewAdjudicado" tabindex="-1" role="dialog" aria-labelledby="modalNewAdjudicadoTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-default">
+                <div class="modal-header ">
+                    <div class="icon-sq bg-warning"><i class="fas fa-pencil-alt"></i></div>
                     <h5 class="modal-title" id="formularioPlanAdjudicadoTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -265,7 +326,8 @@
     <div class="modal fade" id="modalNewAvanzado" tabindex="-1" role="dialog" aria-labelledby="modalNewAvanzadoTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-default">
+                <div class="modal-header ">
+                    <div class="icon-sq bg-warning"><i class="fas fa-pencil-alt"></i></div>
                     <h5 class="modal-title" id="formularioPlanAvanzadoTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>

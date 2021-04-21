@@ -14,7 +14,7 @@ class TPAPlanController extends Controller
 
     use ApiResponser;
 
-	private $unidadesTpa = ['Etios X 4P', 'Etios X 5P', 'Corolla XLI', 'Hilux 4x2 DX'];
+	private $unidadesTpa = ['Etios X 4P', 'Etios X 5P', 'Corolla XLI', 'Hilux 4x2 DX', 'Yaris XS AUDIO 5P'];
 	private $modalidadesTPA = ['100%', '70/30'];
 
     public function panelTpa(Request $request)
