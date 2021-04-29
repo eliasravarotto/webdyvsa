@@ -43,7 +43,7 @@ class ModeloGalleryController extends Controller
         if ($request->hasFile('file')) {
             $photo = new File;
 
-            $photo->path = $this->storeAndReziseImage($request, 'public/fotos', 'file')->imagePath;
+            $photo->path = $this->storeAndReziseImage($request, 'public/fotos', 'file', 1200, 100)->imagePath;
 
             $photo->public_path = Storage::url($photo->path);
 
