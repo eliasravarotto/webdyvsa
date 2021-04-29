@@ -4,30 +4,30 @@
 <div class="card">
     <div class="card-header">
         <strong class="card-title">Mensaje</strong> 
-        <span class="float-right">Creado: {{ date('d-m-Y H:m', strtotime($mensaje->created_at))}}</span>
+        <span class="float-right">Creado: {{ date('d-m-Y H:m', strtotime($message->created_at))}}</span>
     </div>
     <div class="card-body">
     	<table class="table table-striped">
         <tbody>
           <tr>
             <th style="width: 20%;">Apellido y Nombre</th>
-            <td>{{ $mensaje->cliente }}</td>
+            <td>{{ $message->cliente }}</td>
           </tr>
           <tr>
             <th>Teléfono</th>
-            <td>{{ $mensaje->telefono }}</td>
+            <td>{{ $message->telefono }}</td>
           </tr>
           <tr>
             <th>Email</th>
-            <td>{{ $mensaje->email }}</td>
+            <td>{{ $message->email }}</td>
           </tr>        
           <tr>
             <th>Comentario</th>
-            <td>{{ $mensaje->mensaje }}</td>
+            <td>{{ $message->message }}</td>
           </tr>
           <tr>
             <th>Creado</th>
-            <td>{{ date('d-m-Y H:m', strtotime($mensaje->created_at))}}</td>
+            <td>{{ date('d-m-Y H:m', strtotime($message->created_at))}}</td>
           </tr>
         </tbody>
   </table>

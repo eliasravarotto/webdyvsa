@@ -22,7 +22,8 @@ class SolicitudTestDriveController extends Controller
      */
     public function index()
     {
-        $solicitudes = SolicitudTestDrive::orderBy('id', 'DESC')->get();
+        $solicitudes = SolicitudTestDrive::orderBy('id', 'DESC')->paginate(10);
+        
         return view('backend.test-drive.index', compact('solicitudes'));
     }
 

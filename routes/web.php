@@ -45,8 +45,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::put('admin/turnos-servicios/{solicitud}','TurnoServicioController@update')->name('turno_servicio_update');
 
 	Route::get('admin/solicitudes-test-drive','SolicitudTestDriveController@index')->name('testdrive_index');
-	Route::get('admin/leads','MensajeEmailController@index')->name('admin_leads');
-	Route::get('admin/mensajes-contacto/{id}/show','MensajeEmailController@show')->name('contacto_mensajes_show');
+	Route::resource('messages','MessageController', ['except' => ['create', 'edit']]);
 	Route::resource('admin/posts','PostController');
 	Route::resource('categories','CategoryController');
 	Route::get('admin/modelo/borrar_caracterisica_modelo/{id}','ModelosController@borrarCaracteristica')->name('borrar_caracterisica_modelo');

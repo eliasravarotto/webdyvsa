@@ -6,7 +6,7 @@
             <i class="fas fa-envelope"></i> Mensajes
         </a>
         <ul id="ul_leads" class="list-unstyled collapse">
-            <li><a href="{{route('admin_leads')}}">Leads</a></li>
+            <li><a href="{{route('messages.index')}}">Leads</a></li>
             <li><a href="{{route('testdrive_index')}}">Test Drive</a></li>
         </ul>
     </li>

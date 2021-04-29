@@ -96,10 +96,11 @@
                             </td>
                             <td class="text-right"><b>$ {{  number_format($usado->precio, 2, ',', '.')}}</b></td>
                             <td class="text-center">
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" class="custom-control-input" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">
-                                  <label class="custom-control-label" for="{{$usado->id}}"></label>
+                                <div class="custom-control ">
+                                  <input type="checkbox" class="" id="{{$usado->id}}" @if($usado->visible == 1) checked @endif onclick="actualizarVisible(this);">
+                                  <label class="" for="{{$usado->id}}"></label>
                                 </div>
+
                             </td>
                             <td class="text-right">
                                 <form method="POST" action="{{ route('usados.destroy', $usado->id) }}">

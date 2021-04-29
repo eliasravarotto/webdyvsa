@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('contenido');
             $table->integer('orden')->nullable();
             $table->date('vencimiento')->nullable();
+            $table->string('slug')->unique();
 
             $table->timestamps();
         });

@@ -26,6 +26,7 @@ class CreateSucursalsTable extends Migration
             $table->boolean('tiene_test_drive');
             $table->integer('negocio_id')->unsigned();
             $table->foreign('negocio_id')->references('id')->on('negocios');
+            $table->string('whatsapp_posventa')->nullable();
             $table->timestamps();
         });
     }

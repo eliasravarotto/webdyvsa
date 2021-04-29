@@ -57,7 +57,7 @@
                 <div class="row">
                   <div class="col-9">
                     <div class="d-flex align-items-center">
-                      <div class="icon-header bg-warning"><i class="fa fa-car"></i></div>
+                      <div class="icon-header bg-warning"><i class="stm-icon-car_sale"></i></div>
                       <div class="d-block">
                         <h5 class="card-title mb-0">Versiones y Precios </h5>
                         <small class="text-muted">{{ $modelo->nombre }}</small>

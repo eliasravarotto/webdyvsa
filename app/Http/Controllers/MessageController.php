@@ -14,6 +14,7 @@ class MessageController extends Controller
     use ApiResponser;
 
     protected $refer = 'contacto, financiacion, tpa, la_voz_del_cliente, usados';
+    private $froms=['contacto', 'financiacion', 'tpa', 'la_voz_del_cliente', 'usados'];
 
 
     /**
@@ -21,9 +22,22 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $froms = $this->froms;
+        $filterFroms = collect($request->filterFroms);
+        $cliente = $request->cliente;
+        $desde = $request->desde;
+        $hasta = $request->hasta;
+
+        $messages = Message::cliente($request->cliente)
+                    ->filterFroms($request->filterFroms)
+                    ->desde($request->desde)
+                    ->hasta($request->hasta)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(15);
+
+        return view('backend.contacto.index', compact('messages', 'froms', 'filterFroms', 'cliente', 'desde', 'hasta'));
     }
 
 
@@ -36,9 +50,8 @@ class MessageController extends Controller
     public function store(Request $request)
     {
 
-
          $rules = [
-            'name' => 'required',
+            'name' => 'required|min:3|max:30',
             'phone' => 'required',
             'email' => 'required',
             'message' => 'required',
@@ -85,7 +98,8 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        //
+        // $mensaje = Message::find($id);
+        return view('backend.contacto.show', compact('message'));
     }
 
 

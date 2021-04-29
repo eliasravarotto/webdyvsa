@@ -174,11 +174,12 @@ class UsadoController extends Controller
     private function validarRequest( $request )
     {
        return $this->validate($request, [
-            'anio' => 'required|integer|min:2008|max:' . date('Y'),
             'color' => 'required',
             'marca' => 'required',
             'modelo' => 'required',
             'interno' => 'required|integer',
+            'km' => 'required|integer|min:100',
+            'anio' => 'required|integer|min:2008|max:' . date('Y'),
         ]);
     }
 

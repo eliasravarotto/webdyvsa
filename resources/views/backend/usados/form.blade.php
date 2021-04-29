@@ -257,17 +257,13 @@
   				previewTemplate: `
   					<div class="dz-preview dz-file-preview">
 					  <div class="dz-details">
-					    <img data-dz-thumbnail style="width: 110px;"/>
-					  </div>
-					  <div class="dz-progress progress mt-1">
-					  	<span class="dz-upload progress-bar" data-dz-uploadprogress></span>
+					    <img data-dz-thumbnail />
 					  </div>
 					  <div class="dz-error-message"><span data-dz-errormessage></span></div>
 					</div>
   				`,
    				init: function() {
    					this.on("success", function(file, response) {
-                        console.log(response);
                         notifier.show('Hecho!', 'La imagen se cargó correctamente.', '', '/imagenes/icons/success.png', 3500);
                     });
                     //display photos
