@@ -1,41 +1,21 @@
 [
-        { "modelo": "Etios",
-          "version": "X 5P",
-          "modalidad": "100%",
-          "image": "/imagenes/tpa/etios100.png",
-          "slug": "etios-x-5p-100",
-          "cuotas": [
-          			{ "cuota": "Cuota 1", 
-          			  "valor": "15.418,08"
-          			},
-          			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "17.594,78"
-          			},
-          			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "17.744,76"
-          			},
-          			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "20.430,39"
-          			}
-        		  		  ]
-        },
-        { "modelo": "Etios", 
-          "version": "X 5P", 
+        { "modelo": "Yaris", 
+          "version": "XS AUDIO 5P", 
           "modalidad": "70/30", 
-          "image": "/imagenes/tpa/etios7030.png",
-          "slug": "etios-x-5p-7030",
+          "image": "/imagenes/tpa/yaris100.png",
+          "slug": "yaris-xs-audio-5p-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
-          			  "valor": "11.058,12"
+          			  "valor": "15.045,51"
           			},
           			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "14.966,46"
+          			  "valor": "20.261,48"
           			},
           			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "13.316,58"
+          			  "valor": "18.027,89"
           			},
           			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "14.582,55"
+          			  "valor": "19.741,75"
           			}
         		  		  ]
         },
@@ -46,16 +26,16 @@
           "slug": "yaris-xs-hatchback",
           "cuotas": [
                 { "cuota": "Cuota 1",
-                  "valor": "19.878,89"
+                  "valor": "20.872,89"
                 },
                 { "cuota": "Cuotas 2 a 5",
-                  "valor": "22.685,35"
+                  "valor": "23.819,69"
                 },
                 { "cuota": "Cuotas 6 a 24",
-                  "valor": "22.878,73"
+                  "valor": "24.022,73"
                 },
                 { "cuota": "Cuotas 25 a 84",
-                  "valor": "26.341,37"
+                  "valor": "27.658,51"
                 }
                     ]
         },
@@ -66,16 +46,16 @@
           "slug": "hilux-4x2-dx-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
-          			  "valor": "30.543,02"
+          			  "valor": "32.224,81"
           			},
           			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "35.541,11"
+          			  "valor": "37.321,83"
           			},
           			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "31.863,79"
+          			  "valor": "33.460,27"
           			},
           			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "31.497,94"
+          			  "valor": "33.076,09"
           			}
         		  		  ]
         },
@@ -86,16 +66,16 @@
           "slug": "hilux-4x4-dx-100",
           "cuotas": [
           			{ "cuota": "Cuota 1",
-          			  "valor": "44.024,72"
+          			  "valor": "46.230,35"
           			},
           			{ "cuota": "Cuotas 2 a 5",
-          			  "valor": "49.686,58"
+          			  "valor": "52.175,88"
           			},
           			{ "cuota": "Cuotas 6 a 24",
-          			  "valor": "50.076,87"
+          			  "valor": "52.585,72"
           			},
           			{ "cuota": "Cuotas 25 a 84",
-          			  "valor": "51.601,26"
+          			  "valor": "54.186,48"
           			}
         		  		  ]
         },
@@ -106,16 +86,16 @@
           "slug": "corolla-xli-mt-100",
           "cuotas": [
                 { "cuota": "Cuota 1",
-                  "valor": "27.013,63"
+                  "valor": "27.337,65"
                 },
                 { "cuota": "Cuotas 2 a 5",
-                  "valor": "30.487,76"
+                  "valor": "30.853,45"
                 },
                 { "cuota": "Cuotas 6 a 24",
-                  "valor": "30.727,24"
+                  "valor": "31.095,81"
                 },
                 { "cuota": "Cuotas 25 a 84",
-                  "valor": "31.662,61"
+                  "valor": "32.042,39"
                 }
                     ]
         },
@@ -126,16 +106,16 @@
           "slug": "corolla-cross-xei-cvt-100",
           "cuotas": [
                 { "cuota": "Cuota 1",
-                  "valor": "38.057,12"
+                  "valor": "39.960,43"
                 },
                 { "cuota": "Cuotas 2 a 5",
-                  "valor": "42.951,52"
+                  "valor": "45.099,60"
                 },
                 { "cuota": "Cuotas 6 a 24",
-                  "valor": "43.288,90"
+                  "valor": "45.453,86"
                 },
                 { "cuota": "Cuotas 25 a 84",
-                  "valor": "44.606,66"
+                  "valor": "46.837,51"
                 }
                     ]
         }
