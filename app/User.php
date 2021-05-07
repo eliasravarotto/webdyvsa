@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -47,15 +48,29 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role', 'user_role');
     }
 
-    public function hasRoles($roles)
+    public function hasRoles($rolesIds)
     {
-        foreach ($roles as $role_id) {
+
+        foreach ($rolesIds as $role_id) {
             foreach ($this->roles as $userRole) {
-                if ($userRole->id === $role_id) {
+                if ($userRole->id === (int) $role_id) {
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    // Función copiada del archivo:
+     // vendor\laravel\framework\src\Illuminate\Auth\Passwords\CanResetPassword.php     
+     /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
     }
 }

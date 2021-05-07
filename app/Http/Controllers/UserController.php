@@ -12,6 +12,13 @@ class UserController extends Controller
 
     use ImageHandler;
 
+
+    function __construct()
+    {
+        $this->middleware(['roles:1']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -68,7 +75,7 @@ class UserController extends Controller
 
         $user->roles()->sync($request->roles);
 
-        return $user;
+        return redirect('/usuarios')->with('success', 'Usuario creado');
     }
 
     /**
@@ -120,7 +127,7 @@ class UserController extends Controller
 
         $user->roles()->sync($request->roles);
 
-        return $user;
+        return back()->with('success', 'Usuario actualizado');
     }
 
     /**
@@ -131,6 +138,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->roles()->sync([]);
+
+        $user->delete();
+
+        return redirect('/usuarios')->with('success', 'Usuario eliminado');
     }
 }

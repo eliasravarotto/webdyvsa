@@ -16,6 +16,13 @@ class AccesorioController extends Controller
     use ImageHandler;
     use ApiResponser;
 
+
+    function __construct()
+    {
+        $this->middleware(['roles:2']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

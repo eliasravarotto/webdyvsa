@@ -14,9 +14,9 @@
 	    <div class="card ">
 	        <div class="card-body">
 	        	<form action="{{ route('usuarios.update', $user->id) }}" method="POST" autocomplete="off" enctype="multipart/form-data" files="true">
-	    			<div class="card-panel">
+	    			<div class="card-panel mb-5">
 			        	<div class="row">
-			        		<div class="col-12 col-md-4">
+			        		<div class="col-12 col-md-8">
 			        			<div class="d-flex align-items-center">
 			        				<div class="icon-header bg-warning"><i class="fas fa-users"></i></div>
 			        				<div class="d-block">
@@ -25,6 +25,15 @@
 			        				</div>
 			        			</div>
 			        		</div>
+			        		<div class="col-12 col-md-4 text-right">
+			        			<a href="#" 
+			                       class="btn btn-link" 
+			                       onclick="event.preventDefault();
+			                       			var result = confirm('¿Realmente desea eliminar el usuario?');
+	                                      	result ? document.getElementById('delete-form').submit() : null;">
+			                    	<i class="fas fa-times"></i> Eliminar
+			                    </a>
+			        		</div>
 			        	</div>
 	    			</div>
 	        		<input name="_method" type="hidden" value="PUT">
@@ -32,6 +41,10 @@
 	        		@include('backend.users.form')
 	        		
 				</form>
+                <form id="delete-form" class="d-none" action="{{ route('usuarios.destroy', $user->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="_method" value="DELETE">
+                </form>
 	        </div>
 	    </div>
 	    </div>
