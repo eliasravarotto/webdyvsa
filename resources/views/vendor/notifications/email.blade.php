@@ -12,7 +12,7 @@
 
 {{-- Intro Lines --}}
 @foreach ($introLines as $line)
-    {{ $line }}
+    {{{ $line }}}
 @endforeach
 
 {{-- Action Button --}}
@@ -30,18 +30,18 @@
         }
     ?>
     @component('mail::button', ['url' => $actionUrl, 'color' => $color])
-        {{ $actionText }}
+        {{{ $actionText }}}
     @endcomponent
 @endisset
 
 {{-- Outro Lines --}}
 @foreach ($outroLines as $line)
-    {{ $line }}
+    {{{ $line }}}
 @endforeach
 
 {{-- Salutation --}}
 @if (! empty($salutation))
-    {{ $salutation }}
+    {{{ $salutation }}}
 @else
     Saludos.
 @endif
