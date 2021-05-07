@@ -27,7 +27,6 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->markdown('emails.users.confirmation')
             ->line('Recibió este correo electrónico porque recibimos una solicitud de restablecimiento de contraseña para su cuenta.')
             ->action('Restablecer Contraseña', $this->actionUrl)
             ->line('Si no solicitó un restablecimiento de contraseña, no es necesario realizar ninguna otra acción.');
