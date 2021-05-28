@@ -19,7 +19,7 @@ class AccesorioController extends Controller
 
     function __construct()
     {
-        $this->middleware(['roles:2']);
+        $this->middleware(['roles:2'], [ 'except' => ['getAccesorios'] ]);
     }
 
 
