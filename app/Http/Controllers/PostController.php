@@ -65,6 +65,11 @@ class PostController extends Controller
 
         $post = Post::create($request->all());
 
+        if(isset($request->vencimiento)){
+            $post->vencimiento = $request->vencimiento;
+            $post->update();
+        }
+
         $post->categories()->sync($request->categories);
 
         if ($request->hasFile('imagen_portada')) {
@@ -119,6 +124,13 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         $post->update($request->all());
+
+        if(isset($request->vencimiento)){
+            $post->vencimiento = $request->vencimiento;
+        }else{
+            $post->vencimiento = null;
+        }
+
 
         $post->categories()->sync($request->categories);
         
@@ -176,8 +188,11 @@ class PostController extends Controller
 
     public function getPosts(Request $request)
     {
-        
+        $today = date('Y-m-d');
+
         $posts = Post::with('image')
+                        ->where('vencimiento', '>', $today)
+                        ->orWhere('vencimiento', null)
                         ->with('categories')
                         ->orderBy('created_at', 'DESC')
                         ->get();
