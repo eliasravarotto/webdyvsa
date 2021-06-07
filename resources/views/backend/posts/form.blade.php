@@ -37,23 +37,21 @@
 	</div>
 	<div class="col-sm-12 col-md-3">
 		<div id="div_file">
-		 	@if($post->image != null)
-		 		{{-- <img id='output' style="width: 155px; margin-bottom: 10px;" src="{{$post->image->public_path}}" alt=""> --}}
-		 		<div class="image">
-			    	<input type="file" name="foto" accept='image/*' onchange='openFile(event)' title=" ">
-				</div>
-		 		<img id="foto" src="{{$post->image->public_path}}" alt="Avatar Image">
-		 	@else
-		 		<img id='output' style="width: 155px; margin-bottom: 10px;" src="/imagenes/default-img.png" alt="">
-		    @endif
-
-		    @if($post->id)
-		    	<input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada">
-		    @else
-		    	<input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title="Foto Portada" required>
-	 		@endif
-	 		
-	 		<span class="text-danger">{{ $errors->first('imagen_portada') }}</span>
+			 	@if($post->imagen_portada != null)
+				 	<div class="image">
+				    	<input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title=" ">
+					</div>
+			 		<img id="imagen_portada" src="{{$post->imagen_portada}}">
+			 	@else
+				 	<div class="image">
+						<div class="content">
+				          	<div class="icon-upload text-center"><i class="fas fa-cloud-upload-alt"></i></div>
+							<div class="text text-center">Click o Arrastrar para cambiar imagen</div>
+						</div>
+				    	<input type="file" name="imagen_portada" accept='image/*' onchange='openFile(event)' title=" ">
+					</div>
+			 		<img id="imagen_portada" src alt="" class="d-none">
+			    @endif
 		 </div>
 	</div>
 </div>
@@ -70,19 +68,7 @@
 @section('page-script')
 <script type="text/javascript">
 	//Script field foto
-    var openFile = function(event) {
-	    var input = event.target;
-
-	    var reader = new FileReader();
-
-	    reader.onload = function(){
-	      var dataURL = reader.result;
-	      var output = document.getElementById('output');
-	      output.src = dataURL;
-	    };
-	    
-	    reader.readAsDataURL(input.files[0]);
-  	};
+    
 
   	// CONFIGURACION UTF-8 CKEDITOR
   	CKEDITOR.config.entities  = false;
