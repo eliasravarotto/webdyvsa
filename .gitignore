@@ -1,6 +1,6 @@
 /node_modules
 /public/hot
-/public/storage
+/public/storage/*
 /public/imagenes/usados/*
 /public/imagenes/posts/*
 /public/imagenes/modelos/*
