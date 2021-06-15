@@ -15,11 +15,10 @@ class CreateCaracteristicaModelosTable extends Migration
     {
         Schema::create('caracteristica_modelos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('modelo_id')->unsigned();
-            $table->foreign('modelo_id')->references('id')->on('modelos');
             $table->string('titulo');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
             $table->string('img');
+            $table->integer('modelo_id')->unsigned();
             $table->timestamps();
         });
     }

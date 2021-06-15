@@ -19,7 +19,6 @@ class CreateVersionsTable extends Migration
             $table->string('precio');
             $table->string('moneda')->nullable();
             $table->integer('modelo_id')->unsigned();
-            $table->foreign('modelo_id')->references('id')->on('modelos');
             $table->timestamps();
         });
     }

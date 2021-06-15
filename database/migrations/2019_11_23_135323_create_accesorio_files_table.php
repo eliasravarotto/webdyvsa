@@ -15,13 +15,8 @@ class CreateAccesorioFilesTable extends Migration
     {
         Schema::create('accesorio_files', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('accesorio_id')->unsigned();
-            $table->foreign('accesorio_id')->references('id')->on('accesorios');
-
             $table->integer('file_id')->unsigned();
-            $table->foreign('file_id')->references('id')->on('files');
-
             $table->timestamps();
         });
     }

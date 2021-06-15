@@ -15,19 +15,20 @@ class CreateModelosTable extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('marca_id')->unsigned()->default(1);
-            $table->foreign('marca_id')->references('id')->on('marcas');
             $table->string('nombre');
             $table->string('slug');
             $table->string('img_logo')->nullable();
             $table->string('img_modelo')->nullable();
             $table->string('slogan')->nullable();
-            $table->string('descripcion')->nullable();
+            $table->text('descripcion')->nullable();
             $table->string('link_ficha_tecnica')->nullable();
             $table->string('link_catalogo')->nullable();
             $table->boolean('activo')->default(1);
             $table->boolean('destacado')->default(0);
             $table->integer('orden')->default(1);
+            $table->boolean('publicar_servicio')->default(1);
+            $table->integer('marca_id')->unsigned()->default(1);
+            $table->integer('tipo_vehiculo_id')->nullable()->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

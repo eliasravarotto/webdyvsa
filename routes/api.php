@@ -44,3 +44,15 @@ Route::get('/sucursales-posventa','ApiController@sucursalesPosventa');
 Route::get('/posventa/lista-de-precios','ServicioController@listaDePrecios');
 Route::get('/accesorios','AccesorioController@getAccesorios');
 Route::post('/push-subscription/{token}','FrontController@subscribeClient');
+
+
+Route::group(['middleware' => 'jwt.auth'], function(){
+
+
+
+});
+
+Route::post('/auth/login','ApiAuthController@login');
+Route::get('/auth/logout','ApiAuthController@logout');
+Route::post('/auth/register','ApiAuthController@register');
+Route::post('/auth/refresh','ApiAuthController@refreshToken');

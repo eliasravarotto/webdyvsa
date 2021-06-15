@@ -17,9 +17,8 @@ class CreateAccesoriosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->float('precio');
-            $table->integer('modelo_id')->unsigned();
-            $table->foreign('modelo_id')->references('id')->on('modelos');
             $table->boolean('activo')->nullable();
+            $table->integer('modelo_id')->unsigned();
             $table->timestamps();
         });
     }

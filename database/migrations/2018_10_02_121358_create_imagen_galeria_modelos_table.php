@@ -15,8 +15,8 @@ class CreateImagenGaleriaModelosTable extends Migration
     {
         Schema::create('imagen_galeria_modelos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('url');
             $table->integer('modelo_id')->unsigned();
-            $table->foreign('modelo_id')->references('id')->on('modelos');
             $table->timestamps();
         });
     }

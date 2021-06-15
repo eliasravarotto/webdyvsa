@@ -9,7 +9,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 trait ApiResponser
 {
-	private function successResponse($data, $code)
+	private function successResponse($data, $code = 200)
 	{
 		return response()->json($data, $code);
 	}

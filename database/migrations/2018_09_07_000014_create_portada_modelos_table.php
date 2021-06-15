@@ -21,7 +21,6 @@ class CreatePortadaModelosTable extends Migration
             $table->string('logo');
             
             $table->integer('modelo_id')->unsigned();
-            $table->foreign('modelo_id')->references('id')->on('modelos');
             
             $table->text('html')->nullable();
             $table->timestamps();

@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Jorenvh\Share\Providers\ShareServiceProvider::class,
         App\Providers\RecaptchaValidatorServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
     ],
 
