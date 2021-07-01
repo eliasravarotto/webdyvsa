@@ -6,36 +6,36 @@
           "slug": "yaris-xs-audio-5p-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
-          			  "valor": "15.704,18"
+          			  "valor": "16.382,96"
           			},
           			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "21.790,58"
+          			  "valor": "22.732,44"
           			},
           			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "18.817,13"
+          			  "valor": "19.630,46"
           			},
           			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "20.606,01"
+          			  "valor": "21.496,67"
           			}
         		  		  ]
         },
         { "modelo": "Yaris", 
-          "version": "XS 5P", 
+          "version": "XS 5P AUDIO", 
           "modalidad": "100%",
           "image": "/imagenes/tpa/yaris100.png", 
           "slug": "yaris-xs-hatchback",
           "cuotas": [
                 { "cuota": "Cuota 1",
-                  "valor": "21.786,67"
+                  "valor": "22.705,84"
                 },
                 { "cuota": "Cuotas 2 a 5",
-                  "valor": "25.504,56"
+                  "valor": "26.564,15"
                 },
                 { "cuota": "Cuotas 6 a 24",
-                  "valor": "25.074,41"
+                  "valor": "26.118,06"
                 },
                 { "cuota": "Cuotas 25 a 84",
-                  "valor": "28.869,36"
+                  "valor": "30.065,78"
                 }
                     ]
         },
@@ -46,16 +46,16 @@
           "slug": "hilux-4x2-dx-7030",
           "cuotas": [
           			{ "cuota": "Cuota 1", 
-          			  "valor": "33.543,29"
+          			  "valor": "34.882,53"
           			},
           			{ "cuota": "Cuotas 2 a 5", 
-          			  "valor": "39.955,89"
+          			  "valor": "41.551,15"
           			},
           			{ "cuota": "Cuotas 6 a 24", 
-          			  "valor": "34.829,29"
+          			  "valor": "36.219,88"
           			},
           			{ "cuota": "Cuotas 25 a 84", 
-          			  "valor": "34.429,39"
+          			  "valor": "35.804,01"
           			}
         		  		  ]
         },
@@ -66,16 +66,16 @@
           "slug": "hilux-4x4-dx-100",
           "cuotas": [
           			{ "cuota": "Cuota 1",
-          			  "valor": "48.131,10"
+          			  "valor": "50.004,63"
           			},
           			{ "cuota": "Cuotas 2 a 5",
-          			  "valor": "55.613,82"
+          			  "valor": "57.746,11"
           			},
           			{ "cuota": "Cuotas 6 a 24",
-          			  "valor": "54.747,77"
+          			  "valor": "56.850,73"
           			},
           			{ "cuota": "Cuotas 25 a 84",
-          			  "valor": "56.414,35"
+          			  "valor": "58.571,95"
           			}
         		  		  ]
         },
@@ -86,16 +86,16 @@
           "slug": "corolla-xli-mt-100",
           "cuotas": [
                 { "cuota": "Cuota 1",
-                  "valor": "28.536,78"
+                  "valor": "29.640,87"
                 },
                 { "cuota": "Cuotas 2 a 5",
-                  "valor": "32.973,26"
+                  "valor": "34.229,73"
                 },
                 { "cuota": "Cuotas 6 a 24",
-                  "valor": "32.459,79"
+                  "valor": "33.698,98"
                 },
                 { "cuota": "Cuotas 25 a 84",
-                  "valor": "33.447,89"
+                  "valor": "34.719,25"
                 }
                     ]
         },
@@ -106,16 +106,16 @@
           "slug": "corolla-cross-xei-cvt-100",
           "cuotas": [
                 { "cuota": "Cuota 1",
-                  "valor": "42.977,39"
+                  "valor": "45.251,39"
                 },
                 { "cuota": "Cuotas 2 a 5",
-                  "valor": "49.658,88"
+                  "valor": "52.257,00"
                 },
                 { "cuota": "Cuotas 6 a 24",
-                  "valor": "48.885,57"
+                  "valor": "51.446,73"
                 },
                 { "cuota": "Cuotas 25 a 84",
-                  "valor": "50.373,69"
+                  "valor": "53.004,33"
                 }
                     ]
         }
