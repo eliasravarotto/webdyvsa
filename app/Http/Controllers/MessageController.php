@@ -65,11 +65,15 @@ class MessageController extends Controller
         $message = Message::create($request->all());
 
         if ($request->from == 'contacto' ){
-            Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new MessageReceived($message));
+            Mail::to('fabianaaranda@derkayvargas.com.ar')
+            ->cc(['eliasravarotto@derkayvargas.com.ar'])
+            ->send(new MessageReceived($message));
         }
 
         if ($request->from == 'financiacion' ){
-            Mail::to('fabianaaranda@derkayvargas.com.ar')->send(new MessageReceived($message));
+            Mail::to('fabianaaranda@derkayvargas.com.ar')
+            ->cc(['eliasravarotto@derkayvargas.com.ar'])
+            ->send(new MessageReceived($message));
         }
 
         if ($request->from == 'tpa' ){
