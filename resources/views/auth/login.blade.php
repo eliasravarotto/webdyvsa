@@ -53,7 +53,11 @@
                         </div>
                         <div class="form-row justify-content-center mb-3">
                             <div class="col-11">
-                                <div class="text-muted font-italic"><small>¿Olvido su contraseña? <span class="text-success font-weight-700">Recuperar</span></small></div>
+                                <div class="text-muted font-italic">
+                                    <small>¿Olvido su contraseña? 
+                                        <a href="{{ route('password.request') }}" class="text-success font-weight-700">Recuperar</a>
+                                    </small>
+                                </div>
                             </div>
                         </div>
                         <div class="form-row justify-content-center">

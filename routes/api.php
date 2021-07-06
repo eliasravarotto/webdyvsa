@@ -48,11 +48,11 @@ Route::post('/push-subscription/{token}','FrontController@subscribeClient');
 
 Route::group(['middleware' => 'jwt.auth'], function(){
 
-
-
+    Route::get('/verify-token','ApiAuthController@verifyToken');
 });
 
 Route::post('/auth/login','ApiAuthController@login');
 Route::get('/auth/logout','ApiAuthController@logout');
 Route::post('/auth/register','ApiAuthController@register');
 Route::post('/auth/refresh','ApiAuthController@refreshToken');
+Route::post('/auth/reset-password','App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail');

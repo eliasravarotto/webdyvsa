@@ -8,6 +8,7 @@ use Validator;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
@@ -80,7 +81,7 @@ class ApiAuthController extends Controller
 
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         //  $this->validate($request, ['token' => 'required']);
         $token = JWTAuth::getToken();
@@ -97,6 +98,7 @@ class ApiAuthController extends Controller
             return $this->successResponse($data, 200);
 
         } catch (JWTException $e) {
+
             $data = [
                 'code' => 6, 
                 'success' => false, 
@@ -119,14 +121,15 @@ class ApiAuthController extends Controller
 
         if ($validator->fails()) {
             return response()->json([
-                'success' => false,
                 'code' => 1,
+                'success' => false,
                 'message' => 'Wrong validation',
                 'errors' => $validator->errors()
             ], 422);
         }
 
         $data['verified'] = User::USUARIO_NO_VERIFICADO;
+        $data['password'] = Hash::make($request->password);
         $data['verification_token'] = User::generateVerificationToken();
         $data['avatar'] = '/imagenes/avatars/avatar-1.jpg';
 
@@ -136,7 +139,46 @@ class ApiAuthController extends Controller
         $user = User::create($data);
         $user->roles()->sync($roles);
 
-        return $this->showOne($user, 200);
+        $data = [
+            'code' => 1,
+            'user' => $user,
+            'success' => true,
+            'message' => 'Registration success.'
+        ];
+
+        return response()->json($data, 200);
+    }
+
+    public function verifyToken(Request $request)
+    {
+        try {
+            if (! $token = JWTAuth::parseToken()) {
+                //throw an exception
+                return $this->errorResponse('Invalid Token', 200);
+            }
+        } catch (Exception $e) {
+            if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
+                //throw an exception
+                return $this->errorResponse($e, 200);
+            }else if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException){
+                //throw an exception
+                return $this->errorResponse($e, 200);
+            } else if ( $e instanceof \Tymon\JWTAuth\Exceptions\JWTException) {
+                //throw an exception
+                return $this->errorResponse($e, 200);
+            }else{
+                //throw an exception
+                return $this->errorResponse($e, 200);
+            }
+        }
+
+        $data = [
+            'success' => true,
+            'user' => JWTAuth::toUser($token),
+        ];
+
+        return $this->successResponse($data, 200);
+
     }
 
 }
