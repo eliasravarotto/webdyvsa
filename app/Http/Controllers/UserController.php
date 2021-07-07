@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use App\User;
+use App\Traits\ApiResponser;
 use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ class UserController extends Controller
 {
 
     use ImageHandler;
+    use ApiResponser;
 
 
     function __construct()
@@ -78,16 +80,6 @@ class UserController extends Controller
         return redirect('/usuarios')->with('success', 'Usuario creado');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -145,5 +137,22 @@ class UserController extends Controller
         $user->delete();
 
         return redirect('/usuarios')->with('success', 'Usuario eliminado');
+    }
+
+    public function apiGetUser(Request $request, User $user)
+    {
+        return $this->showOne($user, 200);
+    }
+
+    public function apiUpdateUser(Request $request, User $user)
+    {
+        $data = [];
+        $data['name'] = $request->name;
+        $data['phone'] = $request->phone;
+
+        $user->update($data);
+
+        return $this->showOne($user, 200);
+
     }
 }

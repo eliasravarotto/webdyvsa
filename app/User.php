@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\UserVehicle;
 use App\Notifications\ResetPassword;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
@@ -22,6 +23,7 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name', 
         'email', 
+        'phone', 
         'avatar',
         'password',
         'verified',
@@ -95,5 +97,11 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+
+    public function vehicles()
+    {
+        return $this->hasMany(UserVehicle::class);
     }
 }

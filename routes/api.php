@@ -49,6 +49,8 @@ Route::post('/push-subscription/{token}','FrontController@subscribeClient');
 Route::group(['middleware' => 'jwt.auth'], function(){
 
     Route::get('/verify-token','ApiAuthController@verifyToken');
+    Route::get('/users/{user}','UserController@apiGetUser');
+    Route::post('/users/{user}/edit','UserController@apiUpdateUser');
 });
 
 Route::post('/auth/login','ApiAuthController@login');
