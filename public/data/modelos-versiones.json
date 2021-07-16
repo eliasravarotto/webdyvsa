@@ -1,0 +1,131 @@
+[
+	{
+		"slug": "etios",
+		"modelo": "Etios",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "x4p", "version": "X 4P" },
+			{ "slug": "x5p", "version": "X 5P" }
+		]
+	},
+	{
+		"slug": "yaris",
+		"modelo": "Yaris",
+		"photo" : "/imagenes/app-dyv/yaris.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "corolla2020",
+		"modelo": "Corolla 2020",
+		"photo" : "/imagenes/app-dyv/corolla.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "corolla-hybrid-2020",
+		"modelo": "Corolla Hybrid 2020",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "hilux",
+		"modelo": "Hilux",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "hilux-grs",
+		"modelo": "Hilux GR-Sport",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "innova",
+		"modelo": "Innova",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "chr",
+		"modelo": "C-HR",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "hiace",
+		"modelo": "Hiace",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "sw4",
+		"modelo": "SW4",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "rav4",
+		"modelo": "Rav4",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "prius",
+		"modelo": "Prius",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "camry",
+		"modelo": "Camry",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "t86",
+		"modelo": "86",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "lc-prado",
+		"modelo": "Land Cruiser Prado",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	},
+	{
+		"slug": "lc-200",
+		"modelo": "Land Cruiser 200",
+		"photo" : "/imagenes/app-dyv/etios.png", 
+		"versiones": [
+			{ "slug": "", "version": "" }
+		]
+	}
+]

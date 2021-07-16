@@ -51,6 +51,12 @@ Route::group(['middleware' => 'jwt.auth'], function(){
     Route::get('/verify-token','ApiAuthController@verifyToken');
     Route::get('/users/{user}','UserController@apiGetUser');
     Route::post('/users/{user}/edit','UserController@apiUpdateUser');
+    Route::post('/user-vehicles','UserVehicleController@store');
+    Route::get('/user-vehicles','UserVehicleController@myVehicles');
+    Route::get('/user-vehicles/{vehicle}','UserVehicleController@show');
+    Route::delete('/user-vehicles/{vehicle}','UserVehicleController@destroy');
+
+    Route::get('/modelos','ApiController@modelosVersiones');
 });
 
 Route::post('/auth/login','ApiAuthController@login');
