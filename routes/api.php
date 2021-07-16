@@ -63,4 +63,4 @@ Route::post('/auth/login','ApiAuthController@login');
 Route::get('/auth/logout','ApiAuthController@logout');
 Route::post('/auth/register','ApiAuthController@register');
 Route::post('/auth/refresh','ApiAuthController@refreshToken');
-Route::post('/auth/reset-password','App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail');
+Route::post('/auth/reset-password','Auth\ForgotPasswordController@sendResetLinkEmail');
