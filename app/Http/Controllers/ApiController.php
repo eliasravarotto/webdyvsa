@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Modelo;
+use App\Servicio;
 use App\Sucursal;
-use App\TipoServicio;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -44,7 +44,7 @@ class ApiController extends Controller
 
     public function getTiposServicios(Request $request)
     {
-        $tiposServicios = TipoServicio::all();
+        $tiposServicios = Servicio::all();
 
         return response()->json(['tiposServicios' => $tiposServicios ], 200);
     }

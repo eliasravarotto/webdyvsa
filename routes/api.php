@@ -18,9 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('cliente')->get('/novedades','ApiController@getNovedades');
-Route::middleware('cliente')->get('/modelos','ApiController@getModelos');
-Route::middleware('cliente')->get('/tipos-de-servicios','ApiController@getTiposServicios');
-// Route::middleware('cliente')->post('/turno-servicio','TurnoServicioController@store');
 Route::middleware('cliente')->get('/sucursales/{sucursales_de?}','ApiController@getSucursales');
 
 Route::get('/slide_get_data/{id}','SlideController@getDataSlide');
@@ -44,6 +41,7 @@ Route::get('/sucursales-posventa','ApiController@sucursalesPosventa');
 Route::get('/posventa/lista-de-precios','ServicioController@listaDePrecios');
 Route::get('/accesorios','AccesorioController@getAccesorios');
 Route::post('/push-subscription/{token}','FrontController@subscribeClient');
+Route::get('/tipos-de-servicios','ApiController@getTiposServicios');
 
 
 Route::group(['middleware' => 'jwt.auth'], function(){
@@ -56,7 +54,7 @@ Route::group(['middleware' => 'jwt.auth'], function(){
     Route::get('/user-vehicles/{vehicle}','UserVehicleController@show');
     Route::delete('/user-vehicles/{vehicle}','UserVehicleController@destroy');
 
-    Route::get('/modelos','ApiController@modelosVersiones');
+    Route::get('/modelos-versiones','ApiController@modelosVersiones');
 });
 
 Route::post('/auth/login','ApiAuthController@login');
