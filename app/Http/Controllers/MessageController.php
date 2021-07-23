@@ -100,8 +100,7 @@ class MessageController extends Controller
         }
 
 
-
-        return $this->sendLeadToSalesforce($message);
+        $this->sendLeadToSalesforce($message);
 
 
         return $this->showOne($message);
