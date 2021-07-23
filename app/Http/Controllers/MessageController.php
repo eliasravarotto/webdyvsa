@@ -115,7 +115,6 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        // $mensaje = Message::find($id);
         return view('backend.contacto.show', compact('message'));
     }
 
@@ -139,7 +138,7 @@ class MessageController extends Controller
                             "names":[
                                 {
                                     "part":"first",
-                                    "value":"%firstName%_"
+                                    "value":"%firstName%"
                                 },
                                 {
                                     "part":"last",
@@ -180,11 +179,21 @@ class MessageController extends Controller
                 }
             }';
 
+        $arrNames = explode(" ", $message->name);
+
+        if(sizeof($arrNames) > 1){
+            $message->firstName = explode(" ", $message->name)[0];
+            $message->lastName = explode(" ", $message->name)[1];
+        }else{
+            $message->firstName = explode(" ", $message->name)[0];
+            $message->lastName = explode(" ", $message->name)[0];
+        }
+
         $dataRaw = str_replace("%createdAt%", date('d/m/Y H:m', strtotime($message->created_at)), $dataRaw);
         $dataRaw = str_replace("%interest%", $message->interest, $dataRaw);
         $dataRaw = str_replace("%email%", $message->email, $dataRaw);
-        $dataRaw = str_replace("%firstName%", $message->name, $dataRaw);
-        $dataRaw = str_replace("%lastName%", $message->name, $dataRaw);
+        $dataRaw = str_replace("%firstName%", $message->firstName, $dataRaw);
+        $dataRaw = str_replace("%lastName%", $message->lastName, $dataRaw);
         $dataRaw = str_replace("%phone%", $message->phone, $dataRaw);
         $dataRaw = str_replace("%message%", $message->message, $dataRaw);
 
