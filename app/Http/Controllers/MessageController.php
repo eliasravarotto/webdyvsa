@@ -65,34 +65,43 @@ class MessageController extends Controller
         $message = Message::create($request->all());
 
         if ($request->from == 'contacto' ){
+            $message->interest = 'CONVENCIONAL';
             Mail::to('fabianaaranda@derkayvargas.com.ar')
                 ->cc(['eliasravarotto@derkayvargas.com.ar'])
                 ->send(new MessageReceived($message));
         }
 
         if ($request->from == 'usados' ){
+            $message->interest = 'USADO';
             Mail::to('fabianaaranda@derkayvargas.com.ar')
                 ->cc(['eliasravarotto@derkayvargas.com.ar'])
                 ->send(new MessageReceived($message));
         }
 
         if ($request->from == 'financiacion' ){
+            $message->interest = 'CONVENCIONAL';
             Mail::to('fabianaaranda@derkayvargas.com.ar')
                 ->cc(['eliasravarotto@derkayvargas.com.ar'])
                 ->send(new MessageReceived($message));
         }
         
         if ($request->from == 'la_voz_del_cliente' ){
+            $message->interest = 'CONVENCIONAL';
             Mail::to('matiasromero@derkayvargas.com.ar')
                 ->cc(['fabianaaranda@derkayvargas.com.ar', 'eliasravarotto@derkayvargas.com.ar'])
                 ->send(new MessageReceived($message));
         }
 
         if ($request->from == 'tpa' ){
+            $message->interest = 'PLAN';
             $message->message .= ' - Localidad: ' . $request->localidad;
             Mail::to('santiagogaliano@derkayvargas.com.ar')
                 ->send(new MessageReceived($message));
         }
+
+
+
+        return $this->sendLeadToSalesforce($message);
 
 
         return $this->showOne($message);
@@ -112,8 +121,74 @@ class MessageController extends Controller
 
 
 
-    public function sendLeadToSalesforce()
+    public function sendLeadToSalesforce($message)
     {
+
+        $dataRaw = '{
+                "prospect":{
+                    "requestdate":"%createdAt%",
+                    "customer":{
+                        "comments":"%message%",
+                        "interest":"%interest%",
+                        "contacts":[{
+                            "emails":[
+                                {
+                                    "value":"%email%"
+                                }
+                            ],
+                            "names":[
+                                {
+                                    "part":"first",
+                                    "value":"%firstName%_"
+                                },
+                                {
+                                    "part":"last",
+                                    "value":"%lastName%"
+                                }
+                            ],
+                            "phones":[
+                                {
+                                    "type":"phone",
+                                    "value":"%phone%"
+                                },
+                                {
+                                    "type":"mobile",
+                                    "value":"%phone%"
+                                }
+                            ],
+                            "addresses":[
+                                {
+                                "city":"Chaco",
+                                "country":"Argentina"
+                                }
+                            ]
+                        }]
+                    },
+                    "vehicles":[
+                        {
+                            "make":"",
+                            "model":"",
+                            "code": ""
+                        }
+                    ],
+                    "provider":{
+                        "name":{
+                            "value":"Página Web",
+                            "origin":"Contacto"
+                        }
+                    }
+                }
+            }';
+
+        $dataRaw = str_replace("%createdAt%", date('d/m/Y H:m', strtotime($message->created_at)), $dataRaw);
+        $dataRaw = str_replace("%interest%", $message->interest, $dataRaw);
+        $dataRaw = str_replace("%email%", $message->email, $dataRaw);
+        $dataRaw = str_replace("%firstName%", $message->name, $dataRaw);
+        $dataRaw = str_replace("%lastName%", $message->name, $dataRaw);
+        $dataRaw = str_replace("%phone%", $message->phone, $dataRaw);
+        $dataRaw = str_replace("%message%", $message->message, $dataRaw);
+
+
         $curl = curl_init();
 
         try {
@@ -127,64 +202,10 @@ class MessageController extends Controller
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS =>'{
-                "prospect":{
-                    "requestdate":"09/02/2020 10:27:03",
-                    "customer":{
-                        "comments":"Probando API prospectos..",
-                        "interest":"PLAN",
-                        "contacts":[{
-                            "emails":[
-                                {
-                                    "value":"eliasravarotto@derkayvargas.com.ar"
-                                }
-                            ],
-                            "names":[
-                                {
-                                    "part":"first",
-                                    "value":"Elias"
-                                },
-                                {
-                                    "part":"last",
-                                    "value":"RAVAROTTO"
-                                }
-                            ],
-                            "phones":[
-                                {
-                                    "type":"phone",
-                                    "value":"52511271"
-                                },
-                                {
-                                    "type":"mobile",
-                                    "value":"+5491114059886"
-                                }
-                            ],
-                            "addresses":[
-                                {
-                                "city":"CABA",
-                                "country":"Argentina"
-                                }
-                            ]
-                        }]
-                    },
-                    "vehicles":[
-                        {
-                            "make":"Toyota",
-                            "model":"Plan Hilux 4x4",
-                            "code": "1"
-                        }
-                    ],
-                    "provider":{
-                        "name":{
-                            "value":"Página Web",
-                            "origin":"Contacto"
-                        }
-                    }
-                }
-            }',
+            CURLOPT_POSTFIELDS => $dataRaw,
             CURLOPT_HTTPHEADER => array(
-                'username: fGvova1i0J1nYiwXKgIY',
-                'password: o0dz2qd2nDnyI05TGS28',
+                'username: ' . env('SF_APILEAD_USERNAME', null),
+                'password: ' . env('SF_APILEAD_PASSWORD', null),
                 'dealer: DYV',
                 'Content-Type: application/json'
             ),
@@ -195,12 +216,11 @@ class MessageController extends Controller
         curl_close($curl);
 
         return $response;
-
-            
+           
         } catch (Exception $e) {
             return $e;
         }
 
-
     }
+
 }
