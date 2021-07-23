@@ -29,6 +29,7 @@ Route::get('/modelos/{slug}','ModelosController@getModelo');
 Route::get('/usados','UsadoController@getUsados');
 Route::get('/usados/{slug}','UsadoController@getUsado');
 Route::post('/message','MessageController@store');
+Route::post('/message-test','MessageController@sendLeadToSalesforce');
 Route::post('/turno-servicio','TurnoServicioController@store');
 Route::post('/solicitar-test-drive','SolicitudTestDriveController@store');
 Route::get('/team-tpa','ApiController@getTeamTpa');

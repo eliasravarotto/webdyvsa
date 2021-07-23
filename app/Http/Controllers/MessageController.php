@@ -55,7 +55,7 @@ class MessageController extends Controller
             'phone' => 'required',
             'email' => 'required',
             'message' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
             'sucursal' => 'in:Sáenz Peña,Resistencia,Charata,Villa Ángela',
             'from' => 'required|in:contacto,financiacion,tpa,la_voz_del_cliente,usados',
         ];
@@ -94,6 +94,7 @@ class MessageController extends Controller
                 ->send(new MessageReceived($message));
         }
 
+
         return $this->showOne($message);
     }
 
@@ -110,14 +111,96 @@ class MessageController extends Controller
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Message $message)
+
+    public function sendLeadToSalesforce()
     {
-        //
+        $curl = curl_init();
+
+        try {
+
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.toyota.com.ar:9201/dcx/api/leads',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS =>'{
+                "prospect":{
+                    "requestdate":"09/02/2020 10:27:03",
+                    "customer":{
+                        "comments":"Probando API prospectos..",
+                        "interest":"PLAN",
+                        "contacts":[{
+                            "emails":[
+                                {
+                                    "value":"eliasravarotto@derkayvargas.com.ar"
+                                }
+                            ],
+                            "names":[
+                                {
+                                    "part":"first",
+                                    "value":"Elias"
+                                },
+                                {
+                                    "part":"last",
+                                    "value":"RAVAROTTO"
+                                }
+                            ],
+                            "phones":[
+                                {
+                                    "type":"phone",
+                                    "value":"52511271"
+                                },
+                                {
+                                    "type":"mobile",
+                                    "value":"+5491114059886"
+                                }
+                            ],
+                            "addresses":[
+                                {
+                                "city":"CABA",
+                                "country":"Argentina"
+                                }
+                            ]
+                        }]
+                    },
+                    "vehicles":[
+                        {
+                            "make":"Toyota",
+                            "model":"Plan Hilux 4x4",
+                            "code": "1"
+                        }
+                    ],
+                    "provider":{
+                        "name":{
+                            "value":"Página Web",
+                            "origin":"Contacto"
+                        }
+                    }
+                }
+            }',
+            CURLOPT_HTTPHEADER => array(
+                'username: fGvova1i0J1nYiwXKgIY',
+                'password: o0dz2qd2nDnyI05TGS28',
+                'dealer: DYV',
+                'Content-Type: application/json'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+
+        return $response;
+
+            
+        } catch (Exception $e) {
+            return $e;
+        }
+
+
     }
 }
